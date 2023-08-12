@@ -363,15 +363,24 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.2 查看与修改数据</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.2.1 查看单行，单列，单元格数据</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.2.2 查看多行，多列数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.2.3 修改数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.2.3 查看数据的统计值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.2.4 修改数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.3 增加，删除与合并数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.3.1 增加数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.3.2 删除数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.3.3 合并数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.3 增加，删除与合并数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.3.1 增加数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.3.2 删除数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">1.3.3 合并数据</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.4 查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1.4.1 查询数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">1.4.2 排序数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">1.4.2 分组汇总</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1.5 与数组或列表的转换</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1.6 自定义函数</a></li>
 </ul>
             </nav>
         </div>
@@ -1205,7 +1214,50 @@ Name: 高数, dtype: int64
 </div>
 </section>
 <section id="id8">
-<h3>1.2.3 修改数据<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>1.2.3 查看数据的统计值<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>Pandas 自带一些统计函数，可以得到列数据的统计值，这些统计函数包括：mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），count（计数），skew（均值），quantile（分位数）等。有时候需要添加参数<code class="docutils literal notranslate"><span class="pre">numeric_only</span> <span class="pre">=</span> <span class="pre">True</span></code>，表示只对数值数列应用函数。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;统计学&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># 求出统计学课程等平均分数</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># 求出每门课程等平均值，因为第一列姓名不为数值，添加了参数 ``numeric_only = True``</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>统计学    81.000000
+高数     77.666667
+英语     84.000000
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;高数&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="c1"># 求出高数课程等最高分</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>88
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h3>1.2.4 修改数据<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>在修改 pandas 的 DataFrame 数据时，将 pandas 的索引位置赋值为新的值。例如，当修改某列数据时，语法为：<code class="docutils literal notranslate"><span class="pre">df[‘列名']</span> <span class="pre">=</span>&#160; <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1500,10 +1552,10 @@ Name: 高数, dtype: int64
 </div>
 </section>
 </section>
-<section id="id9">
-<h2>1.3 增加，删除与合并数据<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <section id="id10">
-<h3>1.3.1 增加数据<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h2>1.3 增加，删除与合并数据<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h3>1.3.1 增加数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>在原数据末尾增加一列时，语法为 <code class="docutils literal notranslate"><span class="pre">df[‘新列名']</span> <span class="pre">=</span> <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1796,8 +1848,8 @@ Name: 高数, dtype: int64
 </div>
 <p>若要在指定位置插入行，目前 Pandas 还没有专门的函数，一般采用<code class="docutils literal notranslate"><span class="pre">concat</span></code>函数合并多个 DataFrame 的方式，增加多列或多行数据也可以使用 <code class="docutils literal notranslate"><span class="pre">concat</span></code>函数或<code class="docutils literal notranslate"><span class="pre">merge</span></code>函数，具体参看后面的合并数据章节。</p>
 </section>
-<section id="id11">
-<h3>1.3.2 删除数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<section id="id12">
+<h3>1.3.2 删除数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>Pandas 可以利用<code class="docutils literal notranslate"><span class="pre">drop</span></code>函数删除行数据或列数据。删除一行时，参数为行标签名以及<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>。若没有参数<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>，原始的 DataFrame 数据不变。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1995,8 +2047,8 @@ Name: 高数, dtype: int64
 </div></div></div>
 </div>
 </section>
-<section id="id12">
-<h3>1.3.3 合并数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<section id="id13">
+<h3>1.3.3 合并数据<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>Pandas 中比较常用的两个合并数据的方法是<code class="docutils literal notranslate"><span class="pre">concat</span></code>与<code class="docutils literal notranslate"><span class="pre">merge</span></code>。 当两个 DataFrame 数据表具有完全相同的列标签时，一般用<code class="docutils literal notranslate"><span class="pre">concat</span></code>，其他情况下多用<code class="docutils literal notranslate"><span class="pre">merge</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2676,7 +2728,7 @@ Name: 高数, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="s1">&#39;姓名&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;陈八&#39;</span><span class="p">],</span> <span class="s1">&#39;统计学&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">59</span><span class="p">]})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="s1">&#39;姓名&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;陈小虎&#39;</span><span class="p">],</span> <span class="s1">&#39;统计学&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">59</span><span class="p">]})</span>
 <span class="n">df2</span>
 </pre></div>
 </div>
@@ -2712,7 +2764,7 @@ Name: 高数, dtype: int64
     </tr>
     <tr>
       <th>1</th>
-      <td>陈八</td>
+      <td>陈小虎</td>
       <td>59</td>
     </tr>
   </tbody>
@@ -2824,7 +2876,7 @@ Name: 高数, dtype: int64
     <tr>
       <th>3</th>
       <td>NaN</td>
-      <td>陈八</td>
+      <td>陈小虎</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>59.0</td>
@@ -2938,7 +2990,7 @@ Name: 高数, dtype: int64
     <tr>
       <th>1</th>
       <td>NaN</td>
-      <td>陈八</td>
+      <td>陈小虎</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>59</td>
@@ -2948,6 +3000,1254 @@ Name: 高数, dtype: int64
 </div></div></div>
 </div>
 </section>
+</section>
+<section id="id14">
+<h2>1.4 查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<section id="id15">
+<h3>1.4.1 查询数据<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<p>对 DataFrame 数据按照一定条件查询时，一般会用到一些比较运算符，例如：&gt;, &gt;=, ==, &lt;, &lt;=, !=。条件查询一般只针对列数据，查询时，Pandas 首先生成布尔索引 True 或 False，再通过指定索引生成查询后的数据。</p>
+<p>例如，下面的代码：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;姓名&#39;</span><span class="p">:[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;李四&#39;</span><span class="p">,</span> <span class="s1">&#39;王五&#39;</span><span class="p">],</span> <span class="s1">&#39;统计学&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span>
+                   <span class="s1">&#39;高数&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">82</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span> <span class="s1">&#39;英语&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">]})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>李四</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;统计学&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">83</span>  <span class="c1"># 统计学成绩大于83的布尔索引</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     True
+1    False
+2     True
+Name: 统计学, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;统计学&#39;</span><span class="p">]</span>  <span class="o">&gt;</span> <span class="mi">83</span><span class="p">]</span>  <span class="c1"># 生成统计学成绩大于83的数据</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>对于多条件查询，可以用<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>表示并：两个条件都要满足，用<code class="docutils literal notranslate"><span class="pre">|</span></code>表示或：两个条件满足一个即可。举例：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;高数&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;英语&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">)]</span>  <span class="c1"># 查询高数成绩大于65，英语成绩大于80的数据，注意小括号</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;高数&#39;</span><span class="p">]</span><span class="o">&gt;</span> <span class="mi">65</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;英语&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">)]</span>  <span class="c1"># 查询高数成绩大于65，英语成绩大于80的数据，注意小括号</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>李四</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id16">
+<h3>1.4.2 排序数据<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<p>在处理数据时，经常要对数据排序。 Pandas 提供了一个方便的函数<code class="docutils literal notranslate"><span class="pre">sort_values</span></code>对数值进行排序，它的使用语法如下：</p>
+<table>
+     <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">DataFrame.sort_values(by, axis=0, ascending=True, inplace=False,  na_position='last', ignore_index=False)}</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">by</td>
+        <td style="text-align:left">需要排序的列名(axis=0)或行名(axis=1)，可以有多个</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">axis</td>
+        <td style="text-align:left">0 表示对列排序，1 表示对行排序，默认是0</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">ascending</td>
+        <td style="text-align:left">升序还是降序，默认是升序排列</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">inplace</td>
+        <td style="text-align:left">是否替换原有数据，默认为 False 不替换</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">na_position</td>
+        <td style="text-align:left">缺失值 NaN 放在排序的前面还是后面，默认是放在后面</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">ignore_index</td>
+        <td style="text-align:left">如果为 True，则排序后的行号重新标号，默认是 False</td>
+    </tr>
+</table>
+</br><p>对统计学成绩升序排列：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;统计学&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>李四</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>对统计学与高数成绩降序排序：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;统计学&#39;</span><span class="p">,</span> <span class="s1">&#39;高数&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>李四</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>在参数<code class="docutils literal notranslate"><span class="pre">by</span></code>中，统计学在前，高数在后，表示：先把统计学成绩降序排序，若统计学成绩有相同的，再按高数成绩降序排序。</p>
+<p>由于排序时列标签经常被打乱，可以使用<code class="docutils literal notranslate"><span class="pre">ignore_index</span> <span class="pre">=</span> <span class="pre">True</span></code>重新排列标签，<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>改变原始数据。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;统计学&#39;</span><span class="p">)</span>  <span class="c1"># 排序，可以看出列标也发生了变动</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>李四</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;统计学&#39;</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># 排序后重新排列标签</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>李四</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;统计学&#39;</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># 排序后，没有替换原始数据</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>李四</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;统计学&#39;</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># 排序后，替换了原始数据</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>李四</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>张三</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id17">
+<h3>1.4.2 分组汇总<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<p>在数据分析时，经常也需要将数据分组汇总。例如，在统计学生的期末考试成绩时，可能需要根据专业或者班级来分别计算平均成绩、最高成绩等。此时，可以利用 Pandas 的<code class="docutils literal notranslate"><span class="pre">groupby</span></code>函数方便地实现这些功能。</p>
+<p>groupby 经常结合一些汇总统计量使用，例如 mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），mad（平均绝对偏差），count（计数），skew（均值），quantile（分位数）。</p>
+<p>下面的代码按性别汇总了平均成绩：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;一班&#39;</span><span class="p">,</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;李四&#39;</span><span class="p">,</span><span class="s1">&#39;二班&#39;</span><span class="p">,</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;王五&#39;</span><span class="p">,</span> <span class="s1">&#39;二班&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span><span class="mi">78</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;魏小小&#39;</span><span class="p">,</span><span class="s1">&#39;三班&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span>\
+                      <span class="p">[</span><span class="s1">&#39;马小倩&#39;</span><span class="p">,</span> <span class="s1">&#39;二班&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">63</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;陈小虎&#39;</span><span class="p">,</span> <span class="s1">&#39;一班&#39;</span><span class="p">,</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">93</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;姓名&#39;</span><span class="p">,</span><span class="s1">&#39;班级&#39;</span><span class="p">,</span><span class="s1">&#39;性别&#39;</span><span class="p">,</span><span class="s1">&#39;统计学&#39;</span><span class="p">,</span><span class="s1">&#39;高数&#39;</span><span class="p">,</span><span class="s1">&#39;英语&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>姓名</th>
+      <th>班级</th>
+      <th>性别</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>张三</td>
+      <td>一班</td>
+      <td>男</td>
+      <td>85</td>
+      <td>68</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>李四</td>
+      <td>二班</td>
+      <td>男</td>
+      <td>82</td>
+      <td>63</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>王五</td>
+      <td>二班</td>
+      <td>女</td>
+      <td>84</td>
+      <td>90</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>魏小小</td>
+      <td>三班</td>
+      <td>女</td>
+      <td>75</td>
+      <td>68</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>马小倩</td>
+      <td>二班</td>
+      <td>女</td>
+      <td>69</td>
+      <td>55</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>陈小虎</td>
+      <td>一班</td>
+      <td>男</td>
+      <td>89</td>
+      <td>95</td>
+      <td>93</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;性别&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># 按性别汇总平均成绩, numeric_only = True 表示仅选择对函数有效的数据列</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+    <tr>
+      <th>性别</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>女</th>
+      <td>76.000000</td>
+      <td>71.000000</td>
+      <td>73.666667</td>
+    </tr>
+    <tr>
+      <th>男</th>
+      <td>85.333333</td>
+      <td>75.333333</td>
+      <td>90.333333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;班级&#39;</span><span class="p">,</span> <span class="s1">&#39;性别&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># 按班级、性别汇总平均成绩</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_13273/4010783073.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  df.groupby([&#39;班级&#39;, &#39;性别&#39;]).mean() # 按班级、性别汇总平均成绩
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+    <tr>
+      <th>班级</th>
+      <th>性别</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>一班</th>
+      <th>男</th>
+      <td>87.0</td>
+      <td>81.5</td>
+      <td>91.5</td>
+    </tr>
+    <tr>
+      <th>三班</th>
+      <th>女</th>
+      <td>75.0</td>
+      <td>68.0</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">二班</th>
+      <th>女</th>
+      <td>76.5</td>
+      <td>72.5</td>
+      <td>70.5</td>
+    </tr>
+    <tr>
+      <th>男</th>
+      <td>82.0</td>
+      <td>63.0</td>
+      <td>88.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>若要汇总多个统计量，则可以跟<code class="docutils literal notranslate"><span class="pre">agg</span></code>方法，例如，下面的代码按照班级，汇总了每个班的最高、最低、平均成绩。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;班级&#39;</span><span class="p">,</span> <span class="s1">&#39;性别&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">])</span>  <span class="c1"># 汇总了每个班每个性别的最高、最低、平均成绩</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_13273/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+  df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="3" halign="left">统计学</th>
+      <th colspan="3" halign="left">高数</th>
+      <th colspan="3" halign="left">英语</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>max</th>
+      <th>min</th>
+      <th>mean</th>
+      <th>max</th>
+      <th>min</th>
+      <th>mean</th>
+      <th>max</th>
+      <th>min</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>班级</th>
+      <th>性别</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>一班</th>
+      <th>男</th>
+      <td>89</td>
+      <td>85</td>
+      <td>87.0</td>
+      <td>95</td>
+      <td>68</td>
+      <td>81.5</td>
+      <td>93</td>
+      <td>90</td>
+      <td>91.5</td>
+    </tr>
+    <tr>
+      <th>三班</th>
+      <th>女</th>
+      <td>75</td>
+      <td>75</td>
+      <td>75.0</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68.0</td>
+      <td>80</td>
+      <td>80</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">二班</th>
+      <th>女</th>
+      <td>84</td>
+      <td>69</td>
+      <td>76.5</td>
+      <td>90</td>
+      <td>55</td>
+      <td>72.5</td>
+      <td>78</td>
+      <td>63</td>
+      <td>70.5</td>
+    </tr>
+    <tr>
+      <th>男</th>
+      <td>82</td>
+      <td>82</td>
+      <td>82.0</td>
+      <td>63</td>
+      <td>63</td>
+      <td>63.0</td>
+      <td>88</td>
+      <td>88</td>
+      <td>88.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="id18">
+<h2>1.5 与数组或列表的转换<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<p>使用 Pandas 中的<code class="docutils literal notranslate"><span class="pre">values</span></code>方法可以将 DataFrame 数据转化为 Numpy 的数组形式。例如，对于前面的数据例子：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;姓名&#39;</span><span class="p">:[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;李四&#39;</span><span class="p">,</span> <span class="s1">&#39;王五&#39;</span><span class="p">],</span> <span class="s1">&#39;统计学&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span>
+                   <span class="s1">&#39;高数&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">82</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span> <span class="s1">&#39;英语&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">]})</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;统计学&#39;</span><span class="p">,</span> <span class="s1">&#39;高数&#39;</span><span class="p">,</span> <span class="s1">&#39;英语&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[85, 82, 84],
+       [68, 63, 90],
+       [90, 88, 78]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>也可以对某列数据，使用<code class="docutils literal notranslate"><span class="pre">tolist()</span></code>方法，将该列数据转化为 Python 本身的列表类型 list：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;统计学&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[85, 68, 90]
+</pre></div>
+</div>
+</div>
+</div>
+<p>除了字典类型外，Pandas 也支持将一维或二维的数组或列表转化成 DataFrame 类型。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id19">
+<h2>1.6 自定义函数<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<p>Pandas 可以使用到<code class="docutils literal notranslate"><span class="pre">apply</span></code>调用自定义函数。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;统计学&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span> <span class="c1"># 调用 Numpy 中的求平方根函数对统计学成绩每个元素求平方根</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    9.219544
+1    8.246211
+2    9.486833
+Name: 统计学, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>我们可以使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>定义一个匿名函数在<code class="docutils literal notranslate"><span class="pre">apply</span></code>里面调用：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;高数&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 对每一个高数成绩都减去 10 分</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    72
+1    53
+2    78
+Name: 高数, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apply</span></code> 也可以调用更复杂的自定义函数，例如，下面定义一个成绩替换函数，将分数替换为”优良中差”：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace_score</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;优&#39;</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;良&#39;</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;中&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;差&#39;</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;英语&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">replace_score</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    良
+1    优
+2    中
+Name: 英语, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -3027,15 +4327,24 @@ Name: 高数, dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.2 查看与修改数据</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.2.1 查看单行，单列，单元格数据</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.2.2 查看多行，多列数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.2.3 修改数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.2.3 查看数据的统计值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.2.4 修改数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.3 增加，删除与合并数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.3.1 增加数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.3.2 删除数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.3.3 合并数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.3 增加，删除与合并数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.3.1 增加数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.3.2 删除数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">1.3.3 合并数据</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.4 查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1.4.1 查询数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">1.4.2 排序数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">1.4.2 分组汇总</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1.5 与数组或列表的转换</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1.6 自定义函数</a></li>
 </ul>
   </nav></div>
 
