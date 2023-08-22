@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Pandas 入门 &#8212; Python data science</title>
+    <title>Pandas 入门 &#8212; Python data science</title>
   
   
   
@@ -157,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.  Pandas 入门</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pandas 入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
@@ -344,7 +344,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1.  Pandas 入门</h1>
+    <h1>Pandas 入门</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,33 +354,45 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1 创建，读取与存储数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1.1 创建数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1.2 读取数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.1.3 存储数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">创建，读取与存储数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">创建数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">读取数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">存储数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.2 查看与修改数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.2.1 查看单行，单列，单元格数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.2.2 查看多行，多列数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.2.3 查看数据的统计值</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.2.4 修改数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">查看与修改数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">查看单行，单列，单元格数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">查看多行，多列数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">查看数据的统计值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">修改数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.3 增加，删除与合并数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.3.1 增加数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.3.2 删除数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">1.3.3 合并数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">增加，删除与合并数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">增加数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">删除数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">合并数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.4 查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1.4.1 查询数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">1.4.2 排序数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">1.4.2 分组汇总</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">查询数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">排序数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">分组汇总</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1.5 与数组或列表的转换</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1.6 自定义函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">与数组或列表的转换</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">自定义函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">时间序列数据处理</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-datetime-dt-strftime"><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">数据清洗</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-fillna">数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-duplicates">重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-na">缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -393,7 +405,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1>1.  Pandas 入门<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<h1>Pandas 入门<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
 <p>pandas 是 Python 做统计分析时最重要的数据分析工具之一，它基于 numpy 开发，提供了许多处理大型数据集所需的函数，可以灵活高效的处理各种数据集。</p>
 <p>pandas 一般使用的数据类型为 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, DataFrame 是二维数据，相当于 Excel 里面的一张表格数据。使用 pandas 时首先要导入 pandas 包。</p>
 <div class="cell docutils container">
@@ -404,9 +416,9 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2>1.1 创建，读取与存储数据<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>创建，读取与存储数据<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="id2">
-<h3>1.1.1 创建数据<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>创建数据<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>例如有下面的数据：</p>
 <table class="table">
 <thead>
@@ -521,7 +533,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h3>1.1.2 读取数据<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>读取数据<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>多数情况下，我们要读取数据文件（例如 excel），假设上面的例子在 excel 文件 ‘transcripts.xlsx’ 里并放在电脑硬盘位置“/Users/zhenchen/Documents/python data” 中，可以通过函数<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>读取文件：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -617,7 +629,7 @@ document.write(`
 <br /><p>还有一种常见的数据文件类型为 csv，我们只需使用 pandas 中的函数<code class="docutils literal notranslate"><span class="pre">read_csv</span></code>，它的语法与<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>基本一致。</p>
 </section>
 <section id="id4">
-<h3>1.1.3 存储数据<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>存储数据<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>存储时使用函数 <code class="docutils literal notranslate"><span class="pre">to_excel</span></code> 或 <code class="docutils literal notranslate"><span class="pre">to_csv</span></code>。例如我们将数据 df 仍然存储到文件夹 “/Users/zhenchen/Documents/python data” 里，并命名为 “marks.xlsx”：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -629,7 +641,7 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>1.2 查看与修改数据<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>查看与修改数据<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>快速查看 DataFrame 各列数据的统计信息可以使用 <code class="docutils literal notranslate"><span class="pre">discribe()</span></code> 函数，包括各列数据的非空数值数目、均值、标准差、最大值、最小值、分位数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -734,7 +746,7 @@ document.write(`
 </tbody>
 </table>
 <section id="id6">
-<h3>1.2.1 查看单行，单列，单元格数据<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>查看单行，单列，单元格数据<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>查看某一列数据时，最简单的方式是在中括号<code class="docutils literal notranslate"><span class="pre">[]</span></code>里面输入列名的方式，例如查看英语成绩那一列数据：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -886,7 +898,7 @@ Name: 高数, dtype: int64
 </div>
 </section>
 <section id="id7">
-<h3>1.2.2 查看多行，多列数据<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>查看多行，多列数据<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>查看多行、多列数据时，可以用 <code class="docutils literal notranslate"><span class="pre">iloc</span></code>，它不仅能查看多行多列数据，也能查看单行、单列或某个单元格数据。
 例如，查看行数据：</p>
 <div class="cell docutils container">
@@ -1214,7 +1226,7 @@ Name: 高数, dtype: int64
 </div>
 </section>
 <section id="id8">
-<h3>1.2.3 查看数据的统计值<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>查看数据的统计值<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>Pandas 自带一些统计函数，可以得到列数据的统计值，这些统计函数包括：mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），count（计数），skew（均值），quantile（分位数）等。有时候需要添加参数<code class="docutils literal notranslate"><span class="pre">numeric_only</span> <span class="pre">=</span> <span class="pre">True</span></code>，表示只对数值数列应用函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1257,7 +1269,7 @@ dtype: float64
 </div>
 </section>
 <section id="id9">
-<h3>1.2.4 修改数据<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>修改数据<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>在修改 pandas 的 DataFrame 数据时，将 pandas 的索引位置赋值为新的值。例如，当修改某列数据时，语法为：<code class="docutils literal notranslate"><span class="pre">df[‘列名']</span> <span class="pre">=</span>&#160; <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1553,9 +1565,9 @@ dtype: float64
 </section>
 </section>
 <section id="id10">
-<h2>1.3 增加，删除与合并数据<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2>增加，删除与合并数据<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="id11">
-<h3>1.3.1 增加数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>增加数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>在原数据末尾增加一列时，语法为 <code class="docutils literal notranslate"><span class="pre">df[‘新列名']</span> <span class="pre">=</span> <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1849,7 +1861,7 @@ dtype: float64
 <p>若要在指定位置插入行，目前 Pandas 还没有专门的函数，一般采用<code class="docutils literal notranslate"><span class="pre">concat</span></code>函数合并多个 DataFrame 的方式，增加多列或多行数据也可以使用 <code class="docutils literal notranslate"><span class="pre">concat</span></code>函数或<code class="docutils literal notranslate"><span class="pre">merge</span></code>函数，具体参看后面的合并数据章节。</p>
 </section>
 <section id="id12">
-<h3>1.3.2 删除数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>删除数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>Pandas 可以利用<code class="docutils literal notranslate"><span class="pre">drop</span></code>函数删除行数据或列数据。删除一行时，参数为行标签名以及<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>。若没有参数<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>，原始的 DataFrame 数据不变。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2048,7 +2060,7 @@ dtype: float64
 </div>
 </section>
 <section id="id13">
-<h3>1.3.3 合并数据<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>合并数据<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>Pandas 中比较常用的两个合并数据的方法是<code class="docutils literal notranslate"><span class="pre">concat</span></code>与<code class="docutils literal notranslate"><span class="pre">merge</span></code>。 当两个 DataFrame 数据表具有完全相同的列标签时，一般用<code class="docutils literal notranslate"><span class="pre">concat</span></code>，其他情况下多用<code class="docutils literal notranslate"><span class="pre">merge</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3002,9 +3014,9 @@ dtype: float64
 </section>
 </section>
 <section id="id14">
-<h2>1.4 查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2>查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <section id="id15">
-<h3>1.4.1 查询数据<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>查询数据<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>对 DataFrame 数据按照一定条件查询时，一般会用到一些比较运算符，例如：&gt;, &gt;=, ==, &lt;, &lt;=, !=。条件查询一般只针对列数据，查询时，Pandas 首先生成布尔索引 True 或 False，再通过指定索引生成查询后的数据。</p>
 <p>例如，下面的代码：</p>
 <div class="cell docutils container">
@@ -3236,7 +3248,7 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="id16">
-<h3>1.4.2 排序数据<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>排序数据<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>在处理数据时，经常要对数据排序。 Pandas 提供了一个方便的函数<code class="docutils literal notranslate"><span class="pre">sort_values</span></code>对数值进行排序，它的使用语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -3617,7 +3629,7 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="id17">
-<h3>1.4.2 分组汇总<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>分组汇总<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p>在数据分析时，经常也需要将数据分组汇总。例如，在统计学生的期末考试成绩时，可能需要根据专业或者班级来分别计算平均成绩、最高成绩等。此时，可以利用 Pandas 的<code class="docutils literal notranslate"><span class="pre">groupby</span></code>函数方便地实现这些功能。</p>
 <p>groupby 经常结合一些汇总统计量使用，例如 mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），mad（平均绝对偏差），count（计数），skew（均值），quantile（分位数）。</p>
 <p>下面的代码按性别汇总了平均成绩：</p>
@@ -3775,7 +3787,7 @@ Name: 统计学, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_13273/4010783073.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_72137/4010783073.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).mean() # 按班级、性别汇总平均成绩
 </pre></div>
 </div>
@@ -3850,7 +3862,7 @@ Name: 统计学, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_13273/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_72137/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
 </pre></div>
 </div>
@@ -3967,7 +3979,7 @@ Name: 统计学, dtype: bool
 </section>
 </section>
 <section id="id18">
-<h2>1.5 与数组或列表的转换<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<h2>与数组或列表的转换<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
 <p>使用 Pandas 中的<code class="docutils literal notranslate"><span class="pre">values</span></code>方法可以将 DataFrame 数据转化为 Numpy 的数组形式。例如，对于前面的数据例子：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4187,8 +4199,8 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="id19">
-<h2>1.6 自定义函数<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
-<p>Pandas 可以使用到<code class="docutils literal notranslate"><span class="pre">apply</span></code>调用自定义函数。</p>
+<h2>自定义函数<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<p>Pandas 可以使用<code class="docutils literal notranslate"><span class="pre">apply</span></code>调用自定义函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -4206,7 +4218,7 @@ Name: 统计学, dtype: float64
 </div>
 </div>
 </div>
-<p>我们可以使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>定义一个匿名函数在<code class="docutils literal notranslate"><span class="pre">apply</span></code>里面调用：</p>
+<p>我们也可以使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>定义一个匿名函数在<code class="docutils literal notranslate"><span class="pre">apply</span></code>里面调用：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;高数&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 对每一个高数成绩都减去 10 分</span>
@@ -4248,6 +4260,1354 @@ Name: 英语, dtype: object
 </div>
 </div>
 </div>
+</section>
+<section id="id20">
+<h2>时间序列数据处理<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<section id="to-datetime-dt-strftime">
+<h3><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code><a class="headerlink" href="#to-datetime-dt-strftime" title="Permalink to this heading">#</a></h3>
+<p>实际工作中，经常会遇到大量的时间序列数据。这些时间序列的原始数据一般为文本格式，我们需要将它转化为时间日期格式。 Pandas 提供了 <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code>函数将其他日期时间格式转化为 Python 的日期时间格式。例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;20200514&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2020-05-14 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2020/05/14&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2020-05-14 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2020-05-14&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2020-05-14 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>在上面的代码中可以看出，<code class="docutils literal notranslate"><span class="pre">to_datetime</span></code>方法将不同类型的时间数据字符串转化为 Timestamp 格式：<code class="docutils literal notranslate"><span class="pre">年-月-日</span> <span class="pre">时:分:秒</span></code>。另外一个函数<code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code>可以将 Pandas 的 Timestamp 格式数据转化为其他格式的字符串，例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;入校时间&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2016-09-15&#39;</span><span class="p">,</span> <span class="s1">&#39;2017-03-23&#39;</span><span class="p">,</span> <span class="s1">&#39;2018-09-05&#39;</span><span class="p">],</span> <span class="s1">&#39;统计学&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="s1">&#39;高数&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">82</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span> <span class="s1">&#39;英语&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">],</span> <span class="s1">&#39;姓名&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;李四&#39;</span><span class="p">,</span> <span class="s1">&#39;王五&#39;</span><span class="p">]})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>入校时间</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+      <th>姓名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-09-15</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+      <td>张三</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017-03-23</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+      <td>李四</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-09-05</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+      <td>王五</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># 原始数据中的时间为字符串</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2016-09-15&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;入校时间&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;入校时间&#39;</span><span class="p">])</span> <span class="c1"># 将原始数据中的时间转化为 python 的日期格式</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>入校时间</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+      <th>姓名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2016-09-15</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+      <td>张三</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017-03-23</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+      <td>李四</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-09-05</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+      <td>王五</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2016-09-15 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;入校时间&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m-</span><span class="si">%d</span><span class="s1">-%y&#39;</span><span class="p">)</span>  <span class="c1"># 将日期格式转化为自定义格式的字符串</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    09-15-16
+1    03-23-17
+2    09-05-18
+Name: 入校时间, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;入校时间&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%B-</span><span class="si">%d</span><span class="s1">-%y&#39;</span><span class="p">)</span>  <span class="c1"># 将日期格式转化为自定义格式的字符串，小写 Y 年份显示两位</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    September-15-16
+1        March-23-17
+2    September-05-18
+Name: 入校时间, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;入校时间&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%B-</span><span class="si">%d</span><span class="s1">-%Y&#39;</span><span class="p">)</span>  <span class="c1"># 将日期格式转化为自定义格式的字符串，大写 Y 则年份显示四位</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    September-15-2016
+1        March-23-2017
+2    September-05-2018
+Name: 入校时间, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;入校时间&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%W&#39;</span><span class="p">)</span>  <span class="c1"># 将日期格式转化为自定义格式的字符串，大写 W 显示的为该年第几周</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2016-37
+1    2017-12
+2    2018-36
+Name: 入校时间, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;入校时间&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%w&#39;</span><span class="p">)</span>  <span class="c1"># 将日期格式转化为自定义格式的字符串，小写 w 显示的为该月第几周</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2016-09-4
+1    2017-03-4
+2    2018-09-3
+Name: 入校时间, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="resample">
+<h3>数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code><a class="headerlink" href="#resample" title="Permalink to this heading">#</a></h3>
+<p>对于很多时间序列数据，有时候经常需要对它们按一定周期进行数据聚合，可以用 Pandas 提供的<code class="docutils literal notranslate"><span class="pre">resample</span></code>函数。resample 方法中的小括号中用不同参数表示聚合的频率。举例：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;12/24/2019&#39;</span><span class="p">,</span> <span class="n">periods</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>  <span class="c1"># 生成一个时间序列，频率为天，周期数为 10</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-12-24&#39;, &#39;2019-12-25&#39;, &#39;2019-12-26&#39;, &#39;2019-12-27&#39;,
+               &#39;2019-12-28&#39;, &#39;2019-12-29&#39;, &#39;2019-12-30&#39;, &#39;2019-12-31&#39;,
+               &#39;2020-01-01&#39;, &#39;2020-01-02&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="n">index</span> <span class="o">=</span> <span class="n">index</span><span class="p">)</span>  <span class="c1"># 创建一个包含时间序列的 DataFrame 数据表</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-12-24</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2019-12-25</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2019-12-26</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2019-12-27</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2019-12-28</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2019-12-29</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2019-12-30</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2019-12-31</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2020-01-01</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2020-01-02</th>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># 用 resample 方法按月(&#39;M&#39;)对数据聚合</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-12-31</th>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>2020-01-31</th>
+      <td>17</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;3D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># 用 resample 方法每 3 天(&#39;3D&#39;)对数据聚合</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-12-24</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2019-12-27</th>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>2019-12-30</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>2020-01-02</th>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># 用 resample 方法每周(&#39;w&#39;)对数据聚合</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2019-12-29</th>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>2020-01-05</th>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">resample</span></code>的其他参数中， ‘T’ 表示分钟，‘H’ 表示小时，除了跟<code class="docutils literal notranslate"><span class="pre">sum()</span></code>方法外，还可以跟<code class="docutils literal notranslate"><span class="pre">asfreq()</span></code>，<code class="docutils literal notranslate"><span class="pre">ffill</span></code>，<code class="docutils literal notranslate"><span class="pre">apply()</span></code>等。</p>
+</section>
+</section>
+<section id="id21">
+<h2>数据清洗<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+<section id="replace-fillna">
+<h3>数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code><a class="headerlink" href="#replace-fillna" title="Permalink to this heading">#</a></h3>
+<p>在进行数据处理时，经常需要对原始数据的一些异常值或错误值进行批量处理。 Pandas 提供了<code class="docutils literal notranslate"><span class="pre">replace</span></code>函数方便地进行这项操作。<code class="docutils literal notranslate"><span class="pre">replace</span></code>函数第一项为原数据中的值，第二项为需要替换的值。例如，有下面的学生成绩：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">82</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">]]),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;统计学&#39;</span><span class="p">,</span> <span class="s1">&#39;高数&#39;</span><span class="p">,</span> <span class="s1">&#39;英语&#39;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;李四&#39;</span><span class="p">,</span> <span class="s1">&#39;王五&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>85</td>
+      <td>68</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>82</td>
+      <td>63</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>84</td>
+      <td>90</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>将其中的分数 90 替换为缺失值 NaN，注意，<code class="docutils literal notranslate"><span class="pre">replace</span></code>返回了一个新的数据，但原始数据并没有改变。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>85</td>
+      <td>68.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>82</td>
+      <td>63.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>84</td>
+      <td>NaN</td>
+      <td>78.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="c1"># 原始数据并没有变</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>85</td>
+      <td>68</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>82</td>
+      <td>63</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>84</td>
+      <td>90</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>若需要原始数据改变，需要跟上参数<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span> </code>，下面讲到的函数<code class="docutils literal notranslate"><span class="pre">fillna</span> </code>、<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>、<code class="docutils literal notranslate"><span class="pre">dropna</span></code>、 <code class="docutils literal notranslate"><span class="pre">rename</span></code>等也可以跟这个参数将原始数据改变。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="c1"># 原始数据改变了</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>85</td>
+      <td>68.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>82</td>
+      <td>63.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>84</td>
+      <td>NaN</td>
+      <td>78.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Pandas 提供<code class="docutils literal notranslate"><span class="pre">fillna</span></code>函数批量替换数据表中的缺失值 NaN。例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>  <span class="c1"># 将缺失值替换为 80</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>85</td>
+      <td>68.0</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>82</td>
+      <td>63.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>84</td>
+      <td>80.0</td>
+      <td>78.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;missing&#39;</span><span class="p">)</span>  <span class="c1"># 将缺失值替换为一个字符串</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>85</td>
+      <td>68.0</td>
+      <td>missing</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>82</td>
+      <td>63.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>84</td>
+      <td>missing</td>
+      <td>78.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Pandas 还可以直接调用<code class="docutils literal notranslate"><span class="pre">isnull</span></code>函数判断数据是否为缺失值：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;英语&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>张三     True
+李四    False
+王五    False
+Name: 英语, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="drop-duplicates">
+<h3>重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code><a class="headerlink" href="#drop-duplicates" title="Permalink to this heading">#</a></h3>
+<p>在数据量比较大时，经常会遇到重复数据的问题，可以使用函数<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>将重复数据去掉。例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s1">&#39;一班&#39;</span><span class="p">,</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;一班&#39;</span><span class="p">,</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;二班&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="mi">84</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;三班&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span>\
+                   <span class="p">[</span><span class="s1">&#39;二班&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">63</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;一班&#39;</span><span class="p">,</span> <span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">93</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;班级&#39;</span><span class="p">,</span><span class="s1">&#39;性别&#39;</span><span class="p">,</span><span class="s1">&#39;统计学&#39;</span><span class="p">,</span><span class="s1">&#39;高数&#39;</span><span class="p">,</span><span class="s1">&#39;英语&#39;</span><span class="p">],</span>\
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;王五&#39;</span><span class="p">,</span> <span class="s1">&#39;马六&#39;</span><span class="p">,</span> <span class="s1">&#39;陈小虎&#39;</span><span class="p">,</span> <span class="s1">&#39;魏大帅&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>班级</th>
+      <th>性别</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>一班</td>
+      <td>男</td>
+      <td>85</td>
+      <td>68</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>张三</th>
+      <td>一班</td>
+      <td>男</td>
+      <td>85</td>
+      <td>68</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>二班</td>
+      <td>女</td>
+      <td>84</td>
+      <td>90</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>马六</th>
+      <td>三班</td>
+      <td>女</td>
+      <td>75</td>
+      <td>68</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>陈小虎</th>
+      <td>二班</td>
+      <td>女</td>
+      <td>69</td>
+      <td>55</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>魏大帅</th>
+      <td>一班</td>
+      <td>男</td>
+      <td>89</td>
+      <td>95</td>
+      <td>93</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>前两行的数据完全相同，使用函数<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>处理：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>班级</th>
+      <th>性别</th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>一班</td>
+      <td>男</td>
+      <td>85</td>
+      <td>68</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>二班</td>
+      <td>女</td>
+      <td>84</td>
+      <td>90</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>马六</th>
+      <td>三班</td>
+      <td>女</td>
+      <td>75</td>
+      <td>68</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>陈小虎</th>
+      <td>二班</td>
+      <td>女</td>
+      <td>69</td>
+      <td>55</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>魏大帅</th>
+      <td>一班</td>
+      <td>男</td>
+      <td>89</td>
+      <td>95</td>
+      <td>93</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="drop-na">
+<h3>缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code><a class="headerlink" href="#drop-na" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">dropna</span></code>函数可以将数据表中包含缺失值的行去除掉，与<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>相比，该方法的可调节参数更多些。它的语法如下：</p>
+<table>
+     <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">DataFrame.dropna(axis=0, how='any', thresh=None, inplace=False)}</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">axis</td>
+        <td style="text-align:left">axis=0 表示删除含空值所在行，axis=1 表示删除含空值所在列</td>
+    </tr>
+    <tr>
+        <td rowspan=2 style="text-align:left">how</td>
+        <td style="text-align:left">默认为 how='any'，表示若有空值，就删除</td>
+    </tr>
+    <tr>  
+        <td style="text-align:left">how='all'，表示全部是空值才删除该行或该列</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">thresh</td>
+        <td style="text-align:left">空值的个数，作为行或列的删除标准</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">inplace</td>
+        <td style="text-align:left">若 inplace=True，表示处理后的数据替换原数据</td>
+    </tr>
+</table>
+</br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;统计学&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="s1">&#39;高数&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">82</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span> <span class="s1">&#39;英语&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">]},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span> <span class="s1">&#39;李四&#39;</span><span class="p">,</span> <span class="s1">&#39;王五&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>85.0</td>
+      <td>82</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>68.0</td>
+      <td>75</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>NaN</td>
+      <td>88</td>
+      <td>78.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  <span class="c1"># 默认为删除含有空值的行，并且只要行里面有 Nan 值，就删除</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>李四</th>
+      <td>68.0</td>
+      <td>75</td>
+      <td>90.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># 删除含有空值的列</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>高数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>88</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span> <span class="c1"># 全部是空值才删除</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>张三</th>
+      <td>85.0</td>
+      <td>82</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>李四</th>
+      <td>68.0</td>
+      <td>75</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>王五</th>
+      <td>NaN</td>
+      <td>88</td>
+      <td>78.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="rename">
+<h3>重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename" title="Permalink to this heading">#</a></h3>
+<p>在处理数据表时，有时候要给数据的行名或列名重命名，此时要用到<code class="docutils literal notranslate"><span class="pre">rename</span></code>函数，<code class="docutils literal notranslate"><span class="pre">rename</span></code>函数中的参数为一个字典形式：替换前的名字为字典的 key，替换后的名字为字典的 value。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;统计学&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="s1">&#39;高数&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">82</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span> <span class="s1">&#39;英语&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">]})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;统计学&#39;</span><span class="p">:</span> <span class="s1">&#39;科目A&#39;</span><span class="p">,</span> <span class="s1">&#39;高数&#39;</span><span class="p">:</span> <span class="s1">&#39;科目B&#39;</span><span class="p">})</span>  <span class="c1"># 更改其中两列的列名</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>科目A</th>
+      <th>科目B</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -4318,33 +5678,45 @@ Name: 英语, dtype: object
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1 创建，读取与存储数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.1.1 创建数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.1.2 读取数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.1.3 存储数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">创建，读取与存储数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">创建数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">读取数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">存储数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.2 查看与修改数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.2.1 查看单行，单列，单元格数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.2.2 查看多行，多列数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.2.3 查看数据的统计值</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.2.4 修改数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">查看与修改数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">查看单行，单列，单元格数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">查看多行，多列数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">查看数据的统计值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">修改数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.3 增加，删除与合并数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.3.1 增加数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.3.2 删除数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">1.3.3 合并数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">增加，删除与合并数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">增加数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">删除数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">合并数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">1.4 查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">1.4.1 查询数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">1.4.2 排序数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">1.4.2 分组汇总</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">查询数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">排序数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">分组汇总</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">1.5 与数组或列表的转换</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">1.6 自定义函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">与数组或列表的转换</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">自定义函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">时间序列数据处理</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-datetime-dt-strftime"><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">数据清洗</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-fillna">数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-duplicates">重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-na">缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
