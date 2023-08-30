@@ -6,6 +6,7 @@ root: intro
 chapters:
 - file: python-history
 - file: basic-data-type
+- file: print-read-files
 - file: draw-pictures
 - file: introduction-to-pandas
 - file: markdown
