@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+- file: draw-pictures
 - file: introduction-to-pandas
 - file: markdown
 - file: notebooks
