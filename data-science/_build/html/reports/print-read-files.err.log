@@ -17,16 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-b = 4.56
-f'the numbers are {math.pi} and {b}'
+print 默认输出后光标换行：
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[6], line 2[0m
-[1;32m      1[0m b [38;5;241m=[39m [38;5;241m4.56[39m
-[0;32m----> 2[0m [38;5;124mf[39m[38;5;124m'[39m[38;5;124mthe numbers are [39m[38;5;132;01m{[39;00mmath[38;5;241m.[39mpi[38;5;132;01m}[39;00m[38;5;124m and [39m[38;5;132;01m{[39;00mb[38;5;132;01m}[39;00m[38;5;124m'[39m
+[0;36m  Cell [0;32mIn[17], line 1[0;36m[0m
+[0;31m    print 默认输出后光标换行：[0m
+[0m                   ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid character '：' (U+FF1A)
 
-[0;31mNameError[0m: name 'math' is not defined
-NameError: name 'math' is not defined
+SyntaxError: invalid character '：' (U+FF1A) (3765777741.py, line 1)
 
