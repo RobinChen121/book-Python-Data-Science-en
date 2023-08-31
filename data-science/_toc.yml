@@ -7,6 +7,7 @@ chapters:
 - file: python-history
 - file: basic-data-type
 - file: print-read-files
+- file: define-function
 - file: draw-pictures
 - file: introduction-to-pandas
 - file: markdown
