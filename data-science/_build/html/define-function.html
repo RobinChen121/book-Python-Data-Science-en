@@ -426,7 +426,7 @@ document.write(`
 <br /><p>上面 if 语句块的执行顺序为：如果条件1 为真，将执行 “statement_block_1” 块语句，如果条件1 为假，将判断 “条件2”，如果条件2 为真，将执行 “statement_block_2” 块语句，如果条件2 为假，将执行”statement_block_3”块语句。举例：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入你的月薪: &quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">5000</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
@@ -438,9 +438,31 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>平均水平
+</pre></div>
+</div>
+</div>
+</div>
+<p>上面语句的意思是，若输入的月薪小于 3000，则输出“贫困户”，否则若月薪在 3000 与 12000 之间，输出“平均水平”，若月薪在 12000 之上，则输出“土豪”。if 语句里面还可以嵌套 if 语句，进一步增加判断条件，举例：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入你的月薪: &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="mi">2000</span> <span class="o">&lt;=</span> <span class="n">wage</span> <span class="o">&lt;</span> <span class="mi">3000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户中的一般贫&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户中的特贫&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;不是贫困户&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">wage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入你的月薪: &quot;</span><span class="p">))</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
@@ -464,31 +486,6 @@ document.write(`
 <span class="g g-Whitespace">   </span><span class="mi">1180</span> <span class="p">)</span>
 
 <span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
-</div>
-<p>上面语句的意思是，若输入的月薪小于 3000，则输出“贫困户”，否则若月薪在 3000 与 12000 之间，输出“平均水平”，若月薪在 12000 之上，则输出“土豪”。if 语句里面还可以嵌套 if 语句，进一步增加判断条件，举例：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入你的月薪: &quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="mi">2000</span> <span class="o">&lt;=</span> <span class="n">wage</span> <span class="o">&lt;</span> <span class="mi">3000</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户中的一般贫&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户中的特贫&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;不是贫困户&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>请输入你的月薪: 2000
-
-贫困户
-贫困户中的一般贫
 </pre></div>
 </div>
 </div>
