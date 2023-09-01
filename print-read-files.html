@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'print-read-files';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python 画图" href="draw-pictures.html" />
+    <link rel="next" title="Python 编写函数" href="define-function.html" />
     <link rel="prev" title="Python 的常用数据类型" href="basic-data-type.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,6 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="python-history.html">Python 的诞生与应用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 输出输入，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">Python 画图</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">Pandas 入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
@@ -444,19 +445,15 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
 <span class="sa">f</span><span class="s1">&#39;the numbers are </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="sa">f</span><span class="s1">&#39;the numbers are </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span>
-
-<span class="ne">NameError</span>: name &#39;math&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the numbers are 3.141592653589793 and 4.56&#39;
 </pre></div>
 </div>
 </div>
@@ -580,7 +577,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.1f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.1f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 百分比输出，并保留一位小数</span>
 </pre></div>
 </div>
 </div>
@@ -590,10 +587,18 @@ document.write(`
 </div>
 </div>
 </div>
-<p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分号输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
+<p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print 默认输出后光标换行：
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[17], line 1
+    print 默认输出后光标换行：
+                   ^
+SyntaxError: invalid character &#39;：&#39; (U+FF1A)
 </pre></div>
 </div>
 </div>
@@ -736,7 +741,7 @@ the numbers are 3 and 4.56 and 3
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数返回一个文件对象，常用的语法规则为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">open(filename, mode)</th>
+            <th colspan=2 style="text-align:center">if 语句的一般模式</th>
     </tr>
     <tr>
         <td style="text-align:left">filename</td>
@@ -848,6 +853,56 @@ the numbers are 3 and 4.56 and 3
 </tr>
 </tbody>
 </table>
+<p>举例：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># 在指定位置新建文件</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;my name is zhang san</span><span class="se">\n</span><span class="s1">his name is li si&#39;</span><span class="p">)</span> <span class="c1"># 书写内容，用 \n 换行</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># 关闭打开的文件</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>上面的程序在当前目录新建了一个 txt 文件。 通过<code class="docutils literal notranslate"><span class="pre">write()</span></code>函数在文件里面写内容，其中，\n 表示换行。下面通过<code class="docutils literal notranslate"><span class="pre">read()</span></code>函数读取文件里的全部内容，并返回一个字符串：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># 在指定位置打开文件</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 读取文件内容</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="c1"># 将内容输出到屏幕</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># 关闭打开的文件</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang san
+his name is li si
+</pre></div>
+</div>
+</div>
+</div>
+<p>如果只读取一行，可以用<code class="docutils literal notranslate"><span class="pre">readline()</span></code>函数，另外可以用<code class="docutils literal notranslate"><span class="pre">readlines()</span></code>函数读取所有行，并返回一个字符串列表。</p>
+<p>在实际的 python 读写文件中，经常用到的是 with-open 语句。由于文件读写时都有可能产生 IOError，一旦出错，后面的 f.close() 就不会调用，用 <code class="docutils literal notranslate"><span class="pre">with-open</span></code>语句可以省略 f.close() 语句。上面的读写代码也可以变为：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 写文件</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;my name is zhang san</span><span class="se">\n</span><span class="s1">his name is li si&#39;</span><span class="p">)</span>
+
+<span class="c1"># 读文件</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="nb">str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 读取文件内容</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="c1"># 将内容输出到屏幕</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang san
+his name is li si
+</pre></div>
+</div>
+</div>
+</div>
+<p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
 </section>
 
@@ -892,11 +947,11 @@ the numbers are 3 and 4.56 and 3
       </div>
     </a>
     <a class="right-next"
-       href="draw-pictures.html"
+       href="define-function.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python 画图</p>
+        <p class="prev-next-title">Python 编写函数</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

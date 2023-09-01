@@ -17,15 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-## 集合类型
-
-集合（set）是一个无序的**不重复**元素序列，一般使用大括号 { } 创建。注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 默认创建一个空字典）。
+访问二维列表时，用两个中括号分别跟上索引：
 ------------------
 
-[0;36m  Cell [0;32mIn[63], line 3[0;36m[0m
-[0;31m    集合（set）是一个无序的**不重复**元素序列，一般使用大括号 { } 创建。注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 默认创建一个空字典）。[0m
-[0m      ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid character '（' (U+FF08)
+[0;36m  Cell [0;32mIn[49], line 1[0;36m[0m
+[0;31m    访问二维列表时，用两个中括号分别跟上索引：[0m
+[0m           ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid character '，' (U+FF0C)
 
-SyntaxError: invalid character '（' (U+FF08) (3905120899.py, line 3)
+SyntaxError: invalid character '，' (U+FF0C) (1655428794.py, line 1)
 
