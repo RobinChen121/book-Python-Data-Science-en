@@ -426,7 +426,7 @@ document.write(`
 <br /><p>上面 if 语句块的执行顺序为：如果条件1 为真，将执行 “statement_block_1” 块语句，如果条件1 为假，将判断 “条件2”，如果条件2 为真，将执行 “statement_block_2” 块语句，如果条件2 为假，将执行”statement_block_3”块语句。举例：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入你的月薪: &quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">5000</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
@@ -438,32 +438,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">wage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入你的月薪: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/ipykernel/kernelbase.py:1172,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1165</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Forward raw_input to frontends</span>
-<span class="g g-Whitespace">   </span><span class="mi">1166</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1167</span><span class="sd"> Raises</span>
-<span class="g g-Whitespace">   </span><span class="mi">1168</span><span class="sd"> ------</span>
-<span class="g g-Whitespace">   </span><span class="mi">1169</span><span class="sd"> StdinNotImplementedError if active frontend doesn&#39;t support stdin.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1170</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1171</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1172</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1173</span>         <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1174</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1175</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>平均水平
 </pre></div>
 </div>
 </div>
@@ -471,7 +446,7 @@ document.write(`
 <p>上面语句的意思是，若输入的月薪小于 3000，则输出“贫困户”，否则若月薪在 3000 与 12000 之间，输出“平均水平”，若月薪在 12000 之上，则输出“土豪”。if 语句里面还可以嵌套 if 语句，进一步增加判断条件，举例：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入你的月薪: &quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
@@ -485,9 +460,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>请输入你的月薪: 3000
-
-贫困户
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>贫困户
+贫困户中的一般贫
 </pre></div>
 </div>
 </div>
@@ -789,6 +763,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[16], line 1
+    对于不可变类型，函数调用参数后，参数原来的值不变，例如：
+           ^
+SyntaxError: invalid character &#39;，&#39; (U+FF0C)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -798,11 +780,6 @@ document.write(`
 <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">changeNum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># 结果还是 2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -818,11 +795,6 @@ document.write(`
 <span class="n">listTry</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
 <span class="n">changeList</span><span class="p">(</span><span class="n">listTry</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">listTry</span><span class="p">)</span>  <span class="c1"># 结果是 [10, 20, 30, 1, 2, 3]，改变了列表原来的值</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30, 1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -848,11 +820,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
 </div>
 <p>在上面的代码中，调用 minus 函数，按照参数的顺序，认为 x1 的值为 10， x2 的值为 6。</p>
 <p>赋值传入的意思是：在调用函数时，可以在输入参数时直接给参数赋值，Python 自动根据括号内的参数名匹配参数值，例如：</p>
@@ -863,11 +830,6 @@ document.write(`
     <span class="k">return</span> <span class="n">z</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x1</span> <span class="o">=</span> <span class="mi">6</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4
 </pre></div>
 </div>
 </div>
@@ -882,12 +844,6 @@ document.write(`
 
 <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># 输出：4，没有传递参数值时默认参数值</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># 输出：5，有传递参数值时，覆盖默认参数值</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-5
 </pre></div>
 </div>
 </div>
@@ -906,14 +862,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is 3
-final x is 12
-x is 3
-final x is 18
-</pre></div>
-</div>
-</div>
 </div>
 <p>可以用 **args 来传递不定长的多个赋值的参数，例如：</p>
 <div class="cell docutils container">
@@ -925,11 +873,6 @@ final x is 18
         <span class="k">return</span> <span class="n">x1</span> <span class="o">-</span> <span class="nb">sum</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -947,22 +890,12 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-</pre></div>
-</div>
-</div>
 </div>
 <p>也可以结合 if-else 语句定义 lambda 函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Max</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="k">else</span> <span class="n">b</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Max</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
 </div>
 </div>
@@ -976,21 +909,11 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7fda51470340&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <p>可以用<code class="docutils literal notranslate"><span class="pre">list()</span></code>函数将这个可迭代对象转化为 list 类型：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9]
 </pre></div>
 </div>
 </div>
@@ -1010,11 +933,6 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3]
-</pre></div>
-</div>
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">reduce(fun,</span> <span class="pre">iter)</span></code>首先对可迭代对象 iter 中的前两个元素应用函数 fun，然后将其结果作为 fun 的第一个输入值，再对第 3 个元素应用 fun 函数；以此类推，最后返回一个数。使用 reduce 函数需要从工具包 functools 中提前导入。</p>
 <div class="cell docutils container">
@@ -1027,11 +945,6 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>也可以跟 3 个参数，即<code class="docutils literal notranslate"><span class="pre">reduce(fun,</span> <span class="pre">iter,</span> <span class="pre">start=None)</span></code>。此时，首先对一个初始值 start 与可迭代对象 iter 中的第一个元素应用函数 fun，然后将其结果作为 fun 的第一个输入值，再对第 2 个元素应用 fun 函数；以此类推，最后返回一个数。</p>
 <div class="cell docutils container">
@@ -1039,11 +952,6 @@ final x is 18
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># 求和，起始值为 10</span>
 <span class="n">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
 </div>
 </div>
@@ -1063,11 +971,6 @@ final x is 18
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x2 should not be zero&#39;</span><span class="p">)</span>
 
 <span class="n">devide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x2 should not be zero
 </pre></div>
 </div>
 </div>
@@ -1138,20 +1041,10 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">)</span> <span class="c1"># 默认四舍五入为整数</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -1163,20 +1056,10 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 10)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
 </div>
@@ -1194,20 +1077,10 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(2, 10, 2)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 6, 8]
 </pre></div>
 </div>
 </div>
@@ -1221,14 +1094,6 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 0
-30 1
-40 2
-50 3
-</pre></div>
-</div>
-</div>
 </div>
 <p>使用 enumerate 则上述代码更简洁些：</p>
 <div class="cell docutils container">
@@ -1236,14 +1101,6 @@ final x is 18
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 20
-1 30
-2 40
-3 50
 </pre></div>
 </div>
 </div>
@@ -1256,20 +1113,10 @@ final x is 18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 23, 37, 54]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>  <span class="c1"># 对列表降序排列</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[54, 37, 23, 12]
 </pre></div>
 </div>
 </div>
