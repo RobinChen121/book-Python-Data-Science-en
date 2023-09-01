@@ -30,6 +30,9 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  comments:
+    utterances:
+      repo: "https://github.com/RobinChen121/book-Python-Data-Science"
 
 plugins:
   - jekyll-spaceship
