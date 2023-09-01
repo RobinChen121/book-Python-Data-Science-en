@@ -66,8 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'draw-pictures';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pandas 入门" href="introduction-to-pandas.html" />
-    <link rel="prev" title="Python 输出输入，读写文件" href="print-read-files.html" />
+    <link rel="next" title="Numpy 简介" href="introduction-to-numpy.html" />
+    <link rel="prev" title="Python 编写函数" href="define-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,9 +162,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="python-history.html">Python 的诞生与应用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">Python 输出输入，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 画图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">Numpy 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">Pandas 入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 </ul>
 
     </div>
@@ -497,7 +498,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7ac0f90e50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8888794b80&gt;]
 </pre></div>
 </div>
 <img alt="_images/0ecde9e93f4d729e23512b09c8afe07107c28fe2ca7d0d63b4451d60dcc58fe8.png" src="_images/0ecde9e93f4d729e23512b09c8afe07107c28fe2ca7d0d63b4451d60dcc58fe8.png" />
@@ -510,7 +511,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7ab2a49780&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8888795540&gt;]
 </pre></div>
 </div>
 <img alt="_images/e5034d56658d7b526d339ca391265ea614e44804345c1fe9062c916924caf604.png" src="_images/e5034d56658d7b526d339ca391265ea614e44804345c1fe9062c916924caf604.png" />
@@ -523,7 +524,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7ac1021000&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8888821180&gt;]
 </pre></div>
 </div>
 <img alt="_images/20d08f2ed76a3d2dbafaa5618105a5acaca1a9ef63f6d6a08c8ed880383bfafc.png" src="_images/20d08f2ed76a3d2dbafaa5618105a5acaca1a9ef63f6d6a08c8ed880383bfafc.png" />
@@ -536,7 +537,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7ac12880d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f88981ac490&gt;]
 </pre></div>
 </div>
 <img alt="_images/e4cc3b1fde7efe808df32b86ce2b7eb27f733868125a1cf55ee68e787177ecf1.png" src="_images/e4cc3b1fde7efe808df32b86ce2b7eb27f733868125a1cf55ee68e787177ecf1.png" />
@@ -1008,7 +1009,7 @@ document.write(`
 </section>
 <section id="subplot">
 <h2>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h2>
-<p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数。两个函数比较接近但略有区别，限于篇幅，我们只介绍 <code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
+<p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
             <th colspan=2 style="text-align:center">ax = plt.subplot(nrows=1, ncols=1, index=1, **kwargs)</th>
@@ -1076,6 +1077,7 @@ document.write(`
 <img alt="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" src="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" />
 </div>
 </div>
+<p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
 </section>
 <section id="seaborn">
 <h2>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
@@ -1198,7 +1200,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8a039408ff4d98850017d9d1ad036f87b1c3e30dd0c0f2cf6083a10e94a6c6fd.png" src="_images/8a039408ff4d98850017d9d1ad036f87b1c3e30dd0c0f2cf6083a10e94a6c6fd.png" />
+<img alt="_images/d2289d80ff8e5c498ecdc16f2c57183901f4ef394e6948d7ddce76e7074112a8.png" src="_images/d2289d80ff8e5c498ecdc16f2c57183901f4ef394e6948d7ddce76e7074112a8.png" />
 </div>
 </div>
 <p>seaborn 自带一些函数生成常见的图形，例如<code class="docutils literal notranslate"><span class="pre">barplot</span></code>生成条形图，<code class="docutils literal notranslate"><span class="pre">histplot</span></code>生成直方图，<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>生成箱线图：</p>
@@ -1214,7 +1216,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a2b3bedce088a66b03a4009952604173db175ac75ba6287aecd00948f17e78ff.png" src="_images/a2b3bedce088a66b03a4009952604173db175ac75ba6287aecd00948f17e78ff.png" />
+<img alt="_images/65e1aeddf27a571f884518377518eacf913183e1717e025c0425160f855474a9.png" src="_images/65e1aeddf27a571f884518377518eacf913183e1717e025c0425160f855474a9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1282,20 +1284,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="print-read-files.html"
+       href="define-function.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python 输出输入，读写文件</p>
+        <p class="prev-next-title">Python 编写函数</p>
       </div>
     </a>
     <a class="right-next"
-       href="introduction-to-pandas.html"
+       href="introduction-to-numpy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pandas 入门</p>
+        <p class="prev-next-title">Numpy 简介</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

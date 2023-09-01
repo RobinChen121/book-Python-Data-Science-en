@@ -64,8 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-pandas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
-    <link rel="prev" title="Python 画图" href="draw-pictures.html" />
+    <link rel="prev" title="Numpy 简介" href="introduction-to-numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,9 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="python-history.html">Python 的诞生与应用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">Python 输出输入，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">Python 画图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">Numpy 简介</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pandas 入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
 </ul>
 
     </div>
@@ -395,6 +395,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Pandas 画图</a></li>
 </ul>
             </nav>
         </div>
@@ -3254,7 +3255,7 @@ Name: 统计学, dtype: bool
 <p>在处理数据时，经常要对数据排序。 Pandas 提供了一个方便的函数<code class="docutils literal notranslate"><span class="pre">sort_values</span></code>对数值进行排序，它的使用语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">DataFrame.sort_values(by, axis=0, ascending=True, inplace=False,  na_position='last', ignore_index=False)}</th>
+            <th colspan=2 style="text-align:center">DataFrame.sort_values(by, axis=0, ascending=True, inplace=False,  na_position='last', ignore_index=False)</th>
     </tr>
     <tr>
         <td style="text-align:left">by</td>
@@ -3789,7 +3790,7 @@ Name: 统计学, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_26934/4010783073.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_3800/4010783073.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).mean() # 按班级、性别汇总平均成绩
 </pre></div>
 </div>
@@ -3864,7 +3865,7 @@ Name: 统计学, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_26934/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_3800/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
 </pre></div>
 </div>
@@ -5283,7 +5284,7 @@ Name: 英语, dtype: bool
 <p><code class="docutils literal notranslate"><span class="pre">dropna</span></code>函数可以将数据表中包含缺失值的行去除掉，与<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>相比，该方法的可调节参数更多些。它的语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">DataFrame.dropna(axis=0, how='any', thresh=None, inplace=False)}</th>
+            <th colspan=2 style="text-align:center">DataFrame.dropna(axis=0, how='any', thresh=None, inplace=False)</th>
     </tr>
     <tr>
         <td style="text-align:left">axis</td>
@@ -5611,6 +5612,146 @@ Name: 英语, dtype: bool
 </div>
 </section>
 </section>
+<section id="id22">
+<h2>Pandas 画图<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
+<p>除了结合 matplotlib 与 seaborn 画图外，Pandas 也有自己的画图函数<code class="docutils literal notranslate"><span class="pre">plot</span></code>，它的语法一般为：</p>
+<table>
+     <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">DataFrame.plot(x=None,y=None, kind='line',subplots=False, title=None)</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">x</td>
+        <td style="text-align:left">横坐标数据</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">y</td>
+        <td style="text-align:left">纵坐标数据</td>
+    </tr>
+    <tr>  
+        <td style="text-align:left">kind</td>
+        <td style="text-align:left">默认是线图，还可以是‘bar’,'barh','box','pie','scatter','hist'等</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">subplots</td>
+        <td style="text-align:left">是否将每一列数据分别生成一个子图</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">title</td>
+        <td style="text-align:left">图形的标题</td>
+    </tr>
+</table>
+</br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;statistics&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="s1">&#39;math&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">82</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span> <span class="s1">&#39;English&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">84</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">78</span><span class="p">]})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>statistics</th>
+      <th>math</th>
+      <th>English</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/6b876c8b0b6967ea9b206e6e2d2ff522c277430246727bd6f88e09a330210090.png" src="_images/6b876c8b0b6967ea9b206e6e2d2ff522c277430246727bd6f88e09a330210090.png" />
+</div>
+</div>
+<p>从上图可以看出，Pandas 的<code class="docutils literal notranslate"><span class="pre">plot</span></code>默认对每一列数据，画一个线图。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;My picture&#39;</span><span class="p">)</span> <span class="c1"># 画出柱状图</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;My picture&#39;}&gt;
+</pre></div>
+</div>
+<img alt="_images/025d5e89920125faa854d126e1d556e89e419ef6ed4364f55b75a6bf06f318d7.png" src="_images/025d5e89920125faa854d126e1d556e89e419ef6ed4364f55b75a6bf06f318d7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># 对每一列数据非别生成一个子图</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&lt;Axes: title={&#39;center&#39;: &#39;statistics&#39;}&gt;,
+       &lt;Axes: title={&#39;center&#39;: &#39;math&#39;}&gt;,
+       &lt;Axes: title={&#39;center&#39;: &#39;English&#39;}&gt;], dtype=object)
+</pre></div>
+</div>
+<img alt="_images/cc7672bbc6716c17671baf84dafea645375746063d2d1bf470e834adefb69169.png" src="_images/cc7672bbc6716c17671baf84dafea645375746063d2d1bf470e834adefb69169.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;math&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;statistics&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span> <span class="c1"># 指定横坐标与纵坐标，生成一个散点图</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;math&#39;, ylabel=&#39;statistics&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/b70a4e1a3556db3be2eba2b913c0a54b6945db60dde28bf6edad345442099ca4.png" src="_images/b70a4e1a3556db3be2eba2b913c0a54b6945db60dde28bf6edad345442099ca4.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -5645,22 +5786,13 @@ Name: 英语, dtype: bool
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="draw-pictures.html"
+       href="introduction-to-numpy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python 画图</p>
+        <p class="prev-next-title">Numpy 简介</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="markdown.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -5719,6 +5851,7 @@ Name: 英语, dtype: bool
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Pandas 画图</a></li>
 </ul>
   </nav></div>
 

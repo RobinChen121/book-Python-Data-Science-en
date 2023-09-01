@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'print-read-files';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python 画图" href="draw-pictures.html" />
+    <link rel="next" title="Python 编写函数" href="define-function.html" />
     <link rel="prev" title="Python 的常用数据类型" href="basic-data-type.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,6 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="python-history.html">Python 的诞生与应用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 输出输入，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">Python 画图</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">Pandas 入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
@@ -740,7 +741,7 @@ the numbers are 3 and 4.56 and 3
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数返回一个文件对象，常用的语法规则为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">open(filename, mode)</th>
+            <th colspan=2 style="text-align:center">if 语句的一般模式</th>
     </tr>
     <tr>
         <td style="text-align:left">filename</td>
@@ -901,7 +902,6 @@ his name is li si
 </div>
 </div>
 </div>
-<p>ls -1</p>
 <p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
 </section>
@@ -947,11 +947,11 @@ his name is li si
       </div>
     </a>
     <a class="right-next"
-       href="draw-pictures.html"
+       href="define-function.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python 画图</p>
+        <p class="prev-next-title">Python 编写函数</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

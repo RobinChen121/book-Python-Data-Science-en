@@ -9,5 +9,5 @@ chapters:
 - file: print-read-files
 - file: define-function
 - file: draw-pictures
+- file: introduction-to-numpy
 - file: introduction-to-pandas
-- file: markdown
