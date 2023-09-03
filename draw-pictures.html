@@ -193,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 入门</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python-history.html">Python 的诞生与应用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
@@ -201,6 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 画图</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
@@ -537,7 +538,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff5ab838dc0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc540df0e20&gt;]
 </pre></div>
 </div>
 <img alt="_images/0ecde9e93f4d729e23512b09c8afe07107c28fe2ca7d0d63b4451d60dcc58fe8.png" src="_images/0ecde9e93f4d729e23512b09c8afe07107c28fe2ca7d0d63b4451d60dcc58fe8.png" />
@@ -550,7 +551,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff5ab418760&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc531280730&gt;]
 </pre></div>
 </div>
 <img alt="_images/e5034d56658d7b526d339ca391265ea614e44804345c1fe9062c916924caf604.png" src="_images/e5034d56658d7b526d339ca391265ea614e44804345c1fe9062c916924caf604.png" />
@@ -563,7 +564,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff5ab8cce20&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc540e84fa0&gt;]
 </pre></div>
 </div>
 <img alt="_images/20d08f2ed76a3d2dbafaa5618105a5acaca1a9ef63f6d6a08c8ed880383bfafc.png" src="_images/20d08f2ed76a3d2dbafaa5618105a5acaca1a9ef63f6d6a08c8ed880383bfafc.png" />
@@ -576,7 +577,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff5984b02b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc520298430&gt;]
 </pre></div>
 </div>
 <img alt="_images/e4cc3b1fde7efe808df32b86ce2b7eb27f733868125a1cf55ee68e787177ecf1.png" src="_images/e4cc3b1fde7efe808df32b86ce2b7eb27f733868125a1cf55ee68e787177ecf1.png" />
@@ -1239,7 +1240,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/16be3a790f7b9831789aa8eda7ac8eb47d332aaee6d6bfd4675244ae0a6fcd77.png" src="_images/16be3a790f7b9831789aa8eda7ac8eb47d332aaee6d6bfd4675244ae0a6fcd77.png" />
+<img alt="_images/e47eda57bc3b3c1506726ef4c13fb15e24c5f29406d08e975c1e84dca1213c30.png" src="_images/e47eda57bc3b3c1506726ef4c13fb15e24c5f29406d08e975c1e84dca1213c30.png" />
 </div>
 </div>
 <p>seaborn 自带一些函数生成常见的图形，例如<code class="docutils literal notranslate"><span class="pre">barplot</span></code>生成条形图，<code class="docutils literal notranslate"><span class="pre">histplot</span></code>生成直方图，<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>生成箱线图：</p>
@@ -1255,7 +1256,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2ba656ac05c8458250d2d1ea8918aa4449b81db1d4ae13f14662d55111497662.png" src="_images/2ba656ac05c8458250d2d1ea8918aa4449b81db1d4ae13f14662d55111497662.png" />
+<img alt="_images/ecc7bd2281fc9fe9c2612987abfd177e3033be78f63c987810a784daf573fee8.png" src="_images/ecc7bd2281fc9fe9c2612987abfd177e3033be78f63c987810a784daf573fee8.png" />
 </div>
 </div>
 <div class="cell docutils container">
