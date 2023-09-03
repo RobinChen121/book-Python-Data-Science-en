@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 parts: 
-- caption: Python 入门
+- caption: Python 基础
   chapters:
   - file: python-history
   - file: basic-data-type
@@ -12,6 +12,7 @@ parts:
   - file: define-function
   - file: draw-pictures
   - file: introduction-to-numpy
+  - file: introduction-to-pandas
 - caption: Python 实践
   chapters:
   - file: line-regression
