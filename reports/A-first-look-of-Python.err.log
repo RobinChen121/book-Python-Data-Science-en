@@ -21,13 +21,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print 默认输出后光标换行：
+这样，在代码中使用 tushare 的函数时，就可以用 ts 代替了。
 ------------------
 
-[1;36m  Cell [1;32mIn[17], line 1[1;36m[0m
-[1;33m    print 默认输出后光标换行：[0m
-[1;37m                   ^[0m
-[1;31mSyntaxError[0m[1;31m:[0m invalid character '：' (U+FF1A)
+[1;36m  Cell [1;32mIn[11], line 1[1;36m[0m
+[1;33m    这样，在代码中使用 tushare 的函数时，就可以用 ts 代替了。[0m
+[1;37m      ^[0m
+[1;31mSyntaxError[0m[1;31m:[0m invalid character '，' (U+FF0C)
 
-SyntaxError: invalid character '：' (U+FF1A) (3765777741.py, line 1)
+SyntaxError: invalid character '，' (U+FF0C) (459376479.py, line 1)
 
