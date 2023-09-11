@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -193,7 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-history.html">Python 的诞生与应用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">Python 输出输入，读写文件</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 编写函数</a></li>
@@ -797,21 +796,7 @@ document.write(`
 <li><p>不可变类型：数字，字符串，元组</p></li>
 <li><p>可变类型：列表，字典，集合</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>对于不可变类型，函数调用参数后，参数原来的值不变，例如：
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[16], line 1
-    对于不可变类型，函数调用参数后，参数原来的值不变，例如：
-           ^
-SyntaxError: invalid character &#39;，&#39; (U+FF0C)
-</pre></div>
-</div>
-</div>
-</div>
+<p>对于不可变类型，函数调用参数后，参数原来的值不变，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeNum</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
@@ -820,6 +805,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">changeNum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>    <span class="c1"># 结果还是 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -835,6 +825,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 <span class="n">listTry</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
 <span class="n">changeList</span><span class="p">(</span><span class="n">listTry</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">listTry</span><span class="p">)</span>  <span class="c1"># 结果是 [10, 20, 30, 1, 2, 3]，改变了列表原来的值</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30, 1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -860,6 +855,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
 </div>
 <p>在上面的代码中，调用 minus 函数，按照参数的顺序，认为 x1 的值为 10， x2 的值为 6。</p>
 <p>赋值传入的意思是：在调用函数时，可以在输入参数时直接给参数赋值，Python 自动根据括号内的参数名匹配参数值，例如：</p>
@@ -870,6 +870,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
     <span class="k">return</span> <span class="n">z</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x1</span> <span class="o">=</span> <span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4
 </pre></div>
 </div>
 </div>
@@ -884,6 +889,12 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 
 <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># 输出：4，没有传递参数值时默认参数值</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># 输出：5，有传递参数值时，覆盖默认参数值</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+5
 </pre></div>
 </div>
 </div>
@@ -902,6 +913,14 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is 3
+final x is 12
+x is 3
+final x is 18
+</pre></div>
+</div>
+</div>
 </div>
 <p>可以用 **args 来传递不定长的多个赋值的参数，例如：</p>
 <div class="cell docutils container">
@@ -913,6 +932,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
         <span class="k">return</span> <span class="n">x1</span> <span class="o">-</span> <span class="nb">sum</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -930,12 +954,22 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+</pre></div>
+</div>
+</div>
 </div>
 <p>也可以结合 if-else 语句定义 lambda 函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Max</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="k">else</span> <span class="n">b</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Max</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
 </div>
 </div>
@@ -949,6 +983,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x22b8a5f4d90&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>可以用<code class="docutils literal notranslate"><span class="pre">list()</span></code>函数将这个可迭代对象转化为 list 类型：</p>
 <div class="cell docutils container">
@@ -957,10 +996,23 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 9]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>``filter(fun, iter)`` 对可迭代对象 iter 中的每一个元素应用判断函数 fun 过滤，并返回一个 filter 类型的可迭代对象。
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[27], line 1
+    ``filter(fun, iter)`` 对可迭代对象 iter 中的每一个元素应用判断函数 fun 过滤，并返回一个 filter 类型的可迭代对象。
+                                                          ^
+SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
@@ -1264,7 +1316,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>

@@ -6,7 +6,7 @@ root: intro
 parts: 
 - caption: Python 基础
   chapters:
-  - file: python-history
+  - file: A-first-look-of-Python
   - file: basic-data-type
   - file: print-read-files
   - file: define-function

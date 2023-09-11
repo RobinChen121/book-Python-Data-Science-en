@@ -1,0 +1,121 @@
+Traceback (most recent call last):
+  File "D:\ProgramData\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Load an example dataset
+tips = sns.load_dataset("tips") # seaborn 自带的数据集，国内导入网速慢可能出错，可以把数据集提前从 github 上下载到电脑里
+print(tips)
+type(tips)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mRemoteDisconnected[0m                        Traceback (most recent call last)
+Cell [1;32mIn[17], line 2[0m
+[0;32m      1[0m [38;5;66;03m# Load an example dataset[39;00m
+[1;32m----> 2[0m tips [38;5;241m=[39m sns[38;5;241m.[39mload_dataset([38;5;124m"[39m[38;5;124mtips[39m[38;5;124m"[39m) [38;5;66;03m# seaborn 自带的数据集，国内导入网速慢可能出错，可以把数据集提前从 github 上下载到电脑里[39;00m
+[0;32m      3[0m [38;5;28mprint[39m(tips)
+[0;32m      4[0m [38;5;28mtype[39m(tips)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\seaborn\utils.py:586[0m, in [0;36mload_dataset[1;34m(name, cache, data_home, **kws)[0m
+[0;32m    584[0m cache_path [38;5;241m=[39m os[38;5;241m.[39mpath[38;5;241m.[39mjoin(get_data_home(data_home), os[38;5;241m.[39mpath[38;5;241m.[39mbasename(url))
+[0;32m    585[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m os[38;5;241m.[39mpath[38;5;241m.[39mexists(cache_path):
+[1;32m--> 586[0m     [38;5;28;01mif[39;00m name [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m get_dataset_names():
+[0;32m    587[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124m'[39m[38;5;132;01m{[39;00mname[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m is not one of the example datasets.[39m[38;5;124m"[39m)
+[0;32m    588[0m     urlretrieve(url, cache_path)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\seaborn\utils.py:512[0m, in [0;36mget_dataset_names[1;34m()[0m
+[0;32m    506[0m [38;5;250m[39m[38;5;124;03m"""Report available example datasets, useful for reporting issues.[39;00m
+[0;32m    507[0m 
+[0;32m    508[0m [38;5;124;03mRequires an internet connection.[39;00m
+[0;32m    509[0m 
+[0;32m    510[0m [38;5;124;03m"""[39;00m
+[0;32m    511[0m url [38;5;241m=[39m [38;5;124m"[39m[38;5;124mhttps://github.com/mwaskom/seaborn-data[39m[38;5;124m"[39m
+[1;32m--> 512[0m [38;5;28;01mwith[39;00m urlopen(url) [38;5;28;01mas[39;00m resp:
+[0;32m    513[0m     html [38;5;241m=[39m resp[38;5;241m.[39mread()
+[0;32m    515[0m pat [38;5;241m=[39m [38;5;124mr[39m[38;5;124m"[39m[38;5;124m/mwaskom/seaborn-data/blob/master/([39m[38;5;124m\[39m[38;5;124mw*).csv[39m[38;5;124m"[39m
+
+File [1;32mD:\ProgramData\anaconda3\Lib\urllib\request.py:216[0m, in [0;36murlopen[1;34m(url, data, timeout, cafile, capath, cadefault, context)[0m
+[0;32m    214[0m [38;5;28;01melse[39;00m:
+[0;32m    215[0m     opener [38;5;241m=[39m _opener
+[1;32m--> 216[0m [38;5;28;01mreturn[39;00m opener[38;5;241m.[39mopen(url, data, timeout)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\urllib\request.py:519[0m, in [0;36mOpenerDirector.open[1;34m(self, fullurl, data, timeout)[0m
+[0;32m    516[0m     req [38;5;241m=[39m meth(req)
+[0;32m    518[0m sys[38;5;241m.[39maudit([38;5;124m'[39m[38;5;124murllib.Request[39m[38;5;124m'[39m, req[38;5;241m.[39mfull_url, req[38;5;241m.[39mdata, req[38;5;241m.[39mheaders, req[38;5;241m.[39mget_method())
+[1;32m--> 519[0m response [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_open(req, data)
+[0;32m    521[0m [38;5;66;03m# post-process response[39;00m
+[0;32m    522[0m meth_name [38;5;241m=[39m protocol[38;5;241m+[39m[38;5;124m"[39m[38;5;124m_response[39m[38;5;124m"[39m
+
+File [1;32mD:\ProgramData\anaconda3\Lib\urllib\request.py:536[0m, in [0;36mOpenerDirector._open[1;34m(self, req, data)[0m
+[0;32m    533[0m     [38;5;28;01mreturn[39;00m result
+[0;32m    535[0m protocol [38;5;241m=[39m req[38;5;241m.[39mtype
+[1;32m--> 536[0m result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_call_chain([38;5;28mself[39m[38;5;241m.[39mhandle_open, protocol, protocol [38;5;241m+[39m
+[0;32m    537[0m                           [38;5;124m'[39m[38;5;124m_open[39m[38;5;124m'[39m, req)
+[0;32m    538[0m [38;5;28;01mif[39;00m result:
+[0;32m    539[0m     [38;5;28;01mreturn[39;00m result
+
+File [1;32mD:\ProgramData\anaconda3\Lib\urllib\request.py:496[0m, in [0;36mOpenerDirector._call_chain[1;34m(self, chain, kind, meth_name, *args)[0m
+[0;32m    494[0m [38;5;28;01mfor[39;00m handler [38;5;129;01min[39;00m handlers:
+[0;32m    495[0m     func [38;5;241m=[39m [38;5;28mgetattr[39m(handler, meth_name)
+[1;32m--> 496[0m     result [38;5;241m=[39m func([38;5;241m*[39margs)
+[0;32m    497[0m     [38;5;28;01mif[39;00m result [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m    498[0m         [38;5;28;01mreturn[39;00m result
+
+File [1;32mD:\ProgramData\anaconda3\Lib\urllib\request.py:1391[0m, in [0;36mHTTPSHandler.https_open[1;34m(self, req)[0m
+[0;32m   1390[0m [38;5;28;01mdef[39;00m [38;5;21mhttps_open[39m([38;5;28mself[39m, req):
+[1;32m-> 1391[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mdo_open(http[38;5;241m.[39mclient[38;5;241m.[39mHTTPSConnection, req,
+[0;32m   1392[0m         context[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_context, check_hostname[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_check_hostname)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\urllib\request.py:1352[0m, in [0;36mAbstractHTTPHandler.do_open[1;34m(self, http_class, req, **http_conn_args)[0m
+[0;32m   1350[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m [38;5;28;01mas[39;00m err: [38;5;66;03m# timeout error[39;00m
+[0;32m   1351[0m         [38;5;28;01mraise[39;00m URLError(err)
+[1;32m-> 1352[0m     r [38;5;241m=[39m h[38;5;241m.[39mgetresponse()
+[0;32m   1353[0m [38;5;28;01mexcept[39;00m:
+[0;32m   1354[0m     h[38;5;241m.[39mclose()
+
+File [1;32mD:\ProgramData\anaconda3\Lib\http\client.py:1378[0m, in [0;36mHTTPConnection.getresponse[1;34m(self)[0m
+[0;32m   1376[0m [38;5;28;01mtry[39;00m:
+[0;32m   1377[0m     [38;5;28;01mtry[39;00m:
+[1;32m-> 1378[0m         response[38;5;241m.[39mbegin()
+[0;32m   1379[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mConnectionError[39;00m:
+[0;32m   1380[0m         [38;5;28mself[39m[38;5;241m.[39mclose()
+
+File [1;32mD:\ProgramData\anaconda3\Lib\http\client.py:318[0m, in [0;36mHTTPResponse.begin[1;34m(self)[0m
+[0;32m    316[0m [38;5;66;03m# read until we get a non-100 response[39;00m
+[0;32m    317[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[1;32m--> 318[0m     version, status, reason [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_read_status()
+[0;32m    319[0m     [38;5;28;01mif[39;00m status [38;5;241m!=[39m CONTINUE:
+[0;32m    320[0m         [38;5;28;01mbreak[39;00m
+
+File [1;32mD:\ProgramData\anaconda3\Lib\http\client.py:287[0m, in [0;36mHTTPResponse._read_status[1;34m(self)[0m
+[0;32m    283[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mreply:[39m[38;5;124m"[39m, [38;5;28mrepr[39m(line))
+[0;32m    284[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m line:
+[0;32m    285[0m     [38;5;66;03m# Presumably, the server closed the connection before[39;00m
+[0;32m    286[0m     [38;5;66;03m# sending a valid response.[39;00m
+[1;32m--> 287[0m     [38;5;28;01mraise[39;00m RemoteDisconnected([38;5;124m"[39m[38;5;124mRemote end closed connection without[39m[38;5;124m"[39m
+[0;32m    288[0m                              [38;5;124m"[39m[38;5;124m response[39m[38;5;124m"[39m)
+[0;32m    289[0m [38;5;28;01mtry[39;00m:
+[0;32m    290[0m     version, status, reason [38;5;241m=[39m line[38;5;241m.[39msplit([38;5;28;01mNone[39;00m, [38;5;241m2[39m)
+
+[1;31mRemoteDisconnected[0m: Remote end closed connection without response
+RemoteDisconnected: Remote end closed connection without response
+
