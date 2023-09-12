@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -775,7 +775,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>这样，在代码中使用 tushare 的函数时，就可以用 ts 代替了。</p>
+<p>这样，在代码中使用 Numpy 的函数时，就可以用 np 代替了。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1"># 使用 numpy 中的 log10 函数</span>
@@ -791,7 +791,7 @@ document.write(`
 <p>有的时候，可以结合<code class="docutils literal notranslate"><span class="pre">from</span></code>关键字，导入包中指定的函数。此时，使用这个指定的函数时，就不用跟包的名字了。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">log10</span> <span class="c1"># 从 tushare 包中导入 get_hist_data 函数</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">log10</span> <span class="c1"># 从 Numpy 包中导入 log10 函数</span>
 
 <span class="n">log10</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1"># 函数名字前面没有包的名字</span>
 </pre></div>
@@ -832,7 +832,19 @@ document.write(`
 
 <p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
 <section id="exercise-content">
-<p>练习课本上的 Python 代码。</p>
+<p>输入并运行下面的 Python 代码，画同心圆。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># draw circles</span>
+
+<span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">turtle</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 </div>
 <div class="exercise admonition" id="sum-input">
@@ -962,7 +974,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>

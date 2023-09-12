@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -398,13 +398,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1.1. 用 % 格式化 print</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-print">3.1.2. 用 format 格式化 print</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">3.2. f 函数输出</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.1. 用 % 格式化输出</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.2.2. 用 format 格式化输出</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 读写文件</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.3. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.4. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -419,7 +420,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">3. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <section id="print">
-<h2><span class="section-number">3.1. </span>print 函数<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>print 函数输出<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
 <p>Python 输出非常方便，用<code class="docutils literal notranslate"><span class="pre">print()</span></code>函数，小括号里面可以是数字、字符串、列表、字典等类型。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -445,19 +446,25 @@ document.write(`
 </div>
 </div>
 </div>
+<p>也可以把字符串跟变量一起放到<code class="docutils literal notranslate"><span class="pre">print</span></code>函数里面输出</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span> <span class="c1"># 集合</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;,b = &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{4, 5, 6}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  [1, 2, 3] ,b =  4
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="f">
+<h2><span class="section-number">3.2. </span>f 函数输出<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h2>
+<p>输出也可以用 <code class="docutils literal notranslate"><span class="pre">f{expression}</span></code>，大括号中的 exression 可以是一个变量名，例如，下面的代码打印出一个数组列表：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -499,48 +506,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>print 也可以用 <code class="docutils literal notranslate"><span class="pre">f{expression}</span></code>，大括号中的 exression 可以是一个变量名，例如，下面的代码打印出一个数组列表：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="sa">f</span><span class="s1">&#39;the array is </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="c1"># 输出列表 a</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the array is [1, 2, 3]&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">3.2</span>
-<span class="sa">f</span><span class="s1">&#39;the array is </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">, the numer is </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the array is [1, 2, 3], the numer is 3.2&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
-<span class="sa">f</span><span class="s1">&#39;the numbers are </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the numbers are 3.142 and 4.56&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <section id="id1">
-<h3><span class="section-number">3.1.1. </span>用 % 格式化 print<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.2.1. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>若要格式化输出，要用到百分号 %，语法规则类似 c 语言，具体参考下面的例子。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -663,23 +630,31 @@ age is 25
 </div>
 </div>
 </section>
-<section id="format-print">
-<h3><span class="section-number">3.1.2. </span>用 format 格式化 print<a class="headerlink" href="#format-print" title="Permalink to this heading">#</a></h3>
-<p>用 format 也可以实现多种格式化输出。</p>
+<section id="format">
+<h3><span class="section-number">3.2.2. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h3>
+<p>用<code class="docutils literal notranslate"><span class="pre">format</span></code>也可以实现多种格式化输出，它的基本用法为：</p>
+<table>   
+    <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">string.format(value1, value2...)</th>
+    </tr>
+</table>
+<br />
+<p>在字符串 string 中，用大括号<code class="docutils literal notranslate"><span class="pre">{}</span></code>表示变量在输出时所在的位置。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are </span><span class="si">{}</span><span class="s1"> and </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are </span><span class="si">{}</span><span class="s1"> and </span><span class="si">{:.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are 3 and 4.56
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are 3 and 4.560
 </pre></div>
 </div>
 </div>
 </div>
+<p>大括号<code class="docutils literal notranslate"><span class="pre">{}</span></code>中可以跟一个表示变量的位置索引的数字。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
@@ -698,17 +673,47 @@ the numbers are 3 and 4.56 and 3
 </div>
 </div>
 </div>
-<p>使用 format 时，可以通过冒号 : 跟参数，实现类似来 %的格式化 print。</p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">format</span></code>时，在大括号<code class="docutils literal notranslate"><span class="pre">{}</span></code>中，可以通过冒号<code class="docutils literal notranslate"><span class="pre">:</span></code>以及其他参数，实现一些格式化输出。具体为：</p>
+<table>   
+    <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">'{<变量位置索引> : <填充><对齐><宽度><.><精度><变量类型>}'</th>
+    </tr>
+</table>
+<br /><p>常见的变量类型代码有：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>代码</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>d</p></td>
+<td class="text-left"><p>输出整数的十进制</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>b</p></td>
+<td class="text-left"><p>输出整数的二进制</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>f</p></td>
+<td class="text-left"><p>输出浮点数的标准浮点形式</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>e</p></td>
+<td class="text-left"><p>输出浮点数的科学表示形式</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>%</p></td>
+<td class="text-left"><p>输出浮点数的百分形式</p></td>
+</tr>
+</tbody>
+</table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are </span><span class="si">{0:2.2f}</span><span class="s1"> and </span><span class="si">{0:.2%}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="c1"># print 小数和百分数</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are </span><span class="si">{0:2.2f}</span><span class="s1"> and </span><span class="si">{0:.3%}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="c1"># print 小数和百分数</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are 3.00 and 300.00%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are 3.00 and 300.000%
 </pre></div>
 </div>
 </div>
@@ -726,11 +731,69 @@ the numbers are 3 and 4.56 and 3
 </div>
 </div>
 </div>
-<p>format 还可使实现不同的对齐格式，进制转换，数字填充等，本书不再赘述，感兴趣的读者可以进一步查阅官方文档。</p>
+<p>常见的对齐代码有：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>代码</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>&gt;</p></td>
+<td class="text-left"><p>右对齐，默认</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>&lt;</p></td>
+<td class="text-left"><p>左对齐</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>^</p></td>
+<td class="text-left"><p>居中对齐</p></td>
+</tr>
+</tbody>
+</table>
+<p>一些例子：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = </span><span class="si">{:0&gt;5d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># 用零填充左边, 宽度为5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 00005
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = </span><span class="si">{:&lt;4d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># 填充右边, 默认采用空格填充，宽度为 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 5   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = </span><span class="si">{:+^10.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># 用+填充，居中对齐，宽度为10，保留两位小数</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = +++5.60+++
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="id2">
-<h2><span class="section-number">3.2. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数返回一个文件对象，常用的语法规则为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -898,18 +961,34 @@ his name is li si
 <p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">3.3. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<div class="exercise admonition" id="san-guo">
+<h2><span class="section-number">3.4. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="output">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
+<section id="exercise-content">
+<p>格式化输出 0.0003278 对应的科学计数形式，保留4位有效数字，并且为百分形式。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="print-read-files-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#output"> Exercise 3.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.4%}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.0003278</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="san-guo">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.2 </span></p>
 <section id="exercise-content">
 <p>将下面文字输入到电脑的一个 txt 文件中，并读取将内容显示在屏幕上：</p>
 <p>话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="print-read-files-solution-1">
+<div class="solution dropdown admonition" id="print-read-files-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#san-guo"> Exercise 3.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#san-guo"> Exercise 3.2</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；</span><span class="se">\</span>
@@ -993,13 +1072,14 @@ his name is li si
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1.1. 用 % 格式化 print</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-print">3.1.2. 用 format 格式化 print</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">3.2. f 函数输出</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.1. 用 % 格式化输出</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.2.2. 用 format 格式化输出</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 读写文件</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.3. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.4. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1023,7 +1103,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>

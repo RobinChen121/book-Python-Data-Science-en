@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -760,6 +760,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>计算机中，数组第一个元素的索引是 0；Python 支持倒序索引，最后一个元素的索引是 -1。</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1659,16 +1663,39 @@ document.write(`
 </section>
 <section id="id8">
 <h2><span class="section-number">2.8. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<div class="exercise admonition" id="circle-area">
+<div class="exercise admonition" id="compute-formula">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
 <section id="exercise-content">
-<p>根据给定的半径值，计算圆的面积</p>
+<p>请将下面的数学表达式用 Python 程序写出来，并运算结果。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x=\frac{3^2+4-5*6}{5}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y= (4^3.5+6)*(16\mod{4})\)</span></p></li>
+</ul>
 </section>
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.1</a></p>
+<p class="admonition-title">Solution to</p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="circle-area">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<section id="exercise-content">
+<p>根据给定的半径值，计算圆的面积</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
@@ -1681,15 +1708,15 @@ document.write(`
 </div>
 <div class="exercise admonition" id="quad-equation">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
 <section id="exercise-content">
 <p>通过用户输入数字 a, b, c，计算二次方程: <span class="math notranslate nohighlight">\(ax^2 + bx +c\)</span>。
 (提示：cmath 工具包可以计算负数的开方)</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+<div class="solution dropdown admonition" id="basic-data-type-solution-5">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.2</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="kn">import</span> <span class="nn">cmath</span>
@@ -1712,14 +1739,14 @@ document.write(`
 </div>
 <div class="exercise admonition" id="triangle-area">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
 <section id="exercise-content">
 <p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-5">
+<div class="solution dropdown admonition" id="basic-data-type-solution-7">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.3</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第一边长: &#39;</span><span class="p">))</span>
@@ -1735,6 +1762,44 @@ document.write(`
 </pre></div>
 </div>
 </section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a=&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a= 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;,b = &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  3 ,b =  4
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -1837,7 +1902,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
