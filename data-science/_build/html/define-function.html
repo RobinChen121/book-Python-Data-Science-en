@@ -987,7 +987,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f9ba8a84760&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7fd460bb6800&gt;
 </pre></div>
 </div>
 </div>
@@ -1348,6 +1348,33 @@ final x is 18
 </div>
 </section>
 </div>
+<div class="solution dropdown admonition" id="define-function-solution-4">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 4.2</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recur_fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">   </span><span class="sd">&quot;&quot;&quot;递归函数</span>
+<span class="sd">   输出斐波那契数列&quot;&quot;&quot;</span>
+   <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">n</span>
+   <span class="k">else</span><span class="p">:</span>
+       <span class="k">return</span><span class="p">(</span><span class="n">recur_fibo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">recur_fibo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+ 
+ 
+<span class="c1"># 获取用户输入</span>
+<span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;您要输出几项? &quot;</span><span class="p">))</span>
+ 
+<span class="c1"># 检查输入的数字是否正确</span>
+<span class="k">if</span> <span class="n">nterms</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输入正数&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;斐波那契数列:&quot;</span><span class="p">)</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nterms</span><span class="p">):</span>
+       <span class="nb">print</span><span class="p">(</span><span class="n">recur_fibo</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
 <div class="exercise admonition" id="range-prime-numbers">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
@@ -1355,7 +1382,7 @@ final x is 18
 <p>输出指定范围内的素数。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-5">
+<div class="solution dropdown admonition" id="define-function-solution-6">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 4.3</a></p>
 <section id="solution-content">

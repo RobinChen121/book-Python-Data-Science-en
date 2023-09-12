@@ -404,6 +404,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -896,6 +897,33 @@ his name is li si
 </div>
 <p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
+<section id="id3">
+<h2><span class="section-number">3.3. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="san-guo">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
+<section id="exercise-content">
+<p>将下面文字输入到电脑的一个 txt 文件中，并读取将内容显示在屏幕上：</p>
+<p>话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="print-read-files-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#san-guo"> Exercise 3.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；</span><span class="se">\</span>
+<span class="s1">     汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。&#39;</span><span class="p">)</span>
+
+<span class="c1"># 读文件</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="nb">str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 读取文件内容</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="c1"># 将内容输出到屏幕</span>
+</pre></div>
+</div>
+</section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -971,6 +999,7 @@ his name is li si
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. 练习</a></li>
 </ul>
   </nav></div>
 
