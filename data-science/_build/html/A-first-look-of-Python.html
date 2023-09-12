@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>初识 Python &#8212; Python 数据科学</title>
+    <title>1. 初识 Python &#8212; Python 数据科学</title>
   
   
   
@@ -35,7 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -99,7 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'A-first-look-of-Python';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python 的常用数据类型" href="basic-data-type.html" />
+    <link rel="next" title="2. Python 的常用数据类型" href="basic-data-type.html" />
     <link rel="prev" title="前言" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,17 +194,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">初识 Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">Python 输出输入，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">Pandas 入门</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. 初识 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">5. Python 画图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">6. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 线性回归</a></li>
 </ul>
 
     </div>
@@ -397,15 +398,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Python 的诞生与应用</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Python 安装</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Python 程序的基本特点</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">缩进</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">程序注释与换行</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">命名与保留字</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">安装与使用工具包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1. Python 的诞生与应用</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2. Python 安装</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3. Python 程序的基本特点</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3.1. 缩进</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3.2. 程序注释与换行</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.3.3. 命名与保留字</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.3.4. 安装与使用工具包</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.4. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -418,9 +420,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1>初识 Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1. </span>初识 Python<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <section id="id1">
-<h2>Python 的诞生与应用<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1. </span>Python 的诞生与应用<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Python 的诞生时间非常早，第一版 Python 发行于 1991 年，甚至比另一个编程语言 Java 的历史都早。在大部分时间内，Python 一直作为一个小众的编程语言，并没有大规模流行起来。近些年来，随着大数据技术、人工智能技术的发展和普及，“简洁、具有良好扩展性”的 Python 非常契合大数据与人工智能技术对编程语言的要求，超越其他编程语言迅速崛起。Python 分别在2010年，2018年，2020，2021 年被全球知名的编程语言流行度排行榜网站 TIOBE 评为“年度最佳编程语言”，并长期位于各年或各月流行编程语言排行榜的前三名。中国的网络上甚至产生了一句流行语：“人生苦短，我用 Python”。</p>
 <p><img alt="title" src="_images/guido.jpeg" /></p>
 <p>Python 的创始人为荷兰人吉多·范罗苏姆（Guido van Rossum），在 1989 年的圣诞节期间，吉多·范罗苏姆为了打发时间，决心开发一个新的脚本解释程序，作为 ABC语言的继承，于是 Python 诞生了。之所以选择 Python 作为名字，是由于吉多·范罗苏姆非常喜欢一部 BBC 电视剧— Monty Python’s Flying Circus（中文译名：蒙提·派森的飞行马戏团）。 Python 的英文意思为蟒蛇，这也是为什么一些 Python 相关的软件或书籍用蟒蛇作为图标的原因。</p>
@@ -459,24 +461,25 @@ document.write(`
 <ul class="simple">
 <li><p>百度，谷歌</p></li>
 <li><p>CSDN → 国内的程序员论坛与博客网站</p></li>
-<li><p><a class="reference external" href="http://stackoverflow.com">stackoverflow.com</a> → 国外的编程问答网站</p></li>
-<li><p><a class="reference external" href="http://runoob.com">runoob.com</a> → 国内的编程在线学习网站</p></li>
-<li><p><a class="reference external" href="http://geeksforgeeks.org">geeksforgeeks.org</a> → 国外的编程在线学习网站</p></li>
+<li><p>stackoverflow.com → 国外的编程问答网站</p></li>
+<li><p>runoob.com → 国内的编程在线学习网站</p></li>
+<li><p>geeksforgeeks.org → 国外的编程在线学习网站</p></li>
 </ul>
 <p>学习编程与学习数学、英语等课程不同，不需要去记代码，而一定要<strong>多敲代码！</strong></p>
 </section>
 <section id="id2">
-<h2>Python 安装<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.2. </span>Python 安装<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>使用 Python 时一般有两种方式：一是下载 Anaconda，二是下载 Python 和编辑器 Pycharm。</p>
 <p>Anaconda 包括集成开发环境 Spyder 以及一大堆安装好的常用工具包，比如：Numpy、Pandas、Matplotlib、Sklearn，在 Anaconda 里面还可以使用其他编译器，例如 Jupyter Notebook，IPython，R Studio 等。对于刚刚接触 Python 的新手，推荐使用 Anaconda。</p>
 <p>具体软件的安装不在赘述，请到相关的官方网站下载安装。</p>
 </section>
 <section id="id3">
-<h2>Python 程序的基本特点<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>在交互环境或编辑器上运行一个 Python 的输入输出小程序：</p>
+<h2><span class="section-number">1.3. </span>Python 程序的基本特点<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>在交互环境或编辑器上运行一个 Python 的输入输出小程序。</p>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> 函数打印内容：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world&#39;</span><span class="p">)</span> <span class="c1"># 打印一个字符串</span>
 </pre></div>
 </div>
 </div>
@@ -486,14 +489,19 @@ document.write(`
 </div>
 </div>
 </div>
-<p>name = input(‘请输入你的名字：’) # 从键盘接受一个字符串，并传递给变量 name</p>
-<p>print(‘你的名字是：{}’.format(name)) # 将变量 name 打印出来</p>
+<p><code class="docutils literal notranslate"><span class="pre">input</span></code> 函数接受用户从键盘上的输入内容。下面的代码从键盘接受一个字符串，并传递给一个变量：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入你的名字：&#39;</span><span class="p">)</span> <span class="c1"># 从键盘接受一个字符串，并传递给变量 name</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;你的名字是：</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="c1"># 将变量 name 打印出来</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>代码中的标点符号尽量用英文输入,不要用中文输入,否则出错</p>
 </div>
 <section id="id4">
-<h3>缩进<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.1. </span>缩进<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>Python 与许多其他编程语言的区别在于：Python 使用<strong>缩进</strong>表示不同的代码块，而不是用分号或大括号。</p>
 <p>“缩进”，即代码前的空白区域，来表示不同代码间的包含与层次关系。</p>
 <ul class="simple">
@@ -553,7 +561,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>程序注释与换行<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.2. </span>程序注释与换行<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>编写程序时，经常需要在代码中添加注释，用来解释或备注相关代码，标明作者、日期信息等，提升程序的可读性，计算机并不执行注释的内容。Python 添加注释有两种方法：</p>
 <ul class="simple">
 <li><p>单行注释在代码后面使用 # 跟注释内容</p></li>
@@ -609,7 +617,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>命名与保留字<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.3. </span>命名与保留字<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>编写程序时，经常使用变量存储某些数据。Python 允许使用大写字母、小写字母、数字、下划线_甚至汉字等字符来给变量命名。但是，</p>
 <ul class="simple">
 <li><p>变量名字的首字母不能是数字</p></li>
@@ -653,9 +661,6 @@ document.write(`
 <div class="tip admonition">
 <p class="admonition-title">tips</p>
 <p>在输入变量或函数名时，利用<code class="docutils literal notranslate"><span class="pre">Tab</span></code>键，可以得到编辑器的提示或自动填充</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 <p>保留字，也称为关键字，指被编程语言内部定义并保留使用的标识符，程序员编写程序时<strong>不能定义与保留字相同的变量名</strong>。</p>
 <p>Python 中一共有 33 个保留字：</p>
@@ -717,7 +722,7 @@ document.write(`
 </table>
 </section>
 <section id="id7">
-<h3>安装与使用工具包<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.3.4. </span>安装与使用工具包<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>pip 是 Python 自带包管理工具，该工具提供了对 Python 包的查找、下载、安装、卸载的功能。在我们安装 Python 时，pip 是自动安装的。它的语法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -736,7 +741,7 @@ document.write(`
         <td style="text-align:left">pip install [package_name] -U</td>
     </tr>
     <tr>
-        <td style="text-align:left">显示已安装包列表</td>
+        <td style="text-align:left">显示已安装包列表&nbsp;&nbsp;</td>
         <td style="text-align:left">pip list</td>
     </tr>
     <tr style="border-bottom:solid">
@@ -746,12 +751,14 @@ document.write(`
 </table>
 <br /><p>Anaconda 也可以通过 Anaconda 自带的 Conda 工具从 Anaconda 库中安装包。Windows 系统中的方法是：在 Windows 菜单栏里，点击 Anaconda Prompt，打开 Anaconda 的命令行窗口，然后输入不同的指令。语法与 pip 基本相同，区别在于把命令中的 pip 替换为 conda。</p>
 <p>例如，安装一个金融股票包<code class="docutils literal notranslate"><span class="pre">tushare</span></code>，在命令号窗口输入：</p>
-<p>pip install tushare</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">tushare</span>
+</pre></div>
+</div>
 <p>工具包 tushare 就能自动下载安装了。</p>
 <p>使用工具包时，首先要用关键字<code class="docutils literal notranslate"><span class="pre">import</span></code>导入包。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tushare</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 </pre></div>
 </div>
 </div>
@@ -763,547 +770,95 @@ document.write(`
 <p>有时候，也配合关键字 <code class="docutils literal notranslate"><span class="pre">as</span></code>，将包的名字简写:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tushare</span> <span class="k">as</span> <span class="nn">ts</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>这样，在代码中使用 tushare 的函数时，就可以用 ts 代替了。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>这样，在代码中使用 tushare 的函数时，就可以用 ts 代替了。
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1"># 使用 numpy 中的 log10 函数</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[11], line 1
-    这样，在代码中使用 tushare 的函数时，就可以用 ts 代替了。
-      ^
-SyntaxError: invalid character &#39;，&#39; (U+FF0C)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3010299956639813
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span><span class="o">.</span><span class="n">get_hist_data</span><span class="p">(</span><span class="s1">&#39;600519&#39;</span><span class="p">)</span> <span class="c1">#一次性获取茅台全部日k线数据</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>本接口即将停止更新，请尽快使用Pro版接口：https://tushare.pro/document/2
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>open</th>
-      <th>high</th>
-      <th>close</th>
-      <th>low</th>
-      <th>volume</th>
-      <th>price_change</th>
-      <th>p_change</th>
-      <th>ma5</th>
-      <th>ma10</th>
-      <th>ma20</th>
-      <th>v_ma5</th>
-      <th>v_ma10</th>
-      <th>v_ma20</th>
-      <th>turnover</th>
-    </tr>
-    <tr>
-      <th>date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2023-09-11</th>
-      <td>1808.00</td>
-      <td>1840.00</td>
-      <td>1822.17</td>
-      <td>1808.00</td>
-      <td>15926.00</td>
-      <td>3.67</td>
-      <td>0.20</td>
-      <td>1839.674</td>
-      <td>1846.975</td>
-      <td>1828.131</td>
-      <td>14379.90</td>
-      <td>17249.80</td>
-      <td>19311.33</td>
-      <td>0.13</td>
-    </tr>
-    <tr>
-      <th>2023-09-08</th>
-      <td>1834.94</td>
-      <td>1834.94</td>
-      <td>1818.50</td>
-      <td>1814.95</td>
-      <td>12211.78</td>
-      <td>-19.50</td>
-      <td>-1.06</td>
-      <td>1848.440</td>
-      <td>1848.255</td>
-      <td>1827.173</td>
-      <td>15968.90</td>
-      <td>19762.42</td>
-      <td>19701.58</td>
-      <td>0.10</td>
-    </tr>
-    <tr>
-      <th>2023-09-07</th>
-      <td>1852.60</td>
-      <td>1856.89</td>
-      <td>1838.00</td>
-      <td>1831.19</td>
-      <td>16981.57</td>
-      <td>-23.00</td>
-      <td>-1.24</td>
-      <td>1854.950</td>
-      <td>1848.903</td>
-      <td>1827.948</td>
-      <td>16155.59</td>
-      <td>20424.32</td>
-      <td>20430.32</td>
-      <td>0.14</td>
-    </tr>
-    <tr>
-      <th>2023-09-06</th>
-      <td>1858.00</td>
-      <td>1866.66</td>
-      <td>1861.00</td>
-      <td>1849.01</td>
-      <td>11121.43</td>
-      <td>2.30</td>
-      <td>0.12</td>
-      <td>1856.750</td>
-      <td>1846.733</td>
-      <td>1829.798</td>
-      <td>15723.32</td>
-      <td>21331.68</td>
-      <td>20503.05</td>
-      <td>0.09</td>
-    </tr>
-    <tr>
-      <th>2023-09-05</th>
-      <td>1868.00</td>
-      <td>1868.00</td>
-      <td>1858.70</td>
-      <td>1856.80</td>
-      <td>15658.74</td>
-      <td>-7.30</td>
-      <td>-0.39</td>
-      <td>1855.750</td>
-      <td>1838.033</td>
-      <td>1831.262</td>
-      <td>17461.39</td>
-      <td>22210.75</td>
-      <td>20873.15</td>
-      <td>0.12</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2021-03-19</th>
-      <td>2035.00</td>
-      <td>2043.00</td>
-      <td>2010.00</td>
-      <td>1992.23</td>
-      <td>35780.77</td>
-      <td>-59.70</td>
-      <td>-2.88</td>
-      <td>2019.202</td>
-      <td>2019.202</td>
-      <td>2019.202</td>
-      <td>39630.79</td>
-      <td>39630.79</td>
-      <td>39630.79</td>
-      <td>0.28</td>
-    </tr>
-    <tr>
-      <th>2021-03-18</th>
-      <td>2035.00</td>
-      <td>2086.36</td>
-      <td>2069.70</td>
-      <td>2035.00</td>
-      <td>33864.88</td>
-      <td>39.34</td>
-      <td>1.94</td>
-      <td>2021.503</td>
-      <td>2021.503</td>
-      <td>2021.503</td>
-      <td>40593.29</td>
-      <td>40593.29</td>
-      <td>40593.29</td>
-      <td>0.27</td>
-    </tr>
-    <tr>
-      <th>2021-03-17</th>
-      <td>2000.00</td>
-      <td>2050.00</td>
-      <td>2030.36</td>
-      <td>1976.01</td>
-      <td>31374.91</td>
-      <td>19.86</td>
-      <td>0.99</td>
-      <td>2005.437</td>
-      <td>2005.437</td>
-      <td>2005.437</td>
-      <td>42836.09</td>
-      <td>42836.09</td>
-      <td>42836.09</td>
-      <td>0.25</td>
-    </tr>
-    <tr>
-      <th>2021-03-16</th>
-      <td>1974.93</td>
-      <td>2019.99</td>
-      <td>2010.50</td>
-      <td>1965.00</td>
-      <td>34648.50</td>
-      <td>35.05</td>
-      <td>1.77</td>
-      <td>1992.975</td>
-      <td>1992.975</td>
-      <td>1992.975</td>
-      <td>48566.69</td>
-      <td>48566.69</td>
-      <td>48566.69</td>
-      <td>0.28</td>
-    </tr>
-    <tr>
-      <th>2021-03-15</th>
-      <td>2050.00</td>
-      <td>2069.80</td>
-      <td>1975.45</td>
-      <td>1951.15</td>
-      <td>62484.87</td>
-      <td>-50.55</td>
-      <td>-2.50</td>
-      <td>1975.450</td>
-      <td>1975.450</td>
-      <td>1975.450</td>
-      <td>62484.87</td>
-      <td>62484.87</td>
-      <td>62484.87</td>
-      <td>0.50</td>
-    </tr>
-  </tbody>
-</table>
-<p>609 rows × 14 columns</p>
-</div></div></div>
 </div>
 <p>有的时候，可以结合<code class="docutils literal notranslate"><span class="pre">from</span></code>关键字，导入包中指定的函数。此时，使用这个指定的函数时，就不用跟包的名字了。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tushare</span> <span class="kn">import</span> <span class="n">get_hist_data</span> <span class="c1"># 从 tushare 包中导入 get_hist_data 函数</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">log10</span> <span class="c1"># 从 tushare 包中导入 get_hist_data 函数</span>
 
-<span class="n">get_hist_data</span><span class="p">(</span><span class="s1">&#39;600519&#39;</span><span class="p">)</span> <span class="c1"># 函数名字前面没有包的名字</span>
+<span class="n">log10</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1"># 函数名字前面没有包的名字</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>本接口即将停止更新，请尽快使用Pro版接口：https://tushare.pro/document/2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3010299956639813
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>open</th>
-      <th>high</th>
-      <th>close</th>
-      <th>low</th>
-      <th>volume</th>
-      <th>price_change</th>
-      <th>p_change</th>
-      <th>ma5</th>
-      <th>ma10</th>
-      <th>ma20</th>
-      <th>v_ma5</th>
-      <th>v_ma10</th>
-      <th>v_ma20</th>
-      <th>turnover</th>
-    </tr>
-    <tr>
-      <th>date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2023-09-11</th>
-      <td>1808.00</td>
-      <td>1840.00</td>
-      <td>1822.17</td>
-      <td>1808.00</td>
-      <td>15926.00</td>
-      <td>3.67</td>
-      <td>0.20</td>
-      <td>1839.674</td>
-      <td>1846.975</td>
-      <td>1828.131</td>
-      <td>14379.90</td>
-      <td>17249.80</td>
-      <td>19311.33</td>
-      <td>0.13</td>
-    </tr>
-    <tr>
-      <th>2023-09-08</th>
-      <td>1834.94</td>
-      <td>1834.94</td>
-      <td>1818.50</td>
-      <td>1814.95</td>
-      <td>12211.78</td>
-      <td>-19.50</td>
-      <td>-1.06</td>
-      <td>1848.440</td>
-      <td>1848.255</td>
-      <td>1827.173</td>
-      <td>15968.90</td>
-      <td>19762.42</td>
-      <td>19701.58</td>
-      <td>0.10</td>
-    </tr>
-    <tr>
-      <th>2023-09-07</th>
-      <td>1852.60</td>
-      <td>1856.89</td>
-      <td>1838.00</td>
-      <td>1831.19</td>
-      <td>16981.57</td>
-      <td>-23.00</td>
-      <td>-1.24</td>
-      <td>1854.950</td>
-      <td>1848.903</td>
-      <td>1827.948</td>
-      <td>16155.59</td>
-      <td>20424.32</td>
-      <td>20430.32</td>
-      <td>0.14</td>
-    </tr>
-    <tr>
-      <th>2023-09-06</th>
-      <td>1858.00</td>
-      <td>1866.66</td>
-      <td>1861.00</td>
-      <td>1849.01</td>
-      <td>11121.43</td>
-      <td>2.30</td>
-      <td>0.12</td>
-      <td>1856.750</td>
-      <td>1846.733</td>
-      <td>1829.798</td>
-      <td>15723.32</td>
-      <td>21331.68</td>
-      <td>20503.05</td>
-      <td>0.09</td>
-    </tr>
-    <tr>
-      <th>2023-09-05</th>
-      <td>1868.00</td>
-      <td>1868.00</td>
-      <td>1858.70</td>
-      <td>1856.80</td>
-      <td>15658.74</td>
-      <td>-7.30</td>
-      <td>-0.39</td>
-      <td>1855.750</td>
-      <td>1838.033</td>
-      <td>1831.262</td>
-      <td>17461.39</td>
-      <td>22210.75</td>
-      <td>20873.15</td>
-      <td>0.12</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2021-03-19</th>
-      <td>2035.00</td>
-      <td>2043.00</td>
-      <td>2010.00</td>
-      <td>1992.23</td>
-      <td>35780.77</td>
-      <td>-59.70</td>
-      <td>-2.88</td>
-      <td>2019.202</td>
-      <td>2019.202</td>
-      <td>2019.202</td>
-      <td>39630.79</td>
-      <td>39630.79</td>
-      <td>39630.79</td>
-      <td>0.28</td>
-    </tr>
-    <tr>
-      <th>2021-03-18</th>
-      <td>2035.00</td>
-      <td>2086.36</td>
-      <td>2069.70</td>
-      <td>2035.00</td>
-      <td>33864.88</td>
-      <td>39.34</td>
-      <td>1.94</td>
-      <td>2021.503</td>
-      <td>2021.503</td>
-      <td>2021.503</td>
-      <td>40593.29</td>
-      <td>40593.29</td>
-      <td>40593.29</td>
-      <td>0.27</td>
-    </tr>
-    <tr>
-      <th>2021-03-17</th>
-      <td>2000.00</td>
-      <td>2050.00</td>
-      <td>2030.36</td>
-      <td>1976.01</td>
-      <td>31374.91</td>
-      <td>19.86</td>
-      <td>0.99</td>
-      <td>2005.437</td>
-      <td>2005.437</td>
-      <td>2005.437</td>
-      <td>42836.09</td>
-      <td>42836.09</td>
-      <td>42836.09</td>
-      <td>0.25</td>
-    </tr>
-    <tr>
-      <th>2021-03-16</th>
-      <td>1974.93</td>
-      <td>2019.99</td>
-      <td>2010.50</td>
-      <td>1965.00</td>
-      <td>34648.50</td>
-      <td>35.05</td>
-      <td>1.77</td>
-      <td>1992.975</td>
-      <td>1992.975</td>
-      <td>1992.975</td>
-      <td>48566.69</td>
-      <td>48566.69</td>
-      <td>48566.69</td>
-      <td>0.28</td>
-    </tr>
-    <tr>
-      <th>2021-03-15</th>
-      <td>2050.00</td>
-      <td>2069.80</td>
-      <td>1975.45</td>
-      <td>1951.15</td>
-      <td>62484.87</td>
-      <td>-50.55</td>
-      <td>-2.50</td>
-      <td>1975.450</td>
-      <td>1975.450</td>
-      <td>1975.450</td>
-      <td>62484.87</td>
-      <td>62484.87</td>
-      <td>62484.87</td>
-      <td>0.50</td>
-    </tr>
-  </tbody>
-</table>
-<p>609 rows × 14 columns</p>
-</div></div></div>
 </div>
-<p>导入一个工具包中的所有函数，可以用 *，例如：</p>
+</div>
+<p>导入一个工具包中的所有函数，可以用<code class="docutils literal notranslate"><span class="pre">*</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tushare</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>这样，使用该工具包中的所有函数，都可以直接使用，不用在函数前面跟包的名字。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log2</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="c1"># 函数名字前面没有包的名字</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section id="id8">
+<h2><span class="section-number">1.4. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="A-first-look-of-Python-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
+<section id="exercise-content">
+<p>练习课本上的 Python 代码。</p>
+</section>
+</div>
+<div class="exercise admonition" id="sum-input">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.2 </span></p>
+<section id="exercise-content">
+<p>通过用户键盘输入两个数字，并计算两个数字的和。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="A-first-look-of-Python-solution-2">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#sum-input"> Exercise 1.2</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 用户输入数字</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入第一个数字：&#39;</span><span class="p">)</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入第二个数字：&#39;</span><span class="p">)</span>
+ 
+<span class="c1"># 求和</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+ 
+<span class="c1"># 显示计算结果</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;数字 </span><span class="si">{0}</span><span class="s1"> 和 </span><span class="si">{1}</span><span class="s1"> 相加结果为： </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="nb">sum</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
 </section>
 </section>
 
@@ -1352,7 +907,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python 的常用数据类型</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Python 的常用数据类型</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1374,15 +929,16 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Python 的诞生与应用</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Python 安装</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Python 程序的基本特点</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">缩进</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">程序注释与换行</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">命名与保留字</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">安装与使用工具包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1. Python 的诞生与应用</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2. Python 安装</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3. Python 程序的基本特点</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3.1. 缩进</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3.2. 程序注释与换行</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.3.3. 命名与保留字</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.3.4. 安装与使用工具包</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.4. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1406,7 +962,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

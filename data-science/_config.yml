@@ -37,3 +37,15 @@ html:
 
 plugins:
   - jekyll-spaceship
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - dollarmath
+
+sphinx:
+  extra_extensions:
+    - sphinx_exercise
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

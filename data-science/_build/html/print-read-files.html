@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Python 输出输入，读写文件 &#8212; Python 数据科学</title>
+    <title>3. Python 输出，读写文件 &#8212; Python 数据科学</title>
   
   
   
@@ -35,7 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -99,8 +100,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'print-read-files';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python 编写函数" href="define-function.html" />
-    <link rel="prev" title="Python 的常用数据类型" href="basic-data-type.html" />
+    <link rel="next" title="4. Python 编写函数" href="define-function.html" />
+    <link rel="prev" title="2. Python 的常用数据类型" href="basic-data-type.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,16 +194,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 输出输入，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">5. Python 画图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">6. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 线性回归</a></li>
 </ul>
 
     </div>
@@ -386,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python 输出输入，读写文件</h1>
+    <h1>Python 输出，读写文件</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,13 +398,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-input">print, input 函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">用 % 格式化 print</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-print">用 format 格式化 print</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input"><code class="docutils literal notranslate"><span class="pre">input</span></code>函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1.1. 用 % 格式化 print</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-print">3.1.2. 用 format 格式化 print</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 读写文件</a></li>
 </ul>
             </nav>
         </div>
@@ -415,9 +416,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1>Python 输出输入，读写文件<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
-<section id="print-input">
-<h2>print, input 函数<a class="headerlink" href="#print-input" title="Permalink to this heading">#</a></h2>
+<h1><span class="section-number">3. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<section id="print">
+<h2><span class="section-number">3.1. </span>print 函数<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
 <p>Python 输出非常方便，用<code class="docutils literal notranslate"><span class="pre">print()</span></code>函数，小括号里面可以是数字、字符串、列表、字典等类型。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,8 +538,8 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="print">
-<h3>用 % 格式化 print<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h3>
+<section id="id1">
+<h3><span class="section-number">3.1.1. </span>用 % 格式化 print<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>若要格式化输出，要用到百分号 %，语法规则类似 c 语言，具体参考下面的例子。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -627,21 +628,7 @@ document.write(`
 </div>
 </div>
 <p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print 默认输出后光标换行：
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[17], line 1
-    print 默认输出后光标换行：
-                   ^
-SyntaxError: invalid character &#39;：&#39; (U+FF1A)
-</pre></div>
-</div>
-</div>
-</div>
+<p>print 默认输出后光标换行：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
@@ -676,7 +663,7 @@ age is 25
 </div>
 </section>
 <section id="format-print">
-<h3>用 format 格式化 print<a class="headerlink" href="#format-print" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.1.2. </span>用 format 格式化 print<a class="headerlink" href="#format-print" title="Permalink to this heading">#</a></h3>
 <p>用 format 也可以实现多种格式化输出。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -710,13 +697,7 @@ the numbers are 3 and 4.56 and 3
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>使用 format 时，可以通过冒号 : 跟参数，实现类似来 %的格式化 print。
-</pre></div>
-</div>
-</div>
-</div>
+<p>使用 format 时，可以通过冒号 : 跟参数，实现类似来 %的格式化 print。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
@@ -746,37 +727,9 @@ the numbers are 3 and 4.56 and 3
 </div>
 <p>format 还可使实现不同的对齐格式，进制转换，数字填充等，本书不再赘述，感兴趣的读者可以进一步查阅官方文档。</p>
 </section>
-<section id="input">
-<h3><code class="docutils literal notranslate"><span class="pre">input</span></code>函数<a class="headerlink" href="#input" title="Permalink to this heading">#</a></h3>
-<p>Python 中的输入用<code class="docutils literal notranslate"><span class="pre">input</span></code>函数，可以接受用户在键盘中输入的文本，例如：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;input your name：&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>input your name：chen
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;chen&#39;
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-</section>
-<section id="id1">
-<h2>读写文件<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><span class="section-number">3.2. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数返回一个文件对象，常用的语法规则为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -982,7 +935,7 @@ his name is li si
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python 的常用数据类型</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Python 的常用数据类型</p>
       </div>
     </a>
     <a class="right-next"
@@ -990,7 +943,7 @@ his name is li si
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python 编写函数</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Python 编写函数</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1012,13 +965,12 @@ his name is li si
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print-input">print, input 函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">用 % 格式化 print</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-print">用 format 格式化 print</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input"><code class="docutils literal notranslate"><span class="pre">input</span></code>函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1.1. 用 % 格式化 print</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-print">3.1.2. 用 format 格式化 print</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 读写文件</a></li>
 </ul>
   </nav></div>
 
@@ -1042,7 +994,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Python 编写函数 &#8212; Python 数据科学</title>
+    <title>4. Python 编写函数 &#8212; Python 数据科学</title>
   
   
   
@@ -35,7 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -99,8 +100,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'define-function';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python 画图" href="draw-pictures.html" />
-    <link rel="prev" title="Python 输出输入，读写文件" href="print-read-files.html" />
+    <link rel="next" title="5. Python 画图" href="draw-pictures.html" />
+    <link rel="prev" title="3. Python 输出，读写文件" href="print-read-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,16 +194,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">Python 输出输入，读写文件</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">5. Python 画图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">6. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 线性回归</a></li>
 </ul>
 
     </div>
@@ -396,16 +398,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">条件语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">循环语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">自定义函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">函数参数的传递类型</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">函数的参数传入方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. 条件语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2. 循环语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.3. 自定义函数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.3.1. 函数参数的传递类型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3.2. 函数的参数传入方法</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">lambda, map, filter, reduce 函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">try-except 语句调试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">一些常用的内置函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">4.4. lambda, map, filter, reduce 函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">4.5. try-except 语句调试</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.6. 一些常用的内置函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.7. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -418,9 +421,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <section id="id1">
-<h2>条件语句<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>条件语句<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>编写程序时，经常用到一些条件或判断，需要用到 if 语句，它的字面意思是：如果（if）满足条件，做什么，否则（else）做什么。例如，下面一段代码：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,7 +512,7 @@ document.write(`
 <p>if 中条件判断中常用的符号有：&gt;(大于), &lt;(小于), &gt;=(大于等于), &lt;=(小于等于), ==(等于), !=(不等于)。需要注意的是，在编程语言的判断语句中，两个等号 == 表示判断是否相等（a == 3 表示判断 a 是否等于 3），而一个等号 = 表示的是变量赋值（a = 3 表示将 a 赋值为 3）</p>
 </section>
 <section id="id2">
-<h2>循环语句<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>循环语句<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>循环语句一般有两种，for 语句与 while 语句。for 循环可以遍历任何序列的项目，如一个列表、元组、集合或者一个字符串。for 循环的一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -652,7 +655,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2>自定义函数<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>自定义函数<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Python 提供了许多内建函数，比如 print()，但也可以自己创建函数，这被叫做用户自定义函数。掌握了自定义函数后，就能用 Python 实现很多自己想要的功能了。Python 自定义函数使用<code class="docutils literal notranslate"><span class="pre">def</span></code>关键字，一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -790,7 +793,7 @@ document.write(`
 </div>
 </div>
 <section id="id4">
-<h3>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>根据输入参数的值是否可以改变，函数的参数传递类型包括以下两种：</p>
 <ul class="simple">
 <li><p>不可变类型：数字，字符串，元组</p></li>
@@ -836,7 +839,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>函数的参数传入方法主要有4种类型：</p>
 <ul class="simple">
 <li><p>顺序传入</p></li>
@@ -945,7 +948,7 @@ final x is 18
 </section>
 </section>
 <section id="lambda-map-filter-reduce">
-<h2>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this heading">#</a></h2>
 <p>Python 使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>来创建匿名函数。所谓匿名，即不再使用 def 语句这样标准的形式定义一个函数。<strong>lambda 函数只有一行</strong>，用一个冒号分割传递参数与函数的返回值。非常简洁，在 Pandas 处理数据时经常结合 apply 函数使用。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -984,7 +987,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x22b8a5f4d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f9ba8a84760&gt;
 </pre></div>
 </div>
 </div>
@@ -1002,26 +1005,17 @@ final x is 18
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>``filter(fun, iter)`` 对可迭代对象 iter 中的每一个元素应用判断函数 fun 过滤，并返回一个 filter 类型的可迭代对象。
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[27], line 1
-    ``filter(fun, iter)`` 对可迭代对象 iter 中的每一个元素应用判断函数 fun 过滤，并返回一个 filter 类型的可迭代对象。
-                                                          ^
-SyntaxError: invalid character &#39;，&#39; (U+FF0C)
-</pre></div>
-</div>
-</div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">filter(fun,</span> <span class="pre">iter)</span></code> 对可迭代对象 iter 中的每一个元素应用判断函数 fun 过滤，并返回一个 filter 类型的可迭代对象。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="c1"># 将大于等于 2 的元素过滤出来</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3]
 </pre></div>
 </div>
 </div>
@@ -1037,6 +1031,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>也可以跟 3 个参数，即<code class="docutils literal notranslate"><span class="pre">reduce(fun,</span> <span class="pre">iter,</span> <span class="pre">start=None)</span></code>。此时，首先对一个初始值 start 与可迭代对象 iter 中的第一个元素应用函数 fun，然后将其结果作为 fun 的第一个输入值，再对第 2 个元素应用 fun 函数；以此类推，最后返回一个数。</p>
 <div class="cell docutils container">
@@ -1047,10 +1046,15 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="try-except">
-<h2>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this heading">#</a></h2>
 <p>在编写程序时，有时候不知道程序能否正确运行，想试试程序运行结果如何，可以使用 try-except语句；若 try 块中的语句无法执行通过，则执行 except 块中的语句。</p>
 <p>这个语句在程序调试时经常使用，下面的代码定义了一个除法函数：</p>
 <div class="cell docutils container">
@@ -1063,6 +1067,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x2 should not be zero&#39;</span><span class="p">)</span>
 
 <span class="n">devide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x2 should not be zero
 </pre></div>
 </div>
 </div>
@@ -1083,16 +1092,10 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。
-</pre></div>
-</div>
-</div>
-</div>
+<p>上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。</p>
 </section>
 <section id="id6">
-<h2>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>Python 内置了一些常用的函数，可以方便使用。本书简单介绍以下几个内置函数：</p>
 <table>
     <tr style="border-top:solid">
@@ -1133,10 +1136,20 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">)</span> <span class="c1"># 默认四舍五入为整数</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -1148,10 +1161,20 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 10)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre></div>
 </div>
 </div>
@@ -1162,6 +1185,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(2, 10)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1169,10 +1197,20 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(2, 10, 2)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 6, 8]
 </pre></div>
 </div>
 </div>
@@ -1186,6 +1224,14 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 0
+30 1
+40 2
+50 3
+</pre></div>
+</div>
+</div>
 </div>
 <p>使用 enumerate 则上述代码更简洁些：</p>
 <div class="cell docutils container">
@@ -1193,6 +1239,14 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 20
+1 30
+2 40
+3 50
 </pre></div>
 </div>
 </div>
@@ -1205,6 +1259,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 23, 37, 54]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1212,6 +1271,109 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[54, 37, 23, 12]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h2><span class="section-number">4.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="judge-leap-year">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
+<section id="exercise-content">
+<p>判断用户输入的年份是否为闰年。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#judge-leap-year"> Exercise 4.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入一个年份: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+           <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 是闰年&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>   <span class="c1"># 整百年能被400整除的是闰年</span>
+       <span class="k">else</span><span class="p">:</span>
+           <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 不是闰年&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+   <span class="k">else</span><span class="p">:</span>
+       <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 是闰年&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>       <span class="c1"># 非整百年能被4整除的为闰年</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 不是闰年&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="fib-sequence">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
+<section id="exercise-content">
+<p>输出指定数目的斐波那契数列。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 4.2</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取用户输入数据</span>
+<span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;the number of sequence:&quot;</span><span class="p">))</span>
+
+<span class="c1"># 第一和第二项</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">2</span>
+ 
+<span class="c1"># 判断输入的值是否合法</span>
+<span class="k">if</span> <span class="n">nterms</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;please input a positive value&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">nterms</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;斐波那契数列：&quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;斐波那契数列：&quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+   <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">nterms</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+       <span class="n">nth</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span>
+       <span class="nb">print</span><span class="p">(</span><span class="n">nth</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+       <span class="c1"># 更新值</span>
+       <span class="n">n1</span> <span class="o">=</span> <span class="n">n2</span>
+       <span class="n">n2</span> <span class="o">=</span> <span class="n">nth</span>
+       <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">nth</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nth</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="range-prime-numbers">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
+<section id="exercise-content">
+<p>输出指定范围内的素数。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-5">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 4.3</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take input from the user</span>
+<span class="n">lower</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入区间最小值: &quot;</span><span class="p">))</span>
+<span class="n">upper</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入区间最大值: &quot;</span><span class="p">))</span>
+ 
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span><span class="n">upper</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># 素数大于 1</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </div>
 </section>
 </section>
@@ -1253,7 +1415,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Python 输出输入，读写文件</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Python 输出，读写文件</p>
       </div>
     </a>
     <a class="right-next"
@@ -1261,7 +1423,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python 画图</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Python 画图</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1283,16 +1445,17 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">条件语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">循环语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">自定义函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">函数参数的传递类型</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">函数的参数传入方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. 条件语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2. 循环语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.3. 自定义函数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.3.1. 函数参数的传递类型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3.2. 函数的参数传入方法</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">lambda, map, filter, reduce 函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">try-except 语句调试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">一些常用的内置函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">4.4. lambda, map, filter, reduce 函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">4.5. try-except 语句调试</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.6. 一些常用的内置函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.7. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1316,7 +1479,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

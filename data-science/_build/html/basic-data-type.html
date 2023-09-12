@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Python 的常用数据类型 &#8212; Python 数据科学</title>
+    <title>2. Python 的常用数据类型 &#8212; Python 数据科学</title>
   
   
   
@@ -35,7 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -101,8 +102,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'basic-data-type';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python 输出输入，读写文件" href="print-read-files.html" />
-    <link rel="prev" title="前言" href="intro.html" />
+    <link rel="next" title="3. Python 输出，读写文件" href="print-read-files.html" />
+    <link rel="prev" title="1. 初识 Python" href="A-first-look-of-Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -195,16 +196,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">Python 输出输入，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Python 的常用数据类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">5. Python 画图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">6. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 线性回归</a></li>
 </ul>
 
     </div>
@@ -398,13 +400,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">数字类型：整数型，浮点型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">字符串类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">列表类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">字典类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">元祖类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">集合类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">布尔类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1. 数字类型：整数型，浮点型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2. 字符串类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3. 列表类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.4. 字典类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.5. 元祖类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.6. 集合类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.7. 布尔类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.8. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -417,10 +420,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1>Python 的常用数据类型<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
-<p>Python 的常用数据类型有：数字，字符串，列表，元组，字典。</p>
+<h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<p id="index-0">Python 的常用数据类型有：数字，字符串，列表，元组，字典。</p>
 <section id="id1">
-<h2>数字类型：整数型，浮点型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>数字类型：整数型，浮点型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Python 中定义一个数字型变量特别方便，直接用等号赋值。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +638,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>更复杂的数学运算需要调用数学包 math，例如：</p>
+<p>更复杂的数学运算需要调用数学包<code class="docutils literal notranslate"><span class="pre">math</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -665,7 +668,7 @@ document.write(`
 <p>第一行代码调用 math 中的 sin 函数求 <span class="math notranslate nohighlight">\(sin(\pi/2)\)</span>，其中调用了 math 中的 pi 函数表示 <span class="math notranslate nohighlight">\(\pi\)</span>，第二行代码调用了对数函数求 <span class="math notranslate nohighlight">\(\ln(100)\)</span>。</p>
 </section>
 <section id="id2">
-<h2>字符串类型<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>字符串类型<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>字符串也是 Python 中比较常见的数据类型，可以用单引号或双引号表示字符串。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,7 +848,7 @@ document.write(`
 </table>
 <br /></section>
 <section id="id3">
-<h2>列表类型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>列表（List）是最常用的 Python 数据类型，它由一个\textbf{中括号} [ ] 以及逗号分隔的不同数值或字符串组成，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1067,21 +1070,7 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>访问二维列表时，用两个中括号分别跟上索引：
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[49], line 1
-    访问二维列表时，用两个中括号分别跟上索引：
-           ^
-SyntaxError: invalid character &#39;，&#39; (U+FF0C)
-</pre></div>
-</div>
-</div>
-</div>
+<p>访问二维列表时，用两个中括号分别跟上索引：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -1168,7 +1157,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </table>
 <br /></section>
 <section id="id4">
-<h2>字典类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在<strong>花括号</strong>{ } 中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号 ：分割。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1231,6 +1220,11 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;score&#39;: 95, &#39;mark&#39;: 80}
+</pre></div>
+</div>
+</div>
 </div>
 <p>注意：键必须不可变，所以可以用数字，字符串或元组充当，但用列表就不行。字典类型数据的常用函数还有：</p>
 <table>
@@ -1256,7 +1250,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
     </tr>
 </table></section>
 <section id="id5">
-<h2>元祖类型<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>Python 的元组（tuple）与列表类似，不同之处在于<strong>元组的元素不能修改</strong>。元组使用<strong>小括号</strong>创建，并使用逗号隔开。访问列表元素或者截取部分元组与列表非常类似：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1377,7 +1371,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
     </tr>
 </table></section>
 <section id="id6">
-<h2>集合类型<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>集合类型<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>集合（set）是一个无序的<strong>不重复</strong>元素序列，一般使用大括号 { } 创建。注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 默认创建一个空字典）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1573,7 +1567,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
     </tr>
 </table></section>
 <section id="id7">
-<h2>布尔类型<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>Python 中的布尔值（Bool) 一般通过逻辑判断产生，只有两个可能的结果：<code class="docutils literal notranslate"><span class="pre">True</span></code>或<code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1599,13 +1593,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>在做逻辑判断时，两个等号``==``表示是否相等，若仅有一个等号，则表示赋值。
-</pre></div>
-</div>
-</div>
-</div>
+<p>在做逻辑判断时，两个等号<code class="docutils literal notranslate"><span class="pre">==</span></code>表示是否相等，若仅有一个等号，则表示赋值。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 一个等号表示将 a 赋值为 3</span>
@@ -1669,6 +1657,86 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </div>
 </div>
 </section>
+<section id="id8">
+<h2><span class="section-number">2.8. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="circle-area">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
+<section id="exercise-content">
+<p>根据给定的半径值，计算圆的面积</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;圆的面积为 </span><span class="si">%.6f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="quad-equation">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<section id="exercise-content">
+<p>通过用户输入数字 a, b, c，计算二次方程: <span class="math notranslate nohighlight">\(ax^2 + bx +c\)</span>。
+(提示：cmath 工具包可以计算负数的开方)</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.2</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
+<span class="kn">import</span> <span class="nn">cmath</span>
+ 
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 a: &#39;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 b: &#39;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 c: &#39;</span><span class="p">))</span>
+ 
+<span class="c1"># 计算</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+ 
+<span class="c1"># 两种求解方式</span>
+<span class="n">sol1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span class="n">sol2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">+</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;结果为 </span><span class="si">{0}</span><span class="s1"> 和 </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sol1</span><span class="p">,</span><span class="n">sol2</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="triangle-area">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
+<section id="exercise-content">
+<p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-5">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.3</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第一边长: &#39;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第二边长: &#39;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第三边长: &#39;</span><span class="p">))</span>
+ 
+<span class="c1"># 计算半周长</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+ 
+<span class="c1"># 计算面积</span>
+<span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;三角形面积为 </span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1703,12 +1771,12 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="A-first-look-of-Python.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">前言</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>初识 Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -1716,7 +1784,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python 输出输入，读写文件</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Python 输出，读写文件</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1738,13 +1806,14 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">数字类型：整数型，浮点型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">字符串类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">列表类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">字典类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">元祖类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">集合类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">布尔类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1. 数字类型：整数型，浮点型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2. 字符串类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3. 列表类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.4. 字典类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.5. 元祖类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.6. 集合类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.7. 布尔类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.8. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1768,7 +1837,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

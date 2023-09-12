@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Pandas 入门 &#8212; Python 数据科学</title>
+    <title>7. Pandas 入门 &#8212; Python 数据科学</title>
   
   
   
@@ -35,7 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -99,8 +100,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-pandas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="线性回归" href="line-regression.html" />
-    <link rel="prev" title="Numpy 简介" href="introduction-to-numpy.html" />
+    <link rel="next" title="8. 线性回归" href="line-regression.html" />
+    <link rel="prev" title="6. Numpy 简介" href="introduction-to-numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,16 +194,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">Python 输出输入，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">Numpy 简介</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">5. Python 画图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">6. Numpy 简介</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 线性回归</a></li>
 </ul>
 
     </div>
@@ -396,46 +398,46 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">创建，读取与存储数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">创建数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">读取数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">存储数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.1. 创建，读取与存储数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.1.1. 创建数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.1.2. 读取数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.1.3. 存储数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">查看与修改数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">查看单行，单列，单元格数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">查看多行，多列数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">查看数据的统计值</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">修改数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.2. 查看与修改数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.2.1. 查看单行，单列，单元格数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.2.2. 查看多行，多列数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.2.3. 查看数据的统计值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.2.4. 修改数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">增加，删除与合并数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">增加数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">删除数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">合并数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">7.3. 增加，删除与合并数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">7.3.1. 增加数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">7.3.2. 删除数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">7.3.3. 合并数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">查询数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">排序数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">分组汇总</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">7.4. 查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">7.4.1. 查询数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">7.4.2. 排序数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">7.4.3. 分组汇总</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">与数组或列表的转换</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">自定义函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">时间序列数据处理</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-datetime-dt-strftime"><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">7.5. 与数组或列表的转换</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">7.6. 自定义函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">7.7. 时间序列数据处理</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-datetime-dt-strftime">7.7.1. <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">7.7.2. 数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">数据清洗</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-fillna">数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-duplicates">重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-na">缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">7.8. 数据清洗</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-fillna">7.8.1. 数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-duplicates">7.8.2. 重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-na">7.8.3. 缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">7.8.4. 重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Pandas 画图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">7.9. Pandas 画图</a></li>
 </ul>
             </nav>
         </div>
@@ -448,7 +450,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1>Pandas 入门<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Pandas 入门<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
 <p>pandas 是 Python 做统计分析时最重要的数据分析工具之一，它基于 numpy 开发，提供了许多处理大型数据集所需的函数，可以灵活高效的处理各种数据集。</p>
 <p>pandas 一般使用的数据类型为 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, DataFrame 是二维数据，相当于 Excel 里面的一张表格数据。使用 pandas 时首先要导入 pandas 包。</p>
 <div class="cell docutils container">
@@ -459,9 +461,9 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2>创建，读取与存储数据<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>创建，读取与存储数据<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="id2">
-<h3>创建数据<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>创建数据<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>例如有下面的数据：</p>
 <table class="table">
 <thead>
@@ -576,84 +578,10 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h3>读取数据<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.1.2. </span>读取数据<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>多数情况下，我们要读取数据文件（例如 excel），假设上面的例子在 excel 文件 ‘transcripts.xlsx’ 里并放在电脑硬盘位置“/Users/zhenchen/Documents/python data” 中，可以通过函数<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>读取文件：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/Users/zhenchen/Documents/python data/transcripts.xlsx&#39;</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>df = pd.read_excel(r&#39;/Users/zhenchen/Documents/python data/transcripts.xlsx&#39;)
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/Users/zhenchen/Documents/python data/transcripts.xlsx&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\util\_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
-<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\util\_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\io\excel\_base.py:482,</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, decimal, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span>         <span class="s2">&quot;Engine should not be specified when passing &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span>         <span class="s2">&quot;an ExcelFile - ExcelFile already has the engine set&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>     <span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\io\excel\_base.py:1652,</span> in <span class="ni">ExcelFile.__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1650</span>     <span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;xls&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1651</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1652</span>     <span class="n">ext</span> <span class="o">=</span> <span class="n">inspect_excel_format</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1653</span>         <span class="n">content_or_path</span><span class="o">=</span><span class="n">path_or_buffer</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span>
-<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="k">if</span> <span class="n">ext</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1656</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1657</span>             <span class="s2">&quot;Excel file format cannot be determined, you must specify &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1658</span>             <span class="s2">&quot;an engine manually.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1659</span>         <span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\io\excel\_base.py:1525,</span> in <span class="ni">inspect_excel_format</span><span class="nt">(content_or_path, storage_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content_or_path</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">content_or_path</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">content_or_path</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1525</span> <span class="k">with</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1526</span>     <span class="n">content_or_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1527</span> <span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1528</span>     <span class="n">stream</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">handle</span>
-<span class="g g-Whitespace">   </span><span class="mi">1529</span>     <span class="n">stream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\io\common.py:865,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">856</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">857</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">861</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">863</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>         <span class="c1"># Binary mode</span>
-<span class="ne">--&gt; </span><span class="mi">865</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">866</span>     <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="c1"># Convert BytesIO or file objects passed with an encoding</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/zhenchen/Documents/python data/transcripts.xlsx&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="admonition- admonition">
 <p class="admonition-title">注意</p>
@@ -691,7 +619,7 @@ document.write(`
 <br /><p>还有一种常见的数据文件类型为 csv，我们只需使用 pandas 中的函数<code class="docutils literal notranslate"><span class="pre">read_csv</span></code>，它的语法与<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>基本一致。</p>
 </section>
 <section id="id4">
-<h3>存储数据<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.1.3. </span>存储数据<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>存储时使用函数 <code class="docutils literal notranslate"><span class="pre">to_excel</span></code> 或 <code class="docutils literal notranslate"><span class="pre">to_csv</span></code>。例如我们将数据 df 仍然存储到文件夹 “/Users/zhenchen/Documents/python data” 里，并命名为 “marks.xlsx”：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,7 +631,7 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>查看与修改数据<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>查看与修改数据<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>快速查看 DataFrame 各列数据的统计信息可以使用 <code class="docutils literal notranslate"><span class="pre">discribe()</span></code> 函数，包括各列数据的非空数值数目、均值、标准差、最大值、最小值、分位数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -808,7 +736,7 @@ document.write(`
 </tbody>
 </table>
 <section id="id6">
-<h3>查看单行，单列，单元格数据<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>查看单行，单列，单元格数据<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>查看某一列数据时，最简单的方式是在中括号<code class="docutils literal notranslate"><span class="pre">[]</span></code>里面输入列名的方式，例如查看英语成绩那一列数据：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -960,7 +888,7 @@ Name: 高数, dtype: int64
 </div>
 </section>
 <section id="id7">
-<h3>查看多行，多列数据<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.2.2. </span>查看多行，多列数据<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>查看多行、多列数据时，可以用 <code class="docutils literal notranslate"><span class="pre">iloc</span></code>，它不仅能查看多行多列数据，也能查看单行、单列或某个单元格数据。
 例如，查看行数据：</p>
 <div class="cell docutils container">
@@ -1288,7 +1216,7 @@ Name: 高数, dtype: int64
 </div>
 </section>
 <section id="id8">
-<h3>查看数据的统计值<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.2.3. </span>查看数据的统计值<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>Pandas 自带一些统计函数，可以得到列数据的统计值，这些统计函数包括：mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），count（计数），skew（均值），quantile（分位数）等。有时候需要添加参数<code class="docutils literal notranslate"><span class="pre">numeric_only</span> <span class="pre">=</span> <span class="pre">True</span></code>，表示只对数值数列应用函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1331,7 +1259,7 @@ dtype: float64
 </div>
 </section>
 <section id="id9">
-<h3>修改数据<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.2.4. </span>修改数据<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>在修改 pandas 的 DataFrame 数据时，将 pandas 的索引位置赋值为新的值。例如，当修改某列数据时，语法为：<code class="docutils literal notranslate"><span class="pre">df[‘列名']</span> <span class="pre">=</span>&#160; <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1627,9 +1555,9 @@ dtype: float64
 </section>
 </section>
 <section id="id10">
-<h2>增加，删除与合并数据<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>增加，删除与合并数据<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <section id="id11">
-<h3>增加数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.3.1. </span>增加数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>在原数据末尾增加一列时，语法为 <code class="docutils literal notranslate"><span class="pre">df[‘新列名']</span> <span class="pre">=</span> <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1923,7 +1851,7 @@ dtype: float64
 <p>若要在指定位置插入行，目前 Pandas 还没有专门的函数，一般采用<code class="docutils literal notranslate"><span class="pre">concat</span></code>函数合并多个 DataFrame 的方式，增加多列或多行数据也可以使用 <code class="docutils literal notranslate"><span class="pre">concat</span></code>函数或<code class="docutils literal notranslate"><span class="pre">merge</span></code>函数，具体参看后面的合并数据章节。</p>
 </section>
 <section id="id12">
-<h3>删除数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.3.2. </span>删除数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>Pandas 可以利用<code class="docutils literal notranslate"><span class="pre">drop</span></code>函数删除行数据或列数据。删除一行时，参数为行标签名以及<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>。若没有参数<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>，原始的 DataFrame 数据不变。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2122,7 +2050,7 @@ dtype: float64
 </div>
 </section>
 <section id="id13">
-<h3>合并数据<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.3.3. </span>合并数据<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>Pandas 中比较常用的两个合并数据的方法是<code class="docutils literal notranslate"><span class="pre">concat</span></code>与<code class="docutils literal notranslate"><span class="pre">merge</span></code>。 当两个 DataFrame 数据表具有完全相同的列标签时，一般用<code class="docutils literal notranslate"><span class="pre">concat</span></code>，其他情况下多用<code class="docutils literal notranslate"><span class="pre">merge</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3076,9 +3004,9 @@ dtype: float64
 </section>
 </section>
 <section id="id14">
-<h2>查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <section id="id15">
-<h3>查询数据<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.4.1. </span>查询数据<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>对 DataFrame 数据按照一定条件查询时，一般会用到一些比较运算符，例如：&gt;, &gt;=, ==, &lt;, &lt;=, !=。条件查询一般只针对列数据，查询时，Pandas 首先生成布尔索引 True 或 False，再通过指定索引生成查询后的数据。</p>
 <p>例如，下面的代码：</p>
 <div class="cell docutils container">
@@ -3310,7 +3238,7 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="id16">
-<h3>排序数据<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.4.2. </span>排序数据<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>在处理数据时，经常要对数据排序。 Pandas 提供了一个方便的函数<code class="docutils literal notranslate"><span class="pre">sort_values</span></code>对数值进行排序，它的使用语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -3691,7 +3619,7 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="id17">
-<h3>分组汇总<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.4.3. </span>分组汇总<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p>在数据分析时，经常也需要将数据分组汇总。例如，在统计学生的期末考试成绩时，可能需要根据专业或者班级来分别计算平均成绩、最高成绩等。此时，可以利用 Pandas 的<code class="docutils literal notranslate"><span class="pre">groupby</span></code>函数方便地实现这些功能。</p>
 <p>groupby 经常结合一些汇总统计量使用，例如 mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），mad（平均绝对偏差），count（计数），skew（均值），quantile（分位数）。</p>
 <p>下面的代码按性别汇总了平均成绩：</p>
@@ -3849,6 +3777,10 @@ Name: 统计学, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_79208/4010783073.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  df.groupby([&#39;班级&#39;, &#39;性别&#39;]).mean() # 按班级、性别汇总平均成绩
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3920,6 +3852,10 @@ Name: 统计学, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_79208/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+  df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -4033,7 +3969,7 @@ Name: 统计学, dtype: bool
 </section>
 </section>
 <section id="id18">
-<h2>与数组或列表的转换<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>与数组或列表的转换<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
 <p>使用 Pandas 中的<code class="docutils literal notranslate"><span class="pre">values</span></code>方法可以将 DataFrame 数据转化为 Numpy 的数组形式。例如，对于前面的数据例子：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4253,7 +4189,7 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="id19">
-<h2>自定义函数<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>自定义函数<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
 <p>Pandas 可以使用<code class="docutils literal notranslate"><span class="pre">apply</span></code>调用自定义函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4316,9 +4252,9 @@ Name: 英语, dtype: object
 </div>
 </section>
 <section id="id20">
-<h2>时间序列数据处理<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.7. </span>时间序列数据处理<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
 <section id="to-datetime-dt-strftime">
-<h3><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code><a class="headerlink" href="#to-datetime-dt-strftime" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.7.1. </span><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code><a class="headerlink" href="#to-datetime-dt-strftime" title="Permalink to this heading">#</a></h3>
 <p>实际工作中，经常会遇到大量的时间序列数据。这些时间序列的原始数据一般为文本格式，我们需要将它转化为时间日期格式。 Pandas 提供了 <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code>函数将其他日期时间格式转化为 Python 的日期时间格式。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4584,7 +4520,7 @@ Name: 入校时间, dtype: object
 </div>
 </section>
 <section id="resample">
-<h3>数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code><a class="headerlink" href="#resample" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.7.2. </span>数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code><a class="headerlink" href="#resample" title="Permalink to this heading">#</a></h3>
 <p>对于很多时间序列数据，有时候经常需要对它们按一定周期进行数据聚合，可以用 Pandas 提供的<code class="docutils literal notranslate"><span class="pre">resample</span></code>函数。resample 方法中的小括号中用不同参数表示聚合的频率。举例：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4813,9 +4749,9 @@ Name: 入校时间, dtype: object
 </section>
 </section>
 <section id="id21">
-<h2>数据清洗<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.8. </span>数据清洗<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
 <section id="replace-fillna">
-<h3>数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code><a class="headerlink" href="#replace-fillna" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.8.1. </span>数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code><a class="headerlink" href="#replace-fillna" title="Permalink to this heading">#</a></h3>
 <p>在进行数据处理时，经常需要对原始数据的一些异常值或错误值进行批量处理。 Pandas 提供了<code class="docutils literal notranslate"><span class="pre">replace</span></code>函数方便地进行这项操作。<code class="docutils literal notranslate"><span class="pre">replace</span></code>函数第一项为原数据中的值，第二项为需要替换的值。例如，有下面的学生成绩：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4909,20 +4845,20 @@ Name: 入校时间, dtype: object
     <tr>
       <th>张三</th>
       <td>85</td>
-      <td>68</td>
-      <td>85</td>
+      <td>68.0</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>李四</th>
       <td>82</td>
-      <td>63</td>
-      <td>88</td>
+      <td>63.0</td>
+      <td>88.0</td>
     </tr>
     <tr>
       <th>王五</th>
       <td>84</td>
-      <td>85</td>
-      <td>78</td>
+      <td>NaN</td>
+      <td>78.0</td>
     </tr>
   </tbody>
 </table>
@@ -5161,7 +5097,7 @@ Name: 英语, dtype: bool
 </div>
 </section>
 <section id="drop-duplicates">
-<h3>重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code><a class="headerlink" href="#drop-duplicates" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.8.2. </span>重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code><a class="headerlink" href="#drop-duplicates" title="Permalink to this heading">#</a></h3>
 <p>在数据量比较大时，经常会遇到重复数据的问题，可以使用函数<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>将重复数据去掉。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5331,7 +5267,7 @@ Name: 英语, dtype: bool
 </div>
 </section>
 <section id="drop-na">
-<h3>缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code><a class="headerlink" href="#drop-na" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.8.3. </span>缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code><a class="headerlink" href="#drop-na" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">dropna</span></code>函数可以将数据表中包含缺失值的行去除掉，与<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>相比，该方法的可调节参数更多些。它的语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -5552,7 +5488,7 @@ Name: 英语, dtype: bool
 </div>
 </section>
 <section id="rename">
-<h3>重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.8.4. </span>重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename" title="Permalink to this heading">#</a></h3>
 <p>在处理数据表时，有时候要给数据的行名或列名重命名，此时要用到<code class="docutils literal notranslate"><span class="pre">rename</span></code>函数，<code class="docutils literal notranslate"><span class="pre">rename</span></code>函数中的参数为一个字典形式：替换前的名字为字典的 key，替换后的名字为字典的 value。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5664,7 +5600,7 @@ Name: 英语, dtype: bool
 </section>
 </section>
 <section id="id22">
-<h2>Pandas 画图<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.9. </span>Pandas 画图<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
 <p>除了结合 matplotlib 与 seaborn 画图外，Pandas 也有自己的画图函数<code class="docutils literal notranslate"><span class="pre">plot</span></code>，它的语法一般为：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -5842,7 +5778,7 @@ Name: 英语, dtype: bool
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Numpy 简介</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Numpy 简介</p>
       </div>
     </a>
     <a class="right-next"
@@ -5850,7 +5786,7 @@ Name: 英语, dtype: bool
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">线性回归</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>线性回归</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -5872,46 +5808,46 @@ Name: 英语, dtype: bool
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">创建，读取与存储数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">创建数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">读取数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">存储数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.1. 创建，读取与存储数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.1.1. 创建数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.1.2. 读取数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.1.3. 存储数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">查看与修改数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">查看单行，单列，单元格数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">查看多行，多列数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">查看数据的统计值</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">修改数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.2. 查看与修改数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.2.1. 查看单行，单列，单元格数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.2.2. 查看多行，多列数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7.2.3. 查看数据的统计值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">7.2.4. 修改数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">增加，删除与合并数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">增加数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">删除数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">合并数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">7.3. 增加，删除与合并数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">7.3.1. 增加数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">7.3.2. 删除数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">7.3.3. 合并数据</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">查询数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">排序数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">分组汇总</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">7.4. 查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">7.4.1. 查询数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">7.4.2. 排序数据</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">7.4.3. 分组汇总</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">与数组或列表的转换</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">自定义函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">时间序列数据处理</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-datetime-dt-strftime"><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">7.5. 与数组或列表的转换</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">7.6. 自定义函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">7.7. 时间序列数据处理</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-datetime-dt-strftime">7.7.1. <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">7.7.2. 数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">数据清洗</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-fillna">数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-duplicates">重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-na">缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">7.8. 数据清洗</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-fillna">7.8.1. 数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-duplicates">7.8.2. 重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-na">7.8.3. 缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">7.8.4. 重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Pandas 画图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">7.9. Pandas 画图</a></li>
 </ul>
   </nav></div>
 
@@ -5935,7 +5871,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
