@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -482,12 +482,12 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code> 函数打印内容：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world&#39;</span><span class="p">)</span> <span class="c1"># 打印一个字符串</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;西南大学&quot;</span><span class="p">)</span> <span class="c1"># 打印一个字符串</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, world
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>西南大学
 </pre></div>
 </div>
 </div>
@@ -632,12 +632,15 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;chen&#39;</span>
 <span class="n">Name</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">N</span>    <span class="n">ame</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chen
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">N</span>    <span class="n">ame</span><span class="p">)</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax. Perhaps you forgot a comma?
 </pre></div>
 </div>
 </div>
@@ -645,7 +648,7 @@ document.write(`
 <p>变量命名的原则是最好能<strong>通过变量的名字就知道该变量的意思</strong>，从而方便调试与其他人员阅读。有时候，变量的名字要用到多个单词，此时可以：</p>
 <ul class="simple">
 <li><p>用下划线<code class="docutils literal notranslate"><span class="pre">_</span></code>将多个单词分割，例如 “average_score”</p></li>
-<li><p>不同单词的首字母大写，例如 “AaverageScore”</p></li>
+<li><p>不同单词的首字母大写，例如 “AverageScore”</p></li>
 </ul>
 <p>第 2 种方式也称作驼峰命名，因为变量的名字起伏像骆驼的驼峰。</p>
 <div class="cell docutils container">
@@ -754,7 +757,7 @@ document.write(`
 </table>
 <br /><p>Anaconda 也可以通过 Anaconda 自带的 Conda 工具从 Anaconda 库中安装包。Windows 系统中的方法是：在 Windows 菜单栏里，点击 Anaconda Prompt，打开 Anaconda 的命令行窗口，然后输入不同的指令。语法与 pip 基本相同，区别在于把命令中的 pip 替换为 conda。</p>
 <p>例如，安装一个金融股票包<code class="docutils literal notranslate"><span class="pre">tushare</span></code>，在命令号窗口输入：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">tushare</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span>
 </pre></div>
 </div>
 <p>工具包 tushare 就能自动下载安装了。</p>
@@ -854,8 +857,68 @@ document.write(`
 
 <p class="admonition-title"><span class="caption-number">Exercise 1.2 </span></p>
 <section id="exercise-content">
-<p>通过用户键盘输入两个数字，并计算两个数字的和。</p>
+<p>通过用户的键盘输入两个数字，并计算两个数字的和。</p>
 </section>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入第一个数:&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>请输入第一个数:10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入第 2 个数:&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>请输入第 2 个数:20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -960,7 +1023,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
