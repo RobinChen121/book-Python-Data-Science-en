@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -97,6 +97,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'define-function';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -466,16 +468,6 @@ document.write(`
     </tr>
 </table>
 <br /><p>上面 if 语句块的执行顺序为：如果条件1 为真，将执行 “statement_block_1” 块语句，如果条件1 为假，将判断 “条件2”，如果条件2 为真，将执行 “statement_block_2” 块语句，如果条件2 为假，将执行”statement_block_3”块语句。举例：</p>
-<div class="highlight-flow notranslate"><div class="highlight"><pre><span></span>st=&gt;start: Start
-op=&gt;operation: Your Operation
-cond=&gt;condition: Yes or No?
-e=&gt;end
-
-st-&gt;op-&gt;cond
-cond(yes)-&gt;e
-cond(no)-&gt;op
-</pre></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">5000</span>
@@ -710,7 +702,8 @@ cond(no)-&gt;op
         <td style="text-align:left">return</td>
         <td style="text-align:left">关键字，后面跟函数的返回值，即输出结果</td>
     </tr>
-</table><p>函数的返回值可以有一个或多个，下面的代码返回多个值，既返回两个参数的加和结果，又返回两个参数的值。</p>
+</table>
+</br><p>函数的返回值可以有一个或多个，下面的代码返回多个值，既返回两个参数的加和结果，又返回两个参数的值。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -997,7 +990,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x13860cf4220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7fc802374b80&gt;
 </pre></div>
 </div>
 </div>
@@ -1140,7 +1133,8 @@ final x is 18
         <td style="text-align:left">sorted</td>
         <td style="text-align:left">对可迭代对象进行排序，默认升序</td>
     </tr>
-</table><div class="cell docutils container">
+</table>
+</br><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 四舍五入时保留两位小数</span>
 </pre></div>
@@ -1316,16 +1310,42 @@ final x is 18
 </div>
 </section>
 </div>
-<div class="exercise admonition" id="fib-sequence">
+<div class="exercise admonition" id="sum-cub">
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
 <section id="exercise-content">
-<p>输出指定数目的斐波那契数列。</p>
+<p>自定义一个函数，给定数值 <span class="math notranslate nohighlight">\(n\)</span>，能够计算 从 1 到 <span class="math notranslate nohighlight">\(n\)</span> 所有自然数的立方和。</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="define-function-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 4.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#sum-cub"> Exercise 4.2</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">i</span>
+         
+    <span class="k">return</span> <span class="nb">sum</span>
+ 
+   
+<span class="c1"># 调用函数</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="fib-sequence">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
+<section id="exercise-content">
+<p>输出指定数目的斐波那契数列。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-5">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 4.3</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取用户输入数据</span>
 <span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;the number of sequence:&quot;</span><span class="p">))</span>
@@ -1358,9 +1378,9 @@ final x is 18
 </div>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-4">
+<div class="solution dropdown admonition" id="define-function-solution-6">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 4.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 4.3</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recur_fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="w">   </span><span class="sd">&quot;&quot;&quot;递归函数</span>
@@ -1387,14 +1407,14 @@ final x is 18
 </div>
 <div class="exercise admonition" id="range-prime-numbers">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.4 </span></p>
 <section id="exercise-content">
 <p>输出指定范围内的素数。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-6">
+<div class="solution dropdown admonition" id="define-function-solution-8">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 4.3</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 4.4</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take input from the user</span>
 <span class="n">lower</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入区间最小值: &quot;</span><span class="p">))</span>
@@ -1516,7 +1536,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

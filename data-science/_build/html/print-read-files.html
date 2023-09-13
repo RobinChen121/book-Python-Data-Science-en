@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -399,13 +399,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">3.2. f 函数输出</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.1. 用 % 格式化输出</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.2.2. 用 format 格式化输出</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.3. 读写文件</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.4. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">3.2. f 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.3. 用 format 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. 用 % 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.5. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -506,132 +504,10 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="id1">
-<h3><span class="section-number">3.2.1. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>若要格式化输出，要用到百分号 %，语法规则类似 c 语言，具体参考下面的例子。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1"># 按照整数 print</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is 3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1"># 按照浮点数 print，并保留 2 位小数</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is 3.14
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%.2f</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1"># \n 表示 print 后光标换行</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is 3.14
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are </span><span class="si">%.2f</span><span class="s1"> and </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="c1"># 同时 print 多个数据</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are 3.14 and 4
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%5.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="c1"># 按照浮点数 print，保留 2 位小数，并且输出内容的宽度为5个字符</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is  3.14
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mi">321</span><span class="p">)</span> <span class="c1"># 按照字符串 print</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is 321
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.1f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 百分比输出，并保留一位小数</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.6%
-</pre></div>
-</div>
-</div>
-</div>
 <p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
-<p>print 默认输出后光标换行：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang
-age is 25
-</pre></div>
-</div>
-</div>
-</div>
-<p>若要更改 print 光标结尾的内容，可以通过 end 参数更改：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang-age is 25
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="format">
-<h3><span class="section-number">3.2.2. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h3>
+<h2><span class="section-number">3.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h2>
 <p>用<code class="docutils literal notranslate"><span class="pre">format</span></code>也可以实现多种格式化输出，它的基本用法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -780,7 +656,7 @@ the numbers are 3 and 4.56 and 3
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = </span><span class="si">{:+^10.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># 用+填充，居中对齐，宽度为10，保留两位小数</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = </span><span class="si">{:+^10.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># 用+填充，居中对齐，宽度为 10，保留两位小数</span>
 </pre></div>
 </div>
 </div>
@@ -790,10 +666,132 @@ the numbers are 3 and 4.56 and 3
 </div>
 </div>
 </div>
+<p>print 默认输出后光标换行：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span><span class="p">)</span> <span class="c1"># 光标换行了</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang
+age is 25
+</pre></div>
+</div>
+</div>
+</div>
+<p>若要更改 print 光标结尾的内容，可以通过 end 参数更改：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang-age is 25
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+<section id="id1">
+<h2><span class="section-number">3.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>若要格式化输出，要用到百分号 %，语法规则类似 c 语言，具体参考下面的例子。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1"># 按照整数 print</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1"># 按照浮点数 print，并保留 2 位小数</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is 3.14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%.2f</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1"># \n 表示 print 后光标换行</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is 3.14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are </span><span class="si">%.2f</span><span class="s1"> and </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="c1"># 同时 print 多个数据</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are 3.14 and 4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%5.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="c1"># 按照浮点数 print，保留 2 位小数，并且输出内容的宽度为5个字符</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is  3.14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the number is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mi">321</span><span class="p">)</span> <span class="c1"># 按照字符串 print</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the number is 321
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%.1f%%</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># 百分比输出，并保留一位小数</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.6%
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id2">
-<h2><span class="section-number">3.3. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数返回一个文件对象，常用的语法规则为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -846,7 +844,8 @@ the numbers are 3 and 4.56 and 3
     <tr style="border-bottom:solid">
         <td style="text-align:left">如果该文件不存在，创建新文件进行写入</td>
     </tr>
-</table><p>上面几个读写模式的详细比较如下面的表格所示：</p>
+</table>
+<br /><p>上面几个读写模式的详细比较如下面的表格所示：</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>模式</p></th>
@@ -961,7 +960,7 @@ his name is li si
 <p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">3.4. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="output">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
@@ -1073,13 +1072,11 @@ his name is li si
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">3.2. f 函数输出</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.2.1. 用 % 格式化输出</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.2.2. 用 format 格式化输出</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.3. 读写文件</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.4. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">3.2. f 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.3. 用 format 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. 用 % 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.5. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1103,7 +1100,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

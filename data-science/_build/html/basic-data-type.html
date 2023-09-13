@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -853,7 +853,7 @@ document.write(`
 <br /></section>
 <section id="id3">
 <h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>列表（List）是最常用的 Python 数据类型，它由一个\textbf{中括号} [ ] 以及逗号分隔的不同数值或字符串组成，例如：</p>
+<p>列表（List）是最常用的 Python 数据类型，它由一个<strong>中括号</strong><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>以及逗号分隔的不同数值或字符串组成，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
@@ -1162,7 +1162,7 @@ document.write(`
 <br /></section>
 <section id="id4">
 <h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在<strong>花括号</strong>{ } 中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号 ：分割。</p>
+<p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在花括号<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号<code class="docutils literal notranslate"><span class="pre">：</span></code>分割。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;chen&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span> <span class="p">:</span> <span class="mi">95</span><span class="p">}</span>
@@ -1176,7 +1176,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>访问字典里的值时，则把相应的键放入到方括号 [] 中：</p>
+<p>访问字典里的值时，则把相应的键放入到方括号<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>中：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
@@ -1241,8 +1241,8 @@ document.write(`
         <td style="text-align:left">删除字典 dict 中的所有元素</td>
     </tr>
     <tr>
-        <td style="text-align:left">key in dict</td>
-        <td style="text-align:left">如果键 key 在字典 dict 里返回 true，否则返回 false</td>
+        <td style="text-align:left">dict.get(key, default=None)</td>
+        <td style="text-align:left">返回指定键的值，如果键不在字典中返回 default 设置的默认值</td>
     </tr>
     <tr>
         <td style="text-align:left">dict.values()</td>
@@ -1670,18 +1670,21 @@ document.write(`
 <p>请将下面的数学表达式用 Python 程序写出来，并运算结果。</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(x=\frac{3^2+4-5*6}{5}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y= (4^3.5+6)*(16\mod{4})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y= (4^{3.5}+6)*(16\mod{4})\)</span></p></li>
 </ul>
 </section>
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-1">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#compute-formula"> Exercise 2.1</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">**</span><span class="mf">3.5</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">16</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1695,7 +1698,7 @@ document.write(`
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-3">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.2</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
@@ -1716,7 +1719,7 @@ document.write(`
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-5">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.3</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="kn">import</span> <span class="nn">cmath</span>
@@ -1746,7 +1749,7 @@ document.write(`
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-7">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.4</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第一边长: &#39;</span><span class="p">))</span>
@@ -1763,43 +1766,28 @@ document.write(`
 </div>
 </section>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">3</span>
+<div class="exercise admonition" id="dict-values">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
+<section id="exercise-content">
+<p>定义一个字典，然后计算它们所有数字值的和。。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-9">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.5</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myDict</span><span class="p">:</span> 
+        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">myDict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>      
+    <span class="k">return</span> <span class="nb">sum</span>
+  
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum :&quot;</span><span class="p">,</span> <span class="n">returnSum</span><span class="p">(</span><span class="nb">dict</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a=&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a= 3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;,b = &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  3 ,b =  4
-</pre></div>
-</div>
-</div>
+</section>
 </div>
 </section>
 </section>
@@ -1902,7 +1890,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
