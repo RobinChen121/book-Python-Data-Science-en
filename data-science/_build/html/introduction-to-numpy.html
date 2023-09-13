@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>6. Numpy 简介 &#8212; Python 数据科学</title>
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -45,7 +45,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -103,7 +102,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="7. Pandas 入门" href="introduction-to-pandas.html" />
     <link rel="prev" title="5. Python 画图" href="draw-pictures.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -414,7 +413,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1><span class="section-number">6. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
 <p>Numpy (Numerical Python) 是 Python 语言一个重要的扩展库，支持大量的数组与矩阵运算，此外也提供大量的数学函数库，用于模仿数学软件 MatLab 的功能。Numpy 通常与其他库 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用。</p>
 <p>Numpy 的主要特点是：</p>
 <ul class="simple">
@@ -430,7 +429,7 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2><span class="section-number">6.1. </span>创建数组<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>创建数组<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>用 Numpy 创建数组有多种方法。首先，Numpy 中的<code class="docutils literal notranslate"><span class="pre">array</span></code>函数可以直接将 Python 的 list 类型转化为 Numpy 的数组类型 ndarray。例如，一个一维数组：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -498,8 +497,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.00e+000, 3.95e-322, 0.00e+000],
-       [0.00e+000, 0.00e+000, 0.00e+000]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0.],
+       [0., 0., 0.]])
 </pre></div>
 </div>
 </div>
@@ -570,7 +569,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">6.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>对于一维数组，numpy 的索引切片类似 Python list 类型的索引切片，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -699,7 +698,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">6.3. </span>数组拼接<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>数组拼接<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Numpy 中拼接两个数组用<code class="docutils literal notranslate"><span class="pre">append</span></code>函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -767,7 +766,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">6.4. </span>数组运算<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>数组运算<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Numpy 可以对数组进行多种代数运算，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1047,7 +1046,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>

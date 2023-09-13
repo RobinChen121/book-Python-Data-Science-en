@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>5. Python 画图 &#8212; Python 数据科学</title>
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -45,7 +45,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -105,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="6. Numpy 简介" href="introduction-to-numpy.html" />
     <link rel="prev" title="4. Python 编写函数" href="define-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -405,6 +404,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.3. 饼图，箱线图</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">5.4. 子图函数 subplot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">5.5. seaborn 简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.6. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -417,10 +417,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">5. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
-<h2><span class="section-number">5.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this headline">#</a></h2>
 <p>使用 matplotlib 包画图时，我们一般加载里面的 pyplot 函数，并命名为 plt，然后使用<code class="docutils literal notranslate"><span class="pre">plot</span></code>函数画图。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -450,7 +450,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3a805e8400dee0289d7143802e9b6e151d58849cb284302fd31df172adf59ae2.png" src="_images/3a805e8400dee0289d7143802e9b6e151d58849cb284302fd31df172adf59ae2.png" />
+<img alt="_images/3147589f8626d86a57b761c202f89186793e2926f622596c6479b537a8b93cb4.png" src="_images/3147589f8626d86a57b761c202f89186793e2926f622596c6479b537a8b93cb4.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">plot</span></code> 函数的基本用法如下：</p>
@@ -476,7 +476,7 @@ document.write(`
     </tr>
 </table>
 <br /><p>[fmt] 的常用代码（包括颜色代码、点形代码、线形代码），由下标所示。</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>颜色代码</p></th>
 <th class="head"><p>效果</p></th>
@@ -539,10 +539,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faada990d90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x25e0df33450&gt;]
 </pre></div>
 </div>
-<img alt="_images/0ecde9e93f4d729e23512b09c8afe07107c28fe2ca7d0d63b4451d60dcc58fe8.png" src="_images/0ecde9e93f4d729e23512b09c8afe07107c28fe2ca7d0d63b4451d60dcc58fe8.png" />
+<img alt="_images/aab98a7b25692c2e377b12382d55047a16b252f138da1fc1ba121499dac75f6d.png" src="_images/aab98a7b25692c2e377b12382d55047a16b252f138da1fc1ba121499dac75f6d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -552,10 +552,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faada993520&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x25e0d75d310&gt;]
 </pre></div>
 </div>
-<img alt="_images/e5034d56658d7b526d339ca391265ea614e44804345c1fe9062c916924caf604.png" src="_images/e5034d56658d7b526d339ca391265ea614e44804345c1fe9062c916924caf604.png" />
+<img alt="_images/1bd3d298e972b01dd2c3b5bbd3a2d6c3e40b3bdbd22fdc84cab01d78c56b7f1d.png" src="_images/1bd3d298e972b01dd2c3b5bbd3a2d6c3e40b3bdbd22fdc84cab01d78c56b7f1d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -565,10 +565,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faadaa19f60&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x25e0d7d7c90&gt;]
 </pre></div>
 </div>
-<img alt="_images/20d08f2ed76a3d2dbafaa5618105a5acaca1a9ef63f6d6a08c8ed880383bfafc.png" src="_images/20d08f2ed76a3d2dbafaa5618105a5acaca1a9ef63f6d6a08c8ed880383bfafc.png" />
+<img alt="_images/12e85fabfbaab59e299b99b7ca4ad4c797c14c4ca6b27c4abc4d5008c3f3a65a.png" src="_images/12e85fabfbaab59e299b99b7ca4ad4c797c14c4ca6b27c4abc4d5008c3f3a65a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -578,10 +578,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faadac7d2a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x25e0f0026d0&gt;]
 </pre></div>
 </div>
-<img alt="_images/e4cc3b1fde7efe808df32b86ce2b7eb27f733868125a1cf55ee68e787177ecf1.png" src="_images/e4cc3b1fde7efe808df32b86ce2b7eb27f733868125a1cf55ee68e787177ecf1.png" />
+<img alt="_images/e54de5fc5376cac5175b032cc2ec92a5c0195f013657519f214f168d6fe4e537.png" src="_images/e54de5fc5376cac5175b032cc2ec92a5c0195f013657519f214f168d6fe4e537.png" />
 </div>
 </div>
 <p>如果我们想自定义坐标轴的标题，坐标轴的刻度，坐标轴刻度的范围，设置图形标题，添加图例时，可以通过设置 pyplot 函数中的 xlable（横坐标轴标题）, ylabel（纵坐标轴标题）, xticks（横坐标轴刻度），yticks（纵坐标轴刻度），title（图形标题）, grid（显示网格），legend（显示图例）等属性来实现。若调整图像的清晰度，可以用<code class="docutils literal notranslate"><span class="pre">plt.rcParams[&quot;figure.dpi&quot;]</span></code> 来调整图像的 dpi 值来实现，调整图像的大小可以通过 <code class="docutils literal notranslate"><span class="pre">plt.rcParams('figsize')</span></code>来设置图像的长宽。</p>
@@ -623,12 +623,341 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/347004994cd36c891b6137606a53e58f979c71e3457ac38770d6ea51443a1a6e.png" src="_images/347004994cd36c891b6137606a53e58f979c71e3457ac38770d6ea51443a1a6e.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 25105 (\N{CJK UNIFIED IDEOGRAPH-6211}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30340 (\N{CJK UNIFIED IDEOGRAPH-7684}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 31532 (\N{CJK UNIFIED IDEOGRAPH-7B2C}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 19968 (\N{CJK UNIFIED IDEOGRAPH-4E00}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20010 (\N{CJK UNIFIED IDEOGRAPH-4E2A}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22270 (\N{CJK UNIFIED IDEOGRAPH-56FE}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24418 (\N{CJK UNIFIED IDEOGRAPH-5F62}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/ee70f9f9fda6291c42f91e0bef578c78d35428d78cc0bd2f75bc5b6e24314a15.png" src="_images/ee70f9f9fda6291c42f91e0bef578c78d35428d78cc0bd2f75bc5b6e24314a15.png" />
 </div>
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">5.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>做散点图要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数，该函数的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -678,7 +1007,174 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fc351d743f40747b68f0a05816d764eae5a4af9c6041d360ce6a275bb74bf9a1.png" src="_images/fc351d743f40747b68f0a05816d764eae5a4af9c6041d360ce6a275bb74bf9a1.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 28201 (\N{CJK UNIFIED IDEOGRAPH-6E29}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24230 (\N{CJK UNIFIED IDEOGRAPH-5EA6}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20135 (\N{CJK UNIFIED IDEOGRAPH-4EA7}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37327 (\N{CJK UNIFIED IDEOGRAPH-91CF}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/2638683a6e7796a86c10b24c138c4e317ff65ce8e32de597b50fbd0522364078.png" src="_images/2638683a6e7796a86c10b24c138c4e317ff65ce8e32de597b50fbd0522364078.png" />
 </div>
 </div>
 <p>条形图（bar chart），也称为柱状图，要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">bar</span></code>函数生成，该函数的基本语法为：</p>
@@ -704,9 +1200,9 @@ document.write(`
     </tr>
 </table>
 <br /><p>假设某项针对男女大学生购买饮用水爱好的调查结果如下表：</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>选择</p></th>
+<tr class="row-odd"><th class="text-center head"><p>选择</p></th>
 <th class="head"><p>男</p></th>
 <th class="head"><p>女</p></th>
 </tr>
@@ -760,7 +1256,191 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4fc89278c6683e0319d22ccfc773f296e51aa5d2c953f7a4ba5d47f2b56fda9c.png" src="_images/4fc89278c6683e0319d22ccfc773f296e51aa5d2c953f7a4ba5d47f2b56fda9c.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30007 (\N{CJK UNIFIED IDEOGRAPH-7537}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24615 (\N{CJK UNIFIED IDEOGRAPH-6027}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 36141 (\N{CJK UNIFIED IDEOGRAPH-8D2D}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20080 (\N{CJK UNIFIED IDEOGRAPH-4E70}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 39278 (\N{CJK UNIFIED IDEOGRAPH-996E}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 29992 (\N{CJK UNIFIED IDEOGRAPH-7528}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27700 (\N{CJK UNIFIED IDEOGRAPH-6C34}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24773 (\N{CJK UNIFIED IDEOGRAPH-60C5}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20917 (\N{CJK UNIFIED IDEOGRAPH-51B5}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35843 (\N{CJK UNIFIED IDEOGRAPH-8C03}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26597 (\N{CJK UNIFIED IDEOGRAPH-67E5}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32467 (\N{CJK UNIFIED IDEOGRAPH-7ED3}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26524 (\N{CJK UNIFIED IDEOGRAPH-679C}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30899 (\N{CJK UNIFIED IDEOGRAPH-78B3}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37240 (\N{CJK UNIFIED IDEOGRAPH-9178}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26009 (\N{CJK UNIFIED IDEOGRAPH-6599}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32511 (\N{CJK UNIFIED IDEOGRAPH-7EFF}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33590 (\N{CJK UNIFIED IDEOGRAPH-8336}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30719 (\N{CJK UNIFIED IDEOGRAPH-77FF}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27849 (\N{CJK UNIFIED IDEOGRAPH-6CC9}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27713 (\N{CJK UNIFIED IDEOGRAPH-6C41}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20854 (\N{CJK UNIFIED IDEOGRAPH-5176}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20182 (\N{CJK UNIFIED IDEOGRAPH-4ED6}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/c83097f1d68d5d855ed5f62b228f21d6db8ad0e43ad137c1bba5828c5ed94141.png" src="_images/c83097f1d68d5d855ed5f62b228f21d6db8ad0e43ad137c1bba5828c5ed94141.png" />
 </div>
 </div>
 <p>横放条形图使用<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数，用法与<code class="docutils literal notranslate"><span class="pre">bar</span></code>基本一致。</p>
@@ -777,7 +1457,145 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6e6b6556f7e1f7fcb477bd36e03408a12a24e900e1b7d4645eecbebfa2baf8ff.png" src="_images/6e6b6556f7e1f7fcb477bd36e03408a12a24e900e1b7d4645eecbebfa2baf8ff.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/bb37fb3966f0b34664884821e9278e584cbd33a091dad6cb8ab8d890d29cd6b7.png" src="_images/bb37fb3966f0b34664884821e9278e584cbd33a091dad6cb8ab8d890d29cd6b7.png" />
 </div>
 </div>
 <p>若要将男生与女生的调查情况画出两个条形图一块显示，则可以使用<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数两次，并调整<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数的条形图位置坐标以及相应刻度，使得两组条形图能够并排显示。</p>
@@ -815,7 +1633,225 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/480389863fbf5db95c1224d74539d3ec26bc3af2e06ae1424cbad4a36b7651c1.png" src="_images/480389863fbf5db95c1224d74539d3ec26bc3af2e06ae1424cbad4a36b7651c1.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22899 (\N{CJK UNIFIED IDEOGRAPH-5973}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/b0e9f331e12fcf5e9ce65c8d835eca993bbff9dad31e45a4ce6c64d2ede01398.png" src="_images/b0e9f331e12fcf5e9ce65c8d835eca993bbff9dad31e45a4ce6c64d2ede01398.png" />
 </div>
 </div>
 <p>直方图（histogram）虽然在样式上类似条形图，但它们的作用不一样。直方图用不同的矩形表示频数，常用来观察一组数据的概率分布。在直角坐标中，用横轴表示数据分组，纵轴表示频数或频率，各组与相应的频数就形成了一个个矩形，即直方图。画直方图用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">hist</span></code>函数，它的基本语法为：</p>
@@ -854,12 +1890,126 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d19c24220b936b3962f2f23a4457e896757def0bc6627a7c842753978a3b8282.png" src="_images/d19c24220b936b3962f2f23a4457e896757def0bc6627a7c842753978a3b8282.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/43f8c7a7f146ff61e16d6092ab6e77a2acb6d633fd8da493f4ab9eabcd15bef5.png" src="_images/43f8c7a7f146ff61e16d6092ab6e77a2acb6d633fd8da493f4ab9eabcd15bef5.png" />
 </div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">5.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>饼图（pie char）是一个划分为几个扇形的圆形统计图表，一般用于描述频率或百分比之间的相对关系。在饼图中，每个扇区的弧长（以及圆心角和面积）的大小与其所表示的数量呈固定比例。画饼图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">pie</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -907,7 +2057,313 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/31faa69afbcfb758eebd12417c8e47a9357f1895a704998585c84074ade99c61.png" src="_images/31faa69afbcfb758eebd12417c8e47a9357f1895a704998585c84074ade99c61.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/5245e72ab694692b1998257769e7ee9018afa809cfbb0f0554ca88d62ee0ccbb.png" src="_images/5245e72ab694692b1998257769e7ee9018afa809cfbb0f0554ca88d62ee0ccbb.png" />
 </div>
 </div>
 <p>箱线图（box plot）是一种用来显示数据统计分布情况的图形，包括数据的最大值、最小值、中位数、分位数等特征。画箱线图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数，它的基本语法如下：</p>
@@ -933,9 +2389,9 @@ document.write(`
     </tr>
 </table>
 <br /><p>假设有下面的学生成绩单：</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>课程</p></th>
+<tr class="row-odd"><th class="text-center head"><p>课程</p></th>
 <th class="head"><p>学生A</p></th>
 <th class="head"><p>学生B</p></th>
 <th class="head"><p>学生C</p></th>
@@ -1044,12 +2500,148 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b48c1d645c8cf51bde306dfd7e74aae3d1540e142d6fc0ec53e38a33b430f289.png" src="_images/b48c1d645c8cf51bde306dfd7e74aae3d1540e142d6fc0ec53e38a33b430f289.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33521 (\N{CJK UNIFIED IDEOGRAPH-82F1}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35821 (\N{CJK UNIFIED IDEOGRAPH-8BED}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35199 (\N{CJK UNIFIED IDEOGRAPH-897F}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26041 (\N{CJK UNIFIED IDEOGRAPH-65B9}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32463 (\N{CJK UNIFIED IDEOGRAPH-7ECF}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27982 (\N{CJK UNIFIED IDEOGRAPH-6D4E}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 23398 (\N{CJK UNIFIED IDEOGRAPH-5B66}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24066 (\N{CJK UNIFIED IDEOGRAPH-5E02}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22330 (\N{CJK UNIFIED IDEOGRAPH-573A}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33829 (\N{CJK UNIFIED IDEOGRAPH-8425}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 38144 (\N{CJK UNIFIED IDEOGRAPH-9500}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 36130 (\N{CJK UNIFIED IDEOGRAPH-8D22}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 21153 (\N{CJK UNIFIED IDEOGRAPH-52A1}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 31649 (\N{CJK UNIFIED IDEOGRAPH-7BA1}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 29702 (\N{CJK UNIFIED IDEOGRAPH-7406}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22522 (\N{CJK UNIFIED IDEOGRAPH-57FA}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30784 (\N{CJK UNIFIED IDEOGRAPH-7840}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20250 (\N{CJK UNIFIED IDEOGRAPH-4F1A}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35745 (\N{CJK UNIFIED IDEOGRAPH-8BA1}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32479 (\N{CJK UNIFIED IDEOGRAPH-7EDF}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/bfc0c939fd260949c103f562b503cf152c08538b427f35f5088177c7f343d6ee.png" src="_images/bfc0c939fd260949c103f562b503cf152c08538b427f35f5088177c7f343d6ee.png" />
 </div>
 </div>
 </section>
 <section id="subplot">
-<h2><span class="section-number">5.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this headline">#</a></h2>
 <p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1115,13 +2707,326 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" src="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26524 (\N{CJK UNIFIED IDEOGRAPH-679C}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27713 (\N{CJK UNIFIED IDEOGRAPH-6C41}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30719 (\N{CJK UNIFIED IDEOGRAPH-77FF}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27849 (\N{CJK UNIFIED IDEOGRAPH-6CC9}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27700 (\N{CJK UNIFIED IDEOGRAPH-6C34}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32511 (\N{CJK UNIFIED IDEOGRAPH-7EFF}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33590 (\N{CJK UNIFIED IDEOGRAPH-8336}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20854 (\N{CJK UNIFIED IDEOGRAPH-5176}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20182 (\N{CJK UNIFIED IDEOGRAPH-4ED6}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30899 (\N{CJK UNIFIED IDEOGRAPH-78B3}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37240 (\N{CJK UNIFIED IDEOGRAPH-9178}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 39278 (\N{CJK UNIFIED IDEOGRAPH-996E}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26009 (\N{CJK UNIFIED IDEOGRAPH-6599}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 25105 (\N{CJK UNIFIED IDEOGRAPH-6211}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30340 (\N{CJK UNIFIED IDEOGRAPH-7684}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20960 (\N{CJK UNIFIED IDEOGRAPH-51E0}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20010 (\N{CJK UNIFIED IDEOGRAPH-4E2A}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22270 (\N{CJK UNIFIED IDEOGRAPH-56FE}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24418 (\N{CJK UNIFIED IDEOGRAPH-5F62}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<img alt="_images/e93b5e3731a9752118bb3c233010e55d8ffee39d886178c6e956648277814643.png" src="_images/e93b5e3731a9752118bb3c233010e55d8ffee39d886178c6e956648277814643.png" />
 </div>
 </div>
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
 </section>
 <section id="seaborn">
-<h2><span class="section-number">5.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h2>
 <p>seanborn 是 Python 的另外一个常用工具包，它基于 matplotlib，但画出的图形更加美观些，并且与 Pandas 的数据类型结合地较好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1140,7 +3045,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/648bb411ae9a277d022140dde80894b59657df1c865ee199b8b59487ca8af8e7.png" src="_images/648bb411ae9a277d022140dde80894b59657df1c865ee199b8b59487ca8af8e7.png" />
+<img alt="_images/a3703407e7df87fefdc5e8aa4a07b18b40ce88f80dff78667c43e1d5e711fe00.png" src="_images/a3703407e7df87fefdc5e8aa4a07b18b40ce88f80dff78667c43e1d5e711fe00.png" />
 </div>
 </div>
 <p>可以看出，应用 seaborn 的主题后，图形的配色变化了些。下面我们导入 seaborn 自带的数据集 tips。</p>
@@ -1224,7 +3129,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a007401bd298b3907439e793dcc644849ed56976bc14e32bdfbe60aa9ab1a6fd.png" src="_images/a007401bd298b3907439e793dcc644849ed56976bc14e32bdfbe60aa9ab1a6fd.png" />
+<img alt="_images/736b6a0a9e5ec966fd84614f25fb91371516ec3337acbe72e0dbdc16dc43988f.png" src="_images/736b6a0a9e5ec966fd84614f25fb91371516ec3337acbe72e0dbdc16dc43988f.png" />
 </div>
 </div>
 <p>生成线图时，相同横坐标的数据将会合并，并且，图像会显示均值以及 95% 的置信区间：</p>
@@ -1241,7 +3146,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e8282ea22f6a856b03382340b939ca277ceaca24e456c352447e5581d430a241.png" src="_images/e8282ea22f6a856b03382340b939ca277ceaca24e456c352447e5581d430a241.png" />
+<img alt="_images/cea784f221c7ba4342ca8d2f3bf89190821c3b6f2f9ba1d0f4f3b29d6fb68675.png" src="_images/cea784f221c7ba4342ca8d2f3bf89190821c3b6f2f9ba1d0f4f3b29d6fb68675.png" />
 </div>
 </div>
 <p>seaborn 自带一些函数生成常见的图形，例如<code class="docutils literal notranslate"><span class="pre">barplot</span></code>生成条形图，<code class="docutils literal notranslate"><span class="pre">histplot</span></code>生成直方图，<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>生成箱线图：</p>
@@ -1257,7 +3162,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0bc4d7153dd890716120f208660669b64178ad3bd3322ea75eef5462088d6e95.png" src="_images/0bc4d7153dd890716120f208660669b64178ad3bd3322ea75eef5462088d6e95.png" />
+<img alt="_images/bf70ba7906ea6e82982cf93d728313ce6184364ff9f41beffc9f693182ef7777.png" src="_images/bf70ba7906ea6e82982cf93d728313ce6184364ff9f41beffc9f693182ef7777.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1271,7 +3176,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2532ab2eb755420589f80dd0ab4fc966d0ca0859ce29912becf5469101895984.png" src="_images/2532ab2eb755420589f80dd0ab4fc966d0ca0859ce29912becf5469101895984.png" />
+<img alt="_images/7c10b7094c60e6b376cabfb0268c194c9b5e8badee7968586911d57b27dfaa6e.png" src="_images/7c10b7094c60e6b376cabfb0268c194c9b5e8badee7968586911d57b27dfaa6e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1286,10 +3191,41 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bfdc20e98401ba3e97a6ef70396d6e61fbb0c9a0f699a159c777f8d8efab8171.png" src="_images/bfdc20e98401ba3e97a6ef70396d6e61fbb0c9a0f699a159c777f8d8efab8171.png" />
+<img alt="_images/c4764911b792a4c9643bef9091bf24380d147296c675dbe7016caa519c33114c.png" src="_images/c4764911b792a4c9643bef9091bf24380d147296c675dbe7016caa519c33114c.png" />
 </div>
 </div>
 <p>seaborn 还有其他一些画图函数，例如<code class="docutils literal notranslate"><span class="pre">heatmap</span></code>生成热力图，<code class="docutils literal notranslate"><span class="pre">violinplot</span></code>生成小提琴图，限于篇幅，本文不再赘述，有兴趣的读者可以查阅官方文档。</p>
+</section>
+<section id="id3">
+<h2><span class="section-number">5.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition" id="draw-heart">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
+<section id="exercise-content">
+<p>画出下面这两个函数的图形，并填充两个函数之间的区域。（提示：用<code class="docutils literal notranslate"><span class="pre">fill_between</span></code>函数）</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="draw-pictures-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#draw-heart"> Exercise 5.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.14</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</div>
 </section>
 </section>
 
@@ -1365,6 +3301,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.3. 饼图，箱线图</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">5.4. 子图函数 subplot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">5.5. seaborn 简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.6. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1388,7 +3325,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>

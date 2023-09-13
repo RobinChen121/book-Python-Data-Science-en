@@ -1,29 +1,68 @@
 Traceback (most recent call last):
-  File "/Users/zhenchen/anaconda3/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "/Users/zhenchen/anaconda3/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/Users/zhenchen/anaconda3/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/Users/zhenchen/anaconda3/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "/Users/zhenchen/anaconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\chen_\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
     return future.result()
-  File "/Users/zhenchen/anaconda3/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/Users/zhenchen/anaconda3/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/zhenchen/anaconda3/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。
+import time
+
+
+print('按下回车开始计时，按下 Ctrl + c 停止计时。') # 若是 jupyter notebook， 按下 i+i 键
+while True:
+    text = input('')
+    if text == '':    
+        starttime = time.time()
+        print('开始')
+        try:
+            while True:
+                print('计时: ', round(time.time() - starttime, 0), 's')
+                time.sleep(1)
+        except KeyboardInterrupt:
+            print('结束')
+            endtime = time.time()
+            print('总共的时间为:', round(endtime - starttime, 2),'s')
+            break
+    else:
+        break
 ------------------
 
-[0;36m  Cell [0;32mIn[32], line 1[0;36m[0m
-[0;31m    上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。[0m
-[0m          ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid character '，' (U+FF0C)
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+Cell [1;32mIn[43], line 6[0m
+[0;32m      4[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124m按下回车开始计时，按下 Ctrl + c 停止计时。[39m[38;5;124m'[39m) [38;5;66;03m# 若是 jupyter notebook， 按下 i+i 键[39;00m
+[0;32m      5[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[1;32m----> 6[0m     text [38;5;241m=[39m [38;5;28minput[39m([38;5;124m'[39m[38;5;124m'[39m)
+[0;32m      7[0m     [38;5;28;01mif[39;00m text [38;5;241m==[39m [38;5;124m'[39m[38;5;124m'[39m:    
+[0;32m      8[0m         starttime [38;5;241m=[39m time[38;5;241m.[39mtime()
 
-SyntaxError: invalid character '，' (U+FF0C) (2879357089.py, line 1)
+File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\ipykernel\kernelbase.py:1201[0m, in [0;36mKernel.raw_input[1;34m(self, prompt)[0m
+[0;32m   1199[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[0;32m   1200[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[1;32m-> 1201[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
+[0;32m   1202[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[0;32m   1203[0m     [38;5;28mstr[39m(prompt),
+[0;32m   1204[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[0;32m   1205[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[0;32m   1206[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[0;32m   1207[0m )
+
+[1;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 
