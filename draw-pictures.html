@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Python 画图 &#8212; Python 数据科学</title>
+    <title>6. Python 画图 &#8212; Python 数据科学</title>
   
   
   
@@ -102,8 +102,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'draw-pictures';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Numpy 简介" href="introduction-to-numpy.html" />
-    <link rel="prev" title="4. Python 编写函数" href="define-function.html" />
+    <link rel="next" title="7. Pandas 入门" href="introduction-to-pandas.html" />
+    <link rel="prev" title="5. Numpy 简介" href="introduction-to-numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,8 +200,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">6. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">5. Numpy 简介</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Python 画图</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
@@ -400,11 +400,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plot">5.1. 初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.2. 散点图，条形图，直方图</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.3. 饼图，箱线图</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">5.4. 子图函数 subplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">5.5. seaborn 简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plot">6.1. 初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2. 散点图，条形图，直方图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.3. 饼图，箱线图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">6.4. 子图函数 subplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">6.5. seaborn 简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.6. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -417,10 +418,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">5. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
-<h2><span class="section-number">5.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this heading">#</a></h2>
 <p>使用 matplotlib 包画图时，我们一般加载里面的 pyplot 函数，并命名为 plt，然后使用<code class="docutils literal notranslate"><span class="pre">plot</span></code>函数画图。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -539,7 +540,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe41aea0ee0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc4d8138ee0&gt;]
 </pre></div>
 </div>
 <img alt="_images/0ecde9e93f4d729e23512b09c8afe07107c28fe2ca7d0d63b4451d60dcc58fe8.png" src="_images/0ecde9e93f4d729e23512b09c8afe07107c28fe2ca7d0d63b4451d60dcc58fe8.png" />
@@ -552,7 +553,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe41aea3760&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc4d813b370&gt;]
 </pre></div>
 </div>
 <img alt="_images/e5034d56658d7b526d339ca391265ea614e44804345c1fe9062c916924caf604.png" src="_images/e5034d56658d7b526d339ca391265ea614e44804345c1fe9062c916924caf604.png" />
@@ -565,7 +566,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe41af2dea0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc4d81c1b70&gt;]
 </pre></div>
 </div>
 <img alt="_images/20d08f2ed76a3d2dbafaa5618105a5acaca1a9ef63f6d6a08c8ed880383bfafc.png" src="_images/20d08f2ed76a3d2dbafaa5618105a5acaca1a9ef63f6d6a08c8ed880383bfafc.png" />
@@ -578,7 +579,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe41ad91510&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc4f82ad1b0&gt;]
 </pre></div>
 </div>
 <img alt="_images/e4cc3b1fde7efe808df32b86ce2b7eb27f733868125a1cf55ee68e787177ecf1.png" src="_images/e4cc3b1fde7efe808df32b86ce2b7eb27f733868125a1cf55ee68e787177ecf1.png" />
@@ -628,7 +629,7 @@ document.write(`
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">5.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>做散点图要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数，该函数的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -859,7 +860,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">5.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>饼图（pie char）是一个划分为几个扇形的圆形统计图表，一般用于描述频率或百分比之间的相对关系。在饼图中，每个扇区的弧长（以及圆心角和面积）的大小与其所表示的数量呈固定比例。画饼图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">pie</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1049,7 +1050,7 @@ document.write(`
 </div>
 </section>
 <section id="subplot">
-<h2><span class="section-number">5.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h2>
 <p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1121,7 +1122,7 @@ document.write(`
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
 </section>
 <section id="seaborn">
-<h2><span class="section-number">5.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
 <p>seanborn 是 Python 的另外一个常用工具包，它基于 matplotlib，但画出的图形更加美观些，并且与 Pandas 的数据类型结合地较好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1241,7 +1242,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6ac202b0264f1d04efc53f2a45b7600163f85f71fffb22e3e417d77b9cf59a21.png" src="_images/6ac202b0264f1d04efc53f2a45b7600163f85f71fffb22e3e417d77b9cf59a21.png" />
+<img alt="_images/107ebb7bb2d363b71366ec490e2fb4b59b584c732ce913c2c1a757308f4996f1.png" src="_images/107ebb7bb2d363b71366ec490e2fb4b59b584c732ce913c2c1a757308f4996f1.png" />
 </div>
 </div>
 <p>seaborn 自带一些函数生成常见的图形，例如<code class="docutils literal notranslate"><span class="pre">barplot</span></code>生成条形图，<code class="docutils literal notranslate"><span class="pre">histplot</span></code>生成直方图，<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>生成箱线图：</p>
@@ -1257,7 +1258,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8e91f6af91e1f042f3cf2f53c88e6c1fbda80189b88c5704df0cfdff2d1a3afc.png" src="_images/8e91f6af91e1f042f3cf2f53c88e6c1fbda80189b88c5704df0cfdff2d1a3afc.png" />
+<img alt="_images/3cb7303da2a5fdfa9716b2d671ecefe092eecccca8dae650994ad6148f9883bb.png" src="_images/3cb7303da2a5fdfa9716b2d671ecefe092eecccca8dae650994ad6148f9883bb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1290,6 +1291,44 @@ document.write(`
 </div>
 </div>
 <p>seaborn 还有其他一些画图函数，例如<code class="docutils literal notranslate"><span class="pre">heatmap</span></code>生成热力图，<code class="docutils literal notranslate"><span class="pre">violinplot</span></code>生成小提琴图，限于篇幅，本文不再赘述，有兴趣的读者可以查阅官方文档。</p>
+</section>
+<section id="id3">
+<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="draw-heart">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
+<section id="exercise-content">
+<p>画出下面这两个函数的图形，并填充两个函数之间的区域。（提示：用<code class="docutils literal notranslate"><span class="pre">fill_between</span></code>函数）</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+f(x)=&amp;\sqrt{2|x| - x^2}\\
+g(x)=&amp;-2.14\sqrt{\sqrt{2}-\sqrt{|x|}}
+\end{align}
+\end{split}\]</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="draw-pictures-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#draw-heart"> Exercise 6.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.14</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</div>
 </section>
 </section>
 
@@ -1325,20 +1364,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="define-function.html"
+       href="introduction-to-numpy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Python 编写函数</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Numpy 简介</p>
       </div>
     </a>
     <a class="right-next"
-       href="introduction-to-numpy.html"
+       href="introduction-to-pandas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Numpy 简介</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Pandas 入门</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1360,11 +1399,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plot">5.1. 初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.2. 散点图，条形图，直方图</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.3. 饼图，箱线图</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">5.4. 子图函数 subplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">5.5. seaborn 简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plot">6.1. 初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2. 散点图，条形图，直方图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.3. 饼图，箱线图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">6.4. 子图函数 subplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">6.5. seaborn 简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.6. 练习</a></li>
 </ul>
   </nav></div>
 

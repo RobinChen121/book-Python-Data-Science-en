@@ -761,6 +761,10 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>计算机中，数组第一个元素的索引是 0；Python 支持倒序索引，最后一个元素的索引是 -1。</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># 截取字符串中的一部分，遵循“左闭右开”原则，得到第 1 到第 3 个字符</span>
@@ -849,7 +853,7 @@ document.write(`
 <br /></section>
 <section id="id3">
 <h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>列表（List）是最常用的 Python 数据类型，它由一个\textbf{中括号} [ ] 以及逗号分隔的不同数值或字符串组成，例如：</p>
+<p>列表（List）是最常用的 Python 数据类型，它由一个<strong>中括号</strong><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>以及逗号分隔的不同数值或字符串组成，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
@@ -1158,7 +1162,7 @@ document.write(`
 <br /></section>
 <section id="id4">
 <h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在<strong>花括号</strong>{ } 中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号 ：分割。</p>
+<p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在花括号<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号<code class="docutils literal notranslate"><span class="pre">：</span></code>分割。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;chen&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span> <span class="p">:</span> <span class="mi">95</span><span class="p">}</span>
@@ -1172,7 +1176,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>访问字典里的值时，则把相应的键放入到方括号 [] 中：</p>
+<p>访问字典里的值时，则把相应的键放入到方括号<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>中：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
@@ -1237,8 +1241,8 @@ document.write(`
         <td style="text-align:left">删除字典 dict 中的所有元素</td>
     </tr>
     <tr>
-        <td style="text-align:left">key in dict</td>
-        <td style="text-align:left">如果键 key 在字典 dict 里返回 true，否则返回 false</td>
+        <td style="text-align:left">dict.get(key, default=None)</td>
+        <td style="text-align:left">返回指定键的值，如果键不在字典中返回 default 设置的默认值</td>
     </tr>
     <tr>
         <td style="text-align:left">dict.values()</td>
@@ -1659,16 +1663,40 @@ document.write(`
 </section>
 <section id="id8">
 <h2><span class="section-number">2.8. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<div class="exercise admonition" id="circle-area">
+<div class="exercise admonition" id="compute-formula">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
 <section id="exercise-content">
-<p>根据给定的半径值，计算圆的面积</p>
+<p>请将下面的数学表达式用 Python 程序写出来，并运算结果。</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x=\frac{3^2+4-5*6}{5}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y= (4^{3.5}+6)*(16\mod{4})\)</span></p></li>
+</ul>
 </section>
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#compute-formula"> Exercise 2.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">**</span><span class="mf">3.5</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">16</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="circle-area">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<section id="exercise-content">
+<p>根据给定的半径值，计算圆的面积</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.2</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
@@ -1679,17 +1707,24 @@ document.write(`
 </div>
 </section>
 </div>
+<div class="exercise admonition" id="random">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
+<section id="exercise-content">
+<p>从字符串 ‘abcedefg’ 随机挑取 3 个字符。（提示，使用 random 库中的函数）</p>
+</section>
+</div>
 <div class="exercise admonition" id="quad-equation">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
 <section id="exercise-content">
 <p>通过用户输入数字 a, b, c，计算二次方程: <span class="math notranslate nohighlight">\(ax^2 + bx +c\)</span>。
 (提示：cmath 工具包可以计算负数的开方)</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+<div class="solution dropdown admonition" id="basic-data-type-solution-6">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.4</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="kn">import</span> <span class="nn">cmath</span>
@@ -1712,14 +1747,14 @@ document.write(`
 </div>
 <div class="exercise admonition" id="triangle-area">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
 <section id="exercise-content">
 <p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-5">
+<div class="solution dropdown admonition" id="basic-data-type-solution-8">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.3</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.5</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第一边长: &#39;</span><span class="p">))</span>
@@ -1732,6 +1767,29 @@ document.write(`
 <span class="c1"># 计算面积</span>
 <span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;三角形面积为 </span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="dict-values">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
+<section id="exercise-content">
+<p>定义一个字典，然后计算它们所有数字值的和。。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-10">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.6</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myDict</span><span class="p">:</span> 
+        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">myDict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>      
+    <span class="k">return</span> <span class="nb">sum</span>
+  
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum :&quot;</span><span class="p">,</span> <span class="n">returnSum</span><span class="p">(</span><span class="nb">dict</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
