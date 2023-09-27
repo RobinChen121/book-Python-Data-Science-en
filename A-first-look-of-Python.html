@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -97,6 +97,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'A-first-look-of-Python';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -196,10 +198,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. 初识 Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">5. Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">6. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">3. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">4. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">5. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">6. Python 画图</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
@@ -407,7 +409,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.3.4. 安装与使用工具包</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.4. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math">1.4. math 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.5. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -832,8 +835,158 @@ document.write(`
 </div>
 </section>
 </section>
+<section id="math">
+<h2><span class="section-number">1.4. </span>math 库<a class="headerlink" href="#math" title="Permalink to this heading">#</a></h2>
+<p>math 库是 Python 内置的数学函数库，提供了 4 个数学常数和 44 个数学函数。数学函数包括数值表示函数、幂对数函数、三角函数和特殊函数。</p>
+<p>数学常数：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>数学常数</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>math.pi</p></td>
+<td class="text-left"><p>圆周率 <span class="math notranslate nohighlight">\(\pi\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>math.e</p></td>
+<td class="text-left"><p>自然对数 <span class="math notranslate nohighlight">\(e\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>math.inf</p></td>
+<td class="text-left"><p>正无穷大 <span class="math notranslate nohighlight">\(\infty\)</span>，负无穷大为 <span class="math notranslate nohighlight">\(-\infty\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>math.nan</p></td>
+<td class="text-left"><p>非数值型数</p></td>
+</tr>
+</tbody>
+</table>
+<p>常用的几个数值表示函数：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>ceil(x)</p></td>
+<td class="text-left"><p>向上取整，返回不小于 <span class="math notranslate nohighlight">\(x\)</span> 的最小整数</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>floor(x)</p></td>
+<td class="text-left"><p>向下取整，返回不大于 <span class="math notranslate nohighlight">\(x\)</span> 的最小整数</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>factorial(x)</p></td>
+<td class="text-left"><p>返回整数 <span class="math notranslate nohighlight">\(x\)</span> 的阶乘</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>fsum(iterable)</p></td>
+<td class="text-left"><p>返回可迭代对象(元组, 列表等)中元素的总和，元素须全部为数值</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">fsum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>常用的几个幂对数函数：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>exp(x)</p></td>
+<td class="text-left"><p>返回不小于 <span class="math notranslate nohighlight">\(e\)</span> 的 <span class="math notranslate nohighlight">\(x\)</span> 次幂，<span class="math notranslate nohighlight">\(e^x\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>sqrt(x)</p></td>
+<td class="text-left"><p>返回 <span class="math notranslate nohighlight">\(x\)</span> 的平方根</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>log2(x)</p></td>
+<td class="text-left"><p>返回 <span class="math notranslate nohighlight">\(x\)</span> 的 2 对数值</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>log10(x)</p></td>
+<td class="text-left"><p>返回 <span class="math notranslate nohighlight">\(x\)</span> 的 10 对数值</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>log(x,[base])</p></td>
+<td class="text-left"><p>返回 <span class="math notranslate nohighlight">\(x\)</span> 以 base 为底的对数值，只输入 <span class="math notranslate nohighlight">\(x\)</span> 时返回自然对数值 <span class="math notranslate nohighlight">\(\ln x\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.38905609893065
+</pre></div>
+</div>
+</div>
+</div>
+<p>常用的几个三角函数：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>degree(x)</p></td>
+<td class="text-left"><p>返回弧度 <span class="math notranslate nohighlight">\(x\)</span> 的角度值</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>radians(x)</p></td>
+<td class="text-left"><p>返回角度 <span class="math notranslate nohighlight">\(x\)</span> 的弧度根</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>sin(x)</p></td>
+<td class="text-left"><p>返回弧度 <span class="math notranslate nohighlight">\(x\)</span> 的 正弦值</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>cos(x)</p></td>
+<td class="text-left"><p>返回弧度 <span class="math notranslate nohighlight">\(x\)</span> 的 余弦值</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>asin(x)</p></td>
+<td class="text-left"><p>返回弧度 <span class="math notranslate nohighlight">\(x\)</span> 的反正弦</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>acos(x)</p></td>
+<td class="text-left"><p>返回弧度 <span class="math notranslate nohighlight">\(x\)</span> 的反余弦值</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>atan(x)</p></td>
+<td class="text-left"><p>返回弧度 <span class="math notranslate nohighlight">\(x\)</span> 的反正切值</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>特殊函数包括高斯误差函数<code class="docutils literal notranslate"><span class="pre">erf</span></code>与伽马函数<code class="docutils literal notranslate"><span class="pre">gamma</span></code>等。</p>
+</section>
 <section id="id8">
-<h2><span class="section-number">1.4. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.5. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="A-first-look-of-Python-exercise-0">
 
 <p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
@@ -860,65 +1013,12 @@ document.write(`
 <p>通过用户的键盘输入两个数字，并计算两个数字的和。</p>
 </section>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入第一个数:&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>请输入第一个数:10
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入第 2 个数:&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>请输入第 2 个数:20
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
-</pre></div>
-</div>
-</div>
+<div class="exercise admonition" id="radians">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.3 </span></p>
+<section id="exercise-content">
+<p>利用 math 库中的函数，将弧度 <span class="math notranslate nohighlight">\(\pi/5\)</span> 转化成角度。</p>
+</section>
 </div>
 </section>
 </section>
@@ -999,7 +1099,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.3.4. 安装与使用工具包</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.4. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math">1.4. math 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.5. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1023,7 +1124,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>

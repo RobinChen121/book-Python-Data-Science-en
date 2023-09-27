@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -459,6 +459,39 @@ document.write(`
 </div>
 </div>
 </div>
+<p>print 默认输出后光标换行：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span><span class="p">)</span> <span class="c1"># 光标换行了</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang
+age is 25
+</pre></div>
+</div>
+</div>
+</div>
+<p>若要更改 print 光标结尾的内容，可以通过<code class="docutils literal notranslate"><span class="pre">end</span></code>参数更改：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang-age is 25
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="f">
 <h2><span class="section-number">4.2. </span>f 函数输出<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h2>
@@ -504,14 +537,13 @@ document.write(`
 </div>
 </div>
 </div>
-<p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
 </section>
 <section id="format">
 <h2><span class="section-number">4.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h2>
 <p>用<code class="docutils literal notranslate"><span class="pre">format</span></code>也可以实现多种格式化输出，它的基本用法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">string.format(value1, value2...)</th>
+            <th colspan=2 style="text-align:center">包含{}的string.format(value1, value2...)</th>
     </tr>
 </table>
 <br />
@@ -545,6 +577,19 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are 4.56 and 3
 the numbers are 3 and 4.56
 the numbers are 3 and 4.56 and 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>要输出大括号符号，则用两个大括号表示：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are {{0}} and {{1}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are {0} and {1}
 </pre></div>
 </div>
 </div>
@@ -666,39 +711,6 @@ the numbers are 3 and 4.56 and 3
 </div>
 </div>
 </div>
-<p>print 默认输出后光标换行：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span><span class="p">)</span> <span class="c1"># 光标换行了</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang
-age is 25
-</pre></div>
-</div>
-</div>
-</div>
-<p>若要更改 print 光标结尾的内容，可以通过 end 参数更改：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;zhang&#39;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my name is </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">age</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is zhang-age is 25
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="id1">
 <h2><span class="section-number">4.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
@@ -789,24 +801,42 @@ age is 25
 </div>
 </div>
 </div>
+<p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
 </section>
 <section id="id2">
 <h2><span class="section-number">4.5. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数返回一个文件对象，常用的语法规则为：</p>
-<table>   
-    <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">if 语句的一般模式</th>
-    </tr>
-    <tr>
-        <td style="text-align:left">filename</td>
-        <td style="text-align:left">字符串，文件地址及文件名，默认地址为当前的项目文件夹</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">mode</td>
-        <td style="text-align:left">文件读写模式，默认模式为只读(r)</td>
-    </tr>
-</table>
-<br /><p>常见的文件读写模式（mode）有：</p>
+<p>Python 对文本文件的操作步骤为<code class="docutils literal notranslate"><span class="pre">打开——操作——关闭</span></code>：打开计算机存储位置的一个文件，进行一些读写操作，然后关闭这个文件。打开后的文件处于占用状态，此时计算机的其他进程不能操作这个文件；文件关闭后，其他进程才能操作这个文件。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>Python 用``open()``函数打开一个文件对象，常用的语法规则为：
+
+&lt;table&gt;   
+    &lt;tr style=&quot;border-top:solid; border-bottom:solid&quot;&gt;
+            &lt;th colspan=2 style=&quot;text-align:center&quot;&gt;if 语句的一般模式&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td style=&quot;text-align:left&quot;&gt;filename&lt;/td&gt;
+        &lt;td style=&quot;text-align:left&quot;&gt;字符串，文件地址及文件名，默认地址为当前的项目文件夹&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr style=&quot;border-bottom:solid&quot;&gt;
+        &lt;td style=&quot;text-align:left&quot;&gt;mode&lt;/td&gt;
+        &lt;td style=&quot;text-align:left&quot;&gt;文件读写模式，默认模式为只读(r)&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[24], line 1
+    Python 用``open()``函数打开一个文件对象，常用的语法规则为：
+                                ^
+SyntaxError: invalid character &#39;，&#39; (U+FF0C)
+</pre></div>
+</div>
+</div>
+</div>
+<p>常见的文件读写模式（mode）有：</p>
 <table>
     <tr style="border-top:solid">
         <td style="text-align:left">r</td>
@@ -911,17 +941,18 @@ age is 25
 <p>举例：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># 在指定位置新建文件</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># 在当前文件夹下新建文件，若要在指定位置 E 盘 files 文件夹下打开文件 f = open(&#39;E:\\files\\test.txt&#39;, &#39;r&#39;)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;my name is zhang san</span><span class="se">\n</span><span class="s1">his name is li si&#39;</span><span class="p">)</span> <span class="c1"># 书写内容，用 \n 换行</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># 关闭打开的文件</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>上面的程序在当前目录新建了一个 txt 文件。 通过<code class="docutils literal notranslate"><span class="pre">write()</span></code>函数在文件里面写内容，其中，\n 表示换行。下面通过<code class="docutils literal notranslate"><span class="pre">read()</span></code>函数读取文件里的全部内容，并返回一个字符串：</p>
+<p>上面的程序在当前目录新建了一个 txt 文件。 通过<code class="docutils literal notranslate"><span class="pre">write()</span></code>函数在文件里面写内容，其中，\n 表示换行。若要在指定地址内创建和修改文件，可以进一步在 filename 中添加文件地址字符串。</p>
+<p>下面通过<code class="docutils literal notranslate"><span class="pre">read()</span></code>函数读取文件里的全部内容，并返回一个字符串：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># 在指定位置打开文件</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> 
 <span class="nb">str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 读取文件内容</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="c1"># 将内容输出到屏幕</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># 关闭打开的文件</span>
@@ -935,12 +966,12 @@ his name is li si
 </div>
 </div>
 </div>
-<p>如果只读取一行，可以用<code class="docutils literal notranslate"><span class="pre">readline()</span></code>函数，另外可以用<code class="docutils literal notranslate"><span class="pre">readlines()</span></code>函数读取所有行，并返回一个字符串列表。</p>
-<p>在实际的 python 读写文件中，经常用到的是 with-open 语句。由于文件读写时都有可能产生 IOError，一旦出错，后面的 f.close() 就不会调用，用 <code class="docutils literal notranslate"><span class="pre">with-open</span></code>语句可以省略 f.close() 语句。上面的读写代码也可以变为：</p>
+<p>如果只读取一行，可以用<code class="docutils literal notranslate"><span class="pre">readline()</span></code>函数，另外可以用<code class="docutils literal notranslate"><span class="pre">readlines()</span></code>函数读取所有行，并返回一个每行作为元素的列表。</p>
+<p>在实际的 python 读写文件中，经常用到的是<code class="docutils literal notranslate"><span class="pre">with-open</span></code>语句。由于文件读写时可能产生读写 IOError，一旦出错，后面的 f.close() 就不会调用，导致文件在后台一直没有关闭，用 <code class="docutils literal notranslate"><span class="pre">with-open</span></code>语句可以省略 f.close() 语句。上面的读写代码也可以变为：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 写文件</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;my name is zhang san</span><span class="se">\n</span><span class="s1">his name is li si&#39;</span><span class="p">)</span>
 
 <span class="c1"># 读文件</span>
@@ -1100,7 +1131,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>

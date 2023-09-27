@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -102,7 +102,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'basic-data-type';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Python 输出，读写文件" href="print-read-files.html" />
+    <link rel="next" title="3. Numpy 简介" href="introduction-to-numpy.html" />
     <link rel="prev" title="1. 初识 Python" href="A-first-look-of-Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -198,10 +198,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">5. Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">6. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">3. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">4. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">5. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">6. Python 画图</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
@@ -407,7 +407,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.5. 元祖类型</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.6. 集合类型</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.7. 布尔类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.8. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random">2.8. random 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.9. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -421,7 +422,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
-<p id="index-0">Python 的常用数据类型有：数字，字符串，列表，元组，字典。</p>
+<p id="index-0">Python 的常用数据类型有：数字，字符串，列表，元组，集合，字典。</p>
 <section id="id1">
 <h2><span class="section-number">2.1. </span>数字类型：整数型，浮点型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Python 中定义一个数字型变量特别方便，直接用等号赋值。例如：</p>
@@ -552,7 +553,13 @@ document.write(`
 </div>
 </div>
 </div>
-<p>求余数用百分号 %，幂运算用两个星号 **，例如：</p>
+<p>数字类型之间的相互运算的所生成的结果是“更宽”的数字类型：</p>
+<ul class="simple">
+<li><p>整数之间运算，如果数学意义上的结果是小数，结果是浮点数</p></li>
+<li><p>整数之间运算，如果数学意义上的结果是整数，结果是整数</p></li>
+<li><p>整数和浮点数的混合运算，输出结果是浮点数</p></li>
+</ul>
+<p>求余数用百分号<code class="docutils literal notranslate"><span class="pre">%</span></code>，幂运算用两个星号<code class="docutils literal notranslate"><span class="pre">**</span></code>，两个数的整数商用符号 <code class="docutils literal notranslate"><span class="pre">//</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">%</span> <span class="mi">5</span>
@@ -577,7 +584,41 @@ document.write(`
 </div>
 </div>
 </div>
-<p>对数字类型还有一些其他运算，例如求绝对值用函数<code class="docutils literal notranslate"><span class="pre">abs</span></code>，四舍五入函数用<code class="docutils literal notranslate"><span class="pre">round</span></code>，求最大值函数<code class="docutils literal notranslate"><span class="pre">max</span></code>，求最小值函数<code class="docutils literal notranslate"><span class="pre">min</span></code>：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">4.5</span><span class="o">//</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>等号<code class="docutils literal notranslate"><span class="pre">=</span></code>结合其他运算符号(operator)，Python 能够实现快速赋值操作：</p>
+<p>x operator= y 等价于 x = x operator y</p>
+<p>例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">3</span> <span class="c1">#与 x = x + 3 等价</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">*=</span> <span class="mi">3</span> <span class="c1">#与 y = y*3 等价</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =  4
+y =  6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python 对数字类型还有一些其他内置函数，例如求绝对值用函数<code class="docutils literal notranslate"><span class="pre">abs</span></code>，四舍五入函数用<code class="docutils literal notranslate"><span class="pre">round</span></code>，求最大值函数<code class="docutils literal notranslate"><span class="pre">max</span></code>，求最小值函数<code class="docutils literal notranslate"><span class="pre">min</span></code>：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">)</span>
@@ -842,15 +883,49 @@ document.write(`
         <td style="text-align:left">字符串 str 的长度</td>
     </tr>
     <tr>
-        <td style="text-align:left">isnumeric(str)</td>
+        <td style="text-align:left">isnumeric()</td>
         <td style="text-align:left">如果字符串 str 中只包含数字字符，则返回 True，否则返回 False</td>
     </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">isalpha(str)</td>
+    <tr>
+        <td style="text-align:left">isspace()</td>
+        <td style="text-align:left">如果字符串 str 都是空格，则返回 True，否则返回 False</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">isalpha()</td>
         <td style="text-align:left">如果字符串 str 的字符都是字母则返回 True, 否则返回 False</td>
     </tr>
+    <tr>
+        <td style="text-align:left" rowspan="2">replace(old, new[, count])</td>
+        <td style="text-align:left">返回字符串的副本，old 子串被替换为 new，如果 count 给出，</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">
+        则前 count 次出现的子串被替换    
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">strip([chars])</td>
+        <td style="text-align:left">返回字符串的副本，在其左侧和右侧去掉 chars 中列出的字符</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">split(sep=None, maxsplit=-1)</td>
+        <td style="text-align:left">返回一个根据 sep 分割的字符串列表</td>
+    </tr>
 </table>
-<br /></section>
+<br /><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;python data science&#39;</span>
+<span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;python&#39;, &#39;data&#39;, &#39;science&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="id3">
 <h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>列表（List）是最常用的 Python 数据类型，它由一个<strong>中括号</strong><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>以及逗号分隔的不同数值或字符串组成，例如：</p>
@@ -938,6 +1013,19 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[34, 10, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">list3</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># list 从第 2 到第 4，步长为 2的所有元素</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7]
 </pre></div>
 </div>
 </div>
@@ -1140,7 +1228,7 @@ document.write(`
     </tr>
     <tr>
         <td style="text-align:left">list(seq)</td>
-        <td style="text-align:left">将元组转化为列表</td>
+        <td style="text-align:left">将其他类型转化为列表</td>
     </tr>
     <tr>
         <td style="text-align:left">len(list)</td>
@@ -1252,7 +1340,37 @@ document.write(`
         <td style="text-align:left">dict.keys()</td>
         <td style="text-align:left">返回一个迭代器，可以使用 list() 来转换为列表</td>
     </tr>
-</table></section>
+</table><p>与列表、字符串或者元组类型一样，字典可以通过<code class="docutils literal notranslate"><span class="pre">for-in</span></code>语句对其元素进行遍历，返回的是字典的 key。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>score
+mark
+</pre></div>
+</div>
+</div>
+</div>
+<p>若要输出 value，则可以用<code class="docutils literal notranslate"><span class="pre">get</span></code>函数或者用方括号<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>里面跟 key。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95
+80
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="id5">
 <h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>Python 的元组（tuple）与列表类似，不同之处在于<strong>元组的元素不能修改</strong>。元组使用<strong>小括号</strong>创建，并使用逗号隔开。访问列表元素或者截取部分元组与列表非常类似：</p>
@@ -1661,8 +1779,68 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="random">
+<h2><span class="section-number">2.8. </span>random 库<a class="headerlink" href="#random" title="Permalink to this heading">#</a></h2>
+<p>随机数在编程中应用比较普遍，Python 内置的<code class="docutils literal notranslate"><span class="pre">random</span></code>库可以生成常见的伪随机数（计算机生成的随机数都是伪随机数，真随机数是不能人为产生的）。</p>
+<p><code class="docutils literal notranslate"><span class="pre">random</span></code>库中的常用函数：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>seed(a=None)</p></td>
+<td class="text-left"><p>初始化随机数种子，默认值为当前系统时间</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>random()</p></td>
+<td class="text-left"><p>生成一个 [0.0, 1.0] 之间的小数</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>randint(a, b)</p></td>
+<td class="text-left"><p>生成一个 [a, b] 之间的随机整数</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>uniform(a, b)</p></td>
+<td class="text-left"><p>生成一个 [a, b] 之间的随机小数</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>shuffle(seq)</p></td>
+<td class="text-left"><p>将序列类型中的元素打乱，返回打乱后的序列</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>sample(pop, k)</p></td>
+<td class="text-left"><p>从 pop 中随机选取 k 个元素，以列表形式返回</p></td>
+</tr>
+</tbody>
+</table>
+<p>随机数的种子可以通过函数<code class="docutils literal notranslate"><span class="pre">seed</span></code>指定，只要种子相同，每次生成的随机数也相同。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="c1"># 没有设置种子，每次运行显示的随机数不一样</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1434334534553876
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="c1"># 设置了种子，每次运行显示的随机数相同</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1456692551041303
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="id8">
-<h2><span class="section-number">2.8. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="compute-formula">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
@@ -1674,37 +1852,11 @@ document.write(`
 </ul>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-1">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#compute-formula"> Exercise 2.1</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">**</span><span class="mf">3.5</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">16</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</div>
 <div class="exercise admonition" id="circle-area">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
 <section id="exercise-content">
 <p>根据给定的半径值，计算圆的面积</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-3">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.2</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;圆的面积为 </span><span class="si">%.6f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
-</pre></div>
-</div>
 </section>
 </div>
 <div class="exercise admonition" id="random">
@@ -1722,53 +1874,11 @@ document.write(`
 (提示：cmath 工具包可以计算负数的开方)</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-6">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.4</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
-<span class="kn">import</span> <span class="nn">cmath</span>
- 
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 a: &#39;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 b: &#39;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 c: &#39;</span><span class="p">))</span>
- 
-<span class="c1"># 计算</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
- 
-<span class="c1"># 两种求解方式</span>
-<span class="n">sol1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
-<span class="n">sol2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">+</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
- 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;结果为 </span><span class="si">{0}</span><span class="s1"> 和 </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sol1</span><span class="p">,</span><span class="n">sol2</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-</div>
 <div class="exercise admonition" id="triangle-area">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
 <section id="exercise-content">
 <p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-8">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.5</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第一边长: &#39;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第二边长: &#39;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第三边长: &#39;</span><span class="p">))</span>
- 
-<span class="c1"># 计算半周长</span>
-<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
- 
-<span class="c1"># 计算面积</span>
-<span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;三角形面积为 </span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">area</span><span class="p">)</span>
-</pre></div>
-</div>
 </section>
 </div>
 <div class="exercise admonition" id="dict-values">
@@ -1838,11 +1948,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="print-read-files.html"
+       href="introduction-to-numpy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Python 输出，读写文件</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Numpy 简介</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1871,7 +1981,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.5. 元祖类型</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.6. 集合类型</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.7. 布尔类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.8. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random">2.8. random 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.9. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1895,7 +2006,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
