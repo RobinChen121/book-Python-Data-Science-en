@@ -21,48 +21,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import time
-
-
-print('按下回车开始计时，按下 Ctrl + c 停止计时。') # 若是 jupyter notebook， 按下 i+i 键
-while True:
-    text = input('')
-    if text == '':    
-        starttime = time.time()
-        print('开始')
-        try:
-            while True:
-                print('计时: ', round(time.time() - starttime, 0), 's')
-                time.sleep(1)
-        except KeyboardInterrupt:
-            print('结束')
-            endtime = time.time()
-            print('总共的时间为:', round(endtime - starttime, 2),'s')
-            break
-    else:
-        break
+举例：
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
-Cell [1;32mIn[43], line 6[0m
-[0;32m      4[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124m按下回车开始计时，按下 Ctrl + c 停止计时。[39m[38;5;124m'[39m) [38;5;66;03m# 若是 jupyter notebook， 按下 i+i 键[39;00m
-[0;32m      5[0m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
-[1;32m----> 6[0m     text [38;5;241m=[39m [38;5;28minput[39m([38;5;124m'[39m[38;5;124m'[39m)
-[0;32m      7[0m     [38;5;28;01mif[39;00m text [38;5;241m==[39m [38;5;124m'[39m[38;5;124m'[39m:    
-[0;32m      8[0m         starttime [38;5;241m=[39m time[38;5;241m.[39mtime()
+[1;36m  Cell [1;32mIn[2], line 1[1;36m[0m
+[1;33m    举例：[0m
+[1;37m      ^[0m
+[1;31mSyntaxError[0m[1;31m:[0m invalid character '：' (U+FF1A)
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\ipykernel\kernelbase.py:1201[0m, in [0;36mKernel.raw_input[1;34m(self, prompt)[0m
-[0;32m   1199[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
-[0;32m   1200[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
-[1;32m-> 1201[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(msg)
-[0;32m   1202[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
-[0;32m   1203[0m     [38;5;28mstr[39m(prompt),
-[0;32m   1204[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
-[0;32m   1205[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
-[0;32m   1206[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
-[0;32m   1207[0m )
-
-[1;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
-StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
+SyntaxError: invalid character '：' (U+FF1A) (2928948528.py, line 1)
 

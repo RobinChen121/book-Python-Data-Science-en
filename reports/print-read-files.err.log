@@ -1,48 +1,54 @@
 Traceback (most recent call last):
-  File "D:\ProgramData\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
     return loop.run_until_complete(coro)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  File "D:\Users\chen_\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-Python 用``open()``函数打开一个文件对象，常用的语法规则为：
+# 写文件
+with open('test.txt', 'w') as f:
+     f.write('my name is zhang san\nhis name is li si')
 
-<table>   
-    <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">if 语句的一般模式</th>
-    </tr>
-    <tr>
-        <td style="text-align:left">filename</td>
-        <td style="text-align:left">字符串，文件地址及文件名，默认地址为当前的项目文件夹</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">mode</td>
-        <td style="text-align:left">文件读写模式，默认模式为只读(r)</td>
-    </tr>
-</table>
-<br />
+# 读文件
+with open ('./text.txt', 'r') as f:
+     str = f.read() # 读取文件内容
+     print(str) # 将内容输出到屏幕
 ------------------
 
-[1;36m  Cell [1;32mIn[24], line 1[1;36m[0m
-[1;33m    Python 用``open()``函数打开一个文件对象，常用的语法规则为：[0m
-[1;37m                                ^[0m
-[1;31mSyntaxError[0m[1;31m:[0m invalid character '，' (U+FF0C)
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [1;32mIn[26], line 6[0m
+[0;32m      3[0m      f[38;5;241m.[39mwrite([38;5;124m'[39m[38;5;124mmy name is zhang san[39m[38;5;130;01m\n[39;00m[38;5;124mhis name is li si[39m[38;5;124m'[39m)
+[0;32m      5[0m [38;5;66;03m# 读文件[39;00m
+[1;32m----> 6[0m [38;5;28;01mwith[39;00m [38;5;28mopen[39m ([38;5;124m'[39m[38;5;124m./text.txt[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mr[39m[38;5;124m'[39m) [38;5;28;01mas[39;00m f:
+[0;32m      7[0m      [38;5;28mstr[39m [38;5;241m=[39m f[38;5;241m.[39mread() [38;5;66;03m# 读取文件内容[39;00m
+[0;32m      8[0m      [38;5;28mprint[39m([38;5;28mstr[39m)
 
-SyntaxError: invalid character '，' (U+FF0C) (142548284.py, line 1)
+File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\interactiveshell.py:284[0m, in [0;36m_modified_open[1;34m(file, *args, **kwargs)[0m
+[0;32m    277[0m [38;5;28;01mif[39;00m file [38;5;129;01min[39;00m {[38;5;241m0[39m, [38;5;241m1[39m, [38;5;241m2[39m}:
+[0;32m    278[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[0;32m    279[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mIPython won[39m[38;5;124m'[39m[38;5;124mt let you open fd=[39m[38;5;132;01m{[39;00mfile[38;5;132;01m}[39;00m[38;5;124m by default [39m[38;5;124m"[39m
+[0;32m    280[0m         [38;5;124m"[39m[38;5;124mas it is likely to crash IPython. If you know what you are doing, [39m[38;5;124m"[39m
+[0;32m    281[0m         [38;5;124m"[39m[38;5;124myou can use builtins[39m[38;5;124m'[39m[38;5;124m open.[39m[38;5;124m"[39m
+[0;32m    282[0m     )
+[1;32m--> 284[0m [38;5;28;01mreturn[39;00m io_open(file, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './text.txt'
+FileNotFoundError: [Errno 2] No such file or directory: './text.txt'
 
