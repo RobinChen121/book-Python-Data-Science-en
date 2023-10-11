@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>6. Python 画图 &#8212; Python 数据科学</title>
   
@@ -45,7 +45,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -105,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="7. Pandas 入门" href="introduction-to-pandas.html" />
     <link rel="prev" title="5. Python 编写函数" href="define-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -418,10 +417,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">6. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
-<h2><span class="section-number">6.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this headline">#</a></h2>
 <p>使用 matplotlib 包画图时，我们一般加载里面的 pyplot 函数，并命名为 plt，然后使用<code class="docutils literal notranslate"><span class="pre">plot</span></code>函数画图。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,7 +476,7 @@ document.write(`
     </tr>
 </table>
 <br /><p>[fmt] 的常用代码（包括颜色代码、点形代码、线形代码），由下标所示。</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>颜色代码</p></th>
 <th class="head"><p>效果</p></th>
@@ -540,7 +539,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x29c5f138450&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x281dd552e90&gt;]
 </pre></div>
 </div>
 <img alt="_images/aab98a7b25692c2e377b12382d55047a16b252f138da1fc1ba121499dac75f6d.png" src="_images/aab98a7b25692c2e377b12382d55047a16b252f138da1fc1ba121499dac75f6d.png" />
@@ -553,7 +552,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x29c5faa3810&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x281dcd91650&gt;]
 </pre></div>
 </div>
 <img alt="_images/1bd3d298e972b01dd2c3b5bbd3a2d6c3e40b3bdbd22fdc84cab01d78c56b7f1d.png" src="_images/1bd3d298e972b01dd2c3b5bbd3a2d6c3e40b3bdbd22fdc84cab01d78c56b7f1d.png" />
@@ -566,7 +565,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x29c5f293b10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x281dcdeae10&gt;]
 </pre></div>
 </div>
 <img alt="_images/12e85fabfbaab59e299b99b7ca4ad4c797c14c4ca6b27c4abc4d5008c3f3a65a.png" src="_images/12e85fabfbaab59e299b99b7ca4ad4c797c14c4ca6b27c4abc4d5008c3f3a65a.png" />
@@ -579,7 +578,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x29c5f313990&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x281dd652550&gt;]
 </pre></div>
 </div>
 <img alt="_images/e54de5fc5376cac5175b032cc2ec92a5c0195f013657519f214f168d6fe4e537.png" src="_images/e54de5fc5376cac5175b032cc2ec92a5c0195f013657519f214f168d6fe4e537.png" />
@@ -663,19 +662,19 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 25105 (\N{CJK UNIFIED IDEOGRAPH-6211}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 25105 (\N{CJK UNIFIED IDEOGRAPH-6211}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30340 (\N{CJK UNIFIED IDEOGRAPH-7684}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30340 (\N{CJK UNIFIED IDEOGRAPH-7684}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 31532 (\N{CJK UNIFIED IDEOGRAPH-7B2C}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 31532 (\N{CJK UNIFIED IDEOGRAPH-7B2C}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 19968 (\N{CJK UNIFIED IDEOGRAPH-4E00}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 19968 (\N{CJK UNIFIED IDEOGRAPH-4E00}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20010 (\N{CJK UNIFIED IDEOGRAPH-4E2A}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20010 (\N{CJK UNIFIED IDEOGRAPH-4E2A}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22270 (\N{CJK UNIFIED IDEOGRAPH-56FE}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22270 (\N{CJK UNIFIED IDEOGRAPH-56FE}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24418 (\N{CJK UNIFIED IDEOGRAPH-5F62}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24418 (\N{CJK UNIFIED IDEOGRAPH-5F62}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
@@ -958,7 +957,7 @@ findfont: Generic family &#39;sans-serif&#39; not found because none of the foll
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">6.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>做散点图要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数，该函数的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1038,9 +1037,9 @@ findfont: Generic family &#39;sans-serif&#39; not found because none of the foll
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 28201 (\N{CJK UNIFIED IDEOGRAPH-6E29}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 28201 (\N{CJK UNIFIED IDEOGRAPH-6E29}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24230 (\N{CJK UNIFIED IDEOGRAPH-5EA6}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24230 (\N{CJK UNIFIED IDEOGRAPH-5EA6}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
@@ -1066,9 +1065,9 @@ findfont: Generic family &#39;sans-serif&#39; not found because none of the foll
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20135 (\N{CJK UNIFIED IDEOGRAPH-4EA7}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20135 (\N{CJK UNIFIED IDEOGRAPH-4EA7}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37327 (\N{CJK UNIFIED IDEOGRAPH-91CF}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37327 (\N{CJK UNIFIED IDEOGRAPH-91CF}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 </pre></div>
 </div>
@@ -1203,9 +1202,9 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
     </tr>
 </table>
 <br /><p>假设某项针对男女大学生购买饮用水爱好的调查结果如下表：</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>选择</p></th>
+<tr class="row-odd"><th class="text-center head"><p>选择</p></th>
 <th class="head"><p>男</p></th>
 <th class="head"><p>女</p></th>
 </tr>
@@ -1292,70 +1291,68 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30007 (\N{CJK UNIFIED IDEOGRAPH-7537}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30007 (\N{CJK UNIFIED IDEOGRAPH-7537}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24615 (\N{CJK UNIFIED IDEOGRAPH-6027}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24615 (\N{CJK UNIFIED IDEOGRAPH-6027}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 36141 (\N{CJK UNIFIED IDEOGRAPH-8D2D}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 36141 (\N{CJK UNIFIED IDEOGRAPH-8D2D}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20080 (\N{CJK UNIFIED IDEOGRAPH-4E70}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20080 (\N{CJK UNIFIED IDEOGRAPH-4E70}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 39278 (\N{CJK UNIFIED IDEOGRAPH-996E}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 39278 (\N{CJK UNIFIED IDEOGRAPH-996E}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 29992 (\N{CJK UNIFIED IDEOGRAPH-7528}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 29992 (\N{CJK UNIFIED IDEOGRAPH-7528}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27700 (\N{CJK UNIFIED IDEOGRAPH-6C34}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27700 (\N{CJK UNIFIED IDEOGRAPH-6C34}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24773 (\N{CJK UNIFIED IDEOGRAPH-60C5}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24773 (\N{CJK UNIFIED IDEOGRAPH-60C5}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20917 (\N{CJK UNIFIED IDEOGRAPH-51B5}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20917 (\N{CJK UNIFIED IDEOGRAPH-51B5}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35843 (\N{CJK UNIFIED IDEOGRAPH-8C03}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35843 (\N{CJK UNIFIED IDEOGRAPH-8C03}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26597 (\N{CJK UNIFIED IDEOGRAPH-67E5}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26597 (\N{CJK UNIFIED IDEOGRAPH-67E5}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32467 (\N{CJK UNIFIED IDEOGRAPH-7ED3}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32467 (\N{CJK UNIFIED IDEOGRAPH-7ED3}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26524 (\N{CJK UNIFIED IDEOGRAPH-679C}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30899 (\N{CJK UNIFIED IDEOGRAPH-78B3}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37240 (\N{CJK UNIFIED IDEOGRAPH-9178}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26009 (\N{CJK UNIFIED IDEOGRAPH-6599}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26524 (\N{CJK UNIFIED IDEOGRAPH-679C}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32511 (\N{CJK UNIFIED IDEOGRAPH-7EFF}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30899 (\N{CJK UNIFIED IDEOGRAPH-78B3}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33590 (\N{CJK UNIFIED IDEOGRAPH-8336}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37240 (\N{CJK UNIFIED IDEOGRAPH-9178}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30719 (\N{CJK UNIFIED IDEOGRAPH-77FF}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27849 (\N{CJK UNIFIED IDEOGRAPH-6CC9}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26009 (\N{CJK UNIFIED IDEOGRAPH-6599}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27713 (\N{CJK UNIFIED IDEOGRAPH-6C41}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32511 (\N{CJK UNIFIED IDEOGRAPH-7EFF}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33590 (\N{CJK UNIFIED IDEOGRAPH-8336}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20854 (\N{CJK UNIFIED IDEOGRAPH-5176}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30719 (\N{CJK UNIFIED IDEOGRAPH-77FF}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20182 (\N{CJK UNIFIED IDEOGRAPH-4ED6}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27849 (\N{CJK UNIFIED IDEOGRAPH-6CC9}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27713 (\N{CJK UNIFIED IDEOGRAPH-6C41}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20854 (\N{CJK UNIFIED IDEOGRAPH-5176}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20182 (\N{CJK UNIFIED IDEOGRAPH-4ED6}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
@@ -1692,11 +1689,9 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22899 (\N{CJK UNIFIED IDEOGRAPH-5973}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22899 (\N{CJK UNIFIED IDEOGRAPH-5973}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
@@ -2016,7 +2011,7 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">6.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>饼图（pie char）是一个划分为几个扇形的圆形统计图表，一般用于描述频率或百分比之间的相对关系。在饼图中，每个扇区的弧长（以及圆心角和面积）的大小与其所表示的数量呈固定比例。画饼图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">pie</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -2396,9 +2391,9 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
     </tr>
 </table>
 <br /><p>假设有下面的学生成绩单：</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>课程</p></th>
+<tr class="row-odd"><th class="text-center head"><p>课程</p></th>
 <th class="head"><p>学生A</p></th>
 <th class="head"><p>学生B</p></th>
 <th class="head"><p>学生C</p></th>
@@ -2525,60 +2520,60 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33521 (\N{CJK UNIFIED IDEOGRAPH-82F1}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33521 (\N{CJK UNIFIED IDEOGRAPH-82F1}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35821 (\N{CJK UNIFIED IDEOGRAPH-8BED}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35199 (\N{CJK UNIFIED IDEOGRAPH-897F}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26041 (\N{CJK UNIFIED IDEOGRAPH-65B9}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32463 (\N{CJK UNIFIED IDEOGRAPH-7ECF}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27982 (\N{CJK UNIFIED IDEOGRAPH-6D4E}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 23398 (\N{CJK UNIFIED IDEOGRAPH-5B66}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35821 (\N{CJK UNIFIED IDEOGRAPH-8BED}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24066 (\N{CJK UNIFIED IDEOGRAPH-5E02}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35199 (\N{CJK UNIFIED IDEOGRAPH-897F}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22330 (\N{CJK UNIFIED IDEOGRAPH-573A}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26041 (\N{CJK UNIFIED IDEOGRAPH-65B9}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33829 (\N{CJK UNIFIED IDEOGRAPH-8425}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32463 (\N{CJK UNIFIED IDEOGRAPH-7ECF}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 38144 (\N{CJK UNIFIED IDEOGRAPH-9500}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27982 (\N{CJK UNIFIED IDEOGRAPH-6D4E}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 36130 (\N{CJK UNIFIED IDEOGRAPH-8D22}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 21153 (\N{CJK UNIFIED IDEOGRAPH-52A1}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 31649 (\N{CJK UNIFIED IDEOGRAPH-7BA1}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 29702 (\N{CJK UNIFIED IDEOGRAPH-7406}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 23398 (\N{CJK UNIFIED IDEOGRAPH-5B66}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22522 (\N{CJK UNIFIED IDEOGRAPH-57FA}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24066 (\N{CJK UNIFIED IDEOGRAPH-5E02}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30784 (\N{CJK UNIFIED IDEOGRAPH-7840}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22330 (\N{CJK UNIFIED IDEOGRAPH-573A}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20250 (\N{CJK UNIFIED IDEOGRAPH-4F1A}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33829 (\N{CJK UNIFIED IDEOGRAPH-8425}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35745 (\N{CJK UNIFIED IDEOGRAPH-8BA1}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 38144 (\N{CJK UNIFIED IDEOGRAPH-9500}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32479 (\N{CJK UNIFIED IDEOGRAPH-7EDF}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 36130 (\N{CJK UNIFIED IDEOGRAPH-8D22}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 21153 (\N{CJK UNIFIED IDEOGRAPH-52A1}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 31649 (\N{CJK UNIFIED IDEOGRAPH-7BA1}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 29702 (\N{CJK UNIFIED IDEOGRAPH-7406}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22522 (\N{CJK UNIFIED IDEOGRAPH-57FA}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30784 (\N{CJK UNIFIED IDEOGRAPH-7840}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20250 (\N{CJK UNIFIED IDEOGRAPH-4F1A}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 35745 (\N{CJK UNIFIED IDEOGRAPH-8BA1}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32479 (\N{CJK UNIFIED IDEOGRAPH-7EDF}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 </pre></div>
 </div>
@@ -2650,7 +2645,7 @@ findfont: Generic family &#39;sans-serif&#39; not found because none of the foll
 </div>
 </section>
 <section id="subplot">
-<h2><span class="section-number">6.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this headline">#</a></h2>
 <p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -2779,21 +2774,9 @@ findfont: Generic family &#39;sans-serif&#39; not found because none of the foll
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26524 (\N{CJK UNIFIED IDEOGRAPH-679C}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26524 (\N{CJK UNIFIED IDEOGRAPH-679C}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27713 (\N{CJK UNIFIED IDEOGRAPH-6C41}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30719 (\N{CJK UNIFIED IDEOGRAPH-77FF}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27849 (\N{CJK UNIFIED IDEOGRAPH-6CC9}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27700 (\N{CJK UNIFIED IDEOGRAPH-6C34}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27713 (\N{CJK UNIFIED IDEOGRAPH-6C41}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
@@ -2801,19 +2784,11 @@ findfont: Generic family &#39;sans-serif&#39; not found because none of the foll
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32511 (\N{CJK UNIFIED IDEOGRAPH-7EFF}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30719 (\N{CJK UNIFIED IDEOGRAPH-77FF}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33590 (\N{CJK UNIFIED IDEOGRAPH-8336}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27849 (\N{CJK UNIFIED IDEOGRAPH-6CC9}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20854 (\N{CJK UNIFIED IDEOGRAPH-5176}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20182 (\N{CJK UNIFIED IDEOGRAPH-4ED6}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 27700 (\N{CJK UNIFIED IDEOGRAPH-6C34}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
@@ -2821,13 +2796,9 @@ findfont: Generic family &#39;sans-serif&#39; not found because none of the foll
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30899 (\N{CJK UNIFIED IDEOGRAPH-78B3}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 32511 (\N{CJK UNIFIED IDEOGRAPH-7EFF}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37240 (\N{CJK UNIFIED IDEOGRAPH-9178}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 39278 (\N{CJK UNIFIED IDEOGRAPH-996E}) missing from current font.
-  fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26009 (\N{CJK UNIFIED IDEOGRAPH-6599}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 33590 (\N{CJK UNIFIED IDEOGRAPH-8336}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
@@ -2835,17 +2806,41 @@ findfont: Generic family &#39;sans-serif&#39; not found because none of the foll
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 25105 (\N{CJK UNIFIED IDEOGRAPH-6211}) missing from current font.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20854 (\N{CJK UNIFIED IDEOGRAPH-5176}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30340 (\N{CJK UNIFIED IDEOGRAPH-7684}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20182 (\N{CJK UNIFIED IDEOGRAPH-4ED6}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20960 (\N{CJK UNIFIED IDEOGRAPH-51E0}) missing from current font.
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30899 (\N{CJK UNIFIED IDEOGRAPH-78B3}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20010 (\N{CJK UNIFIED IDEOGRAPH-4E2A}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 37240 (\N{CJK UNIFIED IDEOGRAPH-9178}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22270 (\N{CJK UNIFIED IDEOGRAPH-56FE}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 39278 (\N{CJK UNIFIED IDEOGRAPH-996E}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
-D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24418 (\N{CJK UNIFIED IDEOGRAPH-5F62}) missing from current font.
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 26009 (\N{CJK UNIFIED IDEOGRAPH-6599}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Generic family &#39;sans-serif&#39; not found because none of the following families were found: Heiti TC
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 25105 (\N{CJK UNIFIED IDEOGRAPH-6211}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 30340 (\N{CJK UNIFIED IDEOGRAPH-7684}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20960 (\N{CJK UNIFIED IDEOGRAPH-51E0}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 20010 (\N{CJK UNIFIED IDEOGRAPH-4E2A}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 22270 (\N{CJK UNIFIED IDEOGRAPH-56FE}) missing from current font.
+  fig.canvas.print_figure(bytes_io, **kw)
+D:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserWarning: Glyph 24418 (\N{CJK UNIFIED IDEOGRAPH-5F62}) missing from current font.
   fig.canvas.print_figure(bytes_io, **kw)
 </pre></div>
 </div>
@@ -3035,7 +3030,7 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
 </section>
 <section id="seaborn">
-<h2><span class="section-number">6.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h2>
 <p>seanborn 是 Python 的另外一个常用工具包，它基于 matplotlib，但画出的图形更加美观些，并且与 Pandas 的数据类型结合地较好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3156,7 +3151,7 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2248dc84367303ddeda4ea83de09eefbce27cec079dd0cd1b417997c4f866981.png" src="_images/2248dc84367303ddeda4ea83de09eefbce27cec079dd0cd1b417997c4f866981.png" />
+<img alt="_images/071d71087978ff83602c22694d2e17f23b1bcb9d954fc1766c0b1a31d9455fad.png" src="_images/071d71087978ff83602c22694d2e17f23b1bcb9d954fc1766c0b1a31d9455fad.png" />
 </div>
 </div>
 <p>seaborn 自带一些函数生成常见的图形，例如<code class="docutils literal notranslate"><span class="pre">barplot</span></code>生成条形图，<code class="docutils literal notranslate"><span class="pre">histplot</span></code>生成直方图，<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>生成箱线图：</p>
@@ -3172,7 +3167,7 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3c06218630dbf259da545aa83cfb84cd0b7b1f43dadaa816d1d941049ebecd58.png" src="_images/3c06218630dbf259da545aa83cfb84cd0b7b1f43dadaa816d1d941049ebecd58.png" />
+<img alt="_images/e55f2ffa70e63e59c1804b9440ff940c2ab0a546df210387007ac65c2e9adf71.png" src="_images/e55f2ffa70e63e59c1804b9440ff940c2ab0a546df210387007ac65c2e9adf71.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3207,7 +3202,7 @@ D:\ProgramData\anaconda3\Lib\site-packages\IPython\core\pylabtools.py:152: UserW
 <p>seaborn 还有其他一些画图函数，例如<code class="docutils literal notranslate"><span class="pre">heatmap</span></code>生成热力图，<code class="docutils literal notranslate"><span class="pre">violinplot</span></code>生成小提琴图，限于篇幅，本文不再赘述，有兴趣的读者可以查阅官方文档。</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition" id="draw-heart">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
