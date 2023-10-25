@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Numpy 简介 &#8212; Python 数据科学</title>
+    <title>4. Numpy 简介 &#8212; Python 数据科学</title>
   
   
   
@@ -99,8 +99,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-numpy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Python 输出，读写文件" href="print-read-files.html" />
-    <link rel="prev" title="2. Python 的常用数据类型" href="basic-data-type.html" />
+    <link rel="next" title="5. Pandas 入门" href="introduction-to-pandas.html" />
+    <link rel="prev" title="3. Python 编写函数" href="define-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -195,11 +195,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">4. Python 输出，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">5. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">6. Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">3. Python 编写函数</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">6. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
@@ -397,10 +397,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. 创建数组</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 数组索引和切片</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. 数组拼接</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.4. 数组运算</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. 创建数组</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2. 数组索引和切片</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.3. 数组拼接</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.4. 数组运算</a></li>
 </ul>
             </nav>
         </div>
@@ -413,7 +413,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1><span class="section-number">3. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
 <p>Numpy (Numerical Python) 是 Python 语言一个重要的扩展库，支持大量的数组与矩阵运算，此外也提供大量的数学函数库，用于模仿数学软件 MatLab 的功能。Numpy 通常与其他库 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用。</p>
 <p>Numpy 的主要特点是：</p>
 <ul class="simple">
@@ -429,7 +429,7 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2><span class="section-number">3.1. </span>创建数组<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1. </span>创建数组<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>用 Numpy 创建数组有多种方法。首先，Numpy 中的<code class="docutils literal notranslate"><span class="pre">array</span></code>函数可以直接将 Python 的 list 类型转化为 Numpy 的数组类型 ndarray。例如，一个一维数组：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -569,7 +569,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">3.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>对于一维数组，numpy 的索引切片类似 Python list 类型的索引切片，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -698,7 +698,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">3.3. </span>数组拼接<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.3. </span>数组拼接<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Numpy 中拼接两个数组用<code class="docutils literal notranslate"><span class="pre">append</span></code>函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -766,7 +766,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">3.4. </span>数组运算<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.4. </span>数组运算<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Numpy 可以对数组进行多种代数运算，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -896,14 +896,16 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># c 的特征值与特征向量</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># c 的特征值与特征向量</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;eigenvalues are &#39;</span><span class="p">,</span> <span class="n">eigenvalues</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;eigenvectors are&#39;</span><span class="p">,</span> <span class="n">eigenvectors</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([-0.17890835, 11.17890835]),
- array([[-0.76729658, -0.57152478],
-        [ 0.64129241, -0.82058481]]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues are  [-0.17890835 11.17890835]
+eigenvectors are [[-0.76729658 -0.57152478]
+ [ 0.64129241 -0.82058481]]
 </pre></div>
 </div>
 </div>
@@ -984,20 +986,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="basic-data-type.html"
+       href="define-function.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Python 的常用数据类型</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Python 编写函数</p>
       </div>
     </a>
     <a class="right-next"
-       href="print-read-files.html"
+       href="introduction-to-pandas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Python 输出，读写文件</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Pandas 入门</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1019,10 +1021,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. 创建数组</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 数组索引和切片</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. 数组拼接</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.4. 数组运算</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. 创建数组</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2. 数组索引和切片</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.3. 数组拼接</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.4. 数组运算</a></li>
 </ul>
   </nav></div>
 

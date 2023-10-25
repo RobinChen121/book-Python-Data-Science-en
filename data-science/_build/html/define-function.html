@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Python 编写函数 &#8212; Python 数据科学</title>
+    <title>3. Python 编写函数 &#8212; Python 数据科学</title>
   
   
   
@@ -101,8 +101,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'define-function';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Python 画图" href="draw-pictures.html" />
-    <link rel="prev" title="4. Python 输出，读写文件" href="print-read-files.html" />
+    <link rel="next" title="4. Numpy 简介" href="introduction-to-numpy.html" />
+    <link rel="prev" title="2. Python 的常用数据类型" href="basic-data-type.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -197,11 +197,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">3. Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">4. Python 输出，读写文件</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">6. Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">6. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
@@ -399,17 +399,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.1. 条件语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.2. 循环语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.3. 自定义函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.3.1. 函数参数的传递类型</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.3.2. 函数的参数传入方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. 条件语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 循环语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. 自定义函数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.3.1. 函数参数的传递类型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.3.2. 函数的参数传入方法</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">5.4. lambda, map, filter, reduce 函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">5.5. try-except 语句调试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.6. 一些常用的内置函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.7. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">3.4. lambda, map, filter, reduce 函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">3.5. try-except 语句调试</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.6. 一些常用的内置函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.7. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -422,10 +422,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">5. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <p>用 Python 编写函数时，经常要用到条件语句<code class="docutils literal notranslate"><span class="pre">if</span></code>， 循环语句<code class="docutils literal notranslate"><span class="pre">for</span></code>或<code class="docutils literal notranslate"><span class="pre">while</span></code>。</p>
 <section id="id1">
-<h2><span class="section-number">5.1. </span>条件语句<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1. </span>条件语句<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>语句的字面意思是：如果（if）满足条件，做什么，否则（else）做什么。例如，下面一段代码：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -473,14 +473,25 @@ document.write(`
 </div>
 <p>上面 if 语句块的执行顺序为：如果条件1 为真，将执行 “statement_block_1” 块语句，如果条件1 为假，将判断 “条件2”，如果条件2 为真，将执行 “statement_block_2” 块语句，如果条件2 为假，将执行”statement_block_3”块语句。</p>
 <p>举例：</p>
-<p>wage = 5000
-print(“”)
-if wage &lt;= 3000:
-print(“贫困户”)
-elif wage &lt;= 12000:
-print(“平均水平”)
-else:
-print(“土豪”)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">12000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;平均水平&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;土豪&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>平均水平
+</pre></div>
+</div>
+</div>
+</div>
 <p>上面语句的意思是，若输入的月薪小于 3000，则输出“贫困户”，否则若月薪在 3000 与 12000 之间，输出“平均水平”，若月薪在 12000 之上，则输出“土豪”。</p>
 <p>if 语句里面还可以嵌套 if 语句，进一步增加判断条件，举例：</p>
 <div class="cell docutils container">
@@ -513,7 +524,7 @@ print(“土豪”)</p>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">5.2. </span>循环语句<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2. </span>循环语句<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>循环语句一般有两种，for 语句与 while 语句。for 循环可以遍历任何序列的项目，如一个列表、元组、集合或者一个字符串。for 循环的一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -661,7 +672,7 @@ print(“土豪”)</p>
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">5.3. </span>自定义函数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3. </span>自定义函数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Python 提供了许多内建函数，比如 print()，但也可以自己创建函数，这被叫做用户自定义函数。掌握了自定义函数后，就能用 Python 实现很多自己想要的功能了。Python 自定义函数使用<code class="docutils literal notranslate"><span class="pre">def</span></code>关键字，一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -800,7 +811,7 @@ print(“土豪”)</p>
 </div>
 </div>
 <section id="id4">
-<h3><span class="section-number">5.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>根据输入参数的值是否可以改变，函数的参数传递类型包括以下两种：</p>
 <ul class="simple">
 <li><p>不可变类型：数字，字符串，元组</p></li>
@@ -846,7 +857,7 @@ print(“土豪”)</p>
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">5.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>函数的参数传入方法主要有4种类型：</p>
 <ul class="simple">
 <li><p>顺序传入</p></li>
@@ -955,7 +966,7 @@ final x is 18
 </section>
 </section>
 <section id="lambda-map-filter-reduce">
-<h2><span class="section-number">5.4. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this headline">#</a></h2>
 <p>Python 使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>来创建匿名函数。所谓匿名，即不再使用 def 语句这样标准的形式定义一个函数。<strong>lambda 函数只有一行</strong>，用一个冒号分割传递参数与函数的返回值。非常简洁，在 Pandas 处理数据时经常结合 apply 函数使用。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -994,7 +1005,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x21934910790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1a9821fcd30&gt;
 </pre></div>
 </div>
 </div>
@@ -1061,7 +1072,7 @@ final x is 18
 </div>
 </section>
 <section id="try-except">
-<h2><span class="section-number">5.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this headline">#</a></h2>
 <p>在编写程序时，有时候不知道程序能否正确运行，想试试程序运行结果如何，可以使用 try-except语句；若 try 块中的语句无法执行通过，则执行 except 块中的语句。</p>
 <p>这个语句在程序调试时经常使用，下面的代码定义了一个除法函数：</p>
 <div class="cell docutils container">
@@ -1102,7 +1113,7 @@ final x is 18
 <p>上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。</p>
 </section>
 <section id="id6">
-<h2><span class="section-number">5.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Python 内置了一些常用的函数，可以方便使用。本书简单介绍以下几个内置函数：</p>
 <table>
     <tr style="border-top:solid">
@@ -1287,59 +1298,59 @@ final x is 18
 </div>
 </section>
 <section id="id7">
-<h2><span class="section-number">5.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition" id="judge-leap-year">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
 <section id="exercise-content">
 <p>判断用户输入的年份是否为闰年。</p>
 </section>
 </div>
 <div class="exercise admonition" id="print-multiplication-table">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.2 </span></p>
 <section id="exercise-content">
 <p>编写一个程序，打印出九九乘法表。</p>
 </section>
 </div>
 <div class="exercise admonition" id="sum-cub">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.3 </span></p>
 <section id="exercise-content">
 <p>自定义一个函数，给定数值 <span class="math notranslate nohighlight">\(n\)</span>，能够计算 从 1 到 <span class="math notranslate nohighlight">\(n\)</span> 所有自然数的立方和。</p>
 </section>
 </div>
 <div class="exercise admonition" id="great-common-devisor">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span></p>
 <section id="exercise-content">
 <p>从键盘输入两个整数，编写一个程序可以求出这两个整数的最大公约数。</p>
 </section>
 </div>
 <div class="exercise admonition" id="fib-sequence">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.5 </span></p>
 <section id="exercise-content">
 <p>输出指定数目的斐波那契数列。</p>
 </section>
 </div>
 <div class="exercise admonition" id="range-prime-numbers">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.6 </span></p>
 <section id="exercise-content">
 <p>输出指定范围内的素数。</p>
 </section>
 </div>
 <div class="exercise admonition" id="get-date">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.7 </span></p>
 <section id="exercise-content">
 <p>编写一个程序，能够得到昨天的日期。（提示：使用 datatime 库）</p>
 </section>
 </div>
 <div class="exercise admonition" id="second-watch">
 
-<p class="admonition-title"><span class="caption-number">Exercise 5.8 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.8 </span></p>
 <section id="exercise-content">
 <p>编写一个程序，实现秒表功能。（提示：使用 time 库）</p>
 </section>
@@ -1379,20 +1390,20 @@ final x is 18
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="print-read-files.html"
+       href="basic-data-type.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Python 输出，读写文件</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Python 的常用数据类型</p>
       </div>
     </a>
     <a class="right-next"
-       href="draw-pictures.html"
+       href="introduction-to-numpy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Python 画图</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Numpy 简介</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1414,17 +1425,17 @@ final x is 18
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.1. 条件语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.2. 循环语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.3. 自定义函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.3.1. 函数参数的传递类型</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.3.2. 函数的参数传入方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1. 条件语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.2. 循环语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.3. 自定义函数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.3.1. 函数参数的传递类型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.3.2. 函数的参数传入方法</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">5.4. lambda, map, filter, reduce 函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">5.5. try-except 语句调试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">5.6. 一些常用的内置函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5.7. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">3.4. lambda, map, filter, reduce 函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">3.5. try-except 语句调试</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.6. 一些常用的内置函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.7. 练习</a></li>
 </ul>
   </nav></div>
 

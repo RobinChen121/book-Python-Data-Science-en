@@ -101,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'basic-data-type';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Numpy 简介" href="introduction-to-numpy.html" />
+    <link rel="next" title="3. Python 编写函数" href="define-function.html" />
     <link rel="prev" title="1. 初识 Python" href="A-first-look-of-Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -197,11 +197,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">3. Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">4. Python 输出，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">5. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">6. Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">3. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">6. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
@@ -1288,6 +1288,20 @@ y =  6
 </div>
 </div>
 </div>
+<p>向字典增加一项，可以直接用方括号<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>增加元素：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;major&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;economy&#39;</span>
+<span class="nb">dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;chen&#39;, &#39;score&#39;: 95, &#39;major&#39;: &#39;economy&#39;}
+</pre></div>
+</div>
+</div>
+</div>
 <p>修改字典里的值时，则把相应的键放入到方括号中，赋值进行修改即可：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1298,7 +1312,7 @@ y =  6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;wang&#39;, &#39;score&#39;: 95, &#39;mark&#39;: 80}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;wang&#39;, &#39;score&#39;: 95, &#39;major&#39;: &#39;economy&#39;, &#39;mark&#39;: 80}
 </pre></div>
 </div>
 </div>
@@ -1312,7 +1326,7 @@ y =  6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;score&#39;: 95, &#39;mark&#39;: 80}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;score&#39;: 95, &#39;major&#39;: &#39;economy&#39;, &#39;mark&#39;: 80}
 </pre></div>
 </div>
 </div>
@@ -1349,6 +1363,7 @@ y =  6
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>score
+major
 mark
 </pre></div>
 </div>
@@ -1364,6 +1379,7 @@ mark
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95
+economy
 80
 </pre></div>
 </div>
@@ -1819,7 +1835,7 @@ mark
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7873433323988901
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.05842357318996494
 </pre></div>
 </div>
 </div>
@@ -1947,11 +1963,11 @@ mark
       </div>
     </a>
     <a class="right-next"
-       href="introduction-to-numpy.html"
+       href="define-function.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Numpy 简介</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Python 编写函数</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

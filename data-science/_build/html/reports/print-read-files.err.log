@@ -26,7 +26,7 @@ with open('test.txt', 'w') as f:
      f.write('my name is zhang san\nhis name is li si')
 
 # 读文件
-with open ('./text.txt', 'r') as f:
+with open ('text.txt', 'r') as f:
      str = f.read() # 读取文件内容
      print(str) # 将内容输出到屏幕
 ------------------
@@ -36,7 +36,7 @@ with open ('./text.txt', 'r') as f:
 Cell [1;32mIn[26], line 6[0m
 [0;32m      3[0m      f[38;5;241m.[39mwrite([38;5;124m'[39m[38;5;124mmy name is zhang san[39m[38;5;130;01m\n[39;00m[38;5;124mhis name is li si[39m[38;5;124m'[39m)
 [0;32m      5[0m [38;5;66;03m# 读文件[39;00m
-[1;32m----> 6[0m [38;5;28;01mwith[39;00m [38;5;28mopen[39m ([38;5;124m'[39m[38;5;124m./text.txt[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mr[39m[38;5;124m'[39m) [38;5;28;01mas[39;00m f:
+[1;32m----> 6[0m [38;5;28;01mwith[39;00m [38;5;28mopen[39m ([38;5;124m'[39m[38;5;124mtext.txt[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mr[39m[38;5;124m'[39m) [38;5;28;01mas[39;00m f:
 [0;32m      7[0m      [38;5;28mstr[39m [38;5;241m=[39m f[38;5;241m.[39mread() [38;5;66;03m# 读取文件内容[39;00m
 [0;32m      8[0m      [38;5;28mprint[39m([38;5;28mstr[39m)
 
@@ -49,6 +49,6 @@ File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\IPython\core\interactives
 [0;32m    282[0m     )
 [1;32m--> 284[0m [38;5;28;01mreturn[39;00m io_open(file, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
 
-[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './text.txt'
-FileNotFoundError: [Errno 2] No such file or directory: './text.txt'
+[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'text.txt'
+FileNotFoundError: [Errno 2] No such file or directory: 'text.txt'
 
