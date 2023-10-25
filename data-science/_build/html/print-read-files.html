@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Python 输出，读写文件 &#8212; Python 数据科学</title>
+    <title>6. Python 输出，读写文件 &#8212; Python 数据科学</title>
   
   
   
@@ -100,8 +100,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'print-read-files';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Python 编写函数" href="define-function.html" />
-    <link rel="prev" title="3. Numpy 简介" href="introduction-to-numpy.html" />
+    <link rel="next" title="7. Python 画图" href="draw-pictures.html" />
+    <link rel="prev" title="5. Pandas 入门" href="introduction-to-pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -196,11 +196,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">3. Numpy 简介</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Python 输出，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">5. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">6. Python 画图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">7. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">3. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Pandas 入门</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
@@ -398,12 +398,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">4.1. print 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">4.2. f 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">4.3. 用 format 格式化输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.4. 用 % 格式化输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.5. 读写文件</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">6.1. print 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">6.2. f 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">6.3. 用 format 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.4. 用 % 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.5. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.6. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -416,9 +416,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
+<<<<<<< HEAD
 <h1><span class="section-number">4. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <section id="print">
 <h2><span class="section-number">4.1. </span>print 函数输出<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
+=======
+<h1><span class="section-number">6. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<section id="print">
+<h2><span class="section-number">6.1. </span>print 函数输出<a class="headerlink" href="#print" title="Permalink to this headline">#</a></h2>
+>>>>>>> 46b73760e8546853e489d55e15347a15ee776e31
 <p>Python 输出非常方便，用<code class="docutils literal notranslate"><span class="pre">print()</span></code>函数，小括号里面可以是数字、字符串、列表、字典等类型。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -494,7 +500,11 @@ age is 25
 </div>
 </section>
 <section id="f">
+<<<<<<< HEAD
 <h2><span class="section-number">4.2. </span>f 函数输出<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h2>
+=======
+<h2><span class="section-number">6.2. </span>f 函数输出<a class="headerlink" href="#f" title="Permalink to this headline">#</a></h2>
+>>>>>>> 46b73760e8546853e489d55e15347a15ee776e31
 <p>输出也可以用 <code class="docutils literal notranslate"><span class="pre">f{expression}</span></code>，大括号中的 exression 可以是一个变量名，例如，下面的代码打印出一个数组列表：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -539,7 +549,11 @@ age is 25
 </div>
 </section>
 <section id="format">
+<<<<<<< HEAD
 <h2><span class="section-number">4.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h2>
+=======
+<h2><span class="section-number">6.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this headline">#</a></h2>
+>>>>>>> 46b73760e8546853e489d55e15347a15ee776e31
 <p>用<code class="docutils literal notranslate"><span class="pre">format</span></code>也可以实现多种格式化输出，它的基本用法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -713,7 +727,11 @@ the numbers are 3 and 4.56 and 3
 </div>
 </section>
 <section id="id1">
+<<<<<<< HEAD
 <h2><span class="section-number">4.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+=======
+<h2><span class="section-number">6.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+>>>>>>> 46b73760e8546853e489d55e15347a15ee776e31
 <p>若要格式化输出，要用到百分号 %，语法规则类似 c 语言，具体参考下面的例子。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -804,7 +822,11 @@ the numbers are 3 and 4.56 and 3
 <p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
 </section>
 <section id="id2">
+<<<<<<< HEAD
 <h2><span class="section-number">4.5. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+=======
+<h2><span class="section-number">6.5. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+>>>>>>> 46b73760e8546853e489d55e15347a15ee776e31
 <p>Python 对文本文件的操作步骤为<code class="docutils literal notranslate"><span class="pre">打开——操作——关闭</span></code>：打开计算机存储位置的一个文件，进行一些读写操作，然后关闭这个文件。打开后的文件处于占用状态，此时计算机的其他进程不能操作这个文件；文件关闭后，其他进程才能操作这个文件。</p>
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数打开一个文件对象，常用的语法规则为：</p>
 <table>   
@@ -959,7 +981,7 @@ his name is li si
      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;my name is zhang san</span><span class="se">\n</span><span class="s1">his name is li si&#39;</span><span class="p">)</span>
 
 <span class="c1"># 读文件</span>
-<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
      <span class="nb">str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 读取文件内容</span>
      <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="c1"># 将内容输出到屏幕</span>
 </pre></div>
@@ -971,7 +993,7 @@ his name is li si
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;my name is zhang san</span><span class="se">\n</span><span class="s1">his name is li si&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># 读文件</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>      <span class="nb">str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 读取文件内容</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span>      <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
 
@@ -984,7 +1006,7 @@ his name is li si
 <span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">284</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./text.txt&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;text.txt&#39;
 </pre></div>
 </div>
 </div>
@@ -992,17 +1014,21 @@ his name is li si
 <p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
 <section id="id3">
+<<<<<<< HEAD
 <h2><span class="section-number">4.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+=======
+<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+>>>>>>> 46b73760e8546853e489d55e15347a15ee776e31
 <div class="exercise admonition" id="output">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
 <section id="exercise-content">
 <p>格式化输出 0.0003278 对应的科学计数形式，保留4位有效数字，并且为百分形式。</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="print-read-files-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#output"> Exercise 4.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#output"> Exercise 6.1</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.4%}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.0003278</span><span class="p">))</span>
 </pre></div>
@@ -1011,7 +1037,7 @@ his name is li si
 </div>
 <div class="exercise admonition" id="san-guo">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
 <section id="exercise-content">
 <p>将下面文字输入到电脑的一个 txt 文件中，并读取将内容显示在屏幕上：</p>
 <p>话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。</p>
@@ -1052,20 +1078,20 @@ his name is li si
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction-to-numpy.html"
+       href="introduction-to-pandas.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Numpy 简介</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Pandas 入门</p>
       </div>
     </a>
     <a class="right-next"
-       href="define-function.html"
+       href="draw-pictures.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Python 编写函数</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Python 画图</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1087,12 +1113,12 @@ his name is li si
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">4.1. print 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">4.2. f 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">4.3. 用 format 格式化输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.4. 用 % 格式化输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.5. 读写文件</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">6.1. print 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">6.2. f 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">6.3. 用 format 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.4. 用 % 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.5. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.6. 练习</a></li>
 </ul>
   </nav></div>
 
