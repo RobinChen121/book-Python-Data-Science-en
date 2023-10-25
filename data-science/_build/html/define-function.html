@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>5. Python 编写函数 &#8212; Python 数据科学</title>
   
@@ -45,6 +45,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -104,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="6. Python 画图" href="draw-pictures.html" />
     <link rel="prev" title="4. Python 输出，读写文件" href="print-read-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -422,10 +423,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">5. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>用 Python 编写函数时，经常要用到条件语句<code class="docutils literal notranslate"><span class="pre">if</span></code>， 循环语句<code class="docutils literal notranslate"><span class="pre">for</span></code>或<code class="docutils literal notranslate"><span class="pre">while</span></code>。</p>
 <section id="id1">
-<h2><span class="section-number">5.1. </span>条件语句<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1. </span>条件语句<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>语句的字面意思是：如果（if）满足条件，做什么，否则（else）做什么。例如，下面一段代码：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -449,22 +450,22 @@ document.write(`
             <th style="text-align:center">if 语句的一般用法</th>
     </tr>
     <tr>
-        <td style="text-align:left">if 条件1:</td>
+        <td style="text-align:left">if <条件1>:</td>
     </tr>
     <tr>
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;statement_block_1</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_1&gt;</td>
     </tr>
     <tr>
-        <td style="text-align:left">elif 条件2:</td>
+        <td style="text-align:left">elif <条件2>:</td>
     </tr>
     <tr>
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;statement_block_2</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_2&gt;</td>
     </tr>
     <tr>
         <td style="text-align:left">else:</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;statement_block_3</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_3&gt;</td>
     </tr>
 </table>
 <br /><div class="admonition note">
@@ -473,14 +474,25 @@ document.write(`
 </div>
 <p>上面 if 语句块的执行顺序为：如果条件1 为真，将执行 “statement_block_1” 块语句，如果条件1 为假，将判断 “条件2”，如果条件2 为真，将执行 “statement_block_2” 块语句，如果条件2 为假，将执行”statement_block_3”块语句。</p>
 <p>举例：</p>
-<p>wage = 5000
-print(“”)
-if wage &lt;= 3000:
-print(“贫困户”)
-elif wage &lt;= 12000:
-print(“平均水平”)
-else:
-print(“土豪”)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">12000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;平均水平&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;土豪&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>平均水平
+</pre></div>
+</div>
+</div>
+</div>
 <p>上面语句的意思是，若输入的月薪小于 3000，则输出“贫困户”，否则若月薪在 3000 与 12000 之间，输出“平均水平”，若月薪在 12000 之上，则输出“土豪”。</p>
 <p>if 语句里面还可以嵌套 if 语句，进一步增加判断条件，举例：</p>
 <div class="cell docutils container">
@@ -513,17 +525,17 @@ print(“土豪”)</p>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">5.2. </span>循环语句<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2. </span>循环语句<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>循环语句一般有两种，for 语句与 while 语句。for 循环可以遍历任何序列的项目，如一个列表、元组、集合或者一个字符串。for 循环的一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
             <th style="text-align:center">for 循环语句的一般用法</th>
     </tr>
     <tr>
-        <td style="text-align:left">for variable in sequence:</td>
+        <td style="text-align:left">for &lt;variable&gt; in &lt;sequence&gt;:</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;statements</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&lt;statements&gt;</td>
     </tr>
 </table>
 <br /><p>for 循环的作用是：遍历序列（sequence）中的所有元素，执行命令语句 statements，举例：</p>
@@ -553,10 +565,10 @@ print(“土豪”)</p>
             <th style="text-align:center">while 循环语句的一般用法</th>
     </tr>
     <tr>
-        <td style="text-align:left">while&nbsp; 判断条件:</td>
+        <td style="text-align:left">while&nbsp; &lt;判断条件&gt;:</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statements&gt;</td>
     </tr>
 </table>
 <br /><p>它的作用是，只要满足 while 的判断条件，则一直执行 while 下面的执行语句 statements。</p>
@@ -661,17 +673,17 @@ print(“土豪”)</p>
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">5.3. </span>自定义函数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3. </span>自定义函数<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Python 提供了许多内建函数，比如 print()，但也可以自己创建函数，这被叫做用户自定义函数。掌握了自定义函数后，就能用 Python 实现很多自己想要的功能了。Python 自定义函数使用<code class="docutils literal notranslate"><span class="pre">def</span></code>关键字，一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
             <th style="text-align:center">def 自定义函数的一般用法</th>
     </tr>
     <tr>
-        <td style="text-align:left">def 函数名(参数列表):</td>
+        <td style="text-align:left">def <函数名>(<参数列表>):</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statements&gt;</td>
     </tr>
 </table>
 <br /><p>下面的几行代码定义了一个加和函数：</p>
@@ -800,7 +812,7 @@ print(“土豪”)</p>
 </div>
 </div>
 <section id="id4">
-<h3><span class="section-number">5.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>根据输入参数的值是否可以改变，函数的参数传递类型包括以下两种：</p>
 <ul class="simple">
 <li><p>不可变类型：数字，字符串，元组</p></li>
@@ -846,7 +858,7 @@ print(“土豪”)</p>
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">5.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>函数的参数传入方法主要有4种类型：</p>
 <ul class="simple">
 <li><p>顺序传入</p></li>
@@ -955,9 +967,17 @@ final x is 18
 </section>
 </section>
 <section id="lambda-map-filter-reduce">
-<h2><span class="section-number">5.4. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.4. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this heading">#</a></h2>
 <p>Python 使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>来创建匿名函数。所谓匿名，即不再使用 def 语句这样标准的形式定义一个函数。<strong>lambda 函数只有一行</strong>，用一个冒号分割传递参数与函数的返回值。非常简洁，在 Pandas 处理数据时经常结合 apply 函数使用。</p>
-<div class="cell docutils container">
+<table>   
+    <tr style="border-top:solid; border-bottom:solid">
+            <th style="text-align:center">lambda 函数的一般用法</th>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left"><函数名> = lambda <参数列表>: <表达式></td>
+    </tr>    
+</table>
+<br /><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> 
@@ -973,7 +993,7 @@ final x is 18
 <p>也可以结合 if-else 语句定义 lambda 函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Max</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="k">else</span> <span class="n">b</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Max</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="k">else</span> <span class="n">b</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">Max</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -994,7 +1014,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x21934910790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x28598b70910&gt;
 </pre></div>
 </div>
 </div>
@@ -1061,9 +1081,26 @@ final x is 18
 </div>
 </section>
 <section id="try-except">
-<h2><span class="section-number">5.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this heading">#</a></h2>
 <p>在编写程序时，有时候不知道程序能否正确运行，想试试程序运行结果如何，可以使用 try-except语句；若 try 块中的语句无法执行通过，则执行 except 块中的语句。</p>
-<p>这个语句在程序调试时经常使用，下面的代码定义了一个除法函数：</p>
+<table>   
+    <tr style="border-top:solid; border-bottom:solid">
+            <th style="text-align:center">try-excpet 语句的一般用法</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">try:</td>
+    </tr> 
+    <tr>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<语句块1></td>
+    </tr>
+    <tr>
+        <td style="text-align:left">except [异常类型]:</td>
+    </tr> 
+    <tr>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<语句块2></td>
+    </tr>
+</table>
+<br /><p>这个语句在程序调试时经常使用，下面的代码定义了一个除法函数：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -1102,7 +1139,7 @@ final x is 18
 <p>上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。</p>
 </section>
 <section id="id6">
-<h2><span class="section-number">5.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>Python 内置了一些常用的函数，可以方便使用。本书简单介绍以下几个内置函数：</p>
 <table>
     <tr style="border-top:solid">
@@ -1287,7 +1324,7 @@ final x is 18
 </div>
 </section>
 <section id="id7">
-<h2><span class="section-number">5.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="judge-leap-year">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>

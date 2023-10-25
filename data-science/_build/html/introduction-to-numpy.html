@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>3. Numpy 简介 &#8212; Python 数据科学</title>
   
@@ -45,6 +45,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -102,7 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="4. Python 输出，读写文件" href="print-read-files.html" />
     <link rel="prev" title="2. Python 的常用数据类型" href="basic-data-type.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -413,7 +414,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1><span class="section-number">3. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
 <p>Numpy (Numerical Python) 是 Python 语言一个重要的扩展库，支持大量的数组与矩阵运算，此外也提供大量的数学函数库，用于模仿数学软件 MatLab 的功能。Numpy 通常与其他库 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用。</p>
 <p>Numpy 的主要特点是：</p>
 <ul class="simple">
@@ -429,7 +430,7 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2><span class="section-number">3.1. </span>创建数组<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1. </span>创建数组<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>用 Numpy 创建数组有多种方法。首先，Numpy 中的<code class="docutils literal notranslate"><span class="pre">array</span></code>函数可以直接将 Python 的 list 类型转化为 Numpy 的数组类型 ndarray。例如，一个一维数组：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,9 +568,102 @@ document.write(`
 </div>
 </div>
 </div>
+<p>numpy 库中常见的数组创建函数如下表所示：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
+<th class="head text-center"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>np.arrange(x, y, i)</p></td>
+<td class="text-center"><p>创建一个由 x 到 y，以 i 为步长的数组</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>np.linspace(x, y, n)</p></td>
+<td class="text-center"><p>创建一个由 x 到 y，等分为 n 个元素的数组</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>np.ones((m,n))</p></td>
+<td class="text-center"><p>创建一个 m 行 n 列全是 1 的数组</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>np.empty((m,n))</p></td>
+<td class="text-center"><p>创建一个 m 行 n 列全是 0 的数组</p></td>
+</tr>
+</tbody>
+</table>
+<p>numpy 创建的数组类型为 ndarray类型，它的常用属性如下表所示：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
+<th class="head text-center"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>ndarray.ndim</p></td>
+<td class="text-center"><p>数组的行数</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>ndarray.shape</p></td>
+<td class="text-center"><p>数组在每个维度上大小的整数元组</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>ndarray.size</p></td>
+<td class="text-center"><p>数组中元素的个数</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>ndarray.dtype</p></td>
+<td class="text-center"><p>数组中元素的数据类型</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">a</span><span class="o">.</span><span class="n">ndim</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;float64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id2">
-<h2><span class="section-number">3.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>对于一维数组，numpy 的索引切片类似 Python list 类型的索引切片，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +729,7 @@ document.write(`
 <p>对于多维数组，Numpy 数组的索引和切片在<strong>一个中括号</strong>里面用逗号分隔不同维度，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># 创建一个 3 行 4 列的二维数组</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># 创建一个 3 行 4 列的二维数组，reshape函数不改变数值，将原数组重组为一个指定行数列数的数组</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -698,7 +792,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">3.3. </span>数组拼接<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3. </span>数组拼接<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>Numpy 中拼接两个数组用<code class="docutils literal notranslate"><span class="pre">append</span></code>函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -766,7 +860,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">3.4. </span>数组运算<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4. </span>数组运算<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>Numpy 可以对数组进行多种代数运算，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -896,14 +990,16 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># c 的特征值与特征向量</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># c 的特征值与特征向量</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;eigenvalues are &#39;</span><span class="p">,</span> <span class="n">eigenvalues</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;eigenvectors are&#39;</span><span class="p">,</span> <span class="n">eigenvectors</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([-0.17890835, 11.17890835]),
- array([[-0.76729658, -0.57152478],
-        [ 0.64129241, -0.82058481]]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues are  [-0.17890835 11.17890835]
+eigenvectors are [[-0.76729658 -0.57152478]
+ [ 0.64129241 -0.82058481]]
 </pre></div>
 </div>
 </div>
@@ -948,6 +1044,40 @@ document.write(`
 </div>
 </div>
 </div>
+<p>numpy 库还有一些其他常用的函数，如下表所示：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
+<th class="head text-center"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>np.abs(x)</p></td>
+<td class="text-center"><p>计算每个元素的绝对值</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>np.sqrt(x)</p></td>
+<td class="text-center"><p>计算每个元素的平方根</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>np.squre(x)</p></td>
+<td class="text-center"><p>计算每个元素的平方</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>np.sign(x)</p></td>
+<td class="text-center"><p>计算每个元素的正负号</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>np.ceil(x)</p></td>
+<td class="text-center"><p>计算每个元素向上取整的数值</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>np.floor(x)</p></td>
+<td class="text-center"><p>计算每个元素向下取整的数值</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>np.exp(x)</p></td>
+<td class="text-center"><p>计算每个元素的指数值</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>np.log(x),np.log10(x),np.log2(x)</p></td>
+<td class="text-center"><p>计算每个元素的自然对数值，基于10、2的对数值</p></td>
+</tr>
+</tbody>
+</table>
 <p>另外，Numpy 还有专门的二维数组的类型 Matrix，可以更方便地进行一些矩阵运算，感兴趣的读者可以参见官网。</p>
 </section>
 </section>
