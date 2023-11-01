@@ -1,111 +1,230 @@
 Traceback (most recent call last):
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "D:\ProgramData\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
     return loop.run_until_complete(coro)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\chen_\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  File "D:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+  File "D:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df.to_excel(r'/Users/zhenchen/Documents/python data/marks.xlsx')
+df.groupby(['班级', '性别']).agg(['max', 'min', 'mean'])  # 汇总了每个班每个性别的最高、最低、平均成绩
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mOSError[0m                                   Traceback (most recent call last)
-Cell [1;32mIn[5], line 1[0m
-[1;32m----> 1[0m df[38;5;241m.[39mto_excel([38;5;124mr[39m[38;5;124m'[39m[38;5;124m/Users/zhenchen/Documents/python data/marks.xlsx[39m[38;5;124m'[39m)
+[1;31mTypeError[0m                                 Traceback (most recent call last)
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:1871[0m, in [0;36mGroupBy._agg_py_fallback[1;34m(self, how, values, ndim, alt)[0m
+[0;32m   1870[0m [38;5;28;01mtry[39;00m:
+[1;32m-> 1871[0m     res_values [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mgrouper[38;5;241m.[39magg_series(ser, alt, preserve_dtype[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m   1872[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m err:
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\pandas\util\_decorators.py:211[0m, in [0;36mdeprecate_kwarg.<locals>._deprecate_kwarg.<locals>.wrapper[1;34m(*args, **kwargs)[0m
-[0;32m    209[0m     [38;5;28;01melse[39;00m:
-[0;32m    210[0m         kwargs[new_arg_name] [38;5;241m=[39m new_arg_value
-[1;32m--> 211[0m [38;5;28;01mreturn[39;00m func([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\ops.py:850[0m, in [0;36mBaseGrouper.agg_series[1;34m(self, obj, func, preserve_dtype)[0m
+[0;32m    848[0m     preserve_dtype [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[1;32m--> 850[0m result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_aggregate_series_pure_python(obj, func)
+[0;32m    852[0m npvalues [38;5;241m=[39m lib[38;5;241m.[39mmaybe_convert_objects(result, try_float[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\pandas\util\_decorators.py:211[0m, in [0;36mdeprecate_kwarg.<locals>._deprecate_kwarg.<locals>.wrapper[1;34m(*args, **kwargs)[0m
-[0;32m    209[0m     [38;5;28;01melse[39;00m:
-[0;32m    210[0m         kwargs[new_arg_name] [38;5;241m=[39m new_arg_value
-[1;32m--> 211[0m [38;5;28;01mreturn[39;00m func([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\ops.py:871[0m, in [0;36mBaseGrouper._aggregate_series_pure_python[1;34m(self, obj, func)[0m
+[0;32m    870[0m [38;5;28;01mfor[39;00m i, group [38;5;129;01min[39;00m [38;5;28menumerate[39m(splitter):
+[1;32m--> 871[0m     res [38;5;241m=[39m func(group)
+[0;32m    872[0m     res [38;5;241m=[39m extract_result(res)
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\pandas\core\generic.py:2374[0m, in [0;36mNDFrame.to_excel[1;34m(self, excel_writer, sheet_name, na_rep, float_format, columns, header, index, index_label, startrow, startcol, engine, merge_cells, encoding, inf_rep, verbose, freeze_panes, storage_options)[0m
-[0;32m   2361[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mformats[39;00m[38;5;21;01m.[39;00m[38;5;21;01mexcel[39;00m [38;5;28;01mimport[39;00m ExcelFormatter
-[0;32m   2363[0m formatter [38;5;241m=[39m ExcelFormatter(
-[0;32m   2364[0m     df,
-[0;32m   2365[0m     na_rep[38;5;241m=[39mna_rep,
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:2377[0m, in [0;36mGroupBy.mean.<locals>.<lambda>[1;34m(x)[0m
+[0;32m   2374[0m [38;5;28;01melse[39;00m:
+[0;32m   2375[0m     result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_cython_agg_general(
+[0;32m   2376[0m         [38;5;124m"[39m[38;5;124mmean[39m[38;5;124m"[39m,
+[1;32m-> 2377[0m         alt[38;5;241m=[39m[38;5;28;01mlambda[39;00m x: Series(x)[38;5;241m.[39mmean(numeric_only[38;5;241m=[39mnumeric_only),
+[0;32m   2378[0m         numeric_only[38;5;241m=[39mnumeric_only,
+[0;32m   2379[0m     )
+[0;32m   2380[0m     [38;5;28;01mreturn[39;00m result[38;5;241m.[39m__finalize__([38;5;28mself[39m[38;5;241m.[39mobj, method[38;5;241m=[39m[38;5;124m"[39m[38;5;124mgroupby[39m[38;5;124m"[39m)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\series.py:6221[0m, in [0;36mSeries.mean[1;34m(self, axis, skipna, numeric_only, **kwargs)[0m
+[0;32m   6213[0m [38;5;129m@doc[39m(make_doc([38;5;124m"[39m[38;5;124mmean[39m[38;5;124m"[39m, ndim[38;5;241m=[39m[38;5;241m1[39m))
+[0;32m   6214[0m [38;5;28;01mdef[39;00m [38;5;21mmean[39m(
+[0;32m   6215[0m     [38;5;28mself[39m,
 [1;32m   (...)[0m
-[0;32m   2372[0m     inf_rep[38;5;241m=[39minf_rep,
-[0;32m   2373[0m )
-[1;32m-> 2374[0m formatter[38;5;241m.[39mwrite(
-[0;32m   2375[0m     excel_writer,
-[0;32m   2376[0m     sheet_name[38;5;241m=[39msheet_name,
-[0;32m   2377[0m     startrow[38;5;241m=[39mstartrow,
-[0;32m   2378[0m     startcol[38;5;241m=[39mstartcol,
-[0;32m   2379[0m     freeze_panes[38;5;241m=[39mfreeze_panes,
-[0;32m   2380[0m     engine[38;5;241m=[39mengine,
-[0;32m   2381[0m     storage_options[38;5;241m=[39mstorage_options,
-[0;32m   2382[0m )
+[0;32m   6219[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[0;32m   6220[0m ):
+[1;32m-> 6221[0m     [38;5;28;01mreturn[39;00m NDFrame[38;5;241m.[39mmean([38;5;28mself[39m, axis, skipna, numeric_only, [38;5;241m*[39m[38;5;241m*[39mkwargs)
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\pandas\io\formats\excel.py:944[0m, in [0;36mExcelFormatter.write[1;34m(self, writer, sheet_name, startrow, startcol, freeze_panes, engine, storage_options)[0m
-[0;32m    940[0m     need_save [38;5;241m=[39m [38;5;28;01mFalse[39;00m
-[0;32m    941[0m [38;5;28;01melse[39;00m:
-[0;32m    942[0m     [38;5;66;03m# error: Cannot instantiate abstract class 'ExcelWriter' with abstract[39;00m
-[0;32m    943[0m     [38;5;66;03m# attributes 'engine', 'save', 'supported_extensions' and 'write_cells'[39;00m
-[1;32m--> 944[0m     writer [38;5;241m=[39m ExcelWriter(  [38;5;66;03m# type: ignore[abstract][39;00m
-[0;32m    945[0m         writer, engine[38;5;241m=[39mengine, storage_options[38;5;241m=[39mstorage_options
-[0;32m    946[0m     )
-[0;32m    947[0m     need_save [38;5;241m=[39m [38;5;28;01mTrue[39;00m
-[0;32m    949[0m [38;5;28;01mtry[39;00m:
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\generic.py:11978[0m, in [0;36mNDFrame.mean[1;34m(self, axis, skipna, numeric_only, **kwargs)[0m
+[0;32m  11971[0m [38;5;28;01mdef[39;00m [38;5;21mmean[39m(
+[0;32m  11972[0m     [38;5;28mself[39m,
+[0;32m  11973[0m     axis: Axis [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;241m0[39m,
+[1;32m   (...)[0m
+[0;32m  11976[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[0;32m  11977[0m ) [38;5;241m-[39m[38;5;241m>[39m Series [38;5;241m|[39m [38;5;28mfloat[39m:
+[1;32m> 11978[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_stat_function(
+[0;32m  11979[0m         [38;5;124m"[39m[38;5;124mmean[39m[38;5;124m"[39m, nanops[38;5;241m.[39mnanmean, axis, skipna, numeric_only, [38;5;241m*[39m[38;5;241m*[39mkwargs
+[0;32m  11980[0m     )
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\pandas\io\excel\_openpyxl.py:60[0m, in [0;36mOpenpyxlWriter.__init__[1;34m(self, path, engine, date_format, datetime_format, mode, storage_options, if_sheet_exists, engine_kwargs, **kwargs)[0m
-[0;32m     56[0m [38;5;28;01mfrom[39;00m [38;5;21;01mopenpyxl[39;00m[38;5;21;01m.[39;00m[38;5;21;01mworkbook[39;00m [38;5;28;01mimport[39;00m Workbook
-[0;32m     58[0m engine_kwargs [38;5;241m=[39m combine_kwargs(engine_kwargs, kwargs)
-[1;32m---> 60[0m [38;5;28msuper[39m()[38;5;241m.[39m[38;5;21m__init__[39m(
-[0;32m     61[0m     path,
-[0;32m     62[0m     mode[38;5;241m=[39mmode,
-[0;32m     63[0m     storage_options[38;5;241m=[39mstorage_options,
-[0;32m     64[0m     if_sheet_exists[38;5;241m=[39mif_sheet_exists,
-[0;32m     65[0m     engine_kwargs[38;5;241m=[39mengine_kwargs,
-[0;32m     66[0m )
-[0;32m     68[0m [38;5;66;03m# ExcelWriter replaced "a" by "r+" to allow us to first read the excel file from[39;00m
-[0;32m     69[0m [38;5;66;03m# the file and later write to it[39;00m
-[0;32m     70[0m [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mr+[39m[38;5;124m"[39m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_mode:  [38;5;66;03m# Load from existing workbook[39;00m
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\generic.py:11935[0m, in [0;36mNDFrame._stat_function[1;34m(self, name, func, axis, skipna, numeric_only, **kwargs)[0m
+[0;32m  11933[0m validate_bool_kwarg(skipna, [38;5;124m"[39m[38;5;124mskipna[39m[38;5;124m"[39m, none_allowed[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m> 11935[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_reduce(
+[0;32m  11936[0m     func, name[38;5;241m=[39mname, axis[38;5;241m=[39maxis, skipna[38;5;241m=[39mskipna, numeric_only[38;5;241m=[39mnumeric_only
+[0;32m  11937[0m )
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\pandas\io\excel\_base.py:1313[0m, in [0;36mExcelWriter.__init__[1;34m(self, path, engine, date_format, datetime_format, mode, storage_options, if_sheet_exists, engine_kwargs, **kwargs)[0m
-[0;32m   1309[0m [38;5;28mself[39m[38;5;241m.[39m_handles [38;5;241m=[39m IOHandles(
-[0;32m   1310[0m     cast(IO[[38;5;28mbytes[39m], path), compression[38;5;241m=[39m{[38;5;124m"[39m[38;5;124mcompression[39m[38;5;124m"[39m: [38;5;28;01mNone[39;00m}
-[0;32m   1311[0m )
-[0;32m   1312[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(path, ExcelWriter):
-[1;32m-> 1313[0m     [38;5;28mself[39m[38;5;241m.[39m_handles [38;5;241m=[39m get_handle(
-[0;32m   1314[0m         path, mode, storage_options[38;5;241m=[39mstorage_options, is_text[38;5;241m=[39m[38;5;28;01mFalse[39;00m
-[0;32m   1315[0m     )
-[0;32m   1316[0m [38;5;28mself[39m[38;5;241m.[39m_cur_sheet [38;5;241m=[39m [38;5;28;01mNone[39;00m
-[0;32m   1318[0m [38;5;28;01mif[39;00m date_format [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\series.py:6129[0m, in [0;36mSeries._reduce[1;34m(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)[0m
+[0;32m   6125[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m(
+[0;32m   6126[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mSeries.[39m[38;5;132;01m{[39;00mname[38;5;132;01m}[39;00m[38;5;124m does not allow [39m[38;5;132;01m{[39;00mkwd_name[38;5;132;01m}[39;00m[38;5;124m=[39m[38;5;132;01m{[39;00mnumeric_only[38;5;132;01m}[39;00m[38;5;124m [39m[38;5;124m"[39m
+[0;32m   6127[0m         [38;5;124m"[39m[38;5;124mwith non-numeric dtypes.[39m[38;5;124m"[39m
+[0;32m   6128[0m     )
+[1;32m-> 6129[0m [38;5;28;01mreturn[39;00m op(delegate, skipna[38;5;241m=[39mskipna, [38;5;241m*[39m[38;5;241m*[39mkwds)
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\pandas\io\common.py:734[0m, in [0;36mget_handle[1;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
-[0;32m    732[0m [38;5;66;03m# Only for write methods[39;00m
-[0;32m    733[0m [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mr[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m mode [38;5;129;01mand[39;00m is_path:
-[1;32m--> 734[0m     check_parent_directory([38;5;28mstr[39m(handle))
-[0;32m    736[0m [38;5;28;01mif[39;00m compression:
-[0;32m    737[0m     [38;5;28;01mif[39;00m compression [38;5;241m!=[39m [38;5;124m"[39m[38;5;124mzstd[39m[38;5;124m"[39m:
-[0;32m    738[0m         [38;5;66;03m# compression libraries do not like an explicit text-mode[39;00m
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\nanops.py:147[0m, in [0;36mbottleneck_switch.__call__.<locals>.f[1;34m(values, axis, skipna, **kwds)[0m
+[0;32m    146[0m [38;5;28;01melse[39;00m:
+[1;32m--> 147[0m     result [38;5;241m=[39m alt(values, axis[38;5;241m=[39maxis, skipna[38;5;241m=[39mskipna, [38;5;241m*[39m[38;5;241m*[39mkwds)
+[0;32m    149[0m [38;5;28;01mreturn[39;00m result
 
-File [1;32mD:\Users\chen_\anaconda3\Lib\site-packages\pandas\io\common.py:597[0m, in [0;36mcheck_parent_directory[1;34m(path)[0m
-[0;32m    595[0m parent [38;5;241m=[39m Path(path)[38;5;241m.[39mparent
-[0;32m    596[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m parent[38;5;241m.[39mis_dir():
-[1;32m--> 597[0m     [38;5;28;01mraise[39;00m [38;5;167;01mOSError[39;00m([38;5;124mrf[39m[38;5;124m"[39m[38;5;124mCannot save file into a non-existent directory: [39m[38;5;124m'[39m[38;5;132;01m{[39;00mparent[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m"[39m)
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\nanops.py:404[0m, in [0;36m_datetimelike_compat.<locals>.new_func[1;34m(values, axis, skipna, mask, **kwargs)[0m
+[0;32m    402[0m     mask [38;5;241m=[39m isna(values)
+[1;32m--> 404[0m result [38;5;241m=[39m func(values, axis[38;5;241m=[39maxis, skipna[38;5;241m=[39mskipna, mask[38;5;241m=[39mmask, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    406[0m [38;5;28;01mif[39;00m datetimelike:
 
-[1;31mOSError[0m: Cannot save file into a non-existent directory: '\Users\zhenchen\Documents\python data'
-OSError: Cannot save file into a non-existent directory: '\Users\zhenchen\Documents\python data'
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\nanops.py:720[0m, in [0;36mnanmean[1;34m(values, axis, skipna, mask)[0m
+[0;32m    719[0m the_sum [38;5;241m=[39m values[38;5;241m.[39msum(axis, dtype[38;5;241m=[39mdtype_sum)
+[1;32m--> 720[0m the_sum [38;5;241m=[39m _ensure_numeric(the_sum)
+[0;32m    722[0m [38;5;28;01mif[39;00m axis [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [38;5;28mgetattr[39m(the_sum, [38;5;124m"[39m[38;5;124mndim[39m[38;5;124m"[39m, [38;5;28;01mFalse[39;00m):
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\nanops.py:1693[0m, in [0;36m_ensure_numeric[1;34m(x)[0m
+[0;32m   1691[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(x, [38;5;28mstr[39m):
+[0;32m   1692[0m     [38;5;66;03m# GH#44008, GH#36703 avoid casting e.g. strings to numeric[39;00m
+[1;32m-> 1693[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mCould not convert string [39m[38;5;124m'[39m[38;5;132;01m{[39;00mx[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m to numeric[39m[38;5;124m"[39m)
+[0;32m   1694[0m [38;5;28;01mtry[39;00m:
+
+[1;31mTypeError[0m: Could not convert string '张三陈小虎' to numeric
+
+The above exception was the direct cause of the following exception:
+
+[1;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[69], line 1[0m
+[1;32m----> 1[0m df[38;5;241m.[39mgroupby([[38;5;124m'[39m[38;5;124m班级[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124m性别[39m[38;5;124m'[39m])[38;5;241m.[39magg([[38;5;124m'[39m[38;5;124mmax[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mmin[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mmean[39m[38;5;124m'[39m])
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\generic.py:1442[0m, in [0;36mDataFrameGroupBy.aggregate[1;34m(self, func, engine, engine_kwargs, *args, **kwargs)[0m
+[0;32m   1439[0m     kwargs[[38;5;124m"[39m[38;5;124mengine_kwargs[39m[38;5;124m"[39m] [38;5;241m=[39m engine_kwargs
+[0;32m   1441[0m op [38;5;241m=[39m GroupByApply([38;5;28mself[39m, func, args[38;5;241m=[39margs, kwargs[38;5;241m=[39mkwargs)
+[1;32m-> 1442[0m result [38;5;241m=[39m op[38;5;241m.[39magg()
+[0;32m   1443[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m is_dict_like(func) [38;5;129;01mand[39;00m result [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m   1444[0m     [38;5;66;03m# GH #52849[39;00m
+[0;32m   1445[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39mas_index [38;5;129;01mand[39;00m is_list_like(func):
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\apply.py:178[0m, in [0;36mApply.agg[1;34m(self)[0m
+[0;32m    175[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39magg_dict_like()
+[0;32m    176[0m [38;5;28;01melif[39;00m is_list_like(func):
+[0;32m    177[0m     [38;5;66;03m# we require a list, but not a 'str'[39;00m
+[1;32m--> 178[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39magg_list_like()
+[0;32m    180[0m [38;5;28;01mif[39;00m [38;5;28mcallable[39m(func):
+[0;32m    181[0m     f [38;5;241m=[39m com[38;5;241m.[39mget_cython_func(func)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\apply.py:311[0m, in [0;36mApply.agg_list_like[1;34m(self)[0m
+[0;32m    303[0m [38;5;28;01mdef[39;00m [38;5;21magg_list_like[39m([38;5;28mself[39m) [38;5;241m-[39m[38;5;241m>[39m DataFrame [38;5;241m|[39m Series:
+[0;32m    304[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[0;32m    305[0m [38;5;124;03m    Compute aggregation in the case of a list-like argument.[39;00m
+[0;32m    306[0m 
+[1;32m   (...)[0m
+[0;32m    309[0m [38;5;124;03m    Result of aggregation.[39;00m
+[0;32m    310[0m [38;5;124;03m    """[39;00m
+[1;32m--> 311[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39magg_or_apply_list_like(op_name[38;5;241m=[39m[38;5;124m"[39m[38;5;124magg[39m[38;5;124m"[39m)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\apply.py:1351[0m, in [0;36mGroupByApply.agg_or_apply_list_like[1;34m(self, op_name)[0m
+[0;32m   1346[0m [38;5;66;03m# Only set as_index=True on groupby objects, not Window or Resample[39;00m
+[0;32m   1347[0m [38;5;66;03m# that inherit from this class.[39;00m
+[0;32m   1348[0m [38;5;28;01mwith[39;00m com[38;5;241m.[39mtemp_setattr(
+[0;32m   1349[0m     obj, [38;5;124m"[39m[38;5;124mas_index[39m[38;5;124m"[39m, [38;5;28;01mTrue[39;00m, condition[38;5;241m=[39m[38;5;28mhasattr[39m(obj, [38;5;124m"[39m[38;5;124mas_index[39m[38;5;124m"[39m)
+[0;32m   1350[0m ):
+[1;32m-> 1351[0m     keys, results [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mcompute_list_like(op_name, selected_obj, kwargs)
+[0;32m   1352[0m result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mwrap_results_list_like(keys, results)
+[0;32m   1353[0m [38;5;28;01mreturn[39;00m result
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\apply.py:370[0m, in [0;36mApply.compute_list_like[1;34m(self, op_name, selected_obj, kwargs)[0m
+[0;32m    364[0m colg [38;5;241m=[39m obj[38;5;241m.[39m_gotitem(col, ndim[38;5;241m=[39m[38;5;241m1[39m, subset[38;5;241m=[39mselected_obj[38;5;241m.[39miloc[:, index])
+[0;32m    365[0m args [38;5;241m=[39m (
+[0;32m    366[0m     [[38;5;28mself[39m[38;5;241m.[39maxis, [38;5;241m*[39m[38;5;28mself[39m[38;5;241m.[39margs]
+[0;32m    367[0m     [38;5;28;01mif[39;00m include_axis(op_name, colg)
+[0;32m    368[0m     [38;5;28;01melse[39;00m [38;5;28mself[39m[38;5;241m.[39margs
+[0;32m    369[0m )
+[1;32m--> 370[0m new_res [38;5;241m=[39m [38;5;28mgetattr[39m(colg, op_name)(func, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    371[0m results[38;5;241m.[39mappend(new_res)
+[0;32m    372[0m indices[38;5;241m.[39mappend(index)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\generic.py:252[0m, in [0;36mSeriesGroupBy.aggregate[1;34m(self, func, engine, engine_kwargs, *args, **kwargs)[0m
+[0;32m    250[0m kwargs[[38;5;124m"[39m[38;5;124mengine[39m[38;5;124m"[39m] [38;5;241m=[39m engine
+[0;32m    251[0m kwargs[[38;5;124m"[39m[38;5;124mengine_kwargs[39m[38;5;124m"[39m] [38;5;241m=[39m engine_kwargs
+[1;32m--> 252[0m ret [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_aggregate_multiple_funcs(func, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    253[0m [38;5;28;01mif[39;00m relabeling:
+[0;32m    254[0m     [38;5;66;03m# columns is not narrowed by mypy from relabeling flag[39;00m
+[0;32m    255[0m     [38;5;28;01massert[39;00m columns [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m  [38;5;66;03m# for mypy[39;00m
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\generic.py:357[0m, in [0;36mSeriesGroupBy._aggregate_multiple_funcs[1;34m(self, arg, *args, **kwargs)[0m
+[0;32m    355[0m     [38;5;28;01mfor[39;00m idx, (name, func) [38;5;129;01min[39;00m [38;5;28menumerate[39m(arg):
+[0;32m    356[0m         key [38;5;241m=[39m base[38;5;241m.[39mOutputKey(label[38;5;241m=[39mname, position[38;5;241m=[39midx)
+[1;32m--> 357[0m         results[key] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39maggregate(func, [38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    359[0m [38;5;28;01mif[39;00m [38;5;28many[39m([38;5;28misinstance[39m(x, DataFrame) [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m results[38;5;241m.[39mvalues()):
+[0;32m    360[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mimport[39;00m concat
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\generic.py:244[0m, in [0;36mSeriesGroupBy.aggregate[1;34m(self, func, engine, engine_kwargs, *args, **kwargs)[0m
+[0;32m    242[0m         kwargs[[38;5;124m"[39m[38;5;124mengine[39m[38;5;124m"[39m] [38;5;241m=[39m engine
+[0;32m    243[0m         kwargs[[38;5;124m"[39m[38;5;124mengine_kwargs[39m[38;5;124m"[39m] [38;5;241m=[39m engine_kwargs
+[1;32m--> 244[0m     [38;5;28;01mreturn[39;00m [38;5;28mgetattr[39m([38;5;28mself[39m, func)([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m    246[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(func, abc[38;5;241m.[39mIterable):
+[0;32m    247[0m     [38;5;66;03m# Catch instances of lists / tuples[39;00m
+[0;32m    248[0m     [38;5;66;03m# but not the class list / tuple itself.[39;00m
+[0;32m    249[0m     func [38;5;241m=[39m maybe_mangle_lambdas(func)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:2375[0m, in [0;36mGroupBy.mean[1;34m(self, numeric_only, engine, engine_kwargs)[0m
+[0;32m   2368[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_numba_agg_general(
+[0;32m   2369[0m         grouped_mean,
+[0;32m   2370[0m         executor[38;5;241m.[39mfloat_dtype_mapping,
+[0;32m   2371[0m         engine_kwargs,
+[0;32m   2372[0m         min_periods[38;5;241m=[39m[38;5;241m0[39m,
+[0;32m   2373[0m     )
+[0;32m   2374[0m [38;5;28;01melse[39;00m:
+[1;32m-> 2375[0m     result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_cython_agg_general(
+[0;32m   2376[0m         [38;5;124m"[39m[38;5;124mmean[39m[38;5;124m"[39m,
+[0;32m   2377[0m         alt[38;5;241m=[39m[38;5;28;01mlambda[39;00m x: Series(x)[38;5;241m.[39mmean(numeric_only[38;5;241m=[39mnumeric_only),
+[0;32m   2378[0m         numeric_only[38;5;241m=[39mnumeric_only,
+[0;32m   2379[0m     )
+[0;32m   2380[0m     [38;5;28;01mreturn[39;00m result[38;5;241m.[39m__finalize__([38;5;28mself[39m[38;5;241m.[39mobj, method[38;5;241m=[39m[38;5;124m"[39m[38;5;124mgroupby[39m[38;5;124m"[39m)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:1926[0m, in [0;36mGroupBy._cython_agg_general[1;34m(self, how, alt, numeric_only, min_count, **kwargs)[0m
+[0;32m   1923[0m     result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_agg_py_fallback(how, values, ndim[38;5;241m=[39mdata[38;5;241m.[39mndim, alt[38;5;241m=[39malt)
+[0;32m   1924[0m     [38;5;28;01mreturn[39;00m result
+[1;32m-> 1926[0m new_mgr [38;5;241m=[39m data[38;5;241m.[39mgrouped_reduce(array_func)
+[0;32m   1927[0m res [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_wrap_agged_manager(new_mgr)
+[0;32m   1928[0m out [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_wrap_aggregated_output(res)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\internals\base.py:336[0m, in [0;36mSingleDataManager.grouped_reduce[1;34m(self, func)[0m
+[0;32m    334[0m [38;5;28;01mdef[39;00m [38;5;21mgrouped_reduce[39m([38;5;28mself[39m, func):
+[0;32m    335[0m     arr [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39marray
+[1;32m--> 336[0m     res [38;5;241m=[39m func(arr)
+[0;32m    337[0m     index [38;5;241m=[39m default_index([38;5;28mlen[39m(res))
+[0;32m    339[0m     mgr [38;5;241m=[39m [38;5;28mtype[39m([38;5;28mself[39m)[38;5;241m.[39mfrom_array(res, index)
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:1923[0m, in [0;36mGroupBy._cython_agg_general.<locals>.array_func[1;34m(values)[0m
+[0;32m   1920[0m [38;5;28;01melse[39;00m:
+[0;32m   1921[0m     [38;5;28;01mreturn[39;00m result
+[1;32m-> 1923[0m result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_agg_py_fallback(how, values, ndim[38;5;241m=[39mdata[38;5;241m.[39mndim, alt[38;5;241m=[39malt)
+[0;32m   1924[0m [38;5;28;01mreturn[39;00m result
+
+File [1;32mD:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:1875[0m, in [0;36mGroupBy._agg_py_fallback[1;34m(self, how, values, ndim, alt)[0m
+[0;32m   1873[0m     msg [38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124magg function failed [how->[39m[38;5;132;01m{[39;00mhow[38;5;132;01m}[39;00m[38;5;124m,dtype->[39m[38;5;132;01m{[39;00mser[38;5;241m.[39mdtype[38;5;132;01m}[39;00m[38;5;124m][39m[38;5;124m"[39m
+[0;32m   1874[0m     [38;5;66;03m# preserve the kind of exception that raised[39;00m
+[1;32m-> 1875[0m     [38;5;28;01mraise[39;00m [38;5;28mtype[39m(err)(msg) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[0;32m   1877[0m [38;5;28;01mif[39;00m ser[38;5;241m.[39mdtype [38;5;241m==[39m [38;5;28mobject[39m:
+[0;32m   1878[0m     res_values [38;5;241m=[39m res_values[38;5;241m.[39mastype([38;5;28mobject[39m, copy[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+
+[1;31mTypeError[0m: agg function failed [how->mean,dtype->object]
+TypeError: agg function failed [how->mean,dtype->object]
 
