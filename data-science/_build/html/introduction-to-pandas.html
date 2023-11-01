@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -594,7 +594,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">read_excel</span></code> 的一般语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">read_excel(io, sheetname=0, header=0, skiprows=None, index_col=None, encoding = None)</th>
+            <th colspan=2 style="text-align:center">read_excel(io, sheetname=0, header=0, skiprows=None,  index_col=None)</th>
     </tr>
     <tr>
         <td style="text-align:left">io</td>
@@ -612,22 +612,12 @@ document.write(`
         <td style="text-align:left">skiprows</td>
         <td style="text-align:left">省略指定行数的数据,从第一行开始查起</td>
     </tr>
-    <tr>
+    <tr style="border-bottom:solid">
         <td style="text-align:left">index_col</td>
         <td style="text-align:left">行标题所在的列</td>
     </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">encoding</td>
-        <td style="text-align:left">解码方式，一般为 'gbk'或 'utf-8'</td>
-    </tr>
 </table>
-<br /><div class="admonition- admonition">
-<p class="admonition-title">注意</p>
-<ul class="simple">
-<li><p>读取一些数据文件时，可能需要添加解码参数 encoding=’gbk’ 或 encoding=’utf-8’ 才能正确读取</p></li>
-</ul>
-</div>
-<p>还有一种常见的数据文件类型为 csv，我们只需使用 pandas 中的函数<code class="docutils literal notranslate"><span class="pre">read_csv</span></code>，它的语法与<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>基本一致。</p>
+<br /><p>还有一种常见的数据文件类型为 csv，我们只需使用 pandas 中的函数<code class="docutils literal notranslate"><span class="pre">read_csv</span></code>，它的语法与<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>基本一致。</p>
 </section>
 <section id="id4">
 <h3><span class="section-number">5.1.3. </span>存储数据<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
@@ -3784,7 +3774,7 @@ Name: 统计学, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\chen\AppData\Local\Temp\ipykernel_7412\4010783073.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_75755/4010783073.py:1: FutureWarning: The default value of numeric_only in DataFrameGroupBy.mean is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).mean() # 按班级、性别汇总平均成绩
 </pre></div>
 </div>
@@ -3859,7 +3849,7 @@ Name: 统计学, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\chen\AppData\Local\Temp\ipykernel_7412\2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_75755/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
 </pre></div>
 </div>
@@ -3989,7 +3979,7 @@ Name: 统计学, dtype: bool
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[85, 82, 84],
        [68, 63, 90],
-       [90, 88, 78]], dtype=int64)
+       [90, 88, 78]])
 </pre></div>
 </div>
 </div>
@@ -5700,7 +5690,7 @@ Name: 英语, dtype: bool
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/7b31ede2a27453d92c16162a52a68f46dfd91fad53ac9cddb491a4857c38ab5e.png" src="_images/7b31ede2a27453d92c16162a52a68f46dfd91fad53ac9cddb491a4857c38ab5e.png" />
+<img alt="_images/6b876c8b0b6967ea9b206e6e2d2ff522c277430246727bd6f88e09a330210090.png" src="_images/6b876c8b0b6967ea9b206e6e2d2ff522c277430246727bd6f88e09a330210090.png" />
 </div>
 </div>
 <p>从上图可以看出，Pandas 的<code class="docutils literal notranslate"><span class="pre">plot</span></code>默认对每一列数据，画一个线图。</p>
@@ -5714,7 +5704,7 @@ Name: 英语, dtype: bool
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;My picture&#39;}&gt;
 </pre></div>
 </div>
-<img alt="_images/153da70a972324f3a45361ea8bb17622012ac19dfeaa7410c6000a93f0944c34.png" src="_images/153da70a972324f3a45361ea8bb17622012ac19dfeaa7410c6000a93f0944c34.png" />
+<img alt="_images/025d5e89920125faa854d126e1d556e89e419ef6ed4364f55b75a6bf06f318d7.png" src="_images/025d5e89920125faa854d126e1d556e89e419ef6ed4364f55b75a6bf06f318d7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5729,7 +5719,7 @@ Name: 英语, dtype: bool
        &lt;Axes: title={&#39;center&#39;: &#39;English&#39;}&gt;], dtype=object)
 </pre></div>
 </div>
-<img alt="_images/1b4b491ff4f1966c30f7e2c5154687a9da09cf08336d15752121d8ac94e99b94.png" src="_images/1b4b491ff4f1966c30f7e2c5154687a9da09cf08336d15752121d8ac94e99b94.png" />
+<img alt="_images/cc7672bbc6716c17671baf84dafea645375746063d2d1bf470e834adefb69169.png" src="_images/cc7672bbc6716c17671baf84dafea645375746063d2d1bf470e834adefb69169.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5742,12 +5732,19 @@ Name: 英语, dtype: bool
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;math&#39;, ylabel=&#39;statistics&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/384aa682d5655d406cac38c06e4aaacd68b97ab2c30b65cce50fee30ce657503.png" src="_images/384aa682d5655d406cac38c06e4aaacd68b97ab2c30b65cce50fee30ce657503.png" />
+<img alt="_images/b70a4e1a3556db3be2eba2b913c0a54b6945db60dde28bf6edad345442099ca4.png" src="_images/b70a4e1a3556db3be2eba2b913c0a54b6945db60dde28bf6edad345442099ca4.png" />
 </div>
 </div>
 </section>
 <section id="id23">
 <h2><span class="section-number">5.10. </span>练习<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h2>
+<div class="exercise admonition" id="output">
+
+<p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
+<section id="exercise-content">
+<p>自定义一个包含10个学生，3门课程的成绩单 excel 文件，其中包含不及格的数据。用 pandas 读取该文件，剔除有成绩不及格的学生条目，并输出剩下成绩单各科目的平均成绩，最高成绩；最后将剩下学生所有科目的平均成绩排序并输出名次。</p>
+</section>
+</div>
 </section>
 </section>
 
@@ -5882,7 +5879,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
