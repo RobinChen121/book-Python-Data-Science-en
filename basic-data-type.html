@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>2. Python 的常用数据类型 &#8212; Python 数据科学</title>
   
@@ -45,7 +45,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -105,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="3. Python 编写函数" href="define-function.html" />
     <link rel="prev" title="1. 初识 Python" href="A-first-look-of-Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -421,10 +420,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <p id="index-0">Python 的常用数据类型有：数字，字符串，列表，元组，集合，字典。</p>
 <section id="id1">
-<h2><span class="section-number">2.1. </span>数字类型：整数型，浮点型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>数字类型：整数型，浮点型<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Python 中定义一个数字型变量特别方便，直接用等号赋值。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -709,7 +708,7 @@ y =  6
 <p>第一行代码调用 math 中的 sin 函数求 <span class="math notranslate nohighlight">\(sin(\pi/2)\)</span>，其中调用了 math 中的 pi 函数表示 <span class="math notranslate nohighlight">\(\pi\)</span>，第二行代码调用了对数函数求 <span class="math notranslate nohighlight">\(\ln(100)\)</span>。</p>
 </section>
 <section id="id2">
-<h2><span class="section-number">2.2. </span>字符串类型<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>字符串类型<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>字符串也是 Python 中比较常见的数据类型，可以用单引号或双引号表示字符串。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,7 +926,7 @@ y =  6
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>列表（List）是最常用的 Python 数据类型，它由一个<strong>中括号</strong><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>以及逗号分隔的不同数值或字符串组成，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1249,7 +1248,7 @@ y =  6
 </table>
 <br /></section>
 <section id="id4">
-<h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在花括号<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号<code class="docutils literal notranslate"><span class="pre">：</span></code>分割。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1388,7 +1387,7 @@ economy
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Python 的元组（tuple）与列表类似，不同之处在于<strong>元组的元素不能修改</strong>。元组使用<strong>小括号</strong>创建，并使用逗号隔开。访问列表元素或者截取部分元组与列表非常类似：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1509,7 +1508,7 @@ economy
     </tr>
 </table></section>
 <section id="id6">
-<h2><span class="section-number">2.6. </span>集合类型<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>集合类型<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>集合（set）是一个无序的<strong>不重复</strong>元素序列，一般使用大括号 { } 创建。注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 默认创建一个空字典）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1705,7 +1704,7 @@ economy
     </tr>
 </table></section>
 <section id="id7">
-<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Python 中的布尔值（Bool) 一般通过逻辑判断产生，只有两个可能的结果：<code class="docutils literal notranslate"><span class="pre">True</span></code>或<code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1796,13 +1795,13 @@ economy
 </div>
 </section>
 <section id="random">
-<h2><span class="section-number">2.8. </span>random 库<a class="headerlink" href="#random" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span>random 库<a class="headerlink" href="#random" title="Permalink to this headline">#</a></h2>
 <p>随机数在编程中应用比较普遍，Python 内置的<code class="docutils literal notranslate"><span class="pre">random</span></code>库可以生成常见的伪随机数（计算机生成的随机数都是伪随机数，真随机数是不能人为产生的）。</p>
 <p><code class="docutils literal notranslate"><span class="pre">random</span></code>库中的常用函数：</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
-<th class="head text-left"><p>含义</p></th>
+<tr class="row-odd"><th class="text-center head"><p>函数</p></th>
+<th class="text-left head"><p>含义</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1836,7 +1835,7 @@ economy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3521033423198475
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8932230848545593
 </pre></div>
 </div>
 </div>
@@ -1856,7 +1855,7 @@ economy
 </div>
 </section>
 <section id="id8">
-<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition" id="compute-formula">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>

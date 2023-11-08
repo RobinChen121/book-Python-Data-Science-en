@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>3. Python 编写函数 &#8212; Python 数据科学</title>
   
@@ -45,7 +45,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -105,7 +104,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="4. Numpy 简介" href="introduction-to-numpy.html" />
     <link rel="prev" title="2. Python 的常用数据类型" href="basic-data-type.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -423,10 +422,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">3. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <p>用 Python 编写函数时，经常要用到条件语句<code class="docutils literal notranslate"><span class="pre">if</span></code>， 循环语句<code class="docutils literal notranslate"><span class="pre">for</span></code>或<code class="docutils literal notranslate"><span class="pre">while</span></code>。</p>
 <section id="id1">
-<h2><span class="section-number">3.1. </span>条件语句<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>条件语句<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>语句的字面意思是：如果（if）满足条件，做什么，否则（else）做什么。例如，下面一段代码：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,7 +524,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">3.2. </span>循环语句<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>循环语句<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>循环语句一般有两种，for 语句与 while 语句。for 循环可以遍历任何序列的项目，如一个列表、元组、集合或者一个字符串。for 循环的一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -673,7 +672,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">3.3. </span>自定义函数<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>自定义函数<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Python 提供了许多内建函数，比如 print()，但也可以自己创建函数，这被叫做用户自定义函数。掌握了自定义函数后，就能用 Python 实现很多自己想要的功能了。Python 自定义函数使用<code class="docutils literal notranslate"><span class="pre">def</span></code>关键字，一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -812,7 +811,7 @@ document.write(`
 </div>
 </div>
 <section id="id4">
-<h3><span class="section-number">3.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>根据输入参数的值是否可以改变，函数的参数传递类型包括以下两种：</p>
 <ul class="simple">
 <li><p>不可变类型：数字，字符串，元组</p></li>
@@ -858,7 +857,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">3.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>函数的参数传入方法主要有4种类型：</p>
 <ul class="simple">
 <li><p>顺序传入</p></li>
@@ -967,7 +966,7 @@ final x is 18
 </section>
 </section>
 <section id="lambda-map-filter-reduce">
-<h2><span class="section-number">3.4. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this headline">#</a></h2>
 <p>Python 使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>来创建匿名函数。所谓匿名，即不再使用 def 语句这样标准的形式定义一个函数。<strong>lambda 函数只有一行</strong>，用一个冒号分割传递参数与函数的返回值。非常简洁，在 Pandas 处理数据时经常结合 apply 函数使用。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1014,7 +1013,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1e6fcaa4460&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x19f142583a0&gt;
 </pre></div>
 </div>
 </div>
@@ -1081,7 +1080,7 @@ final x is 18
 </div>
 </section>
 <section id="try-except">
-<h2><span class="section-number">3.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this headline">#</a></h2>
 <p>在编写程序时，有时候不知道程序能否正确运行，想试试程序运行结果如何，可以使用 try-except语句；若 try 块中的语句无法执行通过，则执行 except 块中的语句。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1139,7 +1138,7 @@ final x is 18
 <p>上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。</p>
 </section>
 <section id="id6">
-<h2><span class="section-number">3.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Python 内置了一些常用的函数，可以方便使用。本书简单介绍以下几个内置函数：</p>
 <table>
     <tr style="border-top:solid">
@@ -1324,7 +1323,7 @@ final x is 18
 </div>
 </section>
 <section id="id7">
-<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition" id="judge-leap-year">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
