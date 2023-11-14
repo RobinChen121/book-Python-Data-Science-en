@@ -18,4 +18,5 @@ parts:
 - caption: Python 实践
   numbered: true
   chapters:
+  - file: introduction-to-crawler
   - file: line-regression

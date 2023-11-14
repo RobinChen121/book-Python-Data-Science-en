@@ -1,0 +1,1412 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>8. Python 爬虫入门 &#8212; Python 数据科学</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "https://github.com/RobinChen121/book-Python-Data-Science");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-crawler';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9. 线性回归" href="line-regression.html" />
+    <link rel="prev" title="7. Python 画图" href="draw-pictures.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo2.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    前言
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">3. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">6. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Python 爬虫入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">9. 线性回归</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science/issues/new?title=Issue%20on%20page%20%2Fintroduction-to-crawler.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/introduction-to-crawler.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python 爬虫入门</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">8.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">8.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.3. 爬虫实例 1：抓小说</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">8.4. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.5. 练习</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1><span class="section-number">8. </span>Python 爬虫入门<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<p>Python 的爬虫功能使得程序员可以快速抓取并分析网页中的信息，它实质上是模拟浏览器访问网页。本章主要常用的两个爬虫相关的库<code class="docutils literal notranslate"><span class="pre">requests</span></code>，<code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>。若要模拟鼠标点击等，要用到<code class="docutils literal notranslate"><span class="pre">selenium</span></code> 库，限于篇幅限制，本章不再介绍，具体可以查阅相关资料。</p>
+<section id="requests">
+<h2><span class="section-number">8.1. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 库<a class="headerlink" href="#requests" title="Permalink to this headline">#</a></h2>
+<p>每个网页都有源代码，可以通过鼠标单击右键查看网页源代码。网页中的很多信息都在源代码里面，<code class="docutils literal notranslate"><span class="pre">requests</span></code> 是一个访问网页源代码的库。一般通过 get 函数访问网页，另外一个常用来访问网页的函数是 post，与 get 函数的区别在于 post 能够传递表格或文件到网页所在服务器上。</p>
+<table>   
+    <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">get(url, [timeout], [headers], [proxies], **kwargs)</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">url</td>
+        <td style="text-align:left">网页链接</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">timeout</td>
+        <td style="text-align:left">可选参数，请求网页的最大时长，单位为秒</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">headers</td>
+        <td style="text-align:left">可选参数，模拟浏览器设置</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">proxies</td>
+        <td style="text-align:left">可选参数，代理服务器设置</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">**kwargs</td>
+        <td style="text-align:left">其他参数</td>
+    </tr>
+</table>
+<br /><p>get 或 post 函数返回一个 Resoponse 对象，该对象包括以下常用的属性或函数。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>属性或函数</p></th>
+<th class="text-left head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>status_code</p></td>
+<td class="text-left"><p>网页请求的返回状态，200 表示连接成功，404 表示连接失败</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>text</p></td>
+<td class="text-left"><p>响应网页的字符串内容</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>encoding</p></td>
+<td class="text-left"><p>响应网页的编码方式，可以更改</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>content</p></td>
+<td class="text-left"><p>相应网页的字节形式内容，例如图片或 pdf 文件等</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>raise_for_status()</p></td>
+<td class="text-left"><p>如果网页访问不成功，抛出异常，一般结合 try-except 语句使用</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>json()</p></td>
+<td class="text-left"><p>该函数可以解析网页内容中 JSON 格式的数据</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://www.baidu.com&#39;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">status_code</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>r.text # 结果省略
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">encoding</span>  <span class="c1"># 若为 ISO-8859-1 则中文为乱码</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;utf-8&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span> <span class="c1"># 无论网页原内容是什么编码，都改成 utf-8 编码</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="beautifulsoup4">
+<h2><span class="section-number">8.2. </span><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库<a class="headerlink" href="#beautifulsoup4" title="Permalink to this headline">#</a></h2>
+<p>使用<code class="docutils literal notranslate"><span class="pre">requests</span></code>获取的网页源代码一般非常复杂，不仅包括常规内容，还包括很多定义页面格式的代码。<code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库提供了大量的属性或函数，能够方便地将网页（html）不同标签（tag）中的内容提取出来。常用的属性有下面几个：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>属性</p></th>
+<th class="text-left head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>head</p></td>
+<td class="text-left"><p>网页源代码中的 &lt;head&gt; 标签内容</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>title</p></td>
+<td class="text-left"><p>网页源代码中的 &lt;title&gt; 标签内容</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>body</p></td>
+<td class="text-left"><p>网页源代码中的 &lt;body&gt; 标签内容</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>p</p></td>
+<td class="text-left"><p>网页源代码中的第一个 &lt;p&gt; 标签内容</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>a</p></td>
+<td class="text-left"><p>网页源代码中的第一个 &lt;a&gt; 标签内容</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>div</p></td>
+<td class="text-left"><p>网页源代码中的第一个 &lt;div&gt; 标签内容</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>script</p></td>
+<td class="text-left"><p>网页源代码中的第一个 &lt;script&gt; 标签内容</p></td>
+</tr>
+</tbody>
+</table>
+<div class="tip admonition">
+<p class="admonition-title">tips</p>
+<ul class="simple">
+<li><p>网页中的内容一般在网页源代码的各个标签里</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://www.baidu.com&#39;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="c1"># 将网页内容传递给 BeautifulSoup 提取</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">title</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;title&gt;百度一下，你就知道&lt;/title&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">p</span> <span class="c1"># html 语言中 p 标签表示一个文本段落</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;p class=&quot;lh&quot;&gt;&lt;a class=&quot;text-color&quot; href=&quot;//home.baidu.com&quot; target=&quot;_blank&quot;&gt;关于百度&lt;/a&gt;&lt;/p&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>上面的这些标签对象还有自己的属性可以访问更具体的内容。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>标签属性</p></th>
+<th class="text-left head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>name</p></td>
+<td class="text-left"><p>标签名字，例如 a，p，div等</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>attrs</p></td>
+<td class="text-left"><p>标签的具体属性</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>contents</p></td>
+<td class="text-left"><p>第一个该标签下的所有内容，为列表形式</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>string</p></td>
+<td class="text-left"><p>第一个该标签或子标签下的文本内容，若标签中没有内容或者超过一层的子标签，则返回 None</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>text</p></td>
+<td class="text-left"><p>第一个该标签下（包括子标签）的所有文本内容，若没有内容则返回空文本</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;p&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">attrs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;class&#39;: [&#39;lh&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">contents</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;a class=&quot;text-color&quot; href=&quot;//home.baidu.com&quot; target=&quot;_blank&quot;&gt;关于百度&lt;/a&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;关于百度&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;关于百度&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>将挖网页内容传递给BeautifulSoup 提取时，还可以指定解析器，例如 ‘html.parser’, ‘lxml’, ‘xml’, ‘html5lib’。这些解析器各有利弊，其中 ‘lxml’ 解析速度最快。</p>
+<p>假如有下面的 html 代码：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">html_doc</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;html&gt;</span>
+<span class="s2">    &lt;body&gt;</span>
+<span class="s2">        &lt;h1&gt;Hello, BeautifulSoup!&lt;/h1&gt;</span>
+<span class="s2">        &lt;ul&gt;</span>
+<span class="s2">            &lt;li&gt;&lt;a class = &quot;c1&quot; href=&quot;http://example1.com&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;</span>
+<span class="s2">            &lt;li&gt;&lt;a class = &quot;c2&quot; href=&quot;http://example2.org&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;</span>
+<span class="s2">        &lt;/ul&gt;</span>
+<span class="s2">        &lt;div&gt;</span>
+<span class="s2">        &lt;p&gt;text1&lt;/p&gt; &lt;p&gt;text2&lt;/p&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">    &lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_doc</span><span class="p">,</span> <span class="s1">&#39;lxml&#39;</span><span class="p">)</span> <span class="c1"># 或者 soup2 = BeautifulSoup(html_doc, features = &#39;lxml&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nLink 1\nLink 2\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">soup2</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">string</span><span class="p">)</span> <span class="c1"># 文本内容嵌套超过一层，返回 None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoneType
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">li</span><span class="o">.</span><span class="n">contents</span> <span class="c1"># html 语言中 a 标签是超链接，ul 与 li 标签表示一个无序列表</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;a class=&quot;c1&quot; href=&quot;http://example1.com&quot;&gt;Link 1&lt;/a&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">ul</span><span class="o">.</span><span class="n">li</span><span class="o">.</span><span class="n">text</span> <span class="c1"># 标签通过逗点套子标签</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Link 1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>当需要列出同一类标签对应的所有内容时，需要用到 BeautifulSoup 中的 findall() 函数。</p>
+<table>   
+    <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">find_all([name], [attrs], [string], [limit], **kwargs)</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">name</td>
+        <td style="text-align:left">标签名字</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">attrs</td>
+        <td style="text-align:left">按照标签的具体属性检索, 采用 class_= 形式或 JSON 格式等</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">string</td>
+        <td style="text-align:left">按照关键字检索，采用 string= 形式，返回与关键字完全匹配的字符串</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">limit</td>
+        <td style="text-align:left">返回结果的个数，默认返回所有结果</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">**kwargs</td>
+        <td style="text-align:left">其他参数</td>
+    </tr>
+</table>
+<br /><p>还有一个函数<code class="docutils literal notranslate"><span class="pre">find()</span></code>，与<code class="docutils literal notranslate"><span class="pre">findall()</span></code>的区别在于<code class="docutils literal notranslate"><span class="pre">find()</span></code>只寻找第一个对应标签的内容。还有一个函数<code class="docutils literal notranslate"><span class="pre">find_next()</span></code>，可以查找标签的下一个标签。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="c1"># 检索出网页中所有的 a 标签</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;a class=&quot;c1&quot; href=&quot;http://example1.com&quot;&gt;Link 1&lt;/a&gt;,
+ &lt;a class=&quot;c2&quot; href=&quot;http://example2.org&quot;&gt;Link 2&lt;/a&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;c1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;a class=&quot;c1&quot; href=&quot;http://example1.com&quot;&gt;Link 1&lt;/a&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;c1&#39;</span><span class="p">)</span> <span class="c1"># 参数中可以没有标签名字</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;a class=&quot;c1&quot; href=&quot;http://example1.com&quot;&gt;Link 1&lt;/a&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;Link&#39;</span><span class="p">)</span> <span class="c1"># 关键词检索</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span> <span class="c1"># 导入正则表达式库</span>
+
+<span class="n">soup2</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;Link&#39;</span><span class="p">))</span> <span class="c1"># 通过正则表达式将所有包含 Link 的字符串都检索出来</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Link 1&#39;, &#39;Link 2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>正则表达式是计算机科学中用来描述字符串的一种表达式。正则表达式定义一个字符串表达规则，只要字符串满足这个规则，就算则匹配。可以通过字符串结合符号 .*+? 等定义多种表达规则，具体可以进一步查阅相关资料。</p>
+</div>
+<p>BeautifulSoup 另外一个常用的获取文本内容的函数为<code class="docutils literal notranslate"><span class="pre">get_text</span></code>。与直接使用标签的属性 text 相比，<code class="docutils literal notranslate"><span class="pre">get_text</span></code> 更加灵活，能够方便地实现文本换行。它的一般用法为：</p>
+<table>   
+    <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">get_text([separator=''], [strip=False], **kwargs)</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">separator</td>
+        <td style="text-align:left">各标签下文本的分隔符</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">strip</td>
+        <td style="text-align:left">是否去掉各标签文本的前后空格</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">**kwargs</td>
+        <td style="text-align:left">其他参数</td>
+    </tr>
+</table>
+<br /><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">text</span> <span class="c1"># html 语言中 div 标签表示网页中的一个区域</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\ntext1 text2\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\ntext1 text2\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">separator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n\ntext1\n \ntext2\n\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">separator</span> <span class="o">=</span> <span class="s1">&#39;**&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n**text1** **text2**\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup2</span><span class="o">.</span><span class="n">div</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;text1text2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2><span class="section-number">8.3. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>下面，我们举例如何用爬虫抓取网上的《三国演义》小说，并将每回的内容下载到电脑里。</p>
+<p>首先，找到一个包含《三国演义》小说的网站，本例中，使用了古诗文网：https://so.gushiwen.cn/guwen/book_46653FD803893E4F7F702BCF1F7CCE17.aspx</p>
+<p>然后，在网页的空白处，单击鼠标右键，查看网页源代码：</p>
+<p><img alt="san_guo1" src="_images/san_guo1.png" /></p>
+<p>网页的源代码大致如下：</p>
+<p><img alt="sanguo_2.png" src="_images/san_guo2.png" /></p>
+<ul class="simple">
+<li><p>我们发现每一回的链接在网页中的标签 ul 里面，具体在其每个子标签 span 中的子标签 a 里面。</p></li>
+</ul>
+<p>打开其中任一回的链接，在网页空白处单击右键，查看网页源代码：</p>
+<p><img alt="sanguo_3.png" src="_images/san_guo3.png" /></p>
+<ul class="simple">
+<li><p>我们发现每一回的内容在具体属性为 class=’contson’ 的 div 标签里，其中第一句为每一回的标题，而之后的内容为正文。</p></li>
+</ul>
+<p>根据网页的以上两个特点，设计 Python 的爬虫代码如下。</p>
+<div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>import requests  # 联系网络的包，a package for requesting from websites
+from bs4 import BeautifulSoup  # 分析网页数据的包，a package for webstie data analysis
+import time
+import random
+import os
+
+
+# 获取单个网页信息
+def get_url_content(url):
+    headers = {
+        &#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;
+    }  # 主要是模拟浏览器登录，防止反爬，一般的网站没有这个也行
+    r = requests.get(url, headers=headers, timeout=30)  # 获取网页的内容，并返回给r变量，timeout 为超时时间
+    r.raise_for_status()  # 检查返回网页的内容的状态码，200表示成功
+    r.encoding = r.apparent_encoding  # 统一编码方式
+    return r.text  # 返回网页中的文本内容，数据内容为 r.content
+
+
+# 解析出网页中想要的信息，爬虫的关键步骤
+def filter_info(chapter_num, url_text):
+    soup = BeautifulSoup(url_text, &quot;lxml&quot;)  # 解析网页返回内容，lxml 是一个解码方式，效率比较快，被推荐使用
+    contents = soup.find(&#39;div&#39;, class_=&#39;contson&#39;)
+    # 使用 get_text 可以实现网页里面 p 标签中文本内容的换行，而 text 不能
+    chapter_title = contents.find(&#39;p&#39;).get_text()  # 第一句话是本回的标题
+    chapter_title = &#39;第&#39; + str(chapter_num) + &#39;回 &#39; + chapter_title.lstrip()
+    chapter_content = contents.get_text(separator=&quot;\n&quot;)  # find 返回的不是列表，不用跟 [0]
+    chapter_content = chapter_content.lstrip() # 结掉字符串左边的空字符
+    this_chapter = [chapter_title, chapter_content]
+    return this_chapter
+
+# 从网页中找到每一回的链接
+def get_url_links(url_head_content):
+    soup = BeautifulSoup(url_head_content, &quot;lxml&quot;)  # 解析网页返回内容，lxml 是一个解码方式，效率比较快，被推荐使用
+    # links = soup.find(&#39;div&#39;, class_=&#39;bookcont&#39;)  # 每一回的链接都在类 span 里面
+    links = soup.find(&#39;ul&#39;)  # 每一回的链接都在类 ul 里面
+    links = links.findAll(&#39;span&#39;)
+    link_list = []
+    for each in links:
+        link_list.append(each.a.get(&#39;href&#39;))  # 获取每一回的链接，存储到列表里
+    return link_list
+
+# 将每章内容输出到 txt 文档里
+def write_txt(string_array):
+    file_address = &#39;E:/三国演义/&#39;  # txt 存放地址
+    if not os.path.exists(file_address):       #用os库判断对应文件夹是否存在
+        os.makedirs(file_address)              #如果没有对应文件夹则自动生成 
+    file_name = string_array[0]
+    with open(file_address + file_name + &#39;.txt&#39;, &#39;w&#39;, encoding=&#39;utf-8&#39;) as f: # 必须跟解码形式，不然有的网页中文内容写不到txt里
+        f.write(string_array[1])
+
+# 主函数
+def main():
+    url = &#39;https://so.gushiwen.cn/guwen/book_46653FD803893E4F7F702BCF1F7CCE17.aspx&#39;  # 古诗文网三国演义网址
+    url_head_content = get_url_content(url)  # 获取网页
+    links = get_url_links(url_head_content)  # 获取每一回的链接地址
+    for index, each in enumerate(links):
+        url_link_content = get_url_content(each)  # 获取每一回的网页内容
+        chapter_content = filter_info(index + 1, url_link_content)  # 解析每一回的网页内容，获取小说文本
+        write_txt(chapter_content)  # 输出小说内容到 txt
+        time.sleep(random.random() * 1)  # 每抓一个网页休息0~1秒，防止被反爬措施封锁 IP
+
+# 运行函数
+main()
+</pre></div>
+</div>
+<p>其中，使用 requests 库时，有的网站需要设置 headers 参数才能正确模拟浏览器登录。headers 参数可以在打开网页时，按键盘<code class="docutils literal notranslate"><span class="pre">F12</span></code> 打开， 然后刷新一下网页，单击<code class="docutils literal notranslate"><span class="pre">F12</span></code>弹出窗口的任何一个文件，就能查看网站的所有 headers 信息，有 cookie，user-agent 等信息。如下图所示：</p>
+<p><img alt="sanguo_4.png" src="_images/san_guo4.png" /></p>
+<p>我们可以复制一部分信息或全部信息，放到 request 函数的 headers 参数里面。</p>
+</section>
+<section id="top-250">
+<h2><span class="section-number">8.4. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Permalink to this headline">#</a></h2>
+<p>我们想获取豆瓣高分评价的 250 部电影的信息：电影名字，导演，上映年代，评分，评分人数等。打开豆瓣 top 250 的网页链接 https://movie.douban.com/top250?start= ，发现每个网页显示 25 部电影，一共有 10 个挖网页，网页地址与链接中的 start = 后面的数字有关。例如第 3 个子网页的链接地址是 ‘https://movie.douban.com/top250?start=50 ，根据这个规律，我们可以用一个 for 循环，将 10 个网页分别打开抓取信息。</p>
+<p>打开一个网页，单击右键查看网页源代码，如下图所示：</p>
+<p><img alt="douban1.png" src="_images/douban1.png" /></p>
+<p>通过源代码发现以下几个特点：</p>
+<ul class="simple">
+<li><p>每部电影的信息都在标签 &lt;div class=’item’&gt; 里面。据此，我们可以用一个 for 循环，将每个网页的  &lt;div class=’item&gt; 标签都检索出来</p></li>
+<li><p>电影的中英文名字都在标签  &lt;div class=’title’&gt; 里，而其他名字在标签 &lt;div class=’other’&gt; 里。我们可以使用函数<code class="docutils literal notranslate"><span class="pre">find()</span></code>以及<code class="docutils literal notranslate"><span class="pre">find_next()</span></code> 检索出来。</p></li>
+<li><p>导演，主演，上映年代，电影产地，电影类型信息在标签 &lt;p class=’’&gt; 里。我们可以使用函数<code class="docutils literal notranslate"><span class="pre">find()</span></code>检索，然后利用正则表达式将里面对应文本信息分别提取出来。</p></li>
+<li><p>评分信息在标签 &lt;div class=’rating_num’&gt; 里。我们可以使用函数<code class="docutils literal notranslate"><span class="pre">find()</span></code>检索出来。</p></li>
+<li><p>评分人数信息在标签 &lt;span’&gt; 里。我们可以通过函数<code class="docutils literal notranslate"><span class="pre">find()</span></code>结合关键字’评价’检索出来。</p></li>
+<li><p>代表性评价信息在标签 &lt;div class=’quote’&gt; 里。我们可以使用函数<code class="docutils literal notranslate"><span class="pre">find()</span></code>检索出来。</p></li>
+</ul>
+<p>根据以上的特点，设计出以下的 python 代码。其中中文分词库<code class="docutils literal notranslate"><span class="pre">jieba</span></code>，词云库<code class="docutils literal notranslate"><span class="pre">WordCloud</span></code>库等，若没有安装，需要提前安装（使用 pip 或 conda 安装）到电脑上。</p>
+<p>在画图时，使用 matplotlib 画出饼图，使用 WordCloud 生成词云图，因为 matplotlib 不能自动将不同柱子分配不同的颜色，使用 seaborn 画出柱状图。</p>
+<div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>import requests  # 联系网络的包，a package for requesting from websites
+import pandas as pd
+from bs4 import BeautifulSoup # 分析网页数据的包，a package for webstie data analysis
+import matplotlib.pyplot as plt # 画图的包
+import time 
+import random
+import jieba # 中文分词包
+from wordcloud import WordCloud # 词云包
+import re  # 正则表达式包
+import seaborn as sns # 用 seaborn 画柱状图
+
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;] 
+
+# 主要是模拟浏览器登录，防止反爬
+headers = {
+    &#39;user-agent&#39;:&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;
+    }
+
+## store the information
+rank_list = []
+name_list = [] # 用来存储电影名字的一个二维列表
+director_list = [] # 用来存储导演名字的一个列表，下面几个变量类似
+actor_list = []
+year_list = []
+rating_list = []
+ratingNum_list = []
+quote_list = []
+place_list = []
+category_list = []
+
+num = 0
+for i in range(0, 10):
+    link = &#39;https://movie.douban.com/top250?start=&#39; + str(i*25) # 250部电影一共 10个网页， 10 pages for total 250 movies    
+    res = requests.get(link, headers = headers, timeout = 10)
+    time.sleep(random.random()*3) # 每抓一个网页休息2~3秒，防止被反爬措施封锁 IP，avoid being blocked of the IP address
+    
+    # res.text is the content of the crawler
+    soup = BeautifulSoup(res.text, &quot;lxml&quot;)  # lxml 是一个解码方式，lxml is one decoding model for Beautifulsoup
+    movie_list = soup.find_all(&#39;div&#39;, class_ = &#39;item&#39;) # 检索所有类型为 item 的 div 标签
+    
+    for each in movie_list:
+        # 排名在 em 标签里
+        rank = each.em.text
+        rank_list.append(rank)
+        
+        # 电影名字在标签 &lt;span class=&quot;title&quot;&gt; 与 &lt;span class=&quot;other&quot;&gt; 里
+        other_name = each.find(&#39;span&#39;, class_ = &#39;other&#39;).get_text()
+        other_name = other_name.replace(&#39; &#39;, &#39;&#39;) # 去掉空格
+        other_name = other_name.replace(&#39;\xa0/\xa0&#39;, &#39;&#39;) # 去掉多余字符 \xa0/\xa0
+        cn_name = each.find(&#39;span&#39;, class_ = &#39;title&#39;).get_text()
+        eg_name = each.find(&#39;span&#39;, class_ = &#39;title&#39;).find_next().get_text() # find_next() 查找满足条件的下一个标签
+        eg_name = eg_name.replace(&#39;\xa0/\xa0&#39;, &#39;&#39;) # 去掉多余字符 \xa0/\xa0
+        name_list.append([cn_name, eg_name, other_name])   
+              
+        # 评分信息在标签  &lt;span class=&quot;rating_num&quot;&gt; 里
+        rating =  each.find(&#39;span&#39;, class_ = &#39;rating_num&#39;).get_text()
+        rating_list.append(float(rating))
+        
+        # 评价人数通过关键词&#39;评价&#39;检索
+        rating_num = each.find(string = re.compile(&#39;评价&#39;)).get_text()
+        rating_num = rating_num.replace(&#39;人评价&#39;, &#39;&#39;)
+        ratingNum_list.append(int(rating_num))
+        
+        # 代表性评价在  &lt;p class=&quot;quote&quot;&gt; 里  
+        try:
+            quote =  each.find(&#39;p&#39;, class_ = &#39;quote&#39;).get_text()
+        except Exception: # 有的电影代表性评价没有显示
+            quote =  &#39;&#39;
+        quote_list.append(quote)
+        
+        info = each.p.get_text(strip = True)
+        # 定义正则表达式提取出导演，主演，上映时间，地点，电影类型信息        
+        try: 
+            # (?&lt;=导演: ) match any character begins after character &#39;导演: &#39;
+            # .*? match any character (.), zero or more times (*) but as less as possible (?)
+            # (?=主) match any character before character &#39;主&#39;
+            director = re.compile(&#39;(?&lt;=导演: ).*?(?=主)&#39;).findall(info)[0]
+            actor = re.compile(&#39;(?&lt;=主演: ).*?(?=/)&#39;).findall(info)[0]
+        except Exception: # 有的电影导演名字太长，主演没有显示出来
+            director = re.compile(&#39;(?&lt;=导演: ).*?(?=\xa0)&#39;).findall(info)[0]
+            actor = &#39;&#39;  
+        director_list.append(director)
+        actor_list.append(actor)
+        
+        # \d{4} is a four digit number
+        year = re.compile(&#39;(?&lt;=...)\d{4}&#39;).findall(info)[0]
+        year_list.append(year)
+        place_category = re.compile(&#39;(?&lt;=\xa0/\xa0).*&#39;).findall(info)[0]
+        place_category = place_category.replace(&#39;\xa0&#39;, &#39;&#39;)
+        place_category = place_category.split(&#39;/&#39;)
+        place = place_category[0]
+        category = place_category[1]
+        place_list.append(place)
+        category_list.append(category)
+          
+# 将数据存到 pandas 里
+df = pd.DataFrame(rank_list, columns = [&#39;排名&#39;])    
+df[&#39;电影名字&#39;] = [i[0] for i in name_list]
+df[&#39;外文名字&#39;] = [i[1] for i in name_list]
+df[&#39;其他名字&#39;] = [i[2] for i in name_list]
+df[&#39;评分&#39;] = rating_list
+df[&#39;评价人数&#39;] = ratingNum_list
+df[&#39;导演&#39;] = director_list
+df[&#39;主演&#39;] = actor_list
+df[&#39;上映日期&#39;] = year_list
+df[&#39;地区&#39;] = place_list
+df[&#39;类型&#39;] = category_list
+df[&#39;代表性评论&#39;] = quote_list
+
+# 导出到 xls 文件里，save to xls file    
+df.to_csv(&#39;豆瓣 top 250 电影爬虫抓取.csv&#39;)
+
+# 分析电影来源地并画饼图
+locations = []
+for i in range(len(place_list)):
+    nations = place_list[i].split(&#39; &#39;) 
+    for j in range(len(nations)):
+        if nations[j] == &#39;西德&#39;:
+            nations[j] = &#39;德国&#39;
+        locations.append(nations[j])
+
+df_location = pd.DataFrame(locations, columns = [&#39;地区&#39;])
+# 按照出现次数排序, size() 可以查数，生成一个 Series 类型
+# 然后用 reset_index 重新命名，参数为 name
+# DataFrame 类型的 reset_index 参数为 names
+df2 = df_location.groupby(&#39;地区&#39;).size().reset_index(name=&#39;counts&#39;) # df2 = df2[&#39;地区&#39;].value_counts(ascending = False).reset_index()
+df2.sort_values(by = &#39;counts&#39;, ascending = False, inplace = True, ignore_index = True)
+# 画饼状图
+values = []
+labels = []
+other_count = 0
+for i in range(9):
+    values.append(df2[&#39;counts&#39;][i])
+    labels.append(df2[&#39;地区&#39;][i])
+for i in range(9, df2.shape[0]):
+    other_count += int(df2[&#39;counts&#39;][i])
+values.append(other_count)
+labels.append(&#39;其他地区&#39;)
+plt.figure(1)
+plt.pie(values, labels=labels, autopct=&#39;%.2f%%&#39;)
+plt.legend()  # 显示标签
+plt.show()
+
+
+# 分析电影类型并画饼图
+categories = []
+for i in range(len(category_list)):
+    category = category_list[i].split(&#39; &#39;) 
+    for j in range(len(category)):
+        categories.append(category[j])
+        
+df_category = pd.DataFrame(categories, columns = [&#39;类型&#39;])    
+df3 = df_category.groupby(&#39;类型&#39;).size().reset_index(name=&#39;counts&#39;) 
+df3.sort_values(by = &#39;counts&#39;, ascending = False, inplace = True, ignore_index = True)
+
+values = []
+labels = []
+other_count = 0
+for i in range(15):
+    values.append(df3[&#39;counts&#39;][i])
+    labels.append(df3[&#39;类型&#39;][i])
+for i in range(15, df3.shape[0]):
+    other_count += int(df3[&#39;counts&#39;][i])
+values.append(other_count)
+labels.append(&#39;其他类型&#39;)
+plt.figure(2)
+plt.pie(values, labels=labels, autopct=&#39;%.2f%%&#39;)
+plt.legend()
+plt.show()
+
+# 画词云图
+jieba.add_word(&#39;久石让&#39;)
+jieba.add_word(&#39;谢耳朵&#39;)
+# 一些语气词和没有意义的词
+del_words = [ &#39;就是&#39;, &#39;一个&#39;, &#39;被&#39;, &#39;电影&#39;, &#39;我们&#39;,
+              &#39;不是&#39;, &#39;每个&#39;,  &#39;不会&#39;,  &#39;没有&#39;, 
+              &#39;这样&#39;, &#39;那么&#39;, &#39;不要&#39;, &#39;如果&#39;,
+              &#39;不能&#39;,  &#39;一种&#39;, &#39;不过&#39;, &#39;只有&#39;, &#39;不得不&#39;, 
+              &#39;不得不&#39;, &#39;一部&#39;]
+all_quotes = &#39;&#39;.join(quote_list) # 将所有代表性评论拼接为一个文本
+# 去掉标点符号
+all_quotes = re.sub(r&quot;[0-9\s+\.\!\/_,$%^*()?;；:-【】+\&quot;\&#39;]+|[+——！，;:。？、~@#￥%……&amp;*（）]+&quot;, &quot; &quot;, all_quotes)
+words = jieba.lcut(all_quotes)
+words_final = []
+for i in range(len(words)): 
+    if len(words[i]) &gt; 1 and  words[i] not in del_words: # 去掉一些语气词，单字词 
+        words_final.append(words[i])
+text_result = Counter(words_final)
+cloud = WordCloud(
+    font_path = &#39;C:\Windows\Fonts\FZSTK.TTF&#39;, # 中文字体地址 C:\Windows\Fonts\FZSTK.TTF，提前下载字体或指定，否则中文无法显示
+    # mask = &#39;&#39; 通过 mask 参数指定一个图片地址作为词云的背景图像 
+    background_color = &#39;white&#39;,
+    width = 1000,
+    height = 860,
+    max_words = 25   
+  )
+#wc = cloud.generate(words) # 这种方法对中文支持不太好，this mehtod is better for only english string
+wc = cloud.generate_from_frequencies(text_result)
+wc.to_file(&quot;豆瓣 TOP 250 词云.jpg&quot;) 
+plt.figure(3)
+plt.imshow(wc)
+plt.axis(&#39;off&#39;)
+plt.title(&#39;豆瓣 TOP 250 电影代表性评论的词云分析&#39;)
+plt.show()
+
+# 评分最高的 15 部电影
+# 用 seaborn 画柱状图，因为自动将不同柱子分配不同的颜色
+df_star = df.sort_values(by = &#39;评分&#39;, ascending = False, ignore_index = True)
+number = 15
+df_star_top = df_star.head(number)
+plt.figure(4)
+sns.barplot(data = df_star_top, y = &#39;电影名字&#39;, x = &#39;评分&#39;, orient = &#39;h&#39;)
+plt.title(&#39;评分最高的 &#39; + str(number) + &#39; 部电影&#39;)
+plt.show()
+
+# 评分人数最多的 15 部电影
+df_num = df.sort_values(by = &#39;评价人数&#39;, ascending = False, ignore_index = True)
+df_num_top = df_num.head(number)
+plt.figure(5)
+sns.barplot(data = df_num_top, y = &#39;电影名字&#39;, x = &#39;评价人数&#39;, orient = &#39;h&#39;)
+plt.title(&#39;评分人数最多的 &#39; + str(number) + &#39; 部电影&#39;)
+plt.show()
+
+# 电影年代画图
+df_year = df.groupby(&#39;上映日期&#39;).size().reset_index(name = &#39;部数&#39;)
+df_year.sort_values(&#39;部数&#39;, ascending = False, inplace = True)
+df_year_top = df_year.head(20)
+df_year_top.sort_values(&#39;上映日期&#39;, inplace = True)
+plt.figure(6)
+sns.barplot(data = df_year_top, x = &#39;上映日期&#39;, y = &#39;部数&#39;)
+plt.title(&#39;电影上映年代&#39;)
+plt.show()
+</pre></div>
+</div>
+<p>生成的图形如下：</p>
+<p><img alt="douban2.png" src="_images/douban2.png" />
+<img alt="douban3.png" src="_images/douban3.png" />
+<img alt="douban4.png" src="_images/douban4.png" />
+<img alt="douban5.png" src="_images/douban5.png" />
+<img alt="douban6.png" src="_images/douban6.png" />
+<img alt="douban7.png" src="_images/douban7.png" /></p>
+<p>不同的网站的爬虫技巧经常不一样，要具体网站具体分析。近年来，许多网站都提高了反爬手段防止网站的数据被无端获取。因此，提醒读者避免过度使用爬虫，给一些网站造成不必要的访问负担。</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">8.5. </span>练习<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition" id="crab-news">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
+<section id="exercise-content">
+<p>练习抓取学校的新闻，并尝试画出词云图。</p>
+</section>
+</div>
+<div class="exercise admonition" id="crab-红楼">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.2 </span></p>
+<section id="exercise-content">
+<p>尝试用爬虫下载红楼梦到电脑里。</p>
+</section>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="draw-pictures.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Python 画图</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="line-regression.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>线性回归</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">8.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">8.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.3. 爬虫实例 1：抓小说</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">8.4. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.5. 练习</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Zhen Chen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

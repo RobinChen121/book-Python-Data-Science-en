@@ -101,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'draw-pictures';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. 线性回归" href="line-regression.html" />
+    <link rel="next" title="8. Python 爬虫入门" href="introduction-to-crawler.html" />
     <link rel="prev" title="6. Python 输出，读写文件" href="print-read-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -205,7 +205,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">8. Python 爬虫入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">9. 线性回归</a></li>
 </ul>
 
     </div>
@@ -556,7 +557,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21523950990&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a54d0b9fd0&gt;]
 </pre></div>
 </div>
 <img alt="_images/76d25eca1393698253cf0e96e372455ee40f1d0f2ebc59ca1b3bf6f1facaebef.png" src="_images/76d25eca1393698253cf0e96e372455ee40f1d0f2ebc59ca1b3bf6f1facaebef.png" />
@@ -569,7 +570,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21523093c90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a54d184850&gt;]
 </pre></div>
 </div>
 <img alt="_images/48cc8277d4619998861fecf79619f02327de2c57734d0cb1ef81ab9eef2361df.png" src="_images/48cc8277d4619998861fecf79619f02327de2c57734d0cb1ef81ab9eef2361df.png" />
@@ -582,7 +583,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21523149fd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a54c92b1d0&gt;]
 </pre></div>
 </div>
 <img alt="_images/b4b971621b2f2ad81164c0e957e4ee54e42a2f9850d9144524cb6b7370a993a0.png" src="_images/b4b971621b2f2ad81164c0e957e4ee54e42a2f9850d9144524cb6b7370a993a0.png" />
@@ -595,7 +596,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21524aec690&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a54c8ebe90&gt;]
 </pre></div>
 </div>
 <img alt="_images/b84e40a85420ec58224d8d91e835d57ad96bcb15b7ba6aa44c250cdf436d0532.png" src="_images/b84e40a85420ec58224d8d91e835d57ad96bcb15b7ba6aa44c250cdf436d0532.png" />
@@ -1261,7 +1262,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/afcd28345bc7112128d8d0146e66bfbd3b62314524841a9fabbb1a316462bd3b.png" src="_images/afcd28345bc7112128d8d0146e66bfbd3b62314524841a9fabbb1a316462bd3b.png" />
+<img alt="_images/97b8d52251c9ca406235b232c221d921c972ae4f46ad857b502f0a7b69c911ec.png" src="_images/97b8d52251c9ca406235b232c221d921c972ae4f46ad857b502f0a7b69c911ec.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1275,7 +1276,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/289836f1717333d7acd6c6f1e050c884bb6393a9ea43985225e668d2da46640a.png" src="_images/289836f1717333d7acd6c6f1e050c884bb6393a9ea43985225e668d2da46640a.png" />
+<img alt="_images/b8cabb9e37b1aae41961ae19f0d1baf9a29b929c5bcba547a21adf875d98f177.png" src="_images/b8cabb9e37b1aae41961ae19f0d1baf9a29b929c5bcba547a21adf875d98f177.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1284,15 +1285,16 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">tips</span><span class="p">,</span> 
-    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> 
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> 
     <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;smoker&#39;</span><span class="p">,</span> <span class="c1"># 按是否吸烟生成不同的颜色</span>
+    <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span> <span class="c1"># 调整柱子横竖</span>
 <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ec6935492d93a14c63bd3aadde54e1c9369ac1d826f5a4b5460bc3beed77e600.png" src="_images/ec6935492d93a14c63bd3aadde54e1c9369ac1d826f5a4b5460bc3beed77e600.png" />
+<img alt="_images/160a8d24fd13ee97472839897a75a29572ef8027586864b502d18d61b239d48a.png" src="_images/160a8d24fd13ee97472839897a75a29572ef8027586864b502d18d61b239d48a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1397,11 +1399,11 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
       </div>
     </a>
     <a class="right-next"
-       href="line-regression.html"
+       href="introduction-to-crawler.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>线性回归</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Python 爬虫入门</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
