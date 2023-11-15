@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>7. Python 画图 &#8212; Python 数据科学</title>
   
@@ -45,6 +45,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -104,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="8. Python 爬虫入门" href="introduction-to-crawler.html" />
     <link rel="prev" title="6. Python 输出，读写文件" href="print-read-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -418,10 +419,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
-<h2><span class="section-number">7.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this heading">#</a></h2>
 <p>使用 matplotlib 包画图时，我们一般加载里面的 pyplot 函数，并命名为 plt，然后使用<code class="docutils literal notranslate"><span class="pre">plot</span></code>函数画图。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,7 +455,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7853817b898bbec2f73fdd1fcc8e06e554eae80ed7d27c05e1329a86e689b707.png" src="_images/7853817b898bbec2f73fdd1fcc8e06e554eae80ed7d27c05e1329a86e689b707.png" />
+<img alt="_images/ac8c84b4bb8bcb9a08ef53b2fed503cc42c37c66a11972626af924b50d5b927a.png" src="_images/ac8c84b4bb8bcb9a08ef53b2fed503cc42c37c66a11972626af924b50d5b927a.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">plot</span></code> 函数的基本用法如下：</p>
@@ -480,7 +481,7 @@ document.write(`
     </tr>
 </table>
 <br /><p>[fmt] 的常用代码（包括颜色代码、点形代码、线形代码），由下标所示。</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>颜色代码</p></th>
 <th class="head"><p>效果</p></th>
@@ -557,10 +558,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a54d0b9fd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2422ef02110&gt;]
 </pre></div>
 </div>
-<img alt="_images/76d25eca1393698253cf0e96e372455ee40f1d0f2ebc59ca1b3bf6f1facaebef.png" src="_images/76d25eca1393698253cf0e96e372455ee40f1d0f2ebc59ca1b3bf6f1facaebef.png" />
+<img alt="_images/04bcb5c9a6016e74959821984c7bee02b49c8dd1b07c9549cce79d6ff0403fdd.png" src="_images/04bcb5c9a6016e74959821984c7bee02b49c8dd1b07c9549cce79d6ff0403fdd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -570,10 +571,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a54d184850&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2422fb620d0&gt;]
 </pre></div>
 </div>
-<img alt="_images/48cc8277d4619998861fecf79619f02327de2c57734d0cb1ef81ab9eef2361df.png" src="_images/48cc8277d4619998861fecf79619f02327de2c57734d0cb1ef81ab9eef2361df.png" />
+<img alt="_images/122e75b77d76fc99d71011957814b9ca62be4fa5645af175c77246aa4a2c5b5a.png" src="_images/122e75b77d76fc99d71011957814b9ca62be4fa5645af175c77246aa4a2c5b5a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -583,10 +584,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a54c92b1d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2422f385dd0&gt;]
 </pre></div>
 </div>
-<img alt="_images/b4b971621b2f2ad81164c0e957e4ee54e42a2f9850d9144524cb6b7370a993a0.png" src="_images/b4b971621b2f2ad81164c0e957e4ee54e42a2f9850d9144524cb6b7370a993a0.png" />
+<img alt="_images/b40888bad80b19299911623f85a4ebf618b4c81faf5d1ec2373f1bb9b088de51.png" src="_images/b40888bad80b19299911623f85a4ebf618b4c81faf5d1ec2373f1bb9b088de51.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -596,10 +597,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a54c8ebe90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24230bb9b10&gt;]
 </pre></div>
 </div>
-<img alt="_images/b84e40a85420ec58224d8d91e835d57ad96bcb15b7ba6aa44c250cdf436d0532.png" src="_images/b84e40a85420ec58224d8d91e835d57ad96bcb15b7ba6aa44c250cdf436d0532.png" />
+<img alt="_images/bae565a7b0d96b1538c71ef78ac810e1a37cdc2426a893bc5015670ebc9ef058.png" src="_images/bae565a7b0d96b1538c71ef78ac810e1a37cdc2426a893bc5015670ebc9ef058.png" />
 </div>
 </div>
 <p>如果我们想自定义坐标轴的标题，坐标轴的刻度，坐标轴刻度的范围，设置图形标题，添加图例时，可以通过设置 pyplot 函数中的 xlable（横坐标轴标题）, ylabel（纵坐标轴标题）, xticks（横坐标轴刻度），yticks（纵坐标轴刻度），title（图形标题）, grid（显示网格），legend（显示图例）等属性来实现。若调整图像的清晰度，可以用<code class="docutils literal notranslate"><span class="pre">plt.rcParams[&quot;figure.dpi&quot;]</span></code> 来调整图像的 dpi 值来实现，调整图像的大小可以通过 <code class="docutils literal notranslate"><span class="pre">plt.rcParams('figsize')</span></code>来设置图像的长宽。</p>
@@ -642,7 +643,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a2fc887b2d34208edf29bca64884fcc332968c3890738154d14c7d5049016799.png" src="_images/a2fc887b2d34208edf29bca64884fcc332968c3890738154d14c7d5049016799.png" />
+<img alt="_images/9554e1740c000bc9d177100efad8d006a36b48f022aa65232cafe6f6cbd9f268.png" src="_images/9554e1740c000bc9d177100efad8d006a36b48f022aa65232cafe6f6cbd9f268.png" />
 </div>
 </div>
 <ul class="simple">
@@ -650,7 +651,7 @@ document.write(`
 </ul>
 </section>
 <section id="id1">
-<h2><span class="section-number">7.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>做散点图要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数，该函数的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -700,7 +701,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eff50154006e5b72f0c188b767bfe1be4fb3d16ae770f51e7b5daf3abea88753.png" src="_images/eff50154006e5b72f0c188b767bfe1be4fb3d16ae770f51e7b5daf3abea88753.png" />
+<img alt="_images/02f7a0a2a09386ce500d7c2142e3ecdd21326a7d1a49d94692b436e4edd0a0d5.png" src="_images/02f7a0a2a09386ce500d7c2142e3ecdd21326a7d1a49d94692b436e4edd0a0d5.png" />
 </div>
 </div>
 <p>条形图（bar chart），也称为柱状图，要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">bar</span></code>函数生成，该函数的基本语法为：</p>
@@ -726,9 +727,9 @@ document.write(`
     </tr>
 </table>
 <br /><p>假设某项针对男女大学生购买饮用水爱好的调查结果如下表：</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>选择</p></th>
+<tr class="row-odd"><th class="head text-center"><p>选择</p></th>
 <th class="head"><p>男</p></th>
 <th class="head"><p>女</p></th>
 </tr>
@@ -781,7 +782,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c3669d7b7f6e383a501185e58ed3eb795c57cca36cddabfb10866fd1aa2ff0fa.png" src="_images/c3669d7b7f6e383a501185e58ed3eb795c57cca36cddabfb10866fd1aa2ff0fa.png" />
+<img alt="_images/2ecbd0512bfced32aa1226390dfcd6e47be7d1c7b0b1f3fefa57e9c666f312c7.png" src="_images/2ecbd0512bfced32aa1226390dfcd6e47be7d1c7b0b1f3fefa57e9c666f312c7.png" />
 </div>
 </div>
 <p>横放条形图使用<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数，用法与<code class="docutils literal notranslate"><span class="pre">bar</span></code>基本一致。</p>
@@ -798,7 +799,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/22f846637c7d09124d289a3fadbcb2cc9c07bf8decf333d1a2878b62f472fbbb.png" src="_images/22f846637c7d09124d289a3fadbcb2cc9c07bf8decf333d1a2878b62f472fbbb.png" />
+<img alt="_images/c44f1a8487e51d3a7b4727b1b4f1b7f6ce6e07026dad42f1c538c1e3a7733835.png" src="_images/c44f1a8487e51d3a7b4727b1b4f1b7f6ce6e07026dad42f1c538c1e3a7733835.png" />
 </div>
 </div>
 <p>若要将男生与女生的调查情况画出两个条形图一块显示，则可以使用<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数两次，并调整<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数的条形图位置坐标以及相应刻度，使得两组条形图能够并排显示。</p>
@@ -835,7 +836,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a94083d3cc857cace6600359c8e2158b1e4ff2521ae66e3f7785c87802132949.png" src="_images/a94083d3cc857cace6600359c8e2158b1e4ff2521ae66e3f7785c87802132949.png" />
+<img alt="_images/a2d1424be1f357bdef7fc91a00a4a9b75e0dd5a012be4429fcbcb55d60802923.png" src="_images/a2d1424be1f357bdef7fc91a00a4a9b75e0dd5a012be4429fcbcb55d60802923.png" />
 </div>
 </div>
 <p>直方图（histogram）虽然在样式上类似条形图，但它们的作用不一样。直方图用不同的矩形表示频数，常用来观察一组数据的概率分布。在直角坐标中，用横轴表示数据分组，纵轴表示频数或频率，各组与相应的频数就形成了一个个矩形，即直方图。画直方图用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">hist</span></code>函数，它的基本语法为：</p>
@@ -874,12 +875,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e4cfafa6cad7f44b9e01d6efd856a1131fb9de1616bb9152144561183143e307.png" src="_images/e4cfafa6cad7f44b9e01d6efd856a1131fb9de1616bb9152144561183143e307.png" />
+<img alt="_images/bc3896345ac5ec6abc0867393fb8004e8326a49cedf2a7459daf034ae1c15db6.png" src="_images/bc3896345ac5ec6abc0867393fb8004e8326a49cedf2a7459daf034ae1c15db6.png" />
 </div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">7.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>饼图（pie char）是一个划分为几个扇形的圆形统计图表，一般用于描述频率或百分比之间的相对关系。在饼图中，每个扇区的弧长（以及圆心角和面积）的大小与其所表示的数量呈固定比例。画饼图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">pie</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -927,7 +928,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f63e76bd4cd97980207350379efcb18c029293a3925c345c793f5f96b4957620.png" src="_images/f63e76bd4cd97980207350379efcb18c029293a3925c345c793f5f96b4957620.png" />
+<img alt="_images/497baaf743ed16979cf6ed8f97bf9ab30408b0ba5fa1c458c40fdbf1193c0bde.png" src="_images/497baaf743ed16979cf6ed8f97bf9ab30408b0ba5fa1c458c40fdbf1193c0bde.png" />
 </div>
 </div>
 <p>箱线图（box plot）是一种用来显示数据统计分布情况的图形，包括数据的最大值、最小值、中位数、分位数等特征。画箱线图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数，它的基本语法如下：</p>
@@ -953,9 +954,9 @@ document.write(`
     </tr>
 </table>
 <br /><p>假设有下面的学生成绩单：</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>课程</p></th>
+<tr class="row-odd"><th class="head text-center"><p>课程</p></th>
 <th class="head"><p>学生A</p></th>
 <th class="head"><p>学生B</p></th>
 <th class="head"><p>学生C</p></th>
@@ -1064,12 +1065,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/29e1a8d833d14f60f25d55a919c6623a687009fd35bac680ce9d32aeb18c503c.png" src="_images/29e1a8d833d14f60f25d55a919c6623a687009fd35bac680ce9d32aeb18c503c.png" />
+<img alt="_images/325a2cda9324d16dce39bfe32c6f25f254518ce9c314b044ca68d4d9ecdb48f0.png" src="_images/325a2cda9324d16dce39bfe32c6f25f254518ce9c314b044ca68d4d9ecdb48f0.png" />
 </div>
 </div>
 </section>
 <section id="subplot">
-<h2><span class="section-number">7.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h2>
 <p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1135,13 +1136,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8f5cb4450f8577101ea8e1b85177e59e2ad2932340861f296fb08f778d77b90c.png" src="_images/8f5cb4450f8577101ea8e1b85177e59e2ad2932340861f296fb08f778d77b90c.png" />
+<img alt="_images/165bdebb120d9634cff44acaf84f86860dd3dc017a8a18ffef6e7ef8eb8f1454.png" src="_images/165bdebb120d9634cff44acaf84f86860dd3dc017a8a18ffef6e7ef8eb8f1454.png" />
 </div>
 </div>
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
 </section>
 <section id="seaborn">
-<h2><span class="section-number">7.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
 <p>seanborn 是 Python 的另外一个常用工具包，它基于 matplotlib，但画出的图形更加美观些，并且与 Pandas 的数据类型结合地较好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1161,7 +1162,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/840547056dac7312a59e8617303cae65b3ef2bed01319ed780aaca93b1e3e058.png" src="_images/840547056dac7312a59e8617303cae65b3ef2bed01319ed780aaca93b1e3e058.png" />
+<img alt="_images/6ab70104d6caefa6ddb2b09c151b2377d642003795c19be91f50c92e8a2fb859.png" src="_images/6ab70104d6caefa6ddb2b09c151b2377d642003795c19be91f50c92e8a2fb859.png" />
 </div>
 </div>
 <p>可以看出，应用 seaborn 的主题后，图形的配色变化了些。下面我们导入 seaborn 自带的数据集 tips。</p>
@@ -1245,7 +1246,43 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/736b6a0a9e5ec966fd84614f25fb91371516ec3337acbe72e0dbdc16dc43988f.png" src="_images/736b6a0a9e5ec966fd84614f25fb91371516ec3337acbe72e0dbdc16dc43988f.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+</pre></div>
+</div>
+<img alt="_images/df0273a452dd97e2813d8aea6cbf357d2280bc26797486af6a5e805df03de589.png" src="_images/df0273a452dd97e2813d8aea6cbf357d2280bc26797486af6a5e805df03de589.png" />
 </div>
 </div>
 <p>生成线图时，相同横坐标的数据将会合并，并且，图像会显示均值以及 95% 的置信区间：</p>
@@ -1262,7 +1299,27 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/97b8d52251c9ca406235b232c221d921c972ae4f46ad857b502f0a7b69c911ec.png" src="_images/97b8d52251c9ca406235b232c221d921c972ae4f46ad857b502f0a7b69c911ec.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1057: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  grouped_data = data.groupby(
+</pre></div>
+</div>
+<img alt="_images/d5d1d60ce7c72584cd38ef4850c94296dccc81364e0e644d53578f3cd091ecf3.png" src="_images/d5d1d60ce7c72584cd38ef4850c94296dccc81364e0e644d53578f3cd091ecf3.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1276,7 +1333,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/b8cabb9e37b1aae41961ae19f0d1baf9a29b929c5bcba547a21adf875d98f177.png" src="_images/b8cabb9e37b1aae41961ae19f0d1baf9a29b929c5bcba547a21adf875d98f177.png" />
+<img alt="_images/f674ed31648611f061b07e56aad6b9ad951fb1ac016d28f27a23a4622bd66a7f.png" src="_images/f674ed31648611f061b07e56aad6b9ad951fb1ac016d28f27a23a4622bd66a7f.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1294,7 +1351,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/160a8d24fd13ee97472839897a75a29572ef8027586864b502d18d61b239d48a.png" src="_images/160a8d24fd13ee97472839897a75a29572ef8027586864b502d18d61b239d48a.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\categorical.py:641: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  grouped_vals = vals.groupby(grouper)
+</pre></div>
+</div>
+<img alt="_images/7377e651125a3845842df18461aa813288cf8a5cb39bc6ae91458905d6b57eff.png" src="_images/7377e651125a3845842df18461aa813288cf8a5cb39bc6ae91458905d6b57eff.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1308,7 +1373,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7c10b7094c60e6b376cabfb0268c194c9b5e8badee7968586911d57b27dfaa6e.png" src="_images/7c10b7094c60e6b376cabfb0268c194c9b5e8badee7968586911d57b27dfaa6e.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="_images/2bc3b167bf91c8df39a165d2f760c8dca538ded61404d06813fa4bc7e31ae1df.png" src="_images/2bc3b167bf91c8df39a165d2f760c8dca538ded61404d06813fa4bc7e31ae1df.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1323,13 +1394,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c4764911b792a4c9643bef9091bf24380d147296c675dbe7016caa519c33114c.png" src="_images/c4764911b792a4c9643bef9091bf24380d147296c675dbe7016caa519c33114c.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\ProgramData\anaconda3\Lib\site-packages\seaborn\_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
+  if pd.api.types.is_categorical_dtype(vector):
+D:\ProgramData\anaconda3\Lib\site-packages\seaborn\categorical.py:641: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+  grouped_vals = vals.groupby(grouper)
+</pre></div>
+</div>
+<img alt="_images/6135c4698cd01a7464490a249548d7f2b75137b5aecc719c5e4f535ef8e981ee.png" src="_images/6135c4698cd01a7464490a249548d7f2b75137b5aecc719c5e4f535ef8e981ee.png" />
 </div>
 </div>
 <p>seaborn 还有其他一些画图函数，例如<code class="docutils literal notranslate"><span class="pre">heatmap</span></code>生成热力图，<code class="docutils literal notranslate"><span class="pre">violinplot</span></code>生成小提琴图，限于篇幅，本文不再赘述，有兴趣的读者可以查阅官方文档。</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">7.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="draw-heart">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.1 </span></p>
