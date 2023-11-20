@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>5. Pandas 入门 &#8212; Python 数据科学</title>
   
@@ -45,7 +45,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -103,7 +102,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="6. Python 输出，读写文件" href="print-read-files.html" />
     <link rel="prev" title="4. Numpy 简介" href="introduction-to-numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -205,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">8. Python 爬虫入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">9. 线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">9. 回归</a></li>
 </ul>
 
     </div>
@@ -421,25 +420,26 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5.4. 查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">5.4.1. 查询数据</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">5.4.2. 排序数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">5.4.3. 分组汇总</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">5.4.3. 分组汇总<code class="docutils literal notranslate"><span class="pre">groupby</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset-index">5.4.4. <code class="docutils literal notranslate"><span class="pre">reset_index</span></code>函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">5.5. 与数组或列表的转换</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5.6. 自定义函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.7. 数据清洗</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">5.5. 与数组或列表的转换</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">5.6. 自定义函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5.7. 数据清洗</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-fillna">5.7.1. 数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-duplicates">5.7.2. 重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-na">5.7.3. 缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">5.7.4. 重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.8. 时间序列数据处理</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.8. 时间序列数据处理</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-datetime-dt-strftime">5.8.1. <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">5.8.2. 数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.9. Pandas 画图</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">5.10. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.9. Pandas 画图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.10. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -452,7 +452,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1><span class="section-number">5. </span>Pandas 入门<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Pandas 入门<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h1>
 <p>pandas 是 Python 做统计分析时最重要的数据分析工具之一，它基于 numpy 开发，提供了许多处理大型数据集所需的函数，可以灵活高效的处理各种数据集。</p>
 <p>pandas 一般使用的数据类型为 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, DataFrame 是二维数据，相当于 Excel 里面的一张表格数据，使用 pandas 时首先要导入 pandas 包。</p>
 <div class="cell docutils container">
@@ -463,16 +463,16 @@ document.write(`
 </div>
 </div>
 <section id="id1">
-<h2><span class="section-number">5.1. </span>创建，读取与存储数据<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>创建，读取与存储数据<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <section id="id2">
-<h3><span class="section-number">5.1.1. </span>创建数据<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.1. </span>创建数据<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>例如有下面的数据：</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>姓名</p></th>
-<th class="head text-center"><p>统计学</p></th>
-<th class="head text-center"><p>高数</p></th>
-<th class="head text-center"><p>英语</p></th>
+<tr class="row-odd"><th class="text-center head"><p>姓名</p></th>
+<th class="text-center head"><p>统计学</p></th>
+<th class="text-center head"><p>高数</p></th>
+<th class="text-center head"><p>英语</p></th>
 </tr>
 </thead>
 <tbody>
@@ -580,7 +580,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h3><span class="section-number">5.1.2. </span>读取数据<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.2. </span>读取数据<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>多数情况下，我们要读取数据文件（例如 excel），假设上面的例子在 excel 文件 ‘transcripts.xlsx’ 里并放在电脑硬盘位置“/Users/zhenchen/Documents/python data” 中，可以通过函数<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>读取文件：</p>
 <div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>df = pd.read_excel(r&#39;/Users/zhenchen/Documents/python data/transcripts.xlsx&#39;)
 </pre></div>
@@ -631,7 +631,7 @@ document.write(`
 <p>还有一种常见的数据文件类型为 csv，我们只需使用 pandas 中的函数<code class="docutils literal notranslate"><span class="pre">read_csv</span></code>，它的语法与<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>基本一致。</p>
 </section>
 <section id="id4">
-<h3><span class="section-number">5.1.3. </span>存储数据<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.3. </span>存储数据<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>存储时使用函数 <code class="docutils literal notranslate"><span class="pre">to_excel</span></code> 或 <code class="docutils literal notranslate"><span class="pre">to_csv</span></code>。例如我们将数据 df 仍然存储到文件夹 “/Users/zhenchen/Documents/python data” 里，并命名为 “marks.xlsx”：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/Users/zhenchen/Documents/python data/marks.xlsx&#39;</span><span class="p">)</span>
 </pre></div>
@@ -639,7 +639,7 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2><span class="section-number">5.2. </span>查看与修改数据<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>查看与修改数据<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>快速查看 DataFrame 各列数据的统计信息可以使用 <code class="docutils literal notranslate"><span class="pre">describe()</span></code> 函数，包括各列数据的非空数值数目、均值、标准差、最大值、最小值、分位数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -725,10 +725,10 @@ document.write(`
 </div></div></div>
 </div>
 <p>另外还有几个方便使用的函数：</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>函数</p></th>
-<th class="head text-left"><p>作用</p></th>
+<tr class="row-odd"><th class="text-left head"><p>函数</p></th>
+<th class="text-left head"><p>作用</p></th>
 </tr>
 </thead>
 <tbody>
@@ -744,7 +744,7 @@ document.write(`
 </tbody>
 </table>
 <section id="id6">
-<h3><span class="section-number">5.2.1. </span>查看单行，单列，单元格数据<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.1. </span>查看单行，单列，单元格数据<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>查看某一列数据时，最简单的方式是在中括号<code class="docutils literal notranslate"><span class="pre">[]</span></code>里面输入列名的方式，例如查看英语成绩那一列数据：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -908,7 +908,7 @@ Name: 2, dtype: object
 </div>
 </section>
 <section id="id7">
-<h3><span class="section-number">5.2.2. </span>查看多行，多列数据<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.2. </span>查看多行，多列数据<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>查看多行、多列数据时，可以用 <code class="docutils literal notranslate"><span class="pre">iloc</span></code>，它不仅能查看多行多列数据，也能查看单行、单列或某个单元格数据。
 例如，查看行数据：</p>
 <div class="cell docutils container">
@@ -1236,7 +1236,7 @@ Name: 2, dtype: object
 </div>
 </section>
 <section id="id8">
-<h3><span class="section-number">5.2.3. </span>查看数据的统计值<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.3. </span>查看数据的统计值<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Pandas 自带一些统计函数，可以得到列数据的统计值，这些统计函数包括：mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），count（计数），skew（均值），quantile（分位数）等。有时候需要添加参数<code class="docutils literal notranslate"><span class="pre">numeric_only</span> <span class="pre">=</span> <span class="pre">True</span></code>，表示只对数值数列应用函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1294,7 +1294,7 @@ dtype: float64
 </div>
 </section>
 <section id="id9">
-<h3><span class="section-number">5.2.4. </span>修改数据<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.4. </span>修改数据<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>在修改 pandas 的 DataFrame 数据时，将 pandas 的索引位置赋值为新的值。例如，当修改某列数据时，语法为：<code class="docutils literal notranslate"><span class="pre">df[‘列名']</span> <span class="pre">=</span>&#160; <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1590,9 +1590,9 @@ dtype: float64
 </section>
 </section>
 <section id="id10">
-<h2><span class="section-number">5.3. </span>增加，删除与合并数据<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>增加，删除与合并数据<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <section id="id11">
-<h3><span class="section-number">5.3.1. </span>增加数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.3.1. </span>增加数据<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>在原数据末尾增加一列时，语法为 <code class="docutils literal notranslate"><span class="pre">df[‘新列名']</span> <span class="pre">=</span> <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1886,7 +1886,7 @@ dtype: float64
 <p>若要在指定位置插入行，目前 Pandas 还没有专门的函数，一般采用<code class="docutils literal notranslate"><span class="pre">concat</span></code>函数合并多个 DataFrame 的方式，增加多列或多行数据也可以使用 <code class="docutils literal notranslate"><span class="pre">concat</span></code>函数或<code class="docutils literal notranslate"><span class="pre">merge</span></code>函数，具体参看后面的合并数据章节。</p>
 </section>
 <section id="id12">
-<h3><span class="section-number">5.3.2. </span>删除数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.3.2. </span>删除数据<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Pandas 可以利用<code class="docutils literal notranslate"><span class="pre">drop</span></code>函数删除行数据或列数据。删除一行时，参数为行标签名以及<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>。若没有参数<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>，原始的 DataFrame 数据不变。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2085,7 +2085,7 @@ dtype: float64
 </div>
 </section>
 <section id="id13">
-<h3><span class="section-number">5.3.3. </span>合并数据<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.3.3. </span>合并数据<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Pandas 中比较常用的两个合并数据的方法是<code class="docutils literal notranslate"><span class="pre">concat</span></code>与<code class="docutils literal notranslate"><span class="pre">merge</span></code>。 当两个 DataFrame 数据表具有完全相同的列标签时，一般用<code class="docutils literal notranslate"><span class="pre">concat</span></code>，其他情况下多用<code class="docutils literal notranslate"><span class="pre">merge</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3039,9 +3039,9 @@ dtype: float64
 </section>
 </section>
 <section id="id14">
-<h2><span class="section-number">5.4. </span>查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
 <section id="id15">
-<h3><span class="section-number">5.4.1. </span>查询数据<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.4.1. </span>查询数据<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>对 DataFrame 数据按照一定条件查询时，一般会用到一些比较运算符，例如：&gt;, &gt;=, ==, &lt;, &lt;=, !=。条件查询一般只针对列数据，查询时，Pandas 首先生成布尔索引 True 或 False，再通过指定索引生成查询后的数据。</p>
 <p>例如，下面的代码：</p>
 <div class="cell docutils container">
@@ -3273,7 +3273,7 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="id16">
-<h3><span class="section-number">5.4.2. </span>排序数据<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.4.2. </span>排序数据<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>在处理数据时，经常要对数据排序。 Pandas 提供了一个方便的函数<code class="docutils literal notranslate"><span class="pre">sort_values</span></code>对数值进行排序，它的使用语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -3653,8 +3653,8 @@ Name: 统计学, dtype: bool
 </div></div></div>
 </div>
 </section>
-<section id="id17">
-<h3><span class="section-number">5.4.3. </span>分组汇总<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<section id="groupby">
+<h3><span class="section-number">5.4.3. </span>分组汇总<code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#groupby" title="Permalink to this headline">#</a></h3>
 <p>在数据分析时，经常也需要将数据分组汇总。例如，在统计学生的期末考试成绩时，可能需要根据专业或者班级来分别计算平均成绩、最高成绩等。此时，可以利用 Pandas 的<code class="docutils literal notranslate"><span class="pre">groupby</span></code>函数方便地实现这些功能。</p>
 <p>groupby 经常结合一些汇总统计量使用，例如 mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），mad（平均绝对偏差），count（计数），size(也是计数), skew（均值），quantile（分位数）。</p>
 <p>下面的代码按性别汇总了平均成绩：</p>
@@ -4126,6 +4126,9 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
+</section>
+<section id="reset-index">
+<h3><span class="section-number">5.4.4. </span><code class="docutils literal notranslate"><span class="pre">reset_index</span></code>函数<a class="headerlink" href="#reset-index" title="Permalink to this headline">#</a></h3>
 <p>也可以在 groupby 函数后面再使用函数<code class="docutils literal notranslate"><span class="pre">reset_index</span></code>将多个index作为新的列标题。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4288,216 +4291,124 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:1871,</span> in <span class="ni">GroupBy._agg_py_fallback</span><span class="nt">(self, how, values, ndim, alt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1870</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1871</span>     <span class="n">res_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grouper</span><span class="o">.</span><span class="n">agg_series</span><span class="p">(</span><span class="n">ser</span><span class="p">,</span> <span class="n">alt</span><span class="p">,</span> <span class="n">preserve_dtype</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1872</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\ops.py:850,</span> in <span class="ni">BaseGrouper.agg_series</span><span class="nt">(self, obj, func, preserve_dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span>     <span class="n">preserve_dtype</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">850</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_series_pure_python</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">852</span> <span class="n">npvalues</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">maybe_convert_objects</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">try_float</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\ops.py:871,</span> in <span class="ni">BaseGrouper._aggregate_series_pure_python</span><span class="nt">(self, obj, func)</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">splitter</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">871</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">extract_result</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:2377,</span> in <span class="ni">GroupBy.mean.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2374</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2375</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cython_agg_general</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2376</span>         <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">2377</span>         <span class="n">alt</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2378</span>         <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2379</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2380</span>     <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;groupby&quot;</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\series.py:6221,</span> in <span class="ni">Series.mean</span><span class="nt">(self, axis, skipna, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6213</span> <span class="nd">@doc</span><span class="p">(</span><span class="n">make_doc</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">6214</span> <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">6215</span>     <span class="bp">self</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6219</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">6220</span> <span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">6221</span>     <span class="k">return</span> <span class="n">NDFrame</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\generic.py:11978,</span> in <span class="ni">NDFrame.mean</span><span class="nt">(self, axis, skipna, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11971</span> <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11972</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11973</span>     <span class="n">axis</span><span class="p">:</span> <span class="n">Axis</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11976</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">  </span><span class="mi">11977</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Series</span> <span class="o">|</span> <span class="nb">float</span><span class="p">:</span>
-<span class="ne">&gt; </span><span class="mi">11978</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stat_function</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11979</span>         <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">nanops</span><span class="o">.</span><span class="n">nanmean</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-<span class="g g-Whitespace">  </span><span class="mi">11980</span>     <span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\generic.py:11935,</span> in <span class="ni">NDFrame._stat_function</span><span class="nt">(self, name, func, axis, skipna, numeric_only, **kwargs)</span>
-<span class="g g-Whitespace">  </span><span class="mi">11933</span> <span class="n">validate_bool_kwarg</span><span class="p">(</span><span class="n">skipna</span><span class="p">,</span> <span class="s2">&quot;skipna&quot;</span><span class="p">,</span> <span class="n">none_allowed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="ne">&gt; </span><span class="mi">11935</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reduce</span><span class="p">(</span>
-<span class="g g-Whitespace">  </span><span class="mi">11936</span>     <span class="n">func</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span>
-<span class="g g-Whitespace">  </span><span class="mi">11937</span> <span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\series.py:6129,</span> in <span class="ni">Series._reduce</span><span class="nt">(self, op, name, axis, skipna, numeric_only, filter_type, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6125</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">6126</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not allow </span><span class="si">{</span><span class="n">kwd_name</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">numeric_only</span><span class="si">}</span><span class="s2"> &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">6127</span>         <span class="s2">&quot;with non-numeric dtypes.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">6128</span>     <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">6129</span> <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">delegate</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\nanops.py:147,</span> in <span class="ni">bottleneck_switch.__call__.&lt;locals&gt;.f</span><span class="nt">(values, axis, skipna, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">147</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">alt</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\nanops.py:404,</span> in <span class="ni">_datetimelike_compat.&lt;locals&gt;.new_func</span><span class="nt">(values, axis, skipna, mask, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>     <span class="n">mask</span> <span class="o">=</span> <span class="n">isna</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">404</span> <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="k">if</span> <span class="n">datetimelike</span><span class="p">:</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\nanops.py:720,</span> in <span class="ni">nanmean</span><span class="nt">(values, axis, skipna, mask)</span>
-<span class="g g-Whitespace">    </span><span class="mi">719</span> <span class="n">the_sum</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype_sum</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">720</span> <span class="n">the_sum</span> <span class="o">=</span> <span class="n">_ensure_numeric</span><span class="p">(</span><span class="n">the_sum</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">the_sum</span><span class="p">,</span> <span class="s2">&quot;ndim&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\nanops.py:1693,</span> in <span class="ni">_ensure_numeric</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1691</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1692</span>     <span class="c1"># GH#44008, GH#36703 avoid casting e.g. strings to numeric</span>
-<span class="ne">-&gt; </span><span class="mi">1693</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not convert string &#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&#39; to numeric&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1694</span> <span class="k">try</span><span class="p">:</span>
-
-<span class="ne">TypeError</span>: Could not convert string &#39;张三陈小虎&#39; to numeric
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">75</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;班级&#39;</span><span class="p">,</span> <span class="s1">&#39;性别&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">])</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\generic.py:1442,</span> in <span class="ni">DataFrameGroupBy.aggregate</span><span class="nt">(self, func, engine, engine_kwargs, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1439</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;engine_kwargs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_kwargs</span>
-<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="n">op</span> <span class="o">=</span> <span class="n">GroupByApply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1442</span> <span class="n">result</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">agg</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1443</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">is_dict_like</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="ow">and</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1444</span>     <span class="c1"># GH #52849</span>
-<span class="g g-Whitespace">   </span><span class="mi">1445</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_index</span> <span class="ow">and</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\apply.py:178,</span> in <span class="ni">Apply.agg</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agg_dict_like</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="k">elif</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>     <span class="c1"># we require a list, but not a &#39;str&#39;</span>
-<span class="ne">--&gt; </span><span class="mi">178</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agg_list_like</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">get_cython_func</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\apply.py:311,</span> in <span class="ni">Apply.agg_list_like</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">def</span> <span class="nf">agg_list_like</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Series</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span><span class="sd">     Compute aggregation in the case of a list-like argument.</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span><span class="sd">     Result of aggregation.</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">311</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agg_or_apply_list_like</span><span class="p">(</span><span class="n">op_name</span><span class="o">=</span><span class="s2">&quot;agg&quot;</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\apply.py:1351,</span> in <span class="ni">GroupByApply.agg_or_apply_list_like</span><span class="nt">(self, op_name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1346</span> <span class="c1"># Only set as_index=True on groupby objects, not Window or Resample</span>
-<span class="g g-Whitespace">   </span><span class="mi">1347</span> <span class="c1"># that inherit from this class.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1348</span> <span class="k">with</span> <span class="n">com</span><span class="o">.</span><span class="n">temp_setattr</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1349</span>     <span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;as_index&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;as_index&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1350</span> <span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1351</span>     <span class="n">keys</span><span class="p">,</span> <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_list_like</span><span class="p">(</span><span class="n">op_name</span><span class="p">,</span> <span class="n">selected_obj</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1352</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrap_results_list_like</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1353</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\apply.py:370,</span> in <span class="ni">Apply.compute_list_like</span><span class="nt">(self, op_name, selected_obj, kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="n">colg</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_gotitem</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="n">selected_obj</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">index</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span>     <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span>     <span class="k">if</span> <span class="n">include_axis</span><span class="p">(</span><span class="n">op_name</span><span class="p">,</span> <span class="n">colg</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">370</span> <span class="n">new_res</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">colg</span><span class="p">,</span> <span class="n">op_name</span><span class="p">)(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span> <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_res</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\generic.py:252,</span> in <span class="ni">SeriesGroupBy.aggregate</span><span class="nt">(self, func, engine, engine_kwargs, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;engine&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;engine_kwargs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_kwargs</span>
-<span class="ne">--&gt; </span><span class="mi">252</span> <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_multiple_funcs</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span> <span class="k">if</span> <span class="n">relabeling</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span>     <span class="c1"># columns is not narrowed by mypy from relabeling flag</span>
-<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="k">assert</span> <span class="n">columns</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>  <span class="c1"># for mypy</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\generic.py:357,</span> in <span class="ni">SeriesGroupBy._aggregate_multiple_funcs</span><span class="nt">(self, arg, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span>     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">356</span>         <span class="n">key</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">OutputKey</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">357</span>         <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">359</span> <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">concat</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\generic.py:244,</span> in <span class="ni">SeriesGroupBy.aggregate</span><span class="nt">(self, func, engine, engine_kwargs, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;engine&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;engine_kwargs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">engine_kwargs</span>
-<span class="ne">--&gt; </span><span class="mi">244</span>     <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="c1"># Catch instances of lists / tuples</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="c1"># but not the class list / tuple itself.</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="n">func</span> <span class="o">=</span> <span class="n">maybe_mangle_lambdas</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:2375,</span> in <span class="ni">GroupBy.mean</span><span class="nt">(self, numeric_only, engine, engine_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2368</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_numba_agg_general</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2369</span>         <span class="n">grouped_mean</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2370</span>         <span class="n">executor</span><span class="o">.</span><span class="n">float_dtype_mapping</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2371</span>         <span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2372</span>         <span class="n">min_periods</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2373</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2374</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2375</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cython_agg_general</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2376</span>         <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2377</span>         <span class="n">alt</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2378</span>         <span class="n">numeric_only</span><span class="o">=</span><span class="n">numeric_only</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2379</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2380</span>     <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;groupby&quot;</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:1926,</span> in <span class="ni">GroupBy._cython_agg_general</span><span class="nt">(self, how, alt, numeric_only, min_count, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1923</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_py_fallback</span><span class="p">(</span><span class="n">how</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="n">alt</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1924</span>     <span class="k">return</span> <span class="n">result</span>
-<span class="ne">-&gt; </span><span class="mi">1926</span> <span class="n">new_mgr</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">grouped_reduce</span><span class="p">(</span><span class="n">array_func</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1927</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_agged_manager</span><span class="p">(</span><span class="n">new_mgr</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1928</span> <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_aggregated_output</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\internals\base.py:336,</span> in <span class="ni">SingleDataManager.grouped_reduce</span><span class="nt">(self, func)</span>
-<span class="g g-Whitespace">    </span><span class="mi">334</span> <span class="k">def</span> <span class="nf">grouped_reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span>     <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span>
-<span class="ne">--&gt; </span><span class="mi">336</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="n">index</span> <span class="o">=</span> <span class="n">default_index</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span>     <span class="n">mgr</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:1923,</span> in <span class="ni">GroupBy._cython_agg_general.&lt;locals&gt;.array_func</span><span class="nt">(values)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1920</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1921</span>     <span class="k">return</span> <span class="n">result</span>
-<span class="ne">-&gt; </span><span class="mi">1923</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agg_py_fallback</span><span class="p">(</span><span class="n">how</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">alt</span><span class="o">=</span><span class="n">alt</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1924</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File D:\ProgramData\anaconda3\Lib\site-packages\pandas\core\groupby\groupby.py:1875,</span> in <span class="ni">GroupBy._agg_py_fallback</span><span class="nt">(self, how, values, ndim, alt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1873</span>     <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;agg function failed [how-&gt;</span><span class="si">{</span><span class="n">how</span><span class="si">}</span><span class="s2">,dtype-&gt;</span><span class="si">{</span><span class="n">ser</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">]&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1874</span>     <span class="c1"># preserve the kind of exception that raised</span>
-<span class="ne">-&gt; </span><span class="mi">1875</span>     <span class="k">raise</span> <span class="nb">type</span><span class="p">(</span><span class="n">err</span><span class="p">)(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">1877</span> <span class="k">if</span> <span class="n">ser</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="nb">object</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="n">res_values</span> <span class="o">=</span> <span class="n">res_values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: agg function failed [how-&gt;mean,dtype-&gt;object]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\chen_\AppData\Local\Temp\ipykernel_1496\2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+  df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="3" halign="left">统计学</th>
+      <th colspan="3" halign="left">高数</th>
+      <th colspan="3" halign="left">英语</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>max</th>
+      <th>min</th>
+      <th>mean</th>
+      <th>max</th>
+      <th>min</th>
+      <th>mean</th>
+      <th>max</th>
+      <th>min</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>班级</th>
+      <th>性别</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>一班</th>
+      <th>男</th>
+      <td>89</td>
+      <td>85</td>
+      <td>87.0</td>
+      <td>95</td>
+      <td>68</td>
+      <td>81.5</td>
+      <td>93</td>
+      <td>90</td>
+      <td>91.5</td>
+    </tr>
+    <tr>
+      <th>三班</th>
+      <th>女</th>
+      <td>75</td>
+      <td>75</td>
+      <td>75.0</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68.0</td>
+      <td>80</td>
+      <td>80</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">二班</th>
+      <th>女</th>
+      <td>84</td>
+      <td>69</td>
+      <td>76.5</td>
+      <td>90</td>
+      <td>55</td>
+      <td>72.5</td>
+      <td>78</td>
+      <td>63</td>
+      <td>70.5</td>
+    </tr>
+    <tr>
+      <th>男</th>
+      <td>82</td>
+      <td>82</td>
+      <td>82.0</td>
+      <td>63</td>
+      <td>63</td>
+      <td>63.0</td>
+      <td>88</td>
+      <td>88</td>
+      <td>88.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
-<section id="id18">
-<h2><span class="section-number">5.5. </span>与数组或列表的转换<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<section id="id17">
+<h2><span class="section-number">5.5. </span>与数组或列表的转换<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
 <p>使用 Pandas 中的<code class="docutils literal notranslate"><span class="pre">values</span></code>方法可以将 DataFrame 数据转化为 Numpy 的数组形式。例如，对于前面的数据例子：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4716,8 +4627,8 @@ dtype: int64
 </div></div></div>
 </div>
 </section>
-<section id="id19">
-<h2><span class="section-number">5.6. </span>自定义函数<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<section id="id18">
+<h2><span class="section-number">5.6. </span>自定义函数<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
 <p>Pandas 可以使用<code class="docutils literal notranslate"><span class="pre">apply</span></code>调用自定义函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4779,10 +4690,10 @@ Name: 英语, dtype: object
 </div>
 </div>
 </section>
-<section id="id20">
-<h2><span class="section-number">5.7. </span>数据清洗<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<section id="id19">
+<h2><span class="section-number">5.7. </span>数据清洗<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
 <section id="replace-fillna">
-<h3><span class="section-number">5.7.1. </span>数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code><a class="headerlink" href="#replace-fillna" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.1. </span>数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code><a class="headerlink" href="#replace-fillna" title="Permalink to this headline">#</a></h3>
 <p>在进行数据处理时，经常需要对原始数据的一些异常值或错误值进行批量处理。 Pandas 提供了<code class="docutils literal notranslate"><span class="pre">replace</span></code>函数方便地进行这项操作。<code class="docutils literal notranslate"><span class="pre">replace</span></code>函数第一项为原数据中的值，第二项为需要替换的值。例如，有下面的学生成绩：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5128,7 +5039,7 @@ Name: 英语, dtype: bool
 </div>
 </section>
 <section id="drop-duplicates">
-<h3><span class="section-number">5.7.2. </span>重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code><a class="headerlink" href="#drop-duplicates" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.2. </span>重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code><a class="headerlink" href="#drop-duplicates" title="Permalink to this headline">#</a></h3>
 <p>在数据量比较大时，经常会遇到重复数据的问题，可以使用函数<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>将重复数据去掉。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5298,7 +5209,7 @@ Name: 英语, dtype: bool
 </div>
 </section>
 <section id="drop-na">
-<h3><span class="section-number">5.7.3. </span>缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code><a class="headerlink" href="#drop-na" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.3. </span>缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code><a class="headerlink" href="#drop-na" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">dropna</span></code>函数可以将数据表中包含缺失值的行去除掉，与<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>相比，该方法的可调节参数更多些。它的语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -5519,7 +5430,7 @@ Name: 英语, dtype: bool
 </div>
 </section>
 <section id="rename">
-<h3><span class="section-number">5.7.4. </span>重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.4. </span>重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename" title="Permalink to this headline">#</a></h3>
 <p>在处理数据表时，有时候要给数据的行名或列名重命名，此时要用到<code class="docutils literal notranslate"><span class="pre">rename</span></code>函数，<code class="docutils literal notranslate"><span class="pre">rename</span></code>函数中的参数为一个字典形式：替换前的名字为字典的 key，替换后的名字为字典的 value。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5630,10 +5541,10 @@ Name: 英语, dtype: bool
 </div>
 </section>
 </section>
-<section id="id21">
-<h2><span class="section-number">5.8. </span>时间序列数据处理<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+<section id="id20">
+<h2><span class="section-number">5.8. </span>时间序列数据处理<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
 <section id="to-datetime-dt-strftime">
-<h3><span class="section-number">5.8.1. </span><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code><a class="headerlink" href="#to-datetime-dt-strftime" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.8.1. </span><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code><a class="headerlink" href="#to-datetime-dt-strftime" title="Permalink to this headline">#</a></h3>
 <p>实际工作中，经常会遇到大量的时间序列数据。这些时间序列的原始数据一般为文本格式，我们需要将它转化为时间日期格式。 Pandas 提供了 <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code>函数将其他日期时间格式转化为 Python 的日期时间格式。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5899,7 +5810,7 @@ Name: 入校时间, dtype: object
 </div>
 </section>
 <section id="resample">
-<h3><span class="section-number">5.8.2. </span>数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code><a class="headerlink" href="#resample" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.8.2. </span>数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code><a class="headerlink" href="#resample" title="Permalink to this headline">#</a></h3>
 <p>对于很多时间序列数据，有时候经常需要对它们按一定周期进行数据聚合，可以用 Pandas 提供的<code class="docutils literal notranslate"><span class="pre">resample</span></code>函数。resample 方法中的小括号中用不同参数表示聚合的频率。举例：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6127,8 +6038,8 @@ Name: 入校时间, dtype: object
 <p><code class="docutils literal notranslate"><span class="pre">resample</span></code>的其他参数中， ‘T’ 表示分钟，‘H’ 表示小时，除了跟<code class="docutils literal notranslate"><span class="pre">sum()</span></code>方法外，还可以跟<code class="docutils literal notranslate"><span class="pre">asfreq()</span></code>，<code class="docutils literal notranslate"><span class="pre">ffill</span></code>，<code class="docutils literal notranslate"><span class="pre">apply()</span></code>等。</p>
 </section>
 </section>
-<section id="id22">
-<h2><span class="section-number">5.9. </span>Pandas 画图<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
+<section id="id21">
+<h2><span class="section-number">5.9. </span>Pandas 画图<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h2>
 <p>除了结合 matplotlib 与 seaborn 画图外，Pandas 也有自己的画图函数<code class="docutils literal notranslate"><span class="pre">plot</span></code>，它的语法一般为：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -6271,8 +6182,8 @@ Name: 入校时间, dtype: object
 <p>pandas 有大量处理数据的函数以及众多参数设置，限于篇幅关系，本书不详细赘述。读者使用 pandas 处理数据时，可以进一步查阅官方文档。</p>
 </div>
 </section>
-<section id="id23">
-<h2><span class="section-number">5.10. </span>练习<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h2>
+<section id="id22">
+<h2><span class="section-number">5.10. </span>练习<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition" id="output">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
@@ -6372,25 +6283,26 @@ Name: 入校时间, dtype: object
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">5.4. 查询，排序，分组汇总数据</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">5.4.1. 查询数据</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">5.4.2. 排序数据</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">5.4.3. 分组汇总</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">5.4.3. 分组汇总<code class="docutils literal notranslate"><span class="pre">groupby</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reset-index">5.4.4. <code class="docutils literal notranslate"><span class="pre">reset_index</span></code>函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">5.5. 与数组或列表的转换</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5.6. 自定义函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.7. 数据清洗</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">5.5. 与数组或列表的转换</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">5.6. 自定义函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">5.7. 数据清洗</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-fillna">5.7.1. 数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-duplicates">5.7.2. 重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-na">5.7.3. 缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename">5.7.4. 重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.8. 时间序列数据处理</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">5.8. 时间序列数据处理</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-datetime-dt-strftime">5.8.1. <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resample">5.8.2. 数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.9. Pandas 画图</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">5.10. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">5.9. Pandas 画图</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">5.10. 练习</a></li>
 </ul>
   </nav></div>
 
