@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>8. 线性回归 &#8212; Python 数据科学</title>
+    <title>9. 统计分析 &#8212; Python 数据科学</title>
   
   
   
@@ -99,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'line-regression';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="7. Python 画图" href="draw-pictures.html" />
+    <link rel="prev" title="8. Python 爬虫入门" href="introduction-to-crawler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -202,7 +202,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. 线性回归</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">8. Python 爬虫入门</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. 统计分析</a></li>
 </ul>
 
     </div>
@@ -386,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>线性回归</h1>
+    <h1>统计分析</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,7 +397,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">8.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 做线性回归</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.1. 线性回归</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">9.1.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">9.1.2. sklearn 库</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.2. 主成分分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">9.3. Kmeans 聚类</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4. 人工神经网络</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.5. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -409,8 +418,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">8. </span>线性回归<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p>使用 Python 做线性回归分析有好几种方式，常见的是用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>包或者<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>包。</p>
+<h1><span class="section-number">9. </span>统计分析<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<section id="id2">
+<h2><span class="section-number">9.1. </span>线性回归<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>使用 Python 做线性回归分析有好几种方式，常见的是用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>库或者<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库。</p>
 <p>假设有下面的数据存储在 excel 文件 line_regression.xlsx 中：</p>
 <table class="colwidths-auto table">
 <thead>
@@ -663,7 +674,37 @@ document.write(`
 </div></div></div>
 </div>
 <section id="statsmodels">
-<h2><span class="section-number">8.1. </span><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 做线性回归<a class="headerlink" href="#statsmodels" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">9.1.1. </span><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库<a class="headerlink" href="#statsmodels" title="Permalink to this headline">#</a></h3>
+<p>使用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库做回归一般有以下几个步骤：</p>
+<ul class="simple">
+<li><p>通过 OLS 函数构建回归模型</p></li>
+<li><p>通过 fit 函数拟合</p></li>
+<li><p>通过summary 函数输出回归结果</p></li>
+<li><p>通过 predict 函数得出回归的预测值</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">OLS</span></code> 函数的基本用法如下：</p>
+<table>   
+    <tr style="border-top:solid; border-bottom:solid">
+            <th colspan=2 style="text-align:center">OLS(endog, exog=None, missing='none',**kwargs)</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">endog</td>
+        <td style="text-align:left">因变量（内生变量），是一个一维的数组</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">exog</td>
+        <td style="text-align:left">自变量（外生变量），是一个一维或多维数组</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">missing</td>
+        <td style="text-align:left">出现空值时的处理方式，可选设置为 'drop'（丢掉空值）, 'raise'（提醒错误）</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">**kwargs</td>
+        <td style="text-align:left">其他设置</td>
+    </tr>
+</table>
+<br /><p>函数 OLS 默认回归模型没有截距。若模型中有截距，必须对自变量数据使用一个<code class="docutils literal notranslate"><span class="pre">addconstant()</span></code>函数。</p>
 <p>完整代码如下：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -672,19 +713,19 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span> <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 因变量为第 2 列数据</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># 自变量为第 3 列数据</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># 因变量为第 1列数据</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 自变量为第 2 列数据</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 若模型中有截距，必须有这一步</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># 构建最小二乘模型并拟合</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span> <span class="c1"># 输出回归结果</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">hasconst</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span> <span class="c1"># 构建最小二乘模型并拟合</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span> <span class="c1"># 输出回归结果</span>
 
 <span class="c1"># 画图</span>
-<span class="c1"># 这两行代码在画图时添加中文必须用</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
 
-<span class="n">predicts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span> <span class="c1"># 模型的预测值</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="c1"># 自变量为第 3 列数据</span>
+<span class="n">predicts</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span> <span class="c1"># 模型的预测值</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 自变量为第 3 列数据</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;实际值&#39;</span><span class="p">)</span> <span class="c1"># 散点图</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predicts</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;预测值&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># 显示图例，即每条线对应 label 中的内容</span>
@@ -695,33 +736,729 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                 各项贷款余额   R-squared:                       0.461
-Model:                            OLS   Adj. R-squared:                  0.437
-Method:                 Least Squares   F-statistic:                     19.65
-Date:                Wed, 08 Nov 2023   Prob (F-statistic):           0.000191
-Time:                        22:42:00   Log-Likelihood:                -136.90
-No. Observations:                  25   AIC:                             277.8
-Df Residuals:                      23   BIC:                             280.2
+Dep. Variable:                   不良贷款   R-squared:                       0.712
+Model:                            OLS   Adj. R-squared:                  0.699
+Method:                 Least Squares   F-statistic:                     56.75
+Date:                Mon, 20 Nov 2023   Prob (F-statistic):           1.18e-07
+Time:                        15:26:09   Log-Likelihood:                -51.508
+No. Observations:                  25   AIC:                             107.0
+Df Residuals:                      23   BIC:                             109.5
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-const         36.6902     22.378      1.640      0.115      -9.603      82.983
-本年累计应收贷款       8.6092      1.942      4.433      0.000       4.592      12.627
+const         -0.8295      0.723     -1.147      0.263      -2.325       0.666
+各项贷款余额         0.0379      0.005      7.534      0.000       0.027       0.048
 ==============================================================================
-Omnibus:                       12.343   Durbin-Watson:                   1.987
-Prob(Omnibus):                  0.002   Jarque-Bera (JB):               11.774
-Skew:                           1.224   Prob(JB):                      0.00278
-Kurtosis:                       5.305   Cond. No.                         21.5
+Omnibus:                       14.277   Durbin-Watson:                   2.464
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               14.611
+Skew:                           1.382   Prob(JB):                     0.000672
+Kurtosis:                       5.527   Cond. No.                         262.
 ==============================================================================
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 </pre></div>
 </div>
-<img alt="_images/704d6fb157a2e7bbb88fbd649982a43464a09df13470a80aea526185f2cfd587.png" src="_images/704d6fb157a2e7bbb88fbd649982a43464a09df13470a80aea526185f2cfd587.png" />
+<img alt="_images/ef3067e697815eac11d9b6181950a2ade1c9634cf7b06901bb2168963b25f92e.png" src="_images/ef3067e697815eac11d9b6181950a2ade1c9634cf7b06901bb2168963b25f92e.png" />
 </div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">tips</p>
+<ul class="simple">
+<li><p>若导入包时使用命令 import statsmodels.formula.api as sm, 则在回归分析时不用函数 add_constant 添加截距，但是必须使用统计语言给出模型信息。</p></li>
+</ul>
+</div>
+<p>使用统计语言公式的代码：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;不良贷款~各项贷款余额&#39;</span><span class="p">,</span> <span class="n">datas</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># 构建最小二乘模型并拟合，</span>
+                               <span class="c1">#此时不用单独输入 x，y了，而是将自变量与因变量用统计语言公式表示，将全部数据导入</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span> <span class="c1"># 输出回归结果</span>
+</pre></div>
+</div>
+<p>在多元回归中，只需把自变量改为多列数据即可，假如不良贷款为因变量，从第2列到第5列都是因变量，则使用 statsmodels 包的全部 python 代码如下：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 因变量为第 2 列数据</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># 自变量为第 3 列到第 6 列数据</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 若模型中有截距，必须有这一步</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># 构建最小二乘模型并拟合</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span> <span class="c1"># 输出回归结果</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 各项贷款余额   R-squared:                       0.812
+Model:                            OLS   Adj. R-squared:                  0.786
+Method:                 Least Squares   F-statistic:                     30.32
+Date:                Mon, 20 Nov 2023   Prob (F-statistic):           8.05e-08
+Time:                        15:26:09   Log-Likelihood:                -123.70
+No. Observations:                  25   AIC:                             255.4
+Df Residuals:                      21   BIC:                             260.3
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        -14.0689     16.072     -0.875      0.391     -47.493      19.356
+本年累计应收贷款       3.3001      1.482      2.226      0.037       0.217       6.383
+贷款项目个数         4.3596      1.453      3.001      0.007       1.338       7.381
+本年固定资产投资额      0.6198      0.285      2.176      0.041       0.028       1.212
+==============================================================================
+Omnibus:                        1.935   Durbin-Watson:                   2.147
+Prob(Omnibus):                  0.380   Jarque-Bera (JB):                1.059
+Skew:                           0.499   Prob(JB):                        0.589
+Kurtosis:                       3.143   Cond. No.                         159.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sklearn">
+<h3><span class="section-number">9.1.2. </span>sklearn 库<a class="headerlink" href="#sklearn" title="Permalink to this headline">#</a></h3>
+<p>sklearn 包是机器学习中常见的 python 包，做统计分析时，它并不能像 statsmodels 那样生成非常详细的统计分析结果。<strong>默认自变量与因变量数据都是二维数据，自变量或因变量需要增加一个轴</strong>。</p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 库做回归一把有以下几个步骤：</p>
+<ul class="simple">
+<li><p>对自变量或因变量增加轴</p></li>
+<li><p>通过 LinearRegression 函数构建回归模型</p></li>
+<li><p>通过 fit 函数拟合</p></li>
+<li><p>通过 predict 函数得出回归的预测值</p></li>
+<li><p>通过 coef_，intercept_，score 等函数输出统计结果</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>对于上面同样的例子，一元回归的代码：
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[5], line 1
+    对于上面同样的例子，一元回归的代码：
+             ^
+SyntaxError: invalid character &#39;，&#39; (U+FF0C)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># 因变量为第 2 列数据</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># 自变量为第 3 列数据</span>
+
+<span class="c1"># 将 x，y 分别增加一个轴，以满足 sklearn 中回归模型认可的数据</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> <span class="c1"># 构建线性模型</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># 自变量在前，因变量在后</span>
+<span class="n">predicts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 预测值</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># 拟合程度 R2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2 = </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">R2</span><span class="p">)</span> <span class="c1"># 输出 R2</span>
+<span class="n">coef</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span> <span class="c1"># 斜率</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span> <span class="c1"># 截距</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span> <span class="c1"># 输出斜率和截距</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 = 0.71
+[[0.03789471]] [-0.82952062]
+</pre></div>
+</div>
+</div>
+</div>
+<p>用 sklearn 做多元回归时，因为自变量本身就是多维数据，不需要增加轴了，但因变量还需要增加轴，全部代码如下：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># 因变量为第 2 列数据</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># 自变量为第 3 列到第 6 列数据</span>
+
+<span class="c1"># 将 y 分别增加一个轴，以满足 sklearn 中回归模型认可的数据</span>
+<span class="c1"># 此时由于 x 是多元变量，则不用添加新的轴了</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span> <span class="c1"># 构建线性模型</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># 自变量在前，因变量在后</span>
+<span class="n">predicts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 预测值</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># 拟合程度 R2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2 = </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">R2</span><span class="p">)</span> <span class="c1"># 输出 R2</span>
+<span class="n">coef</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span> <span class="c1"># 斜率</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span> <span class="c1"># 截距</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span> <span class="c1"># 输出斜率和截距</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 = 0.812
+[[3.30005331 4.35955755 0.61975042]] [-14.06888312]
+</pre></div>
+</div>
+</div>
+</div>
+<p>多项式回归，广义最小二乘回归，Lasso 回归，逻辑回归，加权最小二乘回归，分位数回归等，都可以在<code class="docutils literal notranslate"><span class="pre">statsmodel</span></code>库或<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库中找到相应的函数。</p>
+</section>
+</section>
+<section id="id3">
+<h2><span class="section-number">9.2. </span>主成分分析<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>主成分分析（Principle Component Analysis, PCA）是数据降维的一个方法：原始数据中有很多特征变量，可以采用主成分分析方法将原始数据降维为少数几个变量，主成分就是降维后各原始变量的线性组合系数。</p>
+<p>主成分分析的求解一般采用特征根分解，即求解原始数据<strong>协方差矩阵或相关系数矩阵</strong>最大特征根对应的特征向量，即为第一主成分，第二主成分为第二大特征根对应的特征向量，其他的主成分可以依次得出。主成分贡献率为对应特征根占所有特征根加和的比例。</p>
+<p>采用 python 主成分分析时，常用的包为 sklearn，其他一些包也能做（例如 matplotlib.mlab.PCA）。需要注意的是</p>
+<ul class="simple">
+<li><p>最好对原始数据进行标准化</p></li>
+<li><p>sklearn 计算主成分时使用的是协方差矩阵，而不是相关系数矩阵</p></li>
+</ul>
+<p>sklearn 中的标准化函数有：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>函数</p></th>
+<th class="text-left head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>scale(X, axis=0, *)</p></td>
+<td class="text-left"><p>对数据 X 进行 z 标准化，参数 axis 调整对列或对行标准化</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>StandardScaler()</p></td>
+<td class="text-left"><p>z 标准化，列标准化</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>MinMaxScaler()</p></td>
+<td class="text-left"><p>最大最小标准化，列标准化</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>MaxAbsScaler()</p></td>
+<td class="text-left"><p>最大绝对值标准化，列标准化</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>… …</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>举例，下面一个统计数据：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>食品</p></th>
+<th class="head"><p>衣着</p></th>
+<th class="head"><p>居住</p></th>
+<th class="head"><p>家庭设备</p></th>
+<th class="head"><p>交通通讯</p></th>
+<th class="head"><p>文教娱乐</p></th>
+<th class="head"><p>医疗保健</p></th>
+<th class="head"><p>其他</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>北  京</p></td>
+<td><p>1736</p></td>
+<td><p>379</p></td>
+<td><p>854</p></td>
+<td><p>327</p></td>
+<td><p>615</p></td>
+<td><p>797</p></td>
+<td><p>504</p></td>
+<td><p>103</p></td>
+</tr>
+<tr class="row-odd"><td><p>天  津</p></td>
+<td><p>1171</p></td>
+<td><p>257</p></td>
+<td><p>614</p></td>
+<td><p>117</p></td>
+<td><p>328</p></td>
+<td><p>329</p></td>
+<td><p>179</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-even"><td><p>河  北</p></td>
+<td><p>888</p></td>
+<td><p>156</p></td>
+<td><p>399</p></td>
+<td><p>101</p></td>
+<td><p>222</p></td>
+<td><p>226</p></td>
+<td><p>135</p></td>
+<td><p>39</p></td>
+</tr>
+<tr class="row-odd"><td><p>山  西</p></td>
+<td><p>830</p></td>
+<td><p>202</p></td>
+<td><p>201</p></td>
+<td><p>69</p></td>
+<td><p>160</p></td>
+<td><p>280</p></td>
+<td><p>103</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-even"><td><p>内蒙古</p></td>
+<td><p>1054</p></td>
+<td><p>150</p></td>
+<td><p>335</p></td>
+<td><p>84</p></td>
+<td><p>293</p></td>
+<td><p>309</p></td>
+<td><p>176</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-odd"><td><p>辽  宁</p></td>
+<td><p>1127</p></td>
+<td><p>221</p></td>
+<td><p>378</p></td>
+<td><p>100</p></td>
+<td><p>301</p></td>
+<td><p>377</p></td>
+<td><p>234</p></td>
+<td><p>68</p></td>
+</tr>
+<tr class="row-even"><td><p>吉  林</p></td>
+<td><p>1003</p></td>
+<td><p>168</p></td>
+<td><p>257</p></td>
+<td><p>82</p></td>
+<td><p>285</p></td>
+<td><p>261</p></td>
+<td><p>194</p></td>
+<td><p>56</p></td>
+</tr>
+<tr class="row-odd"><td><p>黑龙江</p></td>
+<td><p>924</p></td>
+<td><p>184</p></td>
+<td><p>527</p></td>
+<td><p>74</p></td>
+<td><p>257</p></td>
+<td><p>277</p></td>
+<td><p>254</p></td>
+<td><p>49</p></td>
+</tr>
+<tr class="row-even"><td><p>上  海</p></td>
+<td><p>2684</p></td>
+<td><p>366</p></td>
+<td><p>1320</p></td>
+<td><p>458</p></td>
+<td><p>748</p></td>
+<td><p>937</p></td>
+<td><p>562</p></td>
+<td><p>204</p></td>
+</tr>
+<tr class="row-odd"><td><p>江  苏</p></td>
+<td><p>1569</p></td>
+<td><p>191</p></td>
+<td><p>512</p></td>
+<td><p>168</p></td>
+<td><p>364</p></td>
+<td><p>479</p></td>
+<td><p>199</p></td>
+<td><p>85</p></td>
+</tr>
+<tr class="row-even"><td><p>浙  江</p></td>
+<td><p>2061</p></td>
+<td><p>319</p></td>
+<td><p>914</p></td>
+<td><p>260</p></td>
+<td><p>618</p></td>
+<td><p>723</p></td>
+<td><p>416</p></td>
+<td><p>121</p></td>
+</tr>
+<tr class="row-odd"><td><p>安  徽</p></td>
+<td><p>1000</p></td>
+<td><p>117</p></td>
+<td><p>345</p></td>
+<td><p>106</p></td>
+<td><p>197</p></td>
+<td><p>257</p></td>
+<td><p>134</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-even"><td><p>福  建</p></td>
+<td><p>1518</p></td>
+<td><p>187</p></td>
+<td><p>457</p></td>
+<td><p>154</p></td>
+<td><p>366</p></td>
+<td><p>357</p></td>
+<td><p>154</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>江  西</p></td>
+<td><p>1221</p></td>
+<td><p>125</p></td>
+<td><p>326</p></td>
+<td><p>96</p></td>
+<td><p>230</p></td>
+<td><p>276</p></td>
+<td><p>155</p></td>
+<td><p>56</p></td>
+</tr>
+<tr class="row-even"><td><p>山  东</p></td>
+<td><p>1088</p></td>
+<td><p>160</p></td>
+<td><p>446</p></td>
+<td><p>137</p></td>
+<td><p>294</p></td>
+<td><p>377</p></td>
+<td><p>188</p></td>
+<td><p>46</p></td>
+</tr>
+<tr class="row-odd"><td><p>河  南</p></td>
+<td><p>859</p></td>
+<td><p>132</p></td>
+<td><p>318</p></td>
+<td><p>83</p></td>
+<td><p>160</p></td>
+<td><p>178</p></td>
+<td><p>123</p></td>
+<td><p>39</p></td>
+</tr>
+<tr class="row-even"><td><p>湖  北</p></td>
+<td><p>1192</p></td>
+<td><p>125</p></td>
+<td><p>310</p></td>
+<td><p>110</p></td>
+<td><p>223</p></td>
+<td><p>272</p></td>
+<td><p>135</p></td>
+<td><p>62</p></td>
+</tr>
+<tr class="row-odd"><td><p>湖  南</p></td>
+<td><p>1433</p></td>
+<td><p>128</p></td>
+<td><p>307</p></td>
+<td><p>114</p></td>
+<td><p>219</p></td>
+<td><p>329</p></td>
+<td><p>168</p></td>
+<td><p>58</p></td>
+</tr>
+<tr class="row-even"><td><p>广  东</p></td>
+<td><p>1789</p></td>
+<td><p>144</p></td>
+<td><p>530</p></td>
+<td><p>152</p></td>
+<td><p>412</p></td>
+<td><p>361</p></td>
+<td><p>204</p></td>
+<td><p>116</p></td>
+</tr>
+<tr class="row-odd"><td><p>广  西</p></td>
+<td><p>1187</p></td>
+<td><p>79</p></td>
+<td><p>380</p></td>
+<td><p>95</p></td>
+<td><p>214</p></td>
+<td><p>226</p></td>
+<td><p>123</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-even"><td><p>海  南</p></td>
+<td><p>1135</p></td>
+<td><p>66</p></td>
+<td><p>146</p></td>
+<td><p>92</p></td>
+<td><p>178</p></td>
+<td><p>199</p></td>
+<td><p>93</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-odd"><td><p>重  庆</p></td>
+<td><p>1130</p></td>
+<td><p>96</p></td>
+<td><p>231</p></td>
+<td><p>96</p></td>
+<td><p>163</p></td>
+<td><p>250</p></td>
+<td><p>143</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-even"><td><p>四  川</p></td>
+<td><p>1244</p></td>
+<td><p>116</p></td>
+<td><p>234</p></td>
+<td><p>102</p></td>
+<td><p>172</p></td>
+<td><p>225</p></td>
+<td><p>144</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-odd"><td><p>贵  州</p></td>
+<td><p>820</p></td>
+<td><p>80</p></td>
+<td><p>236</p></td>
+<td><p>62</p></td>
+<td><p>99</p></td>
+<td><p>161</p></td>
+<td><p>72</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-even"><td><p>云  南</p></td>
+<td><p>976</p></td>
+<td><p>80</p></td>
+<td><p>226</p></td>
+<td><p>67</p></td>
+<td><p>100</p></td>
+<td><p>183</p></td>
+<td><p>122</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-odd"><td><p>西  藏</p></td>
+<td><p>1185</p></td>
+<td><p>182</p></td>
+<td><p>84</p></td>
+<td><p>81</p></td>
+<td><p>79</p></td>
+<td><p>28</p></td>
+<td><p>44</p></td>
+<td><p>39</p></td>
+</tr>
+<tr class="row-even"><td><p>陕  西</p></td>
+<td><p>813</p></td>
+<td><p>124</p></td>
+<td><p>212</p></td>
+<td><p>84</p></td>
+<td><p>163</p></td>
+<td><p>297</p></td>
+<td><p>166</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-odd"><td><p>甘  肃</p></td>
+<td><p>859</p></td>
+<td><p>92</p></td>
+<td><p>241</p></td>
+<td><p>74</p></td>
+<td><p>155</p></td>
+<td><p>258</p></td>
+<td><p>114</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>青  海</p></td>
+<td><p>893</p></td>
+<td><p>156</p></td>
+<td><p>329</p></td>
+<td><p>84</p></td>
+<td><p>208</p></td>
+<td><p>110</p></td>
+<td><p>152</p></td>
+<td><p>43</p></td>
+</tr>
+<tr class="row-odd"><td><p>宁  夏</p></td>
+<td><p>923</p></td>
+<td><p>143</p></td>
+<td><p>346</p></td>
+<td><p>77</p></td>
+<td><p>178</p></td>
+<td><p>178</p></td>
+<td><p>199</p></td>
+<td><p>51</p></td>
+</tr>
+<tr class="row-even"><td><p>新  疆</p></td>
+<td><p>804</p></td>
+<td><p>171</p></td>
+<td><p>333</p></td>
+<td><p>68</p></td>
+<td><p>183</p></td>
+<td><p>159</p></td>
+<td><p>169</p></td>
+<td><p>36</p></td>
+</tr>
+</tbody>
+</table>
+<p>主成分分析的 Python 代码为：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">scale</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\data-pca.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 读取数据</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">scale</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># z标准化，标准化之后就自动根据协方差矩阵进行主成分分析了</span>
+<span class="c1"># data2 = np.corrcoef(np.transpose(data)) # 没有必要单独计算协方差阵或相关系数阵</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 可以通过参数 n_components 调整主成分个数</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;特征根：&#39;</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_</span><span class="p">)</span> <span class="c1"># 输出特征根</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;主成分：&#39;</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">)</span> <span class="c1"># 输出主成分</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>特征根： [7.32679152 0.46898546 0.16208403]
+
+主成分： [[ 0.34197826  0.32541509  0.36029958  0.36486138  0.3682146   0.36096996
+   0.35616496  0.34854195]
+ [ 0.54451489 -0.61527353 -0.11520953  0.11674732 -0.03494752 -0.07480108
+  -0.2943857   0.4522824 ]
+ [ 0.27960446  0.69192655 -0.19973533 -0.07235855 -0.02963776 -0.42452329
+  -0.39881297  0.24037227]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="kmeans">
+<h2><span class="section-number">9.3. </span>Kmeans 聚类<a class="headerlink" href="#kmeans" title="Permalink to this headline">#</a></h2>
+<p>Kmeans 是一种动态聚类方法，其基本思想是：首先随机选取 K 个点作为初始凝聚点，按照距离最近原则划分为 K 类；然后重新计算 K 个类的重心作为新的凝聚点，再按照距离最近原则重新分类；重复这一过程，直到重心不再变化为止。</p>
+<p>对上面的例子，进行 Kmeans 聚类并画图的代码为：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span> <span class="c1"># 忽略掉使用默写函数的一些警告信息</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+
+<span class="c1"># 将上述数据放到 excel 里，并用 pandas 读取</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\data-pca.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">scale_values</span> <span class="o">=</span>  <span class="n">MinMaxScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>  <span class="c1"># 数据表转化预处理</span>
+
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">scale_values</span><span class="p">)</span> <span class="c1"># 分为 3 类, 参数 n_init= &#39;auto&#39; 设置初始聚类的运行次数</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span> <span class="c1"># 输出判别结果列表</span>
+
+<span class="c1"># 具体输出判别结果</span>
+<span class="n">cluster_1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">cluster_2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">cluster_3</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cluster_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">cluster_2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cluster_3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;类别1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cluster_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;类别2&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cluster_2</span><span class="p">)</span>        
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;类别3&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cluster_3</span><span class="p">)</span>     
+
+
+<span class="c1"># draw pictures by tsne, or pca, 利用主成分降为 2 维，并画图显示分类结果</span>
+<span class="c1">#from sklearn.manifold import TSNE</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">tsne</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">scale_values</span><span class="p">)</span> <span class="c1"># tsne</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tsne</span><span class="p">)</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
+
+<span class="n">df_1</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">df_2</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">df_3</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># 画图</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="n">df_2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df_2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r*&#39;</span><span class="p">,</span> <span class="n">df_3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df_3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;gD&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 2 1 1 1 2 1 2 0 2 0 1 2 1 2 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1]
+类别1
+[&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
+类别2
+[&#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;吉  林&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
+类别3
+[&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;广  东&#39;]
+</pre></div>
+</div>
+<img alt="_images/9ba19eec440c035652c732036f048b35b9586b011ee529ffbed03f603c4a7674.png" src="_images/9ba19eec440c035652c732036f048b35b9586b011ee529ffbed03f603c4a7674.png" />
+</div>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">9.4. </span>人工神经网络<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>神经网络的目标是：找到一个能把一组输入最好地映射到其正确输出的函数。例如一个简单的分类任务，其中输入是动物的图像，正确的输出将是动物的名称。或者根据历史需求数据，预测未来一期的需求。神经网络的思想类似回归分析中经常用到的拟合，都用到了最小二乘的思想：数学意义上的决策目标是：选取一些参数（神经网络中每个输入的权重），使得拟合的输出与期望输出的误差平方和最小。</p>
+<p>下面是一个神经网络示意图（输入层有一些神经元，隐含层有一些神经元，输出层有一些神经元），输入信息经过正向传播到输出，计算实际输出与期望输出的误差后，在反向传播误差；重复这个过程，在传播过程中，不断减少误差，直到误差减少到一定程度终止。</p>
+<p><img alt="ann.png" src="_images/ann.png" /></p>
+<p>用 BP 神经网络预测 sklearn 包中自带的乳腺癌数据例子：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## 测试一下癌症数据</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+
+<span class="n">cancer</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">()</span>
+<span class="n">cancer_data</span> <span class="o">=</span>  <span class="n">cancer</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+<span class="n">cancer_target</span> <span class="o">=</span> <span class="n">cancer</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
+
+<span class="c1"># 将数据集划分为训练集，测试集</span>
+<span class="n">cancer_data_train</span><span class="p">,</span> <span class="n">cancer_data_test</span><span class="p">,</span> <span class="n">cancer_target_train</span><span class="p">,</span> \
+    <span class="n">cancer_target_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">cancer_data</span><span class="p">,</span> <span class="n">cancer_target</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+    
+<span class="c1"># 数据标准化</span>
+<span class="n">stdScaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cancer_data_train</span><span class="p">)</span>
+<span class="n">cancer_trainStd</span> <span class="o">=</span> <span class="n">stdScaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">cancer_data_train</span><span class="p">)</span>
+<span class="n">cancer_testStd</span> <span class="o">=</span> <span class="n">stdScaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">cancer_data_test</span><span class="p">)</span>
+
+<span class="c1"># 建立 BP 模型</span>
+<span class="n">bpnn</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="c1"># 神经元隐含层的大小</span>
+    <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">solver</span> <span class="o">=</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">bpnn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cancer_trainStd</span><span class="p">,</span> <span class="n">cancer_target_train</span><span class="p">)</span>
+
+<span class="c1"># 预测</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">bpnn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">cancer_testStd</span><span class="p">)</span> <span class="c1"># 返回预测结果</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;神经网络预测结果评价报告：</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">cancer_target_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>神经网络预测结果评价报告：
+               precision    recall  f1-score   support
+
+           0       0.95      0.97      0.96        39
+           1       0.99      0.97      0.98        75
+
+    accuracy                           0.97       114
+   macro avg       0.97      0.97      0.97       114
+weighted avg       0.97      0.97      0.97       114
+</pre></div>
+</div>
+</div>
+</div>
+<p>其他常见的机器学习方法，例如随机森林，支持向量机，梯度提升等，都可以在<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库中找到相应的函数。</p>
+</section>
+<section id="id5">
+<h2><span class="section-number">9.5. </span>练习<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition" id="regression">
+
+<p class="admonition-title"><span class="caption-number">Exercise 9.1 </span></p>
+<section id="exercise-content">
+<p>使用python 中的<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>库或<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库，编程实现《统计学》或《计量经济学》课程上的一些数据分析习题。</p>
+</section>
 </div>
 </section>
 </section>
@@ -758,12 +1495,12 @@ Notes:
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="draw-pictures.html"
+       href="introduction-to-crawler.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Python 画图</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Python 爬虫入门</p>
       </div>
     </a>
 </div></div>
@@ -784,7 +1521,15 @@ Notes:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">8.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 做线性回归</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.1. 线性回归</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">9.1.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">9.1.2. sklearn 库</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.2. 主成分分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">9.3. Kmeans 聚类</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4. 人工神经网络</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.5. 练习</a></li>
 </ul>
   </nav></div>
 
