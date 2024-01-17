@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>7. Python 画图 &#8212; Python 数据科学</title>
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -45,6 +45,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -104,7 +105,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="8. 爬虫入门" href="introduction-to-crawler.html" />
     <link rel="prev" title="6. Python 输出，读写文件" href="print-read-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -431,10 +432,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
-<h2><span class="section-number">7.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this heading">#</a></h2>
 <p>使用 matplotlib 包画图时，我们一般加载里面的 pyplot 函数，并命名为 plt，然后使用<code class="docutils literal notranslate"><span class="pre">plot</span></code>函数画图。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -467,7 +468,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7853817b898bbec2f73fdd1fcc8e06e554eae80ed7d27c05e1329a86e689b707.png" src="_images/7853817b898bbec2f73fdd1fcc8e06e554eae80ed7d27c05e1329a86e689b707.png" />
+<img alt="_images/9c580fdecd2c505433cd8ddb528a179a80b668b62c16dcd9e9ed33fce2dc8b76.png" src="_images/9c580fdecd2c505433cd8ddb528a179a80b668b62c16dcd9e9ed33fce2dc8b76.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">plot</span></code> 函数的基本用法如下：</p>
@@ -493,7 +494,7 @@ document.write(`
     </tr>
 </table>
 <br /><p>[fmt] 的常用代码（包括颜色代码、点形代码、线形代码），由下标所示。</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>颜色代码</p></th>
 <th class="head"><p>效果</p></th>
@@ -570,10 +571,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x249834e02d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb0e8521d50&gt;]
 </pre></div>
 </div>
-<img alt="_images/76d25eca1393698253cf0e96e372455ee40f1d0f2ebc59ca1b3bf6f1facaebef.png" src="_images/76d25eca1393698253cf0e96e372455ee40f1d0f2ebc59ca1b3bf6f1facaebef.png" />
+<img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -583,10 +584,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24982c223d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb0d8904f70&gt;]
 </pre></div>
 </div>
-<img alt="_images/48cc8277d4619998861fecf79619f02327de2c57734d0cb1ef81ab9eef2361df.png" src="_images/48cc8277d4619998861fecf79619f02327de2c57734d0cb1ef81ab9eef2361df.png" />
+<img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -596,10 +597,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24982d12850&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb0d8990cd0&gt;]
 </pre></div>
 </div>
-<img alt="_images/b4b971621b2f2ad81164c0e957e4ee54e42a2f9850d9144524cb6b7370a993a0.png" src="_images/b4b971621b2f2ad81164c0e957e4ee54e42a2f9850d9144524cb6b7370a993a0.png" />
+<img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -609,10 +610,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2498466da50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb0d896ef80&gt;]
 </pre></div>
 </div>
-<img alt="_images/b84e40a85420ec58224d8d91e835d57ad96bcb15b7ba6aa44c250cdf436d0532.png" src="_images/b84e40a85420ec58224d8d91e835d57ad96bcb15b7ba6aa44c250cdf436d0532.png" />
+<img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
 </div>
 </div>
 <p>如果我们想自定义坐标轴的标题，坐标轴的刻度，坐标轴刻度的范围，设置图形标题，添加图例时，可以通过设置 pyplot 函数中的 xlable（横坐标轴标题）, ylabel（纵坐标轴标题）, xticks（横坐标轴刻度），yticks（纵坐标轴刻度），title（图形标题）, grid（显示网格），legend（显示图例）等属性来实现。若调整图像的清晰度，可以用<code class="docutils literal notranslate"><span class="pre">plt.rcParams[&quot;figure.dpi&quot;]</span></code> 来调整图像的 dpi 值来实现，调整图像的大小可以通过 <code class="docutils literal notranslate"><span class="pre">plt.rcParams('figsize')</span></code>来设置图像的长宽。</p>
@@ -623,7 +624,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heiti TC&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体：‘SimHei’</span>
 <span class="c1"># 这行代码能够正确显示中文时坐标轴上的负刻度</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -655,7 +656,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a2fc887b2d34208edf29bca64884fcc332968c3890738154d14c7d5049016799.png" src="_images/a2fc887b2d34208edf29bca64884fcc332968c3890738154d14c7d5049016799.png" />
+<img alt="_images/d5ade64600337224c418242c9b7f94993582b359f8db54f853a93550ec54873d.png" src="_images/d5ade64600337224c418242c9b7f94993582b359f8db54f853a93550ec54873d.png" />
 </div>
 </div>
 <ul class="simple">
@@ -663,9 +664,9 @@ document.write(`
 </ul>
 </section>
 <section id="id1">
-<h2><span class="section-number">7.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="scatter">
-<h3><span class="section-number">7.2.1. </span><code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数<a class="headerlink" href="#scatter" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.1. </span><code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数<a class="headerlink" href="#scatter" title="Permalink to this heading">#</a></h3>
 <p>做散点图要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数，该函数的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -699,7 +700,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heiti TC&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体：‘SimHei’</span>
 <span class="c1"># 这行代码能够正确显示坐标轴上的负刻度</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -715,12 +716,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eff50154006e5b72f0c188b767bfe1be4fb3d16ae770f51e7b5daf3abea88753.png" src="_images/eff50154006e5b72f0c188b767bfe1be4fb3d16ae770f51e7b5daf3abea88753.png" />
+<img alt="_images/fc351d743f40747b68f0a05816d764eae5a4af9c6041d360ce6a275bb74bf9a1.png" src="_images/fc351d743f40747b68f0a05816d764eae5a4af9c6041d360ce6a275bb74bf9a1.png" />
 </div>
 </div>
 </section>
 <section id="bar-barh">
-<h3><span class="section-number">7.2.2. </span><code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数<a class="headerlink" href="#bar-barh" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.2. </span><code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数<a class="headerlink" href="#bar-barh" title="Permalink to this heading">#</a></h3>
 <p>条形图（bar chart），也称为柱状图，要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">bar</span></code>函数生成，该函数的基本语法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -744,9 +745,9 @@ document.write(`
     </tr>
 </table>
 <br /><p>假设某项针对男女大学生购买饮用水爱好的调查结果如下表：</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>选择</p></th>
+<tr class="row-odd"><th class="head text-center"><p>选择</p></th>
 <th class="head"><p>男</p></th>
 <th class="head"><p>女</p></th>
 </tr>
@@ -785,7 +786,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heiti TC&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;, win 下黑体：&#39;SimHei&#39;</span>
 <span class="c1"># 这行代码能够正确显示坐标轴上的负刻度</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -799,7 +800,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c3669d7b7f6e383a501185e58ed3eb795c57cca36cddabfb10866fd1aa2ff0fa.png" src="_images/c3669d7b7f6e383a501185e58ed3eb795c57cca36cddabfb10866fd1aa2ff0fa.png" />
+<img alt="_images/4fc89278c6683e0319d22ccfc773f296e51aa5d2c953f7a4ba5d47f2b56fda9c.png" src="_images/4fc89278c6683e0319d22ccfc773f296e51aa5d2c953f7a4ba5d47f2b56fda9c.png" />
 </div>
 </div>
 <p>横放条形图使用<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数，用法与<code class="docutils literal notranslate"><span class="pre">bar</span></code>基本一致。</p>
@@ -816,7 +817,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/22f846637c7d09124d289a3fadbcb2cc9c07bf8decf333d1a2878b62f472fbbb.png" src="_images/22f846637c7d09124d289a3fadbcb2cc9c07bf8decf333d1a2878b62f472fbbb.png" />
+<img alt="_images/6e6b6556f7e1f7fcb477bd36e03408a12a24e900e1b7d4645eecbebfa2baf8ff.png" src="_images/6e6b6556f7e1f7fcb477bd36e03408a12a24e900e1b7d4645eecbebfa2baf8ff.png" />
 </div>
 </div>
 <p>若要将男生与女生的调查情况画出两个条形图一块显示，则可以使用<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数两次，并调整<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数的条形图位置坐标以及相应刻度，使得两组条形图能够并排显示。</p>
@@ -827,7 +828,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heiti TC&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;, win 下黑体：&#39;SimHei&#39;</span>
 <span class="c1"># 这行代码能够正确显示坐标轴上的负刻度</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -853,12 +854,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a94083d3cc857cace6600359c8e2158b1e4ff2521ae66e3f7785c87802132949.png" src="_images/a94083d3cc857cace6600359c8e2158b1e4ff2521ae66e3f7785c87802132949.png" />
+<img alt="_images/480389863fbf5db95c1224d74539d3ec26bc3af2e06ae1424cbad4a36b7651c1.png" src="_images/480389863fbf5db95c1224d74539d3ec26bc3af2e06ae1424cbad4a36b7651c1.png" />
 </div>
 </div>
 </section>
 <section id="hist">
-<h3><span class="section-number">7.2.3. </span><code class="docutils literal notranslate"><span class="pre">hist</span></code>函数<a class="headerlink" href="#hist" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.3. </span><code class="docutils literal notranslate"><span class="pre">hist</span></code>函数<a class="headerlink" href="#hist" title="Permalink to this heading">#</a></h3>
 <p>直方图（histogram）虽然在样式上类似条形图，但它们的作用不一样。直方图用不同的矩形表示频数，常用来观察一组数据的概率分布。在直角坐标中，用横轴表示数据分组，纵轴表示频数或频率，各组与相应的频数就形成了一个个矩形，即直方图。画直方图用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">hist</span></code>函数，它的基本语法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -895,15 +896,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e4cfafa6cad7f44b9e01d6efd856a1131fb9de1616bb9152144561183143e307.png" src="_images/e4cfafa6cad7f44b9e01d6efd856a1131fb9de1616bb9152144561183143e307.png" />
+<img alt="_images/d19c24220b936b3962f2f23a4457e896757def0bc6627a7c842753978a3b8282.png" src="_images/d19c24220b936b3962f2f23a4457e896757def0bc6627a7c842753978a3b8282.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="id2">
-<h2><span class="section-number">7.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="pie">
-<h3><span class="section-number">7.3.1. </span><code class="docutils literal notranslate"><span class="pre">pie</span></code>函数<a class="headerlink" href="#pie" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.1. </span><code class="docutils literal notranslate"><span class="pre">pie</span></code>函数<a class="headerlink" href="#pie" title="Permalink to this heading">#</a></h3>
 <p>饼图（pie char）是一个划分为几个扇形的圆形统计图表，一般用于描述频率或百分比之间的相对关系。在饼图中，每个扇区的弧长（以及圆心角和面积）的大小与其所表示的数量呈固定比例。画饼图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">pie</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -936,7 +937,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heiti TC&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;, win 下黑体：&#39;SimHei&#39;</span>
 <span class="c1"># 这行代码能够正确显示坐标轴上的负刻度</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -951,12 +952,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f63e76bd4cd97980207350379efcb18c029293a3925c345c793f5f96b4957620.png" src="_images/f63e76bd4cd97980207350379efcb18c029293a3925c345c793f5f96b4957620.png" />
+<img alt="_images/31faa69afbcfb758eebd12417c8e47a9357f1895a704998585c84074ade99c61.png" src="_images/31faa69afbcfb758eebd12417c8e47a9357f1895a704998585c84074ade99c61.png" />
 </div>
 </div>
 </section>
 <section id="boxplot">
-<h3><span class="section-number">7.3.2. </span><code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数<a class="headerlink" href="#boxplot" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.3.2. </span><code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数<a class="headerlink" href="#boxplot" title="Permalink to this heading">#</a></h3>
 <p>箱线图（box plot）是一种用来显示数据统计分布情况的图形，包括数据的最大值、最小值、中位数、分位数等特征。画箱线图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -980,9 +981,9 @@ document.write(`
     </tr>
 </table>
 <br /><p>假设有下面的学生成绩单：</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>课程</p></th>
+<tr class="row-odd"><th class="head text-center"><p>课程</p></th>
 <th class="head"><p>学生A</p></th>
 <th class="head"><p>学生B</p></th>
 <th class="head"><p>学生C</p></th>
@@ -1072,7 +1073,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heiti TC&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;, win 下黑体：&#39;SimHei&#39;</span>
 <span class="c1"># 这行代码能够正确显示坐标轴上的负刻度</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -1091,13 +1092,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/29e1a8d833d14f60f25d55a919c6623a687009fd35bac680ce9d32aeb18c503c.png" src="_images/29e1a8d833d14f60f25d55a919c6623a687009fd35bac680ce9d32aeb18c503c.png" />
+<img alt="_images/b48c1d645c8cf51bde306dfd7e74aae3d1540e142d6fc0ec53e38a33b430f289.png" src="_images/b48c1d645c8cf51bde306dfd7e74aae3d1540e142d6fc0ec53e38a33b430f289.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="subplot">
-<h2><span class="section-number">7.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h2>
 <p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1132,7 +1133,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heiti TC&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;, win 下黑体：&#39;SimHei&#39;</span>
 <span class="c1"># 这行代码能够正确显示坐标轴上的负刻度</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.unicode_minus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -1163,13 +1164,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8f5cb4450f8577101ea8e1b85177e59e2ad2932340861f296fb08f778d77b90c.png" src="_images/8f5cb4450f8577101ea8e1b85177e59e2ad2932340861f296fb08f778d77b90c.png" />
+<img alt="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" src="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" />
 </div>
 </div>
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
 </section>
 <section id="seaborn">
-<h2><span class="section-number">7.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
 <p>seanborn 是 Python 的另外一个常用工具包，它基于 matplotlib，但画出的图形更加美观些，并且与 Pandas 的数据类型结合地较好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1189,7 +1190,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/840547056dac7312a59e8617303cae65b3ef2bed01319ed780aaca93b1e3e058.png" src="_images/840547056dac7312a59e8617303cae65b3ef2bed01319ed780aaca93b1e3e058.png" />
+<img alt="_images/dc29a136da4782a18cd2fbd29cbcffdabbd82aa23b2c3aa457fec8c9bc132c68.png" src="_images/dc29a136da4782a18cd2fbd29cbcffdabbd82aa23b2c3aa457fec8c9bc132c68.png" />
 </div>
 </div>
 <p>可以看出，应用 seaborn 的主题后，图形的配色变化了些。下面我们导入 seaborn 自带的数据集 tips。</p>
@@ -1225,7 +1226,7 @@ document.write(`
 </div>
 </div>
 <section id="relplot">
-<h3><span class="section-number">7.5.1. </span><code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数<a class="headerlink" href="#relplot" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.5.1. </span><code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数<a class="headerlink" href="#relplot" title="Permalink to this heading">#</a></h3>
 <p>可以看出，tips 数据集载入后，是 Pandas 的 DataFrame 类型，seaborn 可以方便地针对 DataFrame 数据集画图。下面，我们以其中的<code class="docutils literal notranslate"><span class="pre">relplot</span></code> 函数为例，讲解如何使用 seanborn 画图。<code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数的基本用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1275,7 +1276,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/736b6a0a9e5ec966fd84614f25fb91371516ec3337acbe72e0dbdc16dc43988f.png" src="_images/736b6a0a9e5ec966fd84614f25fb91371516ec3337acbe72e0dbdc16dc43988f.png" />
+<img alt="_images/a007401bd298b3907439e793dcc644849ed56976bc14e32bdfbe60aa9ab1a6fd.png" src="_images/a007401bd298b3907439e793dcc644849ed56976bc14e32bdfbe60aa9ab1a6fd.png" />
 </div>
 </div>
 <p>生成线图时，相同横坐标的数据将会合并，并且，图像会显示均值以及 95% 的置信区间：</p>
@@ -1292,7 +1293,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8639bd534ec912f066c66aeb9b801648f8cb3f068df6db606f075da860de9eb7.png" src="_images/8639bd534ec912f066c66aeb9b801648f8cb3f068df6db606f075da860de9eb7.png" />
+<img alt="_images/b7d8d576eb6e1baa8758dbf729cc38e7aa95c59db2cf38d64df2a86c9cd5cbbb.png" src="_images/b7d8d576eb6e1baa8758dbf729cc38e7aa95c59db2cf38d64df2a86c9cd5cbbb.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1306,13 +1307,13 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/0ba7af82d48a77e19b872ad3ea6833b6162787b5ddb806c19380c5df5fe3fd58.png" src="_images/0ba7af82d48a77e19b872ad3ea6833b6162787b5ddb806c19380c5df5fe3fd58.png" />
+<img alt="_images/2a0db2fa135f532eb24715dc69f0ac430a463765ea3e5064a00bb1ca40db5bd2.png" src="_images/2a0db2fa135f532eb24715dc69f0ac430a463765ea3e5064a00bb1ca40db5bd2.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
 </section>
 <section id="barplot">
-<h3><span class="section-number">7.5.2. </span><code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数<a class="headerlink" href="#barplot" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.5.2. </span><code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数<a class="headerlink" href="#barplot" title="Permalink to this heading">#</a></h3>
 <p>seaborn 自带一些函数生成常见的图形，例如<code class="docutils literal notranslate"><span class="pre">barplot</span></code>生成条形图，<code class="docutils literal notranslate"><span class="pre">histplot</span></code>生成直方图，<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>生成箱线图：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1327,7 +1328,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07daa29e6056c97d2495c9617baf58ed4e4aa30b8a03de69884edfab114469f5.png" src="_images/07daa29e6056c97d2495c9617baf58ed4e4aa30b8a03de69884edfab114469f5.png" />
+<img alt="_images/c1973f4334b26ba6f5cceae4a423eead82b0d9eca6779df2a29cfbfd907a7bb1.png" src="_images/c1973f4334b26ba6f5cceae4a423eead82b0d9eca6779df2a29cfbfd907a7bb1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1341,7 +1342,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7c10b7094c60e6b376cabfb0268c194c9b5e8badee7968586911d57b27dfaa6e.png" src="_images/7c10b7094c60e6b376cabfb0268c194c9b5e8badee7968586911d57b27dfaa6e.png" />
+<img alt="_images/2532ab2eb755420589f80dd0ab4fc966d0ca0859ce29912becf5469101895984.png" src="_images/2532ab2eb755420589f80dd0ab4fc966d0ca0859ce29912becf5469101895984.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1356,14 +1357,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c4764911b792a4c9643bef9091bf24380d147296c675dbe7016caa519c33114c.png" src="_images/c4764911b792a4c9643bef9091bf24380d147296c675dbe7016caa519c33114c.png" />
+<img alt="_images/bfdc20e98401ba3e97a6ef70396d6e61fbb0c9a0f699a159c777f8d8efab8171.png" src="_images/bfdc20e98401ba3e97a6ef70396d6e61fbb0c9a0f699a159c777f8d8efab8171.png" />
 </div>
 </div>
 <p>seaborn 还有其他一些画图函数，例如<code class="docutils literal notranslate"><span class="pre">heatmap</span></code>生成热力图，<code class="docutils literal notranslate"><span class="pre">violinplot</span></code>生成小提琴图，限于篇幅，本文不再赘述，有兴趣的读者可以查阅官方文档。</p>
 </section>
 </section>
 <section id="id3">
-<h2><span class="section-number">7.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="draw-heart">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.1 </span></p>
@@ -1501,7 +1502,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
