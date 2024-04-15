@@ -591,81 +591,18 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># 读取 excel 数据，引号里面是 excel 文件在电脑的存储位置</span>
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>
+<span class="c1"># 读取 excel 数据，引号里面是 excel 文件在 mac 系统电脑的存储位置</span>
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas/linear_regression.xlsx&#39;</span><span class="p">)</span> <span class="c1"># 若电脑是 windows 系统，将符号 / 改为 \</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># 读取 excel 数据，引号里面是 excel 文件在电脑的存储位置</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
-<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/pandas/io/excel/_base.py:482,</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, decimal, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span>         <span class="s2">&quot;Engine should not be specified when passing &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span>         <span class="s2">&quot;an ExcelFile - ExcelFile already has the engine set&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>     <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/pandas/io/excel/_base.py:1652,</span> in <span class="ni">ExcelFile.__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1650</span>     <span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;xls&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1651</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1652</span>     <span class="n">ext</span> <span class="o">=</span> <span class="n">inspect_excel_format</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1653</span>         <span class="n">content_or_path</span><span class="o">=</span><span class="n">path_or_buffer</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span>
-<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="k">if</span> <span class="n">ext</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1656</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1657</span>             <span class="s2">&quot;Excel file format cannot be determined, you must specify &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1658</span>             <span class="s2">&quot;an engine manually.&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1659</span>         <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/pandas/io/excel/_base.py:1525,</span> in <span class="ni">inspect_excel_format</span><span class="nt">(content_or_path, storage_options)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content_or_path</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">content_or_path</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">content_or_path</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1525</span> <span class="k">with</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1526</span>     <span class="n">content_or_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1527</span> <span class="p">)</span> <span class="k">as</span> <span class="n">handle</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1528</span>     <span class="n">stream</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="n">handle</span>
-<span class="g g-Whitespace">   </span><span class="mi">1529</span>     <span class="n">stream</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/pandas/io/common.py:865,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">856</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">857</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">861</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">863</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">864</span>         <span class="c1"># Binary mode</span>
-<span class="ne">--&gt; </span><span class="mi">865</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">866</span>     <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="c1"># Convert BytesIO or file objects passed with an encoding</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;datas\\linear_regression.xlsx&#39;
-</pre></div>
 </div>
-</div>
+<div class="admonition- admonition">
+<p class="admonition-title">注意</p>
+<ul class="simple">
+<li><p>苹果电脑的文件地址用符号<code class="docutils literal notranslate"><span class="pre">/</span></code>分割，而 windows 系统的文件地址用符号<code class="docutils literal notranslate"><span class="pre">\</span></code>分割</p></li>
+<li><p>文件地址前加上<code class="docutils literal notranslate"><span class="pre">r</span></code>能够保持字符串原始值的含义，而不对其中的符号进行转义</p></li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -783,7 +720,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span> <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas/linear_regression.xlsx&#39;</span><span class="p">)</span> <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1"># 因变量为第 1列数据</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 自变量为第 2 列数据</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 若模型中有截距，必须有这一步</span>
@@ -793,7 +730,7 @@ document.write(`
 
 <span class="c1"># 画图</span>
 <span class="c1"># 这行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti SC&#39;， 宋体：&#39;Songti SC&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heiti TC&#39;</span><span class="p">]</span> <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;， windows 系统黑体 ‘SimHei’</span>
 
 <span class="n">predicts</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span> <span class="c1"># 模型的预测值</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 自变量为第 3 列数据</span>
@@ -810,8 +747,8 @@ document.write(`
 Dep. Variable:                   不良贷款   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.699
 Method:                 Least Squares   F-statistic:                     56.75
-Date:                Fri, 17 Nov 2023   Prob (F-statistic):           1.18e-07
-Time:                        12:49:35   Log-Likelihood:                -51.508
+Date:                Mon, 15 Apr 2024   Prob (F-statistic):           1.18e-07
+Time:                        22:11:52   Log-Likelihood:                -51.508
 No. Observations:                  25   AIC:                             107.0
 Df Residuals:                      23   BIC:                             109.5
 Df Model:                           1                                         
@@ -832,7 +769,7 @@ Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 </pre></div>
 </div>
-<img alt="_images/ef3067e697815eac11d9b6181950a2ade1c9634cf7b06901bb2168963b25f92e.png" src="_images/ef3067e697815eac11d9b6181950a2ade1c9634cf7b06901bb2168963b25f92e.png" />
+<img alt="_images/206aef618dbf342f395678cb61e1d9d6a7447f11a59708f7857f6da081ca21d4.png" src="_images/206aef618dbf342f395678cb61e1d9d6a7447f11a59708f7857f6da081ca21d4.png" />
 </div>
 </div>
 <div class="tip admonition">
@@ -859,7 +796,7 @@ Notes:
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas/linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 因变量为第 2 列数据</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># 自变量为第 3 列到第 6 列数据</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 若模型中有截距，必须有这一步</span>
@@ -874,8 +811,8 @@ Notes:
 Dep. Variable:                 各项贷款余额   R-squared:                       0.812
 Model:                            OLS   Adj. R-squared:                  0.786
 Method:                 Least Squares   F-statistic:                     30.32
-Date:                Fri, 17 Nov 2023   Prob (F-statistic):           8.05e-08
-Time:                        15:56:32   Log-Likelihood:                -123.70
+Date:                Mon, 15 Apr 2024   Prob (F-statistic):           8.05e-08
+Time:                        22:11:52   Log-Likelihood:                -123.70
 No. Observations:                  25   AIC:                             255.4
 Df Residuals:                      21   BIC:                             260.3
 Df Model:                           3                                         
@@ -918,6 +855,14 @@ Notes:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[5], line 1
+    对于上面同样的例子，一元回归的代码：
+             ^
+SyntaxError: invalid character &#39;，&#39; (U+FF0C)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -926,7 +871,7 @@ Notes:
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
+<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas/linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># 因变量为第 2 列数据</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># 自变量为第 3 列数据</span>
 
@@ -1359,7 +1304,7 @@ Notes:
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\data-pca.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 读取数据</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas/data-pca.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 读取数据</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">scale</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="c1"># z标准化，标准化之后就自动根据协方差矩阵进行主成分分析了</span>
 <span class="c1"># data2 = np.corrcoef(np.transpose(data)) # 没有必要单独计算协方差阵或相关系数阵</span>
 <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 可以通过参数 n_components 调整主成分个数</span>
@@ -1400,7 +1345,7 @@ Notes:
 
 
 <span class="c1"># 将上述数据放到 excel 里，并用 pandas 读取</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas\data-pca.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;datas/data-pca.xlsx&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">scale_values</span> <span class="o">=</span>  <span class="n">MinMaxScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>  <span class="c1"># 数据表转化预处理</span>
 
@@ -1446,16 +1391,16 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 2 1 1 1 2 1 2 0 2 0 1 2 1 2 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 0 0 0 2 0 2 1 2 1 0 2 0 2 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0]
 类别1
-[&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
-类别2
 [&#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;吉  林&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
+类别2
+[&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
 类别3
 [&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;广  东&#39;]
 </pre></div>
 </div>
-<img alt="_images/9ba19eec440c035652c732036f048b35b9586b011ee529ffbed03f603c4a7674.png" src="_images/9ba19eec440c035652c732036f048b35b9586b011ee529ffbed03f603c4a7674.png" />
+<img alt="_images/1b72e58c2ef280c44db8e692b3694c6ad7205539c78579eabefec7b304b76b37.png" src="_images/1b72e58c2ef280c44db8e692b3694c6ad7205539c78579eabefec7b304b76b37.png" />
 </div>
 </div>
 </section>
