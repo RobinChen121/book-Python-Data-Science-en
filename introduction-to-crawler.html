@@ -977,12 +977,12 @@ document.write(`
 <p>然后，在网页的空白处，单击鼠标右键，查看网页源代码：</p>
 <p><img alt="san_guo1" src="_images/san_guo1.png" /></p>
 <p>网页的源代码大致如下：</p>
-<p><img alt="sanguo_2.png" src="_images/san_guo2.png" /></p>
+<p><img alt="sanguo_2.png" src="_images/san_guo2.PNG" /></p>
 <ul class="simple">
 <li><p>我们发现每一回的链接在网页中的标签 ul 里面，具体在其每个子标签 span 中的子标签 a 里面。</p></li>
 </ul>
 <p>打开其中任一回的链接，在网页空白处单击右键，查看网页源代码：</p>
-<p><img alt="sanguo_3.png" src="_images/san_guo3.png" /></p>
+<p><img alt="sanguo_3.png" src="_images/san_guo3.PNG" /></p>
 <ul class="simple">
 <li><p>我们发现每一回的内容在具体属性为 class=’contson’ 的 div 标签里，其中第一句为每一回的标题，而之后的内容为正文。</p></li>
 </ul>
@@ -1063,7 +1063,7 @@ main()
 <h2><span class="section-number">8.4. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Permalink to this heading">#</a></h2>
 <p>我们想获取豆瓣高分评价的 250 部电影的信息：电影名字，导演，上映年代，评分，评分人数等。打开豆瓣 top 250 的网页链接 https://movie.douban.com/top250?start= ，发现每个网页显示 25 部电影，一共有 10 个挖网页，网页地址与链接中的 start = 后面的数字有关。例如第 3 个子网页的链接地址是 ‘https://movie.douban.com/top250?start=50 ，根据这个规律，我们可以用一个 for 循环，将 10 个网页分别打开抓取信息。</p>
 <p>打开一个网页，单击右键查看网页源代码，如下图所示：</p>
-<p><img alt="douban1.png" src="_images/douban1.png" /></p>
+<p><img alt="douban1.png" src="_images/douban1.PNG" /></p>
 <p>通过源代码发现以下几个特点：</p>
 <ul class="simple">
 <li><p>每部电影的信息都在标签 &lt;div class=’item’&gt; 里面。据此，我们可以用一个 for 循环，将每个网页的  &lt;div class=’item’&gt; 标签都检索出来</p></li>
