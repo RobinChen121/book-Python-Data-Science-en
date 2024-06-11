@@ -4201,7 +4201,68 @@ dtype: int64
 </table>
 </div></div></div>
 </div>
-<p>函数<code class="docutils literal notranslate"><span class="pre">reset_index</span></code> 还可以跟 names 参数重新定义列标题的名字。</p>
+<p>函数<code class="docutils literal notranslate"><span class="pre">reset_index</span></code>可以跟<code class="docutils literal notranslate"><span class="pre">drop=True</span></code>参数去除 index。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;班级&#39;</span><span class="p">,</span> <span class="s1">&#39;性别&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># 按班级、性别汇总平均成绩</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>统计学</th>
+      <th>高数</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>87.0</td>
+      <td>81.5</td>
+      <td>91.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>75.0</td>
+      <td>68.0</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>76.5</td>
+      <td>72.5</td>
+      <td>70.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>82.0</td>
+      <td>63.0</td>
+      <td>88.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>函数<code class="docutils literal notranslate"><span class="pre">reset_index</span></code>还可以跟 names 参数重新定义列标题的名字。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;班级&#39;</span><span class="p">,</span> <span class="s1">&#39;性别&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">])</span> <span class="c1"># 按班级、性别汇总平均成绩</span>
@@ -4292,7 +4353,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_89483/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_3838/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
 </pre></div>
 </div>
