@@ -10,3 +10,19 @@
 陈震 
 
 2023年11月20日于重庆
+
+<script src="https://giscus.app/client.js"
+        data-repo="RobinChen121/book-Python-Data-Science"
+        data-repo-id=""
+        data-category=""
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
