@@ -4,6 +4,7 @@
 title: Python 数据科学
 author: Zhen Chen
 logo:  logo2.png
+copyright: "2024"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -32,8 +33,7 @@ html:
   use_repository_button: true
   comments:
     hypothesis: true
-    utterances:
-      repo: "RobinChen121/book-Python-Data-Science"
+    announcement: "" # A banner announcement at the top of the site.
     
 
 plugins:
