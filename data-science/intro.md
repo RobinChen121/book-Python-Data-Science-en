@@ -13,7 +13,7 @@
 
 <script src="https://giscus.app/client.js"
         data-repo="RobinChen121/book-Python-Data-Science"
-        data-repo-id=""
+        data-repo-id="R_kgDOKFdyOw"
         data-category=""
         data-category-id=""
         data-mapping="pathname"
