@@ -56,40 +56,6 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script kind="utterances">
-
-    var commentsRunWhenDOMLoaded = cb => {
-    if (document.readyState != 'loading') {
-        cb()
-    } else if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', cb)
-    } else {
-        document.attachEvent('onreadystatechange', function() {
-        if (document.readyState == 'complete') cb()
-        })
-    }
-}
-
-var addUtterances = () => {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://utteranc.es/client.js";
-    script.async = "async";
-
-    script.setAttribute("repo", "RobinChen121/book-Python-Data-Science");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("label", "💬 comment");
-    script.setAttribute("crossorigin", "anonymous");
-
-    sections = document.querySelectorAll("div.section");
-    if (sections !== null) {
-        section = sections[sections.length-1];
-        section.appendChild(script);
-    }
-}
-commentsRunWhenDOMLoaded(addUtterances);
-</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -572,7 +538,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff02aa2dab0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb0288663e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
@@ -585,7 +551,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feff86e11b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb02887d2a0&gt;]
 </pre></div>
 </div>
 <img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
@@ -598,7 +564,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7feff8768fd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb04ada8f40&gt;]
 </pre></div>
 </div>
 <img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
@@ -611,7 +577,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff02ac557e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb038621840&gt;]
 </pre></div>
 </div>
 <img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
@@ -1294,7 +1260,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4d947fe679abdddfffe2ad35e3e5e6127afb68a6ad9b206383632c4740f87933.png" src="_images/4d947fe679abdddfffe2ad35e3e5e6127afb68a6ad9b206383632c4740f87933.png" />
+<img alt="_images/4ef8e6400cff65ad29d923d4c162bb8c352dcd1f7da88521e84d063ad54ec5e1.png" src="_images/4ef8e6400cff65ad29d923d4c162bb8c352dcd1f7da88521e84d063ad54ec5e1.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1308,7 +1274,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/83a1a2241be3a3bfae64267c92d11f95abebf8b41ca10d5126ff90bc305be014.png" src="_images/83a1a2241be3a3bfae64267c92d11f95abebf8b41ca10d5126ff90bc305be014.png" />
+<img alt="_images/016f43b42f864d4aa0ad4c965f56cc1c851d0bc8fa7c9db25bcd96daa96021b3.png" src="_images/016f43b42f864d4aa0ad4c965f56cc1c851d0bc8fa7c9db25bcd96daa96021b3.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1329,7 +1295,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/36dd3f3f8e542e2f9c5410b0504909860f6e5bc1db0372a8ce64edb5476eb7a7.png" src="_images/36dd3f3f8e542e2f9c5410b0504909860f6e5bc1db0372a8ce64edb5476eb7a7.png" />
+<img alt="_images/d1b6410b1fdd5ed04a6607cf94e04eb9019234ec6c439efb63aedf4d2f27d30d.png" src="_images/d1b6410b1fdd5ed04a6607cf94e04eb9019234ec6c439efb63aedf4d2f27d30d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1503,7 +1469,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

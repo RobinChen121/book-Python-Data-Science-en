@@ -56,40 +56,6 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script kind="utterances">
-
-    var commentsRunWhenDOMLoaded = cb => {
-    if (document.readyState != 'loading') {
-        cb()
-    } else if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', cb)
-    } else {
-        document.attachEvent('onreadystatechange', function() {
-        if (document.readyState == 'complete') cb()
-        })
-    }
-}
-
-var addUtterances = () => {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://utteranc.es/client.js";
-    script.async = "async";
-
-    script.setAttribute("repo", "RobinChen121/book-Python-Data-Science");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("label", "💬 comment");
-    script.setAttribute("crossorigin", "anonymous");
-
-    sections = document.querySelectorAll("div.section");
-    if (sections !== null) {
-        section = sections[sections.length-1];
-        section.appendChild(script);
-    }
-}
-commentsRunWhenDOMLoaded(addUtterances);
-</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -4354,7 +4320,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_10642/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_11637/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
 </pre></div>
 </div>
@@ -6254,7 +6220,14 @@ Name: 入校时间, dtype: object
 <p>自定义一个包含10个学生，3门课程的成绩单 excel 文件，其中包含不及格的数据。用 pandas 读取该文件，剔除有成绩不及格的学生条目，并输出剩下成绩单各科目的平均成绩，最高成绩；最后将剩下学生所有科目的平均成绩排序并输出名次。</p>
 </section>
 </div>
-</section>
+<script src="https://utteranc.es/client.js"
+        repo="RobinChen121/book-Python-Data-Science"
+        issue-term="pathname"
+        label="utter"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -6389,7 +6362,7 @@ By Zhen Chen
     
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
