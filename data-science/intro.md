@@ -10,13 +10,3 @@
 陈震 
 
 2023年11月20日于重庆
-
-
-<script src="https://utteranc.es/client.js"
-        repo="RobinChen121/book-Python-Data-Science"
-        issue-term="pathname"
-        label="utter"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
