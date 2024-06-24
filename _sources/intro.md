@@ -12,17 +12,17 @@
 2023年11月20日于重庆
 
 <script src="https://giscus.app/client.js"
-        data-repo="RobinChen121/book-Python-Data-Science"
-        data-repo-id=""
-        data-category=""
-        data-category-id=""
+        data-repo="robinchen121/book-Python-Data-Science"
+        data-repo-id="R_kgDOKFdyOw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKFdyO84CgWHi"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
+        data-theme="light"
+        data-lang="en"
         crossorigin="anonymous"
         async>
 </script>
