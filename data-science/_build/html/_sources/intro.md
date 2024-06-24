@@ -13,7 +13,7 @@
 
 
 <script src="https://utteranc.es/client.js"
-        repo="https://github.com/RobinChen121/book-Python-Data-Science"
+        repo="RobinChen121/book-Python-Data-Science"
         issue-term="pathname"
         label="utter"
         theme="github-light"
