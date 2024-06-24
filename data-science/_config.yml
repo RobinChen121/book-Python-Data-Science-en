@@ -33,7 +33,7 @@ html:
   comments:
     hypothesis: true
     utterances:
-      repo: "https://github.com/RobinChen121/book-Python-Data-Science"
+      repo: "github-org/github-repo"
 
 plugins:
   - jekyll-spaceship
