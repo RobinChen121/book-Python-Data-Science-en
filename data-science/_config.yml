@@ -32,8 +32,11 @@ html:
   use_repository_button: true
   comments:
     hypothesis: true
+
+html:
+  comments:
     utterances:
-      repo: "https://github.com/RobinChen121/book-Python-Data-Science"
+      repo: "github-org/github-repo"
 
 plugins:
   - jekyll-spaceship
