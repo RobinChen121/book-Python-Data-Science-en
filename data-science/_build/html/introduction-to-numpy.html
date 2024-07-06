@@ -381,7 +381,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numpy">
+  <!-- Toogle google translation -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+                  includedLanguages: 'zh-CN,zh-TW,en,ja,ko,de,ru,fr,es,it,pt,hi,ar',
+layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+</script>
+<script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
+<br><section class="tex2jax_ignore mathjax_ignore" id="numpy">
 <h1><span class="section-number">4. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
 <p>Numpy (Numerical Python) 是 Python 语言一个重要的扩展库，支持大量的数组与矩阵运算，此外也提供大量的数学函数库，用于模仿数学软件 MatLab 的功能。Numpy 通常与其他库 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用。</p>
 <p>Numpy 的主要特点是：</p>

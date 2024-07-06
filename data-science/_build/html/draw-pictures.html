@@ -398,7 +398,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python">
+  <!-- Toogle google translation -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+                  includedLanguages: 'zh-CN,zh-TW,en,ja,ko,de,ru,fr,es,it,pt,hi,ar',
+layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+</script>
+<script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
+<br><section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
@@ -538,7 +550,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb252e563e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed6aa76560&gt;]
 </pre></div>
 </div>
 <img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
@@ -551,7 +563,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb252e69120&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed6aaa51e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
@@ -564,7 +576,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb230895060&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed6ad1d1b0&gt;]
 </pre></div>
 </div>
 <img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
@@ -577,7 +589,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb252f55750&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed487bda50&gt;]
 </pre></div>
 </div>
 <img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
@@ -1260,7 +1272,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c0859ef37dc50da1ae46a342f45d4541e1dbc90f5ca405caf02d4a22df5cb98f.png" src="_images/c0859ef37dc50da1ae46a342f45d4541e1dbc90f5ca405caf02d4a22df5cb98f.png" />
+<img alt="_images/d00cd195bedba8f81c860f86b472fd788512668946f68c22889a64731a7a6f91.png" src="_images/d00cd195bedba8f81c860f86b472fd788512668946f68c22889a64731a7a6f91.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1274,7 +1286,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/3fc28583bd0222b1391a370410ee71771e8c54f83684dd14e0f17bf6874a04d4.png" src="_images/3fc28583bd0222b1391a370410ee71771e8c54f83684dd14e0f17bf6874a04d4.png" />
+<img alt="_images/ca74caeb6531cce83f014d84469764dc1563b19261ed83618d350afe5c978d42.png" src="_images/ca74caeb6531cce83f014d84469764dc1563b19261ed83618d350afe5c978d42.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1295,7 +1307,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/29a52ca05916a6462856096845f78fff923de5e2a30edb2f537e978057f9f743.png" src="_images/29a52ca05916a6462856096845f78fff923de5e2a30edb2f537e978057f9f743.png" />
+<img alt="_images/24030f44da0fbc32f7815faaa47a2bc322c3280d75106aff63e182846344cc17.png" src="_images/24030f44da0fbc32f7815faaa47a2bc322c3280d75106aff63e182846344cc17.png" />
 </div>
 </div>
 <div class="cell docutils container">

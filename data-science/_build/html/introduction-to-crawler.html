@@ -387,7 +387,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+  <!-- Toogle google translation -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+                  includedLanguages: 'zh-CN,zh-TW,en,ja,ko,de,ru,fr,es,it,pt,hi,ar',
+layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+</script>
+<script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
+<br><section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><span class="section-number">8. </span>爬虫入门<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Python 的爬虫功能使得程序员可以快速抓取并分析网页中的信息，它实质上是模拟浏览器访问网页。本章主要常用的两个爬虫相关的库<code class="docutils literal notranslate"><span class="pre">requests</span></code>，<code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>。若要模拟鼠标点击等，要用到<code class="docutils literal notranslate"><span class="pre">selenium</span></code> 库，限于篇幅限制，本章不再介绍，具体可以查阅相关资料。</p>
 <section id="requests">
