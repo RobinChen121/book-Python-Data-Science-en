@@ -542,6 +542,10 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </tr>
 </tbody>
 </table>
+<div class="tip admonition">
+<p class="admonition-title">tip</p>
+<p>plot 函数实质上将不同坐标的点连线在一起，生成图像。因此，若仅提供两个横坐标与两个纵坐标，则生成一个线段。</p>
+</div>
 <p>下面一些 plot 函数的代码展示了 [x]，[fmt]，**Kwargs 的一些可选用法。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -550,7 +554,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed6aa76560&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcf18c5e560&gt;]
 </pre></div>
 </div>
 <img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
@@ -563,7 +567,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed6aaa51e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcf18c8d390&gt;]
 </pre></div>
 </div>
 <img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
@@ -576,7 +580,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed6ad1d1b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcf18fe90f0&gt;]
 </pre></div>
 </div>
 <img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
@@ -589,7 +593,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fed487bda50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fcf28eb1a80&gt;]
 </pre></div>
 </div>
 <img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
@@ -1272,7 +1276,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d00cd195bedba8f81c860f86b472fd788512668946f68c22889a64731a7a6f91.png" src="_images/d00cd195bedba8f81c860f86b472fd788512668946f68c22889a64731a7a6f91.png" />
+<img alt="_images/97906bdc58d27305ba3d995b32e56129ca1b050dc86b468329f630c3bfe8a2d9.png" src="_images/97906bdc58d27305ba3d995b32e56129ca1b050dc86b468329f630c3bfe8a2d9.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1286,7 +1290,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ca74caeb6531cce83f014d84469764dc1563b19261ed83618d350afe5c978d42.png" src="_images/ca74caeb6531cce83f014d84469764dc1563b19261ed83618d350afe5c978d42.png" />
+<img alt="_images/5bdeffd63e6f6d3b12a0eeeb3059385a846d2d7e5608b5873b1f96cb183b2a44.png" src="_images/5bdeffd63e6f6d3b12a0eeeb3059385a846d2d7e5608b5873b1f96cb183b2a44.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1307,7 +1311,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/24030f44da0fbc32f7815faaa47a2bc322c3280d75106aff63e182846344cc17.png" src="_images/24030f44da0fbc32f7815faaa47a2bc322c3280d75106aff63e182846344cc17.png" />
+<img alt="_images/1a105c6d7cc4e610a8ab5d8a6c134e61a9b8a7faf2a92c527d3ab09466d55b02.png" src="_images/1a105c6d7cc4e610a8ab5d8a6c134e61a9b8a7faf2a92c527d3ab09466d55b02.png" />
 </div>
 </div>
 <div class="cell docutils container">
