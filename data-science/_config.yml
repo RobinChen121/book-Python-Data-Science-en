@@ -3,7 +3,7 @@
 
 title: Python 数据科学
 author: Zhen Chen
-logo:  logo2.png
+logo:  logo.png
 copyright: "2024"
 
 # Force re-execution of notebooks on each build.
@@ -32,8 +32,8 @@ html:
   use_issues_button: true
   use_repository_button: true
   comments:
-    hypothesis: true # discus comments are also added in each ipyb page
-    announcement: "" # A banner announcement at the top of the site.
+    hypothesis: # discus comments are also added in each ipyb page
+    announcement:  # A banner announcement at the top of the site.
     
 
 plugins:
