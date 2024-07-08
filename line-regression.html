@@ -385,7 +385,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+  <!-- Toogle google translation -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+                  includedLanguages: 'zh-CN,zh-TW,en,ja,ko,de,ru,fr,es,it,pt,hi,ar',
+layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+</script>
+<script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
+<br><section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><span class="section-number">9. </span>统计分析<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
 <h2><span class="section-number">9.1. </span>线性回归<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
@@ -714,8 +726,8 @@ document.write(`
 Dep. Variable:                   不良贷款   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.699
 Method:                 Least Squares   F-statistic:                     56.75
-Date:                Mon, 24 Jun 2024   Prob (F-statistic):           1.18e-07
-Time:                        20:15:42   Log-Likelihood:                -51.508
+Date:                Fri, 05 Jul 2024   Prob (F-statistic):           1.18e-07
+Time:                        22:40:20   Log-Likelihood:                -51.508
 No. Observations:                  25   AIC:                             107.0
 Df Residuals:                      23   BIC:                             109.5
 Df Model:                           1                                         
@@ -778,8 +790,8 @@ Notes:
 Dep. Variable:                 各项贷款余额   R-squared:                       0.812
 Model:                            OLS   Adj. R-squared:                  0.786
 Method:                 Least Squares   F-statistic:                     30.32
-Date:                Mon, 24 Jun 2024   Prob (F-statistic):           8.05e-08
-Time:                        20:15:42   Log-Likelihood:                -123.70
+Date:                Fri, 05 Jul 2024   Prob (F-statistic):           8.05e-08
+Time:                        22:40:20   Log-Likelihood:                -123.70
 No. Observations:                  25   AIC:                             255.4
 Df Residuals:                      21   BIC:                             260.3
 Df Model:                           3                                         
