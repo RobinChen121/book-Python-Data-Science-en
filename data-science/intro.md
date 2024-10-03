@@ -42,7 +42,7 @@ body {
 <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar',
+                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
 layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
       }
 </script>
