@@ -828,6 +828,24 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 </div>
+<p>可以利用三重引号，来添加函数的说明 (docstring)，例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;this is a hello function&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
+
+<span class="n">hello</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, world!
+</pre></div>
+</div>
+</div>
+</div>
+<p>在一些 python 编译软件中，例如 Spyder，当鼠标停留在某个函数或类名时，自动显示该函数或类的说明（docstring），极大地增加了代码的可读性。</p>
 <section id="id4">
 <h3><span class="section-number">3.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>根据输入参数的值是否可以改变，函数的参数传递类型包括以下两种：</p>
@@ -1031,7 +1049,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f7832187070&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f862a5b0d30&gt;
 </pre></div>
 </div>
 </div>
