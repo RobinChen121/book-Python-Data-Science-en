@@ -616,12 +616,12 @@ the numbers are 3 and 4.56 and 3
 <p>要输出大括号符号，则用两个大括号表示：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are {{0}} and {{1}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the numbers are {{ </span><span class="si">{0}</span><span class="s1"> }} and {{ </span><span class="si">{1}</span><span class="s1"> }}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are {0} and {1}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are { 3 } and { 4.56 }
 </pre></div>
 </div>
 </div>
@@ -640,19 +640,22 @@ the numbers are 3 and 4.56 and 3
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>d</p></td>
+<tr class="row-even"><td class="text-left"><p>s</p></td>
+<td class="text-left"><p>输出字符串形式，默认形式</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>d</p></td>
 <td class="text-left"><p>输出整数的十进制</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>b</p></td>
+<tr class="row-even"><td class="text-left"><p>b</p></td>
 <td class="text-left"><p>输出整数的二进制</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>f</p></td>
+<tr class="row-odd"><td class="text-left"><p>f</p></td>
 <td class="text-left"><p>输出浮点数的标准浮点形式</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>e</p></td>
+<tr class="row-even"><td class="text-left"><p>e</p></td>
 <td class="text-left"><p>输出浮点数的科学表示形式</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>%</p></td>
+<tr class="row-odd"><td class="text-left"><p>%</p></td>
 <td class="text-left"><p>输出浮点数的百分形式</p></td>
 </tr>
 </tbody>
@@ -739,6 +742,20 @@ the numbers are 3 and 4.56 and 3
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = +++5.60+++
+</pre></div>
+</div>
+</div>
+</div>
+<p>宽度值以及精读值可以作为变量，用大括号 {} 结合参数传递的形式赋值，例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = {:^</span><span class="si">{width}</span><span class="s1">.</span><span class="si">{precision}</span><span class="s1">f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">precision</span> <span class="o">=</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># 宽度与精度值作为变量</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =   5.600   
 </pre></div>
 </div>
 </div>
