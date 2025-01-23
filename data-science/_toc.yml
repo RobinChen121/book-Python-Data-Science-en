@@ -15,8 +15,9 @@ parts:
   - file: print-read-files
   - file: draw-pictures  
 
-- caption: Python 实践
+- caption: Python 进阶
   numbered: true
   chapters:
-  - file: introduction-to-crawler
   - file: line-regression
+  - file: introduction-to-crawler
+  - file: introduction-to-class
