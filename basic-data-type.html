@@ -171,10 +171,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">6. Python 输出，读写文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 进阶</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">8. 爬虫入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">9. 统计分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
 </ul>
 
     </div>
@@ -1356,20 +1357,24 @@ y =  6
         <td style="text-align:left">返回字典 dict 中的元素个数，即键或值的个数</td>
     </tr>
     <tr>
-        <td style="text-align:left">dict.clear()</td>
+        <td style="text-align:left">clear()</td>
         <td style="text-align:left">删除字典 dict 中的所有元素</td>
     </tr>
     <tr>
-        <td style="text-align:left">dict.get(key, default=None)</td>
+        <td style="text-align:left">get(key, default=None)</td>
         <td style="text-align:left">返回指定键的值，如果键不在字典中返回 default 设置的默认值</td>
     </tr>
     <tr>
-        <td style="text-align:left">dict.values()</td>
+        <td style="text-align:left">values()</td>
+        <td style="text-align:left">返回一个迭代器，可以使用 list() 来转换为列表</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">keys()</td>
         <td style="text-align:left">返回一个迭代器，可以使用 list() 来转换为列表</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">dict.keys()</td>
-        <td style="text-align:left">返回一个迭代器，可以使用 list() 来转换为列表</td>
+        <td style="text-align:left">popitem()</td>
+        <td style="text-align:left">删除字典的最后一项，并返回这个删除的项</td>
     </tr>
 </table><p>与列表、字符串或者元组类型一样，字典可以通过<code class="docutils literal notranslate"><span class="pre">for-in</span></code>语句对其元素进行遍历，返回的是字典的 key。</p>
 <div class="cell docutils container">
@@ -1853,7 +1858,7 @@ economy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2019738782820114
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7403935030600206
 </pre></div>
 </div>
 </div>

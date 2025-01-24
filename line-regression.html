@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>9. 统计分析 &#8212; Python 数据科学</title>
+    <title>8. 统计分析 &#8212; Python 数据科学</title>
   
   
   
@@ -67,7 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'line-regression';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="8. 爬虫入门" href="introduction-to-crawler.html" />
+    <link rel="next" title="9. 爬虫入门" href="introduction-to-crawler.html" />
+    <link rel="prev" title="7. Python 画图" href="draw-pictures.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -168,10 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">6. Python 输出，读写文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 进阶</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">8. 爬虫入门</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. 统计分析</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. 统计分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 </ul>
 
     </div>
@@ -365,15 +366,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.1. 线性回归</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">9.1.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">9.1.2. sklearn 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.1. 线性回归</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">8.1.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">8.1.2. sklearn 库</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.2. 主成分分析</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">9.3. Kmeans 聚类</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4. 人工神经网络</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.5. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.2. 主成分分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">8.3. Kmeans 聚类</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.4. 人工神经网络</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.5. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -435,9 +436,9 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
 <br><section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">9. </span>统计分析<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>统计分析<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2><span class="section-number">9.1. </span>线性回归<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>线性回归<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>使用 Python 做线性回归分析有好几种方式，常见的是用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>库或者<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库。</p>
 <p>假设有下面的数据存储在 excel 文件 line_regression.xlsx 中：</p>
 <table class="table">
@@ -698,7 +699,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div></div></div>
 </div>
 <section id="statsmodels">
-<h3><span class="section-number">9.1.1. </span><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库<a class="headerlink" href="#statsmodels" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.1.1. </span><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库<a class="headerlink" href="#statsmodels" title="Permalink to this heading">#</a></h3>
 <p>使用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库做回归一般有以下几个步骤：</p>
 <ul class="simple">
 <li><p>通过 OLS 函数构建回归模型</p></li>
@@ -763,8 +764,8 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 Dep. Variable:                   不良贷款   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.699
 Method:                 Least Squares   F-statistic:                     56.75
-Date:                Sat, 18 Jan 2025   Prob (F-statistic):           1.18e-07
-Time:                        23:34:04   Log-Likelihood:                -51.508
+Date:                Fri, 24 Jan 2025   Prob (F-statistic):           1.18e-07
+Time:                        16:16:47   Log-Likelihood:                -51.508
 No. Observations:                  25   AIC:                             107.0
 Df Residuals:                      23   BIC:                             109.5
 Df Model:                           1                                         
@@ -827,8 +828,8 @@ Notes:
 Dep. Variable:                 各项贷款余额   R-squared:                       0.812
 Model:                            OLS   Adj. R-squared:                  0.786
 Method:                 Least Squares   F-statistic:                     30.32
-Date:                Sat, 18 Jan 2025   Prob (F-statistic):           8.05e-08
-Time:                        23:34:04   Log-Likelihood:                -123.70
+Date:                Fri, 24 Jan 2025   Prob (F-statistic):           8.05e-08
+Time:                        16:16:47   Log-Likelihood:                -123.70
 No. Observations:                  25   AIC:                             255.4
 Df Residuals:                      21   BIC:                             260.3
 Df Model:                           3                                         
@@ -855,7 +856,7 @@ Notes:
 </div>
 </section>
 <section id="sklearn">
-<h3><span class="section-number">9.1.2. </span>sklearn 库<a class="headerlink" href="#sklearn" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.1.2. </span>sklearn 库<a class="headerlink" href="#sklearn" title="Permalink to this heading">#</a></h3>
 <p>sklearn 包是机器学习中常见的 python 包，做统计分析时，它并不能像 statsmodels 那样生成非常详细的统计分析结果。<strong>默认自变量与因变量数据都是二维数据，自变量或因变量需要增加一个轴</strong>。</p>
 <p>使用<code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 库做回归一把有以下几个步骤：</p>
 <ul class="simple">
@@ -951,7 +952,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </section>
 </section>
 <section id="id3">
-<h2><span class="section-number">9.2. </span>主成分分析<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span>主成分分析<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>主成分分析（Principle Component Analysis, PCA）是数据降维的一个方法：原始数据中有很多特征变量，可以采用主成分分析方法将原始数据降维为少数几个变量，主成分就是降维后各原始变量的线性组合系数。</p>
 <p>主成分分析的求解一般采用特征根分解，即求解原始数据<strong>协方差矩阵或相关系数矩阵</strong>最大特征根对应的特征向量，即为第一主成分，第二主成分为第二大特征根对应的特征向量，其他的主成分可以依次得出。主成分贡献率为对应特征根占所有特征根加和的比例。</p>
 <p>采用 python 主成分分析时，常用的包为 sklearn，其他一些包也能做（例如 matplotlib.mlab.PCA）。需要注意的是</p>
@@ -1346,7 +1347,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </div>
 </section>
 <section id="kmeans">
-<h2><span class="section-number">9.3. </span>Kmeans 聚类<a class="headerlink" href="#kmeans" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>Kmeans 聚类<a class="headerlink" href="#kmeans" title="Permalink to this heading">#</a></h2>
 <p>Kmeans 是一种动态聚类方法，其基本思想是：首先随机选取 K 个点作为初始凝聚点，按照距离最近原则划分为 K 类；然后重新计算 K 个类的重心作为新的凝聚点，再按照距离最近原则重新分类；重复这一过程，直到重心不再变化为止。</p>
 <p>对上面的例子，进行 Kmeans 聚类并画图的代码为：</p>
 <div class="cell docutils container">
@@ -1421,7 +1422,7 @@ SyntaxError: invalid character &#39;，&#39; (U+FF0C)
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">9.4. </span>人工神经网络<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>人工神经网络<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>神经网络的目标是：找到一个能把一组输入最好地映射到其正确输出的函数。例如一个简单的分类任务，其中输入是动物的图像，正确的输出将是动物的名称。或者根据历史需求数据，预测未来一期的需求。神经网络的思想类似回归分析中经常用到的拟合，都用到了最小二乘的思想：数学意义上的决策目标是：选取一些参数（神经网络中每个输入的权重），使得拟合的输出与期望输出的误差平方和最小。</p>
 <p>下面是一个神经网络示意图（输入层有一些神经元，隐含层有一些神经元，输出层有一些神经元），输入信息经过正向传播到输出，计算实际输出与期望输出的误差后，在反向传播误差；重复这个过程，在传播过程中，不断减少误差，直到误差减少到一定程度终止。</p>
 <p><img alt="ann.png" src="_images/ann.png" /></p>
@@ -1476,10 +1477,10 @@ weighted avg       0.97      0.97      0.97       114
 <p>其他常见的机器学习方法，例如随机森林，支持向量机，梯度提升等，都可以在<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库中找到相应的函数。</p>
 </section>
 <section id="id5">
-<h2><span class="section-number">9.5. </span>练习<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>练习<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="regression">
 
-<p class="admonition-title"><span class="caption-number">Exercise 9.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
 <section id="exercise-content">
 <p>使用python 中的<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>库或<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库，编程实现《统计学》或《计量经济学》课程上的一些数据分析习题。</p>
 </section>
@@ -1533,13 +1534,22 @@ weighted avg       0.97      0.97      0.97       114
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction-to-crawler.html"
+       href="draw-pictures.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>爬虫入门</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Python 画图</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="introduction-to-crawler.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>爬虫入门</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -1559,15 +1569,15 @@ weighted avg       0.97      0.97      0.97       114
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.1. 线性回归</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">9.1.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">9.1.2. sklearn 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.1. 线性回归</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">8.1.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">8.1.2. sklearn 库</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.2. 主成分分析</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">9.3. Kmeans 聚类</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.4. 人工神经网络</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.5. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.2. 主成分分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">8.3. Kmeans 聚类</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.4. 人工神经网络</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.5. 练习</a></li>
 </ul>
   </nav></div>
 
