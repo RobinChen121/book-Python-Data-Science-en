@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>前言 &#8212; Python 数据科学</title>
+    <title>10. Python 面向对象编程 &#8212; Python 数据科学</title>
   
   
   
@@ -64,10 +64,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-class';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. 初识 Python" href="A-first-look-of-Python.html" />
+    <link rel="prev" title="9. 爬虫入门" href="introduction-to-crawler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -133,7 +133,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -152,8 +152,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     前言
                 </a>
             </li>
@@ -169,10 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 进阶</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Python 面向对象编程</a></li>
 </ul>
 
     </div>
@@ -244,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science/issues/new?title=Issue%20on%20page%20%2Fintroduction-to-class.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -274,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/introduction-to-class.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -284,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -354,7 +354,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>前言</h1>
+    <h1>Python 面向对象编程</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,32 +417,9 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <script type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
-<br>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>前言<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<p>本书尝试用最简洁的语言，最简短的代码，帮助读者快速掌握 Python 数据分析的方法。本书内容基于作者常年对 Python 课程的教学，更加适合经济管理类专业的学生阅读。</p>
-<p>本书的撰写过程中，结合了笔者之前在 CSDN 撰写的一些博客，之前用 Latex 撰写的一些手稿，以及 Python 课堂教学参考书中的部分内容。</p>
-<p>撰写本书的时候，笔者作为一名青椒，仍在坎坷的学术之路上奔波。撰写本书完全基于兴趣与情怀，对职业发展与学术发表的帮助并不大。但，既然选择了学术这条道路，就<em><strong>争取学习更多有趣的知识，尝试解决一些学术问题，并能够传播与分享知识给他人</strong></em>，这应当是我的学术人生追求。</p>
-<p>陈震</p>
-<p>2023年11月20日于重庆</p>
-<script src="https://giscus.app/client.js"
-        data-repo="robinchen121/book-Python-Data-Science"
-        data-repo-id="R_kgDOKFdyOw"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOKFdyO84CgWHi"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script><div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<br><section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1><span class="section-number">10. </span>Python 面向对象编程<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<p>Python 是一种支持面向对象编程（OOP）的语言。面向对象编程是一种编程范式，提供了一种结构化的方式来组织和管理代码，使得代码更易于理解、维护、扩展和重用。它特别适合开发大型、复杂的系统。</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -476,14 +453,14 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="right-next"
-       href="A-first-look-of-Python.html"
-       title="next page">
+    <a class="left-prev"
+       href="introduction-to-crawler.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>初识 Python</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>爬虫入门</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

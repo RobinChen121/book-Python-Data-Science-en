@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>8. 爬虫入门 &#8212; Python 数据科学</title>
+    <title>9. 爬虫入门 &#8212; Python 数据科学</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-crawler';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="9. 统计分析" href="line-regression.html" />
-    <link rel="prev" title="7. Python 画图" href="draw-pictures.html" />
+    <link rel="next" title="&lt;no title&gt;" href="introduction-to-class.html" />
+    <link rel="prev" title="8. 统计分析" href="line-regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,10 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">6. Python 输出，读写文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 实践</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 进阶</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. 爬虫入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">9. 统计分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. 爬虫入门</a></li>
 </ul>
 
     </div>
@@ -366,16 +366,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">8.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">8.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findall-find">8.2.1. 函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">8.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">9.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">9.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findall-find">9.2.1. 函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">9.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.3. 爬虫实例 1：抓小说</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">8.4. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.5. 后记</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 爬虫实例 1：抓小说</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">9.4. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.5. 后记</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.6. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -437,10 +437,10 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
 <br><section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">8. </span>爬虫入门<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>爬虫入门<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>Python 的爬虫功能使得程序员可以快速抓取并分析网页中的信息，它实质上是模拟浏览器访问网页。本章主要常用的两个爬虫相关的库<code class="docutils literal notranslate"><span class="pre">requests</span></code>，<code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>。若要模拟鼠标点击等，要用到<code class="docutils literal notranslate"><span class="pre">selenium</span></code> 库，限于篇幅限制，本章不再介绍，具体可以查阅相关资料。</p>
 <section id="requests">
-<h2><span class="section-number">8.1. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 库<a class="headerlink" href="#requests" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 库<a class="headerlink" href="#requests" title="Permalink to this heading">#</a></h2>
 <p>每个网页都有源代码，可以通过鼠标单击右键查看网页源代码。网页中的很多信息都在源代码里面，<code class="docutils literal notranslate"><span class="pre">requests</span></code> 是一个访问网页源代码的库。一般通过 get 函数访问网页，另外一个常用来访问网页的函数是 post，与 get 函数的区别在于 post 能够传递表格或文件到网页所在服务器上。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -534,7 +534,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </section>
 <section id="beautifulsoup4">
-<h2><span class="section-number">8.2. </span><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库<a class="headerlink" href="#beautifulsoup4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.2. </span><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库<a class="headerlink" href="#beautifulsoup4" title="Permalink to this heading">#</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">requests</span></code>获取的网页源代码一般非常复杂，不仅包括常规内容，还包括很多定义页面格式的代码。</p>
 <div class="tip admonition">
 <p class="admonition-title">tips</p>
@@ -770,7 +770,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <section id="findall-find">
-<h3><span class="section-number">8.2.1. </span>函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code><a class="headerlink" href="#findall-find" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">9.2.1. </span>函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code><a class="headerlink" href="#findall-find" title="Permalink to this heading">#</a></h3>
 <p>当需要列出同一类标签对应的所有内容时，需要用到 BeautifulSoup 中的 findall() 函数。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -849,7 +849,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </section>
 <section id="get">
-<h3><span class="section-number">8.2.2. </span>函数<code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">9.2.2. </span>函数<code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Permalink to this heading">#</a></h3>
 <p>通过函数<code class="docutils literal notranslate"><span class="pre">get</span></code>可以访问标签的具体属性，例如 class 类型，具体超链接等。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -987,7 +987,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </section>
 </section>
 <section id="id2">
-<h2><span class="section-number">8.3. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.3. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>下面，我们举例如何用爬虫抓取网上的《三国演义》小说，并将每回的内容下载到电脑里。</p>
 <p>首先，找到一个包含《三国演义》小说的网站，本例中，使用了古诗文网：https://so.gushiwen.cn/guwen/book_46653FD803893E4F7F702BCF1F7CCE17.aspx</p>
 <p>然后，在网页的空白处，单击鼠标右键，查看网页源代码：</p>
@@ -1076,7 +1076,7 @@ main()
 <p>我们可以复制一部分信息或全部信息，放到 request 函数的 headers 参数里面。</p>
 </section>
 <section id="top-250">
-<h2><span class="section-number">8.4. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.4. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Permalink to this heading">#</a></h2>
 <p>我们想获取豆瓣高分评价的 250 部电影的信息：电影名字，导演，上映年代，评分，评分人数等。打开豆瓣 top 250 的网页链接 https://movie.douban.com/top250?start= ，发现每个网页显示 25 部电影，一共有 10 个挖网页，网页地址与链接中的 start = 后面的数字有关。例如第 3 个子网页的链接地址是 ‘https://movie.douban.com/top250?start=50 ，根据这个规律，我们可以用一个 for 循环，将 10 个网页分别打开抓取信息。</p>
 <p>打开一个网页，单击右键查看网页源代码，如下图所示：</p>
 <p><img alt="douban1.png" src="_images/douban1.PNG" /></p>
@@ -1334,7 +1334,7 @@ plt.show()
 <img alt="douban7.png" src="_images/douban7.png" /></p>
 </section>
 <section id="id3">
-<h2><span class="section-number">8.5. </span>后记<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.5. </span>后记<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>不同的网站的爬虫技巧经常不一样，要具体网站具体分析。</p></li>
 <li><p>由于一些网站经常更新数据的存储地址或源代码，某段时间的爬虫代码可能在下一个时间段就不能用了，爬虫代码也要更新。</p></li>
@@ -1344,24 +1344,24 @@ plt.show()
 <p>近年来，许多网站都提高了反爬手段防止网站的数据被无端获取。因此，提醒读者避免过度使用爬虫，给一些网站造成不必要的访问负担。</p>
 </section>
 <section id="id4">
-<h2><span class="section-number">8.6. </span>练习<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.6. </span>练习<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="crab-poem">
 
-<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 9.1 </span></p>
 <section id="exercise-content">
 <p>练习从网上抓取一首诗词。</p>
 </section>
 </div>
 <div class="exercise admonition" id="crab-news">
 
-<p class="admonition-title"><span class="caption-number">Exercise 8.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 9.2 </span></p>
 <section id="exercise-content">
 <p>练习抓取学校的新闻，并尝试画出词云图。</p>
 </section>
 </div>
 <div class="exercise admonition" id="crab-红楼">
 
-<p class="admonition-title"><span class="caption-number">Exercise 8.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 9.3 </span></p>
 <section id="exercise-content">
 <p>尝试用爬虫下载小说《红楼梦》到电脑里。</p>
 </section>
@@ -1415,20 +1415,20 @@ plt.show()
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="draw-pictures.html"
+       href="line-regression.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Python 画图</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>统计分析</p>
       </div>
     </a>
     <a class="right-next"
-       href="line-regression.html"
+       href="introduction-to-class.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>统计分析</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1450,16 +1450,16 @@ plt.show()
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">8.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">8.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findall-find">8.2.1. 函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">8.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">9.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">9.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findall-find">9.2.1. 函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">9.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.3. 爬虫实例 1：抓小说</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">8.4. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.5. 后记</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 爬虫实例 1：抓小说</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">9.4. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.5. 后记</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.6. 练习</a></li>
 </ul>
   </nav></div>
 
