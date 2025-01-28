@@ -25,3 +25,4 @@ scipy==1.9.3
 seaborn==0.10.1
     # via -r requirements.in
 scikit-learn
+platform # for checking platform system and setting up fonts in matplotlib
