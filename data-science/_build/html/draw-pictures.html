@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7. Python 画图 &#8212; Python 数据科学</title>
+    <title>7. &#8212; Python 数据科学</title>
   
   
   
@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'draw-pictures';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. 统计分析" href="line-regression.html" />
+    <link rel="next" title="9. 统计分析" href="line-regression.html" />
     <link rel="prev" title="6. Python 输出，读写文件" href="print-read-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -190,13 +190,14 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Numpy 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Pandas 入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">6. Python 输出，读写文件</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Python 画图</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. <!-- Toogle google translation --></a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 进阶</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">9. 统计分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">10. 爬虫入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">11. Python 面向对象编程</a></li>
 </ul>
 
     </div>
@@ -431,7 +432,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python 画图</h1>
+    <h1><!-- Toogle google translation --></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -441,26 +442,31 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plot">7.1. 初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2. 散点图，条形图，直方图</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter">7.2.1. <code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-barh">7.2.2. <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hist">7.2.3. <code class="docutils literal notranslate"><span class="pre">hist</span></code>函数</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. <!-- Toogle google translation --></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python">8. Python 画图</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plot">8.1. 初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.2. 散点图，条形图，直方图</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter">8.2.1. <code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-barh">8.2.2. <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hist">8.2.3. <code class="docutils literal notranslate"><span class="pre">hist</span></code>函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.3. 饼图，箱线图</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pie">7.3.1. <code class="docutils literal notranslate"><span class="pre">pie</span></code>函数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">7.3.2. <code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.3. 饼图，箱线图</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pie">8.3.1. <code class="docutils literal notranslate"><span class="pre">pie</span></code>函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">8.3.2. <code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">7.4. 子图函数 subplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">7.5. seaborn 简介</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relplot">7.5.1. <code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barplot">7.5.2. <code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">8.4. 子图函数 subplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">8.5. seaborn 简介</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relplot">8.5.1. <code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barplot">8.5.2. <code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.6. 练习</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -471,7 +477,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <!-- Toogle google translation -->
+  <section id="id1">
+<h1><span class="section-number">7. </span><!-- Toogle google translation --><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <div id="google_translate_element"></div>
 <style>    
 .goog-te-gadget {
@@ -520,11 +527,12 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <script type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
-<br><section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<br></section>
+<section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1><span class="section-number">8. </span>Python 画图<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
-<h2><span class="section-number">7.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Link to this heading">#</a></h2>
 <p>使用 matplotlib 包画图时，我们一般加载里面的 pyplot 函数，并命名为 plt，然后使用<code class="docutils literal notranslate"><span class="pre">plot</span></code>函数画图。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -665,7 +673,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x257b2620310&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ad550f4400&gt;]
 </pre></div>
 </div>
 <img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
@@ -678,7 +686,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x257b26213c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ad550f5300&gt;]
 </pre></div>
 </div>
 <img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
@@ -691,7 +699,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x257b1e54df0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ad54920e50&gt;]
 </pre></div>
 </div>
 <img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
@@ -704,7 +712,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x257b263e890&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ad55109e70&gt;]
 </pre></div>
 </div>
 <img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
@@ -768,10 +776,10 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li><p>可以看出，Python 画图关键是定义图像的坐标（横坐标、纵坐标），然后用一些参数进一步设置图像的细节</p></li>
 </ul>
 </section>
-<section id="id1">
-<h2><span class="section-number">7.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2><span class="section-number">8.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="scatter">
-<h3><span class="section-number">7.2.1. </span><code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数<a class="headerlink" href="#scatter" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.1. </span><code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数<a class="headerlink" href="#scatter" title="Link to this heading">#</a></h3>
 <p>做散点图要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数，该函数的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -834,7 +842,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </section>
 <section id="bar-barh">
-<h3><span class="section-number">7.2.2. </span><code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数<a class="headerlink" href="#bar-barh" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.2. </span><code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数<a class="headerlink" href="#bar-barh" title="Link to this heading">#</a></h3>
 <p>条形图（bar chart），也称为柱状图，要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">bar</span></code>函数生成，该函数的基本语法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -989,7 +997,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </section>
 <section id="hist">
-<h3><span class="section-number">7.2.3. </span><code class="docutils literal notranslate"><span class="pre">hist</span></code>函数<a class="headerlink" href="#hist" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.3. </span><code class="docutils literal notranslate"><span class="pre">hist</span></code>函数<a class="headerlink" href="#hist" title="Link to this heading">#</a></h3>
 <p>直方图（histogram）虽然在样式上类似条形图，但它们的作用不一样。直方图用不同的矩形表示频数，常用来观察一组数据的概率分布。在直角坐标中，用横轴表示数据分组，纵轴表示频数或频率，各组与相应的频数就形成了一个个矩形，即直方图。画直方图用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">hist</span></code>函数，它的基本语法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1031,10 +1039,10 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </section>
 </section>
-<section id="id2">
-<h2><span class="section-number">7.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2><span class="section-number">8.3. </span>饼图，箱线图<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <section id="pie">
-<h3><span class="section-number">7.3.1. </span><code class="docutils literal notranslate"><span class="pre">pie</span></code>函数<a class="headerlink" href="#pie" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.3.1. </span><code class="docutils literal notranslate"><span class="pre">pie</span></code>函数<a class="headerlink" href="#pie" title="Link to this heading">#</a></h3>
 <p>饼图（pie char）是一个划分为几个扇形的圆形统计图表，一般用于描述频率或百分比之间的相对关系。在饼图中，每个扇区的弧长（以及圆心角和面积）的大小与其所表示的数量呈固定比例。画饼图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">pie</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1095,7 +1103,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </section>
 <section id="boxplot">
-<h3><span class="section-number">7.3.2. </span><code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数<a class="headerlink" href="#boxplot" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.3.2. </span><code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数<a class="headerlink" href="#boxplot" title="Link to this heading">#</a></h3>
 <p>箱线图（box plot）是一种用来显示数据统计分布情况的图形，包括数据的最大值、最小值、中位数、分位数等特征。画箱线图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1245,7 +1253,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </section>
 </section>
 <section id="subplot">
-<h2><span class="section-number">7.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Link to this heading">#</a></h2>
 <p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1325,7 +1333,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
 </section>
 <section id="seaborn">
-<h2><span class="section-number">7.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Link to this heading">#</a></h2>
 <p>seanborn 是 Python 的另外一个常用工具包，它基于 matplotlib，但画出的图形更加美观些，并且与 Pandas 的数据类型结合地较好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1381,7 +1389,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <section id="relplot">
-<h3><span class="section-number">7.5.1. </span><code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数<a class="headerlink" href="#relplot" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.1. </span><code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数<a class="headerlink" href="#relplot" title="Link to this heading">#</a></h3>
 <p>可以看出，tips 数据集载入后，是 Pandas 的 DataFrame 类型，seaborn 可以方便地针对 DataFrame 数据集画图。下面，我们以其中的<code class="docutils literal notranslate"><span class="pre">relplot</span></code> 函数为例，讲解如何使用 seanborn 画图。<code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数的基本用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1448,7 +1456,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d9ec0e9f2d72fac87fd1f94f0b6a2222fbee20c1d46fab364e348dd48241ccf8.png" src="_images/d9ec0e9f2d72fac87fd1f94f0b6a2222fbee20c1d46fab364e348dd48241ccf8.png" />
+<img alt="_images/23bbb3cd604bb25e55d91ed521911f395ccb5bac295bb3c03a4f7f22a7354dd5.png" src="_images/23bbb3cd604bb25e55d91ed521911f395ccb5bac295bb3c03a4f7f22a7354dd5.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1462,13 +1470,13 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/b58b4ef817d668f95daa279f3efa618552da5578e6ae31ec635b2669cc149056.png" src="_images/b58b4ef817d668f95daa279f3efa618552da5578e6ae31ec635b2669cc149056.png" />
+<img alt="_images/fd42e58ba8bf6ccb1cc9e887b1ae1e22cd9f1b7c5c107452242f655b2a46dc4c.png" src="_images/fd42e58ba8bf6ccb1cc9e887b1ae1e22cd9f1b7c5c107452242f655b2a46dc4c.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
 </section>
 <section id="barplot">
-<h3><span class="section-number">7.5.2. </span><code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数<a class="headerlink" href="#barplot" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.5.2. </span><code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数<a class="headerlink" href="#barplot" title="Link to this heading">#</a></h3>
 <p>seaborn 自带一些函数生成常见的图形，例如<code class="docutils literal notranslate"><span class="pre">barplot</span></code>生成条形图，<code class="docutils literal notranslate"><span class="pre">histplot</span></code>生成直方图，<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>生成箱线图：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1483,7 +1491,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eba5ffe9574ea95233989f6c52fcc383cd679700b1893ee64b5c40bdcdd88412.png" src="_images/eba5ffe9574ea95233989f6c52fcc383cd679700b1893ee64b5c40bdcdd88412.png" />
+<img alt="_images/01b2f97cad6b7f333f51b0e2e61e1827b7f705d7c2e9faecde1798bc74b3528f.png" src="_images/01b2f97cad6b7f333f51b0e2e61e1827b7f705d7c2e9faecde1798bc74b3528f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1518,11 +1526,11 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <p>seaborn 还有其他一些画图函数，例如<code class="docutils literal notranslate"><span class="pre">heatmap</span></code>生成热力图，<code class="docutils literal notranslate"><span class="pre">violinplot</span></code>生成小提琴图，限于篇幅，本文不再赘述，有兴趣的读者可以查阅官方文档。</p>
 </section>
 </section>
-<section id="id3">
-<h2><span class="section-number">7.6. </span>练习<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2><span class="section-number">8.6. </span>练习<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="draw-heart">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
 <section id="exercise-content">
 <p>画出下面这两个函数的图形，并填充两个函数之间的区域。（提示：用<code class="docutils literal notranslate"><span class="pre">fill_between</span></code>函数填充颜色）</p>
 <div class="math notranslate nohighlight">
@@ -1536,7 +1544,7 @@ g(x)=&amp;-2.14\sqrt{\sqrt{2}-\sqrt{|x|}}
 </div>
 <div class="exercise admonition" id="draw-heart2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8.2 </span></p>
 <section id="exercise-content">
 <p>画出下面这个函数的图形，并尝试从0 到 20 变化 <span class="math notranslate nohighlight">\(\alpha\)</span> 的值实现动态心形的效果。（提示：用循环，结合参数 pause，clf 实现图形刷新）</p>
 <div class="math notranslate nohighlight">
@@ -1606,7 +1614,7 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>统计分析</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>统计分析</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1626,26 +1634,31 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plot">7.1. 初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.2. 散点图，条形图，直方图</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter">7.2.1. <code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-barh">7.2.2. <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hist">7.2.3. <code class="docutils literal notranslate"><span class="pre">hist</span></code>函数</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">7. <!-- Toogle google translation --></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python">8. Python 画图</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-plot">8.1. 初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.2. 散点图，条形图，直方图</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter">8.2.1. <code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-barh">8.2.2. <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hist">8.2.3. <code class="docutils literal notranslate"><span class="pre">hist</span></code>函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">7.3. 饼图，箱线图</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pie">7.3.1. <code class="docutils literal notranslate"><span class="pre">pie</span></code>函数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">7.3.2. <code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.3. 饼图，箱线图</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pie">8.3.1. <code class="docutils literal notranslate"><span class="pre">pie</span></code>函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">8.3.2. <code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">7.4. 子图函数 subplot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">7.5. seaborn 简介</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relplot">7.5.1. <code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barplot">7.5.2. <code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplot">8.4. 子图函数 subplot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">8.5. seaborn 简介</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relplot">8.5.1. <code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barplot">8.5.2. <code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">7.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.6. 练习</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
