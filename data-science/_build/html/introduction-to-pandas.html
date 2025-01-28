@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>5. Pandas 入门 &#8212; Python 数据科学</title>
   
@@ -15,55 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=564be945" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-pandas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -78,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -144,12 +154,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -189,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -198,7 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -215,6 +236,55 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science/main?urlpath=lab/tree/doc/introduction-to-pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -327,20 +397,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -419,7 +491,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <!-- Toogle google translation -->
 <div id="google_translate_element"></div>
@@ -471,7 +543,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
 <br><section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1><span class="section-number">5. </span>Pandas 入门<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Pandas 入门<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
 <p>pandas 是 Python 做统计分析时最重要的数据分析工具之一，它基于 numpy 开发，提供了许多处理大型数据集所需的函数，可以灵活高效的处理各种数据集。</p>
 <p>pandas 一般使用的数据类型为 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, DataFrame 是二维数据，相当于 Excel 里面的一张表格数据，使用 pandas 时首先要导入 pandas 包。</p>
 <div class="cell docutils container">
@@ -482,11 +554,11 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <section id="id1">
-<h2><span class="section-number">5.1. </span>创建，读取与存储数据<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>创建，读取与存储数据<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="id2">
-<h3><span class="section-number">5.1.1. </span>创建数据<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.1. </span>创建数据<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>例如有下面的数据：</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>姓名</p></th>
 <th class="head text-center"><p>统计学</p></th>
@@ -512,6 +584,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </tr>
 </tbody>
 </table>
+</div>
 <p>我们使用字典类型数据，将上面的读取到一个 DataFrame 里面：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,7 +672,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </section>
 <section id="id3">
-<h3><span class="section-number">5.1.2. </span>读取数据<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.2. </span>读取数据<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>多数情况下，我们要读取数据文件（例如 excel），假设上面的例子在 excel 文件 ‘transcripts.xlsx’ 里并放在电脑硬盘位置“/Users/zhenchen/Documents/python data” 中，可以通过函数<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>读取文件：</p>
 <div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>df = pd.read_excel(r&#39;/Users/zhenchen/Documents/python data/transcripts.xlsx&#39;)
 </pre></div>
@@ -650,7 +723,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <p>还有一种常见的数据文件类型为 csv，我们只需使用 pandas 中的函数<code class="docutils literal notranslate"><span class="pre">read_csv</span></code>，它的语法与<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>基本一致。</p>
 </section>
 <section id="id4">
-<h3><span class="section-number">5.1.3. </span>存储数据<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.1.3. </span>存储数据<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>存储时使用函数 <code class="docutils literal notranslate"><span class="pre">to_excel</span></code> 或 <code class="docutils literal notranslate"><span class="pre">to_csv</span></code>。例如我们将数据 df 仍然存储到文件夹 “/Users/zhenchen/Documents/python data” 里，并命名为 “marks.xlsx”：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/Users/zhenchen/Documents/python data/marks.xlsx&#39;</span><span class="p">)</span>
 </pre></div>
@@ -658,7 +731,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </section>
 </section>
 <section id="id5">
-<h2><span class="section-number">5.2. </span>查看与修改数据<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>查看与修改数据<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>快速查看 DataFrame 各列数据的统计信息可以使用 <code class="docutils literal notranslate"><span class="pre">describe()</span></code> 函数，包括各列数据的非空数值数目、均值、标准差、最大值、最小值、分位数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -744,7 +817,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div></div></div>
 </div>
 <p>另外还有几个方便使用的函数：</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>函数</p></th>
 <th class="head text-left"><p>作用</p></th>
@@ -762,8 +835,9 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </tr>
 </tbody>
 </table>
+</div>
 <section id="id6">
-<h3><span class="section-number">5.2.1. </span>查看单行，单列，单元格数据<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.1. </span>查看单行，单列，单元格数据<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>查看某一列数据时，最简单的方式是在中括号<code class="docutils literal notranslate"><span class="pre">[]</span></code>里面输入列名的方式，例如查看英语成绩那一列数据：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,7 +1001,7 @@ Name: 2, dtype: object
 </div>
 </section>
 <section id="id7">
-<h3><span class="section-number">5.2.2. </span>查看多行，多列数据<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.2. </span>查看多行，多列数据<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>查看多行、多列数据时，可以用 <code class="docutils literal notranslate"><span class="pre">iloc</span></code>，它不仅能查看多行多列数据，也能查看单行、单列或某个单元格数据。
 例如，查看行数据：</p>
 <div class="cell docutils container">
@@ -1255,7 +1329,7 @@ Name: 2, dtype: object
 </div>
 </section>
 <section id="id8">
-<h3><span class="section-number">5.2.3. </span>查看数据的统计值<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.3. </span>查看数据的统计值<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>Pandas 自带一些统计函数，可以得到列数据的统计值，这些统计函数包括：mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），count（计数），skew（均值），quantile（分位数）等。有时候需要添加参数<code class="docutils literal notranslate"><span class="pre">numeric_only</span> <span class="pre">=</span> <span class="pre">True</span></code>，表示只对数值数列应用函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1313,7 +1387,7 @@ dtype: float64
 </div>
 </section>
 <section id="id9">
-<h3><span class="section-number">5.2.4. </span>修改数据<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.2.4. </span>修改数据<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>在修改 pandas 的 DataFrame 数据时，将 pandas 的索引位置赋值为新的值。例如，当修改某列数据时，语法为：<code class="docutils literal notranslate"><span class="pre">df[‘列名']</span> <span class="pre">=</span>&#160; <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1609,9 +1683,9 @@ dtype: float64
 </section>
 </section>
 <section id="id10">
-<h2><span class="section-number">5.3. </span>增加，删除与合并数据<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>增加，删除与合并数据<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <section id="id11">
-<h3><span class="section-number">5.3.1. </span>增加数据<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.3.1. </span>增加数据<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p>在原数据末尾增加一列时，语法为 <code class="docutils literal notranslate"><span class="pre">df[‘新列名']</span> <span class="pre">=</span> <span class="pre">某个值或某个元素个数与</span> <span class="pre">DataFrame</span> <span class="pre">列数相同的列表</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1905,7 +1979,7 @@ dtype: float64
 <p>若要在指定位置插入行，目前 Pandas 还没有专门的函数，一般采用<code class="docutils literal notranslate"><span class="pre">concat</span></code>函数合并多个 DataFrame 的方式，增加多列或多行数据也可以使用 <code class="docutils literal notranslate"><span class="pre">concat</span></code>函数或<code class="docutils literal notranslate"><span class="pre">merge</span></code>函数，具体参看后面的合并数据章节。</p>
 </section>
 <section id="id12">
-<h3><span class="section-number">5.3.2. </span>删除数据<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.3.2. </span>删除数据<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>Pandas 可以利用<code class="docutils literal notranslate"><span class="pre">drop</span></code>函数删除行数据或列数据。删除一行时，参数为行标签名以及<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>。若没有参数<code class="docutils literal notranslate"><span class="pre">inplace</span> <span class="pre">=</span> <span class="pre">True</span></code>，原始的 DataFrame 数据不变。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2104,7 +2178,7 @@ dtype: float64
 </div>
 </section>
 <section id="id13">
-<h3><span class="section-number">5.3.3. </span>合并数据<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.3.3. </span>合并数据<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>Pandas 中比较常用的两个合并数据的方法是<code class="docutils literal notranslate"><span class="pre">concat</span></code>与<code class="docutils literal notranslate"><span class="pre">merge</span></code>。 当两个 DataFrame 数据表具有完全相同的列标签时，一般用<code class="docutils literal notranslate"><span class="pre">concat</span></code>，其他情况下多用<code class="docutils literal notranslate"><span class="pre">merge</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3058,9 +3132,9 @@ dtype: float64
 </section>
 </section>
 <section id="id14">
-<h2><span class="section-number">5.4. </span>查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>查询，排序，分组汇总数据<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <section id="id15">
-<h3><span class="section-number">5.4.1. </span>查询数据<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.4.1. </span>查询数据<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p>对 DataFrame 数据按照一定条件查询时，一般会用到一些比较运算符，例如：&gt;, &gt;=, ==, &lt;, &lt;=, !=。条件查询一般只针对列数据，查询时，Pandas 首先生成布尔索引 True 或 False，再通过指定索引生成查询后的数据。</p>
 <p>例如，下面的代码：</p>
 <div class="cell docutils container">
@@ -3292,7 +3366,7 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="id16">
-<h3><span class="section-number">5.4.2. </span>排序数据<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.4.2. </span>排序数据<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>在处理数据时，经常要对数据排序。 Pandas 提供了一个方便的函数<code class="docutils literal notranslate"><span class="pre">sort_values</span></code>对数值进行排序，它的使用语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -3673,7 +3747,7 @@ Name: 统计学, dtype: bool
 </div>
 </section>
 <section id="groupby">
-<h3><span class="section-number">5.4.3. </span>分组汇总<code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#groupby" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.4.3. </span>分组汇总<code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#groupby" title="Link to this heading">#</a></h3>
 <p>在数据分析时，经常也需要将数据分组汇总。例如，在统计学生的期末考试成绩时，可能需要根据专业或者班级来分别计算平均成绩、最高成绩等。此时，可以利用 Pandas 的<code class="docutils literal notranslate"><span class="pre">groupby</span></code>函数方便地实现这些功能。</p>
 <p>groupby 经常结合一些汇总统计量使用，例如 mean（均值），max（最大值），min（最小值），median（中位数），std（标准差），mad（平均绝对偏差），count（计数），size(也是计数), skew（均值），quantile（分位数）。</p>
 <p>下面的代码按性别汇总了平均成绩：</p>
@@ -4147,7 +4221,7 @@ dtype: int64
 </div>
 </section>
 <section id="reset-index">
-<h3><span class="section-number">5.4.4. </span><code class="docutils literal notranslate"><span class="pre">reset_index</span></code>函数<a class="headerlink" href="#reset-index" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.4.4. </span><code class="docutils literal notranslate"><span class="pre">reset_index</span></code>函数<a class="headerlink" href="#reset-index" title="Link to this heading">#</a></h3>
 <p>也可以在 groupby 函数后面再使用函数<code class="docutils literal notranslate"><span class="pre">reset_index</span></code>将多个index作为新的列标题。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4371,7 +4445,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_7644/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\chen\AppData\Local\Temp\ipykernel_3980\2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
 </pre></div>
 </div>
@@ -4488,7 +4562,7 @@ dtype: int64
 </section>
 </section>
 <section id="id17">
-<h2><span class="section-number">5.5. </span>与数组或列表的转换<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.5. </span>与数组或列表的转换<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
 <p>使用 Pandas 中的<code class="docutils literal notranslate"><span class="pre">values</span></code>方法可以将 DataFrame 数据转化为 Numpy 的数组形式。例如，对于前面的数据例子：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4501,7 +4575,7 @@ dtype: int64
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[85, 82, 84],
        [68, 63, 90],
-       [90, 88, 78]])
+       [90, 88, 78]], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -4708,7 +4782,7 @@ dtype: int64
 </div>
 </section>
 <section id="id18">
-<h2><span class="section-number">5.6. </span>自定义函数<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.6. </span>自定义函数<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
 <p>Pandas 可以使用<code class="docutils literal notranslate"><span class="pre">apply</span></code>调用自定义函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4771,9 +4845,9 @@ Name: 英语, dtype: object
 </div>
 </section>
 <section id="id19">
-<h2><span class="section-number">5.7. </span>数据清洗<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.7. </span>数据清洗<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
 <section id="replace-fillna">
-<h3><span class="section-number">5.7.1. </span>数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code><a class="headerlink" href="#replace-fillna" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.1. </span>数据替换<code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna</span></code><a class="headerlink" href="#replace-fillna" title="Link to this heading">#</a></h3>
 <p>在进行数据处理时，经常需要对原始数据的一些异常值或错误值进行批量处理。 Pandas 提供了<code class="docutils literal notranslate"><span class="pre">replace</span></code>函数方便地进行这项操作。<code class="docutils literal notranslate"><span class="pre">replace</span></code>函数第一项为原数据中的值，第二项为需要替换的值。例如，有下面的学生成绩：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5119,7 +5193,7 @@ Name: 英语, dtype: bool
 </div>
 </section>
 <section id="astype">
-<h3><span class="section-number">5.7.2. </span>数据类型转换 <code class="docutils literal notranslate"><span class="pre">astype</span></code><a class="headerlink" href="#astype" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.2. </span>数据类型转换 <code class="docutils literal notranslate"><span class="pre">astype</span></code><a class="headerlink" href="#astype" title="Link to this heading">#</a></h3>
 <p>很多时候，我们需要对原始数据进行数据转换。例如，一些原始数据中的数字为文本类型，我们需要讲它们转化为数值类型才能进行之后的计算操作。常见的数据类型转换函数为<code class="docutils literal notranslate"><span class="pre">astype</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5266,7 +5340,7 @@ dtype: object
 <p>改变<code class="docutils literal notranslate"><span class="pre">as_type</span></code>小括号中的参数为 int，str等，我们同样可以将原始数据转化为整数型，字符串型等。</p>
 </section>
 <section id="drop-duplicates">
-<h3><span class="section-number">5.7.3. </span>重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code><a class="headerlink" href="#drop-duplicates" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.3. </span>重复值处理<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code><a class="headerlink" href="#drop-duplicates" title="Link to this heading">#</a></h3>
 <p>在数据量比较大时，经常会遇到重复数据的问题，可以使用函数<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>将重复数据去掉。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5460,7 +5534,7 @@ dtype: object
 </table>
 </br></section>
 <section id="drop-na">
-<h3><span class="section-number">5.7.4. </span>缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code><a class="headerlink" href="#drop-na" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.4. </span>缺失值处理<code class="docutils literal notranslate"><span class="pre">drop_na</span></code><a class="headerlink" href="#drop-na" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">dropna</span></code>函数可以将数据表中包含缺失值的行去除掉，与<code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code>的语法类似。它的语法如下：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -5685,7 +5759,7 @@ dtype: object
 </div>
 </section>
 <section id="rename">
-<h3><span class="section-number">5.7.5. </span>重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.5. </span>重命名<code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename" title="Link to this heading">#</a></h3>
 <p>在处理数据表时，有时候要给数据的行名或列名重命名，此时要用到<code class="docutils literal notranslate"><span class="pre">rename</span></code>函数，<code class="docutils literal notranslate"><span class="pre">rename</span></code>函数中的参数为一个字典形式：替换前的名字为字典的 key，替换后的名字为字典的 value。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5801,9 +5875,9 @@ dtype: object
 </section>
 </section>
 <section id="id20">
-<h2><span class="section-number">5.8. </span>时间序列数据处理<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.8. </span>时间序列数据处理<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
 <section id="to-datetime-dt-strftime">
-<h3><span class="section-number">5.8.1. </span><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code><a class="headerlink" href="#to-datetime-dt-strftime" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.8.1. </span><code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> 与 <code class="docutils literal notranslate"><span class="pre">dt.strftime</span></code><a class="headerlink" href="#to-datetime-dt-strftime" title="Link to this heading">#</a></h3>
 <p>实际工作中，经常会遇到大量的时间序列数据。这些时间序列的原始数据一般为文本格式，我们需要将它转化为时间日期格式。 Pandas 提供了 <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code>函数将其他日期时间格式转化为 Python 的日期时间格式。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6069,7 +6143,7 @@ Name: 入校时间, dtype: object
 </div>
 </section>
 <section id="resample">
-<h3><span class="section-number">5.8.2. </span>数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code><a class="headerlink" href="#resample" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.8.2. </span>数据聚合函数<code class="docutils literal notranslate"><span class="pre">resample</span></code><a class="headerlink" href="#resample" title="Link to this heading">#</a></h3>
 <p>对于很多时间序列数据，有时候经常需要对它们按一定周期进行数据聚合，可以用 Pandas 提供的<code class="docutils literal notranslate"><span class="pre">resample</span></code>函数。resample 方法中的小括号中用不同参数表示聚合的频率。举例：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6298,7 +6372,7 @@ Name: 入校时间, dtype: object
 </section>
 </section>
 <section id="id21">
-<h2><span class="section-number">5.9. </span>Pandas 画图<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.9. </span>Pandas 画图<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
 <p>除了结合 matplotlib 与 seaborn 画图外，Pandas 也有自己的画图函数<code class="docutils literal notranslate"><span class="pre">plot</span></code>，它的语法一般为：</p>
 <table>
      <tr style="border-top:solid; border-bottom:solid">
@@ -6442,7 +6516,7 @@ Name: 入校时间, dtype: object
 </div>
 </section>
 <section id="id22">
-<h2><span class="section-number">5.10. </span>练习<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.10. </span>练习<a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="output">
 
 <p class="admonition-title"><span class="caption-number">Exercise 5.1 </span></p>
@@ -6485,8 +6559,8 @@ Name: 入校时间, dtype: object
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "RobinChen121/book-Python-Data-Science",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -6506,11 +6580,10 @@ Name: 入校时间, dtype: object
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="introduction-to-numpy.html"
@@ -6530,10 +6603,7 @@ Name: 入校时间, dtype: object
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -6541,6 +6611,7 @@ Name: 入校时间, dtype: object
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -6612,6 +6683,7 @@ By Zhen Chen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2025.
@@ -6638,8 +6710,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>
