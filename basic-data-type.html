@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>2. Python 的常用数据类型 &#8212; Python 数据科学</title>
   
@@ -14,52 +15,55 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=564be945" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'basic-data-type';</script>
@@ -76,23 +80,19 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -114,20 +114,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,11 +134,9 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -156,23 +146,12 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -212,7 +191,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -221,7 +200,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -399,22 +378,20 @@
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -459,7 +436,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <!-- Toogle google translation -->
 <div id="google_translate_element"></div>
@@ -511,10 +488,10 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
 <br><section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p id="index-0">Python 的常用数据类型有：数字，字符串，列表，元组，集合，字典。</p>
 <section id="id1">
-<h2><span class="section-number">2.1. </span>数字类型：整数型，浮点型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>数字类型：整数型，浮点型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Python 中定义一个数字型变量特别方便，直接用等号赋值。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -799,7 +776,7 @@ y =  6
 <p>第一行代码调用 math 中的 sin 函数求 <span class="math notranslate nohighlight">\(sin(\pi/2)\)</span>，其中调用了 math 中的 pi 函数表示 <span class="math notranslate nohighlight">\(\pi\)</span>，第二行代码调用了对数函数求 <span class="math notranslate nohighlight">\(\ln(100)\)</span>。</p>
 </section>
 <section id="id2">
-<h2><span class="section-number">2.2. </span>字符串类型<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>字符串类型<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>字符串也是 Python 中比较常见的数据类型，可以用单引号或双引号表示字符串。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1017,7 +994,7 @@ y =  6
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>列表（List）是最常用的 Python 数据类型，它由一个<strong>中括号</strong><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>以及逗号分隔的不同数值或字符串组成，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1339,7 +1316,7 @@ y =  6
 </table>
 <br /></section>
 <section id="id4">
-<h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在花括号<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号<code class="docutils literal notranslate"><span class="pre">：</span></code>分割。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1482,7 +1459,7 @@ economy
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>Python 的元组（tuple）与列表类似，不同之处在于<strong>元组的元素不能修改</strong>。元组使用<strong>小括号</strong>创建，并使用逗号隔开。访问列表元素或者截取部分元组与列表非常类似：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1603,7 +1580,7 @@ economy
     </tr>
 </table></section>
 <section id="id6">
-<h2><span class="section-number">2.6. </span>集合类型<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>集合类型<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>集合（set）是一个无序的<strong>不重复</strong>元素序列，一般使用大括号 { } 创建。注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 默认创建一个空字典）。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1799,7 +1776,7 @@ economy
     </tr>
 </table></section>
 <section id="id7">
-<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>Python 中的布尔值（Bool) 一般通过逻辑判断产生，只有两个可能的结果：<code class="docutils literal notranslate"><span class="pre">True</span></code>或<code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1890,10 +1867,10 @@ economy
 </div>
 </section>
 <section id="random">
-<h2><span class="section-number">2.8. </span>random 库<a class="headerlink" href="#random" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span>random 库<a class="headerlink" href="#random" title="Permalink to this heading">#</a></h2>
 <p>随机数在编程中应用比较普遍，Python 内置的<code class="docutils literal notranslate"><span class="pre">random</span></code>库可以生成常见的伪随机数（计算机生成的随机数都是伪随机数，真随机数是不能人为产生的）。</p>
 <p><code class="docutils literal notranslate"><span class="pre">random</span></code>库中的常用函数：</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>函数</p></th>
 <th class="head text-left"><p>含义</p></th>
@@ -1920,7 +1897,6 @@ economy
 </tr>
 </tbody>
 </table>
-</div>
 <p>随机数的种子可以通过函数<code class="docutils literal notranslate"><span class="pre">seed</span></code>指定，只要种子相同，每次生成的随机数也相同。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1931,7 +1907,7 @@ economy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.13920386168873256
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.18012935916980832
 </pre></div>
 </div>
 </div>
@@ -1951,7 +1927,7 @@ economy
 </div>
 </section>
 <section id="id8">
-<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="compute-formula">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
@@ -1963,6 +1939,19 @@ economy
 </ul>
 </section>
 </div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#compute-formula"> Exercise 2.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">**</span><span class="mf">3.5</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">16</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
 <div class="exercise admonition" id="circle-area">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
@@ -1970,11 +1959,35 @@ economy
 <p>根据给定的半径值，计算圆的面积</p>
 </section>
 </div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.2</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;圆的面积为 </span><span class="si">%.6f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
 <div class="exercise admonition" id="random">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
 <section id="exercise-content">
 <p>从字符串 ‘abcedefg’ 随机挑取 3 个字符。（提示，使用 random 库中的函数）</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-5">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#random"> Exercise 2.3</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="s1">&#39;abcedefg&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </div>
 <div class="exercise admonition" id="quad-equation">
@@ -1985,11 +1998,53 @@ economy
 (提示：cmath 工具包可以计算负数的开方)</p>
 </section>
 </div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-7">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.4</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
+<span class="kn">import</span> <span class="nn">cmath</span>
+ 
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 a: &#39;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 b: &#39;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入 c: &#39;</span><span class="p">))</span>
+ 
+<span class="c1"># 计算</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+ 
+<span class="c1"># 两种求解方式</span>
+<span class="n">sol1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span class="n">sol2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">+</span><span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;结果为 </span><span class="si">{0}</span><span class="s1"> 和 </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sol1</span><span class="p">,</span><span class="n">sol2</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
 <div class="exercise admonition" id="triangle-area">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
 <section id="exercise-content">
 <p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-9">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.5</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第一边长: &#39;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第二边长: &#39;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入三角形第三边长: &#39;</span><span class="p">))</span>
+ 
+<span class="c1"># 计算半周长</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+ 
+<span class="c1"># 计算面积</span>
+<span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;三角形面积为 </span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </div>
 <div class="exercise admonition" id="dict-values">
@@ -1999,7 +2054,7 @@ economy
 <p>定义一个字典，然后计算它们所有数字值的和。。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-10">
+<div class="solution dropdown admonition" id="basic-data-type-solution-11">
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.6</a></p>
 <section id="solution-content">
@@ -2057,10 +2112,11 @@ economy
 
               
               
-              
-              
-                <footer class="prev-next-footer d-print-none">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="A-first-look-of-Python.html"
@@ -2080,7 +2136,10 @@ economy
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -2088,7 +2147,6 @@ economy
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2126,7 +2184,6 @@ By Zhen Chen
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2025.
@@ -2153,8 +2210,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
