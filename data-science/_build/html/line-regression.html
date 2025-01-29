@@ -55,7 +55,6 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -259,53 +258,6 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Live Code</span>
 </button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science/issues/new?title=Issue%20on%20page%20%2Fline-regression.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
 </li>
       
   </ul>
@@ -839,7 +791,7 @@ Dep. Variable:                   不良贷款   R-squared:                      
 Model:                            OLS   Adj. R-squared:                  0.699
 Method:                 Least Squares   F-statistic:                     56.75
 Date:                Wed, 29 Jan 2025   Prob (F-statistic):           1.18e-07
-Time:                        20:22:02   Log-Likelihood:                -51.508
+Time:                        21:45:58   Log-Likelihood:                -51.508
 No. Observations:                  25   AIC:                             107.0
 Df Residuals:                      23   BIC:                             109.5
 Df Model:                           1                                         
@@ -910,7 +862,7 @@ Dep. Variable:                 各项贷款余额   R-squared:                  
 Model:                            OLS   Adj. R-squared:                  0.786
 Method:                 Least Squares   F-statistic:                     30.32
 Date:                Wed, 29 Jan 2025   Prob (F-statistic):           8.05e-08
-Time:                        20:22:02   Log-Likelihood:                -123.70
+Time:                        21:45:58   Log-Likelihood:                -123.70
 No. Observations:                  25   AIC:                             255.4
 Df Residuals:                      21   BIC:                             260.3
 Df Model:                           3                                         
@@ -1494,16 +1446,16 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 0 1 1 1 0 1 1 2 0 2 1 0 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 1 0 0 0 1 0 1 2 1 2 0 1 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0]
 类别1
-[&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;广  东&#39;]
+[&#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;吉  林&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
 类别2
-[&#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;吉  林&#39;, &#39;黑龙江&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
+[&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;湖  南&#39;, &#39;广  东&#39;]
 类别3
 [&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
 </pre></div>
 </div>
-<img alt="_images/74cf2837729733e5e8724286eb25842b7dc62c278ad080922a3e9d0b20b5c031.png" src="_images/74cf2837729733e5e8724286eb25842b7dc62c278ad080922a3e9d0b20b5c031.png" />
+<img alt="_images/7ee369e69eb8b1f2a1b604e1ee392f063bb08713202df417b516a965d7a30a76.png" src="_images/7ee369e69eb8b1f2a1b604e1ee392f063bb08713202df417b516a965d7a30a76.png" />
 </div>
 </div>
 </section>
@@ -1550,12 +1502,12 @@ Notes:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>神经网络预测结果评价报告：
                precision    recall  f1-score   support
 
-           0       0.95      0.95      0.95        43
-           1       0.97      0.97      0.97        71
+           0       1.00      0.94      0.97        48
+           1       0.96      1.00      0.98        66
 
-    accuracy                           0.96       114
-   macro avg       0.96      0.96      0.96       114
-weighted avg       0.96      0.96      0.96       114
+    accuracy                           0.97       114
+   macro avg       0.98      0.97      0.97       114
+weighted avg       0.97      0.97      0.97       114
 </pre></div>
 </div>
 </div>

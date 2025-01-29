@@ -52,8 +52,13 @@ parse:
     - amsmath
 
 sphinx:
+  extra_templates_path: ["_templates"]
   extra_extensions:
-    - sphinx_exercise
+      - sphinx_exercise
   config:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+html:
+  theme_options:
+    navbar_start: ["header.html"] # use_repository_button: false
 
