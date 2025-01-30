@@ -38,6 +38,3 @@ p {
 body {
     top: 0px !important; 
     }
-
-#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:first-child{display: none;}
-#google_translate_element .goog-te-gadget-simple .goog-te-menu-value:before{content: 'Translate'}

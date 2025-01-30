@@ -54,6 +54,6 @@ var targetElement = document.getElementById("google_translate_element");
     headerButtons.appendChild(div);
     headerButtons.appendChild(scirpt1);
     headerButtons.appendChild(script2);
-    headerButtons.appendChild(newButton);
-    headerButtons.appendChild(targetElement);
+    //headerButtons.appendChild(newButton);
+    //headerButtons.appendChild(targetElement);
 });
