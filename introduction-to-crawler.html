@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -15,33 +15,34 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -50,11 +51,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -64,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-crawler';</script>
+    <script src="_static/myfile.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="10. Python 面向对象编程" href="introduction-to-class.html" />
@@ -77,19 +80,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +118,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +146,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -143,12 +162,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -188,7 +218,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -197,14 +227,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -229,14 +259,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science/main?urlpath=lab/tree/data-science/introduction-to-crawler.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -258,6 +288,53 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Live Code</span>
 </button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science/issues/new?title=Issue%20on%20page%20%2Fintroduction-to-crawler.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
 </li>
       
   </ul>
@@ -328,26 +405,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -387,47 +466,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <!-- Toogle google translation -->
 <div id="google_translate_element"></div>
-<style>    
-.goog-te-gadget {
-  font-family: Roboto, "Open Sans", sans-serif !important;
-  text-transform: uppercase;
-}
-.goog-te-gadget-simple {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border: 1px solid rgba(237, 230, 230, 0.5) !important;
-  padding: 8px !important;
-  border-radius: 4px !important;
-  font-size: 1rem !important;
-  line-height: 1rem !important;
-  display: inline-block;
-  cursor: pointer;
-  zoom: 1;
-}
-
-.goog-te-gadget-icon {
-  background-image: url(https://placehold.it/32) !important;
-  background-position: 0px 0px;
-  height: 0px !important;
-  width: 0px !important;
-  margin-right: 8px !important;
-  display: none;
-}
-
-.VIpgJd-ZVi9od-ORHb-OEVmcd {
-    display: none; // add !important if required 
-  }
-    
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-    } 
-body {
-    top: 0px !important; 
-    }
-</style>
 <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
@@ -470,7 +512,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
     </tr>
 </table>
 <br /><p>get 或 post 函数返回一个 Resoponse 对象，该对象包括以下常用的属性或函数。</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>属性或函数</p></th>
 <th class="head text-left"><p>描述</p></th>
@@ -497,6 +539,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </tr>
 </tbody>
 </table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
@@ -512,7 +555,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 </div>
-<div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>r.text # 结果省略
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">text</span> <span class="c1"># 结果省略</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -566,7 +609,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库提供了大量的属性或函数，能够方便地将网页（html）不同标签（tag）中的内容提取出来。常用的属性有下面几个：</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>属性</p></th>
 <th class="head text-left"><p>描述</p></th>
@@ -596,6 +639,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </tr>
 </tbody>
 </table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -632,7 +676,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <p>上面的这些标签对象还有自己的属性可以访问更具体的内容。</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>标签属性</p></th>
 <th class="head text-left"><p>描述</p></th>
@@ -656,6 +700,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </tr>
 </tbody>
 </table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">name</span>
@@ -1005,72 +1050,72 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li><p>我们发现每一回的内容在具体属性为 class=’contson’ 的 div 标签里，其中第一句为每一回的标题，而之后的内容为正文。</p></li>
 </ul>
 <p>根据网页的以上两个特点，设计 Python 的爬虫代码如下。</p>
-<div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>import requests  # 联系网络的包，a package for requesting from websites
-from bs4 import BeautifulSoup  # 分析网页数据的包，a package for webstie data analysis
-import time
-import random
-import os
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>  <span class="c1"># 联系网络的包，a package for requesting from websites</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>  <span class="c1"># 分析网页数据的包，a package for webstie data analysis</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">os</span>
 
 
-# 获取单个网页信息
-def get_url_content(url):
-    # headers = {
-    #     &#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;
-    # }  # 主要是模拟浏览器登录，防止反爬，一般的网站没有这个也行，谷歌浏览器 按 F12 能够找到网站支持的 headers
-    r = requests.get(url, timeout=30)  # 获取网页的内容，并返回给r变量，timeout 为超时时间
-    # r.raise_for_status()  # 检查返回网页的内容的状态码，200表示成功
-    # r.encoding = r.apparent_encoding  # 统一编码方式
-    return r.text  # 返回网页中的文本内容，数据内容为 r.content
+<span class="c1"># 获取单个网页信息</span>
+<span class="k">def</span> <span class="nf">get_url_content</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="c1"># headers = {</span>
+    <span class="c1">#     &#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;</span>
+    <span class="c1"># }  # 主要是模拟浏览器登录，防止反爬，一般的网站没有这个也行，谷歌浏览器 按 F12 能够找到网站支持的 headers</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># 获取网页的内容，并返回给r变量，timeout 为超时时间</span>
+    <span class="c1"># r.raise_for_status()  # 检查返回网页的内容的状态码，200表示成功</span>
+    <span class="c1"># r.encoding = r.apparent_encoding  # 统一编码方式</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>  <span class="c1"># 返回网页中的文本内容，数据内容为 r.content</span>
 
 
-# 解析出网页中想要的信息，爬虫的关键步骤
-def filter_info(chapter_num, url_text):
-    soup = BeautifulSoup(url_text, &quot;lxml&quot;)  # 解析网页返回内容，lxml 是一个解码方式，效率比较快，被推荐使用
-    contents = soup.find(&#39;div&#39;, class_=&#39;contson&#39;)
-    # 使用 get_text 可以实现网页里面 p 标签中文本内容的换行，而 text 不能
-    chapter_title = contents.find(&#39;p&#39;).get_text()  # 第一句话是本回的标题
-    chapter_title = &#39;第&#39; + str(chapter_num) + &#39;回 &#39; + chapter_title.lstrip()
-    # chapter_content = contents.get_text(separator=&quot;\n&quot;)  # find 返回的不是列表，不用跟 [0]
-    chapter_content = contents.text
-    chapter_content = chapter_content.lstrip() # 去掉字符串左边的空字符
-    this_chapter = [chapter_title, chapter_content]
-    return this_chapter
+<span class="c1"># 解析出网页中想要的信息，爬虫的关键步骤</span>
+<span class="k">def</span> <span class="nf">filter_info</span><span class="p">(</span><span class="n">chapter_num</span><span class="p">,</span> <span class="n">url_text</span><span class="p">):</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">url_text</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>  <span class="c1"># 解析网页返回内容，lxml 是一个解码方式，效率比较快，被推荐使用</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;contson&#39;</span><span class="p">)</span>
+    <span class="c1"># 使用 get_text 可以实现网页里面 p 标签中文本内容的换行，而 text 不能</span>
+    <span class="n">chapter_title</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>  <span class="c1"># 第一句话是本回的标题</span>
+    <span class="n">chapter_title</span> <span class="o">=</span> <span class="s1">&#39;第&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">chapter_num</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;回 &#39;</span> <span class="o">+</span> <span class="n">chapter_title</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+    <span class="c1"># chapter_content = contents.get_text(separator=&quot;\n&quot;)  # find 返回的不是列表，不用跟 [0]</span>
+    <span class="n">chapter_content</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">chapter_content</span> <span class="o">=</span> <span class="n">chapter_content</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span> <span class="c1"># 去掉字符串左边的空字符</span>
+    <span class="n">this_chapter</span> <span class="o">=</span> <span class="p">[</span><span class="n">chapter_title</span><span class="p">,</span> <span class="n">chapter_content</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">this_chapter</span>
 
-# 从网页中找到每一回的链接
-def get_url_links(url_head_content):
-    soup = BeautifulSoup(url_head_content, &quot;lxml&quot;)  # 解析网页返回内容，lxml 是一个解码方式，效率比较快，被推荐使用
-    # links = soup.find(&#39;div&#39;, class_=&#39;bookcont&#39;)  # 每一回的链接都在类 span 里面
-    links = soup.find(&#39;ul&#39;)  # 每一回的链接都在类 ul 里面
-    links = links.findAll(&#39;span&#39;)
-    link_list = []
-    for each in links:
-        link_list.append(each.a.get(&#39;href&#39;))  # 获取每一回的链接，存储到列表里
-    return link_list
+<span class="c1"># 从网页中找到每一回的链接</span>
+<span class="k">def</span> <span class="nf">get_url_links</span><span class="p">(</span><span class="n">url_head_content</span><span class="p">):</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">url_head_content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>  <span class="c1"># 解析网页返回内容，lxml 是一个解码方式，效率比较快，被推荐使用</span>
+    <span class="c1"># links = soup.find(&#39;div&#39;, class_=&#39;bookcont&#39;)  # 每一回的链接都在类 span 里面</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">)</span>  <span class="c1"># 每一回的链接都在类 ul 里面</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">links</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">)</span>
+    <span class="n">link_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+        <span class="n">link_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">each</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span>  <span class="c1"># 获取每一回的链接，存储到列表里</span>
+    <span class="k">return</span> <span class="n">link_list</span>
 
-# 将每章内容输出到 txt 文档里
-def write_txt(string_array):
-    file_address = &#39;E:/三国演义/&#39;  # txt 存放地址
-    if not os.path.exists(file_address):       #用os库判断对应文件夹是否存在
-        os.makedirs(file_address)              #如果没有对应文件夹则自动生成 
-    file_name = string_array[0]
-    with open(file_address + file_name + &#39;.txt&#39;, &#39;w&#39;, encoding=&#39;utf-8&#39;) as f: # 必须跟解码形式，不然有的网页中文内容写不到txt里
-        f.write(string_array[1])
+<span class="c1"># 将每章内容输出到 txt 文档里</span>
+<span class="k">def</span> <span class="nf">write_txt</span><span class="p">(</span><span class="n">string_array</span><span class="p">):</span>
+    <span class="n">file_address</span> <span class="o">=</span> <span class="s1">&#39;E:/三国演义/&#39;</span>  <span class="c1"># txt 存放地址</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_address</span><span class="p">):</span>       <span class="c1">#用os库判断对应文件夹是否存在</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">file_address</span><span class="p">)</span>              <span class="c1">#如果没有对应文件夹则自动生成 </span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">string_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_address</span> <span class="o">+</span> <span class="n">file_name</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="c1"># 必须跟解码形式，不然有的网页中文内容写不到txt里</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">string_array</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-# 主函数
-def main():
-    url = &#39;https://so.gushiwen.cn/gushi/tangshi.aspx&#39;  # 古诗文网三国演义网址
-    url_head_content = get_url_content(url)  # 获取网页
-    links = get_url_links(url_head_content)  # 获取每一回的链接地址
-    # enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列
-    # 同时列出数据下标和数据
-    for index, each in enumerate(links):
-        url_link_content = get_url_content(each)  # 获取每一回的网页内容
-        chapter_content = filter_info(index + 1, url_link_content)  # 解析每一回的网页内容，获取小说文本
-        write_txt(chapter_content)  # 输出小说内容到 txt
-        time.sleep(random.random() * 1)  # 每抓一个网页休息0~1秒，防止被反爬措施封锁 IP
+<span class="c1"># 主函数</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://so.gushiwen.cn/gushi/tangshi.aspx&#39;</span>  <span class="c1"># 古诗文网三国演义网址</span>
+    <span class="n">url_head_content</span> <span class="o">=</span> <span class="n">get_url_content</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># 获取网页</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">get_url_links</span><span class="p">(</span><span class="n">url_head_content</span><span class="p">)</span>  <span class="c1"># 获取每一回的链接地址</span>
+    <span class="c1"># enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列</span>
+    <span class="c1"># 同时列出数据下标和数据</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">each</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">links</span><span class="p">):</span>
+        <span class="n">url_link_content</span> <span class="o">=</span> <span class="n">get_url_content</span><span class="p">(</span><span class="n">each</span><span class="p">)</span>  <span class="c1"># 获取每一回的网页内容</span>
+        <span class="n">chapter_content</span> <span class="o">=</span> <span class="n">filter_info</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">url_link_content</span><span class="p">)</span>  <span class="c1"># 解析每一回的网页内容，获取小说文本</span>
+        <span class="n">write_txt</span><span class="p">(</span><span class="n">chapter_content</span><span class="p">)</span>  <span class="c1"># 输出小说内容到 txt</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 每抓一个网页休息0~1秒，防止被反爬措施封锁 IP</span>
 
-# 运行函数
-main()
+<span class="c1"># 运行函数</span>
+<span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>其中，使用 requests 库时，有的网站需要设置 headers 参数才能正确模拟浏览器登录。headers 参数可以在打开网页时，按键盘<code class="docutils literal notranslate"><span class="pre">F12</span></code> 打开， 然后刷新一下网页，单击<code class="docutils literal notranslate"><span class="pre">F12</span></code>弹出窗口的任何一个文件，就能查看网站的所有 headers 信息，有 cookie，user-agent 等信息。如下图所示：</p>
@@ -1093,238 +1138,238 @@ main()
 </ul>
 <p>根据以上的特点，设计出以下的 python 代码。其中中文分词库<code class="docutils literal notranslate"><span class="pre">jieba</span></code>，词云库<code class="docutils literal notranslate"><span class="pre">WordCloud</span></code>库等，若没有安装，需要提前安装（使用 pip 或 conda 安装）到电脑上。</p>
 <p>在画图时，使用 matplotlib 画出饼图，使用 WordCloud 生成词云图，因为 matplotlib 不能自动将不同柱子分配不同的颜色，使用 seaborn 画出柱状图。</p>
-<div class="highlight-{code-block}python notranslate"><div class="highlight"><pre><span></span>import requests  # 联系网络的包，a package for requesting from websites
-import pandas as pd
-from bs4 import BeautifulSoup # 分析网页数据的包，a package for webstie data analysis
-import matplotlib.pyplot as plt # 画图的包
-import time 
-import random
-import jieba # 中文分词包
-from wordcloud import WordCloud # 词云包
-import re  # 正则表达式包
-import seaborn as sns # 用 seaborn 画柱状图
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>  <span class="c1"># 联系网络的包，a package for requesting from websites</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="c1"># 分析网页数据的包，a package for webstie data analysis</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># 画图的包</span>
+<span class="kn">import</span> <span class="nn">time</span> 
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">jieba</span> <span class="c1"># 中文分词包</span>
+<span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span> <span class="c1"># 词云包</span>
+<span class="kn">import</span> <span class="nn">re</span>  <span class="c1"># 正则表达式包</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> <span class="c1"># 用 seaborn 画柱状图</span>
 
-plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;] 
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SimHei&#39;</span><span class="p">]</span> 
 
-# 主要是模拟浏览器登录，防止反爬
-headers = {
-    &#39;user-agent&#39;:&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;
-    }
+<span class="c1"># 主要是模拟浏览器登录，防止反爬</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;user-agent&#39;</span><span class="p">:</span><span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;</span>
+    <span class="p">}</span>
 
-## store the information
-rank_list = []
-name_list = [] # 用来存储电影名字的一个二维列表
-director_list = [] # 用来存储导演名字的一个列表，下面几个变量类似
-actor_list = []
-year_list = []
-rating_list = []
-ratingNum_list = []
-quote_list = []
-place_list = []
-category_list = []
+<span class="c1">## store the information</span>
+<span class="n">rank_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">name_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># 用来存储电影名字的一个二维列表</span>
+<span class="n">director_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># 用来存储导演名字的一个列表，下面几个变量类似</span>
+<span class="n">actor_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">year_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rating_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ratingNum_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">quote_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">place_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">category_list</span> <span class="o">=</span> <span class="p">[]</span>
 
-num = 0
-for i in range(0, 10):
-    link = &#39;https://movie.douban.com/top250?start=&#39; + str(i*25) # 250部电影一共 10个网页， 10 pages for total 250 movies    
-    res = requests.get(link, headers = headers, timeout = 10)
-    time.sleep(random.random()*3) # 每抓一个网页休息2~3秒，防止被反爬措施封锁 IP，avoid being blocked of the IP address
+<span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">link</span> <span class="o">=</span> <span class="s1">&#39;https://movie.douban.com/top250?start=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">25</span><span class="p">)</span> <span class="c1"># 250部电影一共 10个网页， 10 pages for total 250 movies    </span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 每抓一个网页休息2~3秒，防止被反爬措施封锁 IP，avoid being blocked of the IP address</span>
     
-    # res.text is the content of the crawler
-    soup = BeautifulSoup(res.text, &quot;lxml&quot;)  # lxml 是一个解码方式，lxml is one decoding model for Beautifulsoup
-    movie_list = soup.find_all(&#39;div&#39;, class_ = &#39;item&#39;) # 检索所有类型为 item 的 div 标签
+    <span class="c1"># res.text is the content of the crawler</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>  <span class="c1"># lxml 是一个解码方式，lxml is one decoding model for Beautifulsoup</span>
+    <span class="n">movie_list</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;item&#39;</span><span class="p">)</span> <span class="c1"># 检索所有类型为 item 的 div 标签</span>
     
-    for each in movie_list:
-        # 排名在 em 标签里
-        rank = each.em.text
-        rank_list.append(rank)
+    <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">movie_list</span><span class="p">:</span>
+        <span class="c1"># 排名在 em 标签里</span>
+        <span class="n">rank</span> <span class="o">=</span> <span class="n">each</span><span class="o">.</span><span class="n">em</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">rank_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rank</span><span class="p">)</span>
         
-        # 电影名字在标签 &lt;span class=&quot;title&quot;&gt; 与 &lt;span class=&quot;other&quot;&gt; 里
-        other_name = each.find(&#39;span&#39;, class_ = &#39;other&#39;).get_text()
-        other_name = other_name.replace(&#39; &#39;, &#39;&#39;) # 去掉空格
-        other_name = other_name.replace(&#39;\xa0/\xa0&#39;, &#39;&#39;) # 去掉多余字符 \xa0/\xa0
-        cn_name = each.find(&#39;span&#39;, class_ = &#39;title&#39;).get_text()
-        eg_name = each.find(&#39;span&#39;, class_ = &#39;title&#39;).find_next().get_text() # find_next() 查找满足条件的下一个标签
-        eg_name = eg_name.replace(&#39;\xa0/\xa0&#39;, &#39;&#39;) # 去掉多余字符 \xa0/\xa0
-        name_list.append([cn_name, eg_name, other_name])   
+        <span class="c1"># 电影名字在标签 &lt;span class=&quot;title&quot;&gt; 与 &lt;span class=&quot;other&quot;&gt; 里</span>
+        <span class="n">other_name</span> <span class="o">=</span> <span class="n">each</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;other&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="n">other_name</span> <span class="o">=</span> <span class="n">other_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># 去掉空格</span>
+        <span class="n">other_name</span> <span class="o">=</span> <span class="n">other_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\xa0</span><span class="s1">/</span><span class="se">\xa0</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># 去掉多余字符 \xa0/\xa0</span>
+        <span class="n">cn_name</span> <span class="o">=</span> <span class="n">each</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="n">eg_name</span> <span class="o">=</span> <span class="n">each</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_next</span><span class="p">()</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="c1"># find_next() 查找满足条件的下一个标签</span>
+        <span class="n">eg_name</span> <span class="o">=</span> <span class="n">eg_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\xa0</span><span class="s1">/</span><span class="se">\xa0</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># 去掉多余字符 \xa0/\xa0</span>
+        <span class="n">name_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">cn_name</span><span class="p">,</span> <span class="n">eg_name</span><span class="p">,</span> <span class="n">other_name</span><span class="p">])</span>   
               
-        # 评分信息在标签  &lt;span class=&quot;rating_num&quot;&gt; 里
-        rating =  each.find(&#39;span&#39;, class_ = &#39;rating_num&#39;).get_text()
-        rating_list.append(float(rating))
+        <span class="c1"># 评分信息在标签  &lt;span class=&quot;rating_num&quot;&gt; 里</span>
+        <span class="n">rating</span> <span class="o">=</span>  <span class="n">each</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;rating_num&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="n">rating_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">rating</span><span class="p">))</span>
         
-        # 评价人数通过关键词&#39;评价&#39;检索
-        rating_num = each.find(string = re.compile(&#39;评价&#39;)).get_text()
-        rating_num = rating_num.replace(&#39;人评价&#39;, &#39;&#39;)
-        ratingNum_list.append(int(rating_num))
+        <span class="c1"># 评价人数通过关键词&#39;评价&#39;检索</span>
+        <span class="n">rating_num</span> <span class="o">=</span> <span class="n">each</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">string</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;评价&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="n">rating_num</span> <span class="o">=</span> <span class="n">rating_num</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;人评价&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">ratingNum_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">rating_num</span><span class="p">))</span>
         
-        # 代表性评价在  &lt;p class=&quot;quote&quot;&gt; 里  
-        try:
-            quote =  each.find(&#39;p&#39;, class_ = &#39;quote&#39;).get_text()
-        except Exception: # 有的电影代表性评价没有显示
-            quote =  &#39;&#39;
-        quote_list.append(quote)
+        <span class="c1"># 代表性评价在  &lt;p class=&quot;quote&quot;&gt; 里  </span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">quote</span> <span class="o">=</span>  <span class="n">each</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s1">&#39;quote&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span> <span class="c1"># 有的电影代表性评价没有显示</span>
+            <span class="n">quote</span> <span class="o">=</span>  <span class="s1">&#39;&#39;</span>
+        <span class="n">quote_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">quote</span><span class="p">)</span>
         
-        info = each.p.get_text(strip = True)
-        # 定义正则表达式提取出导演，主演，上映时间，地点，电影类型信息        
-        try: 
-            # (?&lt;=导演: ) match any character begins after character &#39;导演: &#39;
-            # .*? match any character (.), zero or more times (*) but as less as possible (?)
-            # (?=主) match any character before character &#39;主&#39;
-            director = re.compile(&#39;(?&lt;=导演: ).*?(?=主)&#39;).findall(info)[0]
-            actor = re.compile(&#39;(?&lt;=主演: ).*?(?=/)&#39;).findall(info)[0]
-        except Exception: # 有的电影导演名字太长，主演没有显示出来
-            director = re.compile(&#39;(?&lt;=导演: ).*?(?=\xa0)&#39;).findall(info)[0]
-            actor = &#39;&#39;  
-        director_list.append(director)
-        actor_list.append(actor)
+        <span class="n">info</span> <span class="o">=</span> <span class="n">each</span><span class="o">.</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># 定义正则表达式提取出导演，主演，上映时间，地点，电影类型信息        </span>
+        <span class="k">try</span><span class="p">:</span> 
+            <span class="c1"># (?&lt;=导演: ) match any character begins after character &#39;导演: &#39;</span>
+            <span class="c1"># .*? match any character (.), zero or more times (*) but as less as possible (?)</span>
+            <span class="c1"># (?=主) match any character before character &#39;主&#39;</span>
+            <span class="n">director</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(?&lt;=导演: ).*?(?=主)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">info</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">actor</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(?&lt;=主演: ).*?(?=/)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">info</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span> <span class="c1"># 有的电影导演名字太长，主演没有显示出来</span>
+            <span class="n">director</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(?&lt;=导演: ).*?(?=</span><span class="se">\xa0</span><span class="s1">)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">info</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">actor</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>  
+        <span class="n">director_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">director</span><span class="p">)</span>
+        <span class="n">actor_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actor</span><span class="p">)</span>
         
-        # \d{4} is a four digit number
-        year = re.compile(&#39;(?&lt;=...)\d{4}&#39;).findall(info)[0]
-        year_list.append(year)
-        place_category = re.compile(&#39;(?&lt;=\xa0/\xa0).*&#39;).findall(info)[0]
-        place_category = place_category.replace(&#39;\xa0&#39;, &#39;&#39;)
-        place_category = place_category.split(&#39;/&#39;)
-        place = place_category[0]
-        category = place_category[1]
-        place_list.append(place)
-        category_list.append(category)
+        <span class="c1"># \d{4} is a four digit number</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(?&lt;=...)\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">info</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">year_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+        <span class="n">place_category</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(?&lt;=</span><span class="se">\xa0</span><span class="s1">/</span><span class="se">\xa0</span><span class="s1">).*&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">info</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">place_category</span> <span class="o">=</span> <span class="n">place_category</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\xa0</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">place_category</span> <span class="o">=</span> <span class="n">place_category</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+        <span class="n">place</span> <span class="o">=</span> <span class="n">place_category</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="n">place_category</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">place_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">place</span><span class="p">)</span>
+        <span class="n">category_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
           
-# 将数据存到 pandas 里
-df = pd.DataFrame(rank_list, columns = [&#39;排名&#39;])    
-df[&#39;电影名字&#39;] = [i[0] for i in name_list]
-df[&#39;外文名字&#39;] = [i[1] for i in name_list]
-df[&#39;其他名字&#39;] = [i[2] for i in name_list]
-df[&#39;评分&#39;] = rating_list
-df[&#39;评价人数&#39;] = ratingNum_list
-df[&#39;导演&#39;] = director_list
-df[&#39;主演&#39;] = actor_list
-df[&#39;上映日期&#39;] = year_list
-df[&#39;地区&#39;] = place_list
-df[&#39;类型&#39;] = category_list
-df[&#39;代表性评论&#39;] = quote_list
+<span class="c1"># 将数据存到 pandas 里</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rank_list</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;排名&#39;</span><span class="p">])</span>    
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;电影名字&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;外文名字&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;其他名字&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">name_list</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;评分&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rating_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;评价人数&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratingNum_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;导演&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">director_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;主演&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">actor_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;上映日期&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">year_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;地区&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;类型&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">category_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;代表性评论&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">quote_list</span>
 
-# 导出到 xls 文件里，save to xls file    
-df.to_csv(&#39;豆瓣 top 250 电影爬虫抓取.csv&#39;)
+<span class="c1"># 导出到 xls 文件里，save to xls file    </span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;豆瓣 top 250 电影爬虫抓取.csv&#39;</span><span class="p">)</span>
 
-# 分析电影来源地并画饼图
-locations = []
-for i in range(len(place_list)):
-    nations = place_list[i].split(&#39; &#39;) 
-    for j in range(len(nations)):
-        if nations[j] == &#39;西德&#39;:
-            nations[j] = &#39;德国&#39;
-        locations.append(nations[j])
+<span class="c1"># 分析电影来源地并画饼图</span>
+<span class="n">locations</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">place_list</span><span class="p">)):</span>
+    <span class="n">nations</span> <span class="o">=</span> <span class="n">place_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nations</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">nations</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;西德&#39;</span><span class="p">:</span>
+            <span class="n">nations</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;德国&#39;</span>
+        <span class="n">locations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nations</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
 
-df_location = pd.DataFrame(locations, columns = [&#39;地区&#39;])
-# 按照出现次数排序, size() 可以查数，生成一个 Series 类型
-# 然后用 reset_index 重新命名，参数为 name
-# DataFrame 类型的 reset_index 参数为 names
-df2 = df_location.groupby(&#39;地区&#39;).size().reset_index(name=&#39;counts&#39;) # df2 = df2[&#39;地区&#39;].value_counts(ascending = False).reset_index()
-df2.sort_values(by = &#39;counts&#39;, ascending = False, inplace = True, ignore_index = True)
-# 画饼状图
-values = []
-labels = []
-other_count = 0
-for i in range(9):
-    values.append(df2[&#39;counts&#39;][i])
-    labels.append(df2[&#39;地区&#39;][i])
-for i in range(9, df2.shape[0]):
-    other_count += int(df2[&#39;counts&#39;][i])
-values.append(other_count)
-labels.append(&#39;其他地区&#39;)
-plt.figure(1)
-plt.pie(values, labels=labels, autopct=&#39;%.2f%%&#39;)
-plt.legend()  # 显示标签
-plt.show()
+<span class="n">df_location</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">locations</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;地区&#39;</span><span class="p">])</span>
+<span class="c1"># 按照出现次数排序, size() 可以查数，生成一个 Series 类型</span>
+<span class="c1"># 然后用 reset_index 重新命名，参数为 name</span>
+<span class="c1"># DataFrame 类型的 reset_index 参数为 names</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df_location</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;地区&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span> <span class="c1"># df2 = df2[&#39;地区&#39;].value_counts(ascending = False).reset_index()</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="c1"># 画饼状图</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">other_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;counts&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;地区&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">df2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">other_count</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;counts&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other_count</span><span class="p">)</span>
+<span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;其他地区&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.2f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># 显示标签</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
-# 分析电影类型并画饼图
-categories = []
-for i in range(len(category_list)):
-    category = category_list[i].split(&#39; &#39;) 
-    for j in range(len(category)):
-        categories.append(category[j])
+<span class="c1"># 分析电影类型并画饼图</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">category_list</span><span class="p">)):</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">category_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">category</span><span class="p">)):</span>
+        <span class="n">categories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">category</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         
-df_category = pd.DataFrame(categories, columns = [&#39;类型&#39;])    
-df3 = df_category.groupby(&#39;类型&#39;).size().reset_index(name=&#39;counts&#39;) 
-df3.sort_values(by = &#39;counts&#39;, ascending = False, inplace = True, ignore_index = True)
+<span class="n">df_category</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">categories</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;类型&#39;</span><span class="p">])</span>    
+<span class="n">df3</span> <span class="o">=</span> <span class="n">df_category</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;类型&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span> 
+<span class="n">df3</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;counts&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
-values = []
-labels = []
-other_count = 0
-for i in range(15):
-    values.append(df3[&#39;counts&#39;][i])
-    labels.append(df3[&#39;类型&#39;][i])
-for i in range(15, df3.shape[0]):
-    other_count += int(df3[&#39;counts&#39;][i])
-values.append(other_count)
-labels.append(&#39;其他类型&#39;)
-plt.figure(2)
-plt.pie(values, labels=labels, autopct=&#39;%.2f%%&#39;)
-plt.legend()
-plt.show()
+<span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">other_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
+    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;counts&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;类型&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">df3</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">other_count</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;counts&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+<span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other_count</span><span class="p">)</span>
+<span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;其他类型&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.2f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-# 画词云图
-jieba.add_word(&#39;久石让&#39;)
-jieba.add_word(&#39;谢耳朵&#39;)
-# 一些语气词和没有意义的词
-del_words = [ &#39;就是&#39;, &#39;一个&#39;, &#39;被&#39;, &#39;电影&#39;, &#39;我们&#39;,
-              &#39;不是&#39;, &#39;每个&#39;,  &#39;不会&#39;,  &#39;没有&#39;, 
-              &#39;这样&#39;, &#39;那么&#39;, &#39;不要&#39;, &#39;如果&#39;,
-              &#39;不能&#39;,  &#39;一种&#39;, &#39;不过&#39;, &#39;只有&#39;, &#39;不得不&#39;, 
-              &#39;不得不&#39;, &#39;一部&#39;]
-all_quotes = &#39;&#39;.join(quote_list) # 将所有代表性评论拼接为一个文本
-# 去掉标点符号
-all_quotes = re.sub(r&quot;[0-9\s+\.\!\/_,$%^*()?;；:-【】+\&quot;\&#39;]+|[+——！，;:。？、~@#￥%……&amp;*（）]+&quot;, &quot; &quot;, all_quotes)
-words = jieba.lcut(all_quotes)
-words_final = []
-for i in range(len(words)): 
-    if len(words[i]) &gt; 1 and  words[i] not in del_words: # 去掉一些语气词，单字词 
-        words_final.append(words[i])
-text_result = Counter(words_final)
-cloud = WordCloud(
-    font_path = &#39;C:\Windows\Fonts\FZSTK.TTF&#39;, # 中文字体地址 C:\Windows\Fonts\FZSTK.TTF，提前下载字体或指定，否则中文无法显示
-    # mask = &#39;&#39; 通过 mask 参数指定一个图片地址作为词云的背景图像 
-    background_color = &#39;white&#39;,
-    width = 1000,
-    height = 860,
-    max_words = 25   
-  )
-#wc = cloud.generate(words) # 这种方法对中文支持不太好，this mehtod is better for only english string
-wc = cloud.generate_from_frequencies(text_result)
-wc.to_file(&quot;豆瓣 TOP 250 词云.jpg&quot;) 
-plt.figure(3)
-plt.imshow(wc)
-plt.axis(&#39;off&#39;)
-plt.title(&#39;豆瓣 TOP 250 电影代表性评论的词云分析&#39;)
-plt.show()
+<span class="c1"># 画词云图</span>
+<span class="n">jieba</span><span class="o">.</span><span class="n">add_word</span><span class="p">(</span><span class="s1">&#39;久石让&#39;</span><span class="p">)</span>
+<span class="n">jieba</span><span class="o">.</span><span class="n">add_word</span><span class="p">(</span><span class="s1">&#39;谢耳朵&#39;</span><span class="p">)</span>
+<span class="c1"># 一些语气词和没有意义的词</span>
+<span class="n">del_words</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;就是&#39;</span><span class="p">,</span> <span class="s1">&#39;一个&#39;</span><span class="p">,</span> <span class="s1">&#39;被&#39;</span><span class="p">,</span> <span class="s1">&#39;电影&#39;</span><span class="p">,</span> <span class="s1">&#39;我们&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;不是&#39;</span><span class="p">,</span> <span class="s1">&#39;每个&#39;</span><span class="p">,</span>  <span class="s1">&#39;不会&#39;</span><span class="p">,</span>  <span class="s1">&#39;没有&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;这样&#39;</span><span class="p">,</span> <span class="s1">&#39;那么&#39;</span><span class="p">,</span> <span class="s1">&#39;不要&#39;</span><span class="p">,</span> <span class="s1">&#39;如果&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;不能&#39;</span><span class="p">,</span>  <span class="s1">&#39;一种&#39;</span><span class="p">,</span> <span class="s1">&#39;不过&#39;</span><span class="p">,</span> <span class="s1">&#39;只有&#39;</span><span class="p">,</span> <span class="s1">&#39;不得不&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;不得不&#39;</span><span class="p">,</span> <span class="s1">&#39;一部&#39;</span><span class="p">]</span>
+<span class="n">all_quotes</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">quote_list</span><span class="p">)</span> <span class="c1"># 将所有代表性评论拼接为一个文本</span>
+<span class="c1"># 去掉标点符号</span>
+<span class="n">all_quotes</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[0-9\s+\.\!\/_,$%^*()?;；:-【】+</span><span class="se">\&quot;</span><span class="s2">\&#39;]+|[+——！，;:。？、~@#￥%……&amp;*（）]+&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">all_quotes</span><span class="p">)</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">jieba</span><span class="o">.</span><span class="n">lcut</span><span class="p">(</span><span class="n">all_quotes</span><span class="p">)</span>
+<span class="n">words_final</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)):</span> 
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span>  <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">del_words</span><span class="p">:</span> <span class="c1"># 去掉一些语气词，单字词 </span>
+        <span class="n">words_final</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">text_result</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">words_final</span><span class="p">)</span>
+<span class="n">cloud</span> <span class="o">=</span> <span class="n">WordCloud</span><span class="p">(</span>
+    <span class="n">font_path</span> <span class="o">=</span> <span class="s1">&#39;C:\Windows\Fonts\FZSTK.TTF&#39;</span><span class="p">,</span> <span class="c1"># 中文字体地址 C:\Windows\Fonts\FZSTK.TTF，提前下载字体或指定，否则中文无法显示</span>
+    <span class="c1"># mask = &#39;&#39; 通过 mask 参数指定一个图片地址作为词云的背景图像 </span>
+    <span class="n">background_color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="mi">860</span><span class="p">,</span>
+    <span class="n">max_words</span> <span class="o">=</span> <span class="mi">25</span>   
+  <span class="p">)</span>
+<span class="c1">#wc = cloud.generate(words) # 这种方法对中文支持不太好，this mehtod is better for only english string</span>
+<span class="n">wc</span> <span class="o">=</span> <span class="n">cloud</span><span class="o">.</span><span class="n">generate_from_frequencies</span><span class="p">(</span><span class="n">text_result</span><span class="p">)</span>
+<span class="n">wc</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;豆瓣 TOP 250 词云.jpg&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;豆瓣 TOP 250 电影代表性评论的词云分析&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-# 评分最高的 15 部电影
-# 用 seaborn 画柱状图，因为自动将不同柱子分配不同的颜色
-df_star = df.sort_values(by = &#39;评分&#39;, ascending = False, ignore_index = True)
-number = 15
-df_star_top = df_star.head(number)
-plt.figure(4)
-sns.barplot(data = df_star_top, y = &#39;电影名字&#39;, x = &#39;评分&#39;, orient = &#39;h&#39;)
-plt.title(&#39;评分最高的 &#39; + str(number) + &#39; 部电影&#39;)
-plt.show()
+<span class="c1"># 评分最高的 15 部电影</span>
+<span class="c1"># 用 seaborn 画柱状图，因为自动将不同柱子分配不同的颜色</span>
+<span class="n">df_star</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;评分&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">df_star_top</span> <span class="o">=</span> <span class="n">df_star</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_star_top</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;电影名字&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;评分&#39;</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;评分最高的 &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; 部电影&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-# 评分人数最多的 15 部电影
-df_num = df.sort_values(by = &#39;评价人数&#39;, ascending = False, ignore_index = True)
-df_num_top = df_num.head(number)
-plt.figure(5)
-sns.barplot(data = df_num_top, y = &#39;电影名字&#39;, x = &#39;评价人数&#39;, orient = &#39;h&#39;)
-plt.title(&#39;评分人数最多的 &#39; + str(number) + &#39; 部电影&#39;)
-plt.show()
+<span class="c1"># 评分人数最多的 15 部电影</span>
+<span class="n">df_num</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;评价人数&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">df_num_top</span> <span class="o">=</span> <span class="n">df_num</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_num_top</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;电影名字&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;评价人数&#39;</span><span class="p">,</span> <span class="n">orient</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;评分人数最多的 &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; 部电影&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-# 电影年代画图
-df_year = df.groupby(&#39;上映日期&#39;).size().reset_index(name = &#39;部数&#39;)
-df_year.sort_values(&#39;部数&#39;, ascending = False, inplace = True)
-df_year_top = df_year.head(20)
-df_year_top.sort_values(&#39;上映日期&#39;, inplace = True)
-plt.figure(6)
-sns.barplot(data = df_year_top, x = &#39;上映日期&#39;, y = &#39;部数&#39;)
-plt.title(&#39;电影上映年代&#39;)
-plt.show()
+<span class="c1"># 电影年代画图</span>
+<span class="n">df_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;上映日期&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;部数&#39;</span><span class="p">)</span>
+<span class="n">df_year</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;部数&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">df_year_top</span> <span class="o">=</span> <span class="n">df_year</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">df_year_top</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;上映日期&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_year_top</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;上映日期&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;部数&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;电影上映年代&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>生成的图形如下：</p>
@@ -1369,7 +1414,7 @@ plt.show()
 </section>
 </div>
 <script src="https://giscus.app/client.js"
-        data-repo="robinchen121/book-Python-Data-Science"
+        data-repo="robinchen121/book--Data-Science"
         data-repo-id="R_kgDOKFdyOw"
         data-category="Announcements"
         data-category-id="DIC_kwDOKFdyO84CgWHi"
@@ -1410,11 +1455,10 @@ plt.show()
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="line-regression.html"
@@ -1434,10 +1478,7 @@ plt.show()
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1445,6 +1486,7 @@ plt.show()
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1483,6 +1525,7 @@ By Zhen Chen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2025.
@@ -1509,8 +1552,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
