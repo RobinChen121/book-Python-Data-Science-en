@@ -40,16 +40,6 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
     script2.type = "text/javascript"
     script2.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
 
-var targetElement = document.getElementById("google_translate_element");
-    var yourContent = "Language"
-    targetElement.addEventListener("DOMNodeInserted", () => {
-      $(".goog-te-menu-value span:first").each(function (i, obj) {
-        if (obj.childNodes[0] && obj.childNodes[0].textContent == "Select Language") {
-          $(obj).html(yourContent);
-        }
-      });
-    });
-
     // 将新按钮添加到容器中
     headerButtons.appendChild(div);
     headerButtons.appendChild(scirpt1);
