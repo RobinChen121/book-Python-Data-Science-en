@@ -471,19 +471,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <!-- Toogle google translation -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
-layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-      }
-</script>
-<script type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
-<br><section class="tex2jax_ignore mathjax_ignore" id="python">
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">3. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>用 Python 编写函数时，经常要用到条件语句<code class="docutils literal notranslate"><span class="pre">if</span></code>， 循环语句<code class="docutils literal notranslate"><span class="pre">for</span></code>或<code class="docutils literal notranslate"><span class="pre">while</span></code>。</p>
 <section id="id1">
@@ -1093,7 +1081,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7fadd1a37040&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f85e204cf10&gt;
 </pre></div>
 </div>
 </div>
@@ -1706,7 +1694,19 @@ final x is 18
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script></section>
+</script><!-- Toogle google translation -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
+layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+</script>
+<script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
+<br></section>
 </section>
 
     <script type="text/x-thebe-config">

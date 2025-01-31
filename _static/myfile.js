@@ -22,10 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 添加 script elecment
     var script1 = document.createElement("script");
 
-    // set aciprt type and add script content
+    // set sciprt type and add script content
     script1.type = "text/javascript"
     script1.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    script1.innerHTML = 'Language'
 
     script1.onload = function googleTranslateElementInit() {
         new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
       };
 
-    // 添加 script elecment
+    // 添加 script element
     var script2 = document.createElement("script");
 
     // set aciprt type and add script content
@@ -41,9 +40,9 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
     script2.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
 
     // 将新按钮添加到容器中
-    headerButtons.appendChild(div);
-    headerButtons.appendChild(scirpt1);
-    headerButtons.appendChild(script2);
-    //headerButtons.appendChild(newButton);
-    //headerButtons.appendChild(targetElement);
-});
+    //headerButtons.prepend(newButton);
+    headerButtons.prepend(div);
+    headerButtons.prepend(scirpt1);
+    headerButtons.prepend(script2);
+    
+    });

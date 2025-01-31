@@ -479,19 +479,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <!-- Toogle google translation -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar',
-layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-      }
-</script>
-<script type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
-<br><section class="tex2jax_ignore mathjax_ignore" id="python">
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
@@ -636,7 +624,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb441c6a680&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb770b9eef0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
@@ -649,7 +637,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb430b05750&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb7605f58d0&gt;]
 </pre></div>
 </div>
 <img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
@@ -662,7 +650,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb430b918a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb760685690&gt;]
 </pre></div>
 </div>
 <img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
@@ -675,7 +663,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb441fa16f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb770da97e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
@@ -1419,7 +1407,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f0c8e1bea8a2b22d8767c3ba42a6319030637f0a764ec4b2ca041115d9364a0d.png" src="_images/f0c8e1bea8a2b22d8767c3ba42a6319030637f0a764ec4b2ca041115d9364a0d.png" />
+<img alt="_images/f687ac52a825066b8bf92baadc10eff6fd77abfc34b199e298e9837a4b584aff.png" src="_images/f687ac52a825066b8bf92baadc10eff6fd77abfc34b199e298e9837a4b584aff.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1433,7 +1421,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/1a7580b75d1364f398eb0d4bac08a19089dd231e41b70261cace292aee9afdbf.png" src="_images/1a7580b75d1364f398eb0d4bac08a19089dd231e41b70261cace292aee9afdbf.png" />
+<img alt="_images/c42c4dffaab958351e1bc6b63b62f75a937b494ac0e7d922a608d2b65ac54386.png" src="_images/c42c4dffaab958351e1bc6b63b62f75a937b494ac0e7d922a608d2b65ac54386.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1454,7 +1442,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1b300d4811f8b17c0483e50cc320881368b50099066ecf13ff2d1044997d1488.png" src="_images/1b300d4811f8b17c0483e50cc320881368b50099066ecf13ff2d1044997d1488.png" />
+<img alt="_images/c9268b3871e06d9bd9ef496d11953557acfbca8edff78f00f7706dc42f20293a.png" src="_images/c9268b3871e06d9bd9ef496d11953557acfbca8edff78f00f7706dc42f20293a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1612,7 +1600,19 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script></section>
+</script><!-- Toogle google translation -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar',
+layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+</script>
+<script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
+<br></section>
 </section>
 
     <script type="text/x-thebe-config">
