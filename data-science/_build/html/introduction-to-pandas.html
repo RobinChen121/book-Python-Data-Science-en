@@ -501,19 +501,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <!-- Toogle google translation -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
-layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-      }
-</script>
-<script type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
-<br><section class="tex2jax_ignore mathjax_ignore" id="pandas">
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
 <h1><span class="section-number">5. </span>Pandas 入门<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
 <p>pandas 是 Python 做统计分析时最重要的数据分析工具之一，它基于 numpy 开发，提供了许多处理大型数据集所需的函数，可以灵活高效的处理各种数据集。</p>
 <p>pandas 一般使用的数据类型为 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, DataFrame 是二维数据，相当于 Excel 里面的一张表格数据，使用 pandas 时首先要导入 pandas 包。</p>
@@ -4431,7 +4419,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_14048/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_2751/2648405690.py:1: FutureWarning: [&#39;姓名&#39;] did not aggregate successfully. If any error is raised this will raise in a future version of pandas. Drop these columns/ops to avoid this warning.
   df.groupby([&#39;班级&#39;, &#39;性别&#39;]).agg([&#39;max&#39;, &#39;min&#39;, &#39;mean&#39;])  # 汇总了每个班每个性别的最高、最低、平均成绩
 </pre></div>
 </div>
@@ -6524,7 +6512,19 @@ Name: 入校时间, dtype: object
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script><script src="https://giscus.app/client.js"
+</script><!-- Toogle google translation -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
+layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+</script>
+<script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
+<br><script src="https://giscus.app/client.js"
         data-repo="robinchen121/book-Python-Data-Science"
         data-repo-id="R_kgDOKFdyOw"
         data-category="Announcements"
