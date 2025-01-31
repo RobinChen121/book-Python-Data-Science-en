@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // set aciprt type and add script content
     script1.type = "text/javascript"
     script1.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    script1.innerHTML = 'Language'
 
     script1.onload = function googleTranslateElementInit() {
         new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
