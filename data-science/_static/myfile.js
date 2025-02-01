@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 找到 article-header-buttons 容器
     var headerButtons = document.querySelector('.article-header-buttons');
 
+
     // 创建一个新的按钮
     var newButton = document.createElement('button');
     newButton.className = 'btn btn-info'; // 设置按钮样式
@@ -45,4 +46,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
     headerButtons.prepend(scirpt1);
     headerButtons.prepend(script2);
     
-    });
+    setcookie('googtrans', '/en');
+});
+    
+    

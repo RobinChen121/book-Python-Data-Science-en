@@ -422,7 +422,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -438,6 +440,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.1. 类的初始化 __init__</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2. 类的继承</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -449,7 +460,118 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">10. </span>Python 面向对象编程<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
-<p>Python 是一种支持面向对象编程（OOP）的语言。面向对象编程是一种编程范式，提供了一种结构化的方式来组织和管理代码，使得代码更易于理解、维护、扩展和重用, 特别适合开发大型、复杂的系统。</p>
+<p>Python 是一种支持面向对象编程（Object Oriented Programming, OOP）的语言。面向对象编程是一种编程范式，它将数据和操作数据的函数封装在对象中，通过类（Class）和对象（Object）来组织代码，使得代码更易于理解、维护、扩展和重用, 特别适合开发大型、复杂的系统。</p>
+<p>面向对象编程中，类是对象的模板或蓝图，描述一类事物的属性（变量）和行为（方法）；而对象是类的实例，具体体现类的属性和行为。例如，定义企业员工为一个类，该类中，可以包含姓名，工资，工龄，职务等属性；而具体的一个企业员工张三或李四就是这个类的一个实例。打个比喻，类就像是“蛋糕模具”，对象是用这个模具做出的“蛋糕”。</p>
+<p>Python 通过 <code class="docutils literal notranslate"><span class="pre">class</span></code> 来定义一个类，并在类中进一步定义类的属性（数据）和方法（函数）。语法格式如下：</p>
+<table>   
+    <tr style="border-bottom:solid">
+     </tr>
+    <tr>
+        <td style="text-align:left">class ClassName:</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_1&gt;</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_2&gt;</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_N&gt;</td>
+    </tr>
+</table>
+<br /><p>下面的例子中，我们定义一个员工类：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>  
+    <span class="c1"># 类的属性</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="s1">&#39;business schoool&#39;</span> <span class="c1"># 普通属性</span>
+    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
+    
+    <span class="c1"># 类的方法</span>
+    <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span>
+    
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, everyone!&#39;</span><span class="p">)</span>
+    
+<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span> <span class="c1"># 实例化一个类</span>
+<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span> <span class="c1"># 访问类里的方法</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My department is </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span> <span class="c1"># 访问类里的属性  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, everyone!
+My department is business schoool.
+</pre></div>
+</div>
+</div>
+</div>
+<p>上面的例子中，我们定义了一个 Employee 类，有两个属性：一个普通属性和一个私有属性。前缀双下划线命名的变量为类的私有属性，<strong>不能在类外部直接访问</strong>，但可以在类里面定义一个访问私有属性的方法，然后调用方法进行访问。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is&#39;</span><span class="p">,</span> <span class="n">john</span><span class="o">.</span><span class="n">get_age</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>age is 20
+</pre></div>
+</div>
+</div>
+</div>
+<p>通过实例化一个类，我们就可以通过实例访问类里面的一些属性和方法。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>前缀单下划线命名的变量为类的守保护属性，可以直接访问，但不推荐访问。</p>
+</div>
+<section id="init">
+<h2><span class="section-number">10.1. </span>类的初始化 __init__<a class="headerlink" href="#init" title="Permalink to this heading">#</a></h2>
+<p>类有一个名为 __init__() 的特殊方法，该方法在类实例化时会自动调用，进行实例的初始化。例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>  
+    <span class="c1"># 类的属性</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="s1">&#39;business schoool&#39;</span> <span class="c1"># 普通属性</span>
+    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
+    
+    <span class="c1"># 类的初始化方法</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">department</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">department</span> <span class="o">=</span> <span class="n">department</span>
+    
+    <span class="c1"># 类的方法</span>
+    <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span>
+    
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, everyone! My name is </span><span class="si">%s</span><span class="s1">.&#39;</span><span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    
+<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;engineering school&#39;</span><span class="p">)</span> <span class="c1"># 实例化一个类，自动调用  __init__(）初始化</span>
+<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span> <span class="c1"># 访问类里的方法</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My department is </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span> <span class="c1"># 访问类里的属性  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, everyone! My name is John.
+My department is engineering school.
+</pre></div>
+</div>
+</div>
+</div>
+<p>上面的例子中，__init__ 方法初始化了类的多个属性，可以包括__init__ 方法前面未被类声明的属性。而已经声明的属性值被__init__ 方法中的参数值覆盖。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>类的方法与普通函数有一个显著的区别，它们的第一个参数总是 self，self 代表的是类的实例。</p>
+</div>
+</section>
+<section id="id1">
+<h2><span class="section-number">10.2. </span>类的继承<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <script src="https://giscus.app/client.js"
         data-repo="robinchen121/book-Python-Data-Science"
         data-repo-id="R_kgDOKFdyOw"
@@ -477,6 +599,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
 <br></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -523,6 +646,22 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.1. 类的初始化 __init__</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2. 类的继承</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
