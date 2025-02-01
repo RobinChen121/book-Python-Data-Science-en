@@ -446,7 +446,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.1. 类的初始化 __init__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2. 类的继承</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的专有方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4. 类方法与静态方法</a></li>
 </ul>
             </nav>
         </div>
@@ -462,7 +464,7 @@ document.write(`
 <h1><span class="section-number">10. </span>Python 面向对象编程<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>Python 是一种支持面向对象编程（Object Oriented Programming, OOP）的语言。面向对象编程是一种编程范式，它将数据和操作数据的函数封装在对象中，通过类（Class）和对象（Object）来组织代码，使得代码更易于理解、维护、扩展和重用, 特别适合开发大型、复杂的系统。</p>
 <p>面向对象编程中，类是对象的模板或蓝图，描述一类事物的属性（变量）和行为（方法）；而对象是类的实例，具体体现类的属性和行为。例如，定义企业员工为一个类，该类中，可以包含姓名，工资，工龄，职务等属性；而具体的一个企业员工张三或李四就是这个类的一个实例。打个比喻，类就像是“蛋糕模具”，对象是用这个模具做出的“蛋糕”。</p>
-<p>Python 通过 <code class="docutils literal notranslate"><span class="pre">class</span></code> 来定义一个类，并在类中进一步定义类的属性（数据）和方法（函数）。语法格式如下：</p>
+<p>Python 通过 <code class="docutils literal notranslate"><span class="pre">class</span></code> 来定义一个类，并在类中进一步定义类的<code class="docutils literal notranslate"><span class="pre">属性</span></code>（数据）和<code class="docutils literal notranslate"><span class="pre">方法</span></code>（函数）。语法格式如下：</p>
 <table>   
     <tr style="border-bottom:solid">
      </tr>
@@ -510,7 +512,8 @@ My department is business schoool.
 </div>
 </div>
 </div>
-<p>上面的例子中，我们定义了一个 Employee 类，有两个属性：一个普通属性和一个私有属性。前缀双下划线命名的变量为类的私有属性，<strong>不能在类外部直接访问</strong>，但可以在类里面定义一个访问私有属性的方法，然后调用方法进行访问。</p>
+<p>上面的例子中，我们定义了一个 Employee 类，有两个属性：一个普通属性和一个私有属性。通过实例化一个类，我们就可以通过实例访问类里面的一些属性和方法。</p>
+<p>前缀双下划线命名的变量为类的私有属性，<strong>不能在类外部直接访问</strong>，但可以在类里面定义一个访问私有属性的方法，然后调用方法进行访问。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is&#39;</span><span class="p">,</span> <span class="n">john</span><span class="o">.</span><span class="n">get_age</span><span class="p">())</span>
@@ -523,10 +526,16 @@ My department is business schoool.
 </div>
 </div>
 </div>
-<p>通过实例化一个类，我们就可以通过实例访问类里面的一些属性和方法。</p>
+<p>如果直接在实例 john 访问私有属性 __age (例如 print(john.__age))，程序会报错。</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">__age</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>前缀单下划线命名的变量为类的守保护属性，可以直接访问，但不推荐访问。</p>
+<ul class="simple">
+<li><p>前缀双下划线命名的变量或函数为类的私有属性或方法，不能在类外部直接访问。</p></li>
+<li><p>前缀单下划线命名的变量或函数为类的守保护属性或方法，可以在类外部直接访问，但不推荐访问。</p></li>
+</ul>
 </div>
 <section id="init">
 <h2><span class="section-number">10.1. </span>类的初始化 __init__<a class="headerlink" href="#init" title="Permalink to this heading">#</a></h2>
@@ -571,7 +580,279 @@ My department is engineering school.
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">10.2. </span>类的继承<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">10.2. </span>类的继承与方法重写<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Python 支持类的继承，即一个类可以继承另一个类的所有属性和方法，还可以添加新的属性，新的方法或者重写另一个类的方法。</p>
+<p>例如，我们可以添加一个类 NewEmployee，继承 Employ 类。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NewEmployee</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span> <span class="c1"># 小括号内为所继承的父类名</span>
+    <span class="n">under_probation</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># 子类自己的属性</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">under_probation</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="c1"># 调用父类的初始化函数</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">under_probation</span> <span class="o">=</span> <span class="n">under_probation</span>
+    
+    <span class="c1"># 重写父类的方法</span>
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi! My name is </span><span class="si">%s</span><span class="s1">.&#39;</span><span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    
+    <span class="c1"># 调用父类的方法</span>
+    <span class="k">def</span> <span class="nf">age_range</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">:</span> <span class="c1"># 调用父类的方法</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am over 30s&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am under 30s&#39;</span><span class="p">)</span>
+            
+    <span class="c1"># 自己的方法</span>
+    <span class="k">def</span> <span class="nf">probabtion_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">under_probation</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am under probation.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I have passed probation.&#39;</span><span class="p">)</span>
+    
+    
+<span class="n">tom</span> <span class="o">=</span> <span class="n">NewEmployee</span><span class="p">(</span><span class="n">under_probation</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">department</span> <span class="o">=</span> <span class="s1">&#39;engineering school&#39;</span><span class="p">)</span>
+<span class="n">tom</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+<span class="n">tom</span><span class="o">.</span><span class="n">probabtion_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi! My name is John.
+I have passed probation.
+</pre></div>
+</div>
+</div>
+</div>
+<p>上面的例子中，使用了<code class="docutils literal notranslate"><span class="pre">super()</span></code>调用了父类的 __init__ 与 get_age 方法，并重写父类的 say_hello 方法。</p>
+<p>Python 同样有支持多继承形式，即一个子类可以继承多个父类，将多个类的名称放入子类的小括号里面即可。例如，我们定义个 NewAcademicEmpolyee 类，同时继承了类 Employee 与 NewEmployee。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NewAcademicEmployee</span><span class="p">(</span><span class="n">NewEmployee</span><span class="p">,</span> <span class="n">Employee</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am a new academic empolyee.&#39;</span><span class="p">)</span>
+
+<span class="c1"># 实例化子类时，初始化方法中的参数包括所有父类初始化方法中需要的参数</span>
+<span class="n">lily</span> <span class="o">=</span> <span class="n">NewAcademicEmployee</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Lily&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;art school&#39;</span><span class="p">)</span>
+<span class="n">lily</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, I am a new academic empolyee.
+</pre></div>
+</div>
+</div>
+</div>
+<p>上面的例子中，子类在初始化时，需要传递所有父类初始化方法中需要的参数。</p>
+</section>
+<section id="id2">
+<h2><span class="section-number">10.3. </span>类的专有方法<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>以前后缀双下划线命名的方法为类的专有方法，又称作魔术方法，用以实现一些特定功能。</p>
+<p>下面表格中总结了一些常用的专有方法。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>专有方法</p></th>
+<th class="head text-center"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>__init__</p></td>
+<td class="text-center"><p>创建对象时自动调用，用于初始化类的实例</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>__str__</p></td>
+<td class="text-center"><p>给用户看的，打印对象时显示的内容</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>__repr__</p></td>
+<td class="text-center"><p>给开发者看的，打印对象时显示的内容</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>__getitem__</p></td>
+<td class="text-center"><p>获取对象中元素，使得对象可以像数组一样访问类中元素</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>__setitem__</p></td>
+<td class="text-center"><p>设置对象中元素，使得对象可以像数组一样修改类中元素</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>__add__</p></td>
+<td class="text-center"><p>实现对象的加法运算</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>__sub__</p></td>
+<td class="text-center"><p>实现对象的减法运算</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>__mul__</p></td>
+<td class="text-center"><p>实现对象的乘法运算</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>__truediv__</p></td>
+<td class="text-center"><p>实现对象的除法运算</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>__truediv__</p></td>
+<td class="text-center"><p>实现对象的除法运算</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>__eq__</p></td>
+<td class="text-center"><p>自定义对象比较规则</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>__hash__</p></td>
+<td class="text-center"><p>定义对象的哈希值，让对象支持 set 或 dict 存储</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>__class__</p></td>
+<td class="text-center"><p>返回对象所属类的名字</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>__call__</p></td>
+<td class="text-center"><p>让实例可以像函数一样被调用</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>下面的一个例子展示了 <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> 与 <code class="docutils literal notranslate"><span class="pre">__str__</span></code>的用法。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Person(&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old&quot;</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>  <span class="c1"># 调用 __repr__</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>        <span class="c1"># 默认调用 __str__, 如果 __str__ 未定义，会默认调用 __repr__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Person(&#39;Bob&#39;, 30)
+Bob, 30 years old
+</pre></div>
+</div>
+</div>
+</div>
+<p>如果没有定义 __repr__ 或 __str__ 方法，则打印对象时会显示该对象的内存地址。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># 类中没有 __str__ 或 __repr__ 方法，打印显示地址</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>  <span class="c1"># 返回对象所属类的名字</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x7f77b8de4e20&gt;
+&lt;class &#39;__main__.Dog&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>__main__ 代表的是当前运行的 Python 文件（以 .py 后缀命名的文件）</p>
+</div>
+<p>下面的例子，展示了如何通过 __getitem__ 方法实现像访问数组一样访问实例。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>  <span class="c1"># 支持整数索引和切片</span>
+
+<span class="n">my_list</span> <span class="o">=</span> <span class="n">MyList</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># 像数组切片一样访问类中元素</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20, 30]
+</pre></div>
+</div>
+</div>
+</div>
+<p>下面的例子，实现了两个实例的相加。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vector</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Vector(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">)</span>  <span class="c1"># 输出: Vector(6, 8)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vector(6, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<p>下面的例子，展示了如何比较两个实例。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+    
+    <span class="c1"># 若姓名与年龄都相同，表示两个实例相同</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">age</span>
+        <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># 不是 Person 对象，直接返回 False</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p3</span><span class="p">)</span>  <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>下面的例子，实现了实例类似函数的调用。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Instance called!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Arguments:&quot;</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">obj</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 像函数一样调用实例</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Instance called!
+Arguments: (1, 2) {&#39;a&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">10.4. </span>类方法与静态方法<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <script src="https://giscus.app/client.js"
         data-repo="robinchen121/book-Python-Data-Science"
         data-repo-id="R_kgDOKFdyOw"
@@ -657,7 +938,9 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.1. 类的初始化 __init__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2. 类的继承</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的专有方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4. 类方法与静态方法</a></li>
 </ul>
   </nav></div>
 
