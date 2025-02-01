@@ -445,10 +445,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.1. 类的初始化 __init__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2. 类的继承与方法重写</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的专有方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.1. 类, 对象, 属性, 方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.2. 类的初始化 __init__</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4. 类的专有方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#name">10.5. 特殊变量 __name__</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.6. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.7. dateclass</a></li>
 </ul>
             </nav>
         </div>
@@ -463,6 +466,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">10. </span>Python 面向对象编程<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <p>Python 是一种支持面向对象编程（Object Oriented Programming, OOP）的语言。面向对象编程是一种编程范式，它将数据和操作数据的函数封装在对象中，通过类（Class）和对象（Object）来组织代码，使得代码更易于理解、维护、扩展和重用, 特别适合开发大型、复杂的系统。</p>
+<section id="id1">
+<h2><span class="section-number">10.1. </span>类, 对象, 属性, 方法<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>面向对象编程中，类是对象的模板或蓝图，描述一类事物的属性（变量）和行为（方法）；而对象是类的实例，具体体现类的属性和行为。例如，定义企业员工为一个类，该类中，可以包含姓名，工资，工龄，职务等属性；而具体的一个企业员工张三或李四就是这个类的一个实例。打个比喻，类就像是“蛋糕模具”，对象是用这个模具做出的“蛋糕”。</p>
 <p>Python 通过 <code class="docutils literal notranslate"><span class="pre">class</span></code> 来定义一个类，并在类中进一步定义类的<code class="docutils literal notranslate"><span class="pre">属性</span></code>（数据）和<code class="docutils literal notranslate"><span class="pre">方法</span></code>（函数）。语法格式如下：</p>
 <table>   
@@ -500,8 +505,8 @@ document.write(`
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, everyone!&#39;</span><span class="p">)</span>
     
 <span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span> <span class="c1"># 实例化一个类</span>
-<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span> <span class="c1"># 访问类里的方法</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My department is </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span> <span class="c1"># 访问类里的属性  </span>
+<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span> <span class="c1"># 访问对象里的方法</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My department is </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span> <span class="c1"># 访问对象里的属性  </span>
 </pre></div>
 </div>
 </div>
@@ -526,7 +531,7 @@ My department is business schoool.
 </div>
 </div>
 </div>
-<p>如果直接在实例 john 访问私有属性 __age (例如 print(john.__age))，程序会报错。</p>
+<p>如果直接在对象 john 访问私有属性 __age (例如 print(john.__age))，程序会报错。</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">__age</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -537,9 +542,10 @@ My department is business schoool.
 <li><p>前缀单下划线命名的变量或函数为类的守保护属性或方法，可以在类外部直接访问，但不推荐访问。</p></li>
 </ul>
 </div>
+</section>
 <section id="init">
-<h2><span class="section-number">10.1. </span>类的初始化 __init__<a class="headerlink" href="#init" title="Permalink to this heading">#</a></h2>
-<p>类有一个名为 __init__() 的特殊方法，该方法在类实例化时会自动调用，进行实例的初始化。例如：</p>
+<h2><span class="section-number">10.2. </span>类的初始化 __init__<a class="headerlink" href="#init" title="Permalink to this heading">#</a></h2>
+<p>类有一个名为 __init__() 的特殊方法，该方法在类实例化时会自动调用，进行对象的初始化。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>  
@@ -579,8 +585,8 @@ My department is engineering school.
 <p>类的方法与普通函数有一个显著的区别，它们的第一个参数总是 self，self 代表的是类的实例。</p>
 </div>
 </section>
-<section id="id1">
-<h2><span class="section-number">10.2. </span>类的继承与方法重写<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2><span class="section-number">10.3. </span>类的继承与方法重写<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Python 支持类的继承，即一个类可以继承另一个类的所有属性和方法，还可以添加新的属性，新的方法或者重写另一个类的方法。</p>
 <p>例如，我们可以添加一个类 NewEmployee，继承 Employ 类。</p>
 <div class="cell docutils container">
@@ -647,8 +653,8 @@ I have passed probation.
 </div>
 <p>上面的例子中，子类在初始化时，需要传递所有父类初始化方法中需要的参数。</p>
 </section>
-<section id="id2">
-<h2><span class="section-number">10.3. </span>类的专有方法<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2><span class="section-number">10.4. </span>类的专有方法<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>以前后缀双下划线命名的方法为类的专有方法，又称作魔术方法，用以实现一些特定功能。</p>
 <p>下面表格中总结了一些常用的专有方法。</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -698,7 +704,7 @@ I have passed probation.
 <td class="text-center"><p>返回对象所属类的名字</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>__call__</p></td>
-<td class="text-center"><p>让实例可以像函数一样被调用</p></td>
+<td class="text-center"><p>让对象可以像函数一样被调用</p></td>
 </tr>
 </tbody>
 </table>
@@ -743,7 +749,7 @@ Bob, 30 years old
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x7f77b8de4e20&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x7fcc7887b400&gt;
 &lt;class &#39;__main__.Dog&#39;&gt;
 </pre></div>
 </div>
@@ -753,7 +759,7 @@ Bob, 30 years old
 <p class="admonition-title">Note</p>
 <p>__main__ 代表的是当前运行的 Python 文件（以 .py 后缀命名的文件）</p>
 </div>
-<p>下面的例子，展示了如何通过 __getitem__ 方法实现像访问数组一样访问实例。</p>
+<p>下面的例子，展示了如何通过 __getitem__ 方法实现像访问数组一样访问对象。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyList</span><span class="p">:</span>
@@ -774,7 +780,7 @@ Bob, 30 years old
 </div>
 </div>
 </div>
-<p>下面的例子，实现了两个实例的相加。</p>
+<p>下面的例子，实现了两个对象的相加。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vector</span><span class="p">:</span>
@@ -800,7 +806,7 @@ Bob, 30 years old
 </div>
 </div>
 </div>
-<p>下面的例子，展示了如何比较两个实例。</p>
+<p>下面的例子，展示了如何比较两个对象。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
@@ -830,7 +836,7 @@ False
 </div>
 </div>
 </div>
-<p>下面的例子，实现了实例类似函数的调用。</p>
+<p>下面的例子，实现了对象类似函数的调用。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
@@ -851,8 +857,135 @@ Arguments: (1, 2) {&#39;a&#39;: 3}
 </div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">10.4. </span>类方法与静态方法<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="name">
+<h2><span class="section-number">10.5. </span>特殊变量 __name__<a class="headerlink" href="#name" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> 是 Python 内置的特殊变量，可以表示当前类的名称，也可以表示当前模块的名称。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MyClass</span><span class="o">.</span><span class="vm">__name__</span> <span class="c1"># 返回类的名称</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;MyClass&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="vm">__name__</span> <span class="c1"># 返回模块的名称</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>当直接运行一个 Python 文件时，文件的名称为 ‘__main__’。因此，在编程调试某个程序文件时，可以用一个判断语句，根据文件的名字判断文件是否为当前直接运行的文件。例如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># myscript.py</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This script is running directly&quot;</span><span class="p">)</span>
+    <span class="n">hello</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This script is imported as a module&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This script is running directly
+Hello, world!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">10.6. </span>类方法与静态方法<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>上面的例子中，类中方法的第一个参数总是 self，这类方法为<code class="docutils literal notranslate"><span class="pre">普通方法</span></code>，只能被对象调用。</p>
+<p>除了普通方法外，还有<code class="docutils literal notranslate"><span class="pre">类方法</span></code>与<code class="docutils literal notranslate"><span class="pre">静态方法</span></code>。</p>
+<ul class="simple">
+<li><p>静态方法: 用 &#64;staticmethod 装饰的不带 self 参数的方法叫做静态方法，类的静态方法可以没有参数，可以直接使用类名调用</p></li>
+<li><p>类方法: 默认有个 cls 参数，可以被类和对象调用，需要加上 &#64;classmethod 装饰器</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span> <span class="c1"># 以@开头的名称为装饰器，用来说明特殊的函数</span>
+    <span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;静态方法&#39;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span><span class="c1"># 第一个参数为 cls</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;类方法&#39;</span><span class="p">)</span>
+
+    <span class="c1"># 普通方法</span>
+    <span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="c1"># 第一个参数为 self</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;普通方法&#39;</span><span class="p">)</span>
+
+
+
+<span class="n">MyClass</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span> <span class="c1"># 静态方法可以被类名直接调用</span>
+<span class="n">MyClass</span><span class="o">.</span><span class="n">a</span><span class="p">()</span> <span class="c1"># 类方法可以被类名直接调用</span>
+
+<span class="n">case</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="k">case</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span> <span class="c1"># 静态方法也可以被对象调用</span>
+<span class="k">case</span><span class="o">.</span><span class="n">a</span><span class="p">()</span> <span class="c1"># 类方法也可以被对象调用</span>
+<span class="k">case</span><span class="o">.</span><span class="n">b</span><span class="p">()</span> <span class="c1"># 普通方法只能被对象调用</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>静态方法
+类方法
+静态方法
+类方法
+普通方法
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dateclass">
+<h2><span class="section-number">10.7. </span>dateclass<a class="headerlink" href="#dateclass" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">dataclass</span></code> 是 Python 3.7 引入的装饰器，自动生成 __init__、__repr__、__eq__ 等方法，让数据类的编写更加简洁。</p>
+<p>一个例子：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="c1"># 声明 name 为字符串类型</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="c1"># 声明 age 为整数类型</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>上面的代码等同于：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="c1"># 冒号跟数据类型，可以声明变量的数据类型</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Person(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, age=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">)&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>可以看出，dataclass 与普通类的一个区别是，必须在定义中声明属性的数据类型，但是显著减少了代码量。</p>
 <script src="https://giscus.app/client.js"
         data-repo="robinchen121/book-Python-Data-Science"
         data-repo-id="R_kgDOKFdyOw"
@@ -937,10 +1070,13 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.1. 类的初始化 __init__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.2. 类的继承与方法重写</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的专有方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.1. 类, 对象, 属性, 方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.2. 类的初始化 __init__</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4. 类的专有方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#name">10.5. 特殊变量 __name__</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.6. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.7. dateclass</a></li>
 </ul>
   </nav></div>
 
