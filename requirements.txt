@@ -27,3 +27,4 @@ seaborn==0.10.1
 scikit-learn
 openpyxl # for pandas reading files
 statsmodels
+Ipympl # for animation in Jupyter notebook
