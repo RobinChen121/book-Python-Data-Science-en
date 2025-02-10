@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>7. Python 画图 &#8212; Python 数据科学</title>
   
@@ -19,55 +18,51 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'draw-pictures';</script>
-    <script src="_static/myfile.js"></script>
+    <script src="_static/myfile.js?v=78ba3122"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="8. 统计分析" href="line-regression.html" />
@@ -149,8 +144,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -172,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -204,6 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -233,9 +227,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -260,14 +254,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science/main?urlpath=lab/tree/data-science/draw-pictures.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Binder"
+   title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+    <img src="_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -409,10 +403,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -420,14 +414,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -479,10 +473,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Python 画图<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
 <p>本章将展示如何用 Python 的 matplotlib 工具包生成各种各样的图形，并简单介绍另外一个画图工具包 seaborn 如何生成更加美观与复杂的图形。</p>
 <section id="matplotlib-plot">
-<h2><span class="section-number">7.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>初识 matplotlib 与 <code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#matplotlib-plot" title="Link to this heading">#</a></h2>
 <p>使用 matplotlib 包画图时，我们一般加载里面的 pyplot 函数，并命名为 plt，然后使用<code class="docutils literal notranslate"><span class="pre">plot</span></code>函数画图。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -623,7 +617,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdf32b6e170&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a86b7f44c0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
@@ -636,7 +630,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdf207fd8a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a86b80c190&gt;]
 </pre></div>
 </div>
 <img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
@@ -649,7 +643,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdf20889840&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a86b038be0&gt;]
 </pre></div>
 </div>
 <img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
@@ -662,7 +656,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdf32c49780&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1a86b8760e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
@@ -719,7 +713,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d5ade64600337224c418242c9b7f94993582b359f8db54f853a93550ec54873d.png" src="_images/d5ade64600337224c418242c9b7f94993582b359f8db54f853a93550ec54873d.png" />
+<img alt="_images/370eb444c066960be1e8d44a5beb103d32d6068615c7f3b6e3ab607445acbe16.png" src="_images/370eb444c066960be1e8d44a5beb103d32d6068615c7f3b6e3ab607445acbe16.png" />
 </div>
 </div>
 <ul class="simple">
@@ -727,9 +721,9 @@ document.write(`
 </ul>
 </section>
 <section id="id1">
-<h2><span class="section-number">7.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>散点图，条形图，直方图<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="scatter">
-<h3><span class="section-number">7.2.1. </span><code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数<a class="headerlink" href="#scatter" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.2.1. </span><code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数<a class="headerlink" href="#scatter" title="Link to this heading">#</a></h3>
 <p>做散点图要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">scatter</span></code>函数，该函数的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -787,12 +781,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fc351d743f40747b68f0a05816d764eae5a4af9c6041d360ce6a275bb74bf9a1.png" src="_images/fc351d743f40747b68f0a05816d764eae5a4af9c6041d360ce6a275bb74bf9a1.png" />
+<img alt="_images/9a92bf45135cc33193349fa7d662980aaf570714f2ae3a4cc1b5ee7ca351849b.png" src="_images/9a92bf45135cc33193349fa7d662980aaf570714f2ae3a4cc1b5ee7ca351849b.png" />
 </div>
 </div>
 </section>
 <section id="bar-barh">
-<h3><span class="section-number">7.2.2. </span><code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数<a class="headerlink" href="#bar-barh" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.2.2. </span><code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">barh</span></code> 函数<a class="headerlink" href="#bar-barh" title="Link to this heading">#</a></h3>
 <p>条形图（bar chart），也称为柱状图，要用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">bar</span></code>函数生成，该函数的基本语法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -880,7 +874,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4fc89278c6683e0319d22ccfc773f296e51aa5d2c953f7a4ba5d47f2b56fda9c.png" src="_images/4fc89278c6683e0319d22ccfc773f296e51aa5d2c953f7a4ba5d47f2b56fda9c.png" />
+<img alt="_images/a7652db867d78314a83bebc76e13f45133d99daa301112a5fee14e51ad38cabc.png" src="_images/a7652db867d78314a83bebc76e13f45133d99daa301112a5fee14e51ad38cabc.png" />
 </div>
 </div>
 <p>横放条形图使用<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数，用法与<code class="docutils literal notranslate"><span class="pre">bar</span></code>基本一致。</p>
@@ -897,7 +891,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6e6b6556f7e1f7fcb477bd36e03408a12a24e900e1b7d4645eecbebfa2baf8ff.png" src="_images/6e6b6556f7e1f7fcb477bd36e03408a12a24e900e1b7d4645eecbebfa2baf8ff.png" />
+<img alt="_images/dac3989523e34d01d9cac4b958bc22548227ef26975f026995b19641aed9e202.png" src="_images/dac3989523e34d01d9cac4b958bc22548227ef26975f026995b19641aed9e202.png" />
 </div>
 </div>
 <p>若要将男生与女生的调查情况画出两个条形图一块显示，则可以使用<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数两次，并调整<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数的条形图位置坐标以及相应刻度，使得两组条形图能够并排显示。</p>
@@ -942,12 +936,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/480389863fbf5db95c1224d74539d3ec26bc3af2e06ae1424cbad4a36b7651c1.png" src="_images/480389863fbf5db95c1224d74539d3ec26bc3af2e06ae1424cbad4a36b7651c1.png" />
+<img alt="_images/3ec8206b4c08285391b8e8d5bcf499b2b03576e7b352a8b9a2828652cda1a01a.png" src="_images/3ec8206b4c08285391b8e8d5bcf499b2b03576e7b352a8b9a2828652cda1a01a.png" />
 </div>
 </div>
 </section>
 <section id="hist">
-<h3><span class="section-number">7.2.3. </span><code class="docutils literal notranslate"><span class="pre">hist</span></code>函数<a class="headerlink" href="#hist" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.2.3. </span><code class="docutils literal notranslate"><span class="pre">hist</span></code>函数<a class="headerlink" href="#hist" title="Link to this heading">#</a></h3>
 <p>直方图（histogram）虽然在样式上类似条形图，但它们的作用不一样。直方图用不同的矩形表示频数，常用来观察一组数据的概率分布。在直角坐标中，用横轴表示数据分组，纵轴表示频数或频率，各组与相应的频数就形成了一个个矩形，即直方图。画直方图用到 pyplot 中的<code class="docutils literal notranslate"><span class="pre">hist</span></code>函数，它的基本语法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -984,15 +978,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d19c24220b936b3962f2f23a4457e896757def0bc6627a7c842753978a3b8282.png" src="_images/d19c24220b936b3962f2f23a4457e896757def0bc6627a7c842753978a3b8282.png" />
+<img alt="_images/76c3e36a851a87eae4f7be049bb94e01bc47ee61d3ae0fe1546b3bfce1a88566.png" src="_images/76c3e36a851a87eae4f7be049bb94e01bc47ee61d3ae0fe1546b3bfce1a88566.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="id2">
-<h2><span class="section-number">7.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>饼图，箱线图<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="pie">
-<h3><span class="section-number">7.3.1. </span><code class="docutils literal notranslate"><span class="pre">pie</span></code>函数<a class="headerlink" href="#pie" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.3.1. </span><code class="docutils literal notranslate"><span class="pre">pie</span></code>函数<a class="headerlink" href="#pie" title="Link to this heading">#</a></h3>
 <p>饼图（pie char）是一个划分为几个扇形的圆形统计图表，一般用于描述频率或百分比之间的相对关系。在饼图中，每个扇区的弧长（以及圆心角和面积）的大小与其所表示的数量呈固定比例。画饼图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">pie</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1048,12 +1042,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/31faa69afbcfb758eebd12417c8e47a9357f1895a704998585c84074ade99c61.png" src="_images/31faa69afbcfb758eebd12417c8e47a9357f1895a704998585c84074ade99c61.png" />
+<img alt="_images/a042f01c4ea84c85d301511db682267649c253d3fa1d3cbb4b39d9fa71a58b82.png" src="_images/a042f01c4ea84c85d301511db682267649c253d3fa1d3cbb4b39d9fa71a58b82.png" />
 </div>
 </div>
 </section>
 <section id="boxplot">
-<h3><span class="section-number">7.3.2. </span><code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数<a class="headerlink" href="#boxplot" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.3.2. </span><code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数<a class="headerlink" href="#boxplot" title="Link to this heading">#</a></h3>
 <p>箱线图（box plot）是一种用来显示数据统计分布情况的图形，包括数据的最大值、最小值、中位数、分位数等特征。画箱线图使用 pyplot 中的<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1197,13 +1191,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b48c1d645c8cf51bde306dfd7e74aae3d1540e142d6fc0ec53e38a33b430f289.png" src="_images/b48c1d645c8cf51bde306dfd7e74aae3d1540e142d6fc0ec53e38a33b430f289.png" />
+<img alt="_images/0aff8d2db7a0aa2ea8351d4759eb89b3bbb8a14237ec5d5afe07e8fab7560124.png" src="_images/0aff8d2db7a0aa2ea8351d4759eb89b3bbb8a14237ec5d5afe07e8fab7560124.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="subplot">
-<h2><span class="section-number">7.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>子图函数 subplot<a class="headerlink" href="#subplot" title="Link to this heading">#</a></h2>
 <p>若要 pyplot 一次生成多个图形，一般要用到<code class="docutils literal notranslate"><span class="pre">subplot</span></code>函数，它的基本语法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1277,13 +1271,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" src="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" />
+<img alt="_images/3e530914cd236a2a51dda046cb266f6a3d8f7dcc346e3c009e55c54567a469f7.png" src="_images/3e530914cd236a2a51dda046cb266f6a3d8f7dcc346e3c009e55c54567a469f7.png" />
 </div>
 </div>
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
 </section>
 <section id="seaborn">
-<h2><span class="section-number">7.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>seaborn 简介<a class="headerlink" href="#seaborn" title="Link to this heading">#</a></h2>
 <p>seanborn 是 Python 的另外一个常用工具包，它基于 matplotlib，但画出的图形更加美观些，并且与 Pandas 的数据类型结合地较好。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1339,7 +1333,7 @@ document.write(`
 </div>
 </div>
 <section id="relplot">
-<h3><span class="section-number">7.5.1. </span><code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数<a class="headerlink" href="#relplot" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.5.1. </span><code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数<a class="headerlink" href="#relplot" title="Link to this heading">#</a></h3>
 <p>可以看出，tips 数据集载入后，是 Pandas 的 DataFrame 类型，seaborn 可以方便地针对 DataFrame 数据集画图。下面，我们以其中的<code class="docutils literal notranslate"><span class="pre">relplot</span></code> 函数为例，讲解如何使用 seanborn 画图。<code class="docutils literal notranslate"><span class="pre">relplot</span></code>函数的基本用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1406,7 +1400,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1f3f2060c3737d464db11f18a1eb5906518d673751fcbe3bbb2c095d31d84667.png" src="_images/1f3f2060c3737d464db11f18a1eb5906518d673751fcbe3bbb2c095d31d84667.png" />
+<img alt="_images/e86c86ae4be71c26408c4dfefdd61de09a3cffeb5f16f70f0f3e2ae86626d484.png" src="_images/e86c86ae4be71c26408c4dfefdd61de09a3cffeb5f16f70f0f3e2ae86626d484.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1420,13 +1414,13 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/94d66f59ffdb1e173b69a44dbb5d69a00e9bcbd25747e267515af4919f2f0ec4.png" src="_images/94d66f59ffdb1e173b69a44dbb5d69a00e9bcbd25747e267515af4919f2f0ec4.png" />
+<img alt="_images/8fae489bcfb9cfd62a3f8a802200c27b9c6b74c1faf3a0d54ec076c0ec128a95.png" src="_images/8fae489bcfb9cfd62a3f8a802200c27b9c6b74c1faf3a0d54ec076c0ec128a95.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
 </section>
 <section id="barplot">
-<h3><span class="section-number">7.5.2. </span><code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数<a class="headerlink" href="#barplot" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">7.5.2. </span><code class="docutils literal notranslate"><span class="pre">barplot</span></code>函数<a class="headerlink" href="#barplot" title="Link to this heading">#</a></h3>
 <p>seaborn 自带一些函数生成常见的图形，例如<code class="docutils literal notranslate"><span class="pre">barplot</span></code>生成条形图，<code class="docutils literal notranslate"><span class="pre">histplot</span></code>生成直方图，<code class="docutils literal notranslate"><span class="pre">boxplot</span></code>生成箱线图：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1441,7 +1435,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/03a76afc607dd32d725bde3d1907e5d1c7e5bb6828bc7070ec2c374b32582006.png" src="_images/03a76afc607dd32d725bde3d1907e5d1c7e5bb6828bc7070ec2c374b32582006.png" />
+<img alt="_images/2013e436a87475b12c89979db9cf2a890c8ffc74ae746c89417d76edcb588ff1.png" src="_images/2013e436a87475b12c89979db9cf2a890c8ffc74ae746c89417d76edcb588ff1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1477,7 +1471,7 @@ document.write(`
 </section>
 </section>
 <section id="id3">
-<h2><span class="section-number">7.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>练习<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="draw-heart">
 
 <p class="admonition-title"><span class="caption-number">Exercise 7.1 </span></p>
@@ -1745,8 +1739,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

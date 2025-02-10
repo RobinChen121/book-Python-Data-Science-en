@@ -21,3 +21,4 @@ parts:
   - file: line-regression
   - file: introduction-to-crawler
   - file: introduction-to-class
+  - file: introduction-to-parallel
