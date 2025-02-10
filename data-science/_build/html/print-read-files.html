@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>6. Python 输出，读写文件 &#8212; Python 数据科学</title>
   
@@ -18,49 +19,53 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'print-read-files';</script>
-    <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/myfile.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="7. Python 画图" href="draw-pictures.html" />
@@ -142,6 +147,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -154,8 +161,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
+    <img src="_static/logo.gif" class="logo__image only-light" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.gif" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
@@ -163,7 +170,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -225,9 +232,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -252,14 +259,14 @@
       
       <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science/main?urlpath=lab/tree/data-science/print-read-files.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -401,10 +408,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -412,14 +419,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -458,9 +465,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">6. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <section id="print">
-<h2><span class="section-number">6.1. </span>print 函数输出<a class="headerlink" href="#print" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>print 函数输出<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
 <p>Python 输出非常方便，用<code class="docutils literal notranslate"><span class="pre">print()</span></code>函数，小括号里面可以是数字、字符串、列表、字典等类型。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -551,7 +558,7 @@ age is 25
 </div>
 </section>
 <section id="f">
-<h2><span class="section-number">6.2. </span>f 函数输出<a class="headerlink" href="#f" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>f 函数输出<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h2>
 <p>输出也可以用 <code class="docutils literal notranslate"><span class="pre">f{expression}</span></code>，大括号中的 exression 可以是一个变量名，例如，下面的代码打印出一个数组列表：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,7 +619,7 @@ age is 25
 </div>
 </section>
 <section id="format">
-<h2><span class="section-number">6.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h2>
 <p>用<code class="docutils literal notranslate"><span class="pre">format</span></code>也可以实现多种格式化输出，它的基本用法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -805,7 +812,7 @@ the numbers are 3 and 4.56 and 3
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">6.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>若要格式化输出，要用到百分号 %，语法规则类似 c 语言，具体参考下面的例子。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -896,7 +903,7 @@ the numbers are 3 and 4.56 and 3
 <p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
 </section>
 <section id="id2">
-<h2><span class="section-number">6.5. </span>读写文件<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Python 对文本文件的操作步骤为<code class="docutils literal notranslate"><span class="pre">打开——操作——关闭</span></code>：打开计算机存储位置的一个文件，进行一些读写操作，然后关闭这个文件。打开后的文件处于占用状态，此时计算机的其他进程不能操作这个文件；文件关闭后，其他进程才能操作这个文件。</p>
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数打开一个文件对象，常用的语法规则为：</p>
 <table>   
@@ -1068,7 +1075,7 @@ his name is li si
 <p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="output">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
@@ -1256,8 +1263,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
