@@ -161,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
+    <img src="_static/logo.gif" class="logo__image only-light" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.gif" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
@@ -202,6 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -820,8 +821,8 @@ document.write(`
 Dep. Variable:                   不良贷款   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.699
 Method:                 Least Squares   F-statistic:                     56.75
-Date:                Sat, 01 Feb 2025   Prob (F-statistic):           1.18e-07
-Time:                        20:09:10   Log-Likelihood:                -51.508
+Date:                Mon, 10 Feb 2025   Prob (F-statistic):           1.18e-07
+Time:                        18:05:47   Log-Likelihood:                -51.508
 No. Observations:                  25   AIC:                             107.0
 Df Residuals:                      23   BIC:                             109.5
 Df Model:                           1                                         
@@ -891,8 +892,8 @@ Notes:
 Dep. Variable:                 各项贷款余额   R-squared:                       0.812
 Model:                            OLS   Adj. R-squared:                  0.786
 Method:                 Least Squares   F-statistic:                     30.32
-Date:                Sat, 01 Feb 2025   Prob (F-statistic):           8.05e-08
-Time:                        20:09:10   Log-Likelihood:                -123.70
+Date:                Mon, 10 Feb 2025   Prob (F-statistic):           8.05e-08
+Time:                        18:05:47   Log-Likelihood:                -123.70
 No. Observations:                  25   AIC:                             255.4
 Df Residuals:                      21   BIC:                             260.3
 Df Model:                           3                                         
@@ -1478,16 +1479,16 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 0 2 2 2 0 2 0 1 0 1 2 0 2 0 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 2 1 1 1 2 1 2 0 2 0 1 2 1 2 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1]
 类别1
-[&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;广  东&#39;]
-类别2
 [&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
-类别3
+类别2
 [&#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;吉  林&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
+类别3
+[&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;广  东&#39;]
 </pre></div>
 </div>
-<img alt="_images/39da3a30e314930e372143b5371605889e5cbe33fb9750bb724f17085e4bae2f.png" src="_images/39da3a30e314930e372143b5371605889e5cbe33fb9750bb724f17085e4bae2f.png" />
+<img alt="_images/a43ce123d83e535af10e3f6a13c2dbd5ac56f95ce1f8e35d4f580224cc9f2ba6.png" src="_images/a43ce123d83e535af10e3f6a13c2dbd5ac56f95ce1f8e35d4f580224cc9f2ba6.png" />
 </div>
 </div>
 </section>
@@ -1534,12 +1535,12 @@ Notes:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>神经网络预测结果评价报告：
                precision    recall  f1-score   support
 
-           0       0.95      1.00      0.98        42
-           1       1.00      0.97      0.99        72
+           0       0.89      0.95      0.92        44
+           1       0.97      0.93      0.95        70
 
-    accuracy                           0.98       114
-   macro avg       0.98      0.99      0.98       114
-weighted avg       0.98      0.98      0.98       114
+    accuracy                           0.94       114
+   macro avg       0.93      0.94      0.94       114
+weighted avg       0.94      0.94      0.94       114
 </pre></div>
 </div>
 </div>

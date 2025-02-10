@@ -161,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
+    <img src="_static/logo.gif" class="logo__image only-light" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.gif" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
@@ -202,6 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -452,10 +453,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">9.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 爬虫实例 1：抓小说</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">9.4. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.5. 后记</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 正则表达式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.4. 爬虫实例 1：抓小说</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">9.5. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.6. 后记</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -927,19 +929,6 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>正则表达式是计算机科学中用来描述字符串的一种表达式。正则表达式定义一个字符串表达规则，只要字符串满足这个规则，就算则匹配。可以通过字符串结合符号 .*?&lt;=()[]{}\d\w 等定义多种表达规则，并结合函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>,<code class="docutils literal notranslate"><span class="pre">search()</span></code>,<code class="docutils literal notranslate"><span class="pre">match()</span></code>等检索字符串，具体可以进一步查阅相关资料。</p>
 </div>
-<p>正则表达式中：</p>
-<ul class="simple">
-<li><p>. 匹配任意一个字符</p></li>
-<li><p>* 匹配 0 个或多个表达式</p></li>
-<li><p>+ 匹配 1 个或多个表达式</p></li>
-<li><p>? 匹配 0 个或1个前面定义的正则表达式片段，非贪婪方式</p></li>
-<li><p>\s 表示匹配任意空白字符</p></li>
-<li><p>\S 表示匹配任意非空字符</p></li>
-<li><p>\d 表示匹配任意数字</p></li>
-<li><p>-\D 表示匹配任意非数字</p></li>
-<li><p>^ 匹配一行字符串的开头</p></li>
-<li><p>{n} 精确匹配前面的 n 个表达式</p></li>
-</ul>
 <p>BeautifulSoup 另外一个常用的获取文本内容的函数为<code class="docutils literal notranslate"><span class="pre">get_text</span></code>。与直接使用标签的属性 text 相比，<code class="docutils literal notranslate"><span class="pre">get_text</span></code> 更加灵活，能够方便地实现文本换行。它的一般用法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1021,7 +1010,180 @@ document.write(`
 </section>
 </section>
 <section id="id2">
-<h2><span class="section-number">9.3. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.3. </span>正则表达式<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>正则表达式是计算机科学中用来描述字符串的一种表达式。正则表达式定义一个字符串表达规则，只要字符串满足这个规则，就算匹配成功。可以通过字符串结合符号 .*?&lt;=()[]{}\d\w 等定义多种表达规则，并结合函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>,<code class="docutils literal notranslate"><span class="pre">search()</span></code>,<code class="docutils literal notranslate"><span class="pre">match()</span></code>等检索字符串。通过正则表达式，我们可以实现更加复杂的文本检索。</p>
+<p>一些常见的正则表达式：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>表达式</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>.</p></td>
+<td class="text-left"><p>匹配任意一个字符</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>*</p></td>
+<td class="text-left"><p>匹配 0 个或多个表达式</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>+</p></td>
+<td class="text-left"><p>匹配 1 个或多个表达式</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>.*</p></td>
+<td class="text-left"><p>匹配 0 个或多个字符</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>.+</p></td>
+<td class="text-left"><p>匹配 1 个或多个字符</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>?</p></td>
+<td class="text-left"><p>匹配 0 个 或 1 个前面的字符或正则表达式</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>(?= )</p></td>
+<td class="text-left"><p>匹配但不包含等号后面的内容</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>\s</p></td>
+<td class="text-left"><p>表示匹配 0 个或多个空格</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>\s*</p></td>
+<td class="text-left"><p>表示匹配 1 个或多个空格</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>\s+</p></td>
+<td class="text-left"><p>表示匹配任意空格</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>\S</p></td>
+<td class="text-left"><p>表示匹配任意非空字符</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>\d</p></td>
+<td class="text-left"><p>表示匹配任意数字</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>\D</p></td>
+<td class="text-left"><p>表示匹配任意非数字</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>^</p></td>
+<td class="text-left"><p>匹配一行字符串的开头</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>( )</p></td>
+<td class="text-left"><p>用来提取小括号内正则表达式匹配的内容</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>[ ]</p></td>
+<td class="text-left"><p>用来匹配中括号内所包含的任意一个字符，例如 [abc] 匹配 ‘a’，’b’或’c’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>{n}</p></td>
+<td class="text-left"><p>精确匹配 n 个前面的表达式，例如 ‘o{2}’匹配 ‘food’ 中的两个o</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>{n, m}</p></td>
+<td class="text-left"><p>匹配 n 到 m 次由前面的正则表达式</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>\b</p></td>
+<td class="text-left"><p>匹配单词边界</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>\w</p></td>
+<td class="text-left"><p>匹配字母/数字/下划线，不包括标点符号</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>\w*</p></td>
+<td class="text-left"><p>匹配 0 个或多个字母/数字/下划线</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>\w+</p></td>
+<td class="text-left"><p>匹配 1 个或多个字母/数字/下划线</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>[A-Za-z0-9]+</p></td>
+<td class="text-left"><p>匹配 1 个或多个字母/数字/下划线</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>一些例子：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My name is Alice.&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;My name is (.+)&quot;</span>
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># 输出: Alice.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My name is Alice.&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;My name is (\w*)&quot;</span> <span class="c1"># 不输出标吊符号</span>
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># 输出: Alice</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text1</span> <span class="o">=</span> <span class="s2">&quot;color&quot;</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="s2">&quot;colour&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;colou?r&quot;</span>  <span class="c1"># “u” 出现 0 次或 1 次</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text1</span><span class="p">)))</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text2</span><span class="p">)))</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;apple123 apple apple456&quot;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;apple(?=\d)&quot;</span>  <span class="c1"># 只匹配后面是数字的 &quot;apple&quot;，但不包含数字</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># 输出: [&#39;apple&#39;, &#39;apple&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apple&#39;, &#39;apple&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;fod and ffood are not food&#39;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\b\S*o</span><span class="si">{2}</span><span class="s1">\S*\b&#39;</span>  <span class="c1"># 匹配包含至少两个 &#39;o&#39; 的单词，或 r&#39;\b\w*o{2}\S*\w&#39;</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># 输出: [&#39;ffood&#39;, &#39;food&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ffood&#39;, &#39;food&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">9.4. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>下面，我们举例如何用爬虫抓取网上的《三国演义》小说，并将每回的内容下载到电脑里。</p>
 <p>首先，找到一个包含《三国演义》小说的网站，本例中，使用了古诗文网：https://so.gushiwen.cn/guwen/book_46653FD803893E4F7F702BCF1F7CCE17.aspx</p>
 <p>然后，在网页的空白处，单击鼠标右键，查看网页源代码：</p>
@@ -1110,7 +1272,7 @@ document.write(`
 <p>我们可以复制一部分信息或全部信息，放到 request 函数的 headers 参数里面。</p>
 </section>
 <section id="top-250">
-<h2><span class="section-number">9.4. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.5. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Permalink to this heading">#</a></h2>
 <p>我们想获取豆瓣高分评价的 250 部电影的信息：电影名字，导演，上映年代，评分，评分人数等。打开豆瓣 top 250 的网页链接 https://movie.douban.com/top250?start= ，发现每个网页显示 25 部电影，一共有 10 个挖网页，网页地址与链接中的 start = 后面的数字有关。例如第 3 个子网页的链接地址是 ‘https://movie.douban.com/top250?start=50 ，根据这个规律，我们可以用一个 for 循环，将 10 个网页分别打开抓取信息。</p>
 <p>打开一个网页，单击右键查看网页源代码，如下图所示：</p>
 <p><img alt="douban1.png" src="_images/douban1.PNG" /></p>
@@ -1367,8 +1529,8 @@ document.write(`
 <img alt="douban6.png" src="_images/douban6.png" />
 <img alt="douban7.png" src="_images/douban7.png" /></p>
 </section>
-<section id="id3">
-<h2><span class="section-number">9.5. </span>后记<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2><span class="section-number">9.6. </span>后记<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>不同的网站的爬虫技巧经常不一样，要具体网站具体分析。</p></li>
 <li><p>由于一些网站经常更新数据的存储地址或源代码，某段时间的爬虫代码可能在下一个时间段就不能用了，爬虫代码也要更新。</p></li>
@@ -1377,8 +1539,8 @@ document.write(`
 </ul>
 <p>近年来，许多网站都提高了反爬手段防止网站的数据被无端获取。因此，提醒读者避免过度使用爬虫，给一些网站造成不必要的访问负担。</p>
 </section>
-<section id="id4">
-<h2><span class="section-number">9.6. </span>练习<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2><span class="section-number">9.7. </span>练习<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <div class="exercise admonition" id="crab-poem">
 
 <p class="admonition-title"><span class="caption-number">Exercise 9.1 </span></p>
@@ -1499,10 +1661,11 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">9.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 爬虫实例 1：抓小说</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">9.4. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.5. 后记</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 正则表达式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.4. 爬虫实例 1：抓小说</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">9.5. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.6. 后记</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7. 练习</a></li>
 </ul>
   </nav></div>
 
