@@ -799,8 +799,11 @@ document.write(`
         <td style="text-align:left">pip uninstall [package_name]</td>
     </tr>
     <tr>
-        <td style="text-align:left">更新包</td>
+        <td rowspan =2 style="text-align:left">更新包</td>
         <td style="text-align:left">pip install [package_name] -U</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">或 pip install [package_name] --upgrade </td>
     </tr>
     <tr>
         <td style="text-align:left">显示已安装包列表&nbsp;&nbsp;</td>
@@ -811,7 +814,14 @@ document.write(`
         <td style="text-align:left">pip search [package_name]</td>
     </tr>
 </table>
-<br /><p>Anaconda 也可以通过 Anaconda 自带的 Conda 工具从 Anaconda 库中安装包。Windows 系统中的方法是：在 Windows 菜单栏里，点击 Anaconda Prompt，打开 Anaconda 的命令行窗口，然后输入不同的指令。语法与 pip 基本相同，区别在于把命令中的 pip 替换为 conda。</p>
+<br /><div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>pip install [package_name] -U 等价于 pip install -U [package_name]</p></li>
+<li><p>pip install [package_name] –upgrade 等价于 pip install –upgrade [package_name]</p></li>
+</ul>
+</div>
+<p>Anaconda 也可以通过 Anaconda 自带的 Conda 工具从 Anaconda 库中安装包。Windows 系统中的方法是：在 Windows 菜单栏里，点击 Anaconda Prompt，打开 Anaconda 的命令行窗口，然后输入不同的指令。语法与 pip 基本相同，区别在于把命令中的 pip 替换为 conda。</p>
 <p>例如，安装一个金融股票包<code class="docutils literal notranslate"><span class="pre">tushare</span></code>，在命令号窗口输入：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span>
 </pre></div>
@@ -917,21 +927,21 @@ document.write(`
 <p>常用的几个数值表示函数：</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
+<tr class="row-odd"><th class="head text-left"><p>函数</p></th>
 <th class="head text-left"><p>含义</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>ceil(x)</p></td>
+<tr class="row-even"><td class="text-left"><p>ceil(x)</p></td>
 <td class="text-left"><p>向上取整，返回不小于 <span class="math notranslate nohighlight">\(x\)</span> 的最小整数</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>floor(x)</p></td>
+<tr class="row-odd"><td class="text-left"><p>floor(x)</p></td>
 <td class="text-left"><p>向下取整，返回不大于 <span class="math notranslate nohighlight">\(x\)</span> 的最小整数</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>factorial(x)</p></td>
+<tr class="row-even"><td class="text-left"><p>factorial(x)</p></td>
 <td class="text-left"><p>返回整数 <span class="math notranslate nohighlight">\(x\)</span> 的阶乘</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>fsum(iterable)</p></td>
+<tr class="row-odd"><td class="text-left"><p>fsum(iterable)</p></td>
 <td class="text-left"><p>返回可迭代对象(元组, 列表等)中元素的总和，元素须全部为数值</p></td>
 </tr>
 </tbody>
