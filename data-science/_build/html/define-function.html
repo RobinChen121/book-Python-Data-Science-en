@@ -1095,7 +1095,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f9198784850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f95b1e6de70&gt;
 </pre></div>
 </div>
 </div>
@@ -1178,7 +1178,7 @@ final x is 18
     <tr>
         <td style="text-align:left">except [异常类型]:</td>
     </tr> 
-    <tr>
+    <tr style="border-bottom:solid">
         <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<语句块2></td>
     </tr>
 </table>
@@ -1220,33 +1220,35 @@ final x is 18
 </div>
 <p>上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。</p>
 <p>常见的异常类型还有：</p>
-<table>   
-    <tr style="border-top:solid">
-        <td style="text-align:left">AttributeError</td>
-        <td style="text-align:left">访问对象不存在的属性或方法</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">IndexErro</td>
-        <td style="text-align:left">访问超出列表范围的索引</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">SyntaxError</td>
-        <td style="text-align:left">语法错误</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">NameError</td>
-        <td style="text-align:left">访问未定义的变量或函数时发生的错误</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">TypeError</td>
-        <td style="text-align:left">调用函数时，传递参数的类型错误</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">ModuleNotFoundError</td>
-        <td style="text-align:left">导入不存在的模块或找不到模块</td>
-    </tr>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>异常类型</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AttributeError</p></td>
+<td><p>访问对象不存在的属性或方法</p></td>
+</tr>
+<tr class="row-odd"><td><p>IndexError</p></td>
+<td><p>访问超出列表范围的索引</p></td>
+</tr>
+<tr class="row-even"><td><p>SyntaxError</p></td>
+<td><p>语法错误</p></td>
+</tr>
+<tr class="row-odd"><td><p>NameError</p></td>
+<td><p>访问未定义的变量或函数时发生的错误</p></td>
+</tr>
+<tr class="row-even"><td><p>TypeError</p></td>
+<td><p>调用函数时，传递参数的类型错误</p></td>
+</tr>
+<tr class="row-odd"><td><p>ModuleNotFoundError</p></td>
+<td><p>导入不存在的模块或找不到模块</p></td>
+</tr>
+</tbody>
 </table>
-</br></section>
+</div>
+</section>
 <section id="id6">
 <h2><span class="section-number">3.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <hr>
@@ -1549,17 +1551,6 @@ final x is 18
 <span class="kn">import</span> <span class="nn">module</span>  <span class="c1"># 现在可以正常导入</span>
 </pre></div>
 </div>
-<p>如果你正在组织项目结构，最好的做法是将目录变成 <strong>包（package）</strong> 结构：</p>
-<p><strong>目录结构</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
-│-- main.py
-│-- my_package/
-│   │-- __init__.py
-│   │-- my_module.py
-</pre></div>
-</div>
-<p><strong>导入方式</strong>
-在 <code class="docutils literal notranslate"><span class="pre">main.py</span></code> 中：</p>
 </section>
 </section>
 <section id="id10">
