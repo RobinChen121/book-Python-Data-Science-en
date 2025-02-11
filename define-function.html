@@ -473,9 +473,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">3. </span>Python 编写函数<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<hr>
 <p>用 Python 编写函数时，经常要用到条件语句<code class="docutils literal notranslate"><span class="pre">if</span></code>， 循环语句<code class="docutils literal notranslate"><span class="pre">for</span></code>或<code class="docutils literal notranslate"><span class="pre">while</span></code>。</p>
 <section id="id1">
 <h2><span class="section-number">3.1. </span>条件语句<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<hr>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>语句的字面意思是：如果（if）满足条件，做什么，否则（else）做什么。例如，下面一段代码：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -575,6 +577,7 @@ document.write(`
 </section>
 <section id="id2">
 <h2><span class="section-number">3.2. </span>循环语句<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>循环语句一般有两种，for 语句与 while 语句。for 循环可以遍历任何序列的项目，如一个列表、元组、集合或者一个字符串。for 循环的一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -723,6 +726,7 @@ document.write(`
 </section>
 <section id="id3">
 <h2><span class="section-number">3.3. </span>自定义函数<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>Python 提供了许多内建函数，比如 print()，但也可以自己创建函数，这被叫做用户自定义函数。掌握了自定义函数后，就能用 Python 实现很多自己想要的功能了。Python 自定义函数使用<code class="docutils literal notranslate"><span class="pre">def</span></code>关键字，一般用法如下：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -880,6 +884,7 @@ document.write(`
 <p>在一些 python 编译软件中，例如 Spyder，当鼠标停留在某个函数或类名时，自动显示该函数或类的说明（docstring），极大地增加了代码的可读性。</p>
 <section id="id4">
 <h3><span class="section-number">3.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<hr>
 <p>根据输入参数的值是否可以改变，函数的参数传递类型包括以下两种：</p>
 <ul class="simple">
 <li><p>不可变类型：数字，字符串，元组</p></li>
@@ -926,6 +931,7 @@ document.write(`
 </section>
 <section id="id5">
 <h3><span class="section-number">3.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<hr>
 <p>函数的参数传入方法主要有4种类型：</p>
 <ul class="simple">
 <li><p>顺序传入</p></li>
@@ -1035,6 +1041,7 @@ final x is 18
 </section>
 <section id="lambda-map-filter-reduce">
 <h2><span class="section-number">3.4. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>Python 使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>来创建匿名函数。所谓匿名，即不再使用 def 语句这样标准的形式定义一个函数。<strong>lambda 函数只有一行</strong>，用一个冒号分割传递参数与函数的返回值。非常简洁，在 Pandas 处理数据时经常结合 apply 函数使用。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1081,7 +1088,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7fa91a377400&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7fd53a295930&gt;
 </pre></div>
 </div>
 </div>
@@ -1149,6 +1156,7 @@ final x is 18
 </section>
 <section id="try-except">
 <h2><span class="section-number">3.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>在编写程序时，有时候不知道程序能否正确运行，想试试程序运行结果如何，可以使用 try-except语句；若 try 块中的语句无法执行通过，则执行 except 块中的语句。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1234,6 +1242,7 @@ final x is 18
 </br></section>
 <section id="id6">
 <h2><span class="section-number">3.6. </span>一些常用的内置函数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>Python 内置了一些常用的函数，可以方便使用。本书简单介绍以下几个内置函数：</p>
 <table>
     <tr style="border-top:solid">
@@ -1419,7 +1428,7 @@ final x is 18
 </section>
 <section id="id7">
 <h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
-<div class="exercise admonition" id="judge-leap-year">
+<hr><div class="exercise admonition" id="judge-leap-year">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
 <section id="exercise-content">
@@ -1484,6 +1493,7 @@ final x is 18
  
    
 <span class="c1"># 调用函数</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
@@ -1502,10 +1512,12 @@ final x is 18
 <p class="admonition-title">Solution to<a class="reference internal" href="#great-common-devisor"> Exercise 3.4</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一个函数</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
    <span class="n">gcd</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># 初始值为 1</span>
  
    <span class="c1"># 获取两个数的最小值</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
        <span class="n">smaller</span> <span class="o">=</span> <span class="n">y</span>
    <span class="k">else</span><span class="p">:</span>
@@ -1519,6 +1531,7 @@ final x is 18
  
  
 <span class="c1"># 用户输入两个数字</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入第一个数字: &quot;</span><span class="p">))</span>
 <span class="n">num2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入第二个数字: &quot;</span><span class="p">))</span>
  
@@ -1539,14 +1552,17 @@ final x is 18
 <p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 3.5</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取用户输入数据</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;the number of sequence:&quot;</span><span class="p">))</span>
 
 <span class="c1"># 第一和第二项</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="n">n1</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">n2</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">2</span>
  
 <span class="c1"># 判断输入的值是否合法</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="k">if</span> <span class="n">nterms</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;please input a positive value&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">nterms</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -1560,6 +1576,7 @@ final x is 18
        <span class="n">nth</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span>
        <span class="nb">print</span><span class="p">(</span><span class="n">nth</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
        <span class="c1"># 更新值</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
        <span class="n">n1</span> <span class="o">=</span> <span class="n">n2</span>
        <span class="n">n2</span> <span class="o">=</span> <span class="n">nth</span>
        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -1583,9 +1600,11 @@ final x is 18
  
  
 <span class="c1"># 获取用户输入</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;您要输出几项? &quot;</span><span class="p">))</span>
  
 <span class="c1"># 检查输入的数字是否正确</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="k">if</span> <span class="n">nterms</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输入正数&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -1608,11 +1627,13 @@ final x is 18
 <p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 3.6</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take input from the user</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="n">lower</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入区间最小值: &quot;</span><span class="p">))</span>
 <span class="n">upper</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入区间最大值: &quot;</span><span class="p">))</span>
  
 <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span><span class="n">upper</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     <span class="c1"># 素数大于 1</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
     <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="p">):</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1643,6 +1664,7 @@ final x is 18
     <span class="k">return</span> <span class="n">yesterday</span>
  
 <span class="c1"># 输出</span>
+<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">getYesterday</span><span class="p">())</span>
 </pre></div>
 </div>
