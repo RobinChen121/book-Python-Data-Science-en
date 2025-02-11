@@ -465,6 +465,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
 <h1><span class="section-number">4. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
+<hr>
 <p>Numpy (Numerical Python) 是 Python 语言一个重要的扩展库，支持大量的数组与矩阵运算，此外也提供大量的数学函数库，用于模仿数学软件 MatLab 的功能。Numpy 通常与其他库 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用。</p>
 <p>Numpy 的主要特点是：</p>
 <ul class="simple">
@@ -481,6 +482,7 @@ document.write(`
 </div>
 <section id="id1">
 <h2><span class="section-number">4.1. </span>创建数组<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>用 Numpy 创建数组有多种方法。首先，Numpy 中的<code class="docutils literal notranslate"><span class="pre">array</span></code>函数可以直接将 Python 的 list 类型转化为 Numpy 的数组类型 ndarray。例如，一个一维数组：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -716,6 +718,7 @@ document.write(`
 </section>
 <section id="id2">
 <h2><span class="section-number">4.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>对于一维数组，numpy 的索引切片类似 Python list 类型的索引切片，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,6 +848,7 @@ document.write(`
 </section>
 <section id="id3">
 <h2><span class="section-number">4.3. </span>数组拼接<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>Numpy 中拼接两个数组用<code class="docutils literal notranslate"><span class="pre">append</span></code>函数。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -913,6 +917,7 @@ document.write(`
 </section>
 <section id="id4">
 <h2><span class="section-number">4.4. </span>数组运算<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>Numpy 可以对数组进行多种代数运算，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1135,6 +1140,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </section>
 <section id="id5">
 <h2><span class="section-number">4.5. </span>生成随机数<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<hr>
 <p>numpy 包的<code class="docutils literal notranslate"><span class="pre">random</span></code>方法基本支持所有分布，并且能够一次生成多行多列的随机数, 例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1145,8 +1151,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.12056616, 7.92179431],
-       [3.51931898, 8.89257866]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2.85398663, 3.54898006],
+       [8.99082849, 8.26897439]])
 </pre></div>
 </div>
 </div>
@@ -1158,7 +1164,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.1720908 , 8.04009092, 9.82165887, 2.68098444, 7.41480281])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.63035604, 6.51817922, 5.00969276, 2.03219596, 1.95928769])
 </pre></div>
 </div>
 </div>
@@ -1170,8 +1176,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6, 8],
-       [4, 5]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8, 7],
+       [2, 2]])
 </pre></div>
 </div>
 </div>
@@ -1183,8 +1189,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.43448757, 4.82522297],
-       [4.49219649, 4.31734742]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.86637124, 2.95208357],
+       [4.16977737, 6.59686089]])
 </pre></div>
 </div>
 </div>
@@ -1196,8 +1202,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9, 5],
-       [9, 4]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4],
+       [3, 8]])
 </pre></div>
 </div>
 </div>
