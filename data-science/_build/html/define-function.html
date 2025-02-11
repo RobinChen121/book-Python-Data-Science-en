@@ -459,7 +459,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">3.4. lambda, map, filter, reduce 函数</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">3.5. try-except 语句调试</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.6. 一些常用的内置函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.7. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module">3.7. 导入其他模块（module）</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.7.1. Python 如何查找模块</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.7.2. 同级模块导入或同级文件夹下的模块导入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.7.3. 与父文件夹同级的模块导入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-path-append">3.7.4. 使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.8. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -1088,7 +1095,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7fc5918a9480&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f9198784850&gt;
 </pre></div>
 </div>
 </div>
@@ -1426,8 +1433,137 @@ final x is 18
 </div>
 </div>
 </section>
+<section id="module">
+<h2><span class="section-number">3.7. </span>导入其他模块（module）<a class="headerlink" href="#module" title="Permalink to this heading">#</a></h2>
+<hr><p>Python 编程中，每个以 .py 为后缀的文件被称作模块（module）。很多时候，我们需要导入其他模块中的函数，</p>
+<p>在 Python 中导入其他文件夹中的模块时，有几个规则和方法可供使用。主要涉及 Python 的<strong>模块搜索路径（sys.path</strong>），以及如何使用<strong>相对导入</strong>和<strong>绝对导入</strong>。</p>
 <section id="id7">
-<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h3><span class="section-number">3.7.1. </span>Python 如何查找模块<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<hr><ol class="arabic simple">
+<li><p><strong>当前目录</strong>（脚本所在的文件夹）。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">sys.path</span></code> 中的目录</strong>：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> 环境变量中的路径。</p></li>
+<li><p>Python 安装目录中的标准库路径。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">site-packages</span></code> 目录（安装的第三方库）。</p></li>
+</ul>
+</li>
+</ol>
+<p>你可以运行以下代码查看 Python sys.path中的路径目录：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/zhenchen/Documents/book-Python-Data-Science/data-science&#39;, &#39;/Users/yourname/projects&#39;, &#39;/Users/zhenchen/Documents/book-Python-Data-Science/data-science&#39;, &#39;/Users/zhenchen/anaconda3/lib/python310.zip&#39;, &#39;/Users/zhenchen/anaconda3/lib/python3.10&#39;, &#39;/Users/zhenchen/anaconda3/lib/python3.10/lib-dynload&#39;, &#39;&#39;, &#39;/Users/zhenchen/.local/lib/python3.10/site-packages&#39;, &#39;/Users/zhenchen/anaconda3/lib/python3.10/site-packages&#39;, &#39;/Users/zhenchen/anaconda3/lib/python3.10/site-packages/PyQt5_sip-12.11.0-py3.10-macosx-10.9-x86_64.egg&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h3><span class="section-number">3.7.2. </span>同级模块导入或同级文件夹下的模块导入<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<hr><p>若导入模块是当前模块的同级文件，即二者在一个父目录下，例如：</p>
+<p><strong>目录结构</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│── main.py
+│── my_module.py
+</pre></div>
+</div>
+<p>我们在 main.py 文件中想导入 my_module.py 模块，可以：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
+</pre></div>
+</div>
+<p>若具体想导入 my_module.py 模块中的某个函数或类 foo()，可以</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="n">foo</span>
+</pre></div>
+</div>
+<p>若导入模块在与当前模块同级的文件夹下，例如：</p>
+<p><strong>目录结构</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project_root</span><span class="o">/</span>
+<span class="o">|--</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|--</span> <span class="n">folder1</span><span class="o">/</span>
+<span class="o">|</span>    <span class="o">|--</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>我们在 main.py 文件中想导入 folder1 文件夹下的 my_module.py 模块，可以：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder1.my_module</span> <span class="kn">import</span> <span class="n">foo</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3><span class="section-number">3.7.3. </span>与父文件夹同级的模块导入<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<hr><p>若导入模块在与当前模块父文件夹同级，例如：</p>
+<p><strong>目录结构1</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project_root</span><span class="o">/</span>
+<span class="o">|--</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|--</span> <span class="n">folder1</span><span class="o">/</span>
+<span class="o">|</span>    <span class="o">|--</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>或者：</p>
+<p><strong>目录结构2</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project_root</span><span class="o">/</span>
+<span class="o">|--</span> <span class="n">folder2</span>
+<span class="o">|</span>    <span class="o">|--</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|--</span> <span class="n">folder1</span><span class="o">/</span>
+<span class="o">|</span>    <span class="o">|--</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>在 main.py 文件中想导入与父文件夹同级的 my_module.py 模块，可以通过将父文件夹路径添加到 sys.path 中去的方式：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># 获取 `parent_directory` 路径</span>
+<span class="n">parent_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;..&quot;</span><span class="p">))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parent_dir</span><span class="p">)</span>  <span class="c1"># 插入 `parent_directory` 到 sys.path</span>
+</pre></div>
+</div>
+<p>现在可以正确导入 my_module.py</p>
+<ul class="simple">
+<li><p>若为目录结构1： import my_module</p></li>
+<li><p>若为目录结构2:    from folder2 import my_module</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pycharm 会自动把整个项目文件夹的根目录加入到 sys.path 中，因此在 Pycharm 中，都可按照跟目录下的模块导入</p>
+</div>
+<p>例如，在 Pycharm 中，对于目录结构2，可以直接按下面代码导入模块，而不用通过 sys.path 添加父文件夹路径。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder2</span> <span class="kn">import</span> <span class="n">my_module</span>
+</pre></div>
+</div>
+</section>
+<section id="sys-path-append">
+<h3><span class="section-number">3.7.4. </span>使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code><a class="headerlink" href="#sys-path-append" title="Permalink to this heading">#</a></h3>
+<hr>
+<p>如果你的模块所在路径比较复杂，你可以使用以下方法 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code>添加导入模块的具体路径。</p>
+<p>例如，如果你想导入 <code class="docutils literal notranslate"><span class="pre">other_folder/module.py</span></code>，其中，”other_folder” 为文件夹在电脑硬盘中的详细地址。可以在代码中手动添加路径：</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;other_folder&quot;</span><span class="p">))</span>  <span class="c1"># 临时将路径添加到 sys.path</span>
+<span class="kn">import</span> <span class="nn">module</span>  <span class="c1"># 现在可以正常导入</span>
+</pre></div>
+</div>
+<p>如果你正在组织项目结构，最好的做法是将目录变成 <strong>包（package）</strong> 结构：</p>
+<p><strong>目录结构</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│-- main.py
+│-- my_package/
+│   │-- __init__.py
+│   │-- my_module.py
+</pre></div>
+</div>
+<p><strong>导入方式</strong>
+在 <code class="docutils literal notranslate"><span class="pre">main.py</span></code> 中：</p>
+</section>
+</section>
+<section id="id10">
+<h2><span class="section-number">3.8. </span>练习<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="judge-leap-year">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
@@ -1805,7 +1941,14 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">3.4. lambda, map, filter, reduce 函数</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">3.5. try-except 语句调试</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.6. 一些常用的内置函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.7. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module">3.7. 导入其他模块（module）</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">3.7.1. Python 如何查找模块</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">3.7.2. 同级模块导入或同级文件夹下的模块导入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3.7.3. 与父文件夹同级的模块导入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-path-append">3.7.4. 使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">3.8. 练习</a></li>
 </ul>
   </nav></div>
 

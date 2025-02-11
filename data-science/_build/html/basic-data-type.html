@@ -1278,7 +1278,7 @@ y =  6
     </tr>
     <tr>
         <td style="text-align:left">list(seq)</td>
-        <td style="text-align:left">将其他类型转化为列表</td>
+        <td style="text-align:left">将其他序列类型转化为列表</td>
     </tr>
     <tr>
         <td style="text-align:left">len(list)</td>
@@ -1286,18 +1286,40 @@ y =  6
     </tr>
     <tr>
         <td style="text-align:left">list.count(obj)</td>
-        <td style="text-align:left">统计某个元素在列表中出现的次数</td>
+        <td style="text-align:left">统计某个元素 obj 在列表中出现的次数</td>
     </tr>
     <tr>
         <td style="text-align:left">list.reverse()</td>
         <td style="text-align:left">将列表反转</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">list.pop(index)</td>
+        <td style="text-align:left">移除列表中 index 位置的元素</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">list.remove(element)</td>
+        <td style="text-align:left">移除列表中内容为 element 的元素</td>
     </tr>
     <tr style="border-bottom:solid">
         <td style="text-align:left">list.clear()</td>
         <td style="text-align:left">清空列表</td>
     </tr>
 </table>
-<br /></section>
+<br /><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="id4">
 <h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <hr>
@@ -1895,7 +1917,7 @@ economy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2037953575822804
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8396122077696004
 </pre></div>
 </div>
 </div>
