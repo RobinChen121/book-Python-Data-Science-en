@@ -654,6 +654,31 @@ I have passed probation.
 </div>
 </div>
 <p>上面的例子中，子类在初始化时，需要传递所有父类初始化方法中需要的参数。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果子类和父类有同名的方法，并且你使用子类实例调用该方法，Python 会优先调用子类的方法，而不会调用父类的方法。</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parent method&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 重写父类方法</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Child method&quot;</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># 输出: Child method</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Child method
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id3">
 <h2><span class="section-number">10.4. </span>类的专有方法<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
@@ -751,7 +776,7 @@ Bob, 30 years old
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x7faeb9f67370&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x7fc5025b6fe0&gt;
 &lt;class &#39;__main__.Dog&#39;&gt;
 </pre></div>
 </div>

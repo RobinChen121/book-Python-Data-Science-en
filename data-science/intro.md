@@ -13,6 +13,15 @@
 
 2023年11月20日于重庆
 
+This book aims to help readers quickly grasp Python data analysis methods using the simplest language and the shortest code. The content is based on the author’s extensive experience teaching Python courses and is particularly suitable for students in economics and management fields.
+
+In writing this book, the author has drawn upon prior blog posts published on CSDN, some handwritten notes originally prepared in LaTeX, and certain reference materials used in Python classroom teaching.
+
+As an early-career scholar navigating the challenging academic path, the author embarked on writing this book out of pure interest and passion, with limited expectation for it to contribute to career advancement or academic publications. However, having chosen the academic path, my aspiration is to continually learn interesting knowledge, tackle academic problems, and share insights with others. This, I believe, is the true pursuit of my academic journey.
+
+Dr Zhen Chen
+
+November 20th, 2023 at Chongqing, China
 
 <script src="https://giscus.app/client.js"
         data-repo="robinchen121/book-Python-Data-Science"
