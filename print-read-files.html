@@ -202,7 +202,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 编程的良好习惯</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -565,12 +566,12 @@ age is 25
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="sa">f</span><span class="s1">&#39;the array is </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="c1"># 输出列表 a</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;the array is </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># 输出列表 a</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the array is [1, 2, 3]&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the array is [1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -578,12 +579,12 @@ age is 25
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">3.2</span>
-<span class="sa">f</span><span class="s1">&#39;the array is </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">, the numer is </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;the array is </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">, the numer is </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the array is [1, 2, 3], the numer is 3.2&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the array is [1, 2, 3], the numer is 3.2
 </pre></div>
 </div>
 </div>
@@ -593,28 +594,98 @@ age is 25
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
-<span class="sa">f</span><span class="s1">&#39;the numbers are </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;the numbers are </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the numbers are 3.141592653589793 and 4.56&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the numbers are 3.141592653589793 and 4.56
 </pre></div>
 </div>
 </div>
 </div>
-<p>也可以结合冒号 : 指定保留的小数位数，结合等号 = 实现等号赋值的表达。例如</p>
+<p>也可以结合冒号<code class="docutils literal notranslate"><span class="pre">:</span></code>指定保留的小数位数，结合等号<code class="docutils literal notranslate"><span class="pre">=</span></code>实现等号赋值的表达。例如</p>
+<p>冒号后面的格式具体为：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>: &lt;填充&gt;&lt;对齐&gt;&lt;宽度&gt;&lt;.&gt;&lt;精度&gt;&lt;变量类型&gt;</p></th>
+</tr>
+</thead>
+</table>
+</div>
+<p>常见的对齐代码有：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>代码</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>&gt;</p></td>
+<td class="text-left"><p>右对齐，默认</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>&lt;</p></td>
+<td class="text-left"><p>左对齐</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>^</p></td>
+<td class="text-left"><p>居中对齐</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>常见的变量类型代码有：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>代码</p></th>
+<th class="head text-left"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>s</p></td>
+<td class="text-left"><p>输出字符串形式，默认形式</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>d</p></td>
+<td class="text-left"><p>输出整数的十进制</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>b</p></td>
+<td class="text-left"><p>输出整数的二进制</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>f</p></td>
+<td class="text-left"><p>输出浮点数的标准浮点形式</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>e</p></td>
+<td class="text-left"><p>输出浮点数的科学表示形式</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>%</p></td>
+<td class="text-left"><p>输出浮点数的百分形式</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
-<span class="sa">f</span><span class="s1">&#39;the numbers are </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s1">&#39;</span>
+<span class="c1"># 第一个数保留 3 位小数，浮点型，第二个数右对齐，宽度 20，保留 2 位小数，百分数显示</span>
+<span class="sa">f</span><span class="s1">&#39;the numbers are </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= :</span><span class="s1">&gt;20.2%</span><span class="si">}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the numbers are 3.142 and b = 4.56&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the numbers are 1.000 and b =              456.00%&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.6</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= :</span><span class="s1">+^10.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 用+填充，居中对齐，宽度为 10，保留两位小数</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = +++5.60+++
 </pre></div>
 </div>
 </div>
@@ -678,38 +749,11 @@ the numbers are 3 and 4.56 and 3
 </div>
 </div>
 <p>使用<code class="docutils literal notranslate"><span class="pre">format</span></code>时，在大括号<code class="docutils literal notranslate"><span class="pre">{}</span></code>中，可以通过冒号<code class="docutils literal notranslate"><span class="pre">:</span></code>以及其他参数，实现一些格式化输出。具体为：</p>
-<table>   
-    <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">'{<变量位置索引> : <填充><对齐><宽度><.><精度><变量类型>}'</th>
-    </tr>
-</table>
-<br /><p>常见的变量类型代码有：</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>代码</p></th>
-<th class="head text-left"><p>含义</p></th>
+<tr class="row-odd"><th class="head"><p>&lt;变量位置索引&gt; : &lt;填充&gt;&lt;对齐&gt;&lt;宽度&gt;&lt;.&gt;&lt;精度&gt;&lt;变量类型&gt;}</p></th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p>s</p></td>
-<td class="text-left"><p>输出字符串形式，默认形式</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>d</p></td>
-<td class="text-left"><p>输出整数的十进制</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>b</p></td>
-<td class="text-left"><p>输出整数的二进制</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>f</p></td>
-<td class="text-left"><p>输出浮点数的标准浮点形式</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>e</p></td>
-<td class="text-left"><p>输出浮点数的科学表示形式</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>%</p></td>
-<td class="text-left"><p>输出浮点数的百分形式</p></td>
-</tr>
-</tbody>
 </table>
 </div>
 <div class="cell docutils container">
@@ -738,26 +782,6 @@ the numbers are 3 and 4.56 and 3
 </pre></div>
 </div>
 </div>
-</div>
-<p>常见的对齐代码有：</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>代码</p></th>
-<th class="head text-left"><p>含义</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p>&gt;</p></td>
-<td class="text-left"><p>右对齐，默认</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>&lt;</p></td>
-<td class="text-left"><p>左对齐</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>^</p></td>
-<td class="text-left"><p>居中对齐</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <p>一些例子：</p>
 <div class="cell docutils container">

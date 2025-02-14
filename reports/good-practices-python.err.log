@@ -17,13 +17,37 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-int a = 5
+import os
+import sys 
+
+
+# 上面空一行或两行
+class MyClass:
+    
+    def foo1(self):
+        pass
+
+    # 类内部的函数之间使用一个空行分割
+    def foo2(self):
+        pass
+        
+
+# 类与类外部的函数使用两个空行分割
+def main1():
+    my_class = MyClass()
+    my_class.foo1()
+
+if __name__ == "__main__":
+    main()
 ------------------
 
-[0;36m  Cell [0;32mIn[94], line 1[0;36m[0m
-[0;31m    int a = 5[0m
-[0m        ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[1], line 22[0m
+[1;32m     19[0m     my_class[38;5;241m.[39mfoo1()
+[1;32m     21[0m [38;5;28;01mif[39;00m [38;5;18m__name__[39m [38;5;241m==[39m [38;5;124m"[39m[38;5;124m__main__[39m[38;5;124m"[39m:
+[0;32m---> 22[0m     [43mmain[49m()
 
-SyntaxError: invalid syntax (184005221.py, line 1)
+[0;31mNameError[0m: name 'main' is not defined
+NameError: name 'main' is not defined
 

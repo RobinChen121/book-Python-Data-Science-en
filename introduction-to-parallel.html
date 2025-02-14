@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>11. Python 并行计算 &#8212; Python 数据科学</title>
+    <title>12. Python 并行计算 &#8212; Python 数据科学</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="_static/myfile.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="10. Python 面向对象编程" href="introduction-to-class.html" />
+    <link rel="prev" title="11. Python 编程的良好习惯" href="good-practices-python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -201,7 +201,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 编程的良好习惯</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -446,8 +447,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.1. 进程与线程</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocess">11.2. multirpocess 包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1. 进程与线程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocess">12.2. multirpocess 包</a></li>
 </ul>
             </nav>
         </div>
@@ -460,10 +461,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">11. </span>Python 并行计算<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Python 并行计算<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <hr><p>在进入并行计算前，我们首先需要了解一下一些计算机操作系统的知识。</p>
 <section id="id1">
-<h2><span class="section-number">11.1. </span>进程与线程<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>进程与线程<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p><strong>进程</strong>是一个程序的运行实例，每个进程有独立的内存空间，<strong>相互隔离</strong>，不会直接共享数据。</p></li>
 <li><p><strong>线程</strong>是进程内部的一个执行单元，一个进程可以有多个线程，它们<strong>共享同一个进程的内存</strong>。</p></li>
@@ -524,7 +525,7 @@ document.write(`
 </ul>
 </section>
 <section id="multirpocess">
-<h2><span class="section-number">11.2. </span>multirpocess 包<a class="headerlink" href="#multirpocess" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">12.2. </span>multirpocess 包<a class="headerlink" href="#multirpocess" title="Permalink to this heading">#</a></h2>
 <hr><script src="https://giscus.app/client.js"
         data-repo="robinchen121/book-Python-Data-Science"
         data-repo-id="R_kgDOKFdyOw"
@@ -585,12 +586,12 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction-to-class.html"
+       href="good-practices-python.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Python 面向对象编程</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Python 编程的良好习惯</p>
       </div>
     </a>
 </div>
@@ -609,8 +610,8 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.1. 进程与线程</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocess">11.2. multirpocess 包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1. 进程与线程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocess">12.2. multirpocess 包</a></li>
 </ul>
   </nav></div>
 
