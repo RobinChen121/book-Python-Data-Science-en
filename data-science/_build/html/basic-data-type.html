@@ -204,7 +204,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 编程的良好习惯</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -472,6 +473,12 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="python">
 <h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <hr><p>Python 的常用数据类型包括数字，字符串，列表，字典等。</p>
+<p>Pyton 将数据赋值给变量，变量命名时有下面的规则。</p>
+<ul class="simple">
+<li><p>变量名必须以字母（a-z 或 A-Z）或下划线（_）开头，不能以数字开头。</p></li>
+<li><p>变量名只能包含字母、数字和下划线（_），不能包含空格或特殊字符。</p></li>
+<li><p>变量名区分大小写（myVar 和 myvar 是不同的变量）。</p></li>
+</ul>
 <section id="id1">
 <h2><span class="section-number">2.1. </span>数字类型: 整数型，浮点型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <hr><div class="cell docutils container">
@@ -501,6 +508,10 @@ document.write(`
 </div>
 </div>
 <p>在上面的这段代码中，定义了一个数字型变量 a，并将其赋值为 1；定义了一个浮点型变量 b，并将其赋值为 2.2。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Python 命名变量时是区分大小写的：A = 3 与 a = 3 是两个不同变量。</p>
+</div>
 <p>Python 并不像其他的一些编程语言那样需要明确数字的细分类型：整数型（int），浮点型（float）等。Python 可以自己判断数字类型，例如在上面的代码中，由于 a 没有小数点，Python 认为 a 是整数型，b 带了小数点，Python 认为 b 是浮点型。</p>
 <p>我们可以利用 type 函数检验下：</p>
 <div class="cell docutils container">
@@ -1917,7 +1928,7 @@ economy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9797432861135393
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.762021677267553
 </pre></div>
 </div>
 </div>
@@ -1938,9 +1949,27 @@ economy
 </section>
 <section id="id8">
 <h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
-<hr><div class="exercise admonition" id="compute-formula">
+<hr><div class="exercise admonition" id="define-variable">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
+<section id="exercise-content">
+<p>定义一个 Python 数据变量，下面表达式正确的是：</p>
+<p>A.    int a = 5</p>
+<p>B.    var a = 5</p>
+<p>C.    a = 5</p>
+<p>D.    $a = 5</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#define-variable"> Exercise 2.1</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="compute-formula">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
 <section id="exercise-content">
 <p>请将下面的数学表达式用 Python 程序写出来，并运算结果。</p>
 <ul class="simple">
@@ -1949,9 +1978,9 @@ economy
 </ul>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-1">
+<div class="solution dropdown admonition" id="basic-data-type-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#compute-formula"> Exercise 2.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#compute-formula"> Exercise 2.2</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -1964,14 +1993,14 @@ economy
 </div>
 <div class="exercise admonition" id="circle-area">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
 <section id="exercise-content">
 <p>根据给定的半径值，计算圆的面积</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+<div class="solution dropdown admonition" id="basic-data-type-solution-5">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.3</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
@@ -1984,14 +2013,14 @@ economy
 </div>
 <div class="exercise admonition" id="random">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
 <section id="exercise-content">
 <p>从字符串 ‘abcedefg’ 随机挑取 3 个字符。（提示，使用 random 库中的函数）</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-5">
+<div class="solution dropdown admonition" id="basic-data-type-solution-7">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#random"> Exercise 2.3</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#random"> Exercise 2.4</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
@@ -2002,15 +2031,15 @@ economy
 </div>
 <div class="exercise admonition" id="quad-equation">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
 <section id="exercise-content">
 <p>通过用户输入数字 a, b, c，计算二次方程: <span class="math notranslate nohighlight">\(ax^2 + bx +c\)</span>。
 (提示：cmath 工具包可以计算负数的开方)</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-7">
+<div class="solution dropdown admonition" id="basic-data-type-solution-9">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.4</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.5</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
@@ -2036,14 +2065,14 @@ economy
 </div>
 <div class="exercise admonition" id="triangle-area">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
 <section id="exercise-content">
 <p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-9">
+<div class="solution dropdown admonition" id="basic-data-type-solution-11">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.5</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.6</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
@@ -2065,14 +2094,14 @@ economy
 </div>
 <div class="exercise admonition" id="dict-values">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
 <section id="exercise-content">
 <p>定义一个字典，然后计算它们所有数字值的和。。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-11">
+<div class="solution dropdown admonition" id="basic-data-type-solution-13">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.6</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.7</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>

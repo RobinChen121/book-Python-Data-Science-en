@@ -204,7 +204,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 编程的良好习惯</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -799,7 +800,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span><span class="o">+</span><span class="n">x2</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span>
     <span class="k">return</span> <span class="n">z</span>
 
 <span class="n">x1</span> <span class="o">=</span> <span class="mi">10</span>
@@ -810,30 +811,6 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-</pre></div>
-</div>
-</div>
-</div>
-<p>在多个返回值时，有时候需要用新的变量表示各个返回值，可以用下面的方式赋值：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span><span class="o">+</span><span class="n">x2</span>
-    <span class="k">return</span> <span class="n">z</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span>
-
-<span class="n">x1</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">sums</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="c1"># 用新变量赋值</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-10
-6
 </pre></div>
 </div>
 </div>
@@ -894,7 +871,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>在一些 python 编译软件中，例如 Spyder，当鼠标停留在某个函数或类名时，自动显示该函数或类的说明（docstring），极大地增加了代码的可读性。</p>
+<p>在一些 python IDE 软件中，例如 Spyder 或 Pycharm，当鼠标停留在某个函数或类名时，自动显示该函数或类的说明（docstring），极大地增加了代码的可读性。</p>
 <section id="id4">
 <h3><span class="section-number">3.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <hr>
@@ -1368,10 +1345,10 @@ final x is 18
 </div>
 <p>若导入模块在与当前模块同级的文件夹下，例如：</p>
 <p><strong>目录结构</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project_root</span><span class="o">/</span>
-<span class="o">|--</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
-<span class="o">|--</span> <span class="n">folder1</span><span class="o">/</span>
-<span class="o">|</span>    <span class="o">|--</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│── main.py
+│── folder1/
+│    │── my_module.py
 </pre></div>
 </div>
 <p>我们在 main.py 文件中想导入 folder1 文件夹下的 my_module.py 模块，可以：</p>
@@ -1383,19 +1360,19 @@ final x is 18
 <h3><span class="section-number">3.6.3. </span>与父文件夹同级的模块导入<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <hr><p>若导入模块在与当前模块父文件夹同级，例如：</p>
 <p><strong>目录结构1</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project_root</span><span class="o">/</span>
-<span class="o">|--</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
-<span class="o">|--</span> <span class="n">folder1</span><span class="o">/</span>
-<span class="o">|</span>    <span class="o">|--</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│── my_module.py
+│── folder1/
+│    │── main.py
 </pre></div>
 </div>
 <p>或者：</p>
 <p><strong>目录结构2</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">project_root</span><span class="o">/</span>
-<span class="o">|--</span> <span class="n">folder2</span>
-<span class="o">|</span>    <span class="o">|--</span> <span class="n">my_module</span><span class="o">.</span><span class="n">py</span>
-<span class="o">|--</span> <span class="n">folder1</span><span class="o">/</span>
-<span class="o">|</span>    <span class="o">|--</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│── folder2
+│    │── my_module.py
+│── folder1/
+│    │── main.py
 </pre></div>
 </div>
 <p>在 main.py 文件中想导入与父文件夹同级的 my_module.py 模块，可以通过将父文件夹路径添加到 sys.path 中去的方式：</p>
@@ -1484,7 +1461,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7fce608daf20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x7f8ee85ace80&gt;
 </pre></div>
 </div>
 </div>
