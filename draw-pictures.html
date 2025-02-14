@@ -204,7 +204,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 的良好编程规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -626,7 +627,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fae888392a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7cb8b31330&gt;]
 </pre></div>
 </div>
 <img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
@@ -639,7 +640,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fae9a828fd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7cc9550eb0&gt;]
 </pre></div>
 </div>
 <img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
@@ -652,7 +653,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fae9a8b8be0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7cc95e0fd0&gt;]
 </pre></div>
 </div>
 <img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
@@ -665,7 +666,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fae782acee0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7cc9669030&gt;]
 </pre></div>
 </div>
 <img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
@@ -1419,7 +1420,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c41ae409b558741b2a5a5fa7f18f53f5d2d42a4fd4e17968d1cca206e9b13236.png" src="_images/c41ae409b558741b2a5a5fa7f18f53f5d2d42a4fd4e17968d1cca206e9b13236.png" />
+<img alt="_images/9a9a8b73e740966e59da5432b3847f24d31d61de0f25348b49f3125de54f6a01.png" src="_images/9a9a8b73e740966e59da5432b3847f24d31d61de0f25348b49f3125de54f6a01.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1433,7 +1434,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/27d9f3c61c0bc6a215d87a392e3af9ef9c094f13185a524c012dcbf64fde3978.png" src="_images/27d9f3c61c0bc6a215d87a392e3af9ef9c094f13185a524c012dcbf64fde3978.png" />
+<img alt="_images/d502562bfd232496811abffa4f0786fdf2c25386f58335a8795c9b3a8c7767d9.png" src="_images/d502562bfd232496811abffa4f0786fdf2c25386f58335a8795c9b3a8c7767d9.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1454,7 +1455,7 @@ seaborn 自带一些函数生成常见的图形，例如``barplot``生成条形�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/843c30936f2b2b1c169fa4fa0c92dc9c401ceca4fbd0ea41bb664881d28ce07e.png" src="_images/843c30936f2b2b1c169fa4fa0c92dc9c401ceca4fbd0ea41bb664881d28ce07e.png" />
+<img alt="_images/adc24e6ec222c127c7321cb9d87fb7c0c840bc7c9c1714563f17a235240a26a5.png" src="_images/adc24e6ec222c127c7321cb9d87fb7c0c840bc7c9c1714563f17a235240a26a5.png" />
 </div>
 </div>
 <div class="cell docutils container">

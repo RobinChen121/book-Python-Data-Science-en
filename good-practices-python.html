@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>11. Python 编程的良好习惯 &#8212; Python 数据科学</title>
+    <title>11. Python 的良好编程规范 &#8212; Python 数据科学</title>
   
   
   
@@ -202,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Python 编程的良好习惯</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Python 的良好编程规范</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
 </ul>
 
@@ -438,7 +438,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python 编程的良好习惯</h1>
+    <h1>Python 的良好编程规范</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -469,7 +469,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">11.5.2. 日志可以保存到文件</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">11.5.3. 日志格式可自定义</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging">11.5.4. <code class="docutils literal notranslate"><span class="pre">logging</span></code> 可以用于多模块</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">11.5.5. <code class="docutils literal notranslate"><span class="pre">logging</span></code> 适用于多线程**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">11.5.5. <code class="docutils literal notranslate"><span class="pre">logging</span></code> 适用于多线程</a></li>
 </ul>
 </li>
 </ul>
@@ -484,7 +484,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">11. </span>Python 编程的良好习惯<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Python 的良好编程规范<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <hr><p>在 Python 编程中，良好的编码习惯可以提高代码的可读性、可维护性和运行效率。Python 官方提供了 <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8</a> 作为代码风格指南，本章根据该指南以及经验心得总结了下面几点。</p>
 <section id="id1">
 <h2><span class="section-number">11.1. </span>代码布局<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
@@ -1162,7 +1162,7 @@ Charlie is 35 years old.
 <p>多个模块共享同一个 <code class="docutils literal notranslate"><span class="pre">logging</span></code> 配置，比 print() 更方便管理。</p>
 </section>
 <section id="id10">
-<h3><span class="section-number">11.5.5. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code> 适用于多线程**<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.5.5. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code> 适用于多线程<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <hr class="docutils" />
 <p>print() 在多线程环境下可能会导致日志混乱，但 <code class="docutils literal notranslate"><span class="pre">logging</span></code> <strong>是线程安全的</strong>。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -1309,7 +1309,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">11.5.2. 日志可以保存到文件</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">11.5.3. 日志格式可自定义</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging">11.5.4. <code class="docutils literal notranslate"><span class="pre">logging</span></code> 可以用于多模块</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">11.5.5. <code class="docutils literal notranslate"><span class="pre">logging</span></code> 适用于多线程**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">11.5.5. <code class="docutils literal notranslate"><span class="pre">logging</span></code> 适用于多线程</a></li>
 </ul>
 </li>
 </ul>
