@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Python 输出，读写文件 &#8212; Python 数据科学</title>
+    <title>3. Python 输出，读写文件 &#8212; Python 数据科学</title>
   
   
   
@@ -68,8 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="_static/myfile.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Python 画图" href="draw-pictures.html" />
-    <link rel="prev" title="5. Pandas 入门" href="introduction-to-pandas.html" />
+    <link rel="next" title="4. Python 编写函数" href="define-function.html" />
+    <link rel="prev" title="2. Python 的常用数据类型" href="basic-data-type.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,10 +191,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">3. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Pandas 入门</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Python 输出，读写文件</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">5. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">6. Pandas 入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 进阶</span></p>
@@ -448,12 +448,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">6.1. print 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">6.2. f 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">6.3. 用 format 格式化输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.4. 用 % 格式化输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.5. 读写文件</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">3.2. f 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.3. 用 format 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. 用 % 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.5. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-sys">3.6. <code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os">3.6.1. <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6.1.1. 文件和目录操作</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys">3.6.2. <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.7. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -466,10 +474,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">6. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
 <hr>
 <section id="print">
-<h2><span class="section-number">6.1. </span>print 函数输出<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>print 函数输出<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
 <hr>
 <p>Python 输出非常方便，用<code class="docutils literal notranslate"><span class="pre">print()</span></code>函数，小括号里面可以是数字、字符串、列表、字典等类型。</p>
 <div class="cell docutils container">
@@ -561,7 +569,7 @@ age is 25
 </div>
 </section>
 <section id="f">
-<h2><span class="section-number">6.2. </span>f 函数输出<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>f 函数输出<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h2>
 <hr><p>输出也可以用 <code class="docutils literal notranslate"><span class="pre">f{expression}</span></code>，大括号中的 exression 可以是一个变量名，例如，下面的代码打印出一个数组列表：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -692,7 +700,7 @@ age is 25
 </div>
 </section>
 <section id="format">
-<h2><span class="section-number">6.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h2>
 <hr>
 <p>用<code class="docutils literal notranslate"><span class="pre">format</span></code>也可以实现多种格式化输出，它的基本用法为：</p>
 <table>   
@@ -839,7 +847,7 @@ the numbers are 3 and 4.56 and 3
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">6.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <hr>
 若要格式化输出，要用到百分号 %，语法规则类似 c 语言，具体参考下面的例子。<div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -931,7 +939,7 @@ the numbers are 3 and 4.56 and 3
 <p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
 </section>
 <section id="id2">
-<h2><span class="section-number">6.5. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <hr>
 <p>Python 对文本文件的操作步骤为<code class="docutils literal notranslate"><span class="pre">打开——操作——关闭</span></code>：打开计算机存储位置的一个文件，进行一些读写操作，然后关闭这个文件。打开后的文件处于占用状态，此时计算机的其他进程不能操作这个文件；文件关闭后，其他进程才能操作这个文件。</p>
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数打开一个文件对象，常用的语法规则为：</p>
@@ -1105,18 +1113,196 @@ his name is li si
 </div>
 <p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
+<section id="os-sys">
+<h2><span class="section-number">3.6. </span><code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块<a class="headerlink" href="#os-sys" title="Permalink to this heading">#</a></h2>
+<hr><section id="os">
+<h3><span class="section-number">3.6.1. </span><code class="docutils literal notranslate"><span class="pre">os</span></code> 模块<a class="headerlink" href="#os" title="Permalink to this heading">#</a></h3>
+<hr>
+<p>Python 中的 <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块是用于与操作系统交互的标准库，提供了处理文件、目录、进程和环境变量等功能。以下是 <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块的一些主要功能和用法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># 获取操作系统名称，&#39;posix&#39; (Linux/macOS) 或 &#39;nt&#39; (Windows)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>  <span class="c1"># 获取当前工作目录</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>  <span class="c1"># 获取当前目录下的文件和文件夹列表</span>
+</pre></div>
+</div>
 <section id="id3">
-<h2><span class="section-number">6.6. </span>练习<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h4><span class="section-number">3.6.1.1. </span>文件和目录操作<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>切换目录</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/path/to/directory&#39;</span><span class="p">)</span>  <span class="c1"># 更改当前工作目录到新地址 &#39;/path/to/directory&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>创建和删除目录</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;new_dir&#39;</span><span class="p">)</span>  <span class="c1"># 创建一个新目录</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;parent/child/grandchild&#39;</span><span class="p">)</span>  <span class="c1"># 递归创建目录</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s1">&#39;new_dir&#39;</span><span class="p">)</span>  <span class="c1"># 删除目录（目录必须为空）</span>
+<span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="s1">&#39;parent/child/grandchild&#39;</span><span class="p">)</span>  <span class="c1"># 递归删除空目录</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>文件操作</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;new_file.txt&quot;</span>  <span class="c1"># 新建文件</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, this is a new file!&quot;</span><span class="p">)</span>  <span class="c1"># 写入内容</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;new_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;new_file2.txt&#39;</span><span class="p">)</span>  <span class="c1"># 重命名文件或目录</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;new_file2.txt&#39;</span><span class="p">)</span>  <span class="c1"># 删除文件</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>环境变量</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">)</span>  <span class="c1"># 获取所有环境变量</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;HOME&#39;</span><span class="p">))</span>  <span class="c1"># 获取特定环境变量</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;NEW_VAR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>  <span class="c1"># 设置新的环境变量</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>路径处理</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">,</span> <span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 组合路径</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 获取绝对路径</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 检查路径是否存在</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 检查是否是文件</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">))</span>  <span class="c1"># 检查是否是目录</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 拆分文件扩展名</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;/path/to/file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 获取文件名</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;/path/to/file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 获取目录名</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dir/file.txt
+/Users/zhenchen/Documents/book-Python-Data-Science/data-science/file.txt
+False
+False
+False
+(&#39;file&#39;, &#39;.txt&#39;)
+file.txt
+/path/to
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>进程管理</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>  <span class="c1"># 获取当前进程ID</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getppid</span><span class="p">())</span>  <span class="c1"># 获取父进程ID</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16062
+16052
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>跨平台操作</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span><span class="p">:</span>  <span class="c1"># Windows</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running on Windows&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;posix&#39;</span><span class="p">:</span>  <span class="c1"># Linux/macOS</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running on Linux or macOS&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running on Linux or macOS
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sys">
+<h3><span class="section-number">3.6.2. </span><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块<a class="headerlink" href="#sys" title="Permalink to this heading">#</a></h3>
+<hr>
+<p><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块提供了一些与 Python 解释器及其环境相关的变量和函数，适用于处理命令行参数、运行时环境、标准输入输出等。</p>
+<ul class="simple">
+<li><p>获取 Python 版本</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>  <span class="c1"># 获取 Python 版本</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>  <span class="c1"># 获取详细的版本信息</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.10.9 (main, Mar  1 2023, 12:33:47) [Clang 14.0.6 ]
+sys.version_info(major=3, minor=10, micro=9, releaselevel=&#39;final&#39;, serial=0)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>获取当前系统信息</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>  <span class="c1"># 获取操作系统类型 (&#39;win32&#39;, &#39;linux&#39;, &#39;darwin&#39; 等)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>darwin
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>获取 Python 模块搜索路径</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># 获取模块搜索路径</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/my/custom/path&#39;</span><span class="p">)</span>  <span class="c1"># 添加自定义路径</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="output">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
 <section id="exercise-content">
 <p>格式化输出 0.0003278 对应的科学计数形式，保留4位有效数字，并且为百分形式。</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="print-read-files-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#output"> Exercise 6.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#output"> Exercise 3.1</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.4%}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.0003278</span><span class="p">))</span>
 </pre></div>
@@ -1125,7 +1311,7 @@ his name is li si
 </div>
 <div class="exercise admonition" id="san-guo">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 3.2 </span></p>
 <section id="exercise-content">
 <p>将下面文字输入到电脑的一个 txt 文件中，并读取将内容显示在屏幕上：</p>
 <p>话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。</p>
@@ -1133,7 +1319,7 @@ his name is li si
 </div>
 <div class="solution dropdown admonition" id="print-read-files-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#san-guo"> Exercise 6.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#san-guo"> Exercise 3.2</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；</span><span class="se">\</span>
@@ -1208,20 +1394,20 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction-to-pandas.html"
+       href="basic-data-type.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Pandas 入门</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Python 的常用数据类型</p>
       </div>
     </a>
     <a class="right-next"
-       href="draw-pictures.html"
+       href="define-function.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Python 画图</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Python 编写函数</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1241,12 +1427,20 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">6.1. print 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">6.2. f 函数输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">6.3. 用 format 格式化输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.4. 用 % 格式化输出</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.5. 读写文件</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#print">3.1. print 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f">3.2. f 函数输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">3.3. 用 format 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. 用 % 格式化输出</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.5. 读写文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-sys">3.6. <code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os">3.6.1. <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6.1.1. 文件和目录操作</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys">3.6.2. <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.7. 练习</a></li>
 </ul>
   </nav></div>
 
