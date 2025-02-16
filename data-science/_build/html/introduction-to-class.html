@@ -495,21 +495,22 @@ document.write(`
 <br /><p>下面的例子中，我们定义一个员工类：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
     <span class="c1"># 类的属性</span>
-    <span class="n">department</span> <span class="o">=</span> <span class="s1">&#39;business schoool&#39;</span> <span class="c1"># 普通属性</span>
-    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
-    
+    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business schoool&quot;</span>  <span class="c1"># 普通属性</span>
+    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
+
     <span class="c1"># 类的方法</span>
     <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span>
-    
+
     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, everyone!&#39;</span><span class="p">)</span>
-    
-<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span> <span class="c1"># 实例化一个类</span>
-<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span> <span class="c1"># 访问对象里的方法</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My department is </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span> <span class="c1"># 访问对象里的属性  </span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, everyone!&quot;</span><span class="p">)</span>
+
+
+<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span>  <span class="c1"># 实例化一个类</span>
+<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>  <span class="c1"># 访问对象里的方法</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My department is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span>  <span class="c1"># 访问对象里的属性</span>
 </pre></div>
 </div>
 </div>
@@ -524,7 +525,7 @@ My department is business schoool.
 <p>前缀双下划线命名的变量为类的私有属性，<strong>不能在类外部直接访问</strong>，但可以在类里面定义一个访问私有属性的方法，然后调用方法进行访问。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;age is&#39;</span><span class="p">,</span> <span class="n">john</span><span class="o">.</span><span class="n">get_age</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;age is&quot;</span><span class="p">,</span> <span class="n">john</span><span class="o">.</span><span class="n">get_age</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -551,27 +552,28 @@ My department is business schoool.
 <hr><p>类有一个名为 __init__() 的特殊方法，该方法在类实例化时会自动调用，进行对象的初始化。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
     <span class="c1"># 类的属性</span>
-    <span class="n">department</span> <span class="o">=</span> <span class="s1">&#39;business schoool&#39;</span> <span class="c1"># 普通属性</span>
-    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
-    
+    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business schoool&quot;</span>  <span class="c1"># 普通属性</span>
+    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
+
     <span class="c1"># 类的初始化方法</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">department</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__age</span> <span class="o">=</span> <span class="n">age</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">department</span> <span class="o">=</span> <span class="n">department</span>
-    
+
     <span class="c1"># 类的方法</span>
     <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span>
-    
+
     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, everyone! My name is </span><span class="si">%s</span><span class="s1">.&#39;</span><span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-    
-<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;engineering school&#39;</span><span class="p">)</span> <span class="c1"># 实例化一个类，自动调用  __init__(）初始化</span>
-<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span> <span class="c1"># 访问类里的方法</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My department is </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span> <span class="c1"># 访问类里的属性  </span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, everyone! My name is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+
+<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;engineering school&quot;</span><span class="p">)</span>  <span class="c1"># 实例化一个类，自动调用  __init__(）初始化</span>
+<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>  <span class="c1"># 访问类里的方法</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My department is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span>  <span class="c1"># 访问类里的属性</span>
 </pre></div>
 </div>
 </div>
@@ -594,33 +596,35 @@ My department is engineering school.
 <p>例如，我们可以添加一个类 NewEmployee，继承 Employ 类。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NewEmployee</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span> <span class="c1"># 小括号内为所继承的父类名</span>
-    <span class="n">under_probation</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># 子类自己的属性</span>
-    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NewEmployee</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span>  <span class="c1"># 小括号内为所继承的父类名</span>
+    <span class="n">under_probation</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># 子类自己的属性</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">under_probation</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="c1"># 调用父类的初始化函数</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># 调用父类的初始化函数</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">under_probation</span> <span class="o">=</span> <span class="n">under_probation</span>
-    
+
     <span class="c1"># 重写父类的方法</span>
     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi! My name is </span><span class="si">%s</span><span class="s1">.&#39;</span><span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-    
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi! My name is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
     <span class="c1"># 调用父类的方法</span>
     <span class="k">def</span> <span class="nf">age_range</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">:</span> <span class="c1"># 调用父类的方法</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am over 30s&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_age</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">:</span>  <span class="c1"># 调用父类的方法</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am over 30s&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am under 30s&#39;</span><span class="p">)</span>
-            
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am under 30s&quot;</span><span class="p">)</span>
+
     <span class="c1"># 自己的方法</span>
     <span class="k">def</span> <span class="nf">probabtion_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">under_probation</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am under probation.&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am under probation.&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I have passed probation.&#39;</span><span class="p">)</span>
-    
-    
-<span class="n">tom</span> <span class="o">=</span> <span class="n">NewEmployee</span><span class="p">(</span><span class="n">under_probation</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">department</span> <span class="o">=</span> <span class="s1">&#39;engineering school&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I have passed probation.&quot;</span><span class="p">)</span>
+
+
+<span class="n">tom</span> <span class="o">=</span> <span class="n">NewEmployee</span><span class="p">(</span>
+    <span class="n">under_probation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">department</span><span class="o">=</span><span class="s2">&quot;engineering school&quot;</span>
+<span class="p">)</span>
 <span class="n">tom</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
 <span class="n">tom</span><span class="o">.</span><span class="n">probabtion_info</span><span class="p">()</span>
 </pre></div>
@@ -638,12 +642,12 @@ I have passed probation.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NewAcademicEmployee</span><span class="p">(</span><span class="n">NewEmployee</span><span class="p">,</span> <span class="n">Employee</span><span class="p">):</span>
-    
     <span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am a new academic empolyee.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, I am a new academic empolyee.&quot;</span><span class="p">)</span>
+
 
 <span class="c1"># 实例化子类时，初始化方法中的参数包括所有父类初始化方法中需要的参数</span>
-<span class="n">lily</span> <span class="o">=</span> <span class="n">NewAcademicEmployee</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Lily&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;art school&#39;</span><span class="p">)</span>
+<span class="n">lily</span> <span class="o">=</span> <span class="n">NewAcademicEmployee</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Lily&quot;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;art school&quot;</span><span class="p">)</span>
 <span class="n">lily</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -665,9 +669,11 @@ I have passed probation.
     <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parent method&quot;</span><span class="p">)</span>
 
+
 <span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 重写父类方法</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Child method&quot;</span><span class="p">)</span>
+
 
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
 <span class="n">obj</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># 输出: Child method</span>
@@ -748,9 +754,10 @@ I have passed probation.
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old&quot;</span>
 
+
 <span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>  <span class="c1"># 调用 __repr__</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>        <span class="c1"># 默认调用 __str__, 如果 __str__ 未定义，会默认调用 __repr__</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c1"># 默认调用 __str__, 如果 __str__ 未定义，会默认调用 __repr__</span>
 </pre></div>
 </div>
 </div>
@@ -767,14 +774,15 @@ Bob, 30 years old
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">pass</span>
 
+
 <span class="n">d</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># 类中没有 __str__ 或 __repr__ 方法，打印显示地址</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>  <span class="c1"># 类中没有 __str__ 或 __repr__ 方法，打印显示地址</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>  <span class="c1"># 返回对象所属类的名字</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x7f7bc89369b0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x7fd0223a7040&gt;
 &lt;class &#39;__main__.Dog&#39;&gt;
 </pre></div>
 </div>
@@ -793,6 +801,7 @@ Bob, 30 years old
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>  <span class="c1"># 支持整数索引和切片</span>
+
 
 <span class="n">my_list</span> <span class="o">=</span> <span class="n">MyList</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># 像数组切片一样访问类中元素</span>
@@ -819,6 +828,7 @@ Bob, 30 years old
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Vector(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
 
+
 <span class="n">v1</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">v2</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">)</span>  <span class="c1"># 输出: Vector(6, 8)</span>
@@ -838,12 +848,13 @@ Bob, 30 years old
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
-    
+
     <span class="c1"># 若姓名与年龄都相同，表示两个实例相同</span>
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">age</span>
         <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># 不是 Person 对象，直接返回 False</span>
+
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
@@ -869,8 +880,9 @@ False
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Instance called!&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Arguments:&quot;</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
 
+
 <span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
-<span class="n">obj</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 像函数一样调用实例</span>
+<span class="n">obj</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 像函数一样调用实例</span>
 </pre></div>
 </div>
 </div>
@@ -887,7 +899,7 @@ Arguments: (1, 2) {&#39;a&#39;: 3}
 <hr><p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> 是 Python 内置的特殊变量，可以表示当前类的名称，也可以表示当前模块的名称。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MyClass</span><span class="o">.</span><span class="vm">__name__</span> <span class="c1"># 返回类的名称</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MyClass</span><span class="o">.</span><span class="vm">__name__</span>  <span class="c1"># 返回类的名称</span>
 </pre></div>
 </div>
 </div>
@@ -901,7 +913,7 @@ Arguments: (1, 2) {&#39;a&#39;: 3}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">np</span><span class="o">.</span><span class="vm">__name__</span> <span class="c1"># 返回模块的名称</span>
+<span class="n">np</span><span class="o">.</span><span class="vm">__name__</span>  <span class="c1"># 返回模块的名称</span>
 </pre></div>
 </div>
 </div>
@@ -917,6 +929,7 @@ Arguments: (1, 2) {&#39;a&#39;: 3}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># myscript.py</span>
 <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This script is running directly&quot;</span><span class="p">)</span>
@@ -945,27 +958,26 @@ Hello, world!
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
-    <span class="nd">@staticmethod</span> <span class="c1"># 以@开头的名称为装饰器，用来说明特殊的函数</span>
+    <span class="nd">@staticmethod</span>  <span class="c1"># 以@开头的名称为装饰器，用来说明特殊的函数</span>
     <span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;静态方法&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;静态方法&quot;</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span><span class="c1"># 第一个参数为 cls</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;类方法&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>  <span class="c1"># 第一个参数为 cls</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;类方法&quot;</span><span class="p">)</span>
 
     <span class="c1"># 普通方法</span>
-    <span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="c1"># 第一个参数为 self</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;普通方法&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 第一个参数为 self</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;普通方法&quot;</span><span class="p">)</span>
 
 
-
-<span class="n">MyClass</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span> <span class="c1"># 静态方法可以被类名直接调用</span>
-<span class="n">MyClass</span><span class="o">.</span><span class="n">a</span><span class="p">()</span> <span class="c1"># 类方法可以被类名直接调用</span>
+<span class="n">MyClass</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span>  <span class="c1"># 静态方法可以被类名直接调用</span>
+<span class="n">MyClass</span><span class="o">.</span><span class="n">a</span><span class="p">()</span>  <span class="c1"># 类方法可以被类名直接调用</span>
 
 <span class="n">case</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
-<span class="k">case</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span> <span class="c1"># 静态方法也可以被对象调用</span>
-<span class="k">case</span><span class="o">.</span><span class="n">a</span><span class="p">()</span> <span class="c1"># 类方法也可以被对象调用</span>
-<span class="k">case</span><span class="o">.</span><span class="n">b</span><span class="p">()</span> <span class="c1"># 普通方法只能被对象调用</span>
+<span class="k">case</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span>  <span class="c1"># 静态方法也可以被对象调用</span>
+<span class="k">case</span><span class="o">.</span><span class="n">a</span><span class="p">()</span>  <span class="c1"># 类方法也可以被对象调用</span>
+<span class="k">case</span><span class="o">.</span><span class="n">b</span><span class="p">()</span>  <span class="c1"># 普通方法只能被对象调用</span>
 </pre></div>
 </div>
 </div>
@@ -988,10 +1000,11 @@ Hello, world!
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 
+
 <span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="c1"># 声明 name 为字符串类型</span>
-    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="c1"># 声明 age 为整数类型</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># 声明 name 为字符串类型</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>  <span class="c1"># 声明 age 为整数类型</span>
 </pre></div>
 </div>
 </div>
@@ -1000,7 +1013,7 @@ Hello, world!
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="c1"># 冒号跟数据类型，可以声明变量的数据类型</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># 冒号跟数据类型，可以声明变量的数据类型</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
 
