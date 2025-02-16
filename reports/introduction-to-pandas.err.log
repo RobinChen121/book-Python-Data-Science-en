@@ -17,13 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df2.groupby(["班级", "性别"]).agg(["max", "min", "mean"], numeric_only = True)  # 汇总了每个班每个性别的最高、最低、平均成绩
+df2.groupby(["班级", "性别"]).agg(["max", "min", "mean"], numeric_only=True)  # 汇总了每个班每个性别的最高、最低、平均成绩
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mKeyError[0m                                  Traceback (most recent call last)
 Cell [0;32mIn[78], line 1[0m
-[0;32m----> 1[0m [43mdf2[49m[38;5;241;43m.[39;49m[43mgroupby[49m[43m([49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43m班级[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43m性别[39;49m[38;5;124;43m"[39;49m[43m][49m[43m)[49m[38;5;241m.[39magg([[38;5;124m"[39m[38;5;124mmax[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmin[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmean[39m[38;5;124m"[39m], numeric_only [38;5;241m=[39m [38;5;28;01mTrue[39;00m)
+[0;32m----> 1[0m [43mdf2[49m[38;5;241;43m.[39;49m[43mgroupby[49m[43m([49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43m班级[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43m性别[39;49m[38;5;124;43m"[39;49m[43m][49m[43m)[49m[38;5;241m.[39magg([[38;5;124m"[39m[38;5;124mmax[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmin[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmean[39m[38;5;124m"[39m], numeric_only[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
 
 File [0;32m~/anaconda3/lib/python3.10/site-packages/pandas/core/frame.py:8402[0m, in [0;36mDataFrame.groupby[0;34m(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)[0m
 [1;32m   8399[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m([38;5;124m"[39m[38;5;124mYou have to supply one of [39m[38;5;124m'[39m[38;5;124mby[39m[38;5;124m'[39m[38;5;124m and [39m[38;5;124m'[39m[38;5;124mlevel[39m[38;5;124m'[39m[38;5;124m"[39m)
@@ -43,7 +43,7 @@ File [0;32m~/anaconda3/lib/python3.10/site-packages/pandas/core/frame.py:8402[
 
 File [0;32m~/anaconda3/lib/python3.10/site-packages/pandas/core/groupby/groupby.py:965[0m, in [0;36mGroupBy.__init__[0;34m(self, obj, keys, axis, level, grouper, exclusions, selection, as_index, sort, group_keys, squeeze, observed, mutated, dropna)[0m
 [1;32m    962[0m [38;5;28;01mif[39;00m grouper [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[1;32m    963[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgroupby[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgrouper[39;00m [38;5;28;01mimport[39;00m get_grouper
+[1;32m    963[0m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgroupby[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgrouper[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m get_grouper
 [0;32m--> 965[0m     grouper, exclusions, obj [38;5;241m=[39m [43mget_grouper[49m[43m([49m
 [1;32m    966[0m [43m        [49m[43mobj[49m[43m,[49m
 [1;32m    967[0m [43m        [49m[43mkeys[49m[43m,[49m

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2. Python 的常用数据类型 &#8212; Python 数据科学</title>
   
@@ -29,45 +28,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'basic-data-type';</script>
-    <script src="_static/myfile.js"></script>
+    <script src="_static/myfile.js?v=78ba3122"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. Python 输出，读写文件" href="print-read-files.html" />
@@ -471,7 +466,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
 <hr><p>Python 的常用数据类型包括数字，字符串，列表，字典等。</p>
 <p>Pyton 将数据赋值给变量，变量命名时有下面的规则。</p>
 <ul class="simple">
@@ -480,7 +475,7 @@ document.write(`
 <li><p>变量名区分大小写（myVar 和 myvar 是不同的变量）。</p></li>
 </ul>
 <section id="id1">
-<h2><span class="section-number">2.1. </span>数字类型: 整数型，浮点型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.1. </span>数字类型: 整数型，浮点型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -741,7 +736,7 @@ y =  6
 <p>更复杂的数学运算需要调用数学包<code class="docutils literal notranslate"><span class="pre">math</span></code>，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 正弦函数</span>
 </pre></div>
@@ -768,7 +763,7 @@ y =  6
 <p>第一行代码调用 math 中的 sin 函数求 <span class="math notranslate nohighlight">\(sin(\pi/2)\)</span>，其中调用了 math 中的 pi 函数表示 <span class="math notranslate nohighlight">\(\pi\)</span>，第二行代码调用了对数函数求 <span class="math notranslate nohighlight">\(\ln(100)\)</span>。</p>
 </section>
 <section id="id2">
-<h2><span class="section-number">2.2. </span>字符串类型<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2. </span>字符串类型<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr>
 <p>字符串也是 Python 中比较常见的数据类型，可以用单引号或双引号表示字符串。例如：</p>
 <div class="cell docutils container">
@@ -1004,7 +999,7 @@ y =  6
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <hr>
 <p>列表（List）是最常用的 Python 数据类型，它由一个<strong>中括号</strong><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>以及逗号分隔的不同数值或字符串组成，例如：</p>
 <div class="cell docutils container">
@@ -1349,7 +1344,7 @@ y =  6
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <hr>
 <p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在花括号<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号<code class="docutils literal notranslate"><span class="pre">：</span></code>分割。</p>
 <div class="cell docutils container">
@@ -1493,7 +1488,7 @@ economy
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <hr>
 <p>Python 的元组（tuple）与列表类似，不同之处在于<strong>元组的元素不能修改</strong>。元组使用<strong>小括号</strong>创建，并使用逗号隔开。访问列表元素或者截取部分元组与列表非常类似：</p>
 <div class="cell docutils container">
@@ -1615,7 +1610,7 @@ economy
     </tr>
 </table></section>
 <section id="id6">
-<h2><span class="section-number">2.6. </span>集合类型<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>集合类型<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <hr>
 <p>集合（set）是一个无序的<strong>不重复</strong>元素序列，一般使用大括号 { } 创建。注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 默认创建一个空字典）。</p>
 <div class="cell docutils container">
@@ -1812,7 +1807,7 @@ economy
     </tr>
 </table></section>
 <section id="id7">
-<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <hr>
 <p>Python 中的布尔值（Bool) 一般通过逻辑判断产生，只有两个可能的结果：<code class="docutils literal notranslate"><span class="pre">True</span></code>或<code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
 <div class="cell docutils container">
@@ -1904,7 +1899,7 @@ economy
 </div>
 </section>
 <section id="random">
-<h2><span class="section-number">2.8. </span><code class="docutils literal notranslate"><span class="pre">random</span></code> 模块<a class="headerlink" href="#random" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span><code class="docutils literal notranslate"><span class="pre">random</span></code> 模块<a class="headerlink" href="#random" title="Link to this heading">#</a></h2>
 <hr><p>随机数在编程中应用比较普遍，Python 内置的<code class="docutils literal notranslate"><span class="pre">random</span></code>模块可以生成常见的伪随机数（计算机生成的随机数都是伪随机数，真随机数是不能人为产生的）。</p>
 <p><code class="docutils literal notranslate"><span class="pre">random</span></code>中的常用函数：</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1938,14 +1933,14 @@ economy
 <p>随机数的种子可以通过函数<code class="docutils literal notranslate"><span class="pre">seed</span></code>指定，只要种子相同，每次生成的随机数也相同。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  <span class="c1"># 没有设置种子，每次运行显示的随机数不一样</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6551006651449754
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8980434981762333
 </pre></div>
 </div>
 </div>
@@ -1965,7 +1960,7 @@ economy
 </div>
 </section>
 <section id="id8">
-<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="define-variable">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
@@ -1979,7 +1974,7 @@ economy
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#define-variable"> Exercise 2.1</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <p>C</p>
 </section>
@@ -1997,7 +1992,7 @@ economy
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#compute-formula"> Exercise 2.2</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -2017,9 +2012,9 @@ economy
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-5">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.3</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
@@ -2037,9 +2032,9 @@ economy
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-7">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#random"> Exercise 2.4</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="s1">&#39;abcedefg&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -2056,10 +2051,10 @@ economy
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-9">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.5</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
-<span class="kn">import</span> <span class="nn">cmath</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cmath</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 a: &quot;</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 b: &quot;</span><span class="p">))</span>
@@ -2086,7 +2081,7 @@ economy
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-11">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.6</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第一边长: &quot;</span><span class="p">))</span>
@@ -2112,9 +2107,9 @@ economy
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-13">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.7</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myDict</span><span class="p">:</span> 
         <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">myDict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>      
