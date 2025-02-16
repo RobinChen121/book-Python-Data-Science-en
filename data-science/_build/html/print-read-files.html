@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3. Python 输出，读写文件 &#8212; Python 数据科学</title>
   
@@ -29,43 +28,39 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'print-read-files';</script>
-    <script src="_static/myfile.js"></script>
+    <script src="_static/myfile.js?v=78ba3122"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4. Python 编写函数" href="define-function.html" />
@@ -474,10 +469,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">3. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Python 输出，读写文件<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
 <hr>
 <section id="print">
-<h2><span class="section-number">3.1. </span>print 函数输出<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.1. </span>print 函数输出<a class="headerlink" href="#print" title="Link to this heading">#</a></h2>
 <hr>
 <p>Python 输出非常方便，用<code class="docutils literal notranslate"><span class="pre">print()</span></code>函数，小括号里面可以是数字、字符串、列表、字典等类型。</p>
 <div class="cell docutils container">
@@ -569,7 +564,7 @@ age is 25
 </div>
 </section>
 <section id="f">
-<h2><span class="section-number">3.2. </span>f 函数输出<a class="headerlink" href="#f" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2. </span>f 函数输出<a class="headerlink" href="#f" title="Link to this heading">#</a></h2>
 <hr><p>输出也可以用 <code class="docutils literal notranslate"><span class="pre">f{expression}</span></code>，大括号中的 exression 可以是一个变量名，例如，下面的代码打印出一个数组列表：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,7 +594,7 @@ age is 25
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the numbers are </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -700,7 +695,7 @@ age is 25
 </div>
 </section>
 <section id="format">
-<h2><span class="section-number">3.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span>用 format 格式化输出<a class="headerlink" href="#format" title="Link to this heading">#</a></h2>
 <hr>
 <p>用<code class="docutils literal notranslate"><span class="pre">format</span></code>也可以实现多种格式化输出，它的基本用法为：</p>
 <table>   
@@ -847,11 +842,11 @@ the numbers are 3 and 4.56 and 3
 </div>
 </section>
 <section id="id1">
-<h2><span class="section-number">3.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span>用 % 格式化输出<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr>
 若要格式化输出，要用到百分号 %，语法规则类似 c 语言，具体参考下面的例子。<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the number is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># 按照整数 print</span>
 </pre></div>
@@ -939,7 +934,7 @@ the numbers are 3 and 4.56 and 3
 <p>引号里面的百分号 % 定义了输出数据的格式，%d 表示按整数类型输出， %.2f 表示按浮点型输出，其中小数点后的数字表示保留几位小数，小数点前的数字表示输出变量所占的字符宽度，%s 表示按字符串输出,%.1f%% 表示按百分比输出，并保留一位小数。同时 print()函数里面还用一个百分号 % 分割 print 内容与数据变量，多个数据变量可以在小括号里面。</p>
 </section>
 <section id="id2">
-<h2><span class="section-number">3.5. </span>读写文件<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5. </span>读写文件<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr>
 <p>Python 对文本文件的操作步骤为<code class="docutils literal notranslate"><span class="pre">打开——操作——关闭</span></code>：打开计算机存储位置的一个文件，进行一些读写操作，然后关闭这个文件。打开后的文件处于占用状态，此时计算机的其他进程不能操作这个文件；文件关闭后，其他进程才能操作这个文件。</p>
 <p>Python 用<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数打开一个文件对象，常用的语法规则为：</p>
@@ -1114,12 +1109,12 @@ his name is li si
 <p>读写数据格式的文件，例如 txt, xls, xlsx, csv 文件等，一般使用工具包<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>读取文件并处理数据，读者可以在本书的<code class="docutils literal notranslate"><span class="pre">Pandas</span></code>章节查阅。读写 word 格式文件，可以使用工具包<code class="docutils literal notranslate"><span class="pre">textract</span></code>，<code class="docutils literal notranslate"><span class="pre">docx2txt</span></code>等，本书不再赘述，感兴趣的读者可以在网上查阅相关资料。</p>
 </section>
 <section id="os-sys">
-<h2><span class="section-number">3.6. </span><code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块<a class="headerlink" href="#os-sys" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span><code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块<a class="headerlink" href="#os-sys" title="Link to this heading">#</a></h2>
 <hr><section id="os">
-<h3><span class="section-number">3.6.1. </span><code class="docutils literal notranslate"><span class="pre">os</span></code> 模块<a class="headerlink" href="#os" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.6.1. </span><code class="docutils literal notranslate"><span class="pre">os</span></code> 模块<a class="headerlink" href="#os" title="Link to this heading">#</a></h3>
 <hr>
 <p>Python 中的 <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块是用于与操作系统交互的标准库，提供了处理文件、目录、进程和环境变量等功能。以下是 <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块的一些主要功能和用法：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># 获取操作系统名称，&#39;posix&#39; (Linux/macOS) 或 &#39;nt&#39; (Windows)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>  <span class="c1"># 获取当前工作目录</span>
@@ -1127,7 +1122,7 @@ his name is li si
 </pre></div>
 </div>
 <section id="id3">
-<h4><span class="section-number">3.6.1.1. </span>文件和目录操作<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">3.6.1.1. </span>文件和目录操作<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>切换目录</p></li>
 </ul>
@@ -1139,7 +1134,7 @@ his name is li si
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;new_dir&#39;</span><span class="p">)</span>  <span class="c1"># 创建一个新目录</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;parent/child/grandchild&#39;</span><span class="p">)</span>  <span class="c1"># 递归创建目录</span>
@@ -1154,7 +1149,7 @@ his name is li si
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;new_file.txt&quot;</span>  <span class="c1"># 新建文件</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1179,7 +1174,7 @@ his name is li si
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">,</span> <span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 组合路径</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># 获取绝对路径</span>
@@ -1216,8 +1211,8 @@ file.txt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18026
-17961
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18642
+18577
 </pre></div>
 </div>
 </div>
@@ -1227,7 +1222,7 @@ file.txt
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;nt&#39;</span><span class="p">:</span>  <span class="c1"># Windows</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running on Windows&quot;</span><span class="p">)</span>
@@ -1245,7 +1240,7 @@ file.txt
 </section>
 </section>
 <section id="sys">
-<h3><span class="section-number">3.6.2. </span><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块<a class="headerlink" href="#sys" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.6.2. </span><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块<a class="headerlink" href="#sys" title="Link to this heading">#</a></h3>
 <hr>
 <p><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块提供了一些与 Python 解释器及其环境相关的变量和函数，适用于处理命令行参数、运行时环境、标准输入输出等。</p>
 <ul class="simple">
@@ -1253,7 +1248,7 @@ file.txt
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>  <span class="c1"># 获取 Python 版本</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>  <span class="c1"># 获取详细的版本信息</span>
@@ -1292,7 +1287,7 @@ sys.version_info(major=3, minor=10, micro=9, releaselevel=&#39;final&#39;, seria
 </section>
 </section>
 <section id="id4">
-<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="output">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
@@ -1302,7 +1297,7 @@ sys.version_info(major=3, minor=10, micro=9, releaselevel=&#39;final&#39;, seria
 </div>
 <div class="solution dropdown admonition" id="print-read-files-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#output"> Exercise 3.1</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.4%}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.0003278</span><span class="p">))</span>
 </pre></div>
@@ -1319,7 +1314,7 @@ sys.version_info(major=3, minor=10, micro=9, releaselevel=&#39;final&#39;, seria
 </div>
 <div class="solution dropdown admonition" id="print-read-files-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#san-guo"> Exercise 3.2</a></p>
+<p class="admonition-title">Solution to</p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；</span><span class="se">\</span>

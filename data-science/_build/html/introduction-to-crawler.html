@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>9. 爬虫入门 &#8212; Python 数据科学</title>
   
@@ -29,43 +28,39 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-crawler';</script>
-    <script src="_static/myfile.js"></script>
+    <script src="_static/myfile.js?v=78ba3122"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="10. Python 面向对象编程" href="introduction-to-class.html" />
@@ -471,10 +466,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">9. </span>爬虫入门<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>爬虫入门<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>Python 的爬虫功能使得程序员可以快速抓取并分析网页中的信息，它实质上是模拟浏览器访问网页。本章主要常用的两个爬虫相关的库<code class="docutils literal notranslate"><span class="pre">requests</span></code>，<code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>。若要模拟鼠标点击等，要用到<code class="docutils literal notranslate"><span class="pre">selenium</span></code> 库，限于篇幅限制，本章不再介绍，具体可以查阅相关资料。</p>
 <section id="requests">
-<h2><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 库<a class="headerlink" href="#requests" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 库<a class="headerlink" href="#requests" title="Link to this heading">#</a></h2>
 <p>每个网页都有源代码，可以通过鼠标单击右键查看网页源代码。网页中的很多信息都在源代码里面，<code class="docutils literal notranslate"><span class="pre">requests</span></code> 是一个访问网页源代码的库。一般通过 get 函数访问网页，另外一个常用来访问网页的函数是 post，与 get 函数的区别在于 post 能够传递表格或文件到网页所在服务器上。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -532,7 +527,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://www.baidu.com&quot;</span><span class="p">)</span>
 <span class="n">r</span><span class="o">.</span><span class="n">status_code</span>
@@ -569,7 +564,7 @@ document.write(`
 </div>
 </section>
 <section id="beautifulsoup4">
-<h2><span class="section-number">9.2. </span><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库<a class="headerlink" href="#beautifulsoup4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.2. </span><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库<a class="headerlink" href="#beautifulsoup4" title="Link to this heading">#</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">requests</span></code>获取的网页源代码一般非常复杂，不仅包括常规内容，还包括很多定义页面格式的代码。</p>
 <div class="tip admonition">
 <p class="admonition-title">tips</p>
@@ -632,7 +627,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://www.baidu.com&quot;</span><span class="p">)</span>
 <span class="n">r</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span>
@@ -809,7 +804,7 @@ document.write(`
 </div>
 </div>
 <section id="findall-find">
-<h3><span class="section-number">9.2.1. </span>函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code><a class="headerlink" href="#findall-find" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">9.2.1. </span>函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code><a class="headerlink" href="#findall-find" title="Link to this heading">#</a></h3>
 <p>当需要列出同一类标签对应的所有内容时，需要用到 BeautifulSoup 中的 findall() 函数。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -888,7 +883,7 @@ document.write(`
 </div>
 </section>
 <section id="get">
-<h3><span class="section-number">9.2.2. </span>函数<code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">9.2.2. </span>函数<code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Link to this heading">#</a></h3>
 <p>通过函数<code class="docutils literal notranslate"><span class="pre">get</span></code>可以访问标签的具体属性，例如 class 类型，具体超链接等。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -916,7 +911,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>  <span class="c1"># 导入正则表达式库</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>  <span class="c1"># 导入正则表达式库</span>
 
 <span class="n">soup2</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">))</span>  <span class="c1"># 通过正则表达式将所有包含 Link 的字符串都检索出来</span>
 </pre></div>
@@ -1013,7 +1008,7 @@ document.write(`
 </section>
 </section>
 <section id="id2">
-<h2><span class="section-number">9.3. </span>正则表达式<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.3. </span>正则表达式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>正则表达式是计算机科学中用来描述字符串的一种表达式。正则表达式定义一个字符串表达规则，只要字符串满足这个规则，就算匹配成功。可以通过字符串结合符号 .*?&lt;=()[]{}\d\w 等定义多种表达规则，并结合函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>,<code class="docutils literal notranslate"><span class="pre">search()</span></code>,<code class="docutils literal notranslate"><span class="pre">match()</span></code>等检索字符串。通过正则表达式，我们可以实现更加复杂的文本检索。</p>
 <p>一些常见的正则表达式：</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1132,7 +1127,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
 <span class="n">text1</span> <span class="o">=</span> <span class="s2">&quot;color&quot;</span>
 <span class="n">text2</span> <span class="o">=</span> <span class="s2">&quot;colour&quot;</span>
@@ -1168,7 +1163,7 @@ True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;fod and ffood are not food&quot;</span>
 <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\b\S*o</span><span class="si">{2}</span><span class="s2">\S*\b&quot;</span>  <span class="c1"># 匹配包含至少两个 &#39;o&#39; 的单词，或 r&#39;\b\w*o{2}\S*\w&#39;</span>
@@ -1186,7 +1181,7 @@ True
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">9.4. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.4. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>下面，我们举例如何用爬虫抓取网上的《三国演义》小说，并将每回的内容下载到电脑里。</p>
 <p>首先，找到一个包含《三国演义》小说的网站，本例中，使用了古诗文网：https://so.gushiwen.cn/guwen/book_46653FD803893E4F7F702BCF1F7CCE17.aspx</p>
 <p>然后，在网页的空白处，单击鼠标右键，查看网页源代码：</p>
@@ -1202,15 +1197,15 @@ True
 <li><p>我们发现每一回的内容在具体属性为 class=’contson’ 的 div 标签里，其中第一句为每一回的标题，而之后的内容为正文。</p></li>
 </ul>
 <p>根据网页的以上两个特点，设计 Python 的爬虫代码如下。</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>  <span class="c1"># 联系网络的包，a package for requesting from websites</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>  <span class="c1"># 分析网页数据的包，a package for webstie data analysis</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>  <span class="c1"># 联系网络的包，a package for requesting from websites</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>  <span class="c1"># 分析网页数据的包，a package for webstie data analysis</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 
 <span class="c1"># 获取单个网页信息</span>
-<span class="k">def</span> <span class="nf">get_url_content</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_url_content</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="c1"># headers = {</span>
     <span class="c1">#     &#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36&#39;</span>
     <span class="c1"># }  # 主要是模拟浏览器登录，防止反爬，一般的网站没有这个也行，谷歌浏览器 按 F12 能够找到网站支持的 headers</span>
@@ -1221,7 +1216,7 @@ True
 
 
 <span class="c1"># 解析出网页中想要的信息，爬虫的关键步骤</span>
-<span class="k">def</span> <span class="nf">filter_info</span><span class="p">(</span><span class="n">chapter_num</span><span class="p">,</span> <span class="n">url_text</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">filter_info</span><span class="p">(</span><span class="n">chapter_num</span><span class="p">,</span> <span class="n">url_text</span><span class="p">):</span>
     <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">url_text</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>  <span class="c1"># 解析网页返回内容，lxml 是一个解码方式，效率比较快，被推荐使用</span>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;contson&quot;</span><span class="p">)</span>
     <span class="c1"># 使用 get_text 可以实现网页里面 p 标签中文本内容的换行，而 text 不能</span>
@@ -1235,7 +1230,7 @@ True
 
 
 <span class="c1"># 从网页中找到每一回的链接</span>
-<span class="k">def</span> <span class="nf">get_url_links</span><span class="p">(</span><span class="n">url_head_content</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_url_links</span><span class="p">(</span><span class="n">url_head_content</span><span class="p">):</span>
     <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">url_head_content</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>  <span class="c1"># 解析网页返回内容，lxml 是一个解码方式，效率比较快，被推荐使用</span>
     <span class="c1"># links = soup.find(&#39;div&#39;, class_=&#39;bookcont&#39;)  # 每一回的链接都在类 span 里面</span>
     <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">)</span>  <span class="c1"># 每一回的链接都在类 ul 里面</span>
@@ -1247,7 +1242,7 @@ True
 
 
 <span class="c1"># 将每章内容输出到 txt 文档里</span>
-<span class="k">def</span> <span class="nf">write_txt</span><span class="p">(</span><span class="n">string_array</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_txt</span><span class="p">(</span><span class="n">string_array</span><span class="p">):</span>
     <span class="n">file_address</span> <span class="o">=</span> <span class="s2">&quot;E:/三国演义/&quot;</span>  <span class="c1"># txt 存放地址</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_address</span><span class="p">):</span>  <span class="c1"># 用os库判断对应文件夹是否存在</span>
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">file_address</span><span class="p">)</span>  <span class="c1"># 如果没有对应文件夹则自动生成</span>
@@ -1259,7 +1254,7 @@ True
 
 
 <span class="c1"># 主函数</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://so.gushiwen.cn/gushi/tangshi.aspx&quot;</span>  <span class="c1"># 古诗文网三国演义网址</span>
     <span class="n">url_head_content</span> <span class="o">=</span> <span class="n">get_url_content</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c1"># 获取网页</span>
     <span class="n">links</span> <span class="o">=</span> <span class="n">get_url_links</span><span class="p">(</span><span class="n">url_head_content</span><span class="p">)</span>  <span class="c1"># 获取每一回的链接地址</span>
@@ -1281,7 +1276,7 @@ True
 <p>我们可以复制一部分信息或全部信息，放到 request 函数的 headers 参数里面。</p>
 </section>
 <section id="top-250">
-<h2><span class="section-number">9.5. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.5. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Link to this heading">#</a></h2>
 <p>我们想获取豆瓣高分评价的 250 部电影的信息：电影名字，导演，上映年代，评分，评分人数等。打开豆瓣 top 250 的网页链接 https://movie.douban.com/top250?start= ，发现每个网页显示 25 部电影，一共有 10 个挖网页，网页地址与链接中的 start = 后面的数字有关。例如第 3 个子网页的链接地址是 ‘https://movie.douban.com/top250?start=50 ，根据这个规律，我们可以用一个 for 循环，将 10 个网页分别打开抓取信息。</p>
 <p>打开一个网页，单击右键查看网页源代码，如下图所示：</p>
 <p><img alt="douban1.png" src="_images/douban1.PNG" /></p>
@@ -1296,16 +1291,16 @@ True
 </ul>
 <p>根据以上的特点，设计出以下的 python 代码。其中中文分词库<code class="docutils literal notranslate"><span class="pre">jieba</span></code>，词云库<code class="docutils literal notranslate"><span class="pre">WordCloud</span></code>库等，若没有安装，需要提前安装（使用 pip 或 conda 安装）到电脑上。</p>
 <p>在画图时，使用 matplotlib 画出饼图，使用 WordCloud 生成词云图，因为 matplotlib 不能自动将不同柱子分配不同的颜色，使用 seaborn 画出柱状图。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>  <span class="c1"># 联系网络的包，a package for requesting from websites</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>  <span class="c1"># 分析网页数据的包，a package for webstie data analysis</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># 画图的包</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">jieba</span>  <span class="c1"># 中文分词包</span>
-<span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span>  <span class="c1"># 词云包</span>
-<span class="kn">import</span> <span class="nn">re</span>  <span class="c1"># 正则表达式包</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>  <span class="c1"># 用 seaborn 画柱状图</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>  <span class="c1"># 联系网络的包，a package for requesting from websites</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>  <span class="c1"># 分析网页数据的包，a package for webstie data analysis</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>  <span class="c1"># 画图的包</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">jieba</span>  <span class="c1"># 中文分词包</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">wordcloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">WordCloud</span>  <span class="c1"># 词云包</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>  <span class="c1"># 正则表达式包</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>  <span class="c1"># 用 seaborn 画柱状图</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.sans-serif&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SimHei&quot;</span><span class="p">]</span>
 
@@ -1558,7 +1553,7 @@ True
 <img alt="douban7.png" src="_images/douban7.png" /></p>
 </section>
 <section id="id4">
-<h2><span class="section-number">9.6. </span>后记<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.6. </span>后记<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>不同的网站的爬虫技巧经常不一样，要具体网站具体分析。</p></li>
 <li><p>由于一些网站经常更新数据的存储地址或源代码，某段时间的爬虫代码可能在下一个时间段就不能用了，爬虫代码也要更新。</p></li>
@@ -1568,7 +1563,7 @@ True
 <p>近年来，许多网站都提高了反爬手段防止网站的数据被无端获取。因此，提醒读者避免过度使用爬虫，给一些网站造成不必要的访问负担。</p>
 </section>
 <section id="id5">
-<h2><span class="section-number">9.7. </span>练习<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">9.7. </span>练习<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="crab-poem">
 
 <p class="admonition-title"><span class="caption-number">Exercise 9.1 </span></p>

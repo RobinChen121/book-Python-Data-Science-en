@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>11. Python 的良好编程规范 &#8212; Python 数据科学</title>
   
@@ -29,43 +28,39 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'good-practices-python';</script>
-    <script src="_static/myfile.js"></script>
+    <script src="_static/myfile.js?v=78ba3122"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="12. Python 并行计算" href="introduction-to-parallel.html" />
@@ -484,10 +479,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">11. </span>Python 的良好编程规范<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Python 的良好编程规范<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
 <hr><p>在 Python 编程中，良好的编码习惯可以提高代码的可读性、可维护性和运行效率。Python 官方提供了 <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8</a> 作为代码风格指南，本章根据该指南以及经验心得总结了下面几点。</p>
 <section id="id1">
-<h2><span class="section-number">11.1. </span>代码布局<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>代码布局<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>一些 Python IDE 软件，有可以将代码布局转化为 PEP 8 风格的选项或快捷键</p>
@@ -507,7 +502,7 @@ document.write(`
 </ul>
 </div>
 <section id="id2">
-<h3><span class="section-number">11.1.1. </span>空格与空行的使用<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.1.1. </span>空格与空行的使用<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <hr><ul class="simple">
 <li><p>使用 4 个空格缩进（避免使用 Tab）</p></li>
 </ul>
@@ -525,22 +520,22 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 
 <span class="c1"># two blank lines above</span>
-<span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">foo1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">foo1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
     <span class="c1"># functions inside a class are separated by one blank line</span>
-    <span class="k">def</span> <span class="nf">foo2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">foo2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
 
 <span class="c1"># class and the outer function is separated by two blank lines</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">my_class</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
     <span class="n">my_class</span><span class="o">.</span><span class="n">foo1</span><span class="p">()</span>
 
@@ -631,7 +626,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h3><span class="section-number">11.1.2. </span>代码行长度、换行与模块导入<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.1.2. </span>代码行长度、换行与模块导入<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <hr><ul class="simple">
 <li><p>每行代码长度不超过 79 个字符</p></li>
 </ul>
@@ -659,14 +654,14 @@ document.write(`
 <li><p>单独导入通常应该放在单独的行，或者使用 from 导入多个 module</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correct:</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="c1"># Wrong:</span>
-<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="c1"># Correct:</span>
-<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">subprocess</span><span class="w"> </span><span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -681,25 +676,25 @@ document.write(`
 <li><p>在每组导入之间放置一个空行。</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard library imports</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
 
 <span class="c1"># Related third-party imports</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="c1"># Local application/library-specific imports</span>
-<span class="kn">from</span> <span class="nn">my_project.utils</span> <span class="kn">import</span> <span class="n">helper_function</span>
-<span class="kn">from</span> <span class="nn">my_project.models</span> <span class="kn">import</span> <span class="n">UserModel</span>
-<span class="kn">from</span> <span class="nn">my_project.config</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">my_project.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">helper_function</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">my_project.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">my_project.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="id4">
-<h2><span class="section-number">11.2. </span>命名规范<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>命名规范<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>避免使用 python 的保留关键字命名</p></li>
 </ul>
@@ -729,7 +724,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">UserProfile</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">UserProfile</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -743,7 +738,7 @@ document.write(`
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Global Variable&quot;</span>
 
-<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name_</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name_</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Function to greet a user, avoiding causing confusion with the outer variable.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name_</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 
@@ -792,7 +787,7 @@ document.write(`
 </ul>
 </section>
 <section id="docstring">
-<h2><span class="section-number">11.3. </span>注释与文档字符串（Docstring）<a class="headerlink" href="#docstring" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>注释与文档字符串（Docstring）<a class="headerlink" href="#docstring" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p>注释应为完整的句子。第一个单词应大写，除非它是一个以小写字母开头的标识符（变量、类、关键字等）的名字。</p></li>
 <li><p>行内注释应与语句至少相隔两个空格，应以 # 和一个空格开头，可以省略句号</p></li>
@@ -800,7 +795,7 @@ document.write(`
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function calculates the area of a circle.</span>
 <span class="c1"># It takes the radius as input and returns the computed area.</span>
-<span class="k">def</span> <span class="nf">calculate_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the area of a circle using the formula πr².&quot;&quot;&quot;</span>
     <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159</span>  <span class="c1"># Constant value of π, approximated to five decimal places</span>
     
@@ -823,7 +818,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    返回两个数的和。</span>
 
@@ -847,9 +842,9 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h2><span class="section-number">11.4. </span>其他一些推荐<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>其他一些推荐<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <hr><section id="f-string">
-<h3><span class="section-number">11.4.1. </span>使用 f-string 进行字符串格式化<a class="headerlink" href="#f-string" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.1. </span>使用 f-string 进行字符串格式化<a class="headerlink" href="#f-string" title="Link to this heading">#</a></h3>
 <hr><p>相比 <code class="docutils literal notranslate"><span class="pre">%</span></code> 或 <code class="docutils literal notranslate"><span class="pre">.format()</span></code>，<code class="docutils literal notranslate"><span class="pre">f-string</span></code> 更直观、性能更好：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -882,17 +877,17 @@ document.write(`
 </div>
 </section>
 <section id="with">
-<h3><span class="section-number">11.4.2. </span>使用 with 语句管理资源<a class="headerlink" href="#with" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.2. </span>使用 with 语句管理资源<a class="headerlink" href="#with" title="Link to this heading">#</a></h3>
 <hr><p>当操作文件，一些并行计算操作、并行计算或连接数据库时，使用 with 语句，避免手动 close()。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 不需要手动添加 file.close()</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">multiprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pool</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">worker</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Process </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span><span class="si">}</span><span class="s2"> computed </span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -907,7 +902,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3><span class="section-number">11.4.3. </span>使用列表推导式提高代码效率<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.3. </span>使用列表推导式提高代码效率<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <hr><p>列表可以直接在 [] 中使用 for 语句赋值。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -924,7 +919,7 @@ document.write(`
 </div>
 </section>
 <section id="enumerate">
-<h3><span class="section-number">11.4.4. </span>使用<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>遍历列表<a class="headerlink" href="#enumerate" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.4. </span>使用<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>遍历列表<a class="headerlink" href="#enumerate" title="Link to this heading">#</a></h3>
 <hr><p>为了减少代码以及提高代码的可读性，用<code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>遍历替代 range(len(list)) 遍历列表</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -967,7 +962,7 @@ document.write(`
 </div>
 </section>
 <section id="zip">
-<h3><span class="section-number">11.4.5. </span>使用<code class="docutils literal notranslate"><span class="pre">zip()</span></code>遍历多个列表<a class="headerlink" href="#zip" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.5. </span>使用<code class="docutils literal notranslate"><span class="pre">zip()</span></code>遍历多个列表<a class="headerlink" href="#zip" title="Link to this heading">#</a></h3>
 <hr><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">]</span>
@@ -990,13 +985,13 @@ Charlie is 35 years old.
 <p>与 enumerate 相似的是，若要<strong>修改原始列表中的元素，zip 就不适用了</strong>。</p>
 </section>
 <section id="name-main">
-<h3><span class="section-number">11.4.6. </span>使用<code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></code> 保护代码<a class="headerlink" href="#name-main" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.4.6. </span>使用<code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></code> 保护代码<a class="headerlink" href="#name-main" title="Link to this heading">#</a></h3>
 <hr><p>在 Python 中，if <strong>name</strong> == “<strong>main</strong>”: 主要用于防止某些代码在导入时被执行，尤其是在多进程 (multiprocessing)、脚本执行、模块重用等场景下非常重要。</p>
 <p>下面这段多进程的代码，如果没有 if <strong>name</strong> == “<strong>main</strong>”: 语句，则会出错。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">multiprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pool</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">worker</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Process </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span><span class="si">}</span><span class="s2"> computed </span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -1012,7 +1007,7 @@ Charlie is 35 years old.
 </section>
 </section>
 <section id="logging-print">
-<h2><span class="section-number">11.5. </span>开发大型程序时使用<code class="docutils literal notranslate"><span class="pre">logging</span></code>代替 print()<a class="headerlink" href="#logging-print" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">11.5. </span>开发大型程序时使用<code class="docutils literal notranslate"><span class="pre">logging</span></code>代替 print()<a class="headerlink" href="#logging-print" title="Link to this heading">#</a></h2>
 <hr><p>Python 的 logging 模块是一个强大且灵活的日志系统，相比 print()，它能更好地管理日志，尤其适用于生产环境、调试、错误追踪、多线程等场景。</p>
 <p>在小型脚本中 print() 可能够用，但在生产环境或大项目中，logging 是更好的选择。</p>
 <p>printnt()只能输出到控制台，而 <code class="docutils literal notranslate"><span class="pre">logging</span></code> 可以：</p>
@@ -1024,7 +1019,7 @@ Charlie is 35 years old.
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span>
@@ -1038,7 +1033,7 @@ Charlie is 35 years old.
 </div>
 </div>
 <section id="id7">
-<h3><span class="section-number">11.5.1. </span>支持不同级别的日志<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.5.1. </span>支持不同级别的日志<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <hr><p><code class="docutils literal notranslate"><span class="pre">logging</span></code> 提供 <strong>5 种日志级别</strong>：</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1073,7 +1068,7 @@ Charlie is 35 years old.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
@@ -1102,9 +1097,9 @@ Charlie is 35 years old.
 </div>
 </section>
 <section id="id8">
-<h3><span class="section-number">11.5.2. </span>日志可以保存到文件<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.5.2. </span>日志可以保存到文件<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <hr><p>在 print() 中，所有信息只能输出到控制台，一旦关闭终端，信息就丢失了。而 <code class="docutils literal notranslate"><span class="pre">logging</span></code> <strong>可以写入文件</strong>，方便后续分析。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;app.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
@@ -1115,8 +1110,8 @@ Charlie is 35 years old.
 <p>日志会被写入 <code class="docutils literal notranslate"><span class="pre">app.log</span></code> 文件。</p>
 </section>
 <section id="id9">
-<h3><span class="section-number">11.5.3. </span>日志格式可自定义<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
-<hr><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<h3><span class="section-number">11.5.3. </span>日志格式可自定义<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<hr><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
     <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> - </span><span class="si">%(levelname)s</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span>
@@ -1160,10 +1155,10 @@ Charlie is 35 years old.
 </div>
 </section>
 <section id="logging">
-<h3><span class="section-number">11.5.4. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code> 可以用于多模块<a class="headerlink" href="#logging" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.5.4. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code> 可以用于多模块<a class="headerlink" href="#logging" title="Link to this heading">#</a></h3>
 <hr><p>在大型项目中，多个 Python 文件可能需要共享日志系统，print() 无法做到这一点，而 <code class="docutils literal notranslate"><span class="pre">logging</span></code> 可以。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">module</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">module</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting app...&quot;</span><span class="p">)</span>
@@ -1171,28 +1166,28 @@ Charlie is 35 years old.
 </pre></div>
 </div>
 <p>文件 <code class="docutils literal notranslate"><span class="pre">module.py</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">some_function</span><span class="p">():</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is from module.py&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>运行 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">app.py</span></code> 后：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INFO</span><span class="p">:</span><span class="n">root</span><span class="p">:</span><span class="n">Starting</span> <span class="n">app</span><span class="o">...</span>
-<span class="n">INFO</span><span class="p">:</span><span class="n">root</span><span class="p">:</span><span class="n">This</span> <span class="ow">is</span> <span class="kn">from</span> <span class="nn">module.py</span>
+<span class="n">INFO</span><span class="p">:</span><span class="n">root</span><span class="p">:</span><span class="n">This</span> <span class="ow">is</span> <span class="kn">from</span><span class="w"> </span><span class="nn">module.py</span>
 </pre></div>
 </div>
 <p>多个模块共享同一个 <code class="docutils literal notranslate"><span class="pre">logging</span></code> 配置，比 print() 更方便管理。</p>
 </section>
 <section id="id10">
-<h3><span class="section-number">11.5.5. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code> 适用于多线程<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">11.5.5. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code> 适用于多线程<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <hr><p>print() 在多线程环境下可能会导致日志混乱，但 <code class="docutils literal notranslate"><span class="pre">logging</span></code> <strong>是线程安全的</strong>。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">threading</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(threadName)s</span><span class="s2">: </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">worker</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">worker</span><span class="p">():</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Worker thread executing&quot;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>

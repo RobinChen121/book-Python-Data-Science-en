@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>5. Numpy 简介 &#8212; Python 数据科学</title>
   
@@ -29,43 +28,39 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-numpy';</script>
-    <script src="_static/myfile.js"></script>
+    <script src="_static/myfile.js?v=78ba3122"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="6. Pandas 入门" href="introduction-to-pandas.html" />
@@ -471,7 +466,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1><span class="section-number">5. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
 <hr>
 <p>Numpy (Numerical Python) 是 Python 语言一个重要的扩展库，支持大量的数组与矩阵运算，此外也提供大量的数学函数库，用于模仿数学软件 MatLab 的功能。Numpy 通常与其他库 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用。</p>
 <p>Numpy 的主要特点是：</p>
@@ -482,13 +477,13 @@ document.write(`
 <p>使用 numpy 需要首先导入 numpy 包：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="id1">
-<h2><span class="section-number">5.1. </span>创建数组<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>创建数组<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr>
 <p>用 Numpy 创建数组有多种方法。首先，Numpy 中的<code class="docutils literal notranslate"><span class="pre">array</span></code>函数可以直接将 Python 的 list 类型转化为 Numpy 的数组类型 ndarray。例如，一个一维数组：</p>
 <div class="cell docutils container">
@@ -724,7 +719,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">5.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr>
 <p>对于一维数组，numpy 的索引切片类似 Python list 类型的索引切片，例如：</p>
 <div class="cell docutils container">
@@ -854,7 +849,7 @@ document.write(`
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">5.3. </span>数组拼接<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>数组拼接<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <hr>
 <p>Numpy 中拼接两个数组用<code class="docutils literal notranslate"><span class="pre">append</span></code>函数。</p>
 <div class="cell docutils container">
@@ -923,7 +918,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h2><span class="section-number">5.4. </span>数组运算<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>数组运算<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <hr>
 <p>Numpy 可以对数组进行多种代数运算，例如：</p>
 <div class="cell docutils container">
@@ -1146,20 +1141,20 @@ eigenvectors are [[-0.76729658 -0.57152478]
 <p>另外，Numpy 还有专门的二维数组的类型 Matrix，可以更方便地进行一些矩阵运算，感兴趣的读者可以参见官网。</p>
 </section>
 <section id="id5">
-<h2><span class="section-number">5.5. </span>生成随机数<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.5. </span>生成随机数<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <hr>
 <p>numpy 包的<code class="docutils literal notranslate"><span class="pre">random</span></code>方法基本支持所有分布，并且能够一次生成多行多列的随机数, 例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 生成 [1, 10] 内的均匀分布随机数， 2 行 2 列</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8.18092188, 3.04342969],
-       [2.52024704, 9.78989178]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.54947921, 7.43066953],
+       [2.59983849, 5.05890121]])
 </pre></div>
 </div>
 </div>
@@ -1171,7 +1166,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6.04716815, 9.92975122, 9.7734819 , 3.03528881, 1.37417757])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.22683268, 2.97847611, 5.56473336, 4.25338712, 8.33848346])
 </pre></div>
 </div>
 </div>
@@ -1183,8 +1178,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 2],
-       [5, 1]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[7, 1],
+       [6, 1]])
 </pre></div>
 </div>
 </div>
@@ -1196,8 +1191,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.18819721, 5.38671417],
-       [6.09638605, 5.4310195 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.87599048, 5.99768482],
+       [4.06201883, 6.41489765]])
 </pre></div>
 </div>
 </div>
@@ -1209,8 +1204,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 3],
-       [2, 5]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6, 7],
+       [5, 4]])
 </pre></div>
 </div>
 </div>
@@ -1247,12 +1242,12 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </section>
 <section id="numpy-list">
-<h2><span class="section-number">5.6. </span>Numpy 数组与列表 list 运算速度的对比<a class="headerlink" href="#numpy-list" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.6. </span>Numpy 数组与列表 list 运算速度的对比<a class="headerlink" href="#numpy-list" title="Link to this heading">#</a></h2>
 <hr><p>Numpy 对于数值型数据的运算速度远快于 Python 自带的 list 列表。对于大规模的数学计算，优先使用 Numpy 处理。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># 使用 Python 原生 list</span>
 <span class="n">size</span> <span class="o">=</span> <span class="mi">1_000_000</span>
@@ -1272,17 +1267,17 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python List 耗时: 0.19563794136047363
-NumPy 耗时: 0.0022840499877929688
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python List 耗时: 0.19585275650024414
+NumPy 耗时: 0.0022618770599365234
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="time-datatime">
-<h2><span class="section-number">5.7. </span><code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datatime</span></code> 模块<a class="headerlink" href="#time-datatime" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.7. </span><code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datatime</span></code> 模块<a class="headerlink" href="#time-datatime" title="Link to this heading">#</a></h2>
 <hr><section id="time">
-<h3><span class="section-number">5.7.1. </span><code class="docutils literal notranslate"><span class="pre">time</span></code> 模块<a class="headerlink" href="#time" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.1. </span><code class="docutils literal notranslate"><span class="pre">time</span></code> 模块<a class="headerlink" href="#time" title="Link to this heading">#</a></h3>
 <hr>
 <p><code class="docutils literal notranslate"><span class="pre">time</span></code> 模块提供了许多与时间相关的函数，如获取当前时间、暂停程序、测量执行时间等。</p>
 <ul class="simple">
@@ -1290,7 +1285,7 @@ NumPy 耗时: 0.0022840499877929688
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># 获取当前时间戳</span>
 <span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -1299,7 +1294,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1739746168.694314
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1739747029.3258939
 </pre></div>
 </div>
 </div>
@@ -1313,7 +1308,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2025, tm_mon=2, tm_mday=16, tm_hour=22, tm_min=49, tm_sec=28, tm_wday=6, tm_yday=47, tm_isdst=0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2025, tm_mon=2, tm_mday=16, tm_hour=23, tm_min=3, tm_sec=49, tm_wday=6, tm_yday=47, tm_isdst=0)
 </pre></div>
 </div>
 </div>
@@ -1327,7 +1322,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 22:49:28
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 23:03:49
 </pre></div>
 </div>
 </div>
@@ -1430,7 +1425,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.041277 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.051951 seconds
 </pre></div>
 </div>
 </div>
@@ -1447,7 +1442,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.028468 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.028017 seconds
 </pre></div>
 </div>
 </div>
@@ -1466,7 +1461,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.025179 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.026147 seconds
 </pre></div>
 </div>
 </div>
@@ -1482,14 +1477,14 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 22:49:31
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 23:03:52
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="datetime">
-<h3><span class="section-number">5.7.2. </span><code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块<a class="headerlink" href="#datetime" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">5.7.2. </span><code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块<a class="headerlink" href="#datetime" title="Link to this heading">#</a></h3>
 <hr>
 <p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> 是 Python 标准库中的一个模块，提供日期、时间处理的功能，包括获取当前时间、日期计算、时区处理等。</p>
 <ul class="simple">
@@ -1497,7 +1492,7 @@ NumPy 耗时: 0.0022840499877929688
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="c1"># 获取当前本地时间</span>
 <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
@@ -1506,14 +1501,14 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 22:49:31.844692
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 23:03:52.495284
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
 
 <span class="c1"># 获取当前 UTC 时间</span>
 <span class="n">utc_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
@@ -1522,7 +1517,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 22:49:31.848610+00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 23:03:52.499456+00:00
 </pre></div>
 </div>
 </div>
@@ -1532,7 +1527,7 @@ NumPy 耗时: 0.0022840499877929688
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="c1"># 创建指定时间</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
@@ -1548,7 +1543,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="c1"># 从时间戳创建时间</span>
 <span class="n">timestamp</span> <span class="o">=</span> <span class="mi">1708193457</span>  <span class="c1"># 2025-02-17 10:30:57 对应的时间戳</span>
@@ -1571,7 +1566,7 @@ NumPy 耗时: 0.0022840499877929688
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
 
@@ -1589,7 +1584,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="c1"># 字符串 转 datetime</span>
 <span class="n">time_str</span> <span class="o">=</span> <span class="s2">&quot;2025-02-17 10:30:57&quot;</span>
@@ -1609,7 +1604,7 @@ NumPy 耗时: 0.0022840499877929688
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
 <span class="n">new_dt</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -1625,7 +1620,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">dt1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
 <span class="n">dt2</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1648,7 +1643,7 @@ NumPy 耗时: 0.0022840499877929688
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
 
 <span class="n">utc_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
 <span class="n">beijing_time</span> <span class="o">=</span> <span class="n">utc_now</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">8</span><span class="p">)))</span>
@@ -1657,14 +1652,14 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-17 06:49:31.876113+08:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-17 07:03:52.529457+08:00
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
 
 <span class="n">local_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">utc_time</span> <span class="o">=</span> <span class="n">local_time</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
@@ -1673,7 +1668,7 @@ NumPy 耗时: 0.0022840499877929688
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 22:49:31.879899+00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-16 23:03:52.533456+00:00
 </pre></div>
 </div>
 </div>
