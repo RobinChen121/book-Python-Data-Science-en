@@ -16,19 +16,21 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -38,10 +40,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -69,6 +72,7 @@
     <link rel="prev" title="6. Pandas 入门" href="introduction-to-pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,19 +88,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -104,7 +97,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -112,8 +104,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -129,7 +121,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -159,21 +152,17 @@
     
     
     <img src="_static/logo.gif" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <script>document.write(`<img src="_static/logo.gif" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
+    <img src="_static/logo.gif" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -209,9 +198,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -404,24 +398,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -486,7 +472,12 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 matplotlib 中的 plot， 并命名为常用名 plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
 </pre></div>
 </div>
 </div>
@@ -495,8 +486,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># plt.style.use(&#39;default&#39;)</span>
 
@@ -514,7 +505,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9c580fdecd2c505433cd8ddb528a179a80b668b62c16dcd9e9ed33fce2dc8b76.png" src="_images/9c580fdecd2c505433cd8ddb528a179a80b668b62c16dcd9e9ed33fce2dc8b76.png" />
+<img alt="_images/28a252cf2c52ec80a75dd8aa947e19c55fe17816e124fc1495ed2d7f3e85d396.png" src="_images/28a252cf2c52ec80a75dd8aa947e19c55fe17816e124fc1495ed2d7f3e85d396.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">plot</span></code> 函数的基本用法如下：</p>
@@ -622,10 +613,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc581012440&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117701a30&gt;]
 </pre></div>
 </div>
-<img alt="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" src="_images/1482d5806504c5d5f3162c6a08a86ff66920c4fef763625dffb1f7f48ead3859.png" />
+<img alt="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" src="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -635,10 +626,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc5810a2ef0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1177b3e60&gt;]
 </pre></div>
 </div>
-<img alt="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" src="_images/7dcec182a8635621d87aa71d5722cd725bea577de4610f1f01f6308a3b2d1053.png" />
+<img alt="_images/b251f6d31de10b926e1c8f6448d698544a5c5dbd3ba8494ec71315b5bceca67a.png" src="_images/b251f6d31de10b926e1c8f6448d698544a5c5dbd3ba8494ec71315b5bceca67a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -648,10 +639,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc5621ef0d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117b2deb0&gt;]
 </pre></div>
 </div>
-<img alt="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" src="_images/db9ea7b350a7dc6e0c85ad1a4fce22f621b7ebd96c50d5f7d9f82438889b432f.png" />
+<img alt="_images/6a6574b83139e69cc65d4fe67da903ec6432ec1fa3fa00ffc1e0a12b78020fbf.png" src="_images/6a6574b83139e69cc65d4fe67da903ec6432ec1fa3fa00ffc1e0a12b78020fbf.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -663,23 +654,23 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc5622770d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117ba72c0&gt;]
 </pre></div>
 </div>
-<img alt="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" src="_images/221373eef34ce251eed9ace731b0eab57fe12481b4499c9152519f1b03a7bb89.png" />
+<img alt="_images/816540be985965cc59eafc61e284d3ffa703880a5a6b49649fb811d2911b84bd.png" src="_images/816540be985965cc59eafc61e284d3ffa703880a5a6b49649fb811d2911b84bd.png" />
 </div>
 </div>
 <p>如果我们想自定义坐标轴的标题，坐标轴的刻度，坐标轴刻度的范围，设置图形标题，添加图例时，可以通过设置 pyplot 函数中的 xlable（横坐标轴标题）, ylabel（纵坐标轴标题）, xticks（横坐标轴刻度），yticks（纵坐标轴刻度），title（图形标题）, grid（显示网格），legend（显示图例）等属性来实现。若调整图像的清晰度，可以用<code class="docutils literal notranslate"><span class="pre">plt.rcParams[&quot;figure.dpi&quot;]</span></code> 来调整图像的 dpi 值来实现，调整图像的大小可以通过 <code class="docutils literal notranslate"><span class="pre">plt.rcParams('figsize')</span></code>来设置图像的长宽。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 下面几行代码使得 pyplot 画出的图形中可以显示中文</span>
 <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体: &#39;SimHei&#39;</span>
 <span class="c1"># binder 下字体：&#39;Noto Sans CJK JP&#39;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">platform</span>
 
 <span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
@@ -721,7 +712,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d5ade64600337224c418242c9b7f94993582b359f8db54f853a93550ec54873d.png" src="_images/d5ade64600337224c418242c9b7f94993582b359f8db54f853a93550ec54873d.png" />
+<img alt="_images/8d57567c51b59d9359081906c651bdfb980f91245bddfa1a940bfc7065bd8c21.png" src="_images/8d57567c51b59d9359081906c651bdfb980f91245bddfa1a940bfc7065bd8c21.png" />
 </div>
 </div>
 <ul class="simple">
@@ -763,13 +754,13 @@ document.write(`
 <br /><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 下面几行代码使得 pyplot 画出的图形中可以显示中文</span>
 <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体: &#39;SimHei&#39;</span>
 <span class="c1"># binder 下字体：&#39;Noto Sans CJK JP&#39;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">platform</span>
 
 <span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
@@ -792,7 +783,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fc351d743f40747b68f0a05816d764eae5a4af9c6041d360ce6a275bb74bf9a1.png" src="_images/fc351d743f40747b68f0a05816d764eae5a4af9c6041d360ce6a275bb74bf9a1.png" />
+<img alt="_images/0c4f82efe68d9f1d44cee21c29a94a5ebd97650dd500b59f26f2ebcb60443adc.png" src="_images/0c4f82efe68d9f1d44cee21c29a94a5ebd97650dd500b59f26f2ebcb60443adc.png" />
 </div>
 </div>
 </section>
@@ -860,13 +851,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 下面几行代码使得 pyplot 画出的图形中可以显示中文</span>
 <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体: &#39;SimHei&#39;</span>
 <span class="c1"># binder 下字体：&#39;Noto Sans CJK JP&#39;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">platform</span>
 
 <span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
@@ -887,7 +878,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4fc89278c6683e0319d22ccfc773f296e51aa5d2c953f7a4ba5d47f2b56fda9c.png" src="_images/4fc89278c6683e0319d22ccfc773f296e51aa5d2c953f7a4ba5d47f2b56fda9c.png" />
+<img alt="_images/c019a7d241707692214969cd4ff18a25375e6d8eb15bcf97dc78b1146bc9d246.png" src="_images/c019a7d241707692214969cd4ff18a25375e6d8eb15bcf97dc78b1146bc9d246.png" />
 </div>
 </div>
 <p>横放条形图使用<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数，用法与<code class="docutils literal notranslate"><span class="pre">bar</span></code>基本一致。</p>
@@ -904,20 +895,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6e6b6556f7e1f7fcb477bd36e03408a12a24e900e1b7d4645eecbebfa2baf8ff.png" src="_images/6e6b6556f7e1f7fcb477bd36e03408a12a24e900e1b7d4645eecbebfa2baf8ff.png" />
+<img alt="_images/ef802372854e88ea575a0e077ed678cb72a351283faafb674a67ea0e4d0f7be3.png" src="_images/ef802372854e88ea575a0e077ed678cb72a351283faafb674a67ea0e4d0f7be3.png" />
 </div>
 </div>
 <p>若要将男生与女生的调查情况画出两个条形图一块显示，则可以使用<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数两次，并调整<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数的条形图位置坐标以及相应刻度，使得两组条形图能够并排显示。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 下面几行代码使得 pyplot 画出的图形中可以显示中文</span>
 <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体: &#39;SimHei&#39;</span>
 <span class="c1"># binder 下字体：&#39;Noto Sans CJK JP&#39;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">platform</span>
 
 <span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
@@ -952,7 +943,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/480389863fbf5db95c1224d74539d3ec26bc3af2e06ae1424cbad4a36b7651c1.png" src="_images/480389863fbf5db95c1224d74539d3ec26bc3af2e06ae1424cbad4a36b7651c1.png" />
+<img alt="_images/d279070f80303a08cb7b0e51de27c2d2a52ea2bf7e11466845bd50645a99bcd4.png" src="_images/d279070f80303a08cb7b0e51de27c2d2a52ea2bf7e11466845bd50645a99bcd4.png" />
 </div>
 </div>
 </section>
@@ -981,7 +972,7 @@ document.write(`
 <p>下面的代码根据一组数据生成直方图：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">141</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">166</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">203</span><span class="p">,</span><span class="mi">214</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">167</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">183</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">203</span><span class="p">,</span><span class="mi">215</span><span class="p">,</span><span class="mi">144</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span>\
     <span class="mi">178</span><span class="p">,</span><span class="mi">184</span><span class="p">,</span><span class="mi">189</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">205</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">162</span><span class="p">,</span><span class="mi">170</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">179</span><span class="p">,</span><span class="mi">186</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">197</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">226</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">172</span><span class="p">,</span><span class="mi">176</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">202</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">237</span><span class="p">,</span>
@@ -994,7 +985,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d19c24220b936b3962f2f23a4457e896757def0bc6627a7c842753978a3b8282.png" src="_images/d19c24220b936b3962f2f23a4457e896757def0bc6627a7c842753978a3b8282.png" />
+<img alt="_images/0ce9ee524c549869631cb0930aead76c6c817f885f14e6c940fe815ffdab02d8.png" src="_images/0ce9ee524c549869631cb0930aead76c6c817f885f14e6c940fe815ffdab02d8.png" />
 </div>
 </div>
 </section>
@@ -1034,12 +1025,12 @@ document.write(`
 <br /><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># 下面几行代码使得 pyplot 画出的图形中可以显示中文</span>
 <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体: &#39;SimHei&#39;</span>
 <span class="c1"># binder 下字体：&#39;Noto Sans CJK JP&#39;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">platform</span>
 
 <span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
@@ -1061,7 +1052,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/31faa69afbcfb758eebd12417c8e47a9357f1895a704998585c84074ade99c61.png" src="_images/31faa69afbcfb758eebd12417c8e47a9357f1895a704998585c84074ade99c61.png" />
+<img alt="_images/a49845c3fc6bd9af3cf4ab423651305e535b18344f76ca6a4aa9db9b5ea86d57.png" src="_images/a49845c3fc6bd9af3cf4ab423651305e535b18344f76ca6a4aa9db9b5ea86d57.png" />
 </div>
 </div>
 </section>
@@ -1180,13 +1171,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 下面几行代码使得 pyplot 画出的图形中可以显示中文</span>
 <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体: &#39;SimHei&#39;</span>
 <span class="c1"># binder 下字体：&#39;Noto Sans CJK JP&#39;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">platform</span>
 
 <span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
@@ -1214,7 +1205,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b48c1d645c8cf51bde306dfd7e74aae3d1540e142d6fc0ec53e38a33b430f289.png" src="_images/b48c1d645c8cf51bde306dfd7e74aae3d1540e142d6fc0ec53e38a33b430f289.png" />
+<img alt="_images/003b893d2f37aaca7d7a6ad9cef5a2ac6ea638b1662f56aea6a42b9b55f46e14.png" src="_images/003b893d2f37aaca7d7a6ad9cef5a2ac6ea638b1662f56aea6a42b9b55f46e14.png" />
 </div>
 </div>
 </section>
@@ -1252,13 +1243,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入工具包</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 下面几行代码使得 pyplot 画出的图形中可以显示中文</span>
 <span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体: &#39;SimHei&#39;</span>
 <span class="c1"># binder 下字体：&#39;Noto Sans CJK JP&#39;</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">platform</span>
 
 <span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
@@ -1298,7 +1289,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" src="_images/81c229391b510635bca1f1b3f822d9fa674c3d0f7209d4b25a0df3e01958a2a2.png" />
+<img alt="_images/f90ff4371db7c4124ad433dcd2f5a0cb2c30cd7f4398ad4f873a910c61531291.png" src="_images/f90ff4371db7c4124ad433dcd2f5a0cb2c30cd7f4398ad4f873a910c61531291.png" />
 </div>
 </div>
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
@@ -1310,9 +1301,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import seaborn</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Apply the default theme</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>  <span class="c1"># 应用 seaborn 的默认主题</span>
@@ -1325,7 +1316,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dc29a136da4782a18cd2fbd29cbcffdabbd82aa23b2c3aa457fec8c9bc132c68.png" src="_images/dc29a136da4782a18cd2fbd29cbcffdabbd82aa23b2c3aa457fec8c9bc132c68.png" />
+<img alt="_images/35f09abc0649f8967ffd26e061bb88f681c51818f491ccfaecd376432a700516.png" src="_images/35f09abc0649f8967ffd26e061bb88f681c51818f491ccfaecd376432a700516.png" />
 </div>
 </div>
 <p>可以看出，应用 seaborn 的主题后，图形的配色变化了些。下面我们导入 seaborn 自带的数据集 tips。</p>
@@ -1413,7 +1404,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a007401bd298b3907439e793dcc644849ed56976bc14e32bdfbe60aa9ab1a6fd.png" src="_images/a007401bd298b3907439e793dcc644849ed56976bc14e32bdfbe60aa9ab1a6fd.png" />
+<img alt="_images/60af268be7890664fe7ccfaec71317c7334bb594017737d980153328b2160855.png" src="_images/60af268be7890664fe7ccfaec71317c7334bb594017737d980153328b2160855.png" />
 </div>
 </div>
 <p>生成线图时，相同横坐标的数据将会合并，并且，图像会显示均值以及 95% 的置信区间：</p>
@@ -1425,7 +1416,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7e3c45694e3a1a4784e2f003e051d1ac96d77bdf6275cebbbf2ead9dfe663fa.png" src="_images/f7e3c45694e3a1a4784e2f003e051d1ac96d77bdf6275cebbbf2ead9dfe663fa.png" />
+<img alt="_images/8f48b21ed1ca078ba242cae04536c94d2c0879bd9393e37be811224da414d7a4.png" src="_images/8f48b21ed1ca078ba242cae04536c94d2c0879bd9393e37be811224da414d7a4.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1439,7 +1430,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/1282fed6ee92b48d7fd5a45fd44ca315560722497683d1f4ada04813c33cec9a.png" src="_images/1282fed6ee92b48d7fd5a45fd44ca315560722497683d1f4ada04813c33cec9a.png" />
+<img alt="_images/17e3641d6f7581f601f140ede6cf69738ebcd9d801fac41cde40a17c2f8557c6.png" src="_images/17e3641d6f7581f601f140ede6cf69738ebcd9d801fac41cde40a17c2f8557c6.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1457,7 +1448,7 @@ seaborn 自带一些函数生成常见的图形，例如``barplot``生成条形�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6947ef3a3f1b6bb017b6b9f87720a883b3f8a8c69c67b4f68bfd85662230b4de.png" src="_images/6947ef3a3f1b6bb017b6b9f87720a883b3f8a8c69c67b4f68bfd85662230b4de.png" />
+<img alt="_images/fd691c8b8d46959c1e1f0868a7ad517618bd940b30bb4f53ecb31a4c60d3093f.png" src="_images/fd691c8b8d46959c1e1f0868a7ad517618bd940b30bb4f53ecb31a4c60d3093f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1471,7 +1462,7 @@ seaborn 自带一些函数生成常见的图形，例如``barplot``生成条形�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2532ab2eb755420589f80dd0ab4fc966d0ca0859ce29912becf5469101895984.png" src="_images/2532ab2eb755420589f80dd0ab4fc966d0ca0859ce29912becf5469101895984.png" />
+<img alt="_images/5438a3554142524d164dc95d8f30e907ab92f5adfb1ced60c2f5e8f32ef9165b.png" src="_images/5438a3554142524d164dc95d8f30e907ab92f5adfb1ced60c2f5e8f32ef9165b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1486,7 +1477,7 @@ seaborn 自带一些函数生成常见的图形，例如``barplot``生成条形�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bfdc20e98401ba3e97a6ef70396d6e61fbb0c9a0f699a159c777f8d8efab8171.png" src="_images/bfdc20e98401ba3e97a6ef70396d6e61fbb0c9a0f699a159c777f8d8efab8171.png" />
+<img alt="_images/db570bf910202cf3036fd0e6deeed6b5f6966b027865bdab17ea1a248aee7b69.png" src="_images/db570bf910202cf3036fd0e6deeed6b5f6966b027865bdab17ea1a248aee7b69.png" />
 </div>
 </div>
 <p>seaborn 还有其他一些画图函数，例如<code class="docutils literal notranslate"><span class="pre">heatmap</span></code>生成热力图，<code class="docutils literal notranslate"><span class="pre">violinplot</span></code>生成小提琴图，限于篇幅，本文不再赘述，有兴趣的读者可以查阅官方文档。</p>
@@ -1510,11 +1501,11 @@ g(x)=&amp;-2.14\sqrt{\sqrt{2}-\sqrt{|x|}}
 </div>
 <div class="solution dropdown admonition" id="draw-pictures-solution-1">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#draw-heart"> Exercise 7.1</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
@@ -1542,11 +1533,11 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
 </div>
 <div class="solution dropdown admonition" id="draw-pictures-solution-3">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#draw-heart2"> Exercise 7.2</a></p>
 <section id="solution-content">
 <p>This is a solution:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="c1"># type %matplotlib qt to shown figure in a separate window</span>
@@ -1574,15 +1565,15 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
 </div>
 <div class="solution dropdown admonition" id="draw-pictures-solution-4">
 
-<p class="admonition-title">Solution to</p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#draw-heart2"> Exercise 7.2</a></p>
 <section id="solution-content">
 <p>This is another solution:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">FuncAnimation</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.3</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
     <span class="n">PLOT</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -1686,7 +1677,8 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1762,8 +1754,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
