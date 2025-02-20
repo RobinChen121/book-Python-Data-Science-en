@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
@@ -435,14 +435,11 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. 用 % 格式化输出</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.5. 读写文件</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-sys">3.6. <code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os">3.6.1. <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6.1.1. 文件和目录操作</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os">3.6.1. <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys">3.6.2. <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.7. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.7. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -675,6 +672,24 @@ age is 25
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = +++5.60+++
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>填充，对齐，宽度，精度，变量类型本身也可以作为变量</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.6</span>
+<span class="n">fill</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= :{</span><span class="n">fill</span><span class="si">}</span><span class="s2">^10.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 用+填充，居中对齐，宽度为 10，保留两位小数</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = ***5.60***
 </pre></div>
 </div>
 </div>
@@ -1107,8 +1122,6 @@ his name is li si
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>  <span class="c1"># 获取当前目录下的文件和文件夹列表</span>
 </pre></div>
 </div>
-<section id="id3">
-<h4><span class="section-number">3.6.1.1. </span>文件和目录操作<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>切换目录</p></li>
 </ul>
@@ -1197,8 +1210,8 @@ file.txt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16643
-16520
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10474
+10469
 </pre></div>
 </div>
 </div>
@@ -1223,7 +1236,6 @@ file.txt
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="sys">
 <h3><span class="section-number">3.6.2. </span><code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块<a class="headerlink" href="#sys" title="Link to this heading">#</a></h3>
@@ -1267,13 +1279,13 @@ sys.version_info(major=3, minor=12, micro=7, releaselevel=&#39;final&#39;, seria
 <li><p>获取 Python 模块搜索路径</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># 获取模块搜索路径</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;/my/custom/path&#39;</span><span class="p">)</span>  <span class="c1"># 添加自定义路径</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/my/custom/path&quot;</span><span class="p">)</span>  <span class="c1"># 添加自定义路径</span>
 </pre></div>
 </div>
 </section>
 </section>
-<section id="id4">
-<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2><span class="section-number">3.7. </span>练习<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="output">
 
 <p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
@@ -1285,7 +1297,7 @@ sys.version_info(major=3, minor=12, micro=7, releaselevel=&#39;final&#39;, seria
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#output"> Exercise 3.1</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.4%}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.0003278</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.4%}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.0003278</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -1302,13 +1314,12 @@ sys.version_info(major=3, minor=12, micro=7, releaselevel=&#39;final&#39;, seria
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#san-guo"> Exercise 3.2</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./text.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;话说天下大势，分久必合，合久必分：周末七国分争，并入于秦；及秦灭之后，楚、汉分争，又并入于汉；</span><span class="se">\</span>
 <span class="s1">     汉朝自高祖斩白蛇而起义，一统天下，后来光武中兴，传至献帝，遂分为三国。&#39;</span><span class="p">)</span>
 
 <span class="c1"># 读文件</span>
-<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
-<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;./text.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;./text.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
      <span class="nb">str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># 读取文件内容</span>
      <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  <span class="c1"># 将内容输出到屏幕</span>
 </pre></div>
@@ -1415,14 +1426,11 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4. 用 % 格式化输出</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3.5. 读写文件</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-sys">3.6. <code class="docutils literal notranslate"><span class="pre">os</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os">3.6.1. <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.6.1.1. 文件和目录操作</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os">3.6.1. <code class="docutils literal notranslate"><span class="pre">os</span></code> 模块</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys">3.6.2. <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模块</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.7. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.7. 练习</a></li>
 </ul>
   </nav></div>
 

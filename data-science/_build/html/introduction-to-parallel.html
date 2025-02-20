@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
@@ -429,7 +429,17 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1. 进程与线程</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocess">12.2. multirpocess 包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocessing">12.2. <code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">12.2.1. <code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">12.2.1.1. <code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starmap">12.2.1.2. <code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process">12.2.2. <code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">12.2.3. <code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock">12.2.4. <code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -505,9 +515,147 @@
 </li>
 </ul>
 </section>
-<section id="multirpocess">
-<h2><span class="section-number">12.2. </span>multirpocess 包<a class="headerlink" href="#multirpocess" title="Link to this heading">#</a></h2>
-<hr><script src="https://giscus.app/client.js"
+<section id="multirpocessing">
+<h2><span class="section-number">12.2. </span><code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包<a class="headerlink" href="#multirpocessing" title="Link to this heading">#</a></h2>
+<hr><p><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> 是 Python 标准库中的一个包，提供了多进程（并行）执行能力，允许 Python 代码充分利用<strong>多核 CPU</strong>，提高计算效率。</p>
+<p>另外一个并行计算的包是<code class="docutils literal notranslate"><span class="pre">threading</span></code>，提供了多线程（multithreading） 支持，允许多个任务<strong>并发</strong>（concurrent）执行。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> 适用于 CPU 密集型任务，如矩阵运算、加密、图像处理。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">threading</span></code> 适用于 I/O 密集型任务，如文件读写、爬取网页。</p></li>
+</ul>
+<section id="pool">
+<h3><span class="section-number">12.2.1. </span><code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）<a class="headerlink" href="#pool" title="Link to this heading">#</a></h3>
+<hr><p>使用多进程最便捷的工具是使用<code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code>自动管理进程池，不需要向其他进程工具那样需要手动开启关闭进程。Pool 提供了多个方法来调用进入并行计算的函数。</p>
+<section id="map">
+<h4><span class="section-number">12.2.1.1. </span><code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）<a class="headerlink" href="#map" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">worker</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># 并行计算</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面的代码中：</p>
+<ul class="simple">
+<li><p>Pool(processes=4) 创建 4 个进程，自动分配任务。</p></li>
+<li><p>map(worker, range(10)) 将 0~9 作为参数传递给 worker(x) 并行执行。</p></li>
+</ul>
+<p>使用<code class="docutils literal notranslate"><span class="pre">multiprocessing.cpu_count()</span></code>可以获取当前电脑的 cpu 的核数。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>并行计算的程序必须放在<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span> </code>里，防止 Windows/macOS 递归创建进程导致崩溃。</p>
+</div>
+</section>
+<section id="starmap">
+<h4><span class="section-number">12.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）<a class="headerlink" href="#starmap" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">())</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">starmap</span><span class="p">(</span><span class="n">worker</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>对于 starmap()：</p>
+<ul class="simple">
+<li><p>适用于需要多个参数的函数。</p></li>
+<li><p>参数必须以 [( )] 形式传递，小括号<code class="docutils literal notranslate"><span class="pre">()</span></code>内不能只有一个参数。</p></li>
+<li><p>可传递空参数，此时小括号<code class="docutils literal notranslate"><span class="pre">()</span></code>内无任何内容。</p></li>
+</ul>
+</section>
+</section>
+<section id="process">
+<h3><span class="section-number">12.2.2. </span><code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）<a class="headerlink" href="#process" title="Link to this heading">#</a></h3>
+<hr><p>可以通过 <code class="docutils literal notranslate"><span class="pre">Process</span></code> 手动创建进程。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Process </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is running&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">worker</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,))</span>
+        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1"># start the process</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>  <span class="c1"># stop the process</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">target</span></code> 后面跟的是目标函数名字</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code> 是传递到目标函数中的参数值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code> 必须传递一个元祖，因此单参数时后面必须跟一个逗号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start()</span></code>开启进程</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">join()</span></code>关闭进程</p></li>
+</ul>
+</section>
+<section id="queue">
+<h3><span class="section-number">12.2.3. </span><code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）<a class="headerlink" href="#queue" title="Link to this heading">#</a></h3>
+<hr><p>进程间不能直接共享变量，但可以用<code class="docutils literal notranslate"><span class="pre">Queue</span></code>传递数据。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">num</span> <span class="o">*</span> <span class="n">num</span><span class="p">)</span>  <span class="c1"># 进程安全地存入队列</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>  <span class="c1"># 共享队列</span>
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">worker</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">get()</span></code>取出数据</p></li>
+</ul>
+</section>
+<section id="lock">
+<h3><span class="section-number">12.2.4. </span><code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）<a class="headerlink" href="#lock" title="Link to this heading">#</a></h3>
+<hr><p>在 Python 的 multiprocessing 模块中，Lock 是用于同步进程之间访问共享资源的工具。它确保一次只有一个进程可以访问受保护的代码区域，从而防止竞争条件 (race condition) 和数据不一致问题。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>  <span class="c1"># 使用 with 语句自动管理锁的获取和释放</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Process </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> is starting...&#39;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Process </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> is done.&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">lock</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>  <span class="c1"># 创建锁对象</span>
+
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">worker</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>multiprocessing.Lock() 创建了一个进程锁。</p></li>
+<li><p>在 worker() 函数中，使用 with lock: 保护关键代码区域，确保<strong>一次只有一个</strong>进程能执行这部分代码。</p></li>
+<li><p>由于锁的作用，<strong>五个进程会依次执行</strong>，而不是同时输出信息。</p></li>
+</ul>
+<p>multiprocessing 包中其他并行计算的工具还有<code class="docutils literal notranslate"><span class="pre">Manager</span></code>(管理多个进程的共享数据)， <code class="docutils literal notranslate"><span class="pre">pipe</span></code> (允许两个进程之间通信数据)。</p>
+<script src="https://giscus.app/client.js"
         data-repo="robinchen121/book-Python-Data-Science"
         data-repo-id="R_kgDOKFdyOw"
         data-category="Announcements"
@@ -534,6 +682,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
 <br></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -593,7 +742,17 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1. 进程与线程</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocess">12.2. multirpocess 包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocessing">12.2. <code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">12.2.1. <code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">12.2.1.1. <code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starmap">12.2.1.2. <code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process">12.2.2. <code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">12.2.3. <code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock">12.2.4. <code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
