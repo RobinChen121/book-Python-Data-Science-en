@@ -4,11 +4,11 @@
 #
 #    pip-compile
 #
-matplotlib==3.6.2
+matplotlib
     # via
     #   -r requirements.in
     #   seaborn
-numpy==1.23.5
+numpy
     # via
     #   -r requirements.in
     #   contourpy
@@ -16,13 +16,13 @@ numpy==1.23.5
     #   pandas
     #   scipy
     #   seaborn
-pandas==1.5.1
+pandas
     # via
     #   -r requirements.in
     #   seaborn
-scipy==1.9.3
+scipy
     # via seaborn
-seaborn==0.10.1
+seaborn
     # via -r requirements.in
 scikit-learn
 openpyxl # for pandas reading files
