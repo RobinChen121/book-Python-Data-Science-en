@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
@@ -602,6 +602,22 @@
 </div>
 </div>
 <p>输出结果为 0， 1， 2，上述代码的作用是，对于 range(3) 中的每一个元素，打印元素。<strong>for 循环经常结合序列函数 range() 一起使用</strong>：range(a) 表示从 0 到 a-1 的一个数列，range(a, b) 表示从 a 到 b-1 的一个数列，range(a, b, c) 表示从 a 到 b-1，步长为 c 的一个数列。</p>
+<p>若索引 i 在循环中的命令语句中不使用，可以用<code class="docutils literal notranslate"><span class="pre">_</span></code>代替。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World!
+Hello, World!
+Hello, World!
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>for 循环或 while 循环都可以跟<code class="docutils literal notranslate"><span class="pre">else</span></code>语句，<code class="docutils literal notranslate"><span class="pre">else</span></code> 语句只在循环正常执行并结束后才执行。</p>
@@ -1468,7 +1484,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x105c80d00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1063926b0&gt;
 </pre></div>
 </div>
 </div>
