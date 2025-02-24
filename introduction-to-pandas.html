@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
@@ -532,7 +532,9 @@
 <p>我们使用字典类型数据，将上面的读取到一个 DataFrame 里面：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
         <span class="s2">&quot;姓名&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;张三&quot;</span><span class="p">,</span> <span class="s2">&quot;李四&quot;</span><span class="p">,</span> <span class="s2">&quot;王五&quot;</span><span class="p">],</span>
         <span class="s2">&quot;统计学&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span>
@@ -627,7 +629,9 @@
 <p>多数情况下，我们要读取数据文件（例如 excel），假设上面的例子在 excel 文件 ‘transcripts.xlsx’ 里并放在电脑硬盘位置“datas/” 中，可以通过函数<code class="docutils literal notranslate"><span class="pre">read_excel</span></code>读取文件：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 前几行代码是为了运行 live code 而进行的设置，</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># 前几行代码是为了运行 live code 而进行的设置，</span>
 <span class="c1"># 与本章的教学内容无关</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -6303,7 +6307,7 @@ Name: 入校时间, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_16626/359928143.py:1: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_4724/359928143.py:1: FutureWarning: &#39;M&#39; is deprecated and will be removed in a future version, please use &#39;ME&#39; instead.
   df.resample(&quot;M&quot;).sum()  # 用 resample 方法按月(&#39;M&#39;)对数据聚合
 </pre></div>
 </div>
@@ -6397,7 +6401,7 @@ Name: 入校时间, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_16626/3844630848.py:1: FutureWarning: &#39;w&#39; is deprecated and will be removed in a future version, please use &#39;W&#39; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_4724/3844630848.py:1: FutureWarning: &#39;w&#39; is deprecated and will be removed in a future version, please use &#39;W&#39; instead.
   df.resample(&quot;w&quot;).sum()  # 用 resample 方法每周(&#39;w&#39;)对数据聚合
 </pre></div>
 </div>

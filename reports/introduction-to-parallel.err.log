@@ -18,16 +18,33 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print(os.getpid())  # 获取当前进程ID
-print(os.getppid())  # 获取父进程ID
+```python
+import multiprocessing
+
+def worker(queue, num):
+    queue.put(num * num)  # 进程安全地存入队列
+
+if __name__ == '__main__':
+    queue = multiprocessing.Queue()  # 共享队列
+    processes = []
+
+    for i in range(5):
+        p = multiprocessing.Process(target=worker, args=(queue, i))
+        processes.append(p)
+        p.start()
+
+    for p in processes:
+        p.join()
+
+    results = [queue.get() for _ in range(5)]
+    print(results)
+```
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[32], line 1[0m
-[0;32m----> 1[0m [38;5;28mprint[39m(os[38;5;241m.[39mgetpid())  [38;5;66;03m# 获取当前进程ID[39;00m
-[1;32m      2[0m [38;5;28mprint[39m(os[38;5;241m.[39mgetppid())
+[0;36m  Cell [0;32mIn[1], line 1[0;36m[0m
+[0;31m    ```python[0m
+[0m    ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-[0;31mNameError[0m: name 'os' is not defined
 
