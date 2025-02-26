@@ -432,10 +432,11 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.1. 类, 对象, 属性, 方法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.2. 类的初始化 __init__</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的继承与方法重写</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4. 类的专有方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#name">10.5. 特殊变量 __name__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.6. 类方法与静态方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.7. dateclass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-getitem">10.4. 类的专有/特殊方法 __str__、__getitem__等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">10.5. 类的特殊属性 __doc__、__name__ 等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">10.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
             </nav>
         </div>
@@ -478,7 +479,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
     <span class="c1"># 类的属性</span>
-    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business schoool&quot;</span>  <span class="c1"># 普通属性</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business school&quot;</span>  <span class="c1"># 普通属性</span>
     <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
 
     <span class="c1"># 类的方法</span>
@@ -497,7 +498,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, everyone!
-My department is business schoool.
+My department is business school.
 </pre></div>
 </div>
 </div>
@@ -535,7 +536,7 @@ My department is business schoool.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
     <span class="c1"># 类的属性</span>
-    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business schoool&quot;</span>  <span class="c1"># 普通属性</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business school&quot;</span>  <span class="c1"># 普通属性</span>
     <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
 
     <span class="c1"># 类的初始化方法</span>
@@ -668,9 +669,9 @@ I have passed probation.
 </div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">10.4. </span>类的专有方法<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<hr><p>以前后缀双下划线命名的方法为类的专有方法，又称作魔术方法，用以实现一些特定功能。</p>
+<section id="str-getitem">
+<h2><span class="section-number">10.4. </span>类的专有/特殊方法 __str__、__getitem__等<a class="headerlink" href="#str-getitem" title="Link to this heading">#</a></h2>
+<hr><p>以前后缀双下划线命名的方法为类的专有/特殊方法，又称作魔术方法，用以实现一些特定功能。</p>
 <p>下面表格中总结了一些常用的专有方法。</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -686,7 +687,7 @@ I have passed probation.
 <td class="text-center"><p>给用户看的，打印对象时显示的内容</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>__repr__</p></td>
-<td class="text-center"><p>给开发者看的，打印对象时显示的内容</p></td>
+<td class="text-center"><p>给开发者看的，用于调试，打印对象时显示的内容</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>__getitem__</p></td>
 <td class="text-center"><p>获取对象中元素，使得对象可以像数组一样访问类中元素</p></td>
@@ -763,7 +764,7 @@ Bob, 30 years old
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x107754050&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x107b08ec0&gt;
 &lt;class &#39;__main__.Dog&#39;&gt;
 </pre></div>
 </div>
@@ -875,9 +876,50 @@ Arguments: (1, 2) {&#39;a&#39;: 3}
 </div>
 </div>
 </section>
-<section id="name">
-<h2><span class="section-number">10.5. </span>特殊变量 __name__<a class="headerlink" href="#name" title="Link to this heading">#</a></h2>
-<hr><p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> 是 Python 内置的特殊变量，可以表示当前类的名称，也可以表示当前模块的名称。</p>
+<section id="doc-name">
+<h2><span class="section-number">10.5. </span>类的特殊属性 __doc__、__name__ 等<a class="headerlink" href="#doc-name" title="Link to this heading">#</a></h2>
+<hr><p>在 Python 中，类的特殊属性也称作“魔术属性”（magic attribute），或“dunder”属性/方法，通常指以双下划线开头和结尾的特殊属性或方法。这些属性和方法内置于 Python 语言中，用于实现一些特殊行为和功能。</p>
+<p>除了专有方法，Python 还提供一些魔术属性，用于存储元数据或对象状态信息，如：</p>
+<ul class="simple">
+<li><p>__doc__：存储模块、类或函数的文档字符串。</p></li>
+<li><p>__name__：记录模块或类的名称。</p></li>
+<li><p>__dict__：存放对象的属性字典，记录对象的所有可写属性。</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;这是一个演示魔术属性的示例类。&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;示例对象，值为: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Example(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">!r}</span><span class="s2">)&quot;</span>
+
+<span class="c1"># 创建一个实例</span>
+<span class="n">ex</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># 使用魔术属性</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>   <span class="c1"># 输出：这是一个演示魔术属性的示例类。</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>      <span class="c1"># 输出：示例对象，值为: 42</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>     <span class="c1"># 输出：Example(42)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>  <span class="c1"># 以字典形式输出实例的属性值</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>这是一个演示魔术属性的示例类。
+示例对象，值为: 42
+Example(42)
+{&#39;value&#39;: 42}
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">__name__</span></code> 是 Python 内置的特殊变量，可以表示当前类的名称，也可以表示当前模块的名称。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MyClass</span><span class="o">.</span><span class="vm">__name__</span>  <span class="c1"># 返回类的名称</span>
@@ -928,8 +970,46 @@ Hello, world!
 </div>
 </div>
 </section>
-<section id="id4">
-<h2><span class="section-number">10.6. </span>类方法与静态方法<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="setattr-getattr">
+<h2><span class="section-number">10.6. </span>类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code><a class="headerlink" href="#setattr-getattr" title="Link to this heading">#</a></h2>
+<hr><p>对于类中属性值的修改和访问，Python 内置有两个方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code>比较有用。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">setattr(object,</span> <span class="pre">name,</span> <span class="pre">value)</span></code> 设置一个对象 object 的属性 atribte 的值为 value，若没有找到属性，则新建属性并赋值 value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getattr(object,</span> <span class="pre">name)</span></code> 返回对象 object的属性 name 的值，若没找到则触发 AttributeError</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getattr(object,</span> <span class="pre">name,</span> <span class="pre">default)</span></code> 返回对象 object 的属性 name的值，若没找到，则返回 default</p></li>
+</ul>
+<p>其中，小括号的属性参数以<strong>字符串</strong>形式表示。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ExampleClass</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+<span class="nb">setattr</span><span class="p">(</span><span class="n">ExampleClass</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">ExampleClass</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">))</span>
+<span class="nb">setattr</span><span class="p">(</span><span class="n">ExampleClass</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">)</span>  <span class="c1"># 没有找到属性 gender，则新建该属性并赋值</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">ExampleClass</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">))</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">ExampleClass</span><span class="p">(</span><span class="s1">&#39;tom&#39;</span><span class="p">,</span> <span class="s1">&#39;40&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">))</span> <span class="c1"># 没有找到属性 grade，返回给定的值 75</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">gender</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+male
+75
+male
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2><span class="section-number">10.7. </span>类方法与静态方法<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <hr><p>上面的例子中，类中方法的第一个参数总是 self，这类方法为<code class="docutils literal notranslate"><span class="pre">普通方法</span></code>，只能被对象调用。</p>
 <p>除了普通方法外，还有<code class="docutils literal notranslate"><span class="pre">类方法</span></code>与<code class="docutils literal notranslate"><span class="pre">静态方法</span></code>。</p>
 <ul class="simple">
@@ -974,7 +1054,7 @@ Hello, world!
 </div>
 </section>
 <section id="dateclass">
-<h2><span class="section-number">10.7. </span>dateclass<a class="headerlink" href="#dateclass" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.8. </span>dateclass<a class="headerlink" href="#dateclass" title="Link to this heading">#</a></h2>
 <hr><p><code class="docutils literal notranslate"><span class="pre">dataclass</span></code> 是 Python 3.7 引入的装饰器，自动生成 __init__、__repr__、__eq__ 等方法，让数据类的编写更加简洁。</p>
 <p>一个例子：</p>
 <div class="cell docutils container">
@@ -1102,10 +1182,11 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.1. 类, 对象, 属性, 方法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.2. 类的初始化 __init__</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的继承与方法重写</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.4. 类的专有方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#name">10.5. 特殊变量 __name__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">10.6. 类方法与静态方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.7. dateclass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-getitem">10.4. 类的专有/特殊方法 __str__、__getitem__等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">10.5. 类的特殊属性 __doc__、__name__ 等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">10.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
   </nav></div>
 
