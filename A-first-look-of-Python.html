@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. 初识 Python &#8212; Python 数据科学</title>
+    <title>1. Getting started with Python &#8212; Python 数据科学</title>
   
   
   
@@ -70,7 +70,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Python 的常用数据类型" href="basic-data-type.html" />
-    <link rel="prev" title="前言" href="intro.html" />
+    <link rel="prev" title="Preface" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -152,8 +152,8 @@
       
     
     
-    <img src="_static/logo.gif" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <img src="_static/logo.gif" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+    <img src="_static/logo-en.gif" class="logo__image only-light" alt="Python 数据科学 - Home"/>
+    <img src="_static/logo-en.gif" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
   
   
 </a></div>
@@ -170,13 +170,13 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    前言
+                    Preface
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. 初识 Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Getting started with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
@@ -422,7 +422,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>初识 Python</h1>
+    <h1>Getting started with Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,17 +432,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1. Python 的诞生与应用</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2. Python 安装</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3. Python 程序的基本特点</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3.1. 缩进</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3.2. 程序注释与换行</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.3.3. 命名与保留字</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">1.1. Python 的诞生与应用</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.2. Python 安装</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.3. Python 程序的基本特点</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3.1. 缩进</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3.2. 程序注释与换行</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3.3. 命名与保留字</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.4. 安装与使用工具包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.4. 安装与使用工具包</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math">1.5. <code class="docutils literal notranslate"><span class="pre">math</span></code> 模块</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.6. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -454,12 +454,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">1. </span>初识 Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
-<hr class="docutils" />
-<p>本书在每个章节的末尾，会讲解一些 Python 的标准库（Standard Library）中的模块，即 Python 语言自带的一些 .py 文件，无需额外安装，提供了许多常用的功能，如文件操作、数学计算、网络通信、数据处理等。</p>
-<section id="id1">
-<h2><span class="section-number">1.1. </span>Python 的诞生与应用<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started-with-python">
+<h1><span class="section-number">1. </span>Getting started with Python<a class="headerlink" href="#getting-started-with-python" title="Link to this heading">#</a></h1>
+<hr><p>本书在每个章节的末尾，会讲解一些 Python 的标准库（Standard Library）中的模块，即 Python 语言自带的一些 .py 文件，无需额外安装，提供了许多常用的功能，如文件操作、数学计算、网络通信、数据处理等。</p>
+<section id="python">
+<h2><span class="section-number">1.1. </span>Python 的诞生与应用<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
 <hr><p>Python 的诞生时间非常早，第一版 Python 发行于 1991 年，甚至比另一个编程语言 Java 的历史都早。在大部分时间内，Python 一直作为一个小众的编程语言，并没有大规模流行起来。近些年来，随着大数据技术、人工智能技术的发展和普及，<strong>简洁、具有良好扩展性</strong> 的 Python 非常契合大数据与人工智能技术对编程语言的要求，超越其他编程语言迅速崛起。Python 分别在2010年，2018年，2020，2021 年被全球知名的编程语言流行度排行榜网站 TIOBE 评为“年度最佳编程语言”，并长期位于各年或各月流行编程语言排行榜的前三名。中国的网络上甚至产生了一句流行语：“人生苦短，我用 Python”。</p>
 <p><img alt="title" src="_images/guido.jpeg" /></p>
 <p>Python 的创始人为荷兰人吉多·范罗苏姆（Guido van Rossum），在 1989 年的圣诞节期间，吉多·范罗苏姆为了打发时间，决心开发一个新的脚本解释程序，作为 ABC语言的继承，于是 Python 诞生了。之所以选择 Python 作为名字，是由于吉多·范罗苏姆非常喜欢一部 BBC 电视剧— Monty Python’s Flying Circus（中文译名：蒙提·派森的飞行马戏团）。 Python 的英文意思为蟒蛇，这也是为什么一些 Python 相关的软件或书籍用蟒蛇作为图标的原因。</p>
@@ -507,15 +506,15 @@
 </ul>
 <p>学习编程与学习数学、英语等课程不同，不需要去记代码，而一定要<strong>多敲代码！</strong></p>
 </section>
-<section id="id2">
-<h2><span class="section-number">1.2. </span>Python 安装<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2><span class="section-number">1.2. </span>Python 安装<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr>
 <p>使用 Python 时一般有两种方式：一是下载 Anaconda，二是下载 Python 和编辑器 Pycharm。</p>
 <p>Anaconda 包括集成开发环境 Spyder 以及一大堆安装好的常用工具包，比如：Numpy、Pandas、Matplotlib、Sklearn，在 Anaconda 里面还可以使用其他编译器，例如 Jupyter Notebook，IPython，R Studio 等。对于刚刚接触 Python 的新手，推荐使用 Anaconda。</p>
 <p>具体软件的安装不在赘述，请到相关的官方网站下载安装。</p>
 </section>
-<section id="id3">
-<h2><span class="section-number">1.3. </span>Python 程序的基本特点<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2><span class="section-number">1.3. </span>Python 程序的基本特点<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr><p>在交互环境或编辑器上运行一个 Python 的输入输出小程序。</p>
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code> 函数打印内容：</p>
 <div class="cell docutils container">
@@ -541,8 +540,8 @@
 <p class="admonition-title">Note</p>
 <p>代码中的标点符号尽量用英文输入,不要用中文输入,否则出错</p>
 </div>
-<section id="id4">
-<h3><span class="section-number">1.3.1. </span>缩进<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3><span class="section-number">1.3.1. </span>缩进<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <hr>
 <p>Python 与许多其他编程语言的区别在于：Python 使用<strong>缩进</strong>表示不同的代码块，而不是用分号或大括号。</p>
 <p>“缩进”，即代码前的空白区域，来表示不同代码间的包含与层次关系。</p>
@@ -602,8 +601,8 @@
 </div>
 </div>
 </section>
-<section id="id5">
-<h3><span class="section-number">1.3.2. </span>程序注释与换行<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h3><span class="section-number">1.3.2. </span>程序注释与换行<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <hr>
 <p>编写程序时，经常需要在代码中添加注释，用来解释或备注相关代码，标明作者、日期信息等，提升程序的可读性，计算机并不执行注释的内容。Python 添加注释有两种方法：</p>
 <ul class="simple">
@@ -659,8 +658,8 @@
 <p>多行代码中，符号<code class="docutils literal notranslate"><span class="pre">\</span></code> 后面不能紧跟注释</p>
 </div>
 </section>
-<section id="id6">
-<h3><span class="section-number">1.3.3. </span>命名与保留字<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h3><span class="section-number">1.3.3. </span>命名与保留字<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <hr>
 <p>编写程序时，经常使用变量存储某些数据。Python 允许使用大写字母、小写字母、数字、下划线_甚至汉字等字符来给变量命名。但是，</p>
 <ul class="simple">
@@ -767,8 +766,8 @@
 </div>
 </section>
 </section>
-<section id="id7">
-<h2><span class="section-number">1.4. </span>安装与使用工具包<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2><span class="section-number">1.4. </span>安装与使用工具包<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <hr><p>pip 是 Python 自带包管理工具，该工具提供了对 Python 包的查找、下载、安装、卸载的功能。在我们安装 Python 时，pip 是自动安装的。它的语法为：</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -1044,8 +1043,8 @@
 </div>
 <p>特殊函数包括高斯误差函数<code class="docutils literal notranslate"><span class="pre">erf</span></code>与伽马函数<code class="docutils literal notranslate"><span class="pre">gamma</span></code>等。</p>
 </section>
-<section id="id8">
-<h2><span class="section-number">1.6. </span>练习<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h2><span class="section-number">1.6. </span>练习<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="A-first-look-of-Python-exercise-0">
 
 <p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
@@ -1118,16 +1117,16 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -1145,7 +1144,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">前言</p>
+        <p class="prev-next-title">Preface</p>
       </div>
     </a>
     <a class="right-next"
@@ -1174,17 +1173,17 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1. Python 的诞生与应用</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.2. Python 安装</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3. Python 程序的基本特点</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3.1. 缩进</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3.2. 程序注释与换行</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.3.3. 命名与保留字</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">1.1. Python 的诞生与应用</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.2. Python 安装</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.3. Python 程序的基本特点</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3.1. 缩进</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.3.2. 程序注释与换行</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.3.3. 命名与保留字</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.4. 安装与使用工具包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.4. 安装与使用工具包</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math">1.5. <code class="docutils literal notranslate"><span class="pre">math</span></code> 模块</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.6. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.6. 练习</a></li>
 </ul>
   </nav></div>
 
