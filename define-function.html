@@ -66,6 +66,7 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'define-function';</script>
     <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. Numpy 简介" href="introduction-to-numpy.html" />
@@ -1484,7 +1485,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1063926b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1063da980&gt;
 </pre></div>
 </div>
 </div>
@@ -1553,41 +1554,38 @@ final x is 18
 <section id="id11">
 <h2><span class="section-number">4.8. </span>一些常用的内置函数<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <hr><p>Python 内置了一些常用的函数，可以方便使用。本书简单介绍以下几个内置函数：</p>
-<table>
-    <tr style="border-top:solid">
-        <td style="text-align:left">sum</td>
-        <td style="text-align:left">对可迭代对象（如列表，元组，集合）求和</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">max</td>
-        <td style="text-align:left">返回输入参数中的最大值</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">min</td>
-        <td style="text-align:left">返回输入参数中的最小值</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">abs</td>
-        <td style="text-align:left">返回输入数值的绝对值</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">round</td>
-        <td style="text-align:left">返回输入数值的四舍五入值</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">range</td>
-        <td style="text-align:left">创建一个整数序列类型，多用于 for 循环</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">enumerate</td>
-        <td style="text-align:left">将一个可迭代的对象，同时列出各个数据和对应索引，常用在 for 循环中</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">sorted</td>
-        <td style="text-align:left">对可迭代对象进行排序，默认升序</td>
-    </tr>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>函数</p></th>
+<th class="head"><p>功能描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sum</p></td>
+<td><p>对可迭代对象（如列表，元组，集合）求和</p></td>
+</tr>
+<tr class="row-odd"><td><p>max</p></td>
+<td><p>返回可迭代对象中的最大值</p></td>
+</tr>
+<tr class="row-even"><td><p>min</p></td>
+<td><p>返回可迭代对象中的最小值</p></td>
+</tr>
+<tr class="row-odd"><td><p>abs</p></td>
+<td><p>返回输入数值的绝对值</p></td>
+</tr>
+<tr class="row-even"><td><p>round</p></td>
+<td><p>返回输入数值的四舍五入值</p></td>
+</tr>
+<tr class="row-odd"><td><p>range</p></td>
+<td><p>创建一个整数序列类型，多用于 for 循环</p></td>
+</tr>
+<tr class="row-even"><td><p>sorted</p></td>
+<td><p>对可迭代对象进行排序，默认升序</p></td>
+</tr>
+</tbody>
 </table>
-</br><div class="cell docutils container">
+</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 四舍五入时保留两位小数</span>
 </pre></div>

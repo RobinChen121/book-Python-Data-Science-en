@@ -64,6 +64,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-parallel';</script>
     <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="11. Python 的良好编程规范" href="good-practices-python.html" />
@@ -624,6 +625,7 @@
 <li><p>使用<code class="docutils literal notranslate"><span class="pre">put()</span></code>将数据推进 Queue 里</p></li>
 <li><p>使用<code class="docutils literal notranslate"><span class="pre">get()</span></code>取出数据</p></li>
 </ul>
+<p>因此，<code class="docutils literal notranslate"><span class="pre">Process</span></code> 经常结合<code class="docutils literal notranslate"><span class="pre">Queue</span></code>一起使用，获取函数返回的数据。</p>
 </section>
 <section id="lock">
 <h3><span class="section-number">12.2.4. </span><code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）<a class="headerlink" href="#lock" title="Link to this heading">#</a></h3>
