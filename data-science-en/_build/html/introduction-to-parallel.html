@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>12. Python 并行计算 &#8212; Python 数据科学</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-parallel';</script>
+    <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="11. Python 的良好编程规范" href="good-practices-python.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo-en.gif" class="logo__image only-light" alt="Python 数据科学 - Home"/>
+    <img src="_static/logo-en.gif" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    前言
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Python 的常用数据类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">5. Numpy 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">6. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 进阶</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 的良好编程规范</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Python 并行计算</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science/main?urlpath=lab/tree/data-science/introduction-to-parallel.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science/issues/new?title=Issue%20on%20page%20%2Fintroduction-to-parallel.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/introduction-to-parallel.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python 并行计算</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1. 进程与线程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocessing">12.2. <code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">12.2.1. <code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">12.2.1.1. <code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starmap">12.2.1.2. <code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process">12.2.2. <code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">12.2.3. <code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock">12.2.4. <code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1><span class="section-number">12. </span>Python 并行计算<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<hr><p>在进入并行计算前，我们首先需要了解一下一些计算机操作系统的知识。</p>
+<section id="id1">
+<h2><span class="section-number">12.1. </span>进程与线程<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<hr><ul class="simple">
+<li><p><strong>进程</strong>是一个程序的运行实例，每个进程有独立的内存空间，<strong>相互隔离</strong>，不会直接共享数据。</p></li>
+<li><p><strong>线程</strong>是进程内部的一个执行单元，一个进程可以有多个线程，它们<strong>共享同一个进程的内存</strong>。</p></li>
+</ul>
+<p>现代浏览器（如 Chrome）普遍采用多进程架构，打开一些网页时，可能包含多个进程：</p>
+<ul class="simple">
+<li><p>主进程：管理 UI、窗口、用户输入等。</p></li>
+<li><p>渲染进程：负责渲染网页（HTML、CSS、JavaScript），通常每个标签页一个渲染进程。</p></li>
+<li><p>插件进程：用于运行 Flash、PDF 之类的插件。</p></li>
+<li><p>GPU 进程：负责 GPU 加速绘图。</p></li>
+</ul>
+<p>当我们打开两个网页时，浏览器运行的进程结构如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── 浏览器主进程
+├── 渲染进程（网页A）
+├── 渲染进程（网页B）
+├── GPU 进程
+├── 插件进程
+</pre></div>
+</div>
+<p>进程的特点是：</p>
+<ul class="simple">
+<li><p>进程之间相互隔离，例如一个网页崩溃不会影响其他网页。</p></li>
+<li><p>进程有独立的内存空间，所以更安全，但开销较大（占用更多内存）。</p></li>
+</ul>
+<p>在浏览器的渲染进程中，负责执行 JavaScript、渲染页面的任务实际上是由多个线程完成的：</p>
+<ul class="simple">
+<li><p>主线程（Main Thread）：执行 JavaScript、解析 HTML、CSS、布局计算、渲染等。</p></li>
+<li><p>工作线程（Worker Thread）：通过 Web Worker 执行耗时任务（如数据处理），避免阻塞主线程。</p></li>
+<li><p>网络线程：负责处理 HTTP 请求、下载资源。</p></li>
+<li><p>GPU 线程：处理页面渲染加速。</p></li>
+</ul>
+<p>其中，渲染进程的线程结构如下</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>渲染进程（网页A）
+├── 主线程（执行 JavaScript、渲染页面）
+├── 工作线程（Web Worker 处理数据）
+├── 网络线程（加载图片、请求 API）
+├── GPU 线程（处理绘图）
+</pre></div>
+</div>
+<p>线程的特点：</p>
+<ul class="simple">
+<li><p>线程共享同一个进程的内存，可以快速通信，但可能会引起数据竞争问题（需要同步）。</p></li>
+<li><p>线程的开销比进程小，但如果主线程被阻塞，其他线程可能受影响，例如整个网页可能会卡死。</p></li>
+</ul>
+<p>下面这个例子显著地描述了进程与线程的区别。</p>
+<ul class="simple">
+<li><p>进程 = 一家餐厅，每个进程是一个独立的厨房</p>
+<ul>
+<li><p>每个厨房（进程）都独立工作，互不影响，即使一个厨房着火（崩溃），其他厨房还能正常运作。</p></li>
+</ul>
+</li>
+<li><p>线程 = 厨房里的厨师</p>
+<ul>
+<li><p>一个厨房（进程）里有多个厨师（线程），他们共享同一套厨房用具（内存）。</p></li>
+<li><p>如果厨师合作良好，出餐效率高；但如果一个厨师卡住（主线程阻塞），整个厨房可能会停滞。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="multirpocessing">
+<h2><span class="section-number">12.2. </span><code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包<a class="headerlink" href="#multirpocessing" title="Link to this heading">#</a></h2>
+<hr><p><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> 是 Python 标准库中的一个包，提供了多进程（并行）执行能力，允许 Python 代码充分利用<strong>多核 CPU</strong>，提高计算效率。</p>
+<p>另外一个并行计算的包是<code class="docutils literal notranslate"><span class="pre">threading</span></code>，提供了多线程（multithreading） 支持，允许多个任务<strong>并发</strong>（concurrent）执行。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> 适用于 CPU 密集型任务，如矩阵运算、加密、图像处理。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">threading</span></code> 适用于 I/O 密集型任务，如文件读写、爬取网页。</p></li>
+</ul>
+<section id="pool">
+<h3><span class="section-number">12.2.1. </span><code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）<a class="headerlink" href="#pool" title="Link to this heading">#</a></h3>
+<hr><p>使用多进程最便捷的工具是使用<code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code>自动管理进程池，不需要向其他进程工具那样需要手动开启关闭进程。Pool 提供了多个方法来调用进入并行计算的函数。</p>
+<section id="map">
+<h4><span class="section-number">12.2.1.1. </span><code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）<a class="headerlink" href="#map" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">worker</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># 并行计算</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面的代码中：</p>
+<ul class="simple">
+<li><p>Pool(processes=4) 创建 4 个进程，自动分配任务。</p></li>
+<li><p>map(worker, range(10)) 将 0~9 作为参数传递给 worker(x) 并行执行。</p></li>
+</ul>
+<p>使用<code class="docutils literal notranslate"><span class="pre">multiprocessing.cpu_count()</span></code>可以获取当前电脑的 cpu 的核数。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>并行计算的程序必须放在<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span> </code>里，防止 Windows/macOS 递归创建进程导致崩溃。</p>
+</div>
+</section>
+<section id="starmap">
+<h4><span class="section-number">12.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）<a class="headerlink" href="#starmap" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">())</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">starmap</span><span class="p">(</span><span class="n">worker</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>对于 starmap()：</p>
+<ul class="simple">
+<li><p>适用于需要多个参数的函数。</p></li>
+<li><p>参数必须以 [( )] 形式传递，小括号<code class="docutils literal notranslate"><span class="pre">()</span></code>内不能只有一个参数。</p></li>
+<li><p>可传递空参数，此时小括号<code class="docutils literal notranslate"><span class="pre">()</span></code>内无任何内容。</p></li>
+</ul>
+</section>
+</section>
+<section id="process">
+<h3><span class="section-number">12.2.2. </span><code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）<a class="headerlink" href="#process" title="Link to this heading">#</a></h3>
+<hr><p>可以通过 <code class="docutils literal notranslate"><span class="pre">Process</span></code> 手动创建进程。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Process </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> is running&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">worker</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,))</span>
+        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1"># start the process</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>  <span class="c1"># stop the process</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">target</span></code> 后面跟的是目标函数名字</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code> 是传递到目标函数中的参数值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code> 必须传递一个元祖，因此单参数时后面必须跟一个逗号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start()</span></code>开启进程</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">join()</span></code>关闭进程</p></li>
+</ul>
+</section>
+<section id="queue">
+<h3><span class="section-number">12.2.3. </span><code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）<a class="headerlink" href="#queue" title="Link to this heading">#</a></h3>
+<hr><p>进程间不能直接共享变量，但可以用<code class="docutils literal notranslate"><span class="pre">Queue</span></code>传递数据。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">num</span> <span class="o">*</span> <span class="n">num</span><span class="p">)</span>  <span class="c1"># 进程安全地存入队列</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>  <span class="c1"># 共享队列</span>
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">worker</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">put()</span></code>将数据推进 Queue 里</p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">get()</span></code>取出数据</p></li>
+</ul>
+<p>因此，<code class="docutils literal notranslate"><span class="pre">Process</span></code> 经常结合<code class="docutils literal notranslate"><span class="pre">Queue</span></code>一起使用，获取函数返回的数据。</p>
+</section>
+<section id="lock">
+<h3><span class="section-number">12.2.4. </span><code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）<a class="headerlink" href="#lock" title="Link to this heading">#</a></h3>
+<hr><p>在 Python 的 multiprocessing 模块中，Lock 是用于同步进程之间访问共享资源的工具。它确保一次只有一个进程可以访问受保护的代码区域，从而防止竞争条件 (race condition) 和数据不一致问题。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>  <span class="c1"># 使用 with 语句自动管理锁的获取和释放</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Process </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> is starting...&#39;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Process </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1"> is done.&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">lock</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>  <span class="c1"># 创建锁对象</span>
+
+    <span class="n">processes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">worker</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+        <span class="n">processes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>multiprocessing.Lock() 创建了一个进程锁。</p></li>
+<li><p>在 worker() 函数中，使用 with lock: 保护关键代码区域，确保<strong>一次只有一个</strong>进程能执行这部分代码。</p></li>
+<li><p>由于锁的作用，<strong>五个进程会依次执行</strong>，而不是同时输出信息。</p></li>
+</ul>
+<p>multiprocessing 包中其他并行计算的工具还有<code class="docutils literal notranslate"><span class="pre">Manager</span></code>(管理多个进程的共享数据)， <code class="docutils literal notranslate"><span class="pre">pipe</span></code> (允许两个进程之间通信数据)。</p>
+<script src="https://giscus.app/client.js"
+        data-repo="robinchen121/book-Python-Data-Science"
+        data-repo-id="R_kgDOKFdyOw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKFdyO84CgWHi"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script><!-- Toogle google translation -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
+layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+      }
+</script>
+<script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
+<br></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "RobinChen121/book-Python-Data-Science",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="good-practices-python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Python 的良好编程规范</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1. 进程与线程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocessing">12.2. <code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">12.2.1. <code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">12.2.1.1. <code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starmap">12.2.1.2. <code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process">12.2.2. <code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">12.2.3. <code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock">12.2.4. <code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Zhen Chen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
