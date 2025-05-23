@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Python 的常用数据类型 &#8212; Python 数据科学</title>
+    <title>2. Data types in Python &#8212; Python 数据科学</title>
   
   
   
@@ -64,13 +64,21 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'basic-data-type';</script>
     <script src="_static/myfile.js?v=78ba3122"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. Python 输出，读写文件" href="print-read-files.html" />
-    <link rel="prev" title="1. 初识 Python" href="A-first-look-of-Python.html" />
+    <link rel="prev" title="1. Getting started with Python" href="A-first-look-of-Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -152,8 +160,8 @@
       
     
     
-    <img src="_static/logo-en.gif" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <img src="_static/logo-en.gif" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
   
   
 </a></div>
@@ -170,21 +178,21 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    前言
+                    Preface
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 基础</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. 初识 Python</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Python 的常用数据类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. Getting started with Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Data types in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">5. Numpy 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">6. Pandas 入门</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python 进阶</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
@@ -250,7 +258,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science/main?urlpath=lab/tree/data-science/basic-data-type.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science-en/basic-data-type.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -299,7 +307,7 @@
       
       
       
-      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science" target="_blank"
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science-en" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +324,7 @@
       
       
       
-      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science/issues/new?title=Issue%20on%20page%20%2Fbasic-data-type.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/RobinChen121/book-Python-Data-Science-en/issues/new?title=Issue%20on%20page%20%2Fbasic-data-type.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +430,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python 的常用数据类型</h1>
+    <h1>Data types in Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,15 +440,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1. 数字类型: 整数型，浮点型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2. 字符串类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3. 列表类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.4. 字典类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.5. 元祖类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.6. 集合类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.7. 布尔类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-integer-and-float">2.1. Numeric: integer and float</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">2.2. String</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list">2.3. List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">2.4. Dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.5. 元祖类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.6. 集合类型*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.7. 布尔类型</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random">2.8. <code class="docutils literal notranslate"><span class="pre">random</span></code> 模块</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.9. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.9. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -452,17 +460,33 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">2. </span>Python 的常用数据类型<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
-<hr><p>Python 的常用数据类型包括数字，字符串，列表，字典等。</p>
-<p>Pyton 将数据赋值给变量，变量命名时有下面的规则。</p>
-<ul class="simple">
-<li><p>变量名必须以字母（a-z 或 A-Z）或下划线（_）开头，不能以数字开头。</p></li>
-<li><p>变量名只能包含字母、数字和下划线（_），不能包含空格或特殊字符。</p></li>
-<li><p>变量名区分大小写（myVar 和 myvar 是不同的变量）。</p></li>
-</ul>
-<section id="id1">
-<h2><span class="section-number">2.1. </span>数字类型: 整数型，浮点型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-types-in-python">
+<h1><span class="section-number">2. </span>Data types in Python<a class="headerlink" href="#data-types-in-python" title="Link to this heading">#</a></h1>
+<hr><p>Python data types are the classification or categorization of data items. Different data types can be performed on different operations.</p>
+<pre  class="mermaid">
+        flowchart TD
+    A[Python Data Types] --&gt; B[Numeric]
+
+    subgraph B [Numeric]
+        B1[Integer]
+        B2[Float]
+    end
+    
+    A --&gt; C[Dictionary]
+    A --&gt; D[Boolean]
+    A --&gt; E[Set]
+    A --&gt; F[Sequence]
+
+    
+
+    subgraph F [Sequence]
+        F1[List]
+        F2[Tuple]
+        F3[String]
+    end
+    
+    </pre><section id="numeric-integer-and-float">
+<h2><span class="section-number">2.1. </span>Numeric: integer and float<a class="headerlink" href="#numeric-integer-and-float" title="Link to this heading">#</a></h2>
 <hr><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -489,13 +513,8 @@
 </div>
 </div>
 </div>
-<p>在上面的这段代码中，定义了一个数字型变量 a，并将其赋值为 1；定义了一个浮点型变量 b，并将其赋值为 2.2。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Python 命名变量时是区分大小写的：A = 3 与 a = 3 是两个不同变量。</p>
-</div>
-<p>Python 并不像其他的一些编程语言那样需要明确数字的细分类型：整数型（int），浮点型（float）等。Python 可以自己判断数字类型，例如在上面的代码中，由于 a 没有小数点，Python 认为 a 是整数型，b 带了小数点，Python 认为 b 是浮点型。</p>
-<p>我们可以利用 type 函数检验下：</p>
+<p>Unlike some other programming languages, Python does not require explicit variable type declarations. It can automatically infer numeric types. For example, in the code above, since a has no decimal point, Python treats it as an integer (<code class="docutils literal notranslate"><span class="pre">int</span></code>), while b contains a decimal point, so Python interprets it as a floating-point number (<code class="docutils literal notranslate"><span class="pre">float</span></code>).</p>
+<p>We can use the Python keyword <code class="docutils literal notranslate"><span class="pre">type</span></code> to get the type of a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -520,10 +539,10 @@
 </div>
 </div>
 </div>
-<p>Python 中数字类型的互换也非常方便，只需要将数据类型作为函数名即可，如下面代码：</p>
+<p>Type casting refers to converting one data type into another. Python provides several built-in functions to facilitate casting including int(), float() and str().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># 将整形数据 a 转化为浮点型数据</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># cast an integer variable to float</span>
 </pre></div>
 </div>
 </div>
@@ -535,7 +554,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># 将浮点型数据 b 转化为整形数据</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># cast a float variable to integer</span>
 </pre></div>
 </div>
 </div>
@@ -545,217 +564,29 @@
 </div>
 </div>
 </div>
-<p>对于四则运算：加减乘除，则用 + - * / () 符号直接输入即可：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># cast a numeric to string</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8
-</pre></div>
-</div>
-</div>
-</div>
-<p>数字类型之间的相互运算的所生成的结果是“更宽”的数字类型：</p>
 <ul class="simple">
-<li><p>整数之间运算，如果数学意义上的结果是小数，结果是浮点数</p></li>
-<li><p>整数之间运算，如果数学意义上的结果是整数，结果是整数</p></li>
-<li><p>整数和浮点数的混合运算，输出结果是浮点数</p></li>
+<li><p>When integers and floating-point numbers are mixed in an operation, the result will be automatically converted to a floating-point number.</p></li>
 </ul>
-<p>求余数用百分号<code class="docutils literal notranslate"><span class="pre">%</span></code>，幂运算用两个星号<code class="docutils literal notranslate"><span class="pre">**</span></code>，两个数的整数商用符号 <code class="docutils literal notranslate"><span class="pre">//</span></code>，例如：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">%</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">4.5</span> <span class="o">//</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>等号<code class="docutils literal notranslate"><span class="pre">=</span></code>结合其他运算符号(operator)，Python 能够实现快速赋值操作：</p>
-<p>x operator= y 等价于 x = x operator y</p>
-<p>例如：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">x</span> <span class="o">+=</span> <span class="mi">3</span>  <span class="c1"># 与 x = x + 3 等价</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">y</span> <span class="o">*=</span> <span class="mi">3</span>  <span class="c1"># 与 y = y*3 等价</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =  4
-y =  6
-</pre></div>
-</div>
-</div>
-</div>
-<p>Python 对数字类型还有一些其他内置函数，例如求绝对值用函数<code class="docutils literal notranslate"><span class="pre">abs</span></code>，四舍五入函数用<code class="docutils literal notranslate"><span class="pre">round</span></code>，求最大值函数<code class="docutils literal notranslate"><span class="pre">max</span></code>，求最小值函数<code class="docutils literal notranslate"><span class="pre">min</span></code>：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.45</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 四舍五入保留一位小数</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<p>更复杂的数学运算需要调用数学包<code class="docutils literal notranslate"><span class="pre">math</span></code>，例如：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-
-<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 正弦函数</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 对数函数</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>第一行代码调用 math 中的 sin 函数求 <span class="math notranslate nohighlight">\(sin(\pi/2)\)</span>，其中调用了 math 中的 pi 函数表示 <span class="math notranslate nohighlight">\(\pi\)</span>，第二行代码调用了对数函数求 <span class="math notranslate nohighlight">\(\ln(100)\)</span>。</p>
 </section>
-<section id="id2">
-<h2><span class="section-number">2.2. </span>字符串类型<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="string">
+<h2><span class="section-number">2.2. </span>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h2>
 <hr>
-<p>字符串也是 Python 中比较常见的数据类型，可以用单引号或双引号表示字符串。例如：</p>
+<p>A string is a sequence of characters. We can use either single quotes or double quotes to express a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;chen&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;chen&#39;</span>
 <span class="n">name</span>
 </pre></div>
 </div>
@@ -768,18 +599,18 @@ y =  6
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="s2">&quot;Beijing&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="s2">&quot;London&quot;</span>
 <span class="n">city</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Beijing&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;London&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>字符串的拼接直接用加号 + 即可：</p>
+<p>We can concatenate strings directly using the plus operator <code class="docutils literal notranslate"><span class="pre">+</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">+</span> <span class="n">city</span>
@@ -787,15 +618,15 @@ y =  6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;chenBeijing&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;chenLondon&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>还有一种常用的拼接方式是用<code class="docutils literal notranslate"><span class="pre">join</span></code>函数：str.join(sequence)，将序列中的元素以指定的字符连接生成一个新的字符串。例如:</p>
+<p>Another common concatenation method is using the <code class="docutils literal notranslate"><span class="pre">join()</span></code> function: <code class="docutils literal notranslate"><span class="pre">str.join(sequence)</span></code>, which joins elements in the sequence with specified characters to produce a new string. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;chen&quot;</span><span class="p">,</span> <span class="s2">&quot;zhang&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="p">])</span>  <span class="c1"># 将三个字符串用逗号拼接</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;chen&quot;</span><span class="p">,</span> <span class="s2">&quot;zhang&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="p">])</span>  <span class="c1"># concatenating 3 strings with comma</span>
 </pre></div>
 </div>
 </div>
@@ -807,7 +638,7 @@ y =  6
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;2020&quot;</span><span class="p">,</span> <span class="s2">&quot;05&quot;</span><span class="p">,</span> <span class="s2">&quot;13&quot;</span><span class="p">])</span>  <span class="c1"># 将三个字符串用横线拼接</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;2020&quot;</span><span class="p">,</span> <span class="s2">&quot;05&quot;</span><span class="p">,</span> <span class="s2">&quot;13&quot;</span><span class="p">])</span>  <span class="c1"># concatenating 3 strings with dash</span>
 </pre></div>
 </div>
 </div>
@@ -817,50 +648,98 @@ y =  6
 </div>
 </div>
 </div>
-<p>若重复输出字符串，可以使用星号 *：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;chen&quot;</span>
-<span class="n">name</span> <span class="o">*</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;Brunel&quot;</span><span class="p">,</span> <span class="s2">&quot;University&quot;</span><span class="p">])</span> <span class="c1"># concatenating 2 strings with space</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;chenchen&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Brunel University&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>可以将字符串视为一个数组，利用数组的索引得到字符串中的字符，例如：</p>
+<p>If concatnating same strings, we can use the muliplication operator <code class="docutils literal notranslate"><span class="pre">*</span></code>：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 0 代表第 1 个索引</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">name</span> <span class="o">*</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;c&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;JohnJohnJohn&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>计算机中，数组第一个元素的索引是 0；Python 支持倒序索引，最后一个元素的索引是 -1。</p>
-</div>
+<p>we can access individual elements of a <strong>sequence</strong> using indexing. The elements in a <strong>sequence</strong> are indexed starting from 0, and -1 from end.</p>
+<ul class="simple">
+<li><p>The first element is at position 0, the second at 1, and so on. Negative indices are also supported, where <strong>-1 refers to the last element</strong>, -2 to the second last, and so forth.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># 截取字符串中的一部分，遵循“左闭右开”原则，得到第 1 到第 3 个字符</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 0 is the first index</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;che&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;J&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>判断某个字符或某段字符串是否在字符串中，可以用<code class="docutils literal notranslate"><span class="pre">in</span></code>或<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;h&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The syntax for slicing in a <strong>sequence</strong> is <code class="docutils literal notranslate"><span class="pre">sequence[start:end]</span></code>, where start is the starting index (<strong>included</strong>) and end is the stopping index (<strong>excluded</strong>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># get the first to the third characters</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Joh&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># get all the characters from the frist index to end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ohn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To check whether a character or substring exists in a <strong>sequence</strong>, you can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;c&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span>
@@ -868,7 +747,7 @@ y =  6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -880,12 +759,12 @@ y =  6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
 </div>
-<p>将其他数据类型转化为字符串类型，可以用<code class="docutils literal notranslate"><span class="pre">str</span></code>函数：</p>
+<p>Cast other data types to string can be done by using the function <code class="docutils literal notranslate"><span class="pre">str</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
@@ -910,55 +789,52 @@ y =  6
 </div>
 </div>
 </div>
-<p>Python 中常用的字符串处理函数有：</p>
-<table>   
-    <tr style="border-top:solid">
-        <td style="text-align:left">str.capitalize()</td>
-        <td style="text-align:left">将字符串 str 首字母转为大写</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">str.upper()</td>
-        <td style="text-align:left">将字符串 str 内容全部大写</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">str.lower()</td>
-        <td style="text-align:left">将字符串 str 内容转为小写</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">str.len()</td>
-        <td style="text-align:left">字符串 str 的长度</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">str.isnumeric()</td>
-        <td style="text-align:left">如果字符串 str 中只包含数字字符，则返回 True，否则返回 False</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">str.isspace()</td>
-        <td style="text-align:left">如果字符串 str 都是空格，则返回 True，否则返回 False</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">str.isalpha()</td>
-        <td style="text-align:left">如果字符串 str 的字符都是字母则返回 True, 否则返回 False</td>
-    </tr>
-    <tr>
-        <td style="text-align:left" rowspan="2">str.replace(old, new[, count])</td>
-        <td style="text-align:left">返回字符串的副本，old 子串被替换为 new，如果 count 给出，</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">
-        则前 count 次出现的子串被替换    
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:left">str.strip([chars])</td>
-        <td style="text-align:left">返回字符串的副本，在其左侧和右侧去掉 chars 中列出的字符</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">str.split(sep=None, maxsplit=-1)</td>
-        <td style="text-align:left">返回一个根据 sep 分割的字符串列表</td>
-    </tr>
+<p>Some widely used functions for string operations:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>function</p></th>
+<th class="head text-left"><p>meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>str.capitalize()</p></td>
+<td class="text-left"><p>Capitalize the first character in the string ‘str’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>str.upper()</p></td>
+<td class="text-left"><p>Convert all the characters in the string ‘str’ to uppercase</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>str.lower()</p></td>
+<td class="text-left"><p>Convert all the characters in the string ‘str’ to lowercase</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>len(str)</p></td>
+<td class="text-left"><p>length of the <strong>sequence</strong> ‘str’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>str.isnumeric()</p></td>
+<td class="text-left"><p>To check if a string ‘str’ contains only numeric characters</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>str.isdigit()</p></td>
+<td class="text-left"><p>To check if a string ‘str’ contains only digits (0-9)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>str.isalpha()</p></td>
+<td class="text-left"><p>To check if all characters in a string ‘str’ are alphabetic (letters)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>str.replace(old, new])</p></td>
+<td class="text-left"><p>Return a copy of the string  ‘str’ where the substring ‘old’ is replaced by the substring ‘new’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>str.strip([chars])</p></td>
+<td class="text-left"><p>Return a copy of the string  ‘str’ with leading and trailing characters removed specified in the ‘chars’ argument.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>str.split(sep=None)</p></td>
+<td class="text-left"><p>Returns a list of substrings by splitting the string ‘str’ of the specified separator ‘sep’</p></td>
+</tr>
+</tbody>
 </table>
-<br /><div class="cell docutils container">
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There may be more arguments in those functions. Interested readers may refer to relevant resources for further details.</p>
+</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;python data science&quot;</span>
 <span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -984,14 +860,51 @@ y =  6
 </div>
 </div>
 </div>
-</section>
-<section id="id3">
-<h2><span class="section-number">2.3. </span>列表类型<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<hr>
-<p>列表（List）是最常用的 Python 数据类型，它由一个<strong>中括号</strong><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>以及逗号分隔的不同数值或字符串组成，例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Python data science&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39; Brunel University London &#39;</span>
+<span class="n">str1</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Brunel University London&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;University&#39;</span><span class="p">,</span> <span class="s1">&#39;School&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; Brunel School London &#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list">
+<h2><span class="section-number">2.3. </span>List<a class="headerlink" href="#list" title="Link to this heading">#</a></h2>
+<hr>
+<p>A Python list is a <strong>dynamic sized</strong> array (automatically grows and shrinks). We can store <strong>all types</strong> of elements (including another list) in a list. List is shown by <strong>square brackets</strong><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>and elements are seperated by <strong>commas</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span> <span class="c1"># a list of numerics</span>
 <span class="n">list1</span>
 </pre></div>
 </div>
@@ -1004,7 +917,7 @@ y =  6
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;chen&quot;</span><span class="p">,</span> <span class="s2">&quot;zhang&quot;</span><span class="p">,</span> <span class="s2">&quot;wang&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;chen&quot;</span><span class="p">,</span> <span class="s2">&quot;zhang&quot;</span><span class="p">,</span> <span class="s2">&quot;wang&quot;</span><span class="p">]</span> <span class="c1"># a list of strings</span>
 <span class="n">list2</span>
 </pre></div>
 </div>
@@ -1017,7 +930,7 @@ y =  6
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;wang&quot;</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;wang&quot;</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span> <span class="c1"># a list of mixed type of items</span>
 <span class="n">list3</span>
 </pre></div>
 </div>
@@ -1028,22 +941,12 @@ y =  6
 </div>
 </div>
 </div>
-<p>与字符串的索引一样，列表索引从 0 开始，第一个值的索引是位置 0，第二个索引是 1，依此类推。</p>
+<ul class="simple">
+<li><p>The indexing and slicing of a list is same with a string.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># list1 的第 1 个元素</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># list2 的第 2 个元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># the second element of list2</span>
 </pre></div>
 </div>
 </div>
@@ -1055,7 +958,7 @@ y =  6
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># “左闭右开”原则，list1 第 1 到第 2 个元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># the elements indexed by 0 to 1</span>
 </pre></div>
 </div>
 </div>
@@ -1067,7 +970,7 @@ y =  6
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span>  <span class="c1"># list1 第 1 到之后的所有元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="p">[</span><span class="mi">0</span><span class="p">:]</span>  <span class="c1"># the elements indexed by 0 to the end</span>
 </pre></div>
 </div>
 </div>
@@ -1077,35 +980,25 @@ y =  6
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Step size can ge given in slicing with the 3rd argument value</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-<span class="n">list3</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># list 从第 2 到第 4，步长为 2的所有元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">list3</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># the elements indexed by 1 to 3 with step size 2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7]
-</pre></div>
-</div>
-</div>
-</div>
-<p>另外，<strong>Python 支持倒序索引</strong>，-1 表示倒数第 1 个元素，-2 表示倒数第 2 个元素，依次类推。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># list1 的倒数第 1 个元素</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 9]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># list2 的倒数第 2 个元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># the second last element in list2</span>
 </pre></div>
 </div>
 </div>
@@ -1115,9 +1008,12 @@ y =  6
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Using two colons followed by -1 indicates reverse order</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 两个冒号跟上 -1 表示倒序</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># using two colons followed by -1 indicates reverse order</span>
 </pre></div>
 </div>
 </div>
@@ -1127,11 +1023,11 @@ y =  6
 </div>
 </div>
 </div>
-<p>更改列表某个位置的元素，可以直接用索引更改。</p>
+<p>To change the value of some elements in a <strong>sequence</strong>, we can diretly assign values using indexing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
-<span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 将 list 第 2 个元素更改为 10</span>
+<span class="nb">list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># change the value of the second element in list</span>
 <span class="nb">list</span>
 </pre></div>
 </div>
@@ -1142,7 +1038,7 @@ y =  6
 </div>
 </div>
 </div>
-<p>删除列表某个索引的元素，用<code class="docutils literal notranslate"><span class="pre">del</span></code>：</p>
+<p>To delete some element in a <strong>sequence</strong>, we can use <code class="docutils literal notranslate"><span class="pre">del</span></code> along with indexing：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
@@ -1157,7 +1053,7 @@ y =  6
 </div>
 </div>
 </div>
-<p>对于列表类型，运算符 + 、*、in、not in 的功能与字符串中的功能相同。下面举例说明：</p>
+<p>For lists, the operators <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> function identically to their string counterparts. Below are examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
@@ -1208,7 +1104,9 @@ y =  6
 </div>
 </div>
 </div>
-<p>二维列表，用中括号套起多个一维列表生成：</p>
+<ul class="simple">
+<li><p>A 2D list is created by <strong>nesting</strong> one-dimensional lists within square brackets:</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
@@ -1222,7 +1120,7 @@ y =  6
 </div>
 </div>
 </div>
-<p>访问二维列表时，用两个中括号分别跟上索引：</p>
+<p>To visit the element in a 2D list, using two sets of squre brackets with index:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -1235,11 +1133,14 @@ y =  6
 </div>
 </div>
 </div>
-<p>常见的列表函数还有<code class="docutils literal notranslate"><span class="pre">insert</span></code>，<code class="docutils literal notranslate"><span class="pre">append</span></code>，<code class="docutils literal notranslate"><span class="pre">extend</span></code>：</p>
+<ul class="simple">
+<li><p>Adding elements into a list</p></li>
+</ul>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">insert()</span></code>, and <code class="docutils literal notranslate"><span class="pre">extend()</span></code> to add elements in a list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
-<span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 在列表末尾添加一个元素</span>
+<span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># append one element at the end of a list</span>
 <span class="nb">list</span>
 </pre></div>
 </div>
@@ -1252,7 +1153,7 @@ y =  6
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 在列表第二个位置添加一个元素 10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># insert an element 10 into the index 1 of the list</span>
 <span class="nb">list</span>
 </pre></div>
 </div>
@@ -1265,7 +1166,7 @@ y =  6
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>  <span class="c1"># 将另一个列表（元组类型也可以）添加到该列表末尾</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>  <span class="c1"># extend the list with some other sequence elements in the end</span>
 <span class="nb">list</span>
 </pre></div>
 </div>
@@ -1276,46 +1177,42 @@ y =  6
 </div>
 </div>
 </div>
-<p>列表的其他函数还有：</p>
-<table> 
-    <tr style="border-top:solid">
-        <td style="text-align:left">max(list)</td>
-        <td style="text-align:left">返回列表 list 中的最大值元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">min(list)</td>
-        <td style="text-align:left">返回列表 list 中的最小值元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">list(seq)</td>
-        <td style="text-align:left">将其他序列类型转化为列表</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">len(list)</td>
-        <td style="text-align:left">返回列表 list 的长度</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">list.count(obj)</td>
-        <td style="text-align:left">统计某个元素 obj 在列表中出现的次数</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">list.reverse()</td>
-        <td style="text-align:left">将列表反转</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">list.pop(index)</td>
-        <td style="text-align:left">移除列表中 index 位置的元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">list.remove(element)</td>
-        <td style="text-align:left">移除列表中内容为 element 的元素</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">list.clear()</td>
-        <td style="text-align:left">清空列表</td>
-    </tr>
+<p>Some other functions：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>function name</p></th>
+<th class="head text-left"><p>meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>max(list)</p></td>
+<td class="text-left"><p>Return the maximum in a list ‘list’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>min(list)</p></td>
+<td class="text-left"><p>Return the minimum in a list ‘list’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>list(sequence)</p></td>
+<td class="text-left"><p>Transform another suquence ‘sequence’ to a list type</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>sequence.count(element)</p></td>
+<td class="text-left"><p>Count the occurance of an element ‘element’ in a <strong>sequence</strong> ‘sequence’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>list.reverse()</p></td>
+<td class="text-left"><p>Reverse the list ‘list’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>list.pop(index)</p></td>
+<td class="text-left"><p>Remove one element in a list with given index ‘index’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>list.remove(element)</p></td>
+<td class="text-left"><p>Remove all elments in a list ‘list’ whose contents are same as element ‘element’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>list.clear()</p></td>
+<td class="text-left"><p>Clear all the elements in a list ‘list’</p></td>
+</tr>
+</tbody>
 </table>
-<br /><div class="cell docutils container">
+</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -1329,9 +1226,35 @@ y =  6
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;chench&#39;</span>
+<span class="nb">str</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="id4">
-<h2><span class="section-number">2.4. </span>字典类型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="dictionary">
+<h2><span class="section-number">2.4. </span>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">#</a></h2>
 <hr>
 <p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在花括号<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号<code class="docutils literal notranslate"><span class="pre">：</span></code>分割。</p>
 <div class="cell docutils container">
@@ -1474,8 +1397,8 @@ economy
 </div>
 </div>
 </section>
-<section id="id5">
-<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr>
 <p>Python 的元组（tuple）与列表类似，不同之处在于<strong>元组的元素不能修改</strong>。元组使用<strong>小括号</strong>创建，并使用逗号隔开。访问列表元素或者截取部分元组与列表非常类似：</p>
 <div class="cell docutils container">
@@ -1596,8 +1519,8 @@ economy
         <td style="text-align:left">统计某个元素在元组 tup 中出现的次数</td>
     </tr>
 </table></section>
-<section id="id6">
-<h2><span class="section-number">2.6. </span>集合类型<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2><span class="section-number">2.6. </span>集合类型*<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr>
 <p>集合（set）是一个无序的<strong>不重复</strong>元素序列，一般使用大括号 { } 创建。注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 默认创建一个空字典）。</p>
 <div class="cell docutils container">
@@ -1793,8 +1716,8 @@ economy
         <td style="text-align:left">返回两个集合的并集</td>
     </tr>
 </table></section>
-<section id="id7">
-<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <hr>
 <p>Python 中的布尔值（Bool) 一般通过逻辑判断产生，只有两个可能的结果：<code class="docutils literal notranslate"><span class="pre">True</span></code>或<code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
 <div class="cell docutils container">
@@ -1927,7 +1850,7 @@ economy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5468770012614016
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.831045124371628
 </pre></div>
 </div>
 </div>
@@ -1946,60 +1869,18 @@ economy
 </div>
 </div>
 </section>
-<section id="id8">
-<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<hr><div class="exercise admonition" id="define-variable">
+<section id="id4">
+<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<hr><div class="exercise admonition" id="circle-area">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
-<section id="exercise-content">
-<p>定义一个 Python 数据变量，下面表达式正确的是：</p>
-<p>A.    int a = 5</p>
-<p>B.    var a = 5</p>
-<p>C.    a = 5</p>
-<p>D.    $a = 5</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-1">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#define-variable"> Exercise 2.1</a></p>
-<section id="solution-content">
-<p>C</p>
-</section>
-</div>
-<div class="exercise admonition" id="compute-formula">
-
-<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
-<section id="exercise-content">
-<p>请将下面的数学表达式用 Python 程序写出来，并运算结果。</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x=\frac{3^2+4-5*6}{5}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(y= (4^{3.5}+6)*(16\mod{4})\)</span></p></li>
-</ul>
-</section>
-</div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-3">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#compute-formula"> Exercise 2.2</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">**</span><span class="mf">3.5</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">16</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = &quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="circle-area">
-
-<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
 <section id="exercise-content">
 <p>根据给定的半径值，计算圆的面积</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-5">
+<div class="solution dropdown admonition" id="basic-data-type-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.3</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.1</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
@@ -2012,14 +1893,14 @@ economy
 </div>
 <div class="exercise admonition" id="random">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
 <section id="exercise-content">
 <p>从字符串 ‘abcedefg’ 随机挑取 3 个字符。（提示，使用 random 库中的函数）</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-7">
+<div class="solution dropdown admonition" id="basic-data-type-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#random"> Exercise 2.4</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#random"> Exercise 2.2</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
@@ -2030,15 +1911,15 @@ economy
 </div>
 <div class="exercise admonition" id="quad-equation">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
 <section id="exercise-content">
 <p>通过用户输入数字 a, b, c，计算二次方程: <span class="math notranslate nohighlight">\(ax^2 + bx +c\)</span>。
 (提示：cmath 工具包可以计算负数的开方)</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-9">
+<div class="solution dropdown admonition" id="basic-data-type-solution-5">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.5</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.3</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="kn">import</span> <span class="nn">cmath</span>
@@ -2061,14 +1942,14 @@ economy
 </div>
 <div class="exercise admonition" id="triangle-area">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
 <section id="exercise-content">
 <p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-11">
+<div class="solution dropdown admonition" id="basic-data-type-solution-7">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.6</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.4</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
 <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第一边长: &quot;</span><span class="p">))</span>
@@ -2087,14 +1968,14 @@ economy
 </div>
 <div class="exercise admonition" id="dict-values">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
 <section id="exercise-content">
 <p>定义一个字典，然后计算它们所有数字值的和。。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-13">
+<div class="solution dropdown admonition" id="basic-data-type-solution-9">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.7</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.5</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2141,7 +2022,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
     {
         requestKernel: true,
         binderOptions: {
-            repo: "RobinChen121/book-Python-Data-Science",
+            repo: "RobinChen121/book-Python-Data-Science-en",
             ref: "main",
         },
         codeMirrorConfig: {
@@ -2173,7 +2054,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>初识 Python</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Getting started with Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -2202,15 +2083,15 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1. 数字类型: 整数型，浮点型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2. 字符串类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3. 列表类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.4. 字典类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.5. 元祖类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.6. 集合类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.7. 布尔类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-integer-and-float">2.1. Numeric: integer and float</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">2.2. String</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list">2.3. List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">2.4. Dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.5. 元祖类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.6. 集合类型*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.7. 布尔类型</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random">2.8. <code class="docutils literal notranslate"><span class="pre">random</span></code> 模块</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.9. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.9. 练习</a></li>
 </ul>
   </nav></div>
 
