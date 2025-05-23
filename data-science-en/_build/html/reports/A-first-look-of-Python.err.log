@@ -1,35 +1,79 @@
 Traceback (most recent call last):
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "/opt/anaconda3/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 1204, in execute
+  File "/opt/anaconda3/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\util.py", line 84, in wrapped
-    return just_run(coro(*args, **kwargs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\util.py", line 62, in just_run
-    return loop.run_until_complete(coro)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\chen_\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  File "/opt/anaconda3/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 663, in async_execute
+  File "/opt/anaconda3/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+  File "/opt/anaconda3/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "D:\Users\chen_\anaconda3\Lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+  File "/opt/anaconda3/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-name = 'chen'
-Name = 'zhang'
-print(N    ame)
+import turtle
+
+turtle.pensize(2)
+turtle.circle(20)
+turtle.circle(40)
+turtle.circle(60)
+turtle.circle(80)
+turtle.done()
 ------------------
 
-[1;36m  Cell [1;32mIn[7], line 3[1;36m[0m
-[1;33m    print(N    ame)[0m
-[1;37m          ^[0m
-[1;31mSyntaxError[0m[1;31m:[0m invalid syntax. Perhaps you forgot a comma?
 
-SyntaxError: invalid syntax. Perhaps you forgot a comma? (3284151812.py, line 3)
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTclError[0m                                  Traceback (most recent call last)
+File [0;32m<string>:8[0m, in [0;36mcircle[0;34m(radius, extent, steps)[0m
+
+File [0;32m/opt/anaconda3/lib/python3.12/turtle.py:1990[0m, in [0;36mTNavigator.circle[0;34m(self, radius, extent, steps)[0m
+[1;32m   1989[0m [38;5;28mself[39m[38;5;241m.[39mspeed(speed)
+[0;32m-> 1990[0m [38;5;28mself[39m[38;5;241m.[39m_go(l)
+[1;32m   1991[0m [38;5;28mself[39m[38;5;241m.[39mspeed([38;5;241m0[39m)
+
+File [0;32m/opt/anaconda3/lib/python3.12/turtle.py:1597[0m, in [0;36mTNavigator._go[0;34m(self, distance)[0m
+[1;32m   1596[0m ende [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_position [38;5;241m+[39m [38;5;28mself[39m[38;5;241m.[39m_orient [38;5;241m*[39m distance
+[0;32m-> 1597[0m [38;5;28mself[39m[38;5;241m.[39m_goto(ende)
+
+File [0;32m/opt/anaconda3/lib/python3.12/turtle.py:3253[0m, in [0;36mRawTurtle._goto[0;34m(self, end)[0m
+[1;32m   3252[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_drawing:
+[0;32m-> 3253[0m         screen[38;5;241m.[39m_drawline([38;5;28mself[39m[38;5;241m.[39mdrawingLineItem, (([38;5;241m0[39m, [38;5;241m0[39m), ([38;5;241m0[39m, [38;5;241m0[39m)),
+[1;32m   3254[0m                                        fill[38;5;241m=[39m[38;5;124m"[39m[38;5;124m"[39m, width[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_pensize)
+[1;32m   3255[0m [38;5;66;03m# Turtle now at end,[39;00m
+
+File [0;32m/opt/anaconda3/lib/python3.12/turtle.py:539[0m, in [0;36mTurtleScreenBase._drawline[0;34m(self, lineitem, coordlist, fill, width, top)[0m
+[1;32m    538[0m         cl[38;5;241m.[39mappend([38;5;241m-[39my [38;5;241m*[39m [38;5;28mself[39m[38;5;241m.[39myscale)
+[0;32m--> 539[0m     [38;5;28mself[39m[38;5;241m.[39mcv[38;5;241m.[39mcoords(lineitem, [38;5;241m*[39mcl)
+[1;32m    540[0m [38;5;28;01mif[39;00m fill [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m<string>:1[0m, in [0;36mcoords[0;34m(self, *args, **kw)[0m
+
+File [0;32m/opt/anaconda3/lib/python3.12/tkinter/__init__.py:2840[0m, in [0;36mCanvas.coords[0;34m(self, *args)[0m
+[1;32m   2837[0m args [38;5;241m=[39m _flatten(args)
+[1;32m   2838[0m [38;5;28;01mreturn[39;00m [[38;5;28mself[39m[38;5;241m.[39mtk[38;5;241m.[39mgetdouble(x) [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m
+[1;32m   2839[0m                    [38;5;28mself[39m[38;5;241m.[39mtk[38;5;241m.[39msplitlist(
+[0;32m-> 2840[0m            [38;5;28mself[39m[38;5;241m.[39mtk[38;5;241m.[39mcall(([38;5;28mself[39m[38;5;241m.[39m_w, [38;5;124m'[39m[38;5;124mcoords[39m[38;5;124m'[39m) [38;5;241m+[39m args))]
+
+[0;31mTclError[0m: invalid command name ".!canvas"
+
+During handling of the above exception, another exception occurred:
+
+[0;31mTerminator[0m                                Traceback (most recent call last)
+Cell [0;32mIn[33], line 5[0m
+[1;32m      3[0m turtle[38;5;241m.[39mpensize([38;5;241m2[39m)
+[1;32m      4[0m turtle[38;5;241m.[39mcircle([38;5;241m20[39m)
+[0;32m----> 5[0m turtle[38;5;241m.[39mcircle([38;5;241m40[39m)
+[1;32m      6[0m turtle[38;5;241m.[39mcircle([38;5;241m60[39m)
+[1;32m      7[0m turtle[38;5;241m.[39mcircle([38;5;241m80[39m)
+
+File [0;32m<string>:12[0m, in [0;36mcircle[0;34m(radius, extent, steps)[0m
+
+[0;31mTerminator[0m: 
 

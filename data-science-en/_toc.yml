@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 parts: 
-- caption: Python 基础
+- caption: Python Basics
   numbered: true
   chapters:
   - file: A-first-look-of-Python
@@ -15,7 +15,7 @@ parts:
   - file: introduction-to-pandas
   - file: draw-pictures  
 
-- caption: Python 进阶
+- caption: Python Advanced
   numbered: true
   chapters:
   - file: line-regression
