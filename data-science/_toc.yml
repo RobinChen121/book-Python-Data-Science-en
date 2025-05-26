@@ -1,0 +1,25 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts: 
+- caption: Python Basics
+  numbered: true
+  chapters:
+  - file: A-first-look-of-Python
+  - file: basic-data-type
+  - file: print-read-files
+  - file: introduction-to-numpy
+  - file: introduction-to-pandas
+  - file: define-function 
+  - file: draw-pictures  
+
+- caption: Python Advanced
+  numbered: true
+  chapters:
+  - file: line-regression
+  - file: introduction-to-crawler
+  - file: introduction-to-class
+  - file: good-practices-python
+  - file: introduction-to-parallel
