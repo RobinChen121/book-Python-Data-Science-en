@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -40,11 +38,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="3. Output, read and write files" href="print-read-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -197,14 +208,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -397,16 +403,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -455,7 +469,7 @@
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-numpy">
 <h1><span class="section-number">4. </span>Introduction to Numpy<a class="headerlink" href="#introduction-to-numpy" title="Link to this heading">#</a></h1>
 <hr>
-<p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> is a crucial extension library in Python that provides extensive support for <strong>array and matrix operations</strong>, along with a comprehensive collection of mathematical functions designed to emulate the capabilities of mathematical software like MATLAB. NumPy is indispensable for data science, engineering, and research due to its efficiency and integration with other key libraries like <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">Scipy</span></code>, etc.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> is a crucial extension library in Python that provides extensive support for <strong>array and matrix operations</strong>, along with a comprehensive collection of mathematical methods designed to emulate the capabilities of mathematical software like MATLAB. NumPy is indispensable for data science, engineering, and research due to its efficiency and integration with other key libraries like <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">Scipy</span></code>, etc.</p>
 <p>Key Features of NumPy:</p>
 <ul class="simple">
 <li><p>Multi-dimensional Arrays:</p>
@@ -464,7 +478,7 @@
 <li><p>Supports vectorized operations</p></li>
 </ul>
 </li>
-<li><p>Mathematical Functions:</p>
+<li><p>Mathematical methods:</p>
 <ul>
 <li><p>Linear algebra, Fourier transforms, random number generation, etc.</p></li>
 </ul>
@@ -481,7 +495,7 @@
 <section id="create-an-array">
 <h2><span class="section-number">4.1. </span>Create an array<a class="headerlink" href="#create-an-array" title="Link to this heading">#</a></h2>
 <hr>
-<p>The <code class="docutils literal notranslate"><span class="pre">array</span></code> function in NumPy can directly convert Python’s sequence type into NumPy’s array type <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">array</span></code> method in NumPy can directly convert Python’s sequence type into NumPy’s array type <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>.</p>
 <p>For example, a one-dimensional array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,22 +519,22 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">a</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2]
- [3 4]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+       [3, 4]])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The parentheses in the array function must <strong>include a sequence type</strong>; it cannot be written directly as np.array(1, 2, 3, 4).</p>
+<p>The parentheses in the <code class="docutils literal notranslate"><span class="pre">array</span></code> method must <strong>include a sequence type</strong>; it cannot be written directly as np.array(1, 2, 3, 4).</p>
 </div>
-<p>In NumPy, the <code class="docutils literal notranslate"><span class="pre">zeros</span></code> function can create a matrix with all elements set to 0, the <code class="docutils literal notranslate"><span class="pre">ones</span></code> function can create a matrix with all elements set to 1, and the <code class="docutils literal notranslate"><span class="pre">empty</span></code> function can create an uninitialized matrix with <strong>arbitrary element values</strong>.</p>
+<p>In NumPy, the <code class="docutils literal notranslate"><span class="pre">zeros</span></code> method can create a matrix with all elements set to 0, the <code class="docutils literal notranslate"><span class="pre">ones</span></code> method can create a matrix with all elements set to 1, and the <code class="docutils literal notranslate"><span class="pre">empty</span></code> method can create an uninitialized matrix with <strong>arbitrary element values</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># a zero matrix of 3 rows and 4 columns</span>
@@ -563,7 +577,7 @@
 </div>
 </div>
 </div>
-<p>In NumPy, the <code class="docutils literal notranslate"><span class="pre">arange</span></code> function can generate an array with an arithmetic sequence.</p>
+<p>In NumPy, the <code class="docutils literal notranslate"><span class="pre">arange</span></code> method can generate an array with an arithmetic sequence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># generate an array from 0 to 10 (exclusive) with a default step size of 1</span>
@@ -600,7 +614,7 @@
 </div>
 </div>
 </div>
-<p>Another similar function is <code class="docutils literal notranslate"><span class="pre">linspace</span></code>. The difference is that in the <code class="docutils literal notranslate"><span class="pre">arange</span></code> function, <strong>the third parameter represents the step size</strong> of the arithmetic sequence, while in the <code class="docutils literal notranslate"><span class="pre">linspace</span></code> function, <strong>the third parameter indicates the total number of elements</strong> to generate. If you need to generate a sequence of equally spaced floating-point numbers, using <code class="docutils literal notranslate"><span class="pre">linspace</span></code> is preferable.</p>
+<p>Another similar method is <code class="docutils literal notranslate"><span class="pre">linspace</span></code>. The difference is that in the <code class="docutils literal notranslate"><span class="pre">arange</span></code> method, <strong>the third parameter represents the step size</strong> of the arithmetic sequence, while in the <code class="docutils literal notranslate"><span class="pre">linspace</span></code> method, <strong>the third parameter indicates the total number of elements</strong> to generate. If you need to generate a sequence of equally spaced floating-point numbers, using <code class="docutils literal notranslate"><span class="pre">linspace</span></code> is preferable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1"># generate 9 numbers from 0 to 2 (exclusive)</span>
@@ -768,7 +782,7 @@
 <p>For multidimensional arrays, NumPy array indexing and slicing use a <strong>single pair of brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code></strong> with commas separating different dimensions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a 3-row by 4-column two-dimensional array by the &#39;reshape &#39;function</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a 3-row by 4-column two-dimensional array by the &#39;reshape &#39;method</span>
 <span class="c1"># &#39;reshape&#39; does not alter the values but reorganizes the original array with the specified number of rows and columns</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
@@ -835,7 +849,7 @@
 <section id="concatenating">
 <h2><span class="section-number">4.3. </span>Concatenating<a class="headerlink" href="#concatenating" title="Link to this heading">#</a></h2>
 <hr>
-<p>In NumPy, arrays can be concatenated using the <code class="docutils literal notranslate"><span class="pre">append</span></code> or <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> function: <code class="docutils literal notranslate"><span class="pre">append</span></code> joins two arrays, while <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> can join two or more arrays.</p>
+<p>In NumPy, arrays can be concatenated using the <code class="docutils literal notranslate"><span class="pre">append</span></code> or <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> method: <code class="docutils literal notranslate"><span class="pre">append</span></code> joins two arrays, while <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> can join two or more arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -1132,10 +1146,10 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 </div>
-<p>The NumPy library also includes several other commonly used functions, as shown in the table below:</p>
+<p>The NumPy library also includes several other commonly used methods, as shown in the table below:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Function</p></th>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
@@ -1185,8 +1199,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8.5340419 , 6.23628433],
-       [1.21047118, 2.72513828]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.04429151, 4.03560633],
+       [3.99198531, 3.21746203]])
 </pre></div>
 </div>
 </div>
@@ -1198,7 +1212,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6.55285313, 4.66404143, 4.076871  , 7.79143464, 1.58950467])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.72158597, 8.18835113, 1.57055417, 5.74251537, 5.65117185])
 </pre></div>
 </div>
 </div>
@@ -1210,8 +1224,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4, 7],
-       [7, 7]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 1],
+       [4, 2]])
 </pre></div>
 </div>
 </div>
@@ -1223,8 +1237,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.83456858, 3.1019772 ],
-       [4.8404167 , 3.76853155]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.2287676 , 4.29973464],
+       [5.50719463, 4.93332754]])
 </pre></div>
 </div>
 </div>
@@ -1236,8 +1250,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[12,  6],
-       [ 2,  8]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6, 2],
+       [7, 9]])
 </pre></div>
 </div>
 </div>
@@ -1257,7 +1271,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 </div>
-<p>Additionally, NumPy also allows you to define a random number generator object via <code class="docutils literal notranslate"><span class="pre">RandomState()</span></code>, where the parameter inside the parentheses is the random seed. You can then use this object to call specific random distribution generator functions. For example:</p>
+<p>Additionally, NumPy also allows you to define a random number generator object via <code class="docutils literal notranslate"><span class="pre">RandomState()</span></code>, where the parameter inside the parentheses is the random seed. You can then use this object to call specific random distribution generator methods. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
@@ -1278,7 +1292,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 <hr><section id="time-library">
 <h3><span class="section-number">4.6.1. </span><code class="docutils literal notranslate"><span class="pre">time</span></code> library<a class="headerlink" href="#time-library" title="Link to this heading">#</a></h3>
 <hr>
-<p><code class="docutils literal notranslate"><span class="pre">time</span></code> is a Python built-in libray that provides many time-related functions, such as getting the current time, pausing program execution, measuring execution time, and more.</p>
+<p><code class="docutils literal notranslate"><span class="pre">time</span></code> is a Python built-in libray that provides many time-related methods, such as getting the current time, pausing program execution, measuring execution time, and more.</p>
 <ul class="simple">
 <li><p>Get the current time in seconds since January 1, 1970, 00:00:00 (UTC)  by <code class="docutils literal notranslate"><span class="pre">time()</span></code>.</p></li>
 </ul>
@@ -1292,7 +1306,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1748288014.2070882
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1748431603.2848163
 </pre></div>
 </div>
 </div>
@@ -1308,7 +1322,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2025, tm_mon=5, tm_mday=26, tm_hour=20, tm_min=33, tm_sec=34, tm_wday=0, tm_yday=146, tm_isdst=1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2025, tm_mon=5, tm_mday=28, tm_hour=12, tm_min=26, tm_sec=43, tm_wday=2, tm_yday=148, tm_isdst=1)
 </pre></div>
 </div>
 </div>
@@ -1324,7 +1338,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-26 20:33:34
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-28 12:26:43
 </pre></div>
 </div>
 </div>
@@ -1392,7 +1406,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.053512 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.029933 seconds
 </pre></div>
 </div>
 </div>
@@ -1411,7 +1425,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.026919 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.028921 seconds
 </pre></div>
 </div>
 </div>
@@ -1430,7 +1444,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.023372 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.031250 seconds
 </pre></div>
 </div>
 </div>
@@ -1439,7 +1453,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 <section id="datetime-library">
 <h3><span class="section-number">4.6.2. </span><code class="docutils literal notranslate"><span class="pre">datetime</span></code> library<a class="headerlink" href="#datetime-library" title="Link to this heading">#</a></h3>
 <hr>
-<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> is part of Python’s standard built-in library, offering functionalities for date and time manipulation, including fetching the current time, date calculations, timezone handling, and more.</p>
+<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> is part of Python’s standard built-in library, offering methods for date and time manipulation, including fetching the current time, date calculations, timezone handling, and more.</p>
 <ul class="simple">
 <li><p>Get current datetime by <code class="docutils literal notranslate"><span class="pre">now()</span></code>.</p></li>
 </ul>
@@ -1453,7 +1467,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-26 20:33:37.346075
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-28 12:26:46.418400
 </pre></div>
 </div>
 </div>
@@ -1579,7 +1593,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
 <section id="exercise-content">
-<p>What does the np.zeros((1, 2)) function in NumPy do?</p>
+<p>What does the np.zeros((1, 2)) method in NumPy do?</p>
 <p>A.    Create an array with ones, 1 row and 2 columns</p>
 <p>B.    Create an array with zeros, 1 row and 2 columns</p>
 <p>C.    Create an identy matrix</p>
@@ -1597,7 +1611,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 
 <p class="admonition-title"><span class="caption-number">Exercise 4.4 </span></p>
 <section id="exercise-content">
-<p>What does the np.arange(1, 10, 2) function in NumPy do?</p>
+<p>What does the code np.arange(1, 10, 2) in NumPy do?</p>
 <p>A.    Creates an array with values from 1 to 10</p>
 <p>B.    Creates an array with values from 1 to 10 with step 2</p>
 <p>C.    Creates an array with values from 1 to 9 with step 2</p>
@@ -1738,8 +1752,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1807,8 +1820,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

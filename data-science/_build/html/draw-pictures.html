@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -40,11 +38,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -73,7 +70,6 @@
     <link rel="prev" title="6. Define functions" href="define-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -89,8 +85,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -98,6 +105,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -105,8 +113,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -122,8 +130,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -153,17 +160,21 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -199,14 +210,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -399,16 +405,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -609,7 +623,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11754dbb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ed04ef2120&gt;]
 </pre></div>
 </div>
 <img alt="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" src="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" />
@@ -622,7 +636,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1175c2870&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ed04f61fd0&gt;]
 </pre></div>
 </div>
 <img alt="_images/b251f6d31de10b926e1c8f6448d698544a5c5dbd3ba8494ec71315b5bceca67a.png" src="_images/b251f6d31de10b926e1c8f6448d698544a5c5dbd3ba8494ec71315b5bceca67a.png" />
@@ -635,7 +649,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11772e3f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ed0500e630&gt;]
 </pre></div>
 </div>
 <img alt="_images/6a6574b83139e69cc65d4fe67da903ec6432ec1fa3fa00ffc1e0a12b78020fbf.png" src="_images/6a6574b83139e69cc65d4fe67da903ec6432ec1fa3fa00ffc1e0a12b78020fbf.png" />
@@ -650,7 +664,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1177a61b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1ed05069fd0&gt;]
 </pre></div>
 </div>
 <img alt="_images/816540be985965cc59eafc61e284d3ffa703880a5a6b49649fb811d2911b84bd.png" src="_images/816540be985965cc59eafc61e284d3ffa703880a5a6b49649fb811d2911b84bd.png" />
@@ -708,7 +722,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8d57567c51b59d9359081906c651bdfb980f91245bddfa1a940bfc7065bd8c21.png" src="_images/8d57567c51b59d9359081906c651bdfb980f91245bddfa1a940bfc7065bd8c21.png" />
+<img alt="_images/2e6bef56d85950dd6b3d2e5b811072e92c2a155a74f24f1c206e6091f7c72c11.png" src="_images/2e6bef56d85950dd6b3d2e5b811072e92c2a155a74f24f1c206e6091f7c72c11.png" />
 </div>
 </div>
 <ul class="simple">
@@ -779,7 +793,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0c4f82efe68d9f1d44cee21c29a94a5ebd97650dd500b59f26f2ebcb60443adc.png" src="_images/0c4f82efe68d9f1d44cee21c29a94a5ebd97650dd500b59f26f2ebcb60443adc.png" />
+<img alt="_images/cb07c4e2c8325049d20406e4d29040894125b8de42f91a580fa72b5ac41ba825.png" src="_images/cb07c4e2c8325049d20406e4d29040894125b8de42f91a580fa72b5ac41ba825.png" />
 </div>
 </div>
 </section>
@@ -874,7 +888,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c019a7d241707692214969cd4ff18a25375e6d8eb15bcf97dc78b1146bc9d246.png" src="_images/c019a7d241707692214969cd4ff18a25375e6d8eb15bcf97dc78b1146bc9d246.png" />
+<img alt="_images/bc86900d984c3c43d5ceb40b5e55840179451f41735df8538afd586307ac4c09.png" src="_images/bc86900d984c3c43d5ceb40b5e55840179451f41735df8538afd586307ac4c09.png" />
 </div>
 </div>
 <p>横放条形图使用<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数，用法与<code class="docutils literal notranslate"><span class="pre">bar</span></code>基本一致。</p>
@@ -891,7 +905,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ef802372854e88ea575a0e077ed678cb72a351283faafb674a67ea0e4d0f7be3.png" src="_images/ef802372854e88ea575a0e077ed678cb72a351283faafb674a67ea0e4d0f7be3.png" />
+<img alt="_images/087fbb3c30c27fcf564af1d2a595fb1e3ee330694a8785b87dc72559aa79547f.png" src="_images/087fbb3c30c27fcf564af1d2a595fb1e3ee330694a8785b87dc72559aa79547f.png" />
 </div>
 </div>
 <p>若要将男生与女生的调查情况画出两个条形图一块显示，则可以使用<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数两次，并调整<code class="docutils literal notranslate"><span class="pre">bar</span></code>或<code class="docutils literal notranslate"><span class="pre">barh</span></code>函数的条形图位置坐标以及相应刻度，使得两组条形图能够并排显示。</p>
@@ -939,7 +953,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d279070f80303a08cb7b0e51de27c2d2a52ea2bf7e11466845bd50645a99bcd4.png" src="_images/d279070f80303a08cb7b0e51de27c2d2a52ea2bf7e11466845bd50645a99bcd4.png" />
+<img alt="_images/a93d945805875caeca3eab649b5b380fa76794663168bec741bf12dbff648445.png" src="_images/a93d945805875caeca3eab649b5b380fa76794663168bec741bf12dbff648445.png" />
 </div>
 </div>
 </section>
@@ -983,7 +997,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0ce9ee524c549869631cb0930aead76c6c817f885f14e6c940fe815ffdab02d8.png" src="_images/0ce9ee524c549869631cb0930aead76c6c817f885f14e6c940fe815ffdab02d8.png" />
+<img alt="_images/aba07ae81635bc50ffb775d720afefa5ab819e2a2dea6ceb2fdca5708d644050.png" src="_images/aba07ae81635bc50ffb775d720afefa5ab819e2a2dea6ceb2fdca5708d644050.png" />
 </div>
 </div>
 </section>
@@ -1050,7 +1064,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a49845c3fc6bd9af3cf4ab423651305e535b18344f76ca6a4aa9db9b5ea86d57.png" src="_images/a49845c3fc6bd9af3cf4ab423651305e535b18344f76ca6a4aa9db9b5ea86d57.png" />
+<img alt="_images/6a5162cacfeb8a57346922c1cb4c9f59e0564517d03347675ad2dc4143e3a300.png" src="_images/6a5162cacfeb8a57346922c1cb4c9f59e0564517d03347675ad2dc4143e3a300.png" />
 </div>
 </div>
 </section>
@@ -1203,7 +1217,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/003b893d2f37aaca7d7a6ad9cef5a2ac6ea638b1662f56aea6a42b9b55f46e14.png" src="_images/003b893d2f37aaca7d7a6ad9cef5a2ac6ea638b1662f56aea6a42b9b55f46e14.png" />
+<img alt="_images/33f9394fea36e1243c3746885018a1460664b3b53f8b086577796c2e2a8df222.png" src="_images/33f9394fea36e1243c3746885018a1460664b3b53f8b086577796c2e2a8df222.png" />
 </div>
 </div>
 </section>
@@ -1287,7 +1301,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f90ff4371db7c4124ad433dcd2f5a0cb2c30cd7f4398ad4f873a910c61531291.png" src="_images/f90ff4371db7c4124ad433dcd2f5a0cb2c30cd7f4398ad4f873a910c61531291.png" />
+<img alt="_images/8b1ecf02aef1d96f1ca09cd0c0f7e31b3581c09ec9b04e6b3842150b3f29100c.png" src="_images/8b1ecf02aef1d96f1ca09cd0c0f7e31b3581c09ec9b04e6b3842150b3f29100c.png" />
 </div>
 </div>
 <p>另外还有一个<code class="docutils literal notranslate"><span class="pre">subplots</span></code>函数，使用方法是<code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>。其中，fig 用于调整整体图形的参数，而 axs 用于调整每个子图的参数。限于篇幅，我们不做过多介绍。</p>
@@ -1414,7 +1428,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d913bfa393e270832cabc73ba39285888200bb4526a8df168de23d355b72bc03.png" src="_images/d913bfa393e270832cabc73ba39285888200bb4526a8df168de23d355b72bc03.png" />
+<img alt="_images/5fd5f419f1578ecd22028357ae90835236c76794afeb500c9a8a231db77605eb.png" src="_images/5fd5f419f1578ecd22028357ae90835236c76794afeb500c9a8a231db77605eb.png" />
 </div>
 </div>
 <p>seaborn 还有一个函数<code class="docutils literal notranslate"><span class="pre">regplot</span></code>，可以进一步对数据进行线性拟合。</p>
@@ -1428,7 +1442,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/878b67f8abe497128875a8fdad3505b359712b653b2cb3d1ca1560089e9f73e8.png" src="_images/878b67f8abe497128875a8fdad3505b359712b653b2cb3d1ca1560089e9f73e8.png" />
+<img alt="_images/d1cfe61694634bbf45f67d064d564fdec8423eecca2b42952eaed8aac2f12bf4.png" src="_images/d1cfe61694634bbf45f67d064d564fdec8423eecca2b42952eaed8aac2f12bf4.png" />
 </div>
 </div>
 <p>若要进行曲线拟合，可以进一步设置<code class="docutils literal notranslate"><span class="pre">regplot</span></code>里面的参数 order, logx, logistic 等来生成。</p>
@@ -1446,7 +1460,7 @@ seaborn 自带一些函数生成常见的图形，例如``barplot``生成条形�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d497c87695db5aae83f0cfbbdbacbe5bf3ee661da86a6ed12d47a42acbfe4627.png" src="_images/d497c87695db5aae83f0cfbbdbacbe5bf3ee661da86a6ed12d47a42acbfe4627.png" />
+<img alt="_images/c533f9c38c00e65354cc367bc2e7abdd1ea4f086e4b7eae5dbfd95fd13ac5d15.png" src="_images/c533f9c38c00e65354cc367bc2e7abdd1ea4f086e4b7eae5dbfd95fd13ac5d15.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1675,8 +1689,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1752,8 +1765,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
