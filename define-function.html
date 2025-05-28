@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Python 编写函数 &#8212; Python 数据科学</title>
+    <title>6. Define functions &#8212; Python 数据科学</title>
   
   
   
@@ -69,8 +69,8 @@
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Numpy 简介" href="introduction-to-numpy.html" />
-    <link rel="prev" title="3. Python 输出，读写文件" href="print-read-files.html" />
+    <link rel="next" title="7. Python 画图" href="draw-pictures.html" />
+    <link rel="prev" title="5. Introduction to Pandas" href="introduction-to-pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -178,10 +178,10 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. Getting started with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Data types in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">5. Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">6. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Introduction to Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Define functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
@@ -422,7 +422,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python 编写函数</h1>
+    <h1>Define functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,30 +432,30 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. 条件语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2. 循环语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.3. 自定义函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.3.1. 函数参数的传递类型</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3.2. 函数的参数传入方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1. 条件语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.2. 循环语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.3. 自定义函数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.3.1. 函数参数的传递类型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.3.2. 函数的参数传入方法</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.4. 调试程序</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">4.4.1. 使用 print() 进行简单调试</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.4.2. 使用调试器调试</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">4.4.3. 调试功能的 step into, step over, step out, resume program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.4. 调试程序</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">6.4.1. 使用 print() 进行简单调试</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.4.2. 使用调试器调试</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.4.3. 调试功能的 step into, step over, step out, resume program</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">4.5. try-except 语句调试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module">4.6. 导入其他模块（module）</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.6.1. Python 如何查找模块</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.6.2. 同级模块导入或同级文件夹下的模块导入</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.6.3. 与父文件夹同级的模块导入</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-path-append">4.6.4. 使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">6.5. try-except 语句调试</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module">6.6. 导入其他模块（module）</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">6.6.1. Python 如何查找模块</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.6.2. 同级模块导入或同级文件夹下的模块导入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.6.3. 与父文件夹同级的模块导入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-path-append">6.6.4. 使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">4.7. lambda, map, filter, reduce 函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.8. 一些常用的内置函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.9. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.7. lambda, map, filter, reduce 函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.8. 一些常用的内置函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.9. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -467,12 +467,12 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">4. </span>Python 编写函数<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="define-functions">
+<h1><span class="section-number">6. </span>Define functions<a class="headerlink" href="#define-functions" title="Link to this heading">#</a></h1>
 <hr>
 <p>用 Python 编写函数时，经常要用到条件语句<code class="docutils literal notranslate"><span class="pre">if</span></code>， 循环语句<code class="docutils literal notranslate"><span class="pre">for</span></code>或<code class="docutils literal notranslate"><span class="pre">while</span></code>。</p>
 <section id="id1">
-<h2><span class="section-number">4.1. </span>条件语句<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>条件语句<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code>语句的字面意思是：如果（if）满足条件，做什么，否则（else）做什么。例如，下面一段代码：</p>
 <div class="cell docutils container">
@@ -572,7 +572,7 @@
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">4.2. </span>循环语句<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>循环语句<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr>
 <p>循环语句一般有两种，for 语句与 while 语句。for 循环可以遍历任何序列的项目，如一个列表、元组、集合或者一个字符串。for 循环的一般用法如下：</p>
 <table>   
@@ -737,7 +737,7 @@ Hello, World!
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">4.3. </span>自定义函数<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>自定义函数<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <hr>
 <p>Python 提供了许多内建函数，比如 print()，但也可以自己创建函数，这被叫做用户自定义函数。掌握了自定义函数后，就能用 Python 实现很多自己想要的功能了。Python 自定义函数使用<code class="docutils literal notranslate"><span class="pre">def</span></code>关键字，一般用法如下：</p>
 <table>   
@@ -875,7 +875,7 @@ Hello, World!
 </div>
 <p>在一些 python IDE 软件中，例如 Spyder 或 Pycharm，当鼠标停留在某个函数或类名时，自动显示该函数或类的说明（docstring），极大地增加了代码的可读性。</p>
 <section id="id4">
-<h3><span class="section-number">4.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.3.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <hr>
 <p>根据输入参数的值是否可以改变，函数的参数传递类型包括以下两种：</p>
 <ul class="simple">
@@ -924,7 +924,7 @@ Hello, World!
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">4.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.3.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <hr>
 <p>函数的参数传入方法主要有4种类型：</p>
 <ul class="simple">
@@ -1039,10 +1039,10 @@ final x is 18
 </section>
 </section>
 <section id="id6">
-<h2><span class="section-number">4.4. </span>调试程序<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>调试程序<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <hr><p>调试程序是编程不可避免的步骤，调试就是为了帮组发现与修改程序中的错误。因为即使再优秀的程序员，也不可能在编写一个新的程序时一点错误也没有。调试程序有以下几种常用的方法。</p>
 <section id="print">
-<h3><span class="section-number">4.4.1. </span>使用 print() 进行简单调试<a class="headerlink" href="#print" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.1. </span>使用 print() 进行简单调试<a class="headerlink" href="#print" title="Link to this heading">#</a></h3>
 <hr><p>这种调试方法适用于：代码短，问题简单，只需要查看几个变量的值的情况。一般是在怀疑可能会出错的代码行前面使用<code class="docutils literal notranslate"><span class="pre">print()</span></code>语句打印出一些变量值或函数输出结果，从而帮助程序员判断哪里出错。</p>
 <p>例如，下面的例子中在可能发生错误的前一行使用 print 语句输出变量 a 与 b 的值。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -1057,7 +1057,7 @@ final x is 18
 <p>这种方法的缺点是：每次都要手动修改 print() 位置；不能暂停代码，调试麻烦。</p>
 </section>
 <section id="id7">
-<h3><span class="section-number">4.4.2. </span>使用调试器调试<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.2. </span>使用调试器调试<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <hr><p>Python 自带一个调试器 <code class="docutils literal notranslate"><span class="pre">pdb</span></code>，其他的 Python 编程软件（IDE）Spyder, Pycharm, VS code 等在菜单栏或工具栏也有专门的调试功能。</p>
 <p>调试器调试的一般步骤是：</p>
 <ol class="arabic simple">
@@ -1115,7 +1115,7 @@ final x is 18
 </div>
 </section>
 <section id="step-into-step-over-step-out-resume-program">
-<h3><span class="section-number">4.4.3. </span>调试功能的 step into, step over, step out, resume program<a class="headerlink" href="#step-into-step-over-step-out-resume-program" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.4.3. </span>调试功能的 step into, step over, step out, resume program<a class="headerlink" href="#step-into-step-over-step-out-resume-program" title="Link to this heading">#</a></h3>
 <hr><p>使用 IDE 软件调试时，<code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">into</span></code>、<code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">over</span></code>、<code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">out</span></code>和 <code class="docutils literal notranslate"><span class="pre">resume</span> <span class="pre">program</span></code> 是调试器的常见功能，它们的区别如下：</p>
 <ul class="simple">
 <li><p>Step Into（进入函数）：逐行执行代码，并且如果当前行有函数调用，就进入该函数内部。</p>
@@ -1226,7 +1226,7 @@ final x is 18
 </section>
 </section>
 <section id="try-except">
-<h2><span class="section-number">4.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.5. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Link to this heading">#</a></h2>
 <hr>
 <p>在编写程序时，有时候不知道程序能否正确运行，想试试程序运行结果如何，可以使用 try-except语句；若 try 块中的语句无法执行通过，则执行 except 块中的语句。</p>
 <table>   
@@ -1319,11 +1319,11 @@ final x is 18
 </div>
 </section>
 <section id="module">
-<h2><span class="section-number">4.6. </span>导入其他模块（module）<a class="headerlink" href="#module" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span>导入其他模块（module）<a class="headerlink" href="#module" title="Link to this heading">#</a></h2>
 <hr><p>Python 编程中，每个以 .py 为后缀的文件被称作模块（module）。很多时候，我们需要导入其他模块中的函数，</p>
 <p>在 Python 中导入其他文件夹中的模块时，有几个规则和方法可供使用。主要涉及 Python 的<strong>模块搜索路径（sys.path</strong>），以及如何使用<strong>相对导入</strong>和<strong>绝对导入</strong>。</p>
-<section id="id8">
-<h3><span class="section-number">4.6.1. </span>Python 如何查找模块<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="python">
+<h3><span class="section-number">6.6.1. </span>Python 如何查找模块<a class="headerlink" href="#python" title="Link to this heading">#</a></h3>
 <hr><ol class="arabic simple">
 <li><p><strong>当前目录</strong>（脚本所在的文件夹）。</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">sys.path</span></code> 中的目录</strong>：</p>
@@ -1344,14 +1344,14 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science-en&#39;, &#39;/Users/yourname/projects&#39;, &#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science-en&#39;, &#39;/opt/anaconda3/lib/python312.zip&#39;, &#39;/opt/anaconda3/lib/python3.12&#39;, &#39;/opt/anaconda3/lib/python3.12/lib-dynload&#39;, &#39;&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages/aeosa&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages/setuptools/_vendor&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science&#39;, &#39;/Users/yourname/projects&#39;, &#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science&#39;, &#39;/opt/anaconda3/lib/python312.zip&#39;, &#39;/opt/anaconda3/lib/python3.12&#39;, &#39;/opt/anaconda3/lib/python3.12/lib-dynload&#39;, &#39;&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages/aeosa&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages/setuptools/_vendor&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id9">
-<h3><span class="section-number">4.6.2. </span>同级模块导入或同级文件夹下的模块导入<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h3><span class="section-number">6.6.2. </span>同级模块导入或同级文件夹下的模块导入<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <hr><p>若导入模块是当前模块的同级文件，即二者在一个父目录下，例如：</p>
 <p><strong>目录结构</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
@@ -1380,8 +1380,8 @@ final x is 18
 </pre></div>
 </div>
 </section>
-<section id="id10">
-<h3><span class="section-number">4.6.3. </span>与父文件夹同级的模块导入<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h3><span class="section-number">6.6.3. </span>与父文件夹同级的模块导入<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <hr><p>若导入模块在与当前模块父文件夹同级，例如：</p>
 <p><strong>目录结构1</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
@@ -1423,7 +1423,7 @@ final x is 18
 </div>
 </section>
 <section id="sys-path-append">
-<h3><span class="section-number">4.6.4. </span>使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code><a class="headerlink" href="#sys-path-append" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.6.4. </span>使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code><a class="headerlink" href="#sys-path-append" title="Link to this heading">#</a></h3>
 <hr>
 <p>如果你的模块所在路径比较复杂，你可以使用以下方法 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code>添加导入模块的具体路径。</p>
 <p>例如，如果你想导入 <code class="docutils literal notranslate"><span class="pre">other_folder/module.py</span></code>，其中，”other_folder” 为文件夹在电脑硬盘中的详细地址。可以在代码中手动添加路径：</p>
@@ -1437,7 +1437,7 @@ final x is 18
 </section>
 </section>
 <section id="lambda-map-filter-reduce">
-<h2><span class="section-number">4.7. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.7. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Link to this heading">#</a></h2>
 <hr>
 <p>Python 使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>来创建匿名函数。所谓匿名，即不再使用 def 语句这样标准的形式定义一个函数。<strong>lambda 函数只有一行</strong>，用一个冒号分割传递参数与函数的返回值。非常简洁，在 Pandas 处理数据时经常结合 apply 函数使用。</p>
 <table>   
@@ -1485,7 +1485,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x107e402b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x112c34cd0&gt;
 </pre></div>
 </div>
 </div>
@@ -1551,8 +1551,8 @@ final x is 18
 </div>
 </div>
 </section>
-<section id="id11">
-<h2><span class="section-number">4.8. </span>一些常用的内置函数<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h2><span class="section-number">6.8. </span>一些常用的内置函数<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
 <hr><p>Python 内置了一些常用的函数，可以方便使用。本书简单介绍以下几个内置函数：</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1733,18 +1733,89 @@ final x is 18
 </div>
 </div>
 </section>
-<section id="id12">
-<h2><span class="section-number">4.9. </span>练习<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
-<hr><div class="exercise admonition" id="judge-leap-year">
+<section id="id11">
+<h2><span class="section-number">6.9. </span>练习<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<hr><div class="exercise admonition" id="abs">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
 <section id="exercise-content">
-<p>判断用户输入的年份是否为闰年。</p>
+<p>Which function will you use to find the absolute value of a number in Python?</p>
+<p>A.    fabs()</p>
+<p>B.    absolute()</p>
+<p>C.    abs()</p>
+<p>D.    all()</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="define-function-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#judge-leap-year"> Exercise 4.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#abs"> Exercise 6.1</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="global-variable">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
+<section id="exercise-content">
+<p>What is the output of the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;awesome&#39;</span>
+<span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;fantastic&#39;</span>
+    
+<span class="n">fun</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Python is &#39;</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A.    Python is x</p>
+<p>B.    Python is fun</p>
+<p>C.    Python is fantasic</p>
+<p>D.    Python is awesome</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#global-variable"> Exercise 6.2</a></p>
+<section id="solution-content">
+<p>D</p>
+</section>
+</div>
+<div class="exercise admonition" id="global-variable2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.3 </span></p>
+<section id="exercise-content">
+<p>What is the output of the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;awesome&#39;</span>
+<span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;fantastic&#39;</span>
+    
+<span class="n">fun</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Python is &#39;</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A.    Python is x</p>
+<p>B.    Python is fun</p>
+<p>C.    Python is fantasic</p>
+<p>D.    Python is awesome</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-5">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#global-variable2"> Exercise 6.3</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="judge-leap-year">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.4 </span></p>
+<section id="exercise-content">
+<p>判断用户输入的年份是否为闰年。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-7">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#judge-leap-year"> Exercise 6.4</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入一个年份: &quot;</span><span class="p">))</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1761,16 +1832,116 @@ final x is 18
 </div>
 </section>
 </div>
+<div class="exercise admonition" id="circle-area">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.5 </span></p>
+<section id="exercise-content">
+<p>根据给定的半径值，计算圆的面积</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-9">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 6.5</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;圆的面积为 </span><span class="si">%.6f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="quad-equation">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.6 </span></p>
+<section id="exercise-content">
+<p>通过用户输入数字 a, b, c，计算二次方程: <span class="math notranslate nohighlight">\(ax^2 + bx +c\)</span>。
+(提示：cmath 工具包可以计算负数的开方)</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-11">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 6.6</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
+<span class="kn">import</span> <span class="nn">cmath</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 a: &quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 b: &quot;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 c: &quot;</span><span class="p">))</span>
+
+<span class="c1"># 计算</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># 两种求解方式</span>
+<span class="n">sol1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">sol2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;结果为 </span><span class="si">{0}</span><span class="s2"> 和 </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sol1</span><span class="p">,</span> <span class="n">sol2</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="triangle-area">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.7 </span></p>
+<section id="exercise-content">
+<p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-13">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 6.7</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第一边长: &quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第二边长: &quot;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第三边长: &quot;</span><span class="p">))</span>
+
+<span class="c1"># 计算半周长</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># 计算面积</span>
+<span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;三角形面积为 </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="dict-values">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.8 </span></p>
+<section id="exercise-content">
+<p>Define a dict with all the values are numeric and compute the sum of all the values.</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-15">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 6.8</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myDict</span><span class="p">:</span> 
+        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">myDict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>      
+    <span class="k">return</span> <span class="nb">sum</span>
+  
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum :&quot;</span><span class="p">,</span> <span class="n">returnSum</span><span class="p">(</span><span class="nb">dict</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
 <div class="exercise admonition" id="print-multiplication-table">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.9 </span></p>
 <section id="exercise-content">
 <p>编写一个程序，打印出九九乘法表。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-3">
+<div class="solution dropdown admonition" id="define-function-solution-17">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#print-multiplication-table"> Exercise 4.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#print-multiplication-table"> Exercise 6.9</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -1782,14 +1953,14 @@ final x is 18
 </div>
 <div class="exercise admonition" id="sum-cub">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.10 </span></p>
 <section id="exercise-content">
 <p>自定义一个函数，给定数值 <span class="math notranslate nohighlight">\(n\)</span>，能够计算 从 1 到 <span class="math notranslate nohighlight">\(n\)</span> 所有自然数的立方和。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-5">
+<div class="solution dropdown admonition" id="define-function-solution-19">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#sum-cub"> Exercise 4.3</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#sum-cub"> Exercise 6.10</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1807,14 +1978,14 @@ final x is 18
 </div>
 <div class="exercise admonition" id="great-common-devisor">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.11 </span></p>
 <section id="exercise-content">
 <p>从键盘输入两个整数，编写一个程序可以求出这两个整数的最大公约数。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-7">
+<div class="solution dropdown admonition" id="define-function-solution-21">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#great-common-devisor"> Exercise 4.4</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#great-common-devisor"> Exercise 6.11</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一个函数</span>
 <span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -1844,14 +2015,14 @@ final x is 18
 </div>
 <div class="exercise admonition" id="fib-sequence">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.12 </span></p>
 <section id="exercise-content">
 <p>输出指定数目的斐波那契数列。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-9">
+<div class="solution dropdown admonition" id="define-function-solution-23">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 4.5</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 6.12</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取用户输入数据</span>
 <span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;the number of sequence:&quot;</span><span class="p">))</span>
@@ -1885,9 +2056,9 @@ final x is 18
 </div>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-10">
+<div class="solution dropdown admonition" id="define-function-solution-24">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 4.5</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 6.12</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recur_fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1916,14 +2087,14 @@ final x is 18
 </div>
 <div class="exercise admonition" id="range-prime-numbers">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.13 </span></p>
 <section id="exercise-content">
 <p>输出指定范围内的素数。</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-12">
+<div class="solution dropdown admonition" id="define-function-solution-26">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 4.6</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 6.13</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take input from the user</span>
 <span class="n">lower</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入区间最小值: &quot;</span><span class="p">))</span>
@@ -1943,14 +2114,14 @@ final x is 18
 </div>
 <div class="exercise admonition" id="get-date">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.14 </span></p>
 <section id="exercise-content">
 <p>编写一个程序，能够得到昨天的日期。（提示：使用 datatime 库）</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-14">
+<div class="solution dropdown admonition" id="define-function-solution-28">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 4.6</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 6.13</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
@@ -1970,14 +2141,14 @@ final x is 18
 </div>
 <div class="exercise admonition" id="second-watch">
 
-<p class="admonition-title"><span class="caption-number">Exercise 4.8 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.15 </span></p>
 <section id="exercise-content">
 <p>编写一个程序，实现秒表功能。（提示：使用 time 库）</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-16">
+<div class="solution dropdown admonition" id="define-function-solution-30">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#second-watch"> Exercise 4.8</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#second-watch"> Exercise 6.15</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
@@ -2038,16 +2209,16 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -2060,20 +2231,20 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="print-read-files.html"
+       href="introduction-to-pandas.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Python 输出，读写文件</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Introduction to Pandas</p>
       </div>
     </a>
     <a class="right-next"
-       href="introduction-to-numpy.html"
+       href="draw-pictures.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Numpy 简介</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Python 画图</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2094,30 +2265,30 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. 条件语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2. 循环语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.3. 自定义函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.3.1. 函数参数的传递类型</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3.2. 函数的参数传入方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.1. 条件语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.2. 循环语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.3. 自定义函数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.3.1. 函数参数的传递类型</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.3.2. 函数的参数传入方法</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.4. 调试程序</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">4.4.1. 使用 print() 进行简单调试</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.4.2. 使用调试器调试</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">4.4.3. 调试功能的 step into, step over, step out, resume program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.4. 调试程序</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">6.4.1. 使用 print() 进行简单调试</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.4.2. 使用调试器调试</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.4.3. 调试功能的 step into, step over, step out, resume program</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">4.5. try-except 语句调试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module">4.6. 导入其他模块（module）</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.6.1. Python 如何查找模块</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.6.2. 同级模块导入或同级文件夹下的模块导入</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.6.3. 与父文件夹同级的模块导入</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-path-append">4.6.4. 使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">6.5. try-except 语句调试</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module">6.6. 导入其他模块（module）</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">6.6.1. Python 如何查找模块</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.6.2. 同级模块导入或同级文件夹下的模块导入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.6.3. 与父文件夹同级的模块导入</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-path-append">6.6.4. 使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">4.7. lambda, map, filter, reduce 函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.8. 一些常用的内置函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.9. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.7. lambda, map, filter, reduce 函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.8. 一些常用的内置函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">6.9. 练习</a></li>
 </ul>
   </nav></div>
 
