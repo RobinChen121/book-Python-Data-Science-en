@@ -62,8 +62,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
     <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
@@ -77,7 +75,7 @@ window.addEventListener("load", () => mermaid.run());
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Python 输出，读写文件" href="print-read-files.html" />
+    <link rel="next" title="3. Output, read and write files" href="print-read-files.html" />
     <link rel="prev" title="1. Getting started with Python" href="A-first-look-of-Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,10 +184,10 @@ window.addEventListener("load", () => mermaid.run());
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. Getting started with Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Data types in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">5. Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">6. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Introduction to Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Define functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
@@ -444,11 +442,11 @@ window.addEventListener("load", () => mermaid.run());
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">2.2. String</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list">2.3. List</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">2.4. Dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.5. 元祖类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.6. 集合类型*</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.7. 布尔类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random">2.8. <code class="docutils literal notranslate"><span class="pre">random</span></code> 模块</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.9. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple">2.5. Tuple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean">2.6. Boolean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-1">2.7. Set*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-library">2.8. <code class="docutils literal notranslate"><span class="pre">random</span></code> library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">2.9. Excercises</a></li>
 </ul>
             </nav>
         </div>
@@ -463,6 +461,7 @@ window.addEventListener("load", () => mermaid.run());
   <section class="tex2jax_ignore mathjax_ignore" id="data-types-in-python">
 <h1><span class="section-number">2. </span>Data types in Python<a class="headerlink" href="#data-types-in-python" title="Link to this heading">#</a></h1>
 <hr><p>Python data types are the classification or categorization of data items. Different data types can be performed on different operations.</p>
+<p>The following is chart about the built-in data types in Python:</p>
 <pre  class="mermaid">
         flowchart TD
     A[Python Data Types] --&gt; B[Numeric]
@@ -539,7 +538,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>Type casting refers to converting one data type into another. Python provides several built-in functions to facilitate casting including int(), float() and str().</p>
+<p>Type casting refers to converting one data type into another. Python provides several built-in methods to facilitate casting including int(), float() and str().</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># cast an integer variable to float</span>
@@ -566,7 +565,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># cast a numeric to string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -583,7 +582,7 @@ window.addEventListener("load", () => mermaid.run());
 <section id="string">
 <h2><span class="section-number">2.2. </span>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h2>
 <hr>
-<p>A string is a sequence of characters. We can use either single quotes or double quotes to express a string.</p>
+<p>A string is a sequence of characters. We can use <strong>either single quotes <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> or double quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">&quot;&quot;</span></code></strong> to express a string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;chen&#39;</span>
@@ -623,7 +622,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>Another common concatenation method is using the <code class="docutils literal notranslate"><span class="pre">join()</span></code> function: <code class="docutils literal notranslate"><span class="pre">str.join(sequence)</span></code>, which joins elements in the sequence with specified characters to produce a new string. For example:</p>
+<p>Another common concatenation method is using the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method: <code class="docutils literal notranslate"><span class="pre">str.join(sequence)</span></code>, which joins elements in the sequence with specified characters to produce a new string. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;chen&quot;</span><span class="p">,</span> <span class="s2">&quot;zhang&quot;</span><span class="p">,</span> <span class="s2">&quot;li&quot;</span><span class="p">])</span>  <span class="c1"># concatenating 3 strings with comma</span>
@@ -764,7 +763,28 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>Cast other data types to string can be done by using the function <code class="docutils literal notranslate"><span class="pre">str</span></code>:</p>
+<ul class="simple">
+<li><p>input multi-line string using triple quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">&quot;&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'''</span> <span class="pre">'''</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str_multi</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39; this is </span>
+<span class="s1">a multi line</span>
+<span class="s1">string&#39;&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">str_multi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> this is 
+a multi line
+string
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cast other data types to string can be done by using the method <code class="docutils literal notranslate"><span class="pre">str</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
@@ -789,55 +809,55 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>Some widely used functions for string operations:</p>
+<p>Some widely used methods for string operations:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>function</p></th>
-<th class="head text-left"><p>meaning</p></th>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Meaning</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>str.capitalize()</p></td>
-<td class="text-left"><p>Capitalize the first character in the string ‘str’</p></td>
+<tr class="row-even"><td><p>str.capitalize()</p></td>
+<td><p>Capitalize the first character in the string ‘str’</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>str.upper()</p></td>
-<td class="text-left"><p>Convert all the characters in the string ‘str’ to uppercase</p></td>
+<tr class="row-odd"><td><p>str.upper()</p></td>
+<td><p>Convert all the characters in the string ‘str’ to uppercase</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>str.lower()</p></td>
-<td class="text-left"><p>Convert all the characters in the string ‘str’ to lowercase</p></td>
+<tr class="row-even"><td><p>str.lower()</p></td>
+<td><p>Convert all the characters in the string ‘str’ to lowercase</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>len(str)</p></td>
-<td class="text-left"><p>length of the <strong>sequence</strong> ‘str’</p></td>
+<tr class="row-odd"><td><p>len(str)</p></td>
+<td><p>length of the <strong>sequence</strong> ‘str’</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>str.isnumeric()</p></td>
-<td class="text-left"><p>To check if a string ‘str’ contains only numeric characters</p></td>
+<tr class="row-even"><td><p>str.isnumeric()</p></td>
+<td><p>To check if a string ‘str’ contains only numeric characters</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>str.isdigit()</p></td>
-<td class="text-left"><p>To check if a string ‘str’ contains only digits (0-9)</p></td>
+<tr class="row-odd"><td><p>str.isdigit()</p></td>
+<td><p>To check if a string ‘str’ contains only digits (0-9)</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>str.isalpha()</p></td>
-<td class="text-left"><p>To check if all characters in a string ‘str’ are alphabetic (letters)</p></td>
+<tr class="row-even"><td><p>str.isalpha()</p></td>
+<td><p>To check if all characters in a string ‘str’ are alphabetic (letters)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>str.replace(old, new])</p></td>
-<td class="text-left"><p>Return a copy of the string  ‘str’ where the substring ‘old’ is replaced by the substring ‘new’</p></td>
+<tr class="row-odd"><td><p>str.replace(old, new])</p></td>
+<td><p>Return a copy of the string  ‘str’ where the substring ‘old’ is replaced by the substring ‘new’</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>str.strip([chars])</p></td>
-<td class="text-left"><p>Return a copy of the string  ‘str’ with leading and trailing characters removed specified in the ‘chars’ argument.</p></td>
+<tr class="row-even"><td><p>str.strip([chars])</p></td>
+<td><p>Return a copy of the string  ‘str’ with leading and trailing characters removed specified in the ‘chars’ argument.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>str.split(sep=None)</p></td>
-<td class="text-left"><p>Returns a list of substrings by splitting the string ‘str’ of the specified separator ‘sep’</p></td>
+<tr class="row-odd"><td><p>str.split(sep=None)</p></td>
+<td><p>Returns a list of substrings by splitting the string ‘str’ of the specified separator ‘sep’</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There may be more arguments in those functions. Interested readers may refer to relevant resources for further details.</p>
+<p>There may be more arguments in those methods. Interested readers may refer to relevant resources for further details.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;python data science&quot;</span>
-<span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;python data science&quot;</span>
+<span class="n">str1</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -849,8 +869,8 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;python Data Science&quot;</span>
-<span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;python Data Science&quot;</span>
+<span class="n">str1</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -862,7 +882,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -874,7 +894,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39; Brunel University London &#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot; Brunel University London &quot;</span>
 <span class="n">str1</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -887,7 +907,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;University&#39;</span><span class="p">,</span> <span class="s1">&#39;School&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;University&quot;</span><span class="p">,</span> <span class="s2">&quot;School&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1053,7 +1073,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>For lists, the operators <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> function identically to their string counterparts. Below are examples:</p>
+<p>For lists, the operators <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> method identically to their string counterparts. Below are examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
@@ -1105,7 +1125,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 <ul class="simple">
-<li><p>A 2D list is created by <strong>nesting</strong> one-dimensional lists within square brackets:</p></li>
+<li><p>A 2D list is created by <strong>nesting</strong> one-dimensional lists within square brackets.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1134,9 +1154,8 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 <ul class="simple">
-<li><p>Adding elements into a list</p></li>
+<li><p>Adding elements into a list by <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">insert()</span></code> or <code class="docutils literal notranslate"><span class="pre">extend()</span></code>.</p></li>
 </ul>
-<p>We can use <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">insert()</span></code>, and <code class="docutils literal notranslate"><span class="pre">extend()</span></code> to add elements in a list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
@@ -1177,37 +1196,56 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>Some other functions：</p>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loop</span></code> to iterate all the values in a list.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+5
+8
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some other methods：</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>function name</p></th>
-<th class="head text-left"><p>meaning</p></th>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Meaning</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>max(list)</p></td>
-<td class="text-left"><p>Return the maximum in a list ‘list’</p></td>
+<tr class="row-even"><td><p>max(list)</p></td>
+<td><p>Return the maximum in a list ‘list’</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>min(list)</p></td>
-<td class="text-left"><p>Return the minimum in a list ‘list’</p></td>
+<tr class="row-odd"><td><p>min(list)</p></td>
+<td><p>Return the minimum in a list ‘list’</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>list(sequence)</p></td>
-<td class="text-left"><p>Transform another suquence ‘sequence’ to a list type</p></td>
+<tr class="row-even"><td><p>list(sequence)</p></td>
+<td><p>Transform another suquence ‘sequence’ to a list type</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>sequence.count(element)</p></td>
-<td class="text-left"><p>Count the occurance of an element ‘element’ in a <strong>sequence</strong> ‘sequence’</p></td>
+<tr class="row-odd"><td><p>sequence.count(element)</p></td>
+<td><p>Count the occurance of an element ‘element’ in a <strong>sequence</strong> ‘sequence’</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>list.reverse()</p></td>
-<td class="text-left"><p>Reverse the list ‘list’</p></td>
+<tr class="row-even"><td><p>list.reverse()</p></td>
+<td><p>Reverse the list ‘list’</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>list.pop(index)</p></td>
-<td class="text-left"><p>Remove one element in a list with given index ‘index’</p></td>
+<tr class="row-odd"><td><p>list.pop(index)</p></td>
+<td><p>Remove one element in a list with given index ‘index’</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>list.remove(element)</p></td>
-<td class="text-left"><p>Remove all elments in a list ‘list’ whose contents are same as element ‘element’</p></td>
+<tr class="row-even"><td><p>list.remove(element)</p></td>
+<td><p>Remove all elments in a list ‘list’ whose contents are same as element ‘element’</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>list.clear()</p></td>
-<td class="text-left"><p>Clear all the elements in a list ‘list’</p></td>
+<tr class="row-odd"><td><p>list.clear()</p></td>
+<td><p>Clear all the elements in a list ‘list’</p></td>
 </tr>
 </tbody>
 </table>
@@ -1241,8 +1279,8 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;chench&#39;</span>
-<span class="nb">str</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;chench&#39;</span>
+<span class="n">str1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1256,10 +1294,10 @@ window.addEventListener("load", () => mermaid.run());
 <section id="dictionary">
 <h2><span class="section-number">2.4. </span>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">#</a></h2>
 <hr>
-<p>字典是另一种可变容器模型，字典的格式为<code class="docutils literal notranslate"><span class="pre">{key</span> <span class="pre">:</span> <span class="pre">value}</span></code>，整个字典包括在花括号<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>中。<strong>键（key）必须是唯一且不可变</strong>，但值（value）可以取任何数据类型，也可以改变，key，value 之间用冒号<code class="docutils literal notranslate"><span class="pre">：</span></code>分割。</p>
+<p>A Python dictionary is a data type that stores the value in <code class="docutils literal notranslate"><span class="pre">{key:</span> <span class="pre">value}</span></code> pairs. Values can be of any data type and can be duplicated, while <code class="docutils literal notranslate"><span class="pre">keys</span> <span class="pre">can't</span> <span class="pre">be</span> <span class="pre">repeated</span> <span class="pre">and</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">immutable</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;chen&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="mi">95</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;chen&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="mi">95</span><span class="p">}</span> <span class="c1"># create a dict</span>
 <span class="nb">dict</span>
 </pre></div>
 </div>
@@ -1270,7 +1308,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>访问字典里的值时，则把相应的键放入到方括号<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>中：</p>
+<p>To acess the value in a dict, put the <code class="docutils literal notranslate"><span class="pre">corresponding</span> <span class="pre">key</span></code> in the square bracket <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> for the dict or use the method <code class="docutils literal notranslate"><span class="pre">get()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
@@ -1285,17 +1323,17 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;chen&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>向字典增加一项，可以直接用方括号<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>增加元素：</p>
+<p>To add one item in the dict, we can use the square bracket <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> with the new key and value：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;major&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;economy&quot;</span>
@@ -1309,7 +1347,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>修改字典里的值时，则把相应的键放入到方括号中，赋值进行修改即可：</p>
+<p>To revise the value in a dict，assign a new value with the corresponding key：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;wang&quot;</span>
@@ -1324,7 +1362,7 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>删除字典里的某个键值时，用 del：</p>
+<p>To delete one pair key-value, using <code class="docutils literal notranslate"><span class="pre">del</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
@@ -1338,69 +1376,102 @@ window.addEventListener("load", () => mermaid.run());
 </div>
 </div>
 </div>
-<p>注意：键必须不可变，所以可以用数字，字符串或元组充当，但用列表就不行。字典类型数据的常用函数还有：</p>
-<table>
-    <tr style="border-top:solid">
-        <td style="text-align:left">len(dict)</td>
-        <td style="text-align:left">返回字典 dict 中的元素个数，即键或值的个数</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">clear()</td>
-        <td style="text-align:left">删除字典 dict 中的所有元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">get(key, default=None)</td>
-        <td style="text-align:left">返回指定键的值，如果键不在字典中返回 default 设置的默认值</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">values()</td>
-        <td style="text-align:left">返回一个迭代器，可以使用 list() 来转换为列表</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">keys()</td>
-        <td style="text-align:left">返回一个迭代器，可以使用 list() 来转换为列表</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">popitem()</td>
-        <td style="text-align:left">删除字典的最后一项，并返回这个删除的项</td>
-    </tr>
-</table><p>与列表、字符串或者元组类型一样，字典可以通过<code class="docutils literal notranslate"><span class="pre">for-in</span></code>语句对其元素进行遍历，返回的是字典的 key。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since key is immutable, numeric, string and tulic can be the key, but list can not be the key in the dict.</p>
+</div>
+<p>Other methods for operating a dict:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>len(dict)</p></td>
+<td><p>Return the number of items in a dict ‘dict’</p></td>
+</tr>
+<tr class="row-odd"><td><p>dict.clear()</p></td>
+<td><p>Remove all the items in the dict ‘dict’</p></td>
+</tr>
+<tr class="row-even"><td><p>dict.get(key, default=None)</p></td>
+<td><p>Return the corresponding value for the given ‘key’ in the dict ‘dict’;</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>if no corresponding value, return the given default value</p></td>
+</tr>
+<tr class="row-even"><td><p>dict.values()</p></td>
+<td><p>Return a list for all the values in the dict ‘dict’</p></td>
+</tr>
+<tr class="row-odd"><td><p>dict.keys()</p></td>
+<td><p>Return a list for all the keys in the dict ‘dict’</p></td>
+</tr>
+<tr class="row-even"><td><p>dict.items()</p></td>
+<td><p>Return a list for all the items in the dict ‘dict’</p></td>
+</tr>
+<tr class="row-odd"><td><p>dict.popitem(key=None)</p></td>
+<td><p>Remove an item by the given ‘key’;</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>if no key is given, remove the last item</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
+<span class="nb">dict</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>score
-major
-mark
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;score&#39;: 95, &#39;major&#39;: &#39;economy&#39;}
 </pre></div>
 </div>
 </div>
 </div>
-<p>若要输出 value，则可以用<code class="docutils literal notranslate"><span class="pre">get</span></code>函数或者用方括号<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>里面跟 key。</p>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loop</span></code> together with the method <code class="docutils literal notranslate"><span class="pre">values()</span></code> or <code class="docutils literal notranslate"><span class="pre">items()</span></code> for iteration</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Male&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">22</span><span class="p">}</span>
+
+<span class="c1"># Iterate over keys</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span> <span class="c1"># or for key in d.keys():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="c1"># Iterate over values</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="c1"># Iterate over key-value pairs</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95
-economy
-80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+age
+John
+Male
+22
+1: John
+2: Male
+age: 22
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id1">
-<h2><span class="section-number">2.5. </span>元祖类型<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="tuple">
+<h2><span class="section-number">2.5. </span>Tuple<a class="headerlink" href="#tuple" title="Link to this heading">#</a></h2>
 <hr>
-<p>Python 的元组（tuple）与列表类似，不同之处在于<strong>元组的元素不能修改</strong>。元组使用<strong>小括号</strong>创建，并使用逗号隔开。访问列表元素或者截取部分元组与列表非常类似：</p>
+<p>A tuple in Python is very similar to a list, the difference is that <strong>a tuple is immutable</strong>, meaning the elements in a tuple can’t be changed after creation.</p>
+<p>Tuples are created using parentheses <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> with elements separated by <code class="docutils literal notranslate"><span class="pre">commas</span></code>. Accessing, slicing follows the same syntax as lists:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;zh&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -1438,15 +1509,16 @@ economy
 </div>
 </div>
 </div>
-<p>元组中的元素不能修改，但可以用 del 删除整个元组， 也可以用运算符 +、*、in、not in：</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">del</span></code> to delete the tup， 也可以用运算符 +、*、in、not in：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s2">&quot;zh&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="k">del</span> <span class="n">tup</span>  <span class="c1"># 完全删除 tup</span>
+<span class="k">del</span> <span class="n">tup</span>  <span class="c1"># fully delete the tuple &#39;tup&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Operator <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>,<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> can still be used:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
@@ -1497,32 +1569,136 @@ economy
 </div>
 </div>
 </div>
-<table>
-    <tr style="border-top:solid">
-        <td style="text-align:left">max(tup)</td>
-        <td style="text-align:left">返回元组 tup 中的最大值元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">min(tup)</td>
-        <td style="text-align:left">返回元组 tup 中的最小值元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">tuple(seq)</td>
-        <td style="text-align:left">将列表转化为元组</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">len(tup)</td>
-        <td style="text-align:left">返回元组 tup 的长度，即元素个数</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">tup.count(obj)</td>
-        <td style="text-align:left">统计某个元素在元组 tup 中出现的次数</td>
-    </tr>
-</table></section>
-<section id="id2">
-<h2><span class="section-number">2.6. </span>集合类型*<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+</section>
+<section id="boolean">
+<h2><span class="section-number">2.6. </span>Boolean<a class="headerlink" href="#boolean" title="Link to this heading">#</a></h2>
 <hr>
-<p>集合（set）是一个无序的<strong>不重复</strong>元素序列，一般使用大括号 { } 创建。注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 默认创建一个空字典）。</p>
+<p>In Python, Boolean values (Bool) are typically produced through logical comparisons, and there are only two possible outcomes: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">==</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>When making logical comparisions, two equal signs <code class="docutils literal notranslate"><span class="pre">==</span></code> indicate equality, while a single equal sign <code class="docutils literal notranslate"><span class="pre">=</span></code> signifies value assignment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># one euqal sign assigns the value 3 to a 将 a 赋值为 3</span>
+<span class="n">a</span> <span class="o">==</span> <span class="mi">4</span>  <span class="c1"># two equal signs judging whether the value of a equals 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Integers and floats can be used as Boolean values with the bool() method.</p>
+<ul class="simple">
+<li><p>Any number with a value of zero (0 or 0.0) is considered <code class="docutils literal notranslate"><span class="pre">False</span></code> while any non-zero number (positive or negative) is considered True.</p></li>
+<li><p>Empty list/dict/tuple/string, i.e., <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, <code class="docutils literal notranslate"><span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">''</span></code>, are considered <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Logical operations involving multiple conditions—namely “and”, “or”, and “not”—are represented in Python by the keywords <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>, respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-1">
+<h2><span class="section-number">2.7. </span>Set*<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#set-1" title="Link to this heading">#</a></h2>
+<hr>
+<p>A set is an unordered sequence of unique elements, typically created using curly braces <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To create an empty set, you must use <code class="docutils literal notranslate"><span class="pre">set()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>, because <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> defaults to creating an empty dictionary.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">34</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;chen&quot;</span><span class="p">}</span>
@@ -1549,25 +1725,30 @@ economy
 </div>
 </div>
 </div>
-<p>集合间的常用运算符包括：</p>
-<table>
-    <tr style="border-top:solid">
-        <td style="text-align:left">-</td>
-        <td style="text-align:left">删除左边集合包含，而右边集合不包含的元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">|</td>
-        <td>两个集合的并集</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">&</td>
-        <td>两个集合的交集</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">^</td>
-        <td>不同时包含于两个集合中的元素</td>
-    </tr>
-</table><div class="cell docutils container">
+<p>Set operators are：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td><p>Remove the elements that are common to both sets from the left set</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">|</span></code></p></td>
+<td><p>The union of two sets</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code></p></td>
+<td><p>The intersetion of two sets</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">^</span></code></p></td>
+<td><p>Elements that are not the intersection of the two sets</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">34</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;chen&quot;</span><span class="p">}</span>
 <span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;wang&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">}</span>
@@ -1617,7 +1798,13 @@ economy
 </div>
 </div>
 </div>
-<p>在集合中添加元素可以用<code class="docutils literal notranslate"><span class="pre">add</span></code>函数，添加多个元素（可以是列表、元组或字典）用<code class="docutils literal notranslate"><span class="pre">update</span></code>函数，删除某个元素用<code class="docutils literal notranslate"><span class="pre">remove</span></code>函数， 判断某个元素是否在集合中，用<code class="docutils literal notranslate"><span class="pre">in</span></code>或<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>：</p>
+<p>To manipulate elements in a set:</p>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method to insert a <strong>single element</strong></p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">update()</span></code> method to add <strong>multiple elements</strong> (can be from a list, tuple, or dictionary)</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">remove()</span></code> method to delete a specific element</p></li>
+<li><p>Check if an element exists in a set using <code class="docutils literal notranslate"><span class="pre">in</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators:</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">=</span> <span class="p">{</span><span class="mi">13</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">67</span><span class="p">}</span>
@@ -1682,175 +1869,50 @@ economy
 </div>
 </div>
 </div>
-<table>
-    <tr style="border-top:solid">
-        <td style="text-align:left">len(set)</td>
-        <td style="text-align:left">返回集合 set 中的元素个数</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">set.add()</td>
-        <td style="text-align:left">向集合 set 中添加一个元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">set.remove()</td>
-        <td style="text-align:left">集合中移除一个元素</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">set.update(seq)</td>
-        <td style="text-align:left">添加多个元素，可以是列表、元组或字典</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">set1.issubset(set2)</td>
-        <td style="text-align:left">判断集合 set1 是否为另一个集合 set2 的子集</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">set1.issuperset(set2)</td>
-        <td style="text-align:left">判断集合 set1 是否为另一个集合 set2 的父集</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">set1.isdisjoint(set2)</td>
-        <td style="text-align:left">判断两个集合是否包含相同的元素，如果没有返回 True</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">set1.union(set2)</td>
-        <td style="text-align:left">返回两个集合的并集</td>
-    </tr>
-</table></section>
-<section id="id3">
-<h2><span class="section-number">2.7. </span>布尔类型<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<hr>
-<p>Python 中的布尔值（Bool) 一般通过逻辑判断产生，只有两个可能的结果：<code class="docutils literal notranslate"><span class="pre">True</span></code>或<code class="docutils literal notranslate"><span class="pre">False</span></code>。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">==</span> <span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>在做逻辑判断时，两个等号<code class="docutils literal notranslate"><span class="pre">==</span></code>表示是否相等，若仅有一个等号，则表示赋值。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 一个等号表示将 a 赋值为 3</span>
-<span class="n">a</span> <span class="o">==</span> <span class="mi">4</span>  <span class="c1"># 两个等号表示判断 a 是否等于 4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>对多个逻辑判断的运算，即 “且”，”或”，“非”， python 分别提供了<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="random">
-<h2><span class="section-number">2.8. </span><code class="docutils literal notranslate"><span class="pre">random</span></code> 模块<a class="headerlink" href="#random" title="Link to this heading">#</a></h2>
-<hr><p>随机数在编程中应用比较普遍，Python 内置的<code class="docutils literal notranslate"><span class="pre">random</span></code>模块可以生成常见的伪随机数（计算机生成的随机数都是伪随机数，真随机数是不能人为产生的）。</p>
-<p><code class="docutils literal notranslate"><span class="pre">random</span></code>中的常用函数：</p>
+<section id="random-library">
+<h2><span class="section-number">2.8. </span><code class="docutils literal notranslate"><span class="pre">random</span></code> library<a class="headerlink" href="#random-library" title="Link to this heading">#</a></h2>
+<hr><p>Random numbers are widely used in simulations. Python’s built-in random module can generate common pseudorandom numbers (note that all computer-generated random numbers are pseudorandom, true random numbers cannot be artificially produced).</p>
+<p>Commonly used methods in <code class="docutils literal notranslate"><span class="pre">random</span></code>:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
-<th class="head text-left"><p>含义</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Method</p></th>
+<th class="head text-left"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>seed(a=None)</p></td>
-<td class="text-left"><p>初始化随机数种子，默认值为当前系统时间</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">seed(a=None)</span></code></p></td>
+<td class="text-left"><p>Initialize the random number seed (defaults to current system time)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>random()</p></td>
-<td class="text-left"><p>生成一个 [0.0, 1.0] 之间的小数</p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">random()</span></code></p></td>
+<td class="text-left"><p>Generate a float in the range [0.0, 1.0) (left inclusive)</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>randint(a, b)</p></td>
-<td class="text-left"><p>生成一个 [a, b] 之间的随机整数</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">randint(a,</span> <span class="pre">b)</span></code></p></td>
+<td class="text-left"><p>Generate a random integer between [a, b] (both inclusive)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>uniform(a, b)</p></td>
-<td class="text-left"><p>生成一个 [a, b] 之间的随机小数</p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">uniform(a,</span> <span class="pre">b)</span></code></p></td>
+<td class="text-left"><p>Generate a random float between [a, b] (both inclusive)</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>shuffle(seq)</p></td>
-<td class="text-left"><p>将序列类型中的元素打乱，返回打乱后的序列</p></td>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">shuffle(seq)</span></code></p></td>
+<td class="text-left"><p>Shuffle the elements of sequence <code class="docutils literal notranslate"><span class="pre">seq</span></code> in place (returns None)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>sample(pop, k)</p></td>
-<td class="text-left"><p>从 pop 中随机选取 k 个元素，以列表形式返回</p></td>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">sample(seq,</span> <span class="pre">k)</span></code></p></td>
+<td class="text-left"><p>Return a list of <code class="docutils literal notranslate"><span class="pre">k</span></code> unique elements randomly selected from sequence <code class="docutils literal notranslate"><span class="pre">seq</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>随机数的种子可以通过函数<code class="docutils literal notranslate"><span class="pre">seed</span></code>指定，只要种子相同，每次生成的随机数也相同。</p>
+<p>The random number seed can be specified using the <code class="docutils literal notranslate"><span class="pre">seed()</span></code> method. As long as the seed remains the same, the sequence of generated random numbers will also be identical.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  <span class="c1"># 没有设置种子，每次运行显示的随机数不一样</span>
+<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  <span class="c1"># the generated numbers are different every time running the code when not setting the seed</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.831045124371628
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.306077546373428
 </pre></div>
 </div>
 </div>
@@ -1858,7 +1920,7 @@ economy
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  <span class="c1"># 设置了种子，每次运行显示的随机数相同</span>
+<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>  <span class="c1"># if setting the seed, the generated numbers are identical every time running the code</span>
 </pre></div>
 </div>
 </div>
@@ -1869,122 +1931,453 @@ economy
 </div>
 </div>
 </section>
-<section id="id4">
-<h2><span class="section-number">2.9. </span>练习<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<hr><div class="exercise admonition" id="circle-area">
+<section id="excercises">
+<h2><span class="section-number">2.9. </span>Excercises<a class="headerlink" href="#excercises" title="Link to this heading">#</a></h2>
+<hr><div class="exercise admonition" id="auto-type">
 
 <p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
 <section id="exercise-content">
-<p>根据给定的半径值，计算圆的面积</p>
+<p>What type of number is 5.2 in Python?</p>
+<p>A.    string</p>
+<p>B.    integer</p>
+<p>C.    complex</p>
+<p>D.    float</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="basic-data-type-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 2.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#bool"> Exercise 2.2</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<p>D</p>
+</section>
+</div>
+<div class="exercise admonition" id="bool">
 
-<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;圆的面积为 </span><span class="si">%.6f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<section id="exercise-content">
+<p>What does bool(0) return?</p>
+<p>A.    True</p>
+<p>B.    False</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#bool"> Exercise 2.2</a></p>
+<section id="solution-content">
+<p>B</p>
+</section>
+</div>
+<div class="exercise admonition" id="int-value">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
+<section id="exercise-content">
+<p>What will be the result of the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">35.88</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>A.    36</p>
+<p>B.    35.8</p>
+<p>C.    35</p>
+<p>D.    35.88</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-5">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#int-value"> Exercise 2.3</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="list-type">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
+<section id="exercise-content">
+<p>What data type is the object below?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;brunel&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>A.    bool</p>
+<p>B.    str</p>
+<p>C.    list</p>
+<p>D.    dict</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-7">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#list-type"> Exercise 2.4</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="list-slicing">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
+<section id="exercise-content">
+<p>What is the output of the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Welcome&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>A.    co</p>
+<p>B.    com</p>
+<p>C.    lcom</p>
+<p>D.    lc</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-9">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#list-slicing"> Exercise 2.5</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="tuple-plus">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.6 </span></p>
+<section id="exercise-content">
+<p>What is the output of the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tup</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">tup</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>A.    (1, 2, 3, 1, 2, 3)</p>
+<p>B.    (1, 2, 3, 4, 5, 6)</p>
+<p>C.    (2, 4, 6)</p>
+<p>D.    (1, 2, 3)</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-11">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#tuple-plus"> Exercise 2.6</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="cast">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.7 </span></p>
+<section id="exercise-content">
+<p>How to convert the string ‘10’ to a float?</p>
+<p>A.    int(10)</p>
+<p>B.    float(10)</p>
+<p>C.    float 10</p>
+<p>D.    str(10)</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-13">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#cast"> Exercise 2.7</a></p>
+<section id="solution-content">
+<p>B</p>
+</section>
+</div>
+<div class="exercise admonition" id="string-upper">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.8 </span></p>
+<section id="exercise-content">
+<p>What is a correct syntax to print a string ‘txt’ in upper case letters?</p>
+<p>A.    ‘txt’.toupper()</p>
+<p>B.    ‘txt’.to_upper()</p>
+<p>C.    ‘txt’.upper()</p>
+<p>D.    ‘txt’.capital()</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-15">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#string-upper"> Exercise 2.8</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="string-strip">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.9 </span></p>
+<section id="exercise-content">
+<p>How to return the string without any whitespace at the beginning or the end for the string txt = ‘ United Kingdom ‘?</p>
+<p>A.    ‘txt’.space()</p>
+<p>B.    ‘txt’.strip()</p>
+<p>C.    ‘txt’.pop()</p>
+<p>D.    ‘txt’.split()</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-17">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#string-strip"> Exercise 2.9</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="str-plus">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.10 </span></p>
+<section id="exercise-content">
+<p>What is the output of the following codes?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;World&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A.    HelloWorld</p>
+<p>B.    Hello World</p>
+<p>C.    a + b</p>
+<p>D.    ‘Hello’’World’</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-19">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#str-plus"> Exercise 2.10</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="list-str-output">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.11 </span></p>
+<section id="exercise-content">
+<p>What is the output of the follwing code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;uk&quot;</span><span class="p">,</span><span class="s2">&quot;brunel&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>A.    100</p>
+<p>B.    brunel</p>
+<p>C.    k</p>
+<p>D.    u</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-21">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#list-str-output"> Exercise 2.11</a></p>
+<section id="solution-content">
+<p>D</p>
+</section>
+</div>
+<div class="exercise admonition" id="dict-len">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.12 </span></p>
+<section id="exercise-content">
+<p>What is the output of the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;us&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;uk&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;china&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">20</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>A.    8</p>
+<p>B.    20</p>
+<p>C.    6</p>
+<p>D.    4</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-23">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-len"> Exercise 2.12</a></p>
+<section id="solution-content">
+<p>D</p>
+</section>
+</div>
+<div class="exercise admonition" id="dict-true">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.13 </span></p>
+<section id="exercise-content">
+<p>A dictionary cannot have two keys with the same name.</p>
+<p>A.    True</p>
+<p>B.    False</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-25">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-true"> Exercise 2.13</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="bool-true">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.14 </span></p>
+<section id="exercise-content">
+<p>Which of the following is considered a “True” value in Python?</p>
+<p>A.    2</p>
+<p>B.    ‘’</p>
+<p>C.    {}</p>
+<p>D.    []</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-27">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#bool-true"> Exercise 2.14</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="dict-access">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.15 </span></p>
+<section id="exercise-content">
+<p>How to access the value of year from the followinng dict?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span> <span class="o">=</span>	<span class="p">{</span>
+  <span class="s2">&quot;brand&quot;</span><span class="p">:</span> <span class="s2">&quot;Tesla&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2013</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A.    car[‘year’]</p>
+<p>B.    car.get(‘year’)</p>
+<p>C.    car[2013]</p>
+<p>D.     A or B</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-29">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-access"> Exercise 2.15</a></p>
+<section id="solution-content">
+<p>D</p>
+</section>
+</div>
+<div class="exercise admonition" id="dict-pop">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.16 </span></p>
+<section id="exercise-content">
+<p>How to remove the pair key-value “year”: 2013 from the followinng dict?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span> <span class="o">=</span>	<span class="p">{</span>
+  <span class="s2">&quot;brand&quot;</span><span class="p">:</span> <span class="s2">&quot;Tesla&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2013</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A.    car.clear()</p>
+<p>B.    car.get(‘year’)</p>
+<p>C.    car.pop(‘year’)</p>
+<p>D.    car.remove(‘year’)</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-31">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-pop"> Exercise 2.16</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="dict-change">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.17 </span></p>
+<section id="exercise-content">
+<p>How to change the ‘type’ from ‘apple’ to ‘banana’ for the following dict?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span> <span class="p">:</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;red2&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>A.    dict[‘type’] = ‘banana’</p>
+<p>B.    dict(‘type’) = ‘banana’</p>
+<p>C.    dict{‘type’} = ‘banana’</p>
+<p>D.     dict[‘name’] = ‘banana’</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-33">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-change"> Exercise 2.17</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="multi-variable-assign">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.18 </span></p>
+<section id="exercise-content">
+<p>What is a correct syntax to add the value ‘Hello World’, to 3 variables in one statement?</p>
+<p>A.    x, y, z = ‘Hello World’</p>
+<p>B.    x | y | z = ‘Hello World’</p>
+<p>C.    x &amp; y &amp; z = ‘Hello World’</p>
+<p>D.    x = y = z = ‘Hello World’</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-35">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#multi-variable-assign"> Exercise 2.18</a></p>
+<section id="solution-content">
+<p>D</p>
+</section>
+</div>
+<div class="exercise admonition" id="dict-generate">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.19 </span></p>
+<section id="exercise-content">
+<p>What is the output of the following codes?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)}</span> 
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>A.    {1, 2, 3, 4}</p>
+<p>B.    {0, 1, 2, 3}</p>
+<p>C.    {0: 0, 1: 1, 2: 2, 3: 3}</p>
+<p>D.     {0: 0, 1: 1, 2: 4, 3: 9}</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-37">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-generate"> Exercise 2.19</a></p>
+<section id="solution-content">
+<p>D</p>
+</section>
+</div>
+<div class="exercise admonition" id="dict-loop">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.20 </span></p>
+<section id="exercise-content">
+<p>How to loop trough all the values of the followinng dict?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span> <span class="o">=</span>	<span class="p">{</span>
+  <span class="s2">&quot;brand&quot;</span><span class="p">:</span> <span class="s2">&quot;Tesla&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2013</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-39">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-loop"> Exercise 2.20</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">car</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="dict-loop2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 2.21 </span></p>
+<section id="exercise-content">
+<p>How to loop trough all the keys and values of the followinng dict?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">car</span> <span class="o">=</span>	<span class="p">{</span>
+  <span class="s2">&quot;brand&quot;</span><span class="p">:</span> <span class="s2">&quot;Tesla&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2013</span><span class="p">,</span>
+  <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">30000</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="basic-data-type-solution-41">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-loop2"> Exercise 2.21</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">car</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 </div>
 <div class="exercise admonition" id="random">
 
-<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.22 </span></p>
 <section id="exercise-content">
-<p>从字符串 ‘abcedefg’ 随机挑取 3 个字符。（提示，使用 random 库中的函数）</p>
+<p>Ranomly sample 3 chracters from the string ‘abcedefg’. (tips: use the method in the library ‘random’)</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-3">
+<div class="solution dropdown admonition" id="basic-data-type-solution-43">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#random"> Exercise 2.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#random"> Exercise 2.22</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="s1">&#39;abcedefg&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="quad-equation">
-
-<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
-<section id="exercise-content">
-<p>通过用户输入数字 a, b, c，计算二次方程: <span class="math notranslate nohighlight">\(ax^2 + bx +c\)</span>。
-(提示：cmath 工具包可以计算负数的开方)</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-5">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 2.3</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
-<span class="kn">import</span> <span class="nn">cmath</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 a: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 b: &quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 c: &quot;</span><span class="p">))</span>
-
-<span class="c1"># 计算</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
-
-<span class="c1"># 两种求解方式</span>
-<span class="n">sol1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-<span class="n">sol2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;结果为 </span><span class="si">{0}</span><span class="s2"> 和 </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sol1</span><span class="p">,</span> <span class="n">sol2</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="triangle-area">
-
-<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
-<section id="exercise-content">
-<p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-7">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 2.4</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第一边长: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第二边长: &quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第三边长: &quot;</span><span class="p">))</span>
-
-<span class="c1"># 计算半周长</span>
-<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-
-<span class="c1"># 计算面积</span>
-<span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;三角形面积为 </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="dict-values">
-
-<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
-<section id="exercise-content">
-<p>定义一个字典，然后计算它们所有数字值的和。。</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="basic-data-type-solution-9">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 2.5</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
-    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myDict</span><span class="p">:</span> 
-        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">myDict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>      
-    <span class="k">return</span> <span class="nb">sum</span>
-  
-<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum :&quot;</span><span class="p">,</span> <span class="n">returnSum</span><span class="p">(</span><span class="nb">dict</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -2015,7 +2408,14 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <script type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
-<br></section>
+<br><hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>* means this section may not be delivered in the class.</p>
+</aside>
+</aside>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2027,16 +2427,16 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -2062,7 +2462,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Python 输出，读写文件</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Output, read and write files</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2087,11 +2487,11 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">2.2. String</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list">2.3. List</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">2.4. Dictionary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.5. 元祖类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.6. 集合类型*</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.7. 布尔类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random">2.8. <code class="docutils literal notranslate"><span class="pre">random</span></code> 模块</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.9. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple">2.5. Tuple</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean">2.6. Boolean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-1">2.7. Set*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-library">2.8. <code class="docutils literal notranslate"><span class="pre">random</span></code> library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">2.9. Excercises</a></li>
 </ul>
   </nav></div>
 

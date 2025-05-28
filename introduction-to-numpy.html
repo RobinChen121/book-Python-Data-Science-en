@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Numpy 简介 &#8212; Python 数据科学</title>
+    <title>4. Introduction to Numpy &#8212; Python 数据科学</title>
   
   
   
@@ -67,8 +67,8 @@
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Pandas 入门" href="introduction-to-pandas.html" />
-    <link rel="prev" title="4. Python 编写函数" href="define-function.html" />
+    <link rel="next" title="5. Introduction to Pandas" href="introduction-to-pandas.html" />
+    <link rel="prev" title="3. Output, read and write files" href="print-read-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -176,10 +176,10 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="A-first-look-of-Python.html">1. Getting started with Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basic-data-type.html">2. Data types in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Python 输出，读写文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">4. Python 编写函数</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Numpy 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">6. Pandas 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Introduction to Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Define functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Python 画图</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
@@ -420,7 +420,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Numpy 简介</h1>
+    <h1>Introduction to Numpy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -430,17 +430,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.1. 创建数组</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.2. 数组索引和切片</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.3. 数组拼接</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.4. 数组运算</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.5. 生成随机数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-list">5.6. Numpy 数组与列表 list 运算速度的对比</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-datatime">5.7. <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datatime</span></code> 模块</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time">5.7.1. <code class="docutils literal notranslate"><span class="pre">time</span></code> 模块</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime">5.7.2. <code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-array">4.1. Create an array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">4.2. Indexing and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenating">4.3. Concatenating</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-computations">4.4. Array computations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-values-using-numpy-1">4.5. Generate random values using NumPy*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-datatime-library">4.6. <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datatime</span></code> library</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-library">4.6.1. <code class="docutils literal notranslate"><span class="pre">time</span></code> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime-library">4.6.2. <code class="docutils literal notranslate"><span class="pre">datetime</span></code> library</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.7. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -452,16 +452,25 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1><span class="section-number">5. </span>Numpy 简介<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-numpy">
+<h1><span class="section-number">4. </span>Introduction to Numpy<a class="headerlink" href="#introduction-to-numpy" title="Link to this heading">#</a></h1>
 <hr>
-<p>Numpy (Numerical Python) 是 Python 语言一个重要的扩展库，支持大量的数组与矩阵运算，此外也提供大量的数学函数库，用于模仿数学软件 MatLab 的功能。Numpy 通常与其他库 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用。</p>
-<p>Numpy 的主要特点是：</p>
+<p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> is a crucial extension library in Python that provides extensive support for <strong>array and matrix operations</strong>, along with a comprehensive collection of mathematical methods designed to emulate the capabilities of mathematical software like MATLAB. NumPy is indispensable for data science, engineering, and research due to its efficiency and integration with other key libraries like <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">Scipy</span></code>, etc.</p>
+<p>Key Features of NumPy:</p>
 <ul class="simple">
-<li><p>一个强大的 N 维数组对象 ndarray</p></li>
-<li><p>矩阵运算、傅里叶变换、生成随机数功能等</p></li>
+<li><p>Multi-dimensional Arrays:</p>
+<ul>
+<li><p>Efficient ndarray objects for numerical computations</p></li>
+<li><p>Supports vectorized operations</p></li>
 </ul>
-<p>使用 numpy 需要首先导入 numpy 包：</p>
+</li>
+<li><p>Mathematical methods:</p>
+<ul>
+<li><p>Linear algebra, Fourier transforms, random number generation, etc.</p></li>
+</ul>
+</li>
+</ul>
+<p>We first need to import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library before using it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -469,24 +478,29 @@
 </div>
 </div>
 </div>
-<section id="id1">
-<h2><span class="section-number">5.1. </span>创建数组<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="create-an-array">
+<h2><span class="section-number">4.1. </span>Create an array<a class="headerlink" href="#create-an-array" title="Link to this heading">#</a></h2>
 <hr>
-<p>用 Numpy 创建数组有多种方法。首先，Numpy 中的<code class="docutils literal notranslate"><span class="pre">array</span></code>函数可以直接将 Python 的 list 类型转化为 Numpy 的数组类型 ndarray。例如，一个一维数组：</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">array</span></code> method in NumPy can directly convert Python’s sequence type into NumPy’s array type <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>.</p>
+<p>For example, a one-dimensional array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="n">a</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 4]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
 </pre></div>
 </div>
 </div>
 </div>
-<p>一个二维数组：</p>
+<p>A two-dimensional array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
@@ -502,11 +516,14 @@
 </div>
 </div>
 </div>
-<p>注意，<code class="docutils literal notranslate"><span class="pre">array</span></code>函数中的小括号中要包括一个用中括号括起来的 list，不能直接写成 np.array(1, 2, 3, 4)。</p>
-<p>Numpy 中的<code class="docutils literal notranslate"><span class="pre">zeros</span></code>函数可以创建元素值全为 0 的矩阵，<code class="docutils literal notranslate"><span class="pre">ones</span></code>函数可以创建元素值全为 1 的矩阵，而<code class="docutils literal notranslate"><span class="pre">empty</span></code>函数可以创建一个元素值任意的一个空矩阵。例如：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The parentheses in the <code class="docutils literal notranslate"><span class="pre">array</span></code> method must <strong>include a sequence type</strong>; it cannot be written directly as np.array(1, 2, 3, 4).</p>
+</div>
+<p>In NumPy, the <code class="docutils literal notranslate"><span class="pre">zeros</span></code> method can create a matrix with all elements set to 0, the <code class="docutils literal notranslate"><span class="pre">ones</span></code> method can create a matrix with all elements set to 1, and the <code class="docutils literal notranslate"><span class="pre">empty</span></code> method can create an uninitialized matrix with <strong>arbitrary element values</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># 3 行 4 列的零矩阵</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># a zero matrix of 3 rows and 4 columns</span>
 </pre></div>
 </div>
 </div>
@@ -520,7 +537,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># 3 行 4 列的一个矩阵</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># a ones matrix of 3 rows and 4 columns</span>
 </pre></div>
 </div>
 </div>
@@ -534,21 +551,22 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># 2 行 3 列的空矩阵</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># an empty matrix of 3 rows and 4 columns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0.],
-       [0., 0., 0.]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 1., 1., 1.],
+       [1., 1., 1., 1.],
+       [1., 1., 1., 1.]])
 </pre></div>
 </div>
 </div>
 </div>
-<p>Numpy 中的<code class="docutils literal notranslate"><span class="pre">arange</span></code>函数可以生成一个等差数列的数组，例如：</p>
+<p>In NumPy, the <code class="docutils literal notranslate"><span class="pre">arange</span></code> method can generate an array with an arithmetic sequence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 生成一个从 0 到 9 之间的数组，默认步长为 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># generate an array from 0 to 10 (exclusive) with a default step size of 1</span>
 </pre></div>
 </div>
 </div>
@@ -560,7 +578,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 生成一个从 5 到 9 之间的数组，默认步长为 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># generate an array from 5 to 10 (exclusive) with a default step size of 1</span>
 </pre></div>
 </div>
 </div>
@@ -572,7 +590,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 生成一个从 5 到 9 之间的数组，且步长为 2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># enerate an array from 5 to 10 (exclusive) with step size of 2</span>
 </pre></div>
 </div>
 </div>
@@ -582,10 +600,10 @@
 </div>
 </div>
 </div>
-<p>另外一个类似的函数为<code class="docutils literal notranslate"><span class="pre">linespace</span></code>，不同的地方在于：<code class="docutils literal notranslate"><span class="pre">arange</span></code>函数中第三个参数表示等差数组的步长，而<code class="docutils literal notranslate"><span class="pre">linespace</span></code>函数第三个参数表示一共生成的元素个数。若生成一系列等差的浮点数，则用<code class="docutils literal notranslate"><span class="pre">linespace</span></code>更好些。</p>
+<p>Another similar method is <code class="docutils literal notranslate"><span class="pre">linspace</span></code>. The difference is that in the <code class="docutils literal notranslate"><span class="pre">arange</span></code> method, <strong>the third argument represents the step size</strong> of the arithmetic sequence, while in the <code class="docutils literal notranslate"><span class="pre">linspace</span></code> method, <strong>the third argument indicates the total number of elements</strong> to generate. If you need to generate a sequence of equally spaced floating-point numbers, using <code class="docutils literal notranslate"><span class="pre">linspace</span></code> is preferable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1"># 生成从 0 到 2 之间共 9 个数</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1"># generate 9 numbers from 0 to 2 (exclusive)</span>
 </pre></div>
 </div>
 </div>
@@ -595,7 +613,7 @@
 </div>
 </div>
 </div>
-<p>Python 的 list 类型可以与 Numpy 的数组类型 ndarray 互换，例如：</p>
+<p>We can cast the type from ndarray to list by using <code class="docutils literal notranslate"><span class="pre">list()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -609,48 +627,25 @@
 </div>
 </div>
 </div>
-<p>numpy 库中常见的数组创建函数如下表所示：</p>
+<p>The common attributes for <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> are listed in the table below:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
-<th class="head text-center"><p>描述</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>np.arrange(x, y, i)</p></td>
-<td class="text-center"><p>创建一个由 x 到 y，以 i 为步长的数组</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>np.linspace(x, y, n)</p></td>
-<td class="text-center"><p>创建一个由 x 到 y，等分为 n 个元素的数组</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>np.ones((m,n))</p></td>
-<td class="text-center"><p>创建一个 m 行 n 列全是 1 的数组</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>np.empty((m,n))</p></td>
-<td class="text-center"><p>创建一个 m 行 n 列全是 0 的数组</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>numpy 创建的数组类型为 ndarray类型，它的常用属性如下表所示：</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
-<th class="head text-center"><p>描述</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Property</p></th>
+<th class="head"><p>Meaning</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p>ndarray.ndim</p></td>
-<td class="text-center"><p>数组的行数</p></td>
+<td><p>Dimensions of the ndarray</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>ndarray.shape</p></td>
-<td class="text-center"><p>数组在每个维度上大小的整数元组</p></td>
+<td><p>A tuple of integers representing the size of the array in each dimension</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>ndarray.size</p></td>
-<td class="text-center"><p>数组中元素的个数</p></td>
+<td><p>Total number of elements in the array</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>ndarray.dtype</p></td>
-<td class="text-center"><p>数组中元素的数据类型</p></td>
+<td><p>Data type of the elements in the array</p></td>
 </tr>
 </tbody>
 </table>
@@ -705,19 +700,19 @@
 </div>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">5.2. </span>数组索引和切片<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="indexing-and-slicing">
+<h2><span class="section-number">4.2. </span>Indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Link to this heading">#</a></h2>
 <hr>
-<p>对于一维数组，numpy 的索引切片类似 Python list 类型的索引切片，例如：</p>
+<p>For one-dimensional arrays, NumPy’s indexing and slicing are similar to those of Python list types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 生成一个从 4 到 9 之间的数组</span>
-<span class="n">a</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  
+<span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 5, 6, 7, 8, 9])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -736,7 +731,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># 数组 a 的第 3 与第 4 个元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># the 3rd and 4th of the ndarray</span>
 </pre></div>
 </div>
 </div>
@@ -748,7 +743,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 数组 a 的最后一个元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># the last element in the array</span>
 </pre></div>
 </div>
 </div>
@@ -760,7 +755,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 数组 a 倒序</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># reverse of the array</span>
 </pre></div>
 </div>
 </div>
@@ -770,25 +765,27 @@
 </div>
 </div>
 </div>
-<p>对于多维数组，Numpy 数组的索引和切片在<strong>一个中括号</strong>里面用逗号分隔不同维度，例如：</p>
+<p>For multidimensional arrays, NumPy array indexing and slicing use a <strong>single pair of brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code></strong> with commas separating different dimensions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># 创建一个 3 行 4 列的二维数组，reshape函数不改变数值，将原数组重组为一个指定行数列数的数组</span>
-<span class="n">b</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a 3-row by 4-column two-dimensional array by the &#39;reshape &#39;method</span>
+<span class="c1"># &#39;reshape&#39; does not alter the values but reorganizes the original array with the specified number of rows and columns</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2,  3],
-       [ 4,  5,  6,  7],
-       [ 8,  9, 10, 11]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># 二维数组第 2 行第 3 列中的元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># the element at row 2, column 3</span>
 </pre></div>
 </div>
 </div>
@@ -800,7 +797,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># 二维数组第 3 列中， 第 2 行到第 3 行的元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># the elements from the 2nd to 3rd row in the 3rd column of the two-dimensional array.</span>
 </pre></div>
 </div>
 </div>
@@ -812,7 +809,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># 第 3 行的全部元素</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># all the elments in the 3rd row</span>
 </pre></div>
 </div>
 </div>
@@ -824,7 +821,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># cast the 2-D ndarray to a list</span>
 </pre></div>
 </div>
 </div>
@@ -835,10 +832,10 @@
 </div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">5.3. </span>数组拼接<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="concatenating">
+<h2><span class="section-number">4.3. </span>Concatenating<a class="headerlink" href="#concatenating" title="Link to this heading">#</a></h2>
 <hr>
-<p>Numpy 中拼接两个数组用<code class="docutils literal notranslate"><span class="pre">append</span></code>函数。</p>
+<p>In NumPy, arrays can be concatenated using the <code class="docutils literal notranslate"><span class="pre">append</span></code> or <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> method: <code class="docutils literal notranslate"><span class="pre">append</span></code> joins two arrays, while <code class="docutils literal notranslate"><span class="pre">concatenate</span></code> can join two or more arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -877,7 +874,6 @@
 </div>
 </div>
 </div>
-<p>多个数组拼接，可以用<code class="docutils literal notranslate"><span class="pre">concatenate</span></code>。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -893,7 +889,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>  <span class="c1"># 注意里面还有一对小括号</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>  <span class="c1"># there are parentheses () inside</span>
 </pre></div>
 </div>
 </div>
@@ -904,63 +900,119 @@
 </div>
 </div>
 </section>
-<section id="id4">
-<h2><span class="section-number">5.4. </span>数组运算<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="array-computations">
+<h2><span class="section-number">4.4. </span>Array computations<a class="headerlink" href="#array-computations" title="Link to this heading">#</a></h2>
 <hr>
-<p>Numpy 可以对数组进行多种代数运算，例如：</p>
+<p>NumPy supports various algebraic operations on arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">a</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3]
+[3 4 5 6]
+[-3 -3 -3 -3]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">b</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 4, 5, 6])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3 5 7 9]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Get the average value of an array by <code class="docutils literal notranslate"><span class="pre">mean()</span></code> or <code class="docutils literal notranslate"><span class="pre">average()</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span>  <span class="c1"># 两数组相减</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3, -3, -3, -3])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Get the average value of each column in a 2-D array with argument <code class="docutils literal notranslate"><span class="pre">axis=0</span></code>.</p></li>
+<li><p>Get the average value of each row in a 2-D array with and argument <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="c1"># or using mean</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># or using mean</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># or using mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.5
+[5. 6.]
+[4.5 6.5]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Get the maximum of an array by <code class="docutils literal notranslate"><span class="pre">max()</span></code>, minimu by <code class="docutils literal notranslate"><span class="pre">min</span></code>.</p></li>
+<li><p>Get the index of the maximum value by <code class="docutils literal notranslate"><span class="pre">argmax()</span></code>, minium index by <code class="docutils literal notranslate"><span class="pre">argmin()</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># 两数组相加</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 5, 7, 9])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># 数组每个元素乘以一个数值</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># multiply every element by 2</span>
 </pre></div>
 </div>
 </div>
@@ -972,7 +1024,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># 数组每个元素都平方</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># square each element of the array.</span>
 </pre></div>
 </div>
 </div>
@@ -984,7 +1036,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">2</span>  <span class="c1"># 数组每个元素与一个数值比较大小</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">2</span>  <span class="c1"># comare every element with one value</span>
 </pre></div>
 </div>
 </div>
@@ -997,33 +1049,23 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]])</span>
-<span class="n">c</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span> <span class="c1"># transpose a 2-D array</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4., 5.],
-       [6., 7.]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[4. 5.]
+ [6. 7.]]
+[[4. 6.]
+ [5. 7.]]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>  <span class="c1"># c 的转置矩阵</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4., 6.],
-       [5., 7.]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># c 的逆矩阵</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># inverse matrix </span>
 </pre></div>
 </div>
 </div>
@@ -1036,7 +1078,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># c 的特征值与特征向量</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># eigenvalues and eigenvectors of the 2D array c</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;eigenvalues are &quot;</span><span class="p">,</span> <span class="n">eigenvalues</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;eigenvectors are&quot;</span><span class="p">,</span> <span class="n">eigenvectors</span><span class="p">)</span>
 </pre></div>
@@ -1066,7 +1108,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>  <span class="c1"># 矩阵 c 和 d 的乘积</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>  <span class="c1"># the product of matrices c and d</span>
 </pre></div>
 </div>
 </div>
@@ -1079,7 +1121,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>  <span class="c1"># 矩阵 c 和 d 对应元素相乘</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>  <span class="c1"># element-wise multiplication of matrices c and d</span>
 </pre></div>
 </div>
 </div>
@@ -1090,118 +1132,121 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 </div>
-<p>numpy 库还有一些其他常用的函数，如下表所示：</p>
+<p>The NumPy library also includes several other commonly used methods, as shown in the table below:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>函数</p></th>
-<th class="head text-center"><p>描述</p></th>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>np.abs(x)</p></td>
-<td class="text-center"><p>计算每个元素的绝对值</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.abs(x)</span></code></p></td>
+<td><p>Computes the absolute value of each element</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>np.sqrt(x)</p></td>
-<td class="text-center"><p>计算每个元素的平方根</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.sqrt(x)</span></code></p></td>
+<td><p>Computes the square root of each element</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>np.squre(x)</p></td>
-<td class="text-center"><p>计算每个元素的平方</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.square(x)</span></code></p></td>
+<td><p>Computes the square of each element</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>np.sign(x)</p></td>
-<td class="text-center"><p>计算每个元素的正负号</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.sign(x)</span></code></p></td>
+<td><p>Determines the sign (positive/negative) of each element</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>np.ceil(x)</p></td>
-<td class="text-center"><p>计算每个元素向上取整的数值</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.ceil(x)</span></code></p></td>
+<td><p>Rounds each element up to the nearest integer</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>np.floor(x)</p></td>
-<td class="text-center"><p>计算每个元素向下取整的数值</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.floor(x)</span></code></p></td>
+<td><p>Rounds each element down to the nearest integer</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>np.exp(x)</p></td>
-<td class="text-center"><p>计算每个元素的指数值</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">np.exp(x)</span></code></p></td>
+<td><p>Computes the exponential value of each element</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>np.log(x),np.log10(x),np.log2(x)</p></td>
-<td class="text-center"><p>计算每个元素的自然对数值，基于10、2的对数值</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">np.log(x)</span></code>,<code class="docutils literal notranslate"><span class="pre">np.log10(x)</span></code>,<code class="docutils literal notranslate"><span class="pre">np.log2(x)</span></code></p></td>
+<td><p>Computes the natural logarithm, base-10 logarithm, and base-2 logarithm of each element</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>另外，Numpy 还有专门的二维数组的类型 Matrix，可以更方便地进行一些矩阵运算，感兴趣的读者可以参见官网。</p>
+<ul class="simple">
+<li><p>NumPy performs numerical computations significantly faster than Python’s built-in list. <strong>For large-scale mathematical operations, prioritize using NumPy for processin</strong>g.</p></li>
+</ul>
+<p>Additionally, NumPy provides a specialized two-dimensional array type called <code class="docutils literal notranslate"><span class="pre">Matrix</span></code>, which offers more convenient operations for certain matrix computations. Interested readers can refer to the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.matrix.html">official documentation</a> for details.</p>
 </section>
-<section id="id5">
-<h2><span class="section-number">5.5. </span>生成随机数<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="generate-random-values-using-numpy-1">
+<h2><span class="section-number">4.5. </span>Generate random values using NumPy*<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#generate-random-values-using-numpy-1" title="Link to this heading">#</a></h2>
 <hr>
-<p>numpy 包的<code class="docutils literal notranslate"><span class="pre">random</span></code>方法基本支持所有分布，并且能够一次生成多行多列的随机数, 例如：</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">random</span></code> module in NumPy supports virtually all probability distributions and can generate random numbers in multi-row, multi-column arrays at once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 生成 [1, 10] 内的均匀分布随机数， 2 行 2 列</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># generate 2 row 2 column random numbers uniformally distributed between 1 (inclusive) and 10 (exclusive)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.49760604, 2.96961224],
-       [8.97374417, 6.67086667]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.0976429 , 9.27515995],
+       [3.54130241, 5.93142968]])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># 生成 5 个 [1, 10] 内的均匀分布随机数</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># generate 5 random numbers uniformally distributed between 1 (inclusive) and 10 (exclusive)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.3148841 , 9.9899581 , 5.34644509, 2.77156451, 4.3052016 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7.92830223, 3.49999035, 3.54353486, 9.9977529 , 8.81504354])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 生成 [1, 10] 内的随机整数， 2 行 2 列</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># generate 2 row 2 column random integer numbers uniformally distributed between 1 (inclusive) and 10 (exclusive)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6, 5],
-       [5, 6]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9, 9],
+       [6, 5]])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 生成一个正态分布的随机数，均值为 5， 标准差为 1， 2 行 2 列</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># generate 2 row 2 column random numbers normally distributed with mean 5 and standard deviation 1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.00148778, 6.22980276],
-       [4.84479411, 5.29173546]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.41010009, 6.90191561],
+       [5.02791543, 3.92314042]])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 生成一个泊松分布的随机数，均值为 5， 2 行 2 列</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># generate 2 row 2 column random numbers Poisson distributed with argument 5</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 6],
-       [2, 5]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 5],
+       [7, 9]])
 </pre></div>
 </div>
 </div>
 </div>
-<p>numpy 还可以通过<code class="docutils literal notranslate"><span class="pre">random.seed()</span></code>参数设定随机数生成器的种子，同样的种子生成的随机数应该是相同的。</p>
+<p>NumPy also allows setting the seed for the random number generator via the <code class="docutils literal notranslate"><span class="pre">random.seed()</span></code> argument. The same seed should produce identical random numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># 生成 6 个正态分布的随机数，均值为 5， 标准差为 1</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># generate 6 random numbers normally distributed with mean 5 and standard deviation 1</span>
 </pre></div>
 </div>
 </div>
@@ -1212,11 +1257,11 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 </div>
-<p>另外 numpy 还可以通过<code class="docutils literal notranslate"><span class="pre">RandomState()</span></code>来定义一个随机数生成器对象，小括号里面的参数为随机数种子，然后用这个对象调用具体的各个随机分布生成器函数。例如：</p>
+<p>Additionally, NumPy also allows you to define a random number generator object via <code class="docutils literal notranslate"><span class="pre">RandomState()</span></code>, where the argument inside the parentheses is the random seed. You can then use this object to call specific random distribution generator methods. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rvs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">rvs</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># 生成 6 个正态分布的随机数，均值为 5， 标准差为 1</span>
+<span class="n">rvs</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -1228,162 +1273,116 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 </section>
-<section id="numpy-list">
-<h2><span class="section-number">5.6. </span>Numpy 数组与列表 list 运算速度的对比<a class="headerlink" href="#numpy-list" title="Link to this heading">#</a></h2>
-<hr><p>Numpy 对于数值型数据的运算速度远快于 Python 自带的 list 列表。对于大规模的数学计算，优先使用 Numpy 处理。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">time</span>
-
-<span class="c1"># 使用 Python 原生 list</span>
-<span class="n">size</span> <span class="o">=</span> <span class="mi">1_000_000</span>
-<span class="n">py_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
-
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">py_list_squared</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">py_list</span><span class="p">]</span>  <span class="c1"># 普通 Python 列表计算</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python List 耗时:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-
-<span class="c1"># 使用 NumPy 数组</span>
-<span class="n">np_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">np_array_squared</span> <span class="o">=</span> <span class="n">np_array</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># NumPy 直接进行向量化运算</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NumPy 耗时:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python List 耗时: 0.02852606773376465
-NumPy 耗时: 0.0008602142333984375
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="time-datatime">
-<h2><span class="section-number">5.7. </span><code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datatime</span></code> 模块<a class="headerlink" href="#time-datatime" title="Link to this heading">#</a></h2>
-<hr><section id="time">
-<h3><span class="section-number">5.7.1. </span><code class="docutils literal notranslate"><span class="pre">time</span></code> 模块<a class="headerlink" href="#time" title="Link to this heading">#</a></h3>
+<section id="time-datatime-library">
+<h2><span class="section-number">4.6. </span><code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datatime</span></code> library<a class="headerlink" href="#time-datatime-library" title="Link to this heading">#</a></h2>
+<hr><section id="time-library">
+<h3><span class="section-number">4.6.1. </span><code class="docutils literal notranslate"><span class="pre">time</span></code> library<a class="headerlink" href="#time-library" title="Link to this heading">#</a></h3>
 <hr>
-<p><code class="docutils literal notranslate"><span class="pre">time</span></code> 模块提供了许多与时间相关的函数，如获取当前时间、暂停程序、测量执行时间等。</p>
+<p><code class="docutils literal notranslate"><span class="pre">time</span></code> is a Python built-in libray that provides many time-related methods, such as getting the current time, pausing program execution, measuring execution time, and more.</p>
 <ul class="simple">
-<li><p>获取当前时间</p></li>
+<li><p>Get the current time in seconds since January 1, 1970, 00:00:00 (UTC)  by <code class="docutils literal notranslate"><span class="pre">time()</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
-<span class="c1"># 获取当前时间戳</span>
 <span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1747927942.333101
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1748452544.0003672
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Get a tuple of the structured format of the current time by <code class="docutils literal notranslate"><span class="pre">strtime</span></code>.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取当前时间的结构化格式</span>
-<span class="n">current_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">current_time</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2025, tm_mon=5, tm_mday=22, tm_hour=16, tm_min=32, tm_sec=22, tm_wday=3, tm_yday=142, tm_isdst=1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2025, tm_mon=5, tm_mday=28, tm_hour=18, tm_min=15, tm_sec=44, tm_wday=2, tm_yday=148, tm_isdst=1)
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Get the formatted time by <code class="docutils literal notranslate"><span class="pre">strftime</span></code>.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 格式化时间</span>
-<span class="n">formatted_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">formatted_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">formatted_time</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-22 16:32:22
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-28 18:15:44
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>时间转换</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 时间戳转时间字符串</span>
-<span class="n">timestamp</span> <span class="o">=</span> <span class="mi">1708193257</span>
-<span class="n">time_str</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">timestamp</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">time_str</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-02-17 18:07:37
-</pre></div>
-</div>
-</div>
-</div>
-<p>常见的 strftime 格式：</p>
+<p>The codes for time format in <code class="docutils literal notranslate"><span class="pre">strftime</span></code>:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>代码</p></th>
-<th class="head"><p>含义</p></th>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Meaning</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>%Y</p></td>
-<td><p>4 位数年份（如 2025）</p></td>
+<td><p>4-digit year (e.g., 2025)</p></td>
 </tr>
-<tr class="row-odd"><td><p>%m</p></td>
-<td><p>2 位数月份（01-12）</p></td>
+<tr class="row-odd"><td><p>%y</p></td>
+<td><p>2-digit year (e.g., 25)</p></td>
 </tr>
-<tr class="row-even"><td><p>%d</p></td>
-<td><p>2 位数日期（01-31）</p></td>
+<tr class="row-even"><td><p>%m</p></td>
+<td><p>2-digit month (01-12)</p></td>
+</tr>
+<tr class="row-odd"><td><p>%d</p></td>
+<td><p>2-digit day (01-31)</p></td>
+</tr>
+<tr class="row-even"><td><p>%D</p></td>
+<td><p>Equivalent to %m/%d/%y</p></td>
+</tr>
+<tr class="row-odd"><td><p>%B</p></td>
+<td><p>Full month name (January-December)</p></td>
+</tr>
+<tr class="row-even"><td><p>%b</p></td>
+<td><p>Abbreviated month name (e.g. Jul)</p></td>
+</tr>
+<tr class="row-odd"><td><p>%W</p></td>
+<td><p>Week number of the year</p></td>
+</tr>
+<tr class="row-even"><td><p>%w</p></td>
+<td><p>Week number of the month</p></td>
 </tr>
 <tr class="row-odd"><td><p>%H</p></td>
-<td><p>24 小时制小时（00-23）</p></td>
+<td><p>Hour in 24-hour format (00-23)</p></td>
 </tr>
 <tr class="row-even"><td><p>%M</p></td>
-<td><p>分钟（00-59）</p></td>
+<td><p>Minute (00-59)</p></td>
 </tr>
 <tr class="row-odd"><td><p>%S</p></td>
-<td><p>秒（00-59）</p></td>
+<td><p>Second (00-59)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 时间字符串转时间戳</span>
-<span class="n">time_string</span> <span class="o">=</span> <span class="s2">&quot;2025-02-17 10:30:57&quot;</span>
-<span class="n">time_tuple</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">time_string</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
-<span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">time_tuple</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1739788257.0
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
-<li><p>线程休眠</p></li>
+<li><p>Suspends execution for the given number of seconds using <code class="docutils literal notranslate"><span class="pre">sleep()</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start&quot;</span><span class="p">)</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 休眠 3 秒</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># sleep for 3 seconds</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1398,12 +1397,11 @@ NumPy 耗时: 0.0008602142333984375
 </div>
 </div>
 <ul class="simple">
-<li><p>计算程序运行时间</p></li>
+<li><p>Get the computation time by <code class="docutils literal notranslate"><span class="pre">time()</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 time.time()</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
     <span class="k">pass</span>
 <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -1412,15 +1410,17 @@ NumPy 耗时: 0.0008602142333984375
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.030368 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.049338 seconds
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Get more precise computation time by <code class="docutils literal notranslate"><span class="pre">perf_counter()</span></code>.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 time.perf_counter() 获取高精度时间</span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
     <span class="k">pass</span>
 <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
@@ -1429,13 +1429,13 @@ NumPy 耗时: 0.0008602142333984375
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.024422 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.027820 seconds
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>获取 CPU 运行时间</p></li>
+<li><p>Get the CPU time used by the current process.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1448,77 +1448,43 @@ NumPy 耗时: 0.0008602142333984375
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.023950 seconds
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>获取 UTC 时间</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utc_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">utc_time</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-22 15:32:25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.022981 seconds
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="datetime">
-<h3><span class="section-number">5.7.2. </span><code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块<a class="headerlink" href="#datetime" title="Link to this heading">#</a></h3>
+<section id="datetime-library">
+<h3><span class="section-number">4.6.2. </span><code class="docutils literal notranslate"><span class="pre">datetime</span></code> library<a class="headerlink" href="#datetime-library" title="Link to this heading">#</a></h3>
 <hr>
-<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> 是 Python 标准库中的一个模块，提供日期、时间处理的功能，包括获取当前时间、日期计算、时区处理等。</p>
+<p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> is part of Python’s standard built-in library, offering methods for date and time manipulation, including fetching the current time, date calculations, timezone handling, and more.</p>
 <ul class="simple">
-<li><p>获取当前时间</p></li>
+<li><p>Get current datetime by <code class="docutils literal notranslate"><span class="pre">now()</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="c1"># 获取当前本地时间</span>
 <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>  <span class="c1"># 输出示例: 2025-02-17 10:30:57.123456</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-22 16:32:25.469645
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
-
-<span class="c1"># 获取当前 UTC 时间</span>
-<span class="n">utc_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">utc_now</span><span class="p">)</span>  <span class="c1"># 2025-02-17 10:30:57.123456+00:00</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-22 15:32:25.472800+00:00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-28 18:15:47.141272
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>创建自定义时间</p></li>
+<li><p>Create datetime by <code class="docutils literal notranslate"><span class="pre">datetime()</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
-<span class="c1"># 创建指定时间</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>  <span class="c1"># 2025-02-17 10:30:57</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1528,32 +1494,8 @@ NumPy 耗时: 0.0008602142333984375
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-
-<span class="c1"># 从时间戳创建时间</span>
-<span class="n">timestamp</span> <span class="o">=</span> <span class="mi">1708193457</span>  <span class="c1"># 2025-02-17 10:30:57 对应的时间戳</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>  <span class="c1"># 本地时间</span>
-<span class="n">utc_dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>  <span class="c1"># UTC 时间</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">utc_dt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-02-17 18:10:57
-2024-02-17 18:10:57
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/qz/d57_41f55ylf02cqq8twh3540000gn/T/ipykernel_23381/2033922435.py:6: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
-  utc_dt = datetime.utcfromtimestamp(timestamp)  # UTC 时间
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
-<li><p>时间格式化</p></li>
+<li><p>Format the datetime by <code class="docutils literal notranslate"><span class="pre">strftime()</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1561,7 +1503,6 @@ NumPy 耗时: 0.0008602142333984375
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
 
-<span class="c1"># datetime 转字符串</span>
 <span class="n">formatted_str</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">formatted_str</span><span class="p">)</span>
 </pre></div>
@@ -1573,25 +1514,8 @@ NumPy 耗时: 0.0008602142333984375
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-
-<span class="c1"># 字符串 转 datetime</span>
-<span class="n">time_str</span> <span class="o">=</span> <span class="s2">&quot;2025-02-17 10:30:57&quot;</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">time_str</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-02-17 10:30:57
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
-<li><p>时间计算</p></li>
+<li><p>Datetime compuation</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1629,40 +1553,117 @@ NumPy 耗时: 0.0008602142333984375
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>处理时区</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span><span class="p">,</span> <span class="n">timedelta</span>
+</section>
+</section>
+<section id="exercises">
+<h2><span class="section-number">4.7. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<hr><div class="exercise admonition" id="create-array">
 
-<span class="n">utc_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
-<span class="n">beijing_time</span> <span class="o">=</span> <span class="n">utc_now</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">8</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">beijing_time</span><span class="p">)</span>
-</pre></div>
+<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
+<section id="exercise-content">
+<p>How to create a NumPy array from a Python list?</p>
+<p>A.    np.array(list)</p>
+<p>B.    numpy(list)</p>
+<p>C.    np.create(list)</p>
+<p>D.    array(list)</p>
+</section>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-22 23:32:25.495260+08:00
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+<div class="solution dropdown admonition" id="introduction-to-numpy-solution-1">
 
-<span class="n">local_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="n">utc_time</span> <span class="o">=</span> <span class="n">local_time</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">utc_time</span><span class="p">)</span>
-</pre></div>
+<p class="admonition-title">Solution to<a class="reference internal" href="#create-array"> Exercise 4.1</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
 </div>
+<div class="exercise admonition" id="access-array">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
+<section id="exercise-content">
+<p>How to access the element at the second row and third column of a 2D NumPy array ‘arr’?</p>
+<p>A.    arr[1][2]</p>
+<p>B.    arr[2, 3]</p>
+<p>C.    arr[2][3]</p>
+<p>D.    arr[1, 2]</p>
+</section>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-22 15:32:25.498060+00:00
-</pre></div>
+<div class="solution dropdown admonition" id="introduction-to-numpy-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#access-array"> Exercise 4.2</a></p>
+<section id="solution-content">
+<p>D</p>
+</section>
 </div>
+<div class="exercise admonition" id="zeros">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
+<section id="exercise-content">
+<p>What does the np.zeros((1, 2)) method in NumPy do?</p>
+<p>A.    Create an array with ones, 1 row and 2 columns</p>
+<p>B.    Create an array with zeros, 1 row and 2 columns</p>
+<p>C.    Create an identy matrix</p>
+<p>D.    Creates an array with random values</p>
+</section>
 </div>
+<div class="solution dropdown admonition" id="introduction-to-numpy-solution-5">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#zeros"> Exercise 4.3</a></p>
+<section id="solution-content">
+<p>B</p>
+</section>
+</div>
+<div class="exercise admonition" id="arange-step">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.4 </span></p>
+<section id="exercise-content">
+<p>What does the code np.arange(1, 10, 2) in NumPy do?</p>
+<p>A.    Creates an array with values from 1 to 10</p>
+<p>B.    Creates an array with values from 1 to 10 with step 2</p>
+<p>C.    Creates an array with values from 1 to 9 with step 2</p>
+<p>D.    Creates an array with values from 1 to 9</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="introduction-to-numpy-solution-7">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#arange-step"> Exercise 4.4</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
+</div>
+<div class="exercise admonition" id="max_index">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.5 </span></p>
+<section id="exercise-content">
+<p>How to find the indices of the maximum value in a NumPy array ‘arr’?</p>
+<p>A.    np.max(arr)</p>
+<p>B.    np.argmax(arr)</p>
+<p>C.    np.maximum(arr)</p>
+<p>D.    np.max_index(arr)</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="introduction-to-numpy-solution-9">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#max_index"> Exercise 4.5</a></p>
+<section id="solution-content">
+<p>B</p>
+</section>
+</div>
+<div class="exercise admonition" id="mean-axis">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.6 </span></p>
+<section id="exercise-content">
+<p>How can you calculate the mean for each row of a 2D NumPy array ‘arr’?</p>
+<p>A.    np.mean(arr, axis=2)</p>
+<p>B.    np.mean(arr, axis=0)</p>
+<p>C.    np.mean(arr, axis=1)</p>
+<p>D.    np.average(arr, axis=0)</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="introduction-to-numpy-solution-11">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#mean-axis"> Exercise 4.6</a></p>
+<section id="solution-content">
+<p>C</p>
+</section>
 </div>
 <script src="https://giscus.app/client.js"
         data-repo="robinchen121/book-Python-Data-Science"
@@ -1683,14 +1684,20 @@ NumPy 耗时: 0.0008602142333984375
 <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
+                  inclusiveLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
 layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
       }
 </script>
 <script type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
-<br></section>
+<br><hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>* means this section may not be delivered in class.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -1703,16 +1710,16 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -1725,12 +1732,12 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="define-function.html"
+       href="print-read-files.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Python 编写函数</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Output, read and write files</p>
       </div>
     </a>
     <a class="right-next"
@@ -1738,7 +1745,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Pandas 入门</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Introduction to Pandas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1759,17 +1766,17 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5.1. 创建数组</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.2. 数组索引和切片</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.3. 数组拼接</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.4. 数组运算</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5.5. 生成随机数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-list">5.6. Numpy 数组与列表 list 运算速度的对比</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-datatime">5.7. <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datatime</span></code> 模块</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time">5.7.1. <code class="docutils literal notranslate"><span class="pre">time</span></code> 模块</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime">5.7.2. <code class="docutils literal notranslate"><span class="pre">datetime</span></code> 模块</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-array">4.1. Create an array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">4.2. Indexing and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenating">4.3. Concatenating</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-computations">4.4. Array computations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-values-using-numpy-1">4.5. Generate random values using NumPy*</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-datatime-library">4.6. <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">datatime</span></code> library</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-library">4.6.1. <code class="docutils literal notranslate"><span class="pre">time</span></code> library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datetime-library">4.6.2. <code class="docutils literal notranslate"><span class="pre">datetime</span></code> library</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.7. Exercises</a></li>
 </ul>
   </nav></div>
 
