@@ -466,7 +466,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.6. <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-other-modules-1">6.7. Import other modules*[^1]</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-other-modules-1">6.7. Import other modules* </a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-python-find-modules">6.7.1. Where Python find modules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-sibling-module">6.7.2. Import a sibling module</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-nephew-niece-module">6.7.3. Import a nephew/niece module</a></li>
@@ -1274,8 +1274,8 @@ final x is 18
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">x1</span> <span class="o">-</span> <span class="nb">sum</span>
 
 
@@ -1284,21 +1284,7 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">return</span> <span class="n">x1</span> <span class="o">-</span> <span class="nb">sum</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">x3</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
-
-<span class="nn">Cell In[35], line 3,</span> in <span class="ni">minus</span><span class="nt">(x1, **a)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">a</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">return</span> <span class="n">x1</span> <span class="o">-</span> <span class="nb">sum</span>
-
-<span class="ne">NameError</span>: name &#39;args&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -1643,7 +1629,7 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1287fcdc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x29d4aa2dc60&gt;
 </pre></div>
 </div>
 </div>
@@ -1715,9 +1701,8 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 </section>
 <section id="import-other-modules-1">
-<h2><span class="section-number">6.7. </span>Import other modules*[^1]<a class="headerlink" href="#import-other-modules-1" title="Link to this heading">#</a></h2>
-<hr>
-[^1]: \* means this section may not be delivered in class.<p>In Python programming, every file with a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension is called a module. Often, we need to import functions from other modules just like we import some libraries.</p>
+<h2><span class="section-number">6.7. </span>Import other modules* <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#import-other-modules-1" title="Link to this heading">#</a></h2>
+<hr><p>In Python programming, every file with a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension is called a module. Often, we need to import functions from other modules just like we import some libraries.</p>
 <section id="where-python-find-modules">
 <h3><span class="section-number">6.7.1. </span>Where Python find modules<a class="headerlink" href="#where-python-find-modules" title="Link to this heading">#</a></h3>
 <hr><p>The search order for Python modules is as follows:</p>
@@ -1741,7 +1726,7 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science&#39;, &#39;/Users/yourname/projects&#39;, &#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science&#39;, &#39;/opt/anaconda3/lib/python312.zip&#39;, &#39;/opt/anaconda3/lib/python3.12&#39;, &#39;/opt/anaconda3/lib/python3.12/lib-dynload&#39;, &#39;&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages/aeosa&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages/setuptools/_vendor&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;C:\\ProgramData\\anaconda3\\python312.zip&#39;, &#39;C:\\ProgramData\\anaconda3\\DLLs&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib&#39;, &#39;C:\\ProgramData\\anaconda3&#39;, &#39;&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\win32&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\win32\\lib&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\Pythonwin&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\setuptools\\_vendor&#39;]
 </pre></div>
 </div>
 </div>
@@ -1941,16 +1926,152 @@ Continues program execution until the next breakpoint or program termination.</p
 <p>D</p>
 </section>
 </div>
-<div class="exercise admonition" id="circle-area">
+<div class="exercise admonition" id="continue">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.5 </span></p>
 <section id="exercise-content">
-<p>Define a function to compute the area of a circle with given radius. (tips: area = <span class="math notranslate nohighlight">\(\pi\)</span><em>radius</em>radius)</p>
+<p>What statement is to skip the current iteration and proceed with the remaining loops?</p>
+<p>A.    break</p>
+<p>B.    continue</p>
+<p>C.    end</p>
+<p>D.    return</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="define-function-solution-9">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 6.5</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#continue"> Exercise 6.5</a></p>
+<section id="solution-content">
+<p>B</p>
+</section>
+</div>
+<div class="exercise admonition" id="lambda-argument">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.6 </span></p>
+<section id="exercise-content">
+<p>Lambda functions can take multiple arguments.</p>
+<p>A.    True</p>
+<p>B.    False</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-11">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#lambda-argument"> Exercise 6.6</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="scope">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.7 </span></p>
+<section id="exercise-content">
+<p>For the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="k">def</span> <span class="nf">myfunc</span><span class="p">():</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">myfunc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What will be the printed result?</p>
+<p>A.    300</p>
+<p>B.    200</p>
+<p>C.    100</p>
+<p>D.    0</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-13">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#scope"> Exercise 6.7</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="scope2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.8 </span></p>
+<section id="exercise-content">
+<p>For the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="k">def</span> <span class="nf">myfunc</span><span class="p">():</span>
+  <span class="k">global</span> <span class="n">x</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">myfunc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What will be the printed result?</p>
+<p>A.    300</p>
+<p>B.    200</p>
+<p>C.    100</p>
+<p>D.    0</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-15">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#scope2"> Exercise 6.8</a></p>
+<section id="solution-content">
+<p>B</p>
+</section>
+</div>
+<div class="exercise admonition" id="while-output">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.9 </span></p>
+<section id="exercise-content">
+<p>What is the output of the following codes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+   <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Else block&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A.    Prints “Hello” three times and then prints “Else block”</p>
+<p>B.    Prints “Hello” three times</p>
+<p>C.    Prints “Else block” three times</p>
+<p>D.    Raise an error</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-17">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#while-output"> Exercise 6.9</a></p>
+<section id="solution-content">
+<p>A</p>
+</section>
+</div>
+<div class="exercise admonition" id="loop-list">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.10 </span></p>
+<section id="exercise-content">
+<p>Loop and print each element for the following list and break the loop if the item is “banana”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;perch&quot;</span><span class="p">,</span> <span class="p">,</span> <span class="s2">&quot;grape&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-19">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#loop-list"> Exercise 6.10</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;perch&quot;</span><span class="p">,</span> <span class="p">,</span> <span class="s2">&quot;grape&quot;</span><span class="p">,</span> <span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
+    <span class="k">break</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="circle-area">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.11 </span></p>
+<section id="exercise-content">
+<p>Define a function to compute the area of a circle with given radius. (tips: area = <span class="math notranslate nohighlight">\(\pi\)</span>*radius*radius)</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-21">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 6.11</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
@@ -1967,16 +2088,16 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 <div class="exercise admonition" id="sum-cub">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.12 </span></p>
 <section id="exercise-content">
 <p>Define a function, with given value of <span class="math notranslate nohighlight">\(n\)</span>, it can calculate the sum of the cubes of all natural numbers from 1 to <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-11">
+<div class="solution dropdown admonition" id="define-function-solution-23">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#sum-cub"> Exercise 6.6</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#sum-cub"> Exercise 6.12</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_cube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span><span class="n">i</span>       
@@ -1984,21 +2105,21 @@ Continues program execution until the next breakpoint or program termination.</p
  
    
 <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_cube</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
 </div>
 <div class="exercise admonition" id="dict-values">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.7 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.13 </span></p>
 <section id="exercise-content">
 <p>Define a dict with all the values are numeric and compute the sum of all the values.</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-13">
+<div class="solution dropdown admonition" id="define-function-solution-25">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 6.7</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 6.13</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2014,14 +2135,14 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 <div class="exercise admonition" id="judge-leap-year">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.8 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.14 </span></p>
 <section id="exercise-content">
 <p>Define a function to evaluate whether the input year is leap year or not. (tips: a leap year is a year value that is divisible by 4 but not by 100, or divisible by 400.)</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-15">
+<div class="solution dropdown admonition" id="define-function-solution-27">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#judge-leap-year"> Exercise 6.8</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#judge-leap-year"> Exercise 6.14</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;input a year: &quot;</span><span class="p">))</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -2034,6 +2155,39 @@ Continues program execution until the next breakpoint or program termination.</p
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is a leap year&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span> 
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not a lear year&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="exercise admonition" id="unique-list">
+
+<p class="admonition-title"><span class="caption-number">Exercise 6.15 </span></p>
+<section id="exercise-content">
+<p>Write a Python function that takes a list and returns a new list with distinct elements from the first list.</p>
+<p>Sample List : [1,2,3,3,3,3,4,5]</p>
+<p>Unique List : [1, 2, 3, 4, 5]</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="define-function-solution-29">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#unique-list"> Exercise 6.15</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unique_list</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="c1"># Create an empty list &#39;x&#39; to store unique elements</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Iterate through each element &#39;a&#39; in the input list &#39;l&#39;</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+        <span class="c1"># Check if the element &#39;a&#39; is not already present in the list &#39;x&#39;</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+            <span class="c1"># If &#39;a&#39; is not in &#39;x&#39;, add it to the list &#39;x&#39;</span>
+            <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="c1"># Return the list &#39;x&#39; containing unique elements</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Print the result of calling the &#39;unique_list&#39; function with a list containing duplicate elements</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]))</span>
 </pre></div>
 </div>
 </section>
@@ -2064,7 +2218,14 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <script type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
-<br></section>
+<br><hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>* means this section may not be delivered in class.</p>
+</aside>
+</aside>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2151,7 +2312,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.6. <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-other-modules-1">6.7. Import other modules*[^1]</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-other-modules-1">6.7. Import other modules* </a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-python-find-modules">6.7.1. Where Python find modules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-sibling-module">6.7.2. Import a sibling module</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-nephew-niece-module">6.7.3. Import a nephew/niece module</a></li>
