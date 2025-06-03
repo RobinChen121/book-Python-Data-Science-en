@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Define functions &#8212; Python 数据科学</title>
+    <title>6. Functions &#8212; Python 数据科学</title>
   
   
   
@@ -192,7 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Introduction to Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Define functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Draw pictures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
@@ -436,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Define functions</h1>
+    <h1>Functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -447,29 +447,34 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-built-in-functions">6.1. Some built-in functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2. 条件语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.3. 循环语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.4. 自定义函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.4.1. 函数参数的传递类型</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.4.2. 函数的参数传入方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">6.2. <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-statement">6.3. Loop statement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">6.3.1. <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">6.3.2. <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.5. 调试程序</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">6.5.1. 使用 print() 进行简单调试</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.5.2. 使用调试器调试</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.5.3. 调试功能的 step into, step over, step out, resume program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-defined-functions">6.4. Self-defined functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-passing-types-in-functions">6.4.1. Parameter Passing Types in Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-passing-techniques-in-functions">6.4.2. Parameter passing techniques in functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">6.6. try-except 语句调试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module">6.7. 导入其他模块（module）</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">6.7.1. Python 如何查找模块</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.7.2. 同级模块导入或同级文件夹下的模块导入</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.7.3. 与父文件夹同级的模块导入</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-path-append">6.7.4. 使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">6.5. Debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-print">6.5.1. Debug using <code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-a-dubugger">6.5.2. Debug using a dubugger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.5.3. <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-try-except-statements">6.5.4. Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.8. lambda, map, filter, reduce 函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.9. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.6. <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-other-modules-1">6.7. Import other modules*[^1]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-python-find-modules">6.7.1. Where Python find modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-sibling-module">6.7.2. Import a sibling module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-nephew-niece-module">6.7.3. Import a nephew/niece module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-aucle-aunt-cousin-module">6.7.4. Import a aucle/aunt, cousin module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-using-sys-path-append">6.7.5. Import using <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.8. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -481,48 +486,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="define-functions">
-<h1><span class="section-number">6. </span>Define functions<a class="headerlink" href="#define-functions" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="functions">
+<h1><span class="section-number">6. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
 <hr>
 <p>Python Functions is a block of statements that return the specific task. It is very import in coding since we can define a function to achive personalized needs.</p>
-<p>用 Python 编写函数时，经常要用到条件语句<code class="docutils literal notranslate"><span class="pre">if</span></code>， 循环语句<code class="docutils literal notranslate"><span class="pre">for</span></code>或<code class="docutils literal notranslate"><span class="pre">while</span></code>。</p>
+<p>When writing functions in Python, the frequently used statements are conditional statements <code class="docutils literal notranslate"><span class="pre">if</span></code>, and loop statements such as <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>Before we introduce how to self define functions, let us learn some useful buit-in functions of Python.</p>
 <section id="some-built-in-functions">
 <h2><span class="section-number">6.1. </span>Some built-in functions<a class="headerlink" href="#some-built-in-functions" title="Link to this heading">#</a></h2>
-<hr><p>Python 内置了一些常用的函数，可以方便使用。本书简单介绍以下几个内置函数：</p>
+<hr><p>Some commonly used built-in functions are:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>函数</p></th>
-<th class="head"><p>功能描述</p></th>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>sum</p></td>
-<td><p>对可迭代对象（如列表，元组，集合）求和</p></td>
+<td><p>Calculates the sum of an iterable (e.g., sequence, set)</p></td>
 </tr>
 <tr class="row-odd"><td><p>max</p></td>
-<td><p>返回可迭代对象中的最大值</p></td>
+<td><p>Returns the maximum value in an iterable</p></td>
 </tr>
 <tr class="row-even"><td><p>min</p></td>
-<td><p>返回可迭代对象中的最小值</p></td>
+<td><p>Returns the minimum value in an iterable</p></td>
 </tr>
 <tr class="row-odd"><td><p>abs</p></td>
-<td><p>返回输入数值的绝对值</p></td>
+<td><p>Returns the absolute value of a number</p></td>
 </tr>
 <tr class="row-even"><td><p>round</p></td>
-<td><p>返回输入数值的四舍五入值</p></td>
+<td><p>Rounds a number to the nearest integer (or specified decimal places)</p></td>
 </tr>
 <tr class="row-odd"><td><p>range</p></td>
-<td><p>创建一个整数序列类型，多用于 for 循环</p></td>
+<td><p>Generates a sequence of integers, commonly used in <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></td>
 </tr>
 <tr class="row-even"><td><p>sorted</p></td>
-<td><p>对可迭代对象进行排序，默认升序</p></td>
+<td><p>Sorts an iterable in ascending order by default</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 四舍五入时保留两位小数</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># round to a float with 2 decimals</span>
 </pre></div>
 </div>
 </div>
@@ -534,7 +540,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">)</span>  <span class="c1"># 默认四舍五入为整数</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">)</span>  <span class="c1"># round to an integer</span>
 </pre></div>
 </div>
 </div>
@@ -544,10 +550,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>range 被 Python 直接视为一种数据类型，表示一个整数数列。包含终点（必有），起点（可选），步长（可选）。可以用<code class="docutils literal notranslate"><span class="pre">list()</span></code>将 range 类型转化为列表类型。</p>
+<p>In Python, <code class="docutils literal notranslate"><span class="pre">range</span></code> is directly treated as an iterable data type representing a sequence of integers. It includes the <strong>end value (required, exclusive)</strong>, <strong>start value (optional, inclusive)</strong>, and <strong>step size (optional)</strong>. You can convert a range object into a list using <code class="docutils literal notranslate"><span class="pre">list()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 创建一个从 0 到 10 (不包括 10) 的整数序列，默认起点为 0，默认步长值为 1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># an integer sequence from 0 to 9, step size is 1 by default</span>
 </pre></div>
 </div>
 </div>
@@ -559,7 +565,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># convert the range to a list</span>
 </pre></div>
 </div>
 </div>
@@ -571,7 +577,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 创建一个从 2 到 10 的整数序列</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># an integer sequence from 2 to 10</span>
 </pre></div>
 </div>
 </div>
@@ -583,19 +589,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 创建一个从 2 到 10 的整数序列，并且步长值为 2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(2, 10, 2)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># an integer list from 2 to 10, step size 2</span>
 </pre></div>
 </div>
 </div>
@@ -605,25 +599,21 @@ document.write(`
 </div>
 </div>
 </div>
-<p>eumerate 经常结合 for 循环使用。</p>
+<p><code class="docutils literal notranslate"><span class="pre">range</span></code> is frequently used in the <code class="docutils literal notranslate"><span class="pre">for-loop</span></code> statement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20 0
-30 1
-40 2
-50 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 6 7 8 9 
 </pre></div>
 </div>
 </div>
 </div>
-<p>使用 enumerate 则上述代码更简洁些：</p>
+<p>Another helpful function in the <code class="docutils literal notranslate"><span class="pre">for-loop</span></code> statement is <code class="docutils literal notranslate"><span class="pre">eumerate()</span></code>, in which its argument is an iterable and can return an enumerate object that has a counter for each element.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
@@ -641,11 +631,11 @@ document.write(`
 </div>
 </div>
 </div>
-<p>sorted 函数可以对可迭代对象进行排序，默认为升序，可迭代对象一般是列表。</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> function sorts an iterable object, with ascending order as the default.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">37</span><span class="p">]</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1"># 对列表升序排列</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -657,7 +647,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># 对列表降序排列</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># change the &#39;reverse&#39; argument to sort in descending order</span>
 </pre></div>
 </div>
 </div>
@@ -668,122 +658,156 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="id1">
-<h2><span class="section-number">6.2. </span>条件语句<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<hr>
-<p><code class="docutils literal notranslate"><span class="pre">if</span></code>语句的字面意思是：如果（if）满足条件，做什么，否则（else）做什么。例如，下面一段代码：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value of a is greater than 10&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value of a is not greater than 10&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Value of a is not greater than 10
-</pre></div>
-</div>
-</div>
-</div>
-<p>这段代码的意思是，如果 a 比 10 大，则输出 “Value of a is greater than 10”，否则输出 “Value of a is not greater than 10”。if 语句还可以跟 elif （else if 的意思），再次判断一个条件。</p>
+<section id="if-statement">
+<h2><span class="section-number">6.2. </span><code class="docutils literal notranslate"><span class="pre">if</span></code> statement<a class="headerlink" href="#if-statement" title="Link to this heading">#</a></h2>
+<hr><p>The syntax for the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is:</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th style="text-align:center">if 语句的一般用法</th>
     </tr>
     <tr>
-        <td style="text-align:left">if <条件1>:</td>
+        <td style="text-align:left">if condition1:</td>
     </tr>
     <tr>
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_1&gt;</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement_block_1</td>
     </tr>
     <tr>
-        <td style="text-align:left">elif <条件2>:</td>
+        <td style="text-align:left">elif condition2:</td>
     </tr>
     <tr>
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_2&gt;</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement_block_2</td>
     </tr>
     <tr>
         <td style="text-align:left">else:</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_3&gt;</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement_block_3</td>
     </tr>
 </table>
-<br /><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>if 循环中，<code class="docutils literal notranslate"><span class="pre">elif</span></code>语句块或者<code class="docutils literal notranslate"><span class="pre">else</span></code>语句块可以没有</p>
-</div>
-<p>上面 if 语句块的执行顺序为：如果条件1 为真，将执行 “statement_block_1” 块语句，如果条件1 为假，将判断 “条件2”，如果条件2 为真，将执行 “statement_block_2” 块语句，如果条件2 为假，将执行”statement_block_3”块语句。</p>
-<p>举例：</p>
+<br /><p>The if block first checks “Condition 1”—if true, runs “statement_block_1”; otherwise, it evaluates “Condition 2”. When “Condition 2” holds, “statement_block_2” runs; if neither condition is met, “statement_block_3” executes.</p>
+<p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">5000</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">12000</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;平均水平&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">2000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;poor&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">4000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;middle&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;土豪&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rich&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>平均水平
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rich
 </pre></div>
 </div>
 </div>
 </div>
-<p>上面语句的意思是，若输入的月薪小于 3000，则输出“贫困户”，否则若月薪在 3000 与 12000 之间，输出“平均水平”，若月薪在 12000 之上，则输出“土豪”。</p>
-<p>if 语句里面还可以嵌套 if 语句，进一步增加判断条件，举例：</p>
+<p>There can be other <code class="docutils literal notranslate"><span class="pre">if</span></code> statement inside one <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">2000</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="mi">2000</span> <span class="o">&lt;=</span> <span class="n">wage</span> <span class="o">&lt;</span> <span class="mi">3000</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户中的一般贫&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;贫困户中的特贫&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wage</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">2000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;poor&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;very poor&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">wage</span> <span class="o">&lt;=</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;super poor&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;不是贫困户&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;not poor&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>贫困户
-贫困户中的一般贫
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poor
 </pre></div>
 </div>
 </div>
 </div>
-<p>在上面的程序中，若月薪小于等于 3000，又嵌套了两个条件进一步判断。</p>
-<p>if 中条件判断中常用的符号有：<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>(大于), <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>(小于), <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>(大于等于), <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>(小于等于), <code class="docutils literal notranslate"><span class="pre">==</span></code>(等于), <code class="docutils literal notranslate"><span class="pre">!=</span></code>(不等于)。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>两个等号 == 表示判断是否相等（a == 3 表示判断 a 是否等于 3），而一个等号 = 表示的是变量赋值（a = 3 表示将 a 赋值为 3）</p>
+<p>There can be no <code class="docutils literal notranslate"><span class="pre">elif</span></code> block or <code class="docutils literal notranslate"><span class="pre">else</span></code> block inside the <code class="docutils literal notranslate"><span class="pre">if</span></code> block.</p>
+</div>
+<ul class="simple">
+<li><p>Unlike many other programming languages, Python uses <code class="docutils literal notranslate"><span class="pre">indentation</span></code> to define code blocks instead of semicolons ; or curly braces {}.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indentation</span></code> affects the scope of commands inside a block.</p></li>
+</ul>
+<p><img alt="title" src="_images/codeStyle.PNG" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value of a is greater than 10&quot;</span><span class="p">)</span> <span class="c1"># this line is not implemented</span>
+<span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+12
+14
+16
+18
+120
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above code, the if block has consistent indentation, and the while block also maintains uniform indentation. This formatting enhances program readability and clearly defines the <strong>scope</strong> of different commands.</p>
+<ul class="simple">
+<li><p>The statement <code class="docutils literal notranslate"><span class="pre">print(&quot;Value</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">is</span> <span class="pre">greater</span> <span class="pre">than</span> <span class="pre">10&quot;)</span></code> aligns with <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">25</span></code>, meaning both belong to the if block and execute only when the if condition is met.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">print(&quot;Value</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">is</span> <span class="pre">greater</span> <span class="pre">than</span> <span class="pre">10&quot;)</span></code> were aligned with <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">10</span></code> instead, it would no longer be part of the if block—instead, it would execute outside the if statement, regardless of the condition.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value of a is greater than 10&quot;</span><span class="p">)</span> <span class="c1"># this line is out of the if block and thus not affected by the if block</span>
+<span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Value of a is greater than 10
+10
+12
+14
+16
+18
+120
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">6.3. </span>循环语句<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="loop-statement">
+<h2><span class="section-number">6.3. </span>Loop statement<a class="headerlink" href="#loop-statement" title="Link to this heading">#</a></h2>
 <hr>
-<p>循环语句一般有两种，for 语句与 while 语句。for 循环可以遍历任何序列的项目，如一个列表、元组、集合或者一个字符串。for 循环的一般用法如下：</p>
+<p>There are two loop statements: <code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<section id="for-loop">
+<h3><span class="section-number">6.3.1. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#for-loop" title="Link to this heading">#</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop can iterate over <code class="docutils literal notranslate"><span class="pre">iterable</span> <span class="pre">objects</span></code>, such as <strong>lists, tuples, sets, dictionaries, or strings</strong>.
+The syntax of a for loop is as follows:</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th style="text-align:center">for 循环语句的一般用法</th>
     </tr>
     <tr>
-        <td style="text-align:left">for &lt;variable&gt; in &lt;sequence&gt;:</td>
+        <td style="text-align:left">for variable in iterable:</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statements&gt;</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements</td>
     </tr>
 </table>
-<br /><p>for 循环的作用是：遍历序列（sequence）中的所有元素，执行命令语句 statements，举例：</p>
+<br /><p>The purpose of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is to iterate through all elements in a iterable object and execute one or more statements.</p>
+<p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
@@ -799,8 +823,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>输出结果为 0， 1， 2，上述代码的作用是，对于 range(3) 中的每一个元素，打印元素。<strong>for 循环经常结合序列函数 range() 一起使用</strong>：range(a) 表示从 0 到 a-1 的一个数列，range(a, b) 表示从 a 到 b-1 的一个数列，range(a, b, c) 表示从 a 到 b-1，步长为 c 的一个数列。</p>
-<p>若索引 i 在循环中的命令语句中不使用，可以用<code class="docutils literal notranslate"><span class="pre">_</span></code>代替。</p>
+<p>The above codes print every element in the <code class="docutils literal notranslate"><span class="pre">range(3)</span></code>.</p>
+<p>If the variable in the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is not used in the statements, we can replace the variable with <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
@@ -816,24 +840,22 @@ Hello, World!
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>for 循环或 while 循环都可以跟<code class="docutils literal notranslate"><span class="pre">else</span></code>语句，<code class="docutils literal notranslate"><span class="pre">else</span></code> 语句只在循环正常执行并结束后才执行。</p>
-</div>
-<p>另一个 while 循环语句的一般格式为：</p>
+</section>
+<section id="while-loop">
+<h3><span class="section-number">6.3.2. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#while-loop" title="Link to this heading">#</a></h3>
+<p>They syntax for <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is:</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th style="text-align:center">while 循环语句的一般用法</th>
     </tr>
     <tr>
-        <td style="text-align:left">while&nbsp; &lt;判断条件&gt;:</td>
+        <td style="text-align:left">while&nbsp; condition:</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statements&gt;</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements</td>
     </tr>
 </table>
-<br /><p>它的作用是，只要满足 while 的判断条件，则一直执行 while 下面的执行语句 statements。</p>
-<p>举例：</p>
+<br /><p>In the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, if the condition is met, the commands within the while loop will continue to execute indefinitely.</p>
+<p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -851,47 +873,47 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>上面语句的作用是：只要 a 小于 4，则将 a 值打印出来并将 a 值加 1，在 a 等于 4 时停止执行 while语句。</p>
-<p>for 循环与 while 循环经常结合<code class="docutils literal notranslate"><span class="pre">break</span></code>或<code class="docutils literal notranslate"><span class="pre">continue</span></code>语句，<code class="docutils literal notranslate"><span class="pre">break</span></code>语句可以跳出循环体，而<code class="docutils literal notranslate"><span class="pre">continue</span></code>语句用来告诉 Python 跳过当前循环中的剩余语句，然后继续进行下一轮循环。举例：</p>
+<p>In the above codes: if a is less than 4, print a and add a by 1; repeat this process until a equals 4.</p>
+<p>The for loop and while loop are often used in combination with the <code class="docutils literal notranslate"><span class="pre">break</span></code> or <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements. <strong>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement exits the loop entirely</strong>, while <strong>the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement skips the remaining code in the current iteration and proceeds to the next cycle</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;循环结束&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop is over&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-循环结束
+loop is over
 </pre></div>
 </div>
 </div>
 </div>
-<p>上面代码中，在 i 等于 1 时执行<code class="docutils literal notranslate"><span class="pre">break</span></code>跳出了整个循环体。</p>
-<p>若改为<code class="docutils literal notranslate"><span class="pre">continue</span></code>语句：</p>
+<p>In the above codes, the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement makes the program jump out the for loop when i equals 1.</p>
+<p>If replacing <code class="docutils literal notranslate"><span class="pre">break</span></code> with <code class="docutils literal notranslate"><span class="pre">continue</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;循环结束&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop is over&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 2
-循环结束
+loop is over
 </pre></div>
 </div>
 </div>
 </div>
-<p>上面代码中，在 i 等于 1 时执行<code class="docutils literal notranslate"><span class="pre">continue</span></code>跳出了当前循环，执行剩下的循环。</p>
-<p>在 while 循环中，<code class="docutils literal notranslate"><span class="pre">break</span></code>与<code class="docutils literal notranslate"><span class="pre">continue</span></code>的例子：</p>
+<p>In the above codes, when i equals 1, the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement skips the current iteration and proceeds with the remaining loops.</p>
+<p>Examples about <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> in the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -900,13 +922,13 @@ Hello, World!
     <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;循环结束&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop is over&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-循环结束
+loop is over
 </pre></div>
 </div>
 </div>
@@ -919,7 +941,7 @@ Hello, World!
     <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;循环结束&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loop is over&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -927,28 +949,32 @@ Hello, World!
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 4
 5
-循环结束
+loop is over
 </pre></div>
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and <code class="docutils literal notranslate"><span class="pre">while</span></code> loops can be followed by an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement. The <code class="docutils literal notranslate"><span class="pre">else</span></code> block executes only if the loop completes normally (i.e., without encountering a <code class="docutils literal notranslate"><span class="pre">break</span></code>).</p>
+</div>
 </section>
-<section id="id3">
-<h2><span class="section-number">6.4. </span>自定义函数<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+</section>
+<section id="self-defined-functions">
+<h2><span class="section-number">6.4. </span>Self-defined functions<a class="headerlink" href="#self-defined-functions" title="Link to this heading">#</a></h2>
 <hr>
-<p>Python 提供了许多内建函数，比如 print()，但也可以自己创建函数，这被叫做用户自定义函数。掌握了自定义函数后，就能用 Python 实现很多自己想要的功能了。Python 自定义函数使用<code class="docutils literal notranslate"><span class="pre">def</span></code>关键字，一般用法如下：</p>
+<p>Python uses the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> to define a function. They syntax is:</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th style="text-align:center">def 自定义函数的一般用法</th>
     </tr>
     <tr>
-        <td style="text-align:left">def <函数名>(<参数列表>):</td>
+        <td style="text-align:left">def &nbsp;&nbsp;function_name(parameters):</td>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statements&gt;</td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements</td>
     </tr>
 </table>
-<br /><p>下面的几行代码定义了一个加和函数：</p>
+<br /><p>The following codes define a summation function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -958,30 +984,30 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>该自定义函数有以下几个特点：</p>
-<table>   
-    <tr style="border-top:solid">
-        <td style="text-align:left">def</td>
-        <td style="text-align:left">关键字 def 开头</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">add</td>
-        <td style="text-align:left"> 函数的名字，可以自命名</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">(x1, x2)</td>
-        <td style="text-align:left">小括号里面是函数的输入参数</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">:</td>
-        <td style="text-align:left">冒号，换行写函数内容；若不换行，整个函数只能有一行代码</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">return</td>
-        <td style="text-align:left">关键字，后面跟函数的返回值，即输出结果</td>
-    </tr>
+<p>There are severy features for a self-defined function in Python.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">def</span></code></p></td>
+<td><p>A self-defined function starts with keyword <code class="docutils literal notranslate"><span class="pre">def</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code></p></td>
+<td><p>Function parameters are inside the parentheses</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">:</span></code></p></td>
+<td><p>A colon after the right parenthesis of the parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">return</span></code></p></td>
+<td><p>The return values of the fuction follows after the keyword <code class="docutils literal notranslate"><span class="pre">return</span></code></p></td>
+</tr>
+</tbody>
 </table>
-</br><p>函数的返回值可以有一个或多个，下面的代码返回多个值，既返回两个参数的加和结果，又返回两个参数的值。</p>
+</div>
+<p><strong>A Python function can return one or multiple values, or no return values</strong>. The following code returns multiple values—both the sum of the two arguments and the original arguments themselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -991,7 +1017,10 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>调用函数时，通过输入函数名字，并把函数的参数传递进去，例如：</p>
+<p>When calling a function, specify the function name and pass in the required arguments, for example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Arguments</span></code> are the actual values passed to the function when it is called. They replace the <code class="docutils literal notranslate"><span class="pre">parameters</span></code> during execution.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -1011,7 +1040,7 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>若某个返回值不使用，可以用下划线<code class="docutils literal notranslate"><span class="pre">_</span></code>替代该变量名。</p>
+<p>If you don’t need to use a particular return value, you can assign it to an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> as a convention to indicate unused variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -1021,7 +1050,7 @@ Hello, World!
 
 <span class="n">x1</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">sums</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>  <span class="c1"># 用下划线 _ 替代第二个返回值</span>
+<span class="n">sums</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>  <span class="c1"># use _ to represent the second value</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sums</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -1034,8 +1063,8 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>上面的代码中，用下划线替代第二个返回参数值，用新的变量名替代其他参数值。</p>
-<p>函数也可以不带输入参数，即小括号里面可以没有内容，例如，下面的代码打印一句话 ``Hello, world!”：</p>
+<p>In the code above, an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> is used to ignore the second return value, while the other return values are assigned to new variables.</p>
+<p>A function can also be defined without input parameters, meaning the parentheses can be left empty. For example, the following code prints the message ``Hello, world!’’.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
@@ -1052,7 +1081,7 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>可以利用三重引号，来添加函数的说明 (docstring)，例如：</p>
+<p>You can use triple quote <code class="docutils literal notranslate"><span class="pre">'''</span> <span class="pre">'''</span></code> or triple quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">&quot;&quot;&quot;</span></code> to add function documentation (<code class="docutils literal notranslate"><span class="pre">docstring</span></code>). For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
@@ -1070,25 +1099,26 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>在一些 python IDE 软件中，例如 Spyder 或 Pycharm，当鼠标停留在某个函数或类名时，自动显示该函数或类的说明（docstring），极大地增加了代码的可读性。</p>
-<section id="id4">
-<h3><span class="section-number">6.4.1. </span>函数参数的传递类型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>In some Python IDEs like Spyder or PyCharm, hovering the mouse over a function or class name will automatically display its documentation (docstring), significantly improving code readability.</p>
+<section id="parameter-passing-types-in-functions">
+<h3><span class="section-number">6.4.1. </span>Parameter Passing Types in Functions<a class="headerlink" href="#parameter-passing-types-in-functions" title="Link to this heading">#</a></h3>
 <hr>
-<p>根据输入参数的值是否可以改变，函数的参数传递类型包括以下两种：</p>
+<p>Function parameters in Python are categorized by mutability into two groups:</p>
+<p>• Immutable objects: <code class="docutils literal notranslate"><span class="pre">numeric</span></code>, <code class="docutils literal notranslate"><span class="pre">strings</span></code>, <code class="docutils literal notranslate"><span class="pre">tuples</span></code></p>
+<p>• Mutable objects: <code class="docutils literal notranslate"><span class="pre">lists</span></code>, <code class="docutils literal notranslate"><span class="pre">dicts</span></code>, <code class="docutils literal notranslate"><span class="pre">sets</span></code></p>
 <ul class="simple">
-<li><p>不可变类型：数字，字符串，元组</p></li>
-<li><p>可变类型：列表，字典，集合</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Arguments</span></code> are the actual values passed to the function when it is called. They replace the <code class="docutils literal notranslate"><span class="pre">parameters</span></code> during execution.</p></li>
 </ul>
-<p>对于不可变类型，函数调用参数后，参数原来的值不变，例如：</p>
+<p>For immutable types, the original value of the parameter remains unchanged after being passed to a function. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeNum</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeNum</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="c1"># this parameter a is valid only inside the scope of the function</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 
 
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">changeNum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  <span class="c1"># 结果还是 2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># this variable is outside the scope of the function</span>
+<span class="n">changeNum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1">#  the value a is still 2</span>
 </pre></div>
 </div>
 </div>
@@ -1098,8 +1128,35 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>上面的代码中，由于传递的是数字类型，调用函数后，参数原来的数值不变，对于字符串或元组类型，传递时也是这样。</p>
-<p>对于可变类型，函数调用参数后，参数原来的值也改变，例如：</p>
+<p>In the above code, since a numeric type is passed, the original value of the parameter remains unchanged after the function call. The same behavior applies to string and tuple types when passed as arguments.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the parameters in a function, if they are immutable objects, they are local variables and only valid inside the function body. So they are different with the same-name variables outside the function defintion block.</p>
+</div>
+<p>We can use the keyword <code class="docutils literal notranslate"><span class="pre">global</span></code> to declare a variable inside a function refer to a variable in the global (module-level) scope rather than creating a local variable.</p>
+<ul class="simple">
+<li><p>The global variable can not be the parameter of a function.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeNum</span><span class="p">():</span> 
+    <span class="k">global</span> <span class="n">a</span> <span class="c1"># declare a global variable</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># this variable is outside the scope of the function</span>
+<span class="n">changeNum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1">#  the value a is changed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>When mutable objects (e.g., lists, dictionaries) are passed to a function, their original values can be altered if modified inside the function. This happens because Python passes them by object reference. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeList</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
@@ -1109,7 +1166,7 @@ Hello, World!
 
 <span class="n">listTry</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
 <span class="n">changeList</span><span class="p">(</span><span class="n">listTry</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">listTry</span><span class="p">)</span>  <span class="c1"># 结果是 [10, 20, 30, 1, 2, 3]，改变了列表原来的值</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">listTry</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
@@ -1120,17 +1177,17 @@ Hello, World!
 </div>
 </div>
 </section>
-<section id="id5">
-<h3><span class="section-number">6.4.2. </span>函数的参数传入方法<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="parameter-passing-techniques-in-functions">
+<h3><span class="section-number">6.4.2. </span>Parameter passing techniques in functions<a class="headerlink" href="#parameter-passing-techniques-in-functions" title="Link to this heading">#</a></h3>
 <hr>
-<p>函数的参数传入方法主要有4种类型：</p>
+<p>There are four main methods for passing function parameters:</p>
 <ul class="simple">
-<li><p>顺序传入</p></li>
-<li><p>赋值传入</p></li>
-<li><p>默认参数值传入</p></li>
-<li><p>不定长参数传入</p></li>
+<li><p>Positional arguments</p></li>
+<li><p>Assignment by keyword arguments</p></li>
+<li><p>Default parameter values</p></li>
+<li><p>Variable-length arguments</p></li>
 </ul>
-<p>对于顺序传入，函数的参数值跟输入的顺序一一对应：</p>
+<p>For positional arguments, the function parameters are assigned values in a <strong>one-to-one correspondence</strong> with the input order.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -1148,8 +1205,8 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>在上面的代码中，调用 minus 函数，按照参数的顺序，认为 x1 的值为 10， x2 的值为 6。</p>
-<p>赋值传入的意思是：在调用函数时，可以在输入参数时直接给参数赋值，Python 自动根据括号内的参数名匹配参数值，例如：</p>
+<p>In the code above, when calling the minus function, the parameters are assigned in order, meaning <span class="math notranslate nohighlight">\(x_1\)</span> is set to 10 and <span class="math notranslate nohighlight">\(x_2\)</span> is set to 6.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Keyword</span> <span class="pre">argument</span> <span class="pre">passing</span></code> means that when calling a function, you can directly assign values to parameters by name. Python <strong>automatically matches the values to parameters based on the names specified in parentheses</strong>. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
@@ -1167,8 +1224,8 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>在上面的代码中，调用 minus 函数时，在小括号内对参数进行了赋值，认为 x2 的值为 10， x1 的值为 6。</p>
-<p>Python 在定义函数时，可以设置参数的默认值，当调用参数时，若没有给参数赋值，则使用参数的默认值，例如：</p>
+<p>In the above code, when calling the minus function, the parameters are explicitly assigned within the parentheses, resulting in <span class="math notranslate nohighlight">\(x_2\)</span> being set to 10 and <span class="math notranslate nohighlight">\(x_1\)</span> to 6.</p>
+<p>In Python, when defining a function, you can set default values for parameters. When calling the function, <strong>if no value is provided for a parameter, the default value will be used</strong>. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
@@ -1176,8 +1233,8 @@ Hello, World!
     <span class="k">return</span> <span class="n">z</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># 输出：4，没有传递参数值时默认参数值</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 输出：5，有传递参数值时，覆盖默认参数值</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># x2 use the default value 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># x2 use the value 5 since a value for x2 is provided when calling the function</span>
 </pre></div>
 </div>
 </div>
@@ -1188,18 +1245,18 @@ Hello, World!
 </div>
 </div>
 </div>
-<p>当一个函数传递多个参数，但不太确定究竟是多少个时，可以用 *args 表示多个参数，例如：</p>
+<p>When a function receives multiple arguments, but you’re not exactly sure how many, you can use <code class="docutils literal notranslate"><span class="pre">*args</span></code> to represent multiple arguments, in which <code class="docutils literal notranslate"><span class="pre">*args</span></code> can be seen as the name of a list. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
         <span class="n">x</span> <span class="o">+=</span> <span class="n">var</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;final x is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
 
 
-<span class="n">plus</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># *args 是 4, 5</span>
-<span class="n">plus</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># *args 是 4, 5, 6</span>
+<span class="n">plus</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># *a is [4, 5]</span>
+<span class="n">plus</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># *a is [4, 5, 6]</span>
 </pre></div>
 </div>
 </div>
@@ -1212,10 +1269,10 @@ final x is 18
 </div>
 </div>
 </div>
-<p>可以用 **args 来传递不定长的多个赋值的参数，例如：</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">**args</span></code> to pass a variable number of keyword (name-value) arguments. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
@@ -1227,112 +1284,133 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">return</span> <span class="n">x1</span> <span class="o">-</span> <span class="nb">sum</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">x3</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="nn">Cell In[35], line 3,</span> in <span class="ni">minus</span><span class="nt">(x1, **a)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">a</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="k">return</span> <span class="n">x1</span> <span class="o">-</span> <span class="nb">sum</span>
+
+<span class="ne">NameError</span>: name &#39;args&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<p>上面的代码中，用 **args 表示 x2 = 3, x3 = 5。</p>
+<p>In the above codes, <code class="docutils literal notranslate"><span class="pre">**args</span></code> represents x2 = 3, x3 = 5.</p>
 </section>
 </section>
-<section id="id6">
-<h2><span class="section-number">6.5. </span>调试程序<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<hr><p>调试程序是编程不可避免的步骤，调试就是为了帮组发现与修改程序中的错误。因为即使再优秀的程序员，也不可能在编写一个新的程序时一点错误也没有。调试程序有以下几种常用的方法。</p>
-<section id="print">
-<h3><span class="section-number">6.5.1. </span>使用 print() 进行简单调试<a class="headerlink" href="#print" title="Link to this heading">#</a></h3>
-<hr><p>这种调试方法适用于：代码短，问题简单，只需要查看几个变量的值的情况。一般是在怀疑可能会出错的代码行前面使用<code class="docutils literal notranslate"><span class="pre">print()</span></code>语句打印出一些变量值或函数输出结果，从而帮助程序员判断哪里出错。</p>
-<p>例如，下面的例子中在可能发生错误的前一行使用 print 语句输出变量 a 与 b 的值。</p>
+<section id="debugging">
+<h2><span class="section-number">6.5. </span>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
+<hr><p>Debugging a program is an unavoidable step in programming. The purpose of debugging is to help identify and fix errors in the program. Even the best programmers can’t write a completely error-free program on the first try. Python provides several common methods for debugging programs.</p>
+<section id="debug-using-print">
+<h3><span class="section-number">6.5.1. </span>Debug using <code class="docutils literal notranslate"><span class="pre">print()</span></code><a class="headerlink" href="#debug-using-print" title="Link to this heading">#</a></h3>
+<hr><p>This method typically involves placing <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements before lines of code that are suspected to contain errors, in order to print out certain variable values or function outputs. This helps the programmer determine where the error is occurring. This debugging method is suitable for situations where the code is short, the problem is simple, and only a few variables need to be checked.</p>
+<p>For example, the following codes have a <code class="docutils literal notranslate"><span class="pre">print()</span></code> line to ouput the values of a and b to check the possible erros.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DEBUG: a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 调试信息</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>  <span class="c1"># 可能发生 ZeroDivisionError</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DEBUG: a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># check the value of a and b</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># 这里会出错</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># there is somthing wrong here</span>
 </pre></div>
 </div>
-<p>这种方法的缺点是：每次都要手动修改 print() 位置；不能暂停代码，调试麻烦。</p>
+<p>The drawbacks of this method is: the <code class="docutils literal notranslate"><span class="pre">print()</span></code> positions need to be manually modified each time.</p>
 </section>
-<section id="id7">
-<h3><span class="section-number">6.5.2. </span>使用调试器调试<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
-<hr><p>Python 自带一个调试器 <code class="docutils literal notranslate"><span class="pre">pdb</span></code>，其他的 Python 编程软件（IDE）Spyder, Pycharm, VS code 等在菜单栏或工具栏也有专门的调试功能。</p>
-<p>调试器调试的一般步骤是：</p>
+<section id="debug-using-a-dubugger">
+<h3><span class="section-number">6.5.2. </span>Debug using a dubugger<a class="headerlink" href="#debug-using-a-dubugger" title="Link to this heading">#</a></h3>
+<hr><p>Python comes with a built-in debugger called <code class="docutils literal notranslate"><span class="pre">pdb</span></code>. Additionally, other Python IDEs such as <code class="docutils literal notranslate"><span class="pre">Spyder</span></code>, <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code>, and <code class="docutils literal notranslate"><span class="pre">VS</span> <span class="pre">Code</span></code> provide dedicated debugging features in their menu or toolbar.</p>
+<p>The general steps for debugging with a debugger are:</p>
 <ol class="arabic simple">
-<li><p>在怀疑出错的代码行前面设置断点</p>
+<li><p>Set a breakpoint before the suspected problematic code line</p>
 <ul class="simple">
-<li><p>IDE软件是在代码行号处单击（会出现红点）</p></li>
-<li><p>pdb为添加一行代码 pdb.set_trace()</p></li>
+<li><p>In IDEs: Click next to the line number (a red dot will appear)</p></li>
+<li><p>In pdb: Add the line <code class="docutils literal notranslate"><span class="pre">pdb.set_trace()</span></code></p></li>
 </ul>
 </li>
-<li><p>启动调试</p></li>
-<li><p>使用调试功能，发现或修改错误</p></li>
-<li><p>退出调试</p></li>
+<li><p>Use debugging tools to identify or fix errors</p></li>
+<li><p>Exit debugging mode</p></li>
 </ol>
-<p>下面代码为使用 pdb 进行调试的例子：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span>
+<p>The following codes are an example using <code class="docutils literal notranslate"><span class="pre">pdb</span></code> to debug:</p>
+<ul class="simple">
+<li><p>Before using <code class="docutils literal notranslate"><span class="pre">pdb</span></code>, first import the pdb library by <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pdb</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span> <span class="c1"># import the pdb library</span>
 
 
 <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># 进入调试模式</span>
+    <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># the line for pdb debugging</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>运行代码后，会出现一个 pdb 的命令行，我们可以在命令后输入命令进行调试。</p>
-<p>pdb 常用命令：</p>
+<p>After running the code, a <code class="docutils literal notranslate"><span class="pre">pdb</span> <span class="pre">command-line</span> <span class="pre">interface</span></code> will appear, allowing you to enter debugging commands for troubleshooting.</p>
+<p>Some commands for <code class="docutils literal notranslate"><span class="pre">pdb</span></code>:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>命令</p></th>
-<th class="head"><p>作用</p></th>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Function</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>n (next)</p></td>
-<td><p>执行当前行，不进入函数</p></td>
+<td><p>Execute current line (without entering functions)</p></td>
 </tr>
 <tr class="row-odd"><td><p>s (step)</p></td>
-<td><p>进入函数内部</p></td>
+<td><p>Step into function calls</p></td>
 </tr>
 <tr class="row-even"><td><p>r (return)</p></td>
-<td><p>运行到当前函数结束</p></td>
+<td><p>Run until current function returns</p></td>
 </tr>
 <tr class="row-odd"><td><p>p var</p></td>
-<td><p>打印变量值</p></td>
+<td><p>Print variable value</p></td>
 </tr>
 <tr class="row-even"><td><p>c (continue)</p></td>
-<td><p>继续运行到下一个断点</p></td>
+<td><p>Continue execution until next breakpoint</p></td>
 </tr>
 <tr class="row-odd"><td><p>q</p></td>
-<td><p>退出调试</p></td>
+<td><p>Quit debugging</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
 <section id="step-into-step-over-step-out-resume-program">
-<h3><span class="section-number">6.5.3. </span>调试功能的 step into, step over, step out, resume program<a class="headerlink" href="#step-into-step-over-step-out-resume-program" title="Link to this heading">#</a></h3>
-<hr><p>使用 IDE 软件调试时，<code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">into</span></code>、<code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">over</span></code>、<code class="docutils literal notranslate"><span class="pre">step</span> <span class="pre">out</span></code>和 <code class="docutils literal notranslate"><span class="pre">resume</span> <span class="pre">program</span></code> 是调试器的常见功能，它们的区别如下：</p>
+<h3><span class="section-number">6.5.3. </span><code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code><a class="headerlink" href="#step-into-step-over-step-out-resume-program" title="Link to this heading">#</a></h3>
+<hr><p>When using an IDE for debugging, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, and <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code> are common debugger functions, and their differences are as follows:</p>
 <ul class="simple">
-<li><p>Step Into（进入函数）：逐行执行代码，并且如果当前行有函数调用，就进入该函数内部。</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code><br />
+Executes code line-by-line. If the current line contains a function call, it enters that function.</p>
 <ul>
-<li><p>相当于 pdb 中的 <code class="docutils literal notranslate"><span class="pre">s</span></code></p></li>
+<li><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">s</span></code> in pdb</p></li>
 </ul>
 </li>
-<li><p>Step Over（跳过函数）：执行当前行的代码，但如果当前行有函数调用，则不进入该函数，而是直接执行完该行，停在下一行。</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>
+Executes the current line’s code. If the line contains a function call, it runs the entire function without stepping inside, then pauses at the next line.</p>
 <ul>
-<li><p>相当于 pdb 中的 <code class="docutils literal notranslate"><span class="pre">n</span></code></p></li>
+<li><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">n</span></code> in pdb</p></li>
 </ul>
 </li>
-<li><p>Step Out（跳出函数）：如果在函数内部，执行完当前函数的剩余代码，并返回到调用该函数的位置；如果在函数外部，则继续执行程序，直到下一个断点或程序结束</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code><br />
+When inside a function: Completes the remaining code of the current function and returns to its caller.<br />
+Outside functions: Continues execution until the next breakpoint or program end.</p>
 <ul>
-<li><p>相当于 pdb 中的 <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
+<li><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">r</span></code> in pdb</p></li>
 </ul>
 </li>
-<li><p>resume program：继续执行程序，直到下一个断点或程序结束。</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code>
+Continues program execution until the next breakpoint or program termination.</p>
 <ul>
-<li><p>相当于 pdb 中的 <code class="docutils literal notranslate"><span class="pre">c</span></code></p></li>
+<li><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">c</span></code> in pdb</p></li>
 </ul>
 </li>
 </ul>
@@ -1345,7 +1423,7 @@ final x is 18
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 如果在这里 &quot;Step Into&quot;，会进入 add 函数</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># if using &quot;Step Into&quot; when debugging, the dubgugger will enter the first line of the &quot;add&quot; function</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
@@ -1359,7 +1437,6 @@ final x is 18
 </div>
 </div>
 </div>
-<p>在 result = add(x, y) 这一行 Step Into，会进入 add 函数的第一行，逐行执行 add 的代码。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -1369,7 +1446,7 @@ final x is 18
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 如果在这里 &quot;Step Over&quot;，不会进入 add，直接执行并跳到 print(result)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># if using &quot;Step Over&quot; here, the dubugger will execute the &quot;add&quot; function and go to the next line in the current block</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
@@ -1383,20 +1460,20 @@ final x is 18
 </div>
 </div>
 </div>
-<p>在 result = add(x, y) 这一行 Step Over，不会进入 add 函数，而是直接执行完 add，然后跳到 print(result)。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span>
 
 
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># 如果在这里 &quot;Step Out&quot;，会直接执行 return 并返回到 main() 的调用处</span>
+    <span class="k">pass</span> <span class="c1"># If using &quot;Step Out&quot; here, the dubugger will execute the &quot;add&quot; function and return to its caller</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  
 
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Execution will pause here after stepping out</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 
@@ -1410,47 +1487,47 @@ final x is 18
 </div>
 </div>
 </div>
-<p>如果调试器当前在 return a + b 这一行，使用 Step Out，会执行 return a + b 并直接回到 result = add(x, y) 这一行。</p>
-<p>在一些调试器中（例如 Pycharm），<code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span> <span class="pre">My</span> <span class="pre">Code</span></code> 是一个增强版的 Step Into，它的作用是：</p>
 <ul class="simple">
-<li><p>进入你自己编写的代码，而跳过 Python 内置库、第三方库的代码。</p></li>
-<li><p>避免进入外部库（如 numpy, pandas 等），只调试自己写的部分，提高调试效率。</p></li>
+<li><p>Python has a keyword called <code class="docutils literal notranslate"><span class="pre">pass</span></code>, which performs no operation. It is typically used as a placeholder statement and can be helpful during program debugging.</p></li>
+</ul>
+<p>In some debuggers (such as PyCharm), <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span> <span class="pre">My</span> <span class="pre">Code</span></code> is an enhanced version of Step Into that serves the following purposes:</p>
+<ul class="simple">
+<li><p>Steps into your own written code while skipping Python built-in libraries and third-party library code.</p></li>
+<li><p>Avoids entering external libraries (like numpy, pandas, etc.), focusing only on debugging your own code to improve debugging efficiency.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Spyder 软件的调试功能命令与上面所讲的命令略有不同，但比较类似。</p>
+<p>The debugging fucionts in some Python IDEs may be a little different with the above descriptions, but are generally quite similar.</p>
 </div>
 </section>
-</section>
-<section id="try-except">
-<h2><span class="section-number">6.6. </span>try-except 语句调试<a class="headerlink" href="#try-except" title="Link to this heading">#</a></h2>
+<section id="debug-using-try-except-statements">
+<h3><span class="section-number">6.5.4. </span>Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements<a class="headerlink" href="#debug-using-try-except-statements" title="Link to this heading">#</a></h3>
 <hr>
-<p>在编写程序时，有时候不知道程序能否正确运行，想试试程序运行结果如何，可以使用 try-except语句；若 try 块中的语句无法执行通过，则执行 except 块中的语句。</p>
+<p>When writing programs, sometimes you’re unsure whether the code will run correctly and want to test how it executes. In such cases, you can use a <strong>try-except statement</strong>: if the code in the <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">block</span></code> fails to execute successfully, the program will then run the code in the <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">block</span></code>.</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th style="text-align:center">try-excpet 语句的一般用法</th>
     </tr>
     <tr>
         <td style="text-align:left">try:</td>
     </tr> 
     <tr>
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<语句块1></td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements</td>
     </tr>
     <tr>
-        <td style="text-align:left">except [异常类型]:</td>
+        <td style="text-align:left">except SomeError:</td>
     </tr> 
     <tr style="border-bottom:solid">
-        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<语句块2></td>
+        <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statements</td>
     </tr>
 </table>
-<br /><p>这个语句在程序调试时经常使用，下面的代码定义了一个除法函数：</p>
+<br /><p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">/</span> <span class="n">x2</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>  <span class="c1"># ZeroDivisionError 表示试图除以零时发生的错误</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>  <span class="c1"># ZeroDivisionError is an error when trying to dividing a number by zero</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x2 should not be zero&quot;</span><span class="p">)</span>
 
 
@@ -1464,188 +1541,60 @@ final x is 18
 </div>
 </div>
 </div>
-<p>上面的代码中，若 x1 能除以 x2，则输出除法结果，否则提示 x2 不能为零。</p>
-<p>Python 还有一个关键字<code class="docutils literal notranslate"><span class="pre">pass</span></code>，不执行任何命令。一般用做占位语句，在程序调试时可以使用。</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">/</span> <span class="n">x2</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">pass</span>
-
-
-<span class="n">devide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>上面的代码中，若 x1 能除以 x2，则输出除法结果，否则程序不输出任何结果。</p>
-<p>常见的异常类型还有：</p>
+<p>In the above code, if x1 can be divided by x2, output the quotient; otherwise, output a notice.</p>
+<p>Common exception types include:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>异常类型</p></th>
-<th class="head"><p>描述</p></th>
+<tr class="row-odd"><th class="head"><p>Exception Type</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>AttributeError</p></td>
-<td><p>访问对象不存在的属性或方法</p></td>
+<tr class="row-even"><td><p><strong>AttributeError</strong></p></td>
+<td><p>Raised when accessing a non-existent attribute or method of an object.</p></td>
 </tr>
-<tr class="row-odd"><td><p>IndexError</p></td>
-<td><p>访问超出列表范围的索引</p></td>
+<tr class="row-odd"><td><p><strong>IndexError</strong></p></td>
+<td><p>Occurs when trying to access an index outside the valid range of a sequence.</p></td>
 </tr>
-<tr class="row-even"><td><p>SyntaxError</p></td>
-<td><p>语法错误</p></td>
+<tr class="row-even"><td><p><strong>SyntaxError</strong></p></td>
+<td><p>Caused by incorrect Python syntax (e.g., missing colons or parentheses).</p></td>
 </tr>
-<tr class="row-odd"><td><p>NameError</p></td>
-<td><p>访问未定义的变量或函数时发生的错误</p></td>
+<tr class="row-odd"><td><p><strong>NameError</strong></p></td>
+<td><p>Raised when referencing an undefined variable or function.</p></td>
 </tr>
-<tr class="row-even"><td><p>TypeError</p></td>
-<td><p>调用函数时，传递参数的类型错误</p></td>
+<tr class="row-even"><td><p><strong>TypeError</strong></p></td>
+<td><p>Occurs when a function receives an argument of an inappropriate type.</p></td>
 </tr>
-<tr class="row-odd"><td><p>ModuleNotFoundError</p></td>
-<td><p>导入不存在的模块或找不到模块</p></td>
+<tr class="row-odd"><td><p><strong>ModuleNotFoundError</strong></p></td>
+<td><p>Triggered when attempting to import a module that does not exist or cannot be found.</p></td>
 </tr>
-<tr class="row-even"><td><p>ValueError</p></td>
-<td><p>函数参数的数据类型正确，但值不符合要求</p></td>
+<tr class="row-even"><td><p><strong>ValueError</strong></p></td>
+<td><p>Raised when a function argument has the correct type but an invalid value.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="module">
-<h2><span class="section-number">6.7. </span>导入其他模块（module）<a class="headerlink" href="#module" title="Link to this heading">#</a></h2>
-<hr><p>Python 编程中，每个以 .py 为后缀的文件被称作模块（module）。很多时候，我们需要导入其他模块中的函数，</p>
-<p>在 Python 中导入其他文件夹中的模块时，有几个规则和方法可供使用。主要涉及 Python 的<strong>模块搜索路径（sys.path</strong>），以及如何使用<strong>相对导入</strong>和<strong>绝对导入</strong>。</p>
-<section id="python">
-<h3><span class="section-number">6.7.1. </span>Python 如何查找模块<a class="headerlink" href="#python" title="Link to this heading">#</a></h3>
-<hr><ol class="arabic simple">
-<li><p><strong>当前目录</strong>（脚本所在的文件夹）。</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">sys.path</span></code> 中的目录</strong>：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> 环境变量中的路径。</p></li>
-<li><p>Python 安装目录中的标准库路径。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">site-packages</span></code> 目录（安装的第三方库）。</p></li>
-</ul>
-</li>
-</ol>
-<p>你可以运行以下代码查看 Python sys.path中的路径目录：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;C:\\ProgramData\\anaconda3\\python312.zip&#39;, &#39;C:\\ProgramData\\anaconda3\\DLLs&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib&#39;, &#39;C:\\ProgramData\\anaconda3&#39;, &#39;&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\win32&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\win32\\lib&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\Pythonwin&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\setuptools\\_vendor&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id8">
-<h3><span class="section-number">6.7.2. </span>同级模块导入或同级文件夹下的模块导入<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
-<hr><p>若导入模块是当前模块的同级文件，即二者在一个父目录下，例如：</p>
-<p><strong>目录结构</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
-│── main.py
-│── my_module.py
-</pre></div>
-</div>
-<p>我们在 main.py 文件中想导入 my_module.py 模块，可以：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
-</pre></div>
-</div>
-<p>若具体想导入 my_module.py 模块中的某个函数或类 foo()，可以</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="n">foo</span>
-</pre></div>
-</div>
-<p>若导入模块在与当前模块同级的文件夹下，例如：</p>
-<p><strong>目录结构</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
-│── main.py
-│── folder1/
-│    │── my_module.py
-</pre></div>
-</div>
-<p>我们在 main.py 文件中想导入 folder1 文件夹下的 my_module.py 模块，可以：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder1.my_module</span> <span class="kn">import</span> <span class="n">foo</span>
-</pre></div>
-</div>
-</section>
-<section id="id9">
-<h3><span class="section-number">6.7.3. </span>与父文件夹同级的模块导入<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
-<hr><p>若导入模块在与当前模块父文件夹同级，例如：</p>
-<p><strong>目录结构1</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
-│── my_module.py
-│── folder1/
-│    │── main.py
-</pre></div>
-</div>
-<p>或者：</p>
-<p><strong>目录结构2</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
-│── folder2
-│    │── my_module.py
-│── folder1/
-│    │── main.py
-</pre></div>
-</div>
-<p>在 main.py 文件中想导入与父文件夹同级的 my_module.py 模块，可以通过将父文件夹路径添加到 sys.path 中去的方式：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="c1"># 获取 `parent_directory` 路径</span>
-<span class="n">parent_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;..&quot;</span><span class="p">))</span>  <span class="c1"># .. represents the parent directory</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parent_dir</span><span class="p">)</span>  <span class="c1"># 插入 `parent_directory` 到 sys.path</span>
-</pre></div>
-</div>
-<p>现在可以正确导入 my_module.py</p>
-<ul class="simple">
-<li><p>若为目录结构1： import my_module</p></li>
-<li><p>若为目录结构2:    from folder2 import my_module</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Pycharm 会自动把整个项目文件夹的根目录加入到 sys.path 中，因此在 Pycharm 中，都可按照跟目录下的模块导入</p>
-</div>
-<p>例如，在 Pycharm 中，对于目录结构2，可以直接按下面代码导入模块，而不用通过 sys.path 添加父文件夹路径。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder2</span> <span class="kn">import</span> <span class="n">my_module</span>
-</pre></div>
-</div>
-</section>
-<section id="sys-path-append">
-<h3><span class="section-number">6.7.4. </span>使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code><a class="headerlink" href="#sys-path-append" title="Link to this heading">#</a></h3>
-<hr>
-<p>如果你的模块所在路径比较复杂，你可以使用以下方法 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code>添加导入模块的具体路径。</p>
-<p>例如，如果你想导入 <code class="docutils literal notranslate"><span class="pre">other_folder/module.py</span></code>，其中，”other_folder” 为文件夹在电脑硬盘中的详细地址。可以在代码中手动添加路径：</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;other_folder&quot;</span><span class="p">))</span>  <span class="c1"># 临时将路径添加到 sys.path</span>
-<span class="kn">import</span> <span class="nn">module</span>  <span class="c1"># 现在可以正常导入</span>
-</pre></div>
-</div>
-</section>
 </section>
 <section id="lambda-map-filter-reduce">
-<h2><span class="section-number">6.8. </span>lambda, map, filter, reduce 函数<a class="headerlink" href="#lambda-map-filter-reduce" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.6. </span><code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce</span></code><a class="headerlink" href="#lambda-map-filter-reduce" title="Link to this heading">#</a></h2>
 <hr>
-<p>Python 使用<code class="docutils literal notranslate"><span class="pre">lambda</span></code>来创建匿名函数。所谓匿名，即不再使用 def 语句这样标准的形式定义一个函数。<strong>lambda 函数只有一行</strong>，用一个冒号分割传递参数与函数的返回值。非常简洁，在 Pandas 处理数据时经常结合 apply 函数使用。</p>
+<p>Python uses <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> or <code class="docutils literal notranslate"><span class="pre">reduce</span></code> to create anonymous functions. The term “anonymous” means these functions are not defined using the standard def statement.</p>
+<p>Key Features:</p>
+<ul class="simple">
+<li><p><strong>Single-line only</strong>: Lambda functions are restricted to one expression.</p></li>
+<li><p>Syntax: Separates input arguments and the return value with a colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>).</p></li>
+</ul>
+<p>The syntax for <code class="docutils literal notranslate"><span class="pre">lambda</span></code> anonymous function is:</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
-            <th style="text-align:center">lambda 函数的一般用法</th>
     </tr>
     <tr style="border-bottom:solid">
-        <td style="text-align:left"><函数名> = lambda <参数列表>: <表达式></td>
+        <td style="text-align:left"> function_name = lambda parameters: return statements</td>
     </tr>    
 </table>
-<br /><div class="cell docutils container">
+<br /><p>For example:</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -1658,7 +1607,8 @@ final x is 18
 </div>
 </div>
 </div>
-<p>也可以结合 if-else 语句定义 lambda 函数。</p>
+<p>In the above codes, “add” is the function name, the parameters are x1, x2 and the return value is x1 + x2.</p>
+<p>We can also use the <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement in the lambda function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Max</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="k">else</span> <span class="n">b</span>
@@ -1672,7 +1622,18 @@ final x is 18
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">map(fun,</span> <span class="pre">iter)</span></code> 对每一个可迭代对象 iter 中的元素应用 fun 函数，并返回一个 map 类型的可迭代对象。fun 函数既可以使用 lambda 匿名函数，也可以用 def 自定义一个函数。</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">map(fun,</span> <span class="pre">iter)</span></code> function applies the function “fun” to each element in an iterable object and returns a <strong>map-type iterable object</strong>.</p>
+<p>Key Features:</p>
+<ul class="simple">
+<li><p>Applies a function to every item in an iterable (e.g., list, tuple).</p></li>
+<li><p><strong>Returns a map object</strong> (an iterator), which can be converted to a list, tuple, etc.</p></li>
+<li><p>fun` can be:</p>
+<ul>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">lambda</span></code> anonymous function(for simple operations).</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">def</span></code> custom function (for complex logic).</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1682,12 +1643,12 @@ final x is 18
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x2abcbfaab00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1287fcdc0&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>可以用<code class="docutils literal notranslate"><span class="pre">list()</span></code>函数将这个可迭代对象转化为 list 类型：</p>
+<p>We can use `list()`` function to convert the map-type iteratble object to the type list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
@@ -1700,11 +1661,11 @@ final x is 18
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">filter(fun,</span> <span class="pre">iter)</span></code> 对可迭代对象 iter 中的每一个元素应用判断函数 fun 过滤，并返回一个 filter 类型的可迭代对象。</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">filter(fun,</span> <span class="pre">iter)</span></code> function applies a filtering function “fun” to each element in the iterable iter and returns a <strong>filter-type iterable object</strong> containing only the elements that meet the condition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>  <span class="c1"># 将大于等于 2 的元素过滤出来</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>  <span class="c1"># filter the elements which are greater equal than 2</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1715,13 +1676,13 @@ final x is 18
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">reduce(fun,</span> <span class="pre">iter)</span></code>首先对可迭代对象 iter 中的前两个元素应用函数 fun，然后将其结果作为 fun 的第一个输入值，再对第 3 个元素应用 fun 函数；以此类推，最后返回一个数。使用 reduce 函数需要从工具包 functools 中提前导入。</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">reduce(fun,</span> <span class="pre">iter)</span></code> function applies a function “fun” cumulatively to items in an iterable object, reducing them to a single value. It <strong>first applies the function to the first two elements</strong> in the iterable iter, then uses the result as the first input for fun when processing the third element, and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>  <span class="c1"># 从工具包 functools 中导入 reduce</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>  <span class="c1"># import reduce from the library functools</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>  <span class="c1"># 求和</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> 
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -1732,11 +1693,16 @@ final x is 18
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>也可以跟 3 个参数，即<code class="docutils literal notranslate"><span class="pre">reduce(fun,</span> <span class="pre">iter,</span> <span class="pre">start=None)</span></code>。此时，首先对一个初始值 start 与可迭代对象 iter 中的第一个元素应用函数 fun，然后将其结果作为 fun 的第一个输入值，再对第 2 个元素应用 fun 函数；以此类推，最后返回一个数。</p>
+<p>The reduce function <strong>can also accept three parameters</strong>, in the form of <code class="docutils literal notranslate"><span class="pre">reduce(fun,</span> <span class="pre">iter,</span> <span class="pre">start=None)</span></code>. In this case:</p>
+<ul class="simple">
+<li><p>It first applies the function fun to the initial value start and the first element of the iterable iter.</p></li>
+<li><p>Then uses the result as the first input for fun when processing the second element.</p></li>
+<li><p>This process continues sequentially through all elements and finally returns a single accumulated value.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># 求和，起始值为 10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># initial value is 10</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -1748,8 +1714,139 @@ final x is 18
 </div>
 </div>
 </section>
-<section id="id10">
-<h2><span class="section-number">6.9. </span>练习<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<section id="import-other-modules-1">
+<h2><span class="section-number">6.7. </span>Import other modules*[^1]<a class="headerlink" href="#import-other-modules-1" title="Link to this heading">#</a></h2>
+<hr>
+[^1]: \* means this section may not be delivered in class.<p>In Python programming, every file with a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension is called a module. Often, we need to import functions from other modules just like we import some libraries.</p>
+<section id="where-python-find-modules">
+<h3><span class="section-number">6.7.1. </span>Where Python find modules<a class="headerlink" href="#where-python-find-modules" title="Link to this heading">#</a></h3>
+<hr><p>The search order for Python modules is as follows:</p>
+<ol class="arabic simple">
+<li><p><strong>Current directory</strong> (the folder where the script is located).</p></li>
+<li><p><strong>Directories in <code class="docutils literal notranslate"><span class="pre">sys.path</span></code></strong>:</p>
+<ul class="simple">
+<li><p>Paths specified in the <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable.</p></li>
+<li><p>Standard library paths in the Python installation directory (for built-in libraries).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> directory (for installed third-party libraries).</p></li>
+</ul>
+</li>
+</ol>
+<p>We can check the directories by the following code using <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science&#39;, &#39;/Users/yourname/projects&#39;, &#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science&#39;, &#39;/opt/anaconda3/lib/python312.zip&#39;, &#39;/opt/anaconda3/lib/python3.12&#39;, &#39;/opt/anaconda3/lib/python3.12/lib-dynload&#39;, &#39;&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages/aeosa&#39;, &#39;/opt/anaconda3/lib/python3.12/site-packages/setuptools/_vendor&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-a-sibling-module">
+<h3><span class="section-number">6.7.2. </span>Import a sibling module<a class="headerlink" href="#import-a-sibling-module" title="Link to this heading">#</a></h3>
+<hr><p>If the imported module is a sibling file of the current module—meaning they share the same parent directory—for example:</p>
+<p><strong>Directory structure</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│── main.py
+│── my_module.py
+</pre></div>
+</div>
+<p>We can directly import the sibiling module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
+</pre></div>
+</div>
+<p>If we just want to import some function or class named “foo” in the sibling module, we can use <code class="docutils literal notranslate"><span class="pre">from-import</span></code> statement.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="n">foo</span>
+</pre></div>
+</div>
+</section>
+<section id="import-a-nephew-niece-module">
+<h3><span class="section-number">6.7.3. </span>Import a nephew/niece module<a class="headerlink" href="#import-a-nephew-niece-module" title="Link to this heading">#</a></h3>
+<p>If the module to be imported is in a folder at the same level as the current module, for example:</p>
+<p><strong>Directory structure</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│── main.py
+│── folder1/
+│    │── my_module.py
+</pre></div>
+</div>
+<p>We can import “my_module.py” in the folder “folder1” by the following code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder1</span> <span class="kn">import</span> <span class="n">my_module</span>
+</pre></div>
+</div>
+<p>If we just want to import the function/class “foo” from “my_module.py”:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder1.my_module</span> <span class="kn">import</span> <span class="n">foo</span>
+</pre></div>
+</div>
+</section>
+<section id="import-a-aucle-aunt-cousin-module">
+<h3><span class="section-number">6.7.4. </span>Import a aucle/aunt, cousin module<a class="headerlink" href="#import-a-aucle-aunt-cousin-module" title="Link to this heading">#</a></h3>
+<hr><p>If the imported module is the sample level with the parent folder:</p>
+<p><strong>Director structure1</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│── my_module.py
+│── folder1/
+│    │── main.py
+</pre></div>
+</div>
+<p>Or if the import module is in the folder which has same level with the parent folder:</p>
+<p><strong>Directory structure2</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project_root/
+│── folder2
+│    │── my_module.py
+│── folder1/
+│    │── main.py
+</pre></div>
+</div>
+<p>We want to import “my_module.py” in the module “main.py”.</p>
+<ul class="simple">
+<li><p>First, we insert the parent directory to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># get the path of  the parent directory</span>
+<span class="n">parent_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;..&quot;</span><span class="p">))</span>  <span class="c1"># .. represents the parent directory</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parent_dir</span><span class="p">)</span>  <span class="c1"># insert the parent directory to sys.path</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Then we can import the my_module accorderingly:</p></li>
+</ul>
+<ul class="simple">
+<li><p>If the imported module is aucle/aunt： <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">my_module</span></code>.</p></li>
+<li><p>If the imported module is cousin: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">folder2</span> <span class="pre">import</span> <span class="pre">my_module</span></code>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PyCharm automatically adds the root directory of the entire project folder to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>. Therefore, in PyCharm, you can directly import modules based on the folder structure without manually adding the parent directory path via <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.</p>
+</div>
+<p>For example，for the directory structure2, we can directly import “my_module” by the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder2</span> <span class="kn">import</span> <span class="n">my_module</span>
+</pre></div>
+</div>
+</section>
+<section id="import-using-sys-path-append">
+<h3><span class="section-number">6.7.5. </span>Import using <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code><a class="headerlink" href="#import-using-sys-path-append" title="Link to this heading">#</a></h3>
+<hr>
+<p>If the path to your module is complex, you can use methods like <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code> to add the specific path of the module you want to import.</p>
+<p>For example, if you want to import “other_folder/my_module.py”, where other_folder is the full absolute path on your computer’s hard drive, you can do this:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;other_folder&quot;</span><span class="p">))</span>  <span class="c1"># add the path of &quot;other_foler&quot; to sys.path</span>
+<span class="kn">import</span> <span class="nn">my_module</span> 
+</pre></div>
+</div>
+</section>
+</section>
+<section id="exercises">
+<h2><span class="section-number">6.8. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="abs">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
@@ -1821,37 +1918,34 @@ final x is 18
 <p>C</p>
 </section>
 </div>
-<div class="exercise admonition" id="judge-leap-year">
+<div class="exercise admonition" id="lambda">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.4 </span></p>
 <section id="exercise-content">
-<p>判断用户输入的年份是否为闰年。</p>
+<p>What is the output of the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">foo</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>A.    5</p>
+<p>B.    6</p>
+<p>C.    11</p>
+<p>D.    30</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="define-function-solution-7">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#judge-leap-year"> Exercise 6.4</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#lambda"> Exercise 6.4</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入一个年份: &quot;</span><span class="p">))</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 是闰年&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>  <span class="c1"># 整百年能被400整除的是闰年</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 不是闰年&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 是闰年&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>  <span class="c1"># 非整百年能被4整除的为闰年</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 不是闰年&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
-</pre></div>
-</div>
+<p>D</p>
 </section>
 </div>
 <div class="exercise admonition" id="circle-area">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.5 </span></p>
 <section id="exercise-content">
-<p>根据给定的半径值，计算圆的面积</p>
+<p>Define a function to compute the area of a circle with given radius. (tips: area = <span class="math notranslate nohighlight">\(\pi\)</span><em>radius</em>radius)</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="define-function-solution-9">
@@ -1860,80 +1954,51 @@ final x is 18
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
+<span class="n">define</span> <span class="n">area_cicle</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the area of the circle is </span><span class="si">{</span><span class="n">area</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
 <span class="n">r</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;圆的面积为 </span><span class="si">%.6f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
+<span class="n">area_circle</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 </div>
-<div class="exercise admonition" id="quad-equation">
+<div class="exercise admonition" id="sum-cub">
 
 <p class="admonition-title"><span class="caption-number">Exercise 6.6 </span></p>
 <section id="exercise-content">
-<p>通过用户输入数字 a, b, c，计算二次方程: <span class="math notranslate nohighlight">\(ax^2 + bx +c\)</span>。
-(提示：cmath 工具包可以计算负数的开方)</p>
+<p>Define a function, with given value of <span class="math notranslate nohighlight">\(n\)</span>, it can calculate the sum of the cubes of all natural numbers from 1 to <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="define-function-solution-11">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#quad-equation"> Exercise 6.6</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#sum-cub"> Exercise 6.6</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
-<span class="kn">import</span> <span class="nn">cmath</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 a: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 b: &quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入 c: &quot;</span><span class="p">))</span>
-
-<span class="c1"># 计算</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
-
-<span class="c1"># 两种求解方式</span>
-<span class="n">sol1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-<span class="n">sol2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">cmath</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;结果为 </span><span class="si">{0}</span><span class="s2"> 和 </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sol1</span><span class="p">,</span> <span class="n">sol2</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="triangle-area">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.7 </span></p>
-<section id="exercise-content">
-<p>通过用户输入三角形三边长度，并计算三角形的面积。</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="define-function-solution-13">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#triangle-area"> Exercise 6.7</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入 cmath(复杂数学运算) 模块</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第一边长: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第二边长: &quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入三角形第三边长: &quot;</span><span class="p">))</span>
-
-<span class="c1"># 计算半周长</span>
-<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-
-<span class="c1"># 计算面积</span>
-<span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">c</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;三角形面积为 </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">area</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span><span class="n">i</span>       
+    <span class="k">return</span> <span class="nb">sum</span>
+ 
+   
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
 </div>
 <div class="exercise admonition" id="dict-values">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.8 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.7 </span></p>
 <section id="exercise-content">
 <p>Define a dict with all the values are numeric and compute the sum of all the values.</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-15">
+<div class="solution dropdown admonition" id="define-function-solution-13">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 6.8</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 6.7</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dictSum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1947,241 +2012,28 @@ final x is 18
 </div>
 </section>
 </div>
-<div class="exercise admonition" id="print-multiplication-table">
+<div class="exercise admonition" id="judge-leap-year">
 
-<p class="admonition-title"><span class="caption-number">Exercise 6.9 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.8 </span></p>
 <section id="exercise-content">
-<p>编写一个程序，打印出九九乘法表。</p>
+<p>Define a function to evaluate whether the input year is leap year or not. (tips: a leap year is a year value that is divisible by 4 but not by 100, or divisible by 400.)</p>
 </section>
 </div>
-<div class="solution dropdown admonition" id="define-function-solution-17">
+<div class="solution dropdown admonition" id="define-function-solution-15">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#print-multiplication-table"> Exercise 6.9</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#judge-leap-year"> Exercise 6.8</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">*</span><span class="si">{}</span><span class="s1">=</span><span class="si">{}</span><span class="se">\t</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="sum-cub">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.10 </span></p>
-<section id="exercise-content">
-<p>自定义一个函数，给定数值 <span class="math notranslate nohighlight">\(n\)</span>，能够计算 从 1 到 <span class="math notranslate nohighlight">\(n\)</span> 所有自然数的立方和。</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="define-function-solution-19">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#sum-cub"> Exercise 6.10</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span><span class="n">i</span>       
-    <span class="k">return</span> <span class="nb">sum</span>
- 
-   
-<span class="c1"># 调用函数</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sumOfCube</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="great-common-devisor">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.11 </span></p>
-<section id="exercise-content">
-<p>从键盘输入两个整数，编写一个程序可以求出这两个整数的最大公约数。</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="define-function-solution-21">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#great-common-devisor"> Exercise 6.11</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一个函数</span>
-<span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">gcd</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 初始值为 1</span>
-
-    <span class="c1"># 获取两个数的最小值</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
-        <span class="n">smaller</span> <span class="o">=</span> <span class="n">y</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">smaller</span> <span class="o">=</span> <span class="n">x</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">smaller</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-            <span class="n">gcd</span> <span class="o">=</span> <span class="n">i</span>
-
-    <span class="k">return</span> <span class="n">gcd</span>
-
-
-<span class="c1"># 用户输入两个数字</span>
-<span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入第一个数字: &quot;</span><span class="p">))</span>
-<span class="n">num2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入第二个数字: &quot;</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="s2">&quot;和&quot;</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="s2">&quot;的最大公约数为&quot;</span><span class="p">,</span> <span class="n">gcd</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="fib-sequence">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.12 </span></p>
-<section id="exercise-content">
-<p>输出指定数目的斐波那契数列。</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="define-function-solution-23">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 6.12</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 获取用户输入数据</span>
-<span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;the number of sequence:&quot;</span><span class="p">))</span>
-
-<span class="c1"># 第一和第二项</span>
-<span class="n">n1</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">n2</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">count</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="c1"># 判断输入的值是否合法</span>
-<span class="k">if</span> <span class="n">nterms</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;please input a positive value&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">nterms</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;斐波那契数列：&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;斐波那契数列：&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="n">nterms</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">nth</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">nth</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
-
-        <span class="c1"># 更新值</span>
-        <span class="n">n1</span> <span class="o">=</span> <span class="n">n2</span>
-        <span class="n">n2</span> <span class="o">=</span> <span class="n">nth</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">nth</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nth</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="solution dropdown admonition" id="define-function-solution-24">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#fib-sequence"> Exercise 6.12</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recur_fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    递归函数</span>
-<span class="sd">    输出斐波那契数列</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">recur_fibo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">recur_fibo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-
-
-<span class="c1"># 获取用户输入</span>
-<span class="n">nterms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;您要输出几项? &quot;</span><span class="p">))</span>
-
-<span class="c1"># 检查输入的数字是否正确</span>
-<span class="k">if</span> <span class="n">nterms</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;输入正数&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;斐波那契数列:&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nterms</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">recur_fibo</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="range-prime-numbers">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.13 </span></p>
-<section id="exercise-content">
-<p>输出指定范围内的素数。</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="define-function-solution-26">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 6.13</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take input from the user</span>
-<span class="n">lower</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入区间最小值: &quot;</span><span class="p">))</span>
-<span class="n">upper</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;输入区间最大值: &quot;</span><span class="p">))</span>
- 
-<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="c1"># 素数大于 1</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">num</span><span class="p">):</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">break</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;input a year: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is a leap year&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>  
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="get-date">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.14 </span></p>
-<section id="exercise-content">
-<p>编写一个程序，能够得到昨天的日期。（提示：使用 datatime 库）</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="define-function-solution-28">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#range-prime-numbers"> Exercise 6.13</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
-
-
-<span class="k">def</span> <span class="nf">getYesterday</span><span class="p">():</span> 
-    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> 
-    <span class="n">oneday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
-    <span class="n">yesterday</span> <span class="o">=</span> <span class="n">today</span> <span class="o">-</span> <span class="n">oneday</span>  
-    <span class="k">return</span> <span class="n">yesterday</span>
-
- 
-<span class="c1"># 输出</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">getYesterday</span><span class="p">())</span>
-</pre></div>
-</div>
-</section>
-</div>
-<div class="exercise admonition" id="second-watch">
-
-<p class="admonition-title"><span class="caption-number">Exercise 6.15 </span></p>
-<section id="exercise-content">
-<p>编写一个程序，实现秒表功能。（提示：使用 time 库）</p>
-</section>
-</div>
-<div class="solution dropdown admonition" id="define-function-solution-30">
-
-<p class="admonition-title">Solution to<a class="reference internal" href="#second-watch"> Exercise 6.15</a></p>
-<section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;按下回车开始计时，按下任意键停止计时。&quot;</span><span class="p">)</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">starttime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;开始&quot;</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;计时: &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">starttime</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;结束&quot;</span><span class="p">)</span>
-        <span class="n">endtime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;总共的时间为:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">endtime</span> <span class="o">-</span> <span class="n">starttime</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;s&quot;</span><span class="p">)</span>
-        <span class="k">break</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not a leap year&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is a leap year&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span> 
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is not a lear year&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -2204,7 +2056,7 @@ final x is 18
 <div id="google_translate_element"></div>
 <script type="text/javascript">
       function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+        new google.translate.TranslateElement({ pageLanguage: 'en',
                   includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
 layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
       }
@@ -2280,29 +2132,34 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-built-in-functions">6.1. Some built-in functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.2. 条件语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">6.3. 循环语句</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">6.4. 自定义函数</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.4.1. 函数参数的传递类型</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.4.2. 函数的参数传入方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">6.2. <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-statement">6.3. Loop statement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">6.3.1. <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">6.3.2. <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.5. 调试程序</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">6.5.1. 使用 print() 进行简单调试</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.5.2. 使用调试器调试</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.5.3. 调试功能的 step into, step over, step out, resume program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-defined-functions">6.4. Self-defined functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-passing-types-in-functions">6.4.1. Parameter Passing Types in Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-passing-techniques-in-functions">6.4.2. Parameter passing techniques in functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">6.6. try-except 语句调试</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module">6.7. 导入其他模块（module）</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">6.7.1. Python 如何查找模块</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">6.7.2. 同级模块导入或同级文件夹下的模块导入</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6.7.3. 与父文件夹同级的模块导入</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-path-append">6.7.4. 使用 <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">6.5. Debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-print">6.5.1. Debug using <code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-a-dubugger">6.5.2. Debug using a dubugger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.5.3. <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-try-except-statements">6.5.4. Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.8. lambda, map, filter, reduce 函数</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">6.9. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.6. <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-other-modules-1">6.7. Import other modules*[^1]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-python-find-modules">6.7.1. Where Python find modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-sibling-module">6.7.2. Import a sibling module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-nephew-niece-module">6.7.3. Import a nephew/niece module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-aucle-aunt-cousin-module">6.7.4. Import a aucle/aunt, cousin module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-using-sys-path-append">6.7.5. Import using <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">6.8. Exercises</a></li>
 </ul>
   </nav></div>
 
