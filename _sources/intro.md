@@ -33,7 +33,7 @@ Dr Zhen Chen
 <div id="google_translate_element"></div>
 <script type="text/javascript">
       function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
+        new google.translate.TranslateElement({ pageLanguage: 'en',
                   includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
 layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
       }
