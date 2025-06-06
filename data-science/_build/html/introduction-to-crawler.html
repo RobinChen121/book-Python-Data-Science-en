@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. 爬虫入门 &#8212; Python 数据科学</title>
+    <title>8. 爬虫入门 &#8212; Python 数据科学</title>
   
   
   
@@ -16,20 +16,22 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -38,10 +40,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -64,10 +67,10 @@
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Python 面向对象编程" href="introduction-to-class.html" />
-    <link rel="prev" title="8. 统计分析" href="line-regression.html" />
+    <link rel="next" title="9. Python 面向对象编程" href="introduction-to-class.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,19 +86,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -103,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -111,8 +102,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -128,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -158,21 +150,17 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -190,16 +178,15 @@
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Introduction to Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Define functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Draw pictures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Draw graphs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="line-regression.html">8. 统计分析</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. 爬虫入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 的良好编程规范</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. 爬虫入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">9. Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">10. Python 的良好编程规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -208,9 +195,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -403,24 +395,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -444,17 +428,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">9.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">9.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findall-find">9.2.1. 函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">9.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">8.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">8.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findall-find">8.2.1. 函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">8.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 正则表达式</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.4. 爬虫实例 1：抓小说</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">9.5. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.6. 后记</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.3. 正则表达式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.4. 爬虫实例 1：抓小说</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">8.5. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.6. 后记</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.7. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -467,10 +451,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">9. </span>爬虫入门<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>爬虫入门<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>Python 的爬虫功能使得程序员可以快速抓取并分析网页中的信息，它实质上是模拟浏览器访问网页。本章主要常用的两个爬虫相关的库<code class="docutils literal notranslate"><span class="pre">requests</span></code>，<code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>。若要模拟鼠标点击等，要用到<code class="docutils literal notranslate"><span class="pre">selenium</span></code> 库，限于篇幅限制，本章不再介绍，具体可以查阅相关资料。</p>
 <section id="requests">
-<h2><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 库<a class="headerlink" href="#requests" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.1. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 库<a class="headerlink" href="#requests" title="Link to this heading">#</a></h2>
 <p>每个网页都有源代码，可以通过鼠标单击右键查看网页源代码。网页中的很多信息都在源代码里面，<code class="docutils literal notranslate"><span class="pre">requests</span></code> 是一个访问网页源代码的库。一般通过 get 函数访问网页，另外一个常用来访问网页的函数是 post，与 get 函数的区别在于 post 能够传递表格或文件到网页所在服务器上。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -565,7 +549,7 @@ document.write(`
 </div>
 </section>
 <section id="beautifulsoup4">
-<h2><span class="section-number">9.2. </span><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库<a class="headerlink" href="#beautifulsoup4" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.2. </span><code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库<a class="headerlink" href="#beautifulsoup4" title="Link to this heading">#</a></h2>
 <p>使用<code class="docutils literal notranslate"><span class="pre">requests</span></code>获取的网页源代码一般非常复杂，不仅包括常规内容，还包括很多定义页面格式的代码。</p>
 <div class="tip admonition">
 <p class="admonition-title">tips</p>
@@ -805,7 +789,7 @@ document.write(`
 </div>
 </div>
 <section id="findall-find">
-<h3><span class="section-number">9.2.1. </span>函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code><a class="headerlink" href="#findall-find" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.1. </span>函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code><a class="headerlink" href="#findall-find" title="Link to this heading">#</a></h3>
 <p>当需要列出同一类标签对应的所有内容时，需要用到 BeautifulSoup 中的 findall() 函数。</p>
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
@@ -884,7 +868,7 @@ document.write(`
 </div>
 </section>
 <section id="get">
-<h3><span class="section-number">9.2.2. </span>函数<code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.2.2. </span>函数<code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Link to this heading">#</a></h3>
 <p>通过函数<code class="docutils literal notranslate"><span class="pre">get</span></code>可以访问标签的具体属性，例如 class 类型，具体超链接等。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1009,7 +993,7 @@ document.write(`
 </section>
 </section>
 <section id="id2">
-<h2><span class="section-number">9.3. </span>正则表达式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.3. </span>正则表达式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>正则表达式是计算机科学中用来描述字符串的一种表达式。正则表达式定义一个字符串表达规则，只要字符串满足这个规则，就算匹配成功。可以通过字符串结合符号 .*?&lt;=()[]{}\d\w 等定义多种表达规则，并结合函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>,<code class="docutils literal notranslate"><span class="pre">search()</span></code>,<code class="docutils literal notranslate"><span class="pre">match()</span></code>等检索字符串。通过正则表达式，我们可以实现更加复杂的文本检索。</p>
 <p>一些常见的正则表达式：</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1182,7 +1166,7 @@ True
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">9.4. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.4. </span>爬虫实例 1：抓小说<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>下面，我们举例如何用爬虫抓取网上的《三国演义》小说，并将每回的内容下载到电脑里。</p>
 <p>首先，找到一个包含《三国演义》小说的网站，本例中，使用了古诗文网：https://so.gushiwen.cn/guwen/book_46653FD803893E4F7F702BCF1F7CCE17.aspx</p>
 <p>然后，在网页的空白处，单击鼠标右键，查看网页源代码：</p>
@@ -1277,7 +1261,7 @@ True
 <p>我们可以复制一部分信息或全部信息，放到 request 函数的 headers 参数里面。</p>
 </section>
 <section id="top-250">
-<h2><span class="section-number">9.5. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Link to this heading">#</a></h2>
 <p>我们想获取豆瓣高分评价的 250 部电影的信息：电影名字，导演，上映年代，评分，评分人数等。打开豆瓣 top 250 的网页链接 https://movie.douban.com/top250?start= ，发现每个网页显示 25 部电影，一共有 10 个挖网页，网页地址与链接中的 start = 后面的数字有关。例如第 3 个子网页的链接地址是 ‘https://movie.douban.com/top250?start=50 ，根据这个规律，我们可以用一个 for 循环，将 10 个网页分别打开抓取信息。</p>
 <p>打开一个网页，单击右键查看网页源代码，如下图所示：</p>
 <p><img alt="douban1.png" src="_images/douban1.PNG" /></p>
@@ -1554,7 +1538,7 @@ True
 <img alt="douban7.png" src="_images/douban7.png" /></p>
 </section>
 <section id="id4">
-<h2><span class="section-number">9.6. </span>后记<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>后记<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>不同的网站的爬虫技巧经常不一样，要具体网站具体分析。</p></li>
 <li><p>由于一些网站经常更新数据的存储地址或源代码，某段时间的爬虫代码可能在下一个时间段就不能用了，爬虫代码也要更新。</p></li>
@@ -1564,24 +1548,24 @@ True
 <p>近年来，许多网站都提高了反爬手段防止网站的数据被无端获取。因此，提醒读者避免过度使用爬虫，给一些网站造成不必要的访问负担。</p>
 </section>
 <section id="id5">
-<h2><span class="section-number">9.7. </span>练习<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7. </span>练习<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="crab-poem">
 
-<p class="admonition-title"><span class="caption-number">Exercise 9.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
 <section id="exercise-content">
 <p>练习从网上抓取一首诗词。</p>
 </section>
 </div>
 <div class="exercise admonition" id="crab-news">
 
-<p class="admonition-title"><span class="caption-number">Exercise 9.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8.2 </span></p>
 <section id="exercise-content">
 <p>练习抓取学校的新闻，并尝试画出词云图。</p>
 </section>
 </div>
 <div class="exercise admonition" id="crab-红楼">
 
-<p class="admonition-title"><span class="caption-number">Exercise 9.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 8.3 </span></p>
 <section id="exercise-content">
 <p>尝试用爬虫下载小说《红楼梦》到电脑里。</p>
 </section>
@@ -1645,21 +1629,12 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="line-regression.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>统计分析</p>
-      </div>
-    </a>
     <a class="right-next"
        href="introduction-to-class.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Python 面向对象编程</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Python 面向对象编程</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1670,7 +1645,8 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1679,17 +1655,17 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">9.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">9.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findall-find">9.2.1. 函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">9.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requests">8.1. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">8.2. <code class="docutils literal notranslate"><span class="pre">beautifulsoup4</span></code>库</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findall-find">8.2.1. 函数<code class="docutils literal notranslate"><span class="pre">findall()</span></code>，<code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get">8.2.2. 函数<code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 正则表达式</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.4. 爬虫实例 1：抓小说</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">9.5. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.6. 后记</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.7. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.3. 正则表达式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.4. 爬虫实例 1：抓小说</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-250">8.5. 爬虫实例 2：抓豆瓣 top 250 的电影信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">8.6. 后记</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">8.7. 练习</a></li>
 </ul>
   </nav></div>
 
@@ -1738,8 +1714,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
