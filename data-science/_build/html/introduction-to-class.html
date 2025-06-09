@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. Python 面向对象编程 &#8212; Python 数据科学</title>
+    <title>10. Python 面向对象编程 &#8212; Python 数据科学</title>
   
   
   
@@ -67,8 +67,8 @@
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Python 的良好编程规范" href="good-practices-python.html" />
-    <link rel="prev" title="8. 爬虫入门" href="introduction-to-crawler.html" />
+    <link rel="next" title="11. Python 的良好编程规范" href="good-practices-python.html" />
+    <link rel="prev" title="9. 爬虫入门" href="introduction-to-crawler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -184,10 +184,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">8. 爬虫入门</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">10. Python 的良好编程规范</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">11. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics1.html">8. Python statistics I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 的良好编程规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -429,14 +430,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.1. 类, 对象, 属性, 方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">9.2. 类的初始化 __init__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 类的继承与方法重写</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-getitem">9.4. 类的专有/特殊方法 __str__、__getitem__等</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">9.5. 类的特殊属性 __doc__、__name__ 等</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">9.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.7. 类方法与静态方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">9.8. dateclass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.1. 类, 对象, 属性, 方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.2. 类的初始化 __init__</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-getitem">10.4. 类的专有/特殊方法 __str__、__getitem__等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">10.5. 类的特殊属性 __doc__、__name__ 等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">10.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
             </nav>
         </div>
@@ -449,10 +450,10 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">9. </span>Python 面向对象编程<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Python 面向对象编程<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
 <hr><p>Python 是一种支持面向对象编程（Object Oriented Programming, OOP）的语言。面向对象编程是一种编程范式，它将数据和操作数据的函数封装在对象中，通过类（Class）和对象（Object）来组织代码，使得代码更易于理解、维护、扩展和重用, 特别适合开发大型、复杂的系统。</p>
 <section id="id1">
-<h2><span class="section-number">9.1. </span>类, 对象, 属性, 方法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.1. </span>类, 对象, 属性, 方法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr><p>面向对象编程中，类是对象的模板或蓝图，描述一类事物的属性（变量）和行为（方法）；而对象是类的实例，具体体现类的属性和行为。例如，定义企业员工为一个类，该类中，可以包含姓名，工资，工龄，职务等属性；而具体的一个企业员工张三或李四就是这个类的一个实例。打个比喻，类就像是“蛋糕模具”，对象是用这个模具做出的“蛋糕”。</p>
 <p>Python 通过 <code class="docutils literal notranslate"><span class="pre">class</span></code> 来定义一个类，并在类中进一步定义类的<code class="docutils literal notranslate"><span class="pre">属性</span></code>（数据）和<code class="docutils literal notranslate"><span class="pre">方法</span></code>（函数）。语法格式如下：</p>
 <table>   
@@ -530,7 +531,7 @@ My department is business school.
 </div>
 </section>
 <section id="init">
-<h2><span class="section-number">9.2. </span>类的初始化 __init__<a class="headerlink" href="#init" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2. </span>类的初始化 __init__<a class="headerlink" href="#init" title="Link to this heading">#</a></h2>
 <hr><p>类有一个名为 __init__() 的特殊方法，该方法在类实例化时会自动调用，进行对象的初始化。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,7 +574,7 @@ My department is engineering school.
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">9.3. </span>类的继承与方法重写<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.3. </span>类的继承与方法重写<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr><p>Python 支持类的继承，即一个类可以继承另一个类的所有属性和方法，还可以添加新的属性，新的方法或者重写另一个类的方法。</p>
 <p>例如，我们可以添加一个类 NewEmployee，继承 Employ 类。</p>
 <div class="cell docutils container">
@@ -670,7 +671,7 @@ I have passed probation.
 </div>
 </section>
 <section id="str-getitem">
-<h2><span class="section-number">9.4. </span>类的专有/特殊方法 __str__、__getitem__等<a class="headerlink" href="#str-getitem" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.4. </span>类的专有/特殊方法 __str__、__getitem__等<a class="headerlink" href="#str-getitem" title="Link to this heading">#</a></h2>
 <hr><p>以前后缀双下划线命名的方法为类的专有/特殊方法，又称作魔术方法，用以实现一些特定功能。</p>
 <p>下面表格中总结了一些常用的专有方法。</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -764,7 +765,7 @@ Bob, 30 years old
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x105834620&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x111d34470&gt;
 &lt;class &#39;__main__.Dog&#39;&gt;
 </pre></div>
 </div>
@@ -877,7 +878,7 @@ Arguments: (1, 2) {&#39;a&#39;: 3}
 </div>
 </section>
 <section id="doc-name">
-<h2><span class="section-number">9.5. </span>类的特殊属性 __doc__、__name__ 等<a class="headerlink" href="#doc-name" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.5. </span>类的特殊属性 __doc__、__name__ 等<a class="headerlink" href="#doc-name" title="Link to this heading">#</a></h2>
 <hr><p>在 Python 中，类的特殊属性也称作“魔术属性”（magic attribute），或“dunder”属性/方法，通常指以双下划线开头和结尾的特殊属性或方法。这些属性和方法内置于 Python 语言中，用于实现一些特殊行为和功能。</p>
 <p>除了专有方法，Python 还提供一些魔术属性，用于存储元数据或对象状态信息，如：</p>
 <ul class="simple">
@@ -971,7 +972,7 @@ Hello, world!
 </div>
 </section>
 <section id="setattr-getattr">
-<h2><span class="section-number">9.6. </span>类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code><a class="headerlink" href="#setattr-getattr" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.6. </span>类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code><a class="headerlink" href="#setattr-getattr" title="Link to this heading">#</a></h2>
 <hr><p>对于类中属性值的修改和访问，Python 内置有两个方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code>比较有用。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">setattr(object,</span> <span class="pre">name,</span> <span class="pre">value)</span></code> 设置一个对象 object 的属性 atribte 的值为 value，若没有找到属性，则新建属性并赋值 value</p></li>
@@ -1009,7 +1010,7 @@ male
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">9.7. </span>类方法与静态方法<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.7. </span>类方法与静态方法<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <hr><p>上面的例子中，类中方法的第一个参数总是 self，这类方法为<code class="docutils literal notranslate"><span class="pre">普通方法</span></code>，只能被对象调用。</p>
 <p>除了普通方法外，还有<code class="docutils literal notranslate"><span class="pre">类方法</span></code>与<code class="docutils literal notranslate"><span class="pre">静态方法</span></code>。</p>
 <ul class="simple">
@@ -1054,7 +1055,7 @@ male
 </div>
 </section>
 <section id="dateclass">
-<h2><span class="section-number">9.8. </span>dateclass<a class="headerlink" href="#dateclass" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.8. </span>dateclass<a class="headerlink" href="#dateclass" title="Link to this heading">#</a></h2>
 <hr><p><code class="docutils literal notranslate"><span class="pre">dataclass</span></code> 是 Python 3.7 引入的装饰器，自动生成 __init__、__repr__、__eq__ 等方法，让数据类的编写更加简洁。</p>
 <p>一个例子：</p>
 <div class="cell docutils container">
@@ -1150,7 +1151,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>爬虫入门</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>爬虫入门</p>
       </div>
     </a>
     <a class="right-next"
@@ -1158,7 +1159,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Python 的良好编程规范</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Python 的良好编程规范</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1179,14 +1180,14 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.1. 类, 对象, 属性, 方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">9.2. 类的初始化 __init__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3. 类的继承与方法重写</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-getitem">9.4. 类的专有/特殊方法 __str__、__getitem__等</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">9.5. 类的特殊属性 __doc__、__name__ 等</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">9.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.7. 类方法与静态方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">9.8. dateclass</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.1. 类, 对象, 属性, 方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.2. 类的初始化 __init__</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-getitem">10.4. 类的专有/特殊方法 __str__、__getitem__等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">10.5. 类的特殊属性 __doc__、__name__ 等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">10.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
   </nav></div>
 
