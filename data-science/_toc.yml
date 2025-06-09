@@ -18,7 +18,7 @@ parts:
 - caption: Python Advanced
   numbered: true
   chapters:
-  - file: line-regression
+  - file: statistics1
   - file: introduction-to-crawler
   - file: introduction-to-class
   - file: good-practices-python

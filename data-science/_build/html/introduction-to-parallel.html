@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11. Python 并行计算 &#8212; Python 数据科学</title>
+    <title>12. Python 并行计算 &#8212; Python 数据科学</title>
   
   
   
@@ -67,7 +67,7 @@
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="10. Python 的良好编程规范" href="good-practices-python.html" />
+    <link rel="prev" title="11. Python 的良好编程规范" href="good-practices-python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -183,10 +183,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">8. 爬虫入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">9. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">10. Python 的良好编程规范</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics1.html">8. Python statistics I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 的良好编程规范</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Python 并行计算</a></li>
 </ul>
 
     </div>
@@ -428,16 +429,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.1. 进程与线程</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocessing">11.2. <code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">11.2.1. <code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">11.2.1.1. <code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starmap">11.2.1.2. <code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1. 进程与线程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocessing">12.2. <code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">12.2.1. <code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">12.2.1.1. <code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starmap">12.2.1.2. <code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process">11.2.2. <code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">11.2.3. <code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock">11.2.4. <code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process">12.2.2. <code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">12.2.3. <code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock">12.2.4. <code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）</a></li>
 </ul>
 </li>
 </ul>
@@ -452,10 +453,10 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">11. </span>Python 并行计算<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Python 并行计算<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
 <hr><p>在进入并行计算前，我们首先需要了解一下一些计算机操作系统的知识。</p>
 <section id="id1">
-<h2><span class="section-number">11.1. </span>进程与线程<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>进程与线程<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr><ul class="simple">
 <li><p><strong>进程</strong>是一个程序的运行实例，每个进程有独立的内存空间，<strong>相互隔离</strong>，不会直接共享数据。</p></li>
 <li><p><strong>线程</strong>是进程内部的一个执行单元，一个进程可以有多个线程，它们<strong>共享同一个进程的内存</strong>。</p></li>
@@ -516,7 +517,7 @@
 </ul>
 </section>
 <section id="multirpocessing">
-<h2><span class="section-number">11.2. </span><code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包<a class="headerlink" href="#multirpocessing" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.2. </span><code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包<a class="headerlink" href="#multirpocessing" title="Link to this heading">#</a></h2>
 <hr><p><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> 是 Python 标准库中的一个包，提供了多进程（并行）执行能力，允许 Python 代码充分利用<strong>多核 CPU</strong>，提高计算效率。</p>
 <p>另外一个并行计算的包是<code class="docutils literal notranslate"><span class="pre">threading</span></code>，提供了多线程（multithreading） 支持，允许多个任务<strong>并发</strong>（concurrent）执行。</p>
 <ul class="simple">
@@ -524,10 +525,10 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">threading</span></code> 适用于 I/O 密集型任务，如文件读写、爬取网页。</p></li>
 </ul>
 <section id="pool">
-<h3><span class="section-number">11.2.1. </span><code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）<a class="headerlink" href="#pool" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.2.1. </span><code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）<a class="headerlink" href="#pool" title="Link to this heading">#</a></h3>
 <hr><p>使用多进程最便捷的工具是使用<code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code>自动管理进程池，不需要向其他进程工具那样需要手动开启关闭进程。Pool 提供了多个方法来调用进入并行计算的函数。</p>
 <section id="map">
-<h4><span class="section-number">11.2.1.1. </span><code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）<a class="headerlink" href="#map" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">12.2.1.1. </span><code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）<a class="headerlink" href="#map" title="Link to this heading">#</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
 
 <span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -551,7 +552,7 @@
 </div>
 </section>
 <section id="starmap">
-<h4><span class="section-number">11.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）<a class="headerlink" href="#starmap" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">12.2.1.2. </span><code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）<a class="headerlink" href="#starmap" title="Link to this heading">#</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">worker</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
@@ -570,7 +571,7 @@
 </section>
 </section>
 <section id="process">
-<h3><span class="section-number">11.2.2. </span><code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）<a class="headerlink" href="#process" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.2.2. </span><code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）<a class="headerlink" href="#process" title="Link to this heading">#</a></h3>
 <hr><p>可以通过 <code class="docutils literal notranslate"><span class="pre">Process</span></code> 手动创建进程。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
 
@@ -597,7 +598,7 @@
 </ul>
 </section>
 <section id="queue">
-<h3><span class="section-number">11.2.3. </span><code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）<a class="headerlink" href="#queue" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.2.3. </span><code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）<a class="headerlink" href="#queue" title="Link to this heading">#</a></h3>
 <hr><p>进程间不能直接共享变量，但可以用<code class="docutils literal notranslate"><span class="pre">Queue</span></code>传递数据。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
 
@@ -627,7 +628,7 @@
 <p>因此，<code class="docutils literal notranslate"><span class="pre">Process</span></code> 经常结合<code class="docutils literal notranslate"><span class="pre">Queue</span></code>一起使用，获取函数返回的数据。</p>
 </section>
 <section id="lock">
-<h3><span class="section-number">11.2.4. </span><code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）<a class="headerlink" href="#lock" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">12.2.4. </span><code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）<a class="headerlink" href="#lock" title="Link to this heading">#</a></h3>
 <hr><p>在 Python 的 multiprocessing 模块中，Lock 是用于同步进程之间访问共享资源的工具。它确保一次只有一个进程可以访问受保护的代码区域，从而防止竞争条件 (race condition) 和数据不一致问题。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -723,7 +724,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Python 的良好编程规范</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Python 的良好编程规范</p>
       </div>
     </a>
 </div>
@@ -743,16 +744,16 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.1. 进程与线程</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocessing">11.2. <code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">11.2.1. <code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">11.2.1.1. <code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starmap">11.2.1.2. <code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.1. 进程与线程</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multirpocessing">12.2. <code class="docutils literal notranslate"><span class="pre">multirpocessing</span></code> 包</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pool">12.2.1. <code class="docutils literal notranslate"><span class="pre">Pool</span></code>（自动管理进程池）</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#map">12.2.1.1. <code class="docutils literal notranslate"><span class="pre">map()</span></code>（适用于单参数函数，自动收集返回值）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starmap">12.2.1.2. <code class="docutils literal notranslate"><span class="pre">starmap()</span></code>（适用于多参数函数）</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process">11.2.2. <code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">11.2.3. <code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock">11.2.4. <code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process">12.2.2. <code class="docutils literal notranslate"><span class="pre">Process</span></code>（手动创建进程）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#queue">12.2.3. <code class="docutils literal notranslate"><span class="pre">Queue</span></code>（进程间通信）</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lock">12.2.4. <code class="docutils literal notranslate"><span class="pre">Lock</span></code>（控制进程）</a></li>
 </ul>
 </li>
 </ul>
