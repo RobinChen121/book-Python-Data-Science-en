@@ -444,16 +444,22 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-test">8.4. Hypothesis test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.5. Reliability and validity test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.6. Linear regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">8.6.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">8.6.2. sklearn 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-test">8.5. t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">8.5.1. One sample t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-sample-independent-t-test">8.5.2. Two sample independent t-test</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.7. 主成分分析</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">8.8. Kmeans 聚类</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.9. 人工神经网络</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.10. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-test">8.6. <span class="math notranslate nohighlight">\(\chi^2\)</span> test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.7. Reliability and validity test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.8. Linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">8.8.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">8.8.2. sklearn 库</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.9. 主成分分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">8.10. Kmeans 聚类</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.11. 人工神经网络</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.12. 练习</a></li>
 </ul>
             </nav>
         </div>
@@ -728,7 +734,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/38c9d813ef92845312b7cd5d6ae85a70103d5e645b2ab5b904f63dc3d5435403.png" src="_images/38c9d813ef92845312b7cd5d6ae85a70103d5e645b2ab5b904f63dc3d5435403.png" />
+<img alt="_images/11a4cc964523d3a30e7fe402ebb2cf1c7079a0df5c5a15ef8d045530fc7ddc4f.png" src="_images/11a4cc964523d3a30e7fe402ebb2cf1c7079a0df5c5a15ef8d045530fc7ddc4f.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays bars of approximately equal height, resulting in a <strong>flat</strong> or level appearance.</p>
@@ -752,7 +758,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/a0f4abbd38e78297303546c9b2893d51505c0d2b77dbfef4a0d99d2294379be7.png" src="_images/a0f4abbd38e78297303546c9b2893d51505c0d2b77dbfef4a0d99d2294379be7.png" />
+<img alt="_images/9c5b2715abcf5f713a7ff74c494f9111c0317615c96b2a92f351c47ab1e599b6.png" src="_images/9c5b2715abcf5f713a7ff74c494f9111c0317615c96b2a92f351c47ab1e599b6.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays a <strong>bell</strong> shape.</p>
@@ -781,7 +787,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/badb81b310e537c490cc8c1e9a583adf496f5db085335f65c803e5216b1f9739.png" src="_images/badb81b310e537c490cc8c1e9a583adf496f5db085335f65c803e5216b1f9739.png" />
+<img alt="_images/d3038b51c657bd8ec6c1b21b969dc62035c56085b0acc85ea01ec7a3a01a2726.png" src="_images/d3038b51c657bd8ec6c1b21b969dc62035c56085b0acc85ea01ec7a3a01a2726.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -820,7 +826,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;size&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/12c9b2225d881b51ce8d4b00fb842a7016c0211d8513d740113ec65b03614068.png" src="_images/12c9b2225d881b51ce8d4b00fb842a7016c0211d8513d740113ec65b03614068.png" />
+<img alt="_images/dcca2efa1c3295c4f7528822fe93cb480f385fa0c43e06937515236c355ffe22.png" src="_images/dcca2efa1c3295c4f7528822fe93cb480f385fa0c43e06937515236c355ffe22.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -851,7 +857,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/779dfba2aa133026c3900498f9cce634d7235b95f25f50e33b2bd410c26a8dc9.png" src="_images/779dfba2aa133026c3900498f9cce634d7235b95f25f50e33b2bd410c26a8dc9.png" />
+<img alt="_images/2cdec1bd286f4c58f059799d77d0d5b8fdb0ce53ed95a7d5531a24a804b31320.png" src="_images/2cdec1bd286f4c58f059799d77d0d5b8fdb0ce53ed95a7d5531a24a804b31320.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1079,10 +1085,10 @@
 <p>Examples of a hypothesis: (1) there is no relationship between gender and the amount of tips; (2) smokers give more tips than non-smokers.</p>
 <p>There are two parts of a hypothesis:</p>
 <ul class="simple">
-<li><p><strong>Null Hypothesis ($H_0$):</strong>
+<li><p><strong>Null Hypothesis (<span class="math notranslate nohighlight">\(H_0\)</span>):</strong>
 The null hypothesis proposes that there is no effect or difference between the variables in two or more samples. For example, a null hypothesis might state, <em>“There is no relationship between gender and the amount of tips.”</em>
 It is the default assumption and the one that is formally tested—either to be retained or rejected based on statistical evidence.</p></li>
-<li><p><strong>Alternative Hypothesis ($H_1$):</strong>
+<li><p><strong>Alternative Hypothesis (<span class="math notranslate nohighlight">\(H_1\)</span>):</strong>
 The alternative hypothesis suggests that there is a meaningful effect or difference between the variables. For instance, it might state, <em>“Gender has an impact on the amount of tips.”</em>
 This hypothesis represents what we aim to support if the null hypothesis is rejected.</p></li>
 </ul>
@@ -1112,11 +1118,121 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 </li>
 </ol>
 </section>
+<section id="t-test">
+<h2><span class="section-number">8.5. </span>t-test<a class="headerlink" href="#t-test" title="Link to this heading">#</a></h2>
+<hr><p><code class="docutils literal notranslate"><span class="pre">Student's</span> <span class="pre">t-test</span></code> is a statistical test used to test whether the difference between the response of two groups is statistically significant or not.</p>
+<p>In this test, the test statistic follows a <code class="docutils literal notranslate"><span class="pre">Student's</span> <span class="pre">t-distribution</span></code> under the null hypothesis. This distribution is similar to normal distribution but with <strong>slightly larger variance</strong>, and is more suitable for testing the real life sampled data. In addition to mean and varariance, it has another parameter called <code class="docutils literal notranslate"><span class="pre">degree</span> <span class="pre">of</span> <span class="pre">freedom</span></code>, which is the number of values in the final calculation of a statistic that are free to vary.</p>
+<p>There are 3 types t-tests in general and we can use the corresponding methods in the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> from the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> library:</p>
+<ul class="simple">
+<li><p>One sample t-test → <code class="docutils literal notranslate"><span class="pre">ttest_1samp</span></code></p></li>
+<li><p>Two independent sample t-test → <code class="docutils literal notranslate"><span class="pre">ttest_ind</span></code></p></li>
+<li><p>Two dependent sample t-test → <code class="docutils literal notranslate"><span class="pre">ttest_rel</span></code></p></li>
+</ul>
+<p>Two events are <code class="docutils literal notranslate"><span class="pre">independent</span></code> if the occurrence of one event does not affect the chances of the occurrence of the other event. In hypothestis tests, <code class="docutils literal notranslate"><span class="pre">independent</span></code> means one sampeld data is not affected by other sampled data.</p>
+<section id="one-sample-t-test">
+<h3><span class="section-number">8.5.1. </span>One sample t-test<a class="headerlink" href="#one-sample-t-test" title="Link to this heading">#</a></h3>
+<hr><p>A <strong>one-sample t-test</strong> is to test whether the mean of a population equals to/not less than/not greater than a value specified in a null hypothesis. The syntax for the method <code class="docutils literal notranslate"><span class="pre">ttest_1samp</span></code> is below:</p>
+<table>
+    <tr style="border-top:solid; border-bottom:solid">
+        <th colspan=2 style="text-align:center">ttest_1samp(a, popmean, alternative='two-sided')</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">a</td>
+        <td style="text-align:left">Array like, sampled observations</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">popmean</td>
+        <td style="text-align:left">Usually float, expected value in null hypothesis</td>
+    </tr>
+    <tr>
+        <td style="text-align:left", rowspan=3>alternative</td>
+        <td style="text-align:left">"two-sided", $H_1$: the mean of the sampled data is different than the given population mean </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">"less", $H_1$: the mean of the sampled data is less than the given population mean </td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">"greater", $H_1$: the mean of the sampled data is greater than the given population mean</td>
+    </tr>
+</table><p>For example, we test the null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span>: the mean of tips is equal to 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">tips</span><span class="p">[</span><span class="s1">&#39;tip&#39;</span><span class="p">],</span> <span class="n">popmean</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=-0.019432641422916876, pvalue=0.9845119176410544, df=243)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ttest_1samp</span></code> return the t-statistics, p-value and the number of degrees of freedom.</p></li>
+</ul>
+<p>Suppose we choose a confidence level 95% (or equivalently, significance level <span class="math notranslate nohighlight">\(\alpha=0.05\)</span>). Since the p-value is 0.98 &gt; 0.05, we do not reject the null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span>. Namely, we can believe that the mean of tips is equal to 3 (the probability is 98.45%).</p>
+<p>For example, we test a one-sided null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span>: the mean of tips is not less than 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">tips</span><span class="p">[</span><span class="s1">&#39;tip&#39;</span><span class="p">],</span> <span class="n">popmean</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;less&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=-0.019432641422916876, pvalue=0.4922559588205272, df=243)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Suppose we choose a confidence level 95% (or equivalently, significance level <span class="math notranslate nohighlight">\(\alpha=0.05\)</span>). Since the p-value is 0.49 &gt; 0.05, we do not reject the null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span>. Namely, we can believe that the mean of tips is not less than 3 (the probability is 50.77%).</p>
+</section>
+<section id="two-sample-independent-t-test">
+<h3><span class="section-number">8.5.2. </span>Two sample independent t-test<a class="headerlink" href="#two-sample-independent-t-test" title="Link to this heading">#</a></h3>
+<hr><p>A two-sample t-test tests the null hypothesis such that the means of two populations are equal or the mean of one population is not less than/not greater than another. This can be done by the method <code class="docutils literal notranslate"><span class="pre">ttest_ind()</span></code>, the syntex of which is below:</p>
+<table>
+    <tr style="border-top:solid; border-bottom:solid">
+        <th colspan=2 style="text-align:center">ttest_ind(a, b, equal_var=True, alternative='two-sided')</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">a</td>
+        <td style="text-align:left">Array like, sampled observations</td>
+    </tr>
+    <tr>
+        <td style="text-align:left">b</td>
+        <td style="text-align:left">Array like, the other sampled observations</td>
+    </tr>
+    <tr>
+        <td style="text-align:left", rowspan=2>equal_var</td>
+        <td style="text-align:left">If True (default), perform a standard independent 2 sample test that assumes equal population variances 
+    </tr>
+    <tr>
+        <td style="text-align:left">If False, perform Welch’s t-test, which does not assume equal population variance</td>
+    </tr>
+    <tr>
+        <td style="text-align:left", rowspan=3>alternative</td>
+        <td style="text-align:left">"two-sided", $H_1$: the mean of the sampled data is different than the other sampled data </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">"less", $H_1$: the mean of the sampled data is less than the other sampled data </td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">"greater", $H_1$: the mean of the sampled data is greater than the other sampled data</td>
+    </tr>
+</table></section>
+</section>
+<section id="chi-2-test">
+<h2><span class="section-number">8.6. </span><span class="math notranslate nohighlight">\(\chi^2\)</span> test<a class="headerlink" href="#chi-2-test" title="Link to this heading">#</a></h2>
+</section>
 <section id="reliability-and-validity-test">
-<h2><span class="section-number">8.5. </span>Reliability and validity test<a class="headerlink" href="#reliability-and-validity-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7. </span>Reliability and validity test<a class="headerlink" href="#reliability-and-validity-test" title="Link to this heading">#</a></h2>
 <hr></section>
 <section id="linear-regression">
-<h2><span class="section-number">8.6. </span>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.8. </span>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h2>
 <hr><p>使用 Python 做线性回归分析有好几种方式，常见的是用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>库或者<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库。</p>
 <p>假设有下面的数据存储在 excel 文件 line_regression.xlsx 中：</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1543,7 +1659,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 </div></div></div>
 </div>
 <section id="statsmodels">
-<h3><span class="section-number">8.6.1. </span><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库<a class="headerlink" href="#statsmodels" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.8.1. </span><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库<a class="headerlink" href="#statsmodels" title="Link to this heading">#</a></h3>
 <hr><p>使用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库做回归一般有以下几个步骤：</p>
 <ul class="simple">
 <li><p>通过 OLS 函数构建回归模型</p></li>
@@ -1627,8 +1743,8 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 Dep. Variable:                   不良贷款   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.699
 Method:                 Least Squares   F-statistic:                     56.75
-Date:                Mon, 09 Jun 2025   Prob (F-statistic):           1.18e-07
-Time:                        18:11:19   Log-Likelihood:                -51.508
+Date:                Wed, 11 Jun 2025   Prob (F-statistic):           1.18e-07
+Time:                        13:43:30   Log-Likelihood:                -51.508
 No. Observations:                  25   AIC:                             107.0
 Df Residuals:                      23   BIC:                             109.5
 Df Model:                           1                                         
@@ -1700,8 +1816,8 @@ Notes:
 Dep. Variable:                 各项贷款余额   R-squared:                       0.812
 Model:                            OLS   Adj. R-squared:                  0.786
 Method:                 Least Squares   F-statistic:                     30.32
-Date:                Mon, 09 Jun 2025   Prob (F-statistic):           8.05e-08
-Time:                        18:11:19   Log-Likelihood:                -123.70
+Date:                Wed, 11 Jun 2025   Prob (F-statistic):           8.05e-08
+Time:                        13:43:30   Log-Likelihood:                -123.70
 No. Observations:                  25   AIC:                             255.4
 Df Residuals:                      21   BIC:                             260.3
 Df Model:                           3                                         
@@ -1728,7 +1844,7 @@ Notes:
 </div>
 </section>
 <section id="sklearn">
-<h3><span class="section-number">8.6.2. </span>sklearn 库<a class="headerlink" href="#sklearn" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.8.2. </span>sklearn 库<a class="headerlink" href="#sklearn" title="Link to this heading">#</a></h3>
 <hr>
 <p>sklearn 包是机器学习中常见的 python 包，做统计分析时，它并不能像 statsmodels 那样生成非常详细的统计分析结果。<strong>默认自变量与因变量数据都是二维数据，自变量或因变量需要增加一个轴</strong>。</p>
 <p>使用<code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 库做回归一把有以下几个步骤：</p>
@@ -1819,7 +1935,7 @@ Notes:
 </section>
 </section>
 <section id="id1">
-<h2><span class="section-number">8.7. </span>主成分分析<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.9. </span>主成分分析<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr>
 <p>主成分分析（Principle Component Analysis, PCA）是数据降维的一个方法：原始数据中有很多特征变量，可以采用主成分分析方法将原始数据降维为少数几个变量，主成分就是降维后各原始变量的线性组合系数。</p>
 <p>主成分分析的求解一般采用特征根分解，即求解原始数据<strong>协方差矩阵或相关系数矩阵</strong>最大特征根对应的特征向量，即为第一主成分，第二主成分为第二大特征根对应的特征向量，其他的主成分可以依次得出。主成分贡献率为对应特征根占所有特征根加和的比例。</p>
@@ -2224,7 +2340,7 @@ Notes:
 </div>
 </section>
 <section id="kmeans">
-<h2><span class="section-number">8.8. </span>Kmeans 聚类<a class="headerlink" href="#kmeans" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.10. </span>Kmeans 聚类<a class="headerlink" href="#kmeans" title="Link to this heading">#</a></h2>
 <hr>
 <p>Kmeans 是一种动态聚类方法，其基本思想是：首先随机选取 K 个点作为初始凝聚点，按照距离最近原则划分为 K 类；然后重新计算 K 个类的重心作为新的凝聚点，再按照距离最近原则重新分类；重复这一过程，直到重心不再变化为止。</p>
 <p>对上面的例子，进行 Kmeans 聚类并画图的代码为：</p>
@@ -2293,21 +2409,21 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 0 0 0 0 0 0 0 1 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 0 2 2 2 0 2 0 1 0 1 2 0 2 0 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2]
 类别1
-[&#39;天  津&#39;, &#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;辽  宁&#39;, &#39;吉  林&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;安  徽&#39;, &#39;福  建&#39;, &#39;江  西&#39;, &#39;山  东&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  东&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
+[&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;广  东&#39;]
 类别2
-[&#39;上  海&#39;]
+[&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
 类别3
-[&#39;北  京&#39;, &#39;浙  江&#39;]
+[&#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;吉  林&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
 </pre></div>
 </div>
-<img alt="_images/b657103d752a99fdbe4f07ebbc04d22574d40fb3bbc7957f2ee57a52753c78da.png" src="_images/b657103d752a99fdbe4f07ebbc04d22574d40fb3bbc7957f2ee57a52753c78da.png" />
+<img alt="_images/5b82ff64a692b42d507db90e9fbfee6a76b4b52a2c3d03c1b396e966094cb97b.png" src="_images/5b82ff64a692b42d507db90e9fbfee6a76b4b52a2c3d03c1b396e966094cb97b.png" />
 </div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">8.9. </span>人工神经网络<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.11. </span>人工神经网络<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr>
 <p>神经网络的目标是：找到一个能把一组输入最好地映射到其正确输出的函数。例如一个简单的分类任务，其中输入是动物的图像，正确的输出将是动物的名称。或者根据历史需求数据，预测未来一期的需求。神经网络的思想类似回归分析中经常用到的拟合，都用到了最小二乘的思想：数学意义上的决策目标是：选取一些参数（神经网络中每个输入的权重），使得拟合的输出与期望输出的误差平方和最小。</p>
 <p>下面是一个神经网络示意图（输入层有一些神经元，隐含层有一些神经元，输出层有一些神经元），输入信息经过正向传播到输出，计算实际输出与期望输出的误差后，在反向传播误差；重复这个过程，在传播过程中，不断减少误差，直到误差减少到一定程度终止。</p>
@@ -2358,12 +2474,12 @@ Notes:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>神经网络预测结果评价报告：
                precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        41
-           1       1.00      1.00      1.00        73
+           0       0.93      0.97      0.95        39
+           1       0.99      0.96      0.97        75
 
-    accuracy                           1.00       114
-   macro avg       1.00      1.00      1.00       114
-weighted avg       1.00      1.00      1.00       114
+    accuracy                           0.96       114
+   macro avg       0.96      0.97      0.96       114
+weighted avg       0.97      0.96      0.97       114
 </pre></div>
 </div>
 </div>
@@ -2371,7 +2487,7 @@ weighted avg       1.00      1.00      1.00       114
 <p>其他常见的机器学习方法，例如随机森林，支持向量机，梯度提升等，都可以在<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库中找到相应的函数。</p>
 </section>
 <section id="id3">
-<h2><span class="section-number">8.10. </span>练习<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.12. </span>练习<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="regression">
 
 <p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
@@ -2485,16 +2601,22 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-test">8.4. Hypothesis test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.5. Reliability and validity test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.6. Linear regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">8.6.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">8.6.2. sklearn 库</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-test">8.5. t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">8.5.1. One sample t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-sample-independent-t-test">8.5.2. Two sample independent t-test</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.7. 主成分分析</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">8.8. Kmeans 聚类</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.9. 人工神经网络</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.10. 练习</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-test">8.6. <span class="math notranslate nohighlight">\(\chi^2\)</span> test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.7. Reliability and validity test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.8. Linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">8.8.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">8.8.2. sklearn 库</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.9. 主成分分析</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">8.10. Kmeans 聚类</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">8.11. 人工神经网络</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">8.12. 练习</a></li>
 </ul>
   </nav></div>
 
