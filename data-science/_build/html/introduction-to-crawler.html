@@ -34,11 +34,11 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=ced2e0c4" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -57,7 +57,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -1172,14 +1172,14 @@ True
 <p>下面，我们举例如何用爬虫抓取网上的《三国演义》小说，并将每回的内容下载到电脑里。</p>
 <p>首先，找到一个包含《三国演义》小说的网站，本例中，使用了古诗文网：https://so.gushiwen.cn/guwen/book_46653FD803893E4F7F702BCF1F7CCE17.aspx</p>
 <p>然后，在网页的空白处，单击鼠标右键，查看网页源代码：</p>
-<p><img alt="san_guo1" src="_images/san_guo1.png" /></p>
+<p><img alt="san_guo1" src="_build/html/_images/san_guo1.png" /></p>
 <p>网页的源代码大致如下：</p>
-<p><img alt="sanguo_2.png" src="_images/san_guo2.PNG" /></p>
+<p><img alt="sanguo_2.png" src="_build/html/_images/san_guo2.PNG" /></p>
 <ul class="simple">
 <li><p>我们发现每一回的链接在网页中的标签 ul 里面，具体在其每个子标签 span 中的子标签 a 里面。</p></li>
 </ul>
 <p>打开其中任一回的链接，在网页空白处单击右键，查看网页源代码：</p>
-<p><img alt="sanguo_3.png" src="_images/san_guo3.PNG" /></p>
+<p><img alt="sanguo_3.png" src="_build/html/_images/san_guo3.PNG" /></p>
 <ul class="simple">
 <li><p>我们发现每一回的内容在具体属性为 class=’contson’ 的 div 标签里，其中第一句为每一回的标题，而之后的内容为正文。</p></li>
 </ul>
@@ -1259,14 +1259,14 @@ True
 </pre></div>
 </div>
 <p>其中，使用 requests 库时，有的网站需要设置 headers 参数才能正确模拟浏览器登录。headers 参数可以在打开网页时，按键盘<code class="docutils literal notranslate"><span class="pre">F12</span></code> 打开， 然后刷新一下网页，单击<code class="docutils literal notranslate"><span class="pre">F12</span></code>弹出窗口的任何一个文件，就能查看网站的所有 headers 信息，有 cookie，user-agent 等信息。如下图所示：</p>
-<p><img alt="sanguo_4.png" src="_images/san_guo4.png" /></p>
+<p><img alt="sanguo_4.png" src="_build/html/_images/san_guo4.png" /></p>
 <p>我们可以复制一部分信息或全部信息，放到 request 函数的 headers 参数里面。</p>
 </section>
 <section id="top-250">
 <h2><span class="section-number">9.5. </span>爬虫实例 2：抓豆瓣 top 250 的电影信息<a class="headerlink" href="#top-250" title="Link to this heading">#</a></h2>
 <p>我们想获取豆瓣高分评价的 250 部电影的信息：电影名字，导演，上映年代，评分，评分人数等。打开豆瓣 top 250 的网页链接 https://movie.douban.com/top250?start= ，发现每个网页显示 25 部电影，一共有 10 个挖网页，网页地址与链接中的 start = 后面的数字有关。例如第 3 个子网页的链接地址是 ‘https://movie.douban.com/top250?start=50 ，根据这个规律，我们可以用一个 for 循环，将 10 个网页分别打开抓取信息。</p>
 <p>打开一个网页，单击右键查看网页源代码，如下图所示：</p>
-<p><img alt="douban1.png" src="_images/douban1.PNG" /></p>
+<p><img alt="douban1.png" src="_build/html/_images/douban1.PNG" /></p>
 <p>通过源代码发现以下几个特点：</p>
 <ul class="simple">
 <li><p>每部电影的信息都在标签 &lt;div class=’item’&gt; 里面。据此，我们可以用一个 for 循环，将每个网页的  &lt;div class=’item’&gt; 标签都检索出来</p></li>
@@ -1532,12 +1532,12 @@ True
 </pre></div>
 </div>
 <p>生成的图形如下：</p>
-<p><img alt="douban2.png" src="_images/douban2.png" />
-<img alt="douban3.png" src="_images/douban3.png" />
-<img alt="douban4.png" src="_images/douban4.png" />
-<img alt="douban5.png" src="_images/douban5.png" />
-<img alt="douban6.png" src="_images/douban6.png" />
-<img alt="douban7.png" src="_images/douban7.png" /></p>
+<p><img alt="douban2.png" src="_build/html/_images/douban2.png" />
+<img alt="douban3.png" src="_build/html/_images/douban3.png" />
+<img alt="douban4.png" src="_build/html/_images/douban4.png" />
+<img alt="douban5.png" src="_build/html/_images/douban5.png" />
+<img alt="douban6.png" src="_build/html/_images/douban6.png" />
+<img alt="douban7.png" src="_build/html/_images/douban7.png" /></p>
 </section>
 <section id="id4">
 <h2><span class="section-number">9.6. </span>后记<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
