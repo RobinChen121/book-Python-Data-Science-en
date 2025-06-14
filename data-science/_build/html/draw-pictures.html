@@ -34,11 +34,11 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=bfa9aaae" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=ced2e0c4" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -57,7 +57,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -614,7 +614,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10c4265a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a850440&gt;]
 </pre></div>
 </div>
 <img alt="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" src="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" />
@@ -627,7 +627,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10c455c40&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a8110d0&gt;]
 </pre></div>
 </div>
 <img alt="_images/767414e87ff4e7446c67721694c63b6b997758a787639ee18d226d1ffc07b887.png" src="_images/767414e87ff4e7446c67721694c63b6b997758a787639ee18d226d1ffc07b887.png" />
@@ -643,7 +643,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10c516a20&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a91a690&gt;]
 </pre></div>
 </div>
 <img alt="_images/f7686d2b5343058ec40fd854c381922a4b2cf62160b4a64a432ad8e4229d1c39.png" src="_images/f7686d2b5343058ec40fd854c381922a4b2cf62160b4a64a432ad8e4229d1c39.png" />
@@ -1205,6 +1205,12 @@
 <h2><span class="section-number">7.5. </span>Introduction to <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> *<a class="headerlink" href="#introduction-to-seaborn" title="Link to this heading">#</a></h2>
 <hr>
 <p><code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> is another commonly used Python library that builds upon <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. It produces more aesthetically pleasing visualizations and integrates particularly well with <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> data structures.</p>
+<ul class="simple">
+<li><p>Install the library <code class="docutils literal notranslate"><span class="pre">Seanborn</span></code> by <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">seaborn</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import seaborn</span>
@@ -1455,7 +1461,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8d4539ab8a608064488042a0d7004db8ac39393510a457dd17ca9af35da9ec87.png" src="_images/8d4539ab8a608064488042a0d7004db8ac39393510a457dd17ca9af35da9ec87.png" />
+<img alt="_images/c3ef786191a62bb09aa8b094053f23b044c21fd8bb098879c0f0658e4d9f14db.png" src="_images/c3ef786191a62bb09aa8b094053f23b044c21fd8bb098879c0f0658e4d9f14db.png" />
 </div>
 </div>
 <p>Seaborn also provides the <code class="docutils literal notranslate"><span class="pre">regplot</span></code> function, which can perform linear regression along with a 95% confidence interval fitting on the data.</p>
@@ -1469,7 +1475,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/cbbefb06853f5d415260956778e682d2028af612b8752bb6178815457f0432f6.png" src="_images/cbbefb06853f5d415260956778e682d2028af612b8752bb6178815457f0432f6.png" />
+<img alt="_images/551d3e0560563f1c0ec850c4a889993574b0af38c7c10a93d885815e5db557a8.png" src="_images/551d3e0560563f1c0ec850c4a889993574b0af38c7c10a93d885815e5db557a8.png" />
 </div>
 </div>
 <p>For curve fitting, you can further configure parameters such as <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">logx</span></code>, and <code class="docutils literal notranslate"><span class="pre">logistic</span></code> in regplot to generate the desired plot.</p>
@@ -1493,7 +1499,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6376063c203201a1ff75b2c8a0d08e5faf51b05d776d466a8c740703e639c244.png" src="_images/6376063c203201a1ff75b2c8a0d08e5faf51b05d776d466a8c740703e639c244.png" />
+<img alt="_images/19a3da9a849edcf41ab777b3de06da674ff177a6f08c563e9d1cd3c2f68ab9b8.png" src="_images/19a3da9a849edcf41ab777b3de06da674ff177a6f08c563e9d1cd3c2f68ab9b8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1525,7 +1531,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 <img alt="_images/db570bf910202cf3036fd0e6deeed6b5f6966b027865bdab17ea1a248aee7b69.png" src="_images/db570bf910202cf3036fd0e6deeed6b5f6966b027865bdab17ea1a248aee7b69.png" />
 </div>
 </div>
-<p>Seaborn offers additional plotting functions such as <code class="docutils literal notranslate"><span class="pre">histplot</span></code> for histograms, <code class="docutils literal notranslate"><span class="pre">heatmap()</span></code> for heatmaps and <code class="docutils literal notranslate"><span class="pre">violinplot()</span></code> for violin plots. Due to space limitations, we won’t cover them in detail here. Interested readers may refer to the official documentation for further exploration.</p>
+<p>Seaborn offers additional plotting functions such as <code class="docutils literal notranslate"><span class="pre">scatterplot</span></code> for scatter plots, <code class="docutils literal notranslate"><span class="pre">histplot</span></code> for histograms, <code class="docutils literal notranslate"><span class="pre">heatmap()</span></code> for heatmaps and <code class="docutils literal notranslate"><span class="pre">violinplot()</span></code> for violin plots. Due to space limitations, we won’t cover them in detail here. Interested readers may refer to the official documentation for further exploration.</p>
 </section>
 </section>
 <section id="exercises">

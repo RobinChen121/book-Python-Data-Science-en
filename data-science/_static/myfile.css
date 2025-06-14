@@ -2,6 +2,10 @@ p {
     text-align: justify;
 }
 
+/* 调整主内容区域的最大宽度 */
+.bd-main .bd-content .bd-article {
+    max-width: 120%; /* 或者你可以设置为 1200px、1400px 等 */
+}
     
 .goog-te-gadget {
   font-family: Roboto, "Open Sans", sans-serif !important;
