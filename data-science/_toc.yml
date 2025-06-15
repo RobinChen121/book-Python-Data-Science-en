@@ -19,6 +19,7 @@ parts:
   numbered: true
   chapters:
   - file: statistics1
+  - file: statistics2
   - file: introduction-to-crawler
   - file: introduction-to-class
   - file: good-practices-python
