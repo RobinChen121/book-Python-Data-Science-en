@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=ced2e0c4" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=22a07d05" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -69,7 +69,7 @@
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Python statistics I" href="statistics1.html" />
+    <link rel="next" title="8. Python statistics" href="statistics1.html" />
     <link rel="prev" title="6. Functions" href="define-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,11 +186,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="statistics1.html">8. Python statistics I</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 的良好编程规范</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics1.html">8. Python statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics2.html">9. Python machine learning</a></li>
 </ul>
 
     </div>
@@ -614,7 +611,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x113ab3dd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f55a5d0&gt;]
 </pre></div>
 </div>
 <img alt="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" src="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" />
@@ -627,7 +624,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x113c11610&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f571610&gt;]
 </pre></div>
 </div>
 <img alt="_images/767414e87ff4e7446c67721694c63b6b997758a787639ee18d226d1ffc07b887.png" src="_images/767414e87ff4e7446c67721694c63b6b997758a787639ee18d226d1ffc07b887.png" />
@@ -643,7 +640,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x113ce2000&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f81ad20&gt;]
 </pre></div>
 </div>
 <img alt="_images/f7686d2b5343058ec40fd854c381922a4b2cf62160b4a64a432ad8e4229d1c39.png" src="_images/f7686d2b5343058ec40fd854c381922a4b2cf62160b4a64a432ad8e4229d1c39.png" />
@@ -739,7 +736,8 @@
         <td style="text-align:left">**kwargs</td>
         <td style="text-align:left">Optional: additional properties (e.g., alpha for transparency)</td>
     </tr>
-</table><div class="cell docutils container">
+</table>
+<br /><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -786,7 +784,7 @@
         <td style="text-align:left">Optional: additional properties (e.g., color, transparency, etc.)</td>
     </tr>
 </table>
-<p>Suppose the results of a survey on drinking water preferences among Grade 1 and Grade 2 college students are as follows:</p>
+<br /><p>Suppose the results of a survey on drinking water preferences among Grade 1 and Grade 2 college students are as follows:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Choice</p></th>
@@ -1461,7 +1459,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/260d6d4cdb133a22d63d4705fe591baa5602468aa91c6fe4f4b18854b9f705cd.png" src="_images/260d6d4cdb133a22d63d4705fe591baa5602468aa91c6fe4f4b18854b9f705cd.png" />
+<img alt="_images/7003d825e44174095474d5b195927e276b0ae153016a61f502bb9952d4baba5e.png" src="_images/7003d825e44174095474d5b195927e276b0ae153016a61f502bb9952d4baba5e.png" />
 </div>
 </div>
 <p>Seaborn also provides the <code class="docutils literal notranslate"><span class="pre">regplot</span></code> function, which can perform linear regression along with a 95% confidence interval fitting on the data.</p>
@@ -1475,7 +1473,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/33b087b31f06ed516d3fc1e14108f201441a2a208c2e735982047adef72f3b11.png" src="_images/33b087b31f06ed516d3fc1e14108f201441a2a208c2e735982047adef72f3b11.png" />
+<img alt="_images/7dc42c24f5900925c9f447b6052c82d92b0d3d4fcb0508b01dbcab299ac59a0e.png" src="_images/7dc42c24f5900925c9f447b6052c82d92b0d3d4fcb0508b01dbcab299ac59a0e.png" />
 </div>
 </div>
 <p>For curve fitting, you can further configure parameters such as <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">logx</span></code>, and <code class="docutils literal notranslate"><span class="pre">logistic</span></code> in regplot to generate the desired plot.</p>
@@ -1499,7 +1497,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c2e11f72433977a9ff33893f3942cdfe58edf07d081ec30fceae648fe44a203e.png" src="_images/c2e11f72433977a9ff33893f3942cdfe58edf07d081ec30fceae648fe44a203e.png" />
+<img alt="_images/fb8d5f041492ddb9372c646e6030b358ce1725461bec990cc5c9c8a2116ec5e5.png" src="_images/fb8d5f041492ddb9372c646e6030b358ce1725461bec990cc5c9c8a2116ec5e5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1862,7 +1860,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Python statistics I</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Python statistics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
