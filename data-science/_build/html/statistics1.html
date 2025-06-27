@@ -181,7 +181,7 @@
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Introduction to Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Define functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Draw graphs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
@@ -449,12 +449,20 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.5. Linear regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.6. Reliability and validity test</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliablity">8.6.1. Reliablity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity">8.6.2. Validity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model-1">8.6. Structural equation model*</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.6.1. An example of using SEM</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.6.1.1. Research question, assumptions and variables</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection-and-pretest">8.6.1.2. Data collection and pretest</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.7. Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.7. Reliability and validity test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliablity">8.7.1. Reliablity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity">8.7.2. Validity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.8. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -729,7 +737,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/93ce5b2bbacb7ca3364d646c7b1cf654f5824cb3f34e69ecc3bcfc09914b2ad0.png" src="_images/93ce5b2bbacb7ca3364d646c7b1cf654f5824cb3f34e69ecc3bcfc09914b2ad0.png" />
+<img alt="_images/ed8ecd0abe6da3e349dfa324636808932756d147b543c812895b00419a68af40.png" src="_images/ed8ecd0abe6da3e349dfa324636808932756d147b543c812895b00419a68af40.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays bars of approximately equal height, resulting in a <strong>flat</strong> or level appearance.</p>
@@ -753,7 +761,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/654cb1158885cade986db6674676d3726da55188ac792670bbcd395474451c32.png" src="_images/654cb1158885cade986db6674676d3726da55188ac792670bbcd395474451c32.png" />
+<img alt="_images/5183dc4fd53b24075cc690d2fab43da51f1f3be6b2c0dd57cce0fff0f5803af7.png" src="_images/5183dc4fd53b24075cc690d2fab43da51f1f3be6b2c0dd57cce0fff0f5803af7.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays a <strong>bell</strong> shape.</p>
@@ -782,7 +790,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/acbdbb4929432a6f1ea542d61cd65768c65370e26c4be45e89cf12294df76778.png" src="_images/acbdbb4929432a6f1ea542d61cd65768c65370e26c4be45e89cf12294df76778.png" />
+<img alt="_images/e5b841179c8c702306929a9df1cf6fc68cc51f5ced5bf95d34e5925259e6baa8.png" src="_images/e5b841179c8c702306929a9df1cf6fc68cc51f5ced5bf95d34e5925259e6baa8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -821,7 +829,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;size&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/20ca3981b2bef850c3e53a6ab5c8f02ff23df06e242c32b327b7f2fc0706efac.png" src="_images/20ca3981b2bef850c3e53a6ab5c8f02ff23df06e242c32b327b7f2fc0706efac.png" />
+<img alt="_images/167f6265f0a3bc96401ad7440a54bb05698277a05830a6efe1d61cf37da833c6.png" src="_images/167f6265f0a3bc96401ad7440a54bb05698277a05830a6efe1d61cf37da833c6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -852,7 +860,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/b23c1c8273905781ca13f9bdef6054ed88285326923d66077b30838385209522.png" src="_images/b23c1c8273905781ca13f9bdef6054ed88285326923d66077b30838385209522.png" />
+<img alt="_images/53f5e4f90a6c1462bb78bebee603a3d5f968edb65a026c50454e889e026408b2.png" src="_images/53f5e4f90a6c1462bb78bebee603a3d5f968edb65a026c50454e889e026408b2.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1889,16 +1897,40 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 </div></div></div>
 </div>
 <p>Descriptions for each column are below:</p>
-<ul class="simple">
-<li><p>total: total number of crashes.</p></li>
-<li><p>speeding: crashes involving speeding.</p></li>
-<li><p>alcohol: crashes involving alcohol.</p></li>
-<li><p>not distracted: percentage of drivers not distracted.</p></li>
-<li><p>no previous: percentage of drivers with no previous crashes.</p></li>
-<li><p>ins_premium: average insurance premium in the state.</p></li>
-<li><p>ins_losses: total insurance losses in the state.</p></li>
-<li><p>abbrev: abbrevation for the state names.</p></li>
-</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">total</span></code></p></td>
+<td><p>Total number of car crash deaths per 10,000 people in each state</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">speeding</span></code></p></td>
+<td><p>Proportion of deaths due to speeding (as a fraction of <code class="docutils literal notranslate"><span class="pre">total</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">alcohol</span></code></p></td>
+<td><p>Proportion of deaths involving alcohol (as a fraction of <code class="docutils literal notranslate"><span class="pre">total</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">not_distracted</span></code></p></td>
+<td><p>Proportion of deaths not caused by distraction</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">no_previous</span></code></p></td>
+<td><p>Proportion of drivers involved in fatal crashes with no prior violations</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ins_premium</span></code></p></td>
+<td><p>Alternative column for insurance premium</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ins_losses</span></code></p></td>
+<td><p>Average insurance losses per driver (in US dollars)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">abbrev</span></code></p></td>
+<td><p>Two-letter abbreviation of the US state</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>A scatter plot for the speeding and total number of crashes is given below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1910,14 +1942,14 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/339c88479e5959fe830c4b7c4b3fdf74b64f05997c48d9af4049e0e592240cf7.png" src="_images/339c88479e5959fe830c4b7c4b3fdf74b64f05997c48d9af4049e0e592240cf7.png" />
+<img alt="_images/866cd92a8eeb49f2de9a0397828441f05bf58559d2455b9d065ee6ab726e284d.png" src="_images/866cd92a8eeb49f2de9a0397828441f05bf58559d2455b9d065ee6ab726e284d.png" />
 </div>
 </div>
-<p>We may assume there is a linear relationship between the amount of tips and the amount of total bills, i.e.,</p>
+<p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq-single-variable">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-eq-single-variable" title="Link to this equation">#</a></span>\[\text{tip}=\beta_0+\beta_1\text{ total_bill}\]</div>
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-eq-single-variable" title="Link to this equation">#</a></span>\[\text{total}=\beta_0+\beta_1\text{ speeding}\]</div>
 <p>Geometrically, linear regression involves finding <strong>the best-fitting line through a set of points</strong>, represented by a linear equation as shown above, where <span class="math notranslate nohighlight">\(\beta_0\)</span> is called the <code class="docutils literal notranslate"><span class="pre">intercept</span></code>.</p>
-<p>Linear regression can be done by the library <code class="docutils literal notranslate"><span class="pre">Statsmodels</span></code>. Some other libraries such as <code class="docutils literal notranslate"><span class="pre">Scipy</span></code> and <code class="docutils literal notranslate"><span class="pre">Sklearn</span></code> also have similar linear regression functions.</p>
+<p>The most common way to comute the linear regreesion model is by the ordinary least square method, for which we can use the function <code class="docutils literal notranslate"><span class="pre">OLS()</span></code> from the library <code class="docutils literal notranslate"><span class="pre">Statsmodels</span></code>.</p>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> library to perform regression typically involves the following steps:</p>
 <ul class="simple">
 <li><p>Construct the regression model using the function <code class="docutils literal notranslate"><span class="pre">OLS()</span></code> and <code class="docutils literal notranslate"><span class="pre">fit()</span></code>.</p></li>
@@ -1943,8 +1975,8 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 Dep. Variable:                  total   R-squared:                       0.374
 Model:                            OLS   Adj. R-squared:                  0.361
 Method:                 Least Squares   F-statistic:                     29.27
-Date:                Thu, 19 Jun 2025   Prob (F-statistic):           1.87e-06
-Time:                        15:45:19   Log-Likelihood:                -132.15
+Date:                Fri, 27 Jun 2025   Prob (F-statistic):           1.87e-06
+Time:                        20:06:59   Log-Likelihood:                -132.15
 No. Observations:                  51   AIC:                             268.3
 Df Residuals:                      49   BIC:                             272.2
 Df Model:                           1                                         
@@ -1967,6 +1999,34 @@ Notes:
 </div>
 </div>
 </div>
+<p>There are a lot of information in the output table, but we usually concern several key informations:</p>
+<ul class="simple">
+<li><p>Values of coefficicent <span class="math notranslate nohighlight">\(\beta_0, \beta_1, \dots\)</span></p>
+<ul>
+<li><p>They are given in the column “coef”. From them, we can get the fitted model. For this example, it is:
+$<span class="math notranslate nohighlight">\(
+\text{tip}=9.5459 +1.2493 \text{ total\_bill}
+\)</span>$</p></li>
+</ul>
+</li>
+<li><p>p-values of the independent variables.</p>
+<ul>
+<li><p>The p-values are given in the column “P&gt;|t|”. If the p-value of an independe variable is less than 0.05, it means there is <strong>linear relationship</strong> between the independent variable and the dependent variable at 95% confidence level. For this example, the p-values are all 0.000.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(R^2\)</span></p>
+<ul>
+<li><p>It is given by the value on the right of “R-squred: “ at the top right of the table. It measures the proportion of variability in the dependent variable explained by the model, with a range between 0 and 1. <strong>The closer it is to 1, the better the model fit</strong>. For this example, it is 0.374.</p></li>
+</ul>
+</li>
+</ul>
+<p>In regression analysis, there is no universal threshold for what constitutes a “good” R² value, as it heavily depends on the <strong>field of study and research context</strong>. However, here are some general guidelines:</p>
+<ul class="simple">
+<li><p>R² &gt; 0.7: Often considered <strong>strong</strong> in social sciences or fields with high noise.</p></li>
+<li><p>R² = 0.3–0.7: <strong>Moderate</strong> explanatory power (common in economics, biology, etc.).</p></li>
+<li><p>R² &lt; 0.3: <strong>Weak</strong> fit, but may still be meaningful in noisy domains (e.g., psychology, climate studies).</p></li>
+<li><p>R² ≈ 0: Model explains almost none of the variability.</p></li>
+</ul>
 <p>The general syntax for the function <code class="docutils literal notranslate"><span class="pre">ols()</span></code> is given below.</p>
 <table>
     <tr style="border-top:solid; border-bottom:solid">
@@ -1983,24 +2043,261 @@ Notes:
 </table>
 <br /><p>The general syntax for the formula is below:</p>
 <blockquote>
-<div><p>y ~ x1 + x2</p>
+<div><p>y ~ x1 + x2 + x1:x2 + C(x3)</p>
 </div></blockquote>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> is the dependent (response) variable</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code> are independent (regressor) variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">x3</span></code> are independent (regressor) variables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C(x3)</span></code> means x3 is catorgorical variable</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> separates the dependent variable from the predictors</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> adds independent variables</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-1</span></code> removes the intercept (by default it’s included)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1:x2</span></code> adds an <strong>interaction term</strong> only</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1*x2</span></code> adds both main effects and the interaction (x1 + x2 + x1:x2)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x1:x2</span></code> adds an <strong>interaction term</strong> only, which equals x1*x2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x1*x2</span></code> adds both main terms and the interaction, which equals x1 + x2 + x1*x2</p></li>
 </ul>
-<p>Normally in regression, we assume that variables affect the outcome independently. But sometimes, the <strong>combined effect</strong> of two variables is more (or less) than just adding their individual effects — that’s where <code class="docutils literal notranslate"><span class="pre">interaction</span> <span class="pre">terms</span></code> come in.</p>
+<ul class="simple">
+<li><p>Normally in regression, we assume that variables affect the outcome independently. But sometimes, the <strong>combined effect</strong> of two variables is more (or less) than just adding their individual effects — that’s where <code class="docutils literal notranslate"><span class="pre">interaction</span> <span class="pre">terms</span></code> come in.</p></li>
+</ul>
+<p>For example, we can apply a linear regression between the amount of total crashes, the speeding and the alcohol:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{total}=\beta_0+\beta_1\text{ speeding}+\beta_2\text{ alcohol}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
+
+<span class="c1"># the linear model is definded by strings the in the formula</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;total ~ speeding + alcohol&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># model summary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  total   R-squared:                       0.730
+Model:                            OLS   Adj. R-squared:                  0.719
+Method:                 Least Squares   F-statistic:                     64.87
+Date:                Fri, 27 Jun 2025   Prob (F-statistic):           2.27e-14
+Time:                        20:06:59   Log-Likelihood:                -110.71
+No. Observations:                  51   AIC:                             227.4
+Df Residuals:                      48   BIC:                             233.2
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      5.6807      0.957      5.934      0.000       3.756       7.606
+speeding       0.1502      0.206      0.728      0.470      -0.265       0.565
+alcohol        1.9152      0.241      7.954      0.000       1.431       2.399
+==============================================================================
+Omnibus:                        2.495   Durbin-Watson:                   1.809
+Prob(Omnibus):                  0.287   Jarque-Bera (JB):                2.045
+Skew:                           0.490   Prob(JB):                        0.360
+Kurtosis:                       2.978   Cond. No.                         23.5
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or, if we consider the interaction of speeding and alcohol (drivers with alcohol tend to driving with highe speed):</p>
+<div class="math notranslate nohighlight">
+\[
+\text{total}=\beta_0+\beta_1\text{ speeding}+\beta_2\text{ alcohol}+\beta_3\text{ alcohol*speeding}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
+
+<span class="c1"># the linear model is definded by strings the in the formula</span>
+<span class="c1"># the below code equals: model = smf.ols(formula=&quot;total ~ alcohol*speeding&quot;, data=crashes).fit()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;total ~ speeding + alcohol + alcohol:speeding&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># model summary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  total   R-squared:                       0.790
+Model:                            OLS   Adj. R-squared:                  0.777
+Method:                 Least Squares   F-statistic:                     58.91
+Date:                Fri, 27 Jun 2025   Prob (F-statistic):           5.91e-16
+Time:                        20:06:59   Log-Likelihood:                -104.31
+No. Observations:                  51   AIC:                             216.6
+Df Residuals:                      47   BIC:                             224.3
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept           -1.8936      2.236     -0.847      0.401      -6.393       2.605
+speeding             1.5561      0.426      3.657      0.001       0.700       2.412
+alcohol              3.5368      0.492      7.191      0.000       2.547       4.526
+alcohol:speeding    -0.2761      0.075     -3.664      0.001      -0.428      -0.125
+==============================================================================
+Omnibus:                        3.087   Durbin-Watson:                   1.807
+Prob(Omnibus):                  0.214   Jarque-Bera (JB):                2.360
+Skew:                           0.520   Prob(JB):                        0.307
+Kurtosis:                       3.168   Cond. No.                         284.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the catogorical variable, we use the dataset “tips” as an example to fit the following equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{tip}=\beta_0+\beta_1\text{ total\_bill}+\beta_2\text{ day}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
+
+<span class="c1"># the linear model is definded by strings the in the formula</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;tip ~ total_bill + C(day)&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># model summary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    tip   R-squared:                       0.459
+Model:                            OLS   Adj. R-squared:                  0.450
+Method:                 Least Squares   F-statistic:                     50.67
+Date:                Fri, 27 Jun 2025   Prob (F-statistic):           7.52e-31
+Time:                        20:06:59   Log-Likelihood:                -350.03
+No. Observations:                 244   AIC:                             710.1
+Df Residuals:                     239   BIC:                             727.5
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P&gt;|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+Intercept         0.9205      0.186      4.943      0.000       0.554       1.287
+C(day)[T.Fri]     0.0189      0.269      0.070      0.944      -0.511       0.549
+C(day)[T.Sat]    -0.0671      0.172     -0.391      0.697      -0.406       0.271
+C(day)[T.Sun]     0.0935      0.178      0.526      0.599      -0.257       0.444
+total_bill        0.1047      0.008     13.915      0.000       0.090       0.119
+==============================================================================
+Omnibus:                       20.916   Durbin-Watson:                   2.149
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               38.821
+Skew:                           0.463   Prob(JB):                     3.72e-09
+Kurtosis:                       4.721   Cond. No.                         103.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Linear regression can also be performed using non-formula-based modeling, non-OLS methods or other libraries, which are omitted here due to space limitations.</p>
+</div>
+</section>
+<section id="structural-equation-model-1">
+<h2><span class="section-number">8.6. </span>Structural equation model*<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#structural-equation-model-1" title="Link to this heading">#</a></h2>
+<hr>
+<p><code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Equation</span> <span class="pre">Modeling</span></code> (SEM) is especially useful when the research involves <strong>latent variables</strong> (concepts that can’t be directly observed) and <strong>complex relationships</strong> among multiple variables—such as mediation, moderation or multiple simultaneous dependencies.</p>
+<blockquote>
+<div><p>Variables like job satisfaction, employee engagement, customer loyalty, leadership style, or brand perception are not directly measurable.</p>
+</div></blockquote>
+<p>These are called latent variables and typically measured through surveys using multiple items. SEM allows us to model the relationship between latent constructs and their observed indicators (this is called the measurement model).</p>
+<blockquote>
+<div><p>SEM is also ideal when the model includes complex cause-effect relationships and we want to test direct and indirect effects simultaneously.</p>
+</div></blockquote>
+<p>For example, we can use SEM to test the following relationship:</p>
+<ul>
+<li><p>Does corporate Social Responsibility (CSR) positively influence a company’s Brand Image, which in turn enhances Customer Satisfaction, ultimately leading to increased Customer Loyalty.</p>
+<p>Corporate Social Responsibility (CSR) → Brand Image → Customer Satisfaction → Customer Loyalty</p>
+</li>
+<li><p>How motivation and leadership style affect both job performance and turnover intention at the same time.</p>
+<p>Motivation        ──→ Job Performance<br />
+Leadership Style  ──→ Job Performance<br />
+Motivation        ──→ Turnover Intention<br />
+Leadership Style  ──→ Turnover Intention</p>
+</li>
+</ul>
+<section id="an-example-of-using-sem">
+<h3><span class="section-number">8.6.1. </span>An example of using SEM<a class="headerlink" href="#an-example-of-using-sem" title="Link to this heading">#</a></h3>
+<hr>
+<p>We use an example in one marketing research showing how tuo use SEM.</p>
+<section id="research-question-assumptions-and-variables">
+<h4><span class="section-number">8.6.1.1. </span>Research question, assumptions and variables<a class="headerlink" href="#research-question-assumptions-and-variables" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Research question: this study aims to explore the impact mechanism of social media advertising (e.g., Instagram ads) on consumers’ purchase intention, and to analyze the mediating role of brand trust and the moderating role of personal innovativeness.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Research Hypotheses:</p>
+<ul>
+<li><p>H1: Attractiveness of social media advertising positively influences brand trust.</p></li>
+<li><p>H2: Brand trust positively influences purchase intention.</p></li>
+<li><p>H3: Brand trust mediates the relationship between advertising attractiveness and purchase intention.</p></li>
+<li><p>H4: Personal innovativeness moderates the relationship between advertising attractiveness and brand trust (the effect is stronger among highly innovative individuals).</p></li>
+</ul>
+</li>
+</ul>
+<p>The hypotheses is illustrated by the following graph.</p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph LR
+  X[Social media advertising X] --&gt; M[Brand Trust M]
+  M --&gt; Y[Purchase Intention Y]
+  X --&gt; Y
+  Z[Personal Innovativeness Z] --&gt; X
+  Z --&gt; M
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Variable Design:</p>
+<ul>
+<li><p>Independent Variable (X): Attractiveness of social media advertising (measured by: advertising creativity, visual design, information usefulness).</p></li>
+<li><p>Mediating Variable (M): Brand trust (measured by: brand reliability, brand integrity).</p></li>
+<li><p>Dependent Variable (Y): Purchase intention (measured by: willingness to buy, willingness to recommend to others).</p></li>
+<li><p>Moderating Variable (Z): Personal innovativeness (categorical variable: high vs. low innovativeness groups).</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Moderating</span> <span class="pre">varaible</span></code>: Determines whether the strength or direction of the effect of the independent variable (X) on the dependent variable (Y) changes depending on <strong>different levels of another variable</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mediating</span> <span class="pre">variable</span></code>: Explains how the independent variable (X) influences the dependent variable (Y) through an <strong>intermediate</strong> mechanism (M).</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="data-collection-and-pretest">
+<h4><span class="section-number">8.6.1.2. </span>Data collection and pretest<a class="headerlink" href="#data-collection-and-pretest" title="Link to this heading">#</a></h4>
+</section>
+</section>
 </section>
 <section id="reliability-and-validity-test">
-<h2><span class="section-number">8.6. </span>Reliability and validity test<a class="headerlink" href="#reliability-and-validity-test" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7. </span>Reliability and validity test<a class="headerlink" href="#reliability-and-validity-test" title="Link to this heading">#</a></h2>
 <hr><p>In research methodology (especially in fields such as <strong>surveys</strong>, psychometrics, and educational assessment), <code class="docutils literal notranslate"><span class="pre">reliability</span></code> and <code class="docutils literal notranslate"><span class="pre">validity</span></code> are two core indicators for evaluating the quality of a measurement scale.</p>
 <section id="reliablity">
-<h3><span class="section-number">8.6.1. </span>Reliablity<a class="headerlink" href="#reliablity" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.7.1. </span>Reliablity<a class="headerlink" href="#reliablity" title="Link to this heading">#</a></h3>
 <hr>
 <p><code class="docutils literal notranslate"><span class="pre">Reliability</span></code> refers to the consistency of measurement. It means that if the questions in a questionnaire are asked repeatedly to the same person, their responses should remain consistent each time.</p>
 <p>There are several common types of reliability listed below.</p>
@@ -2177,11 +2474,11 @@ Notes:
 </ol>
 </section>
 <section id="validity">
-<h3><span class="section-number">8.6.2. </span>Validity<a class="headerlink" href="#validity" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.7.2. </span>Validity<a class="headerlink" href="#validity" title="Link to this heading">#</a></h3>
 <hr><p><code class="docutils literal notranslate"><span class="pre">Validity</span></code> refers to whether a test or study measures what it claims to measure. For example, can a certain set of IQ test questions truly reflect a person’s real intelligence?</p>
 <p>There are several common types of validity listed below.</p>
 <ol class="arabic simple">
-<li><p>Construct Validity</p>
+<li><p><strong>Construct Validity</strong></p>
 <ul class="simple">
 <li><p>Assesses whether the instrument truly measures the theoretical construct it is intended to.</p></li>
 </ul>
@@ -2202,6 +2499,271 @@ Notes:
 <li><p>Average Variance Extracted (AVE): Assesses convergent validity (AVE ≥ 0.50 is acceptable).</p></li>
 <li><p>Composite Reliability (CR): Evaluates internal consistency of latent variables.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">semopy</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">calc_stats</span>
+
+<span class="c1"># Set random seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">300</span>
+
+<span class="c1"># Generate latent variables with assumed relationships</span>
+<span class="c1"># BrandImage ~ N(0,1)</span>
+<span class="n">BrandImage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+<span class="c1"># Customer Satisfaction influenced by BrandImage + noise</span>
+<span class="n">CustSatis</span> <span class="o">=</span> <span class="mf">0.7</span> <span class="o">*</span> <span class="n">BrandImage</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+<span class="c1"># Customer Loyalty influenced by BrandImage and CustSatis + noise</span>
+<span class="n">CustLoyal</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">BrandImage</span> <span class="o">+</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">CustSatis</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+
+<span class="c1"># Function to generate observed indicators from latent variables</span>
+<span class="k">def</span> <span class="nf">generate_indicators</span><span class="p">(</span><span class="n">latent_var</span><span class="p">):</span>
+    <span class="c1"># Each latent variable is measured by 3 indicators with measurement error (std=0.3)</span>
+    <span class="k">return</span> <span class="n">latent_var</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Generate observed variables for each latent variable</span>
+<span class="n">BI</span> <span class="o">=</span> <span class="n">generate_indicators</span><span class="p">(</span><span class="n">BrandImage</span><span class="p">)</span>  <span class="c1"># Brand Image indicators</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">generate_indicators</span><span class="p">(</span><span class="n">CustSatis</span><span class="p">)</span>   <span class="c1"># Customer Satisfaction indicators</span>
+<span class="n">CL</span> <span class="o">=</span> <span class="n">generate_indicators</span><span class="p">(</span><span class="n">CustLoyal</span><span class="p">)</span>   <span class="c1"># Customer Loyalty indicators</span>
+
+<span class="c1"># Combine all observed indicators into one dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">BI</span><span class="p">,</span> <span class="n">CS</span><span class="p">,</span> <span class="n">CL</span><span class="p">])</span>
+
+<span class="c1"># Create DataFrame with appropriate column names matching SEM model</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;BI1&#39;</span><span class="p">,</span> <span class="s1">&#39;BI2&#39;</span><span class="p">,</span> <span class="s1">&#39;BI3&#39;</span><span class="p">,</span> <span class="s1">&#39;CS1&#39;</span><span class="p">,</span> <span class="s1">&#39;CS2&#39;</span><span class="p">,</span> <span class="s1">&#39;CS3&#39;</span><span class="p">,</span> <span class="s1">&#39;CL1&#39;</span><span class="p">,</span> <span class="s1">&#39;CL2&#39;</span><span class="p">,</span> <span class="s1">&#39;CL3&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Transform data to simulate Likert-scale scores (1 to 5)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">df</span>          <span class="c1"># Shift mean to around 3</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>   <span class="c1"># Clip values to range [1, 5]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># Round to 2 decimal places</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sample of simulated data:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Define SEM model using lavaan-style syntax</span>
+<span class="n">model_desc</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">BrandImage =~ BI1 + BI2 + BI3</span>
+<span class="s1">CustSatis =~ CS1 + CS2 + CS3</span>
+<span class="s1">CustLoyal =~ CL1 + CL2 + CL3</span>
+
+<span class="s1">CustSatis ~ BrandImage</span>
+<span class="s1">CustLoyal ~ BrandImage + CustSatis</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="c1"># Initialize and fit SEM model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">model_desc</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Inspect and print path coefficients and loadings</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Path coefficients and loadings:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">inspect</span><span class="p">())</span>
+
+<span class="c1"># Calculate and print model fit statistics (CFI, TLI, RMSEA, AIC, BIC)</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">calc_stats</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Model fit indices:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="p">[[</span><span class="s1">&#39;CFI&#39;</span><span class="p">,</span> <span class="s1">&#39;TLI&#39;</span><span class="p">,</span> <span class="s1">&#39;RMSEA&#39;</span><span class="p">,</span> <span class="s1">&#39;AIC&#39;</span><span class="p">,</span> <span class="s1">&#39;BIC&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample of simulated data:
+    BI1   BI2   BI3   CS1   CS2   CS3   CL1   CL2   CL3
+0  3.61  3.38  3.51  3.50  2.92  2.72  3.60  3.81  4.09
+1  3.25  2.92  2.88  2.17  2.08  2.15  2.58  2.35  2.58
+2  3.24  3.87  3.84  3.91  3.98  3.35  4.17  4.13  4.02
+3  5.00  4.43  4.59  4.64  4.23  4.42  5.00  4.71  5.00
+4  2.84  3.24  2.74  3.31  3.09  2.75  3.18  2.61  3.14
+
+Path coefficients and loadings:
+          lval  op        rval  Estimate  Std. Err    z-value p-value
+0    CustSatis   ~  BrandImage  0.709236   0.03749  18.917873     0.0
+1    CustLoyal   ~  BrandImage  0.387517  0.062313   6.218918     0.0
+2    CustLoyal   ~   CustSatis  0.523219  0.072201   7.246728     0.0
+3          BI1   ~  BrandImage  1.000000         -          -       -
+4          BI2   ~  BrandImage  1.002784  0.028184  35.579707     0.0
+5          BI3   ~  BrandImage  1.001898  0.026477  37.839803     0.0
+6          CS1   ~   CustSatis  1.000000         -          -       -
+7          CS2   ~   CustSatis  1.017068  0.031746  32.037818     0.0
+8          CS3   ~   CustSatis  1.020083   0.03155  32.332258     0.0
+9          CL1   ~   CustLoyal  1.000000         -          -       -
+10         CL2   ~   CustLoyal  0.984247  0.030295  32.488874     0.0
+11         CL3   ~   CustLoyal  0.991337  0.029433  33.681674     0.0
+12  BrandImage  ~~  BrandImage  0.836975   0.07641  10.953723     0.0
+13   CustLoyal  ~~   CustLoyal  0.230511  0.023737   9.711127     0.0
+14   CustSatis  ~~   CustSatis  0.216178  0.022634   9.550881     0.0
+15         BI1  ~~         BI1  0.099511  0.011128   8.942749     0.0
+16         BI2  ~~         BI2  0.087463  0.010389   8.418935     0.0
+17         BI3  ~~         BI3  0.062655  0.008973   6.982522     0.0
+18         CL1  ~~         CL1  0.088391  0.011319    7.80931     0.0
+19         CL2  ~~         CL2  0.107971  0.012342   8.748523     0.0
+20         CL3  ~~         CL3  0.093782  0.011532   8.132006     0.0
+21         CS1  ~~         CS1  0.094921  0.010637   8.923431     0.0
+22         CS2  ~~         CS2  0.078827  0.009771   8.067567     0.0
+23         CS3  ~~         CS3  0.075548  0.009606   7.864844     0.0
+
+Model fit indices:
+            CFI       TLI     RMSEA        AIC         BIC
+Value  0.999754  0.999631  0.011327  41.833862  119.613294
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">完整结构方程模型（SEM）分析示例：社交媒体广告对购买意愿的影响</span>
+<span class="sd">包含：测量模型、结构模型、中介效应、调节效应（多群组分析）</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">semopy</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">bootstrap</span><span class="p">,</span> <span class="n">calc_lrtest</span>
+<span class="kn">from</span> <span class="nn">semopy.semplot</span> <span class="kn">import</span> <span class="n">semplot</span>
+
+<span class="c1"># ======================</span>
+<span class="c1"># 1. 模拟数据生成</span>
+<span class="c1"># ======================</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># 样本量</span>
+
+<span class="c1"># 潜变量真实得分（用于生成题项）</span>
+<span class="n">latent_ad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>    <span class="c1"># 广告吸引力潜变量</span>
+<span class="n">latent_trust</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># 品牌信任（受广告影响）</span>
+<span class="n">latent_purchase</span> <span class="o">=</span> <span class="mf">0.7</span> <span class="o">*</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># 购买意愿</span>
+
+<span class="c1"># 生成观测题项（带测量误差）</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="c1"># 广告吸引力题项（3个）</span>
+    <span class="s1">&#39;ad1&#39;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="s1">&#39;ad2&#39;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="s1">&#39;ad3&#39;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    
+    <span class="c1"># 品牌信任题项（3个）</span>
+    <span class="s1">&#39;trust1&#39;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="s1">&#39;trust2&#39;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="s1">&#39;trust3&#39;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    
+    <span class="c1"># 购买意愿题项（2个）</span>
+    <span class="s1">&#39;purchase1&#39;</span><span class="p">:</span> <span class="n">latent_purchase</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="s1">&#39;purchase2&#39;</span><span class="p">:</span> <span class="n">latent_purchase</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    
+    <span class="c1"># 调节变量（个人创新性，0=低，1=高）</span>
+    <span class="s1">&#39;group&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># 随机分组</span>
+<span class="p">})</span>
+
+<span class="c1"># ======================</span>
+<span class="c1"># 2. 定义SEM模型</span>
+<span class="c1"># ======================</span>
+<span class="n">model_spec</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    # 测量模型（CFA部分）</span>
+<span class="s1">    广告吸引力 =~ ad1 + ad2 + ad3</span>
+<span class="s1">    品牌信任 =~ trust1 + trust2 + trust3</span>
+<span class="s1">    购买意愿 =~ purchase1 + purchase2</span>
+<span class="s1">    </span>
+<span class="s1">    # 结构模型（路径分析）</span>
+<span class="s1">    品牌信任 ~ 广告吸引力</span>
+<span class="s1">    购买意愿 ~ 品牌信任 + 广告吸引力</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="c1"># ======================</span>
+<span class="c1"># 3. 模型拟合与结果</span>
+<span class="c1"># ======================</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">model_spec</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== 模型拟合结果 ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== 标准化系数 ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">std_est</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+<span class="c1"># ======================</span>
+<span class="c1"># 4. 中介效应检验（Bootstrap）</span>
+<span class="c1"># ======================</span>
+<span class="n">mediation_spec</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    广告吸引力 =~ ad1 + ad2 + ad3</span>
+<span class="s1">    品牌信任 =~ trust1 + trust2 + trust3</span>
+<span class="s1">    购买意愿 =~ purchase1 + purchase2</span>
+<span class="s1">    </span>
+<span class="s1">    # 命名路径系数</span>
+<span class="s1">    品牌信任 ~ a*广告吸引力</span>
+<span class="s1">    购买意愿 ~ b*品牌信任 + c*广告吸引力</span>
+<span class="s1">    </span>
+<span class="s1">    # 定义效应</span>
+<span class="s1">    间接 := a*b</span>
+<span class="s1">    总效应 := c + a*b</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">mediation_model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">mediation_spec</span><span class="p">)</span>
+<span class="n">mediation_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">bootstrap_results</span> <span class="o">=</span> <span class="n">bootstrap</span><span class="p">(</span><span class="n">mediation_model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== 中介效应 ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;间接效应估计值: </span><span class="si">{</span><span class="n">bootstrap_results</span><span class="p">[</span><span class="s1">&#39;indirect&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;95%置信区间: [</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_results</span><span class="p">[</span><span class="s1">&#39;indirect&#39;</span><span class="p">],</span><span class="w"> </span><span class="mf">2.5</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_results</span><span class="p">[</span><span class="s1">&#39;indirect&#39;</span><span class="p">],</span><span class="w"> </span><span class="mf">97.5</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+
+<span class="c1"># ======================</span>
+<span class="c1"># 5. 调节效应分析（多群组）</span>
+<span class="c1"># ======================</span>
+<span class="c1"># 按调节变量分组</span>
+<span class="n">group0</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># 低创新性组</span>
+<span class="n">group1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># 高创新性组</span>
+
+<span class="c1"># 分别拟合模型</span>
+<span class="n">model_group0</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">model_spec</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">group0</span><span class="p">)</span>
+<span class="n">model_group1</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">model_spec</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">group1</span><span class="p">)</span>
+
+<span class="c1"># 提取关键路径系数</span>
+<span class="n">beta_group0</span> <span class="o">=</span> <span class="n">model_group0</span><span class="o">.</span><span class="n">inspect</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;品牌信任~广告吸引力&#39;</span><span class="p">,</span> <span class="s1">&#39;Estimate&#39;</span><span class="p">]</span>
+<span class="n">beta_group1</span> <span class="o">=</span> <span class="n">model_group1</span><span class="o">.</span><span class="n">inspect</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;品牌信任~广告吸引力&#39;</span><span class="p">,</span> <span class="s1">&#39;Estimate&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== 调节效应 ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;低创新性组路径系数: </span><span class="si">{</span><span class="n">beta_group0</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;高创新性组路径系数: </span><span class="si">{</span><span class="n">beta_group1</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 似然比检验（比较两组模型）</span>
+<span class="n">lrtest</span> <span class="o">=</span> <span class="n">calc_lrtest</span><span class="p">(</span><span class="n">model_group0</span><span class="p">,</span> <span class="n">model_group1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;路径系数差异显著性(p值): </span><span class="si">{</span><span class="n">lrtest</span><span class="o">.</span><span class="n">pvalue</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ======================</span>
+<span class="c1"># 6. 可视化</span>
+<span class="c1"># ======================</span>
+<span class="c1"># 绘制路径图（需安装graphviz）</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">semplot</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;model.png&quot;</span><span class="p">,</span> <span class="n">plot_covs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 绘制调节效应图</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;低创新性&#39;</span><span class="p">,</span> <span class="s1">&#39;高创新性&#39;</span><span class="p">]</span>
+<span class="n">coefs</span> <span class="o">=</span> <span class="p">[</span><span class="n">beta_group0</span><span class="p">,</span> <span class="n">beta_group1</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">coefs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="s1">&#39;salmon&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;广告吸引力→品牌信任的调节效应&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;路径系数&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">semopy</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">bootstrap</span><span class="p">,</span> <span class="n">calc_lrtest</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">semopy.semplot</span> <span class="kn">import</span> <span class="n">semplot</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># ======================</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># 1. 模拟数据生成</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># ======================</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;bootstrap&#39; from &#39;semopy&#39; (/opt/anaconda3/lib/python3.12/site-packages/semopy/__init__.py)
+</pre></div>
+</div>
+</div>
+</div>
 <ol class="arabic simple" start="3">
 <li><p>Discriminant Validity</p>
 <ul class="simple">
@@ -2214,8 +2776,8 @@ Notes:
 <li><p>Fornell-Larcker Criterion: The square root of the AVE for each construct should be greater than its correlations with other constructs.</p></li>
 <li><p>HTMT Ratio (Heterotrait-Monotrait): Measures inter-construct correlations. HTMT values &lt; 0.85 (or 0.90) are considered acceptable.</p></li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p>Content Validity</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Content Validity</strong></p>
 <ul class="simple">
 <li><p>Examines whether the items adequately cover the domain of the construct.</p></li>
 </ul>
@@ -2229,7 +2791,7 @@ Notes:
 </section>
 </section>
 <section id="exercises">
-<h2><span class="section-number">8.7. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.8. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="statistic">
 
 <p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
@@ -2263,7 +2825,14 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <script type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
-<br></section>
+<br><hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>* means this section may not be delivered in the class.</p>
+</aside>
+</aside>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2351,12 +2920,20 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.5. Linear regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.6. Reliability and validity test</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliablity">8.6.1. Reliablity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity">8.6.2. Validity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model-1">8.6. Structural equation model*</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.6.1. An example of using SEM</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.6.1.1. Research question, assumptions and variables</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection-and-pretest">8.6.1.2. Data collection and pretest</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.7. Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.7. Reliability and validity test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliablity">8.7.1. Reliablity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity">8.7.2. Validity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.8. Exercises</a></li>
 </ul>
   </nav></div>
 

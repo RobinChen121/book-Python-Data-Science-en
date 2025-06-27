@@ -62,6 +62,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'statistics2';</script>
     <script src="_static/myfile.js?v=78ba3122"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
@@ -178,7 +180,7 @@
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Introduction to Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Define functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Draw graphs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
@@ -426,11 +428,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">9.1. Linear regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">9.1.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">9.1.2. sklearn 库</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.1. Standardize Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.2. 主成分分析</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">9.3. Kmeans 聚类</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4. 人工神经网络</a></li>
@@ -450,708 +448,129 @@
 <h1><span class="section-number">9. </span>Python machine learning<a class="headerlink" href="#python-machine-learning" title="Link to this heading">#</a></h1>
 <hr>
 <p>In this chapter, we explain how to perform statistical analysis on data using Python. Rather than delving into the theoretical and computational details of the statistical concepts and methods, we aim to provide intuitive, visual explanations that are easy to understand.</p>
-<section id="linear-regression">
-<h2><span class="section-number">9.1. </span>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h2>
-<hr><p>使用 Python 做线性回归分析有好几种方式，常见的是用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>库或者<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库。</p>
-<p>假设有下面的数据存储在 excel 文件 line_regression.xlsx 中：</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>不良贷款</p></th>
-<th class="head"><p>各项贷款余额</p></th>
-<th class="head"><p>本年累计应收贷款</p></th>
-<th class="head"><p>贷款项目个数</p></th>
-<th class="head"><p>本年固定资产投资额</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0.9</p></td>
-<td><p>67.3</p></td>
-<td><p>6.8</p></td>
-<td><p>5</p></td>
-<td><p>51.9</p></td>
-</tr>
-<tr class="row-odd"><td><p>1.1</p></td>
-<td><p>111.3</p></td>
-<td><p>19.8</p></td>
-<td><p>16</p></td>
-<td><p>90.9</p></td>
-</tr>
-<tr class="row-even"><td><p>4.8</p></td>
-<td><p>173.0</p></td>
-<td><p>7.7</p></td>
-<td><p>17</p></td>
-<td><p>73.7</p></td>
-</tr>
-<tr class="row-odd"><td><p>3.2</p></td>
-<td><p>80.8</p></td>
-<td><p>7.2</p></td>
-<td><p>10</p></td>
-<td><p>14.5</p></td>
-</tr>
-<tr class="row-even"><td><p>7.8</p></td>
-<td><p>199.7</p></td>
-<td><p>16.5</p></td>
-<td><p>19</p></td>
-<td><p>63.2</p></td>
-</tr>
-<tr class="row-odd"><td><p>2.7</p></td>
-<td><p>16.2</p></td>
-<td><p>2.2</p></td>
-<td><p>1</p></td>
-<td><p>2.2</p></td>
-</tr>
-<tr class="row-even"><td><p>1.6</p></td>
-<td><p>107.4</p></td>
-<td><p>10.7</p></td>
-<td><p>17</p></td>
-<td><p>20.2</p></td>
-</tr>
-<tr class="row-odd"><td><p>12.5</p></td>
-<td><p>185.4</p></td>
-<td><p>27.1</p></td>
-<td><p>18</p></td>
-<td><p>43.8</p></td>
-</tr>
-<tr class="row-even"><td><p>1.0</p></td>
-<td><p>96.1</p></td>
-<td><p>1.7</p></td>
-<td><p>10</p></td>
-<td><p>55.9</p></td>
-</tr>
-<tr class="row-odd"><td><p>2.6</p></td>
-<td><p>72.8</p></td>
-<td><p>9.1</p></td>
-<td><p>14</p></td>
-<td><p>64.3</p></td>
-</tr>
-<tr class="row-even"><td><p>0.3</p></td>
-<td><p>64.2</p></td>
-<td><p>2.1</p></td>
-<td><p>11</p></td>
-<td><p>42.7</p></td>
-</tr>
-<tr class="row-odd"><td><p>4.0</p></td>
-<td><p>132.2</p></td>
-<td><p>11.2</p></td>
-<td><p>23</p></td>
-<td><p>76.7</p></td>
-</tr>
-<tr class="row-even"><td><p>0.8</p></td>
-<td><p>58.6</p></td>
-<td><p>6.0</p></td>
-<td><p>14</p></td>
-<td><p>22.8</p></td>
-</tr>
-<tr class="row-odd"><td><p>3.5</p></td>
-<td><p>174.6</p></td>
-<td><p>12.7</p></td>
-<td><p>26</p></td>
-<td><p>117.1</p></td>
-</tr>
-<tr class="row-even"><td><p>10.2</p></td>
-<td><p>263.5</p></td>
-<td><p>15.6</p></td>
-<td><p>34</p></td>
-<td><p>146.7</p></td>
-</tr>
-<tr class="row-odd"><td><p>3.0</p></td>
-<td><p>79.3</p></td>
-<td><p>8.9</p></td>
-<td><p>15</p></td>
-<td><p>29.9</p></td>
-</tr>
-<tr class="row-even"><td><p>0.2</p></td>
-<td><p>14.8</p></td>
-<td><p>0.6</p></td>
-<td><p>2</p></td>
-<td><p>42.1</p></td>
-</tr>
-<tr class="row-odd"><td><p>0.4</p></td>
-<td><p>73.5</p></td>
-<td><p>5.9</p></td>
-<td><p>11</p></td>
-<td><p>25.3</p></td>
-</tr>
-<tr class="row-even"><td><p>1.0</p></td>
-<td><p>24.7</p></td>
-<td><p>5.0</p></td>
-<td><p>4</p></td>
-<td><p>13.4</p></td>
-</tr>
-<tr class="row-odd"><td><p>6.8</p></td>
-<td><p>139.4</p></td>
-<td><p>7.2</p></td>
-<td><p>28</p></td>
-<td><p>64.3</p></td>
-</tr>
-<tr class="row-even"><td><p>11.6</p></td>
-<td><p>368.2</p></td>
-<td><p>16.8</p></td>
-<td><p>32</p></td>
-<td><p>163.9</p></td>
-</tr>
-<tr class="row-odd"><td><p>1.6</p></td>
-<td><p>95.7</p></td>
-<td><p>3.8</p></td>
-<td><p>10</p></td>
-<td><p>44.5</p></td>
-</tr>
-<tr class="row-even"><td><p>1.2</p></td>
-<td><p>109.6</p></td>
-<td><p>10.3</p></td>
-<td><p>14</p></td>
-<td><p>67.9</p></td>
-</tr>
-<tr class="row-odd"><td><p>7.2</p></td>
-<td><p>196.2</p></td>
-<td><p>15.8</p></td>
-<td><p>16</p></td>
-<td><p>39.7</p></td>
-</tr>
-<tr class="row-even"><td><p>3.2</p></td>
-<td><p>102.2</p></td>
-<td><p>12.0</p></td>
-<td><p>10</p></td>
-<td><p>97.1</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">get_dataset_names</span><span class="p">())</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
-<span class="n">dataset</span>
+<p>One key machine leanring library in Python is <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>. Install it using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>.</p>
+<div class="highlight-dos notranslate"><div class="highlight"><pre><span></span>pip install scikit-learn
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;anagrams&#39;, &#39;anscombe&#39;, &#39;attention&#39;, &#39;brain_networks&#39;, &#39;car_crashes&#39;, &#39;diamonds&#39;, &#39;dots&#39;, &#39;dowjones&#39;, &#39;exercise&#39;, &#39;flights&#39;, &#39;fmri&#39;, &#39;geyser&#39;, &#39;glue&#39;, &#39;healthexp&#39;, &#39;iris&#39;, &#39;mpg&#39;, &#39;penguins&#39;, &#39;planets&#39;, &#39;seaice&#39;, &#39;taxis&#39;, &#39;tips&#39;, &#39;titanic&#39;]
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>total_bill</th>
-      <th>tip</th>
-      <th>sex</th>
-      <th>smoker</th>
-      <th>day</th>
-      <th>time</th>
-      <th>size</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>16.99</td>
-      <td>1.01</td>
-      <td>Female</td>
-      <td>No</td>
-      <td>Sun</td>
-      <td>Dinner</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>10.34</td>
-      <td>1.66</td>
-      <td>Male</td>
-      <td>No</td>
-      <td>Sun</td>
-      <td>Dinner</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>21.01</td>
-      <td>3.50</td>
-      <td>Male</td>
-      <td>No</td>
-      <td>Sun</td>
-      <td>Dinner</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>23.68</td>
-      <td>3.31</td>
-      <td>Male</td>
-      <td>No</td>
-      <td>Sun</td>
-      <td>Dinner</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>24.59</td>
-      <td>3.61</td>
-      <td>Female</td>
-      <td>No</td>
-      <td>Sun</td>
-      <td>Dinner</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>239</th>
-      <td>29.03</td>
-      <td>5.92</td>
-      <td>Male</td>
-      <td>No</td>
-      <td>Sat</td>
-      <td>Dinner</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>240</th>
-      <td>27.18</td>
-      <td>2.00</td>
-      <td>Female</td>
-      <td>Yes</td>
-      <td>Sat</td>
-      <td>Dinner</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>241</th>
-      <td>22.67</td>
-      <td>2.00</td>
-      <td>Male</td>
-      <td>Yes</td>
-      <td>Sat</td>
-      <td>Dinner</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>242</th>
-      <td>17.82</td>
-      <td>1.75</td>
-      <td>Male</td>
-      <td>No</td>
-      <td>Sat</td>
-      <td>Dinner</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>243</th>
-      <td>18.78</td>
-      <td>3.00</td>
-      <td>Female</td>
-      <td>No</td>
-      <td>Thur</td>
-      <td>Dinner</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-<p>244 rows × 7 columns</p>
-</div></div></div>
-</div>
-<p>首先使用 pandas 读取 excel 数据：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="c1"># 下面前几行代码是为了运行 live code 而进行的设置，</span>
-<span class="c1"># 与本章的教学内容无关</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;/home/jovyan&quot;</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;data-science/&quot;</span><span class="p">)</span>
-
-<span class="c1"># 正文</span>
-<span class="c1"># 读取 excel 数据，引号里面是 excel 文件在电脑的存储位置</span>
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datas/linear_regression.xlsx&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition- admonition">
-<p class="admonition-title">注意</p>
+<p>When we use this library in Python, its name is <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
+<section id="standardize-data">
+<h2><span class="section-number">9.1. </span>Standardize Data<a class="headerlink" href="#standardize-data" title="Link to this heading">#</a></h2>
+<hr><p><code class="docutils literal notranslate"><span class="pre">Standardization</span></code> is a process of transforming the data to make it more suitable for some statistical analysis or machine learning.</p>
+<p>The main reasons include:</p>
 <ul class="simple">
-<li><p>苹果电脑的文件地址用符号<code class="docutils literal notranslate"><span class="pre">/</span></code>分割，而 windows 系统的文件地址用符号<code class="docutils literal notranslate"><span class="pre">\</span></code>分割</p></li>
-<li><p>文件地址前加上<code class="docutils literal notranslate"><span class="pre">r</span></code>能够保持字符串原始值的含义，而不对其中的符号进行转义</p></li>
+<li><p>To remove the effect of different units and scales</p>
+<ul>
+<li><p>Variables may have different units (e.g., dollars, percentages, counts).</p></li>
+<li><p>Without standardization, variables with larger scales may dominate the model (especially in regression or distance-based models like KNN, SVM).</p></li>
 </ul>
-</div>
+</li>
+<li><p>To compare variable importance</p>
+<ul>
+<li><p>In regression, standardized coefficients allow you to compare which variable has a stronger effect on the outcome.</p></li>
+</ul>
+</li>
+<li><p>To improve model performance</p>
+<ul>
+<li><p>Many machine learning models (e.g., gradient descent-based, PCA, K-means) work better when input features are on similar scales.</p></li>
+</ul>
+</li>
+<li><p>To meet assumptions of some statistical tests</p>
+<ul>
+<li><p>Some models assume variables are normally distributed or centered around 0, especially in multivariate analysis.</p></li>
+</ul>
+</li>
+</ul>
+<p>There are two common methods for standardizing data: z-score standardization and min-max standardization</p>
+<ol class="arabic simple">
+<li><p><strong>Z-score Standardization</strong> (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</p></li>
+</ol>
+<p>Transforms data to have mean (<span class="math notranslate nohighlight">\(\mu\)</span>) = 0 and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) = 1.</p>
+<div class="math notranslate nohighlight">
+\[
+z = \frac{x - \mu}{\sigma}
+\]</div>
+<p>In python, it is easy to standardize the data with the method <code class="docutils literal notranslate"><span class="pre">fit_transform(</span> <span class="pre">)</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datas</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">crash_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">crashes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># standar</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">crash_standard</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># print the first 10 rows</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>不良贷款</th>
-      <th>各项贷款余额</th>
-      <th>本年累计应收贷款</th>
-      <th>贷款项目个数</th>
-      <th>本年固定资产投资额</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.9</td>
-      <td>67.3</td>
-      <td>6.8</td>
-      <td>5</td>
-      <td>51.9</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1.1</td>
-      <td>111.3</td>
-      <td>19.8</td>
-      <td>16</td>
-      <td>90.9</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.8</td>
-      <td>173.0</td>
-      <td>7.7</td>
-      <td>17</td>
-      <td>73.7</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3.2</td>
-      <td>80.8</td>
-      <td>7.2</td>
-      <td>10</td>
-      <td>14.5</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>7.8</td>
-      <td>199.7</td>
-      <td>16.5</td>
-      <td>19</td>
-      <td>63.2</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.56593556  1.2126951  -0.21131068  0.60853209  0.80725756  0.94325764
+  -0.02289992]
+ [ 0.68844283  0.75670887  0.18761539  0.45935701  1.03314134  0.0708756
+  -0.98177845]
+ [ 1.61949811 -0.48361373  0.54740815  1.67605228  1.95169961 -0.33770122
+   0.32112519]
+ [-0.92865317 -0.39952407 -0.8917629  -0.594276   -0.89196792 -0.04841772
+   1.26617765]
+ [-0.5366299   0.01692    -0.63009543 -0.63369765 -0.29104195 -0.2914793
+   0.22027622]
+ [-1.22267063 -0.01511416 -0.5833691  -0.9356316  -1.38129335  1.02964051
+   1.32270187]
+ [ 0.10040792  0.57951992 -0.01564416  0.1166575   0.54542553  1.42128062
+   0.6907692 ]
+ [-2.42324191 -1.49769509 -1.92383077 -1.71868879 -2.17430102  2.19175919
+   0.06330968]
+ [ 0.51693265 -0.62025945  0.17768604  0.64840171  0.7568227   1.54737129
+   0.39391538]]
+</pre></div>
 </div>
-<section id="statsmodels">
-<h3><span class="section-number">9.1.1. </span><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库<a class="headerlink" href="#statsmodels" title="Link to this heading">#</a></h3>
-<hr><p>使用<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库做回归一般有以下几个步骤：</p>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Min-Max Normalization</strong> (0-1 Scaling)</p></li>
+</ol>
+<p>This method scales data to the <strong>[0, 1]</strong> range.</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{x - \min(x)}{\max(x) - \min(x)}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">crash_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">crashes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># standar</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">crash_standard</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># print the first 10 rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.67777778 0.73504832 0.34718769 0.66344003 0.72262679 0.62393111
+  0.45684192]
+ [0.70555556 0.61608775 0.42806394 0.63303046 0.77737321 0.39042695
+  0.24636258]
+ [0.91666667 0.29250457 0.50100651 0.88105566 1.         0.28106617
+  0.5323574 ]
+ [0.33888889 0.31444241 0.20923623 0.41824574 0.31079324 0.35849657
+  0.73980184]
+ [0.42777778 0.42308697 0.26228538 0.41020958 0.45643693 0.29343805
+  0.51022048]
+ [0.27222222 0.41472969 0.27175844 0.34865988 0.19219766 0.64705258
+  0.75220923]
+ [0.57222222 0.56986158 0.38685613 0.56317063 0.65916775 0.75188004
+  0.61349638]
+ [0.         0.02794463 0.         0.18903246 0.         0.95810844
+  0.47576542]
+ [0.66666667 0.25685558 0.42605092 0.67156751 0.71040312 0.78562981
+  0.54833527]]
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
-<li><p>通过 OLS 函数构建回归模型</p></li>
-<li><p>通过 fit 函数拟合</p></li>
-<li><p>通过summary 函数输出回归结果</p></li>
-<li><p>通过 predict 函数得出回归的预测值</p></li>
+<li><p>There is no negative values after standarization for this method.</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">OLS</span></code> 函数的基本用法如下：</p>
-<table>   
-    <tr style="border-top:solid; border-bottom:solid">
-            <th colspan=2 style="text-align:center">OLS(endog, exog=None, missing='none',**kwargs)</th>
-    </tr>
-    <tr>
-        <td style="text-align:left">endog</td>
-        <td style="text-align:left">因变量（内生变量），是一个一维的数组</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">exog</td>
-        <td style="text-align:left">自变量（外生变量），是一个一维或多维数组</td>
-    </tr>
-    <tr>
-        <td style="text-align:left">missing</td>
-        <td style="text-align:left">出现空值时的处理方式，可选设置为 'drop'（丢掉空值）, 'raise'（提醒错误）</td>
-    </tr>
-    <tr style="border-bottom:solid">
-        <td style="text-align:left">**kwargs</td>
-        <td style="text-align:left">其他设置</td>
-    </tr>
-</table>
-<br /><p>函数 OLS 默认回归模型没有截距。若模型中有截距，必须对自变量数据使用一个<code class="docutils literal notranslate"><span class="pre">addconstant()</span></code>函数。</p>
-<p>完整代码如下：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># 下面前几行代码是为了运行 live code 而进行的设置，</span>
-<span class="c1"># 与本章的教学内容无关</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;/home/jovyan&quot;</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;data-science/&quot;</span><span class="p">)</span>
-
-<span class="c1"># 正文</span>
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datas/linear_regression.xlsx&quot;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># 因变量为第 1列数据</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># 自变量为第 2 列数据</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 若模型中有截距，必须有这一步</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">hasconst</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 构建最小二乘模型并拟合</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>  <span class="c1"># 输出回归结果</span>
-
-<span class="c1"># 画图</span>
-<span class="c1"># 下面几行代码使得 pyplot 画出的图形中可以显示中文</span>
-<span class="c1"># mac 系统下字体: 黑体 &#39;Heiti TC&#39;，宋体：&#39;Songti SC&#39;; win 系统下黑体: &#39;SimHei&#39;</span>
-<span class="c1"># binder 下字体：&#39;Noto Sans CJK JP&#39;</span>
-<span class="kn">import</span> <span class="nn">platform</span>
-
-<span class="n">os_name</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
-    <span class="n">font</span> <span class="o">=</span> <span class="s2">&quot;SimHei&quot;</span>
-<span class="k">elif</span> <span class="n">os_name</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">:</span>
-    <span class="n">font</span> <span class="o">=</span> <span class="s2">&quot;Heiti TC&quot;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">font</span> <span class="o">=</span> <span class="s2">&quot;Noto Sans CJK JP&quot;</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.sans-serif&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">font</span><span class="p">]</span>
-
-<span class="n">predicts</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>  <span class="c1"># 模型的预测值</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># 自变量为第 3 列数据</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;实际值&quot;</span><span class="p">)</span>  <span class="c1"># 散点图</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">predicts</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;预测值&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># 显示图例，即每条线对应 label 中的内容</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># 显示图形</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                   不良贷款   R-squared:                       0.712
-Model:                            OLS   Adj. R-squared:                  0.699
-Method:                 Least Squares   F-statistic:                     56.75
-Date:                Thu, 19 Jun 2025   Prob (F-statistic):           1.18e-07
-Time:                        15:43:59   Log-Likelihood:                -51.508
-No. Observations:                  25   AIC:                             107.0
-Df Residuals:                      23   BIC:                             109.5
-Df Model:                           1                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const         -0.8295      0.723     -1.147      0.263      -2.325       0.666
-各项贷款余额         0.0379      0.005      7.534      0.000       0.027       0.048
-==============================================================================
-Omnibus:                       14.277   Durbin-Watson:                   2.464
-Prob(Omnibus):                  0.001   Jarque-Bera (JB):               14.611
-Skew:                           1.382   Prob(JB):                     0.000672
-Kurtosis:                       5.527   Cond. No.                         262.
-==============================================================================
-
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-</pre></div>
-</div>
-<img alt="_images/39a4391e4c8ec00e0ea7242b3226f4e41ac87b82d6c300c75f987ab4db16276e.png" src="_images/39a4391e4c8ec00e0ea7242b3226f4e41ac87b82d6c300c75f987ab4db16276e.png" />
-</div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">tips</p>
-<ul class="simple">
-<li><p>若导入包时使用命令 import statsmodels.formula.api as sm, 则在回归分析时不用函数 add_constant 添加截距，但是必须使用统计语言给出模型信息。</p></li>
-</ul>
-</div>
-<p>使用统计语言公式的代码：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;datas\linear_regression.xlsx&#39;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;不良贷款~各项贷款余额&#39;</span><span class="p">,</span> <span class="n">datas</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> <span class="c1"># 构建最小二乘模型并拟合，</span>
-                               <span class="c1">#此时不用单独输入 x，y了，而是将自变量与因变量用统计语言公式表示，将全部数据导入</span>
-<span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span> <span class="c1"># 输出回归结果</span>
-</pre></div>
-</div>
-<p>在多元回归中，只需把自变量改为多列数据即可，假如不良贷款为因变量，从第2列到第5列都是因变量，则使用 statsmodels 包的全部 python 代码如下：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># 下面前几行代码是为了运行 live code 而进行的设置，</span>
-<span class="c1"># 与本章的教学内容无关</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;/home/jovyan&quot;</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;data-science/&quot;</span><span class="p">)</span>
-
-<span class="c1"># 正文</span>
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datas/linear_regression.xlsx&quot;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># 因变量为第 2 列数据</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 自变量为第 3 列到第 6 列数据</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 若模型中有截距，必须有这一步</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># 构建最小二乘模型并拟合</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>  <span class="c1"># 输出回归结果</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                 各项贷款余额   R-squared:                       0.812
-Model:                            OLS   Adj. R-squared:                  0.786
-Method:                 Least Squares   F-statistic:                     30.32
-Date:                Thu, 19 Jun 2025   Prob (F-statistic):           8.05e-08
-Time:                        15:43:59   Log-Likelihood:                -123.70
-No. Observations:                  25   AIC:                             255.4
-Df Residuals:                      21   BIC:                             260.3
-Df Model:                           3                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const        -14.0689     16.072     -0.875      0.391     -47.493      19.356
-本年累计应收贷款       3.3001      1.482      2.226      0.037       0.217       6.383
-贷款项目个数         4.3596      1.453      3.001      0.007       1.338       7.381
-本年固定资产投资额      0.6198      0.285      2.176      0.041       0.028       1.212
-==============================================================================
-Omnibus:                        1.935   Durbin-Watson:                   2.147
-Prob(Omnibus):                  0.380   Jarque-Bera (JB):                1.059
-Skew:                           0.499   Prob(JB):                        0.589
-Kurtosis:                       3.143   Cond. No.                         159.
-==============================================================================
-
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="sklearn">
-<h3><span class="section-number">9.1.2. </span>sklearn 库<a class="headerlink" href="#sklearn" title="Link to this heading">#</a></h3>
-<hr>
-<p>sklearn 包是机器学习中常见的 python 包，做统计分析时，它并不能像 statsmodels 那样生成非常详细的统计分析结果。<strong>默认自变量与因变量数据都是二维数据，自变量或因变量需要增加一个轴</strong>。</p>
-<p>使用<code class="docutils literal notranslate"><span class="pre">sklearn</span></code> 库做回归一把有以下几个步骤：</p>
-<ul class="simple">
-<li><p>对自变量或因变量增加轴</p></li>
-<li><p>通过 LinearRegression 函数构建回归模型</p></li>
-<li><p>通过 fit 函数拟合</p></li>
-<li><p>通过 predict 函数得出回归的预测值</p></li>
-<li><p>通过 coef_，intercept_，score 等函数输出统计结果</p></li>
-</ul>
-<p>对于上面同样的例子，一元回归的代码：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-
-<span class="c1"># 下面前几行代码是为了运行 live code 而进行的设置，</span>
-<span class="c1"># 与本章的教学内容无关</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;/home/jovyan&quot;</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;data-science/&quot;</span><span class="p">)</span>
-
-<span class="c1"># 正文</span>
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datas/linear_regression.xlsx&quot;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># 因变量为第 2 列数据</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># 自变量为第 3 列数据</span>
-
-<span class="c1"># 将 x，y 分别增加一个轴，以满足 sklearn 中回归模型认可的数据</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>  <span class="c1"># 构建线性模型</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 自变量在前，因变量在后</span>
-<span class="n">predicts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 预测值</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 拟合程度 R2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R2 = </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">R2</span><span class="p">)</span>  <span class="c1"># 输出 R2</span>
-<span class="n">coef</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span>  <span class="c1"># 斜率</span>
-<span class="n">intercept</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span>  <span class="c1"># 截距</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>  <span class="c1"># 输出斜率和截距</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 = 0.71
-[[0.03789471]] [-0.82952062]
-</pre></div>
-</div>
-</div>
-</div>
-<p>用 sklearn 做多元回归时，因为自变量本身就是多维数据，不需要增加轴了，但因变量还需要增加轴，全部代码如下：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-
-<span class="n">datas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datas/linear_regression.xlsx&quot;</span><span class="p">)</span>  <span class="c1"># 读取 excel 数据，引号里面是 excel 文件的位置</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># 因变量为第 2 列数据</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># 自变量为第 3 列到第 6 列数据</span>
-
-<span class="c1"># 将 y 分别增加一个轴，以满足 sklearn 中回归模型认可的数据</span>
-<span class="c1"># 此时由于 x 是多元变量，则不用添加新的轴了</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>  <span class="c1"># 构建线性模型</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 自变量在前，因变量在后</span>
-<span class="n">predicts</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 预测值</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># 拟合程度 R2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R2 = </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">R2</span><span class="p">)</span>  <span class="c1"># 输出 R2</span>
-<span class="n">coef</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">coef_</span>  <span class="c1"># 斜率</span>
-<span class="n">intercept</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span>  <span class="c1"># 截距</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>  <span class="c1"># 输出斜率和截距</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R2 = 0.812
-[[3.30005331 4.35955755 0.61975042]] [-14.06888312]
-</pre></div>
-</div>
-</div>
-</div>
-<p>多项式回归，广义最小二乘回归，Lasso 回归，逻辑回归，加权最小二乘回归，分位数回归等，都可以在<code class="docutils literal notranslate"><span class="pre">statsmodel</span></code>库或<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库中找到相应的函数。</p>
-</section>
 </section>
 <section id="id1">
 <h2><span class="section-number">9.2. </span>主成分分析<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
@@ -1628,16 +1047,16 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 1 1 1 1 1 1 1 0 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 0 2 2 0 0 0 0 1 0 1 2 0 2 0 2 2 0 0 2 2 2 2 2 2 2 2 2 2 2 2]
 类别1
-[&#39;上  海&#39;]
+[&#39;天  津&#39;, &#39;内蒙古&#39;, &#39;辽  宁&#39;, &#39;吉  林&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;湖  南&#39;, &#39;广  东&#39;]
 类别2
-[&#39;天  津&#39;, &#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;辽  宁&#39;, &#39;吉  林&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;安  徽&#39;, &#39;福  建&#39;, &#39;江  西&#39;, &#39;山  东&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  东&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
+[&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
 类别3
-[&#39;北  京&#39;, &#39;浙  江&#39;]
+[&#39;河  北&#39;, &#39;山  西&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
 </pre></div>
 </div>
-<img alt="_images/b4c9d9803f84abf4ccdb8c3c55d5b6c54c7ee4b08a0e5928e7bb47031297ab00.png" src="_images/b4c9d9803f84abf4ccdb8c3c55d5b6c54c7ee4b08a0e5928e7bb47031297ab00.png" />
+<img alt="_images/2b9a5d9a894d2016161edbfea0e59fa4963866b861510154252b5567bbd06116.png" src="_images/2b9a5d9a894d2016161edbfea0e59fa4963866b861510154252b5567bbd06116.png" />
 </div>
 </div>
 </section>
@@ -1693,12 +1112,12 @@ Notes:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>神经网络预测结果评价报告：
                precision    recall  f1-score   support
 
-           0       1.00      0.98      0.99        41
-           1       0.99      1.00      0.99        73
+           0       0.98      0.96      0.97        47
+           1       0.97      0.99      0.98        67
 
-    accuracy                           0.99       114
-   macro avg       0.99      0.99      0.99       114
-weighted avg       0.99      0.99      0.99       114
+    accuracy                           0.97       114
+   macro avg       0.97      0.97      0.97       114
+weighted avg       0.97      0.97      0.97       114
 </pre></div>
 </div>
 </div>
@@ -1799,11 +1218,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">9.1. Linear regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statsmodels">9.1.1. <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> 库</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn">9.1.2. sklearn 库</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.1. Standardize Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">9.2. 主成分分析</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">9.3. Kmeans 聚类</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.4. 人工神经网络</a></li>
