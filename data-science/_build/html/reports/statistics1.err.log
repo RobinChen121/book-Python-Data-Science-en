@@ -1,169 +1,37 @@
 Traceback (most recent call last):
-  File "/opt/anaconda3/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "C:\ProgramData\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "/opt/anaconda3/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/anaconda3/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "C:\ProgramData\anaconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/anaconda3/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
+  File "C:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/opt/anaconda3/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/opt/anaconda3/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/anaconda3/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# -*- coding: utf-8 -*-
-"""
-完整结构方程模型（SEM）分析示例：社交媒体广告对购买意愿的影响
-包含：测量模型、结构模型、中介效应、调节效应（多群组分析）
-"""
+import pingouin as pg
+import seaborn as sns
 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from semopy import Model, bootstrap, calc_lrtest
-from semopy.semplot import semplot
-
-# ======================
-# 1. 模拟数据生成
-# ======================
-np.random.seed(123)
-n = 300  # 样本量
-
-# 潜变量真实得分（用于生成题项）
-latent_ad = np.random.normal(5, 1, n)    # 广告吸引力潜变量
-latent_trust = 0.6 * latent_ad + np.random.normal(0, 1, n)  # 品牌信任（受广告影响）
-latent_purchase = 0.7 * latent_trust + 0.3 * latent_ad + np.random.normal(0, 1, n)  # 购买意愿
-
-# 生成观测题项（带测量误差）
-data = pd.DataFrame({
-    # 广告吸引力题项（3个）
-    'ad1': latent_ad + np.random.normal(0, 0.5, n),
-    'ad2': latent_ad + np.random.normal(0, 0.5, n),
-    'ad3': latent_ad + np.random.normal(0, 0.5, n),
-    
-    # 品牌信任题项（3个）
-    'trust1': latent_trust + np.random.normal(0, 0.5, n),
-    'trust2': latent_trust + np.random.normal(0, 0.5, n),
-    'trust3': latent_trust + np.random.normal(0, 0.5, n),
-    
-    # 购买意愿题项（2个）
-    'purchase1': latent_purchase + np.random.normal(0, 0.5, n),
-    'purchase2': latent_purchase + np.random.normal(0, 0.5, n),
-    
-    # 调节变量（个人创新性，0=低，1=高）
-    'group': np.random.binomial(1, 0.5, n)  # 随机分组
-})
-
-# ======================
-# 2. 定义SEM模型
-# ======================
-model_spec = '''
-    # 测量模型（CFA部分）
-    广告吸引力 =~ ad1 + ad2 + ad3
-    品牌信任 =~ trust1 + trust2 + trust3
-    购买意愿 =~ purchase1 + purchase2
-    
-    # 结构模型（路径分析）
-    品牌信任 ~ 广告吸引力
-    购买意愿 ~ 品牌信任 + 广告吸引力
-'''
-
-# ======================
-# 3. 模型拟合与结果
-# ======================
-model = Model(model_spec)
-result = model.fit(data)
-print("=== 模型拟合结果 ===")
-print(result)
-print("\n=== 标准化系数 ===")
-print(model.inspect(std_est=True))
-
-# ======================
-# 4. 中介效应检验（Bootstrap）
-# ======================
-mediation_spec = '''
-    广告吸引力 =~ ad1 + ad2 + ad3
-    品牌信任 =~ trust1 + trust2 + trust3
-    购买意愿 =~ purchase1 + purchase2
-    
-    # 命名路径系数
-    品牌信任 ~ a*广告吸引力
-    购买意愿 ~ b*品牌信任 + c*广告吸引力
-    
-    # 定义效应
-    间接 := a*b
-    总效应 := c + a*b
-'''
-
-mediation_model = Model(mediation_spec)
-mediation_model.fit(data)
-bootstrap_results = bootstrap(mediation_model, data, n=1000)
-
-print("\n=== 中介效应 ===")
-print(f"间接效应估计值: {bootstrap_results['indirect'].mean():.3f}")
-print(f"95%置信区间: [{np.percentile(bootstrap_results['indirect'], 2.5):.3f}, "
-      f"{np.percentile(bootstrap_results['indirect'], 97.5):.3f}]")
-
-# ======================
-# 5. 调节效应分析（多群组）
-# ======================
-# 按调节变量分组
-group0 = data[data['group'] == 0]  # 低创新性组
-group1 = data[data['group'] == 1]  # 高创新性组
-
-# 分别拟合模型
-model_group0 = Model(model_spec).fit(group0)
-model_group1 = Model(model_spec).fit(group1)
-
-# 提取关键路径系数
-beta_group0 = model_group0.inspect().loc['品牌信任~广告吸引力', 'Estimate']
-beta_group1 = model_group1.inspect().loc['品牌信任~广告吸引力', 'Estimate']
-
-print("\n=== 调节效应 ===")
-print(f"低创新性组路径系数: {beta_group0:.3f}")
-print(f"高创新性组路径系数: {beta_group1:.3f}")
-
-# 似然比检验（比较两组模型）
-lrtest = calc_lrtest(model_group0, model_group1)
-print(f"路径系数差异显著性(p值): {lrtest.pvalue:.4f}")
-
-# ======================
-# 6. 可视化
-# ======================
-# 绘制路径图（需安装graphviz）
-plt.figure(figsize=(10, 6))
-semplot(model, "model.png", plot_covs=True, show=True)
-
-# 绘制调节效应图
-plt.figure(figsize=(8, 5))
-groups = ['低创新性', '高创新性']
-coefs = [beta_group0, beta_group1]
-plt.bar(groups, coefs, color=['skyblue', 'salmon'])
-plt.title("广告吸引力→品牌信任的调节效应")
-plt.ylabel("路径系数")
-plt.grid(axis='y', linestyle='--', alpha=0.7)
-plt.show()
-
+tips = sns.load_dataset("tips")
+pg.anova(tips, dv="tip", between="sex")
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mImportError[0m                               Traceback (most recent call last)
-Cell [0;32mIn[33], line 10[0m
-[1;32m      8[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[1;32m      9[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[0;32m---> 10[0m [38;5;28;01mfrom[39;00m [38;5;21;01msemopy[39;00m [38;5;28;01mimport[39;00m Model, bootstrap, calc_lrtest
-[1;32m     11[0m [38;5;28;01mfrom[39;00m [38;5;21;01msemopy[39;00m[38;5;21;01m.[39;00m[38;5;21;01msemplot[39;00m [38;5;28;01mimport[39;00m semplot
-[1;32m     13[0m [38;5;66;03m# ======================[39;00m
-[1;32m     14[0m [38;5;66;03m# 1. 模拟数据生成[39;00m
-[1;32m     15[0m [38;5;66;03m# ======================[39;00m
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[19], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpingouin[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpg[39;00m
+[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mseaborn[39;00m [38;5;28;01mas[39;00m [38;5;21;01msns[39;00m
+[0;32m      4[0m tips [38;5;241m=[39m sns[38;5;241m.[39mload_dataset([38;5;124m"[39m[38;5;124mtips[39m[38;5;124m"[39m)
 
-[0;31mImportError[0m: cannot import name 'bootstrap' from 'semopy' (/opt/anaconda3/lib/python3.12/site-packages/semopy/__init__.py)
+[1;31mModuleNotFoundError[0m: No module named 'pingouin'
 

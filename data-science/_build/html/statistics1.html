@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -40,11 +38,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=22a07d05" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -73,7 +70,6 @@
     <link rel="prev" title="7. Draw graphs" href="draw-pictures.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -89,8 +85,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -98,6 +105,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -105,8 +113,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -122,8 +130,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -153,17 +160,21 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -196,14 +207,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -396,16 +402,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -449,20 +463,22 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.5. Linear regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model-1">8.6. Structural equation model*</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.6.1. An example of using SEM</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.6.1.1. Research question, assumptions and variables</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection-and-pretest">8.6.1.2. Data collection and pretest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">8.6. Standardize Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-standardization-standardscaler">8.6.1. Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">8.7. Principle component analysis (PCA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-analysis-1">8.8. Factor analysis* </a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model">8.9. Structural equation model*</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.9.1. An example of using SEM</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.9.1.1. Research question, assumptions and variables</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">8.9.1.2. Data collection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-test">8.9.1.3. Pre-test</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.7. Reliability and validity test</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliablity">8.7.1. Reliablity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity">8.7.2. Validity</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.8. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.10. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -737,7 +753,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ed8ecd0abe6da3e349dfa324636808932756d147b543c812895b00419a68af40.png" src="_images/ed8ecd0abe6da3e349dfa324636808932756d147b543c812895b00419a68af40.png" />
+<img alt="_images/f6b9008334d862b2495c9be2057641b0cc3ec062bab987417e548cbb591d87ca.png" src="_images/f6b9008334d862b2495c9be2057641b0cc3ec062bab987417e548cbb591d87ca.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays bars of approximately equal height, resulting in a <strong>flat</strong> or level appearance.</p>
@@ -761,7 +777,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/5183dc4fd53b24075cc690d2fab43da51f1f3be6b2c0dd57cce0fff0f5803af7.png" src="_images/5183dc4fd53b24075cc690d2fab43da51f1f3be6b2c0dd57cce0fff0f5803af7.png" />
+<img alt="_images/219203d3f245daa42613aaaf6beb887c775e056357e5adafc759b7d7821666bd.png" src="_images/219203d3f245daa42613aaaf6beb887c775e056357e5adafc759b7d7821666bd.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays a <strong>bell</strong> shape.</p>
@@ -790,7 +806,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/e5b841179c8c702306929a9df1cf6fc68cc51f5ced5bf95d34e5925259e6baa8.png" src="_images/e5b841179c8c702306929a9df1cf6fc68cc51f5ced5bf95d34e5925259e6baa8.png" />
+<img alt="_images/377079130d3a9caef2541ddc60505f249c83d2a3d2b883ddc6e2a46fda7cd532.png" src="_images/377079130d3a9caef2541ddc60505f249c83d2a3d2b883ddc6e2a46fda7cd532.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -800,7 +816,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6757341092113645
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6757341092113647
 </pre></div>
 </div>
 </div>
@@ -829,7 +845,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;size&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/167f6265f0a3bc96401ad7440a54bb05698277a05830a6efe1d61cf37da833c6.png" src="_images/167f6265f0a3bc96401ad7440a54bb05698277a05830a6efe1d61cf37da833c6.png" />
+<img alt="_images/5f64824c359fa73fb9ca22d9c2db5119941b28647c88bb8fc1bf524897361e9e.png" src="_images/5f64824c359fa73fb9ca22d9c2db5119941b28647c88bb8fc1bf524897361e9e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -860,7 +876,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/53f5e4f90a6c1462bb78bebee603a3d5f968edb65a026c50454e889e026408b2.png" src="_images/53f5e4f90a6c1462bb78bebee603a3d5f968edb65a026c50454e889e026408b2.png" />
+<img alt="_images/3e166ad7615f7e935019c994c06cdb7b49bcb0079b3f5d0d078607d60db1e505.png" src="_images/3e166ad7615f7e935019c994c06cdb7b49bcb0079b3f5d0d078607d60db1e505.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1250,7 +1266,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=1.387859705421269, pvalue=0.16645623503456752, df=242.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=1.387859705421269, pvalue=0.16645623503456755, df=242.0)
 </pre></div>
 </div>
 </div>
@@ -1301,45 +1317,17 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pingouin</span> <span class="k">as</span> <span class="nn">pg</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;tips&quot;</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>ddof1</th>
-      <th>ddof2</th>
-      <th>F</th>
-      <th>p_unc</th>
-      <th>np2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>sex</td>
-      <td>1</td>
-      <td>242</td>
-      <td>1.926155</td>
-      <td>0.166456</td>
-      <td>0.007896</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pingouin&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>There is much information in the output, but the most imoportant one if the <code class="docutils literal notranslate"><span class="pre">p-value</span></code> shown by the “p-unc”. Since the p-value 0.167 is larger than 0.05, we should accept the null hypothesis at a 95% confidence level. The test result is in consitent with that of the two sample t-test.</p>
 <p>For example, test the null hypothesis <span class="math notranslate nohighlight">\(H_0\)</span>: there is no difference between the amount of tips and the day of the week.</p>
@@ -1372,7 +1360,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
       <th>ddof1</th>
       <th>ddof2</th>
       <th>F</th>
-      <th>p_unc</th>
+      <th>p-unc</th>
       <th>np2</th>
     </tr>
   </thead>
@@ -1427,7 +1415,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
       <th>DF</th>
       <th>MS</th>
       <th>F</th>
-      <th>p_unc</th>
+      <th>p-unc</th>
       <th>np2</th>
     </tr>
   </thead>
@@ -1942,7 +1930,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/866cd92a8eeb49f2de9a0397828441f05bf58559d2455b9d065ee6ab726e284d.png" src="_images/866cd92a8eeb49f2de9a0397828441f05bf58559d2455b9d065ee6ab726e284d.png" />
+<img alt="_images/91daa28b28755211402dde5e6f6b55cca36b4a931b03020fbca99a3b47a28f47.png" src="_images/91daa28b28755211402dde5e6f6b55cca36b4a931b03020fbca99a3b47a28f47.png" />
 </div>
 </div>
 <p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
@@ -1975,8 +1963,8 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 Dep. Variable:                  total   R-squared:                       0.374
 Model:                            OLS   Adj. R-squared:                  0.361
 Method:                 Least Squares   F-statistic:                     29.27
-Date:                Fri, 27 Jun 2025   Prob (F-statistic):           1.87e-06
-Time:                        20:06:59   Log-Likelihood:                -132.15
+Date:                Thu, 19 Jun 2025   Prob (F-statistic):           1.87e-06
+Time:                        08:52:46   Log-Likelihood:                -132.15
 No. Observations:                  51   AIC:                             268.3
 Df Residuals:                      49   BIC:                             272.2
 Df Model:                           1                                         
@@ -2084,8 +2072,8 @@ $<span class="math notranslate nohighlight">\(
 Dep. Variable:                  total   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     64.87
-Date:                Fri, 27 Jun 2025   Prob (F-statistic):           2.27e-14
-Time:                        20:06:59   Log-Likelihood:                -110.71
+Date:                Fri, 20 Jun 2025   Prob (F-statistic):           2.27e-14
+Time:                        10:16:11   Log-Likelihood:                -110.71
 No. Observations:                  51   AIC:                             227.4
 Df Residuals:                      48   BIC:                             233.2
 Df Model:                           2                                         
@@ -2136,8 +2124,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.790
 Model:                            OLS   Adj. R-squared:                  0.777
 Method:                 Least Squares   F-statistic:                     58.91
-Date:                Fri, 27 Jun 2025   Prob (F-statistic):           5.91e-16
-Time:                        20:06:59   Log-Likelihood:                -104.31
+Date:                Fri, 20 Jun 2025   Prob (F-statistic):           5.91e-16
+Time:                        10:17:58   Log-Likelihood:                -104.31
 No. Observations:                  51   AIC:                             216.6
 Df Residuals:                      47   BIC:                             224.3
 Df Model:                           3                                         
@@ -2188,8 +2176,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.459
 Model:                            OLS   Adj. R-squared:                  0.450
 Method:                 Least Squares   F-statistic:                     50.67
-Date:                Fri, 27 Jun 2025   Prob (F-statistic):           7.52e-31
-Time:                        20:06:59   Log-Likelihood:                -350.03
+Date:                Fri, 20 Jun 2025   Prob (F-statistic):           7.52e-31
+Time:                        10:52:58   Log-Likelihood:                -350.03
 No. Observations:                 244   AIC:                             710.1
 Df Residuals:                     239   BIC:                             727.5
 Df Model:                           4                                         
@@ -2220,10 +2208,337 @@ Notes:
 <p>Linear regression can also be performed using non-formula-based modeling, non-OLS methods or other libraries, which are omitted here due to space limitations.</p>
 </div>
 </section>
-<section id="structural-equation-model-1">
-<h2><span class="section-number">8.6. </span>Structural equation model*<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#structural-equation-model-1" title="Link to this heading">#</a></h2>
+<section id="standardize-data">
+<h2><span class="section-number">8.6. </span>Standardize Data<a class="headerlink" href="#standardize-data" title="Link to this heading">#</a></h2>
+<hr><p><code class="docutils literal notranslate"><span class="pre">Standardization</span></code> is a process of transforming the data to make it more suitable for some statistical analysis or machine learning.</p>
+<p>The main reasons include:</p>
+<ul class="simple">
+<li><p>To remove the effect of different units and scales</p>
+<ul>
+<li><p>Variables may have different units (e.g., dollars, percentages, counts).</p></li>
+<li><p>Without standardization, variables with larger scales may dominate the model (especially in regression or distance-based models like KNN, SVM).</p></li>
+</ul>
+</li>
+<li><p>To compare variable importance</p>
+<ul>
+<li><p>In regression, standardized coefficients allow you to compare which variable has a stronger effect on the outcome.</p></li>
+</ul>
+</li>
+<li><p>To improve model performance</p>
+<ul>
+<li><p>Many machine learning models (e.g., gradient descent-based, PCA, K-means) work better when input features are on similar scales.</p></li>
+</ul>
+</li>
+<li><p>To meet assumptions of some statistical tests</p>
+<ul>
+<li><p>Some models assume variables are normally distributed or centered around 0, especially in multivariate analysis.</p></li>
+</ul>
+</li>
+</ul>
+<p>There are two common methods for standardizing data: z-score standardization and min-max standardization.</p>
+<section id="z-score-standardization-standardscaler">
+<h3><span class="section-number">8.6.1. </span>Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)<a class="headerlink" href="#z-score-standardization-standardscaler" title="Link to this heading">#</a></h3>
 <hr>
-<p><code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Equation</span> <span class="pre">Modeling</span></code> (SEM) is especially useful when the research involves <strong>latent variables</strong> (concepts that can’t be directly observed) and <strong>complex relationships</strong> among multiple variables—such as mediation, moderation or multiple simultaneous dependencies.</p>
+<p>Transforms data to have mean (<span class="math notranslate nohighlight">\(\mu\)</span>) = 0 and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) = 1.</p>
+<div class="math notranslate nohighlight">
+\[
+z = \frac{x - \mu}{\sigma}
+\]</div>
+<p>In python, it is easy to standardize the data with the method <code class="docutils literal notranslate"><span class="pre">fit_transform(</span> <span class="pre">)</span></code> from the class <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> of the library <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">crash_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">crashes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># standarize the data except the last column</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">crash_standard</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># print the first 10 rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.56593556  1.2126951  -0.21131068  0.60853209  0.80725756  0.94325764
+  -0.02289992]
+ [ 0.68844283  0.75670887  0.18761539  0.45935701  1.03314134  0.0708756
+  -0.98177845]
+ [ 1.61949811 -0.48361373  0.54740815  1.67605228  1.95169961 -0.33770122
+   0.32112519]
+ [-0.92865317 -0.39952407 -0.8917629  -0.594276   -0.89196792 -0.04841772
+   1.26617765]
+ [-0.5366299   0.01692    -0.63009543 -0.63369765 -0.29104195 -0.2914793
+   0.22027622]
+ [-1.22267063 -0.01511416 -0.5833691  -0.9356316  -1.38129335  1.02964051
+   1.32270187]
+ [ 0.10040792  0.57951992 -0.01564416  0.1166575   0.54542553  1.42128062
+   0.6907692 ]
+ [-2.42324191 -1.49769509 -1.92383077 -1.71868879 -2.17430102  2.19175919
+   0.06330968]
+ [ 0.51693265 -0.62025945  0.17768604  0.64840171  0.7568227   1.54737129
+   0.39391538]]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Min-Max Normalization</strong> (0-1 Scaling)</p></li>
+</ol>
+<p>This method scales data to the <strong>[0, 1]</strong> range.</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{x - \min(x)}{\max(x) - \min(x)}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">crash_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">crashes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># standarize the data except the last column</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">crash_standard</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># print the first 10 rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.67777778 0.73504832 0.34718769 0.66344003 0.72262679 0.62393111
+  0.45684192]
+ [0.70555556 0.61608775 0.42806394 0.63303046 0.77737321 0.39042695
+  0.24636258]
+ [0.91666667 0.29250457 0.50100651 0.88105566 1.         0.28106617
+  0.5323574 ]
+ [0.33888889 0.31444241 0.20923623 0.41824574 0.31079324 0.35849657
+  0.73980184]
+ [0.42777778 0.42308697 0.26228538 0.41020958 0.45643693 0.29343805
+  0.51022048]
+ [0.27222222 0.41472969 0.27175844 0.34865988 0.19219766 0.64705258
+  0.75220923]
+ [0.57222222 0.56986158 0.38685613 0.56317063 0.65916775 0.75188004
+  0.61349638]
+ [0.         0.02794463 0.         0.18903246 0.         0.95810844
+  0.47576542]
+ [0.66666667 0.25685558 0.42605092 0.67156751 0.71040312 0.78562981
+  0.54833527]]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>There is no negative values after standarization for the min-max method.</p></li>
+</ul>
+</section>
+</section>
+<section id="principle-component-analysis-pca">
+<h2><span class="section-number">8.7. </span>Principle component analysis (PCA)<a class="headerlink" href="#principle-component-analysis-pca" title="Link to this heading">#</a></h2>
+<hr><p>Principal component analysis (PCA) is a <strong>dimensionality reduction</strong> to simplify a large data set into a smaller set, while preserving their most important structures.</p>
+<p>It represent a transformation of the original variables into a new set of uncorrelated variables through linear combinations. This transformation is structured such that the leading components account for the <strong>maximal possible information (reflected by the data variance)</strong> in the data, effectively compressing the key information into fewer dimensions.</p>
+<ul class="simple">
+<li><p>For example, there are 10 variables in the original data set. We can use PCA to reduce the number of variables to 3 and keep 85% of the original information.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris&quot;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>There are 4 variables in addition to the last categorical variable. We use the class <code class="docutils literal notranslate"><span class="pre">PCA</span></code> from the libraray <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> for reducing to 2 varaibles.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">iris_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># the number of principal components</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris_standard</span><span class="p">)</span>  <span class="c1"># fit the data by PCA</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;explained variance of each principal component: </span><span class="si">{</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>  <span class="c1"># output the explained variance ratio</span>
+
+<span class="n">principal_components</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">iris_standard</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;principal components shown the first 10 rows:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">principal_components</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>explained variance of each principal component: [0.72962445 0.22850762]
+principal components shown the first 10 rows:
+ [[-2.26470281  0.4800266 ]
+ [-2.08096115 -0.67413356]
+ [-2.36422905 -0.34190802]
+ [-2.29938422 -0.59739451]
+ [-2.38984217  0.64683538]
+ [-2.07563095  1.48917752]
+ [-2.44402884  0.0476442 ]
+ [-2.23284716  0.22314807]
+ [-2.33464048 -1.11532768]
+ [-2.18432817 -0.46901356]]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>It is recommended to standarizing the data before applying PCA.</p></li>
+<li><p>Specify the number of principal components through the parameter <code class="docutils literal notranslate"><span class="pre">n_components</span></code> in <code class="docutils literal notranslate"><span class="pre">PCA(</span> <span class="pre">)</span></code>.</p></li>
+<li><p>Fit the data by PCA through the method <code class="docutils literal notranslate"><span class="pre">fit(</span> <span class="pre">)</span></code>.</p></li>
+<li><p>Usually, the cumulated explained variance ratio of the specified principal components should be greather equal than 85%.</p>
+<ul>
+<li><p>In this example, the cumluated explained variance ratiso is 0.729 + 0.228 = 0.954 &gt; 0.85.</p></li>
+</ul>
+</li>
+<li><p>Get the principal components (the values of the reduced variables) by the method <code class="docutils literal notranslate"><span class="pre">fit_transform(</span> <span class="pre">)</span></code>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PCA is generally used as an intermediate step in data analysis. It is often applied for dimensionality reduction before further tasks such as clustering, classification, or visualization.</p>
+</div>
+</section>
+<section id="factor-analysis-1">
+<h2><span class="section-number">8.8. </span>Factor analysis* <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#factor-analysis-1" title="Link to this heading">#</a></h2>
+<hr>
+<p>Factor analysis is a statistical method used to <strong>identify underlying latent factors</strong> that explain the patterns of correlations among observed variables. It helps to uncover the hidden structure in the data by modeling observed variables as linear combinations of a smaller number of unobserved factors. In simple terms, <strong>factor analysis reduces the dimensionality of data by assuming that multiple observed variables are influenced by fewer common factors</strong>.</p>
+<p>Factor analysis is extensively applied in fields such as market research, advertising, psychology, finance, and operations research. Take market research for an example, it helps identify price-sensitive customer segments, uncover brand attributes that affect consumer preferences, and provides insights into the factors influencing the choice of distribution channels.</p>
+<p>The main objective of factor analysis is to <code class="docutils literal notranslate"><span class="pre">reduce</span> <span class="pre">the</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">observed</span> <span class="pre">variables</span> <span class="pre">and</span> <span class="pre">find</span> <span class="pre">unobservable</span> <span class="pre">variables</span></code>, which can be achieved in two steps:</p>
+<ul class="simple">
+<li><p>Factor extraction</p>
+<ul>
+<li><p>This process uses statistical methods (such as principal component analysis or maximum likelihood) to find factors that explain the maximum shared variance among the variables, <strong>determining the number of factors and their initial loadings</strong> (the strength of the relationship between factors and variables).</p></li>
+</ul>
+</li>
+<li><p>Factor rotation</p>
+<ul>
+<li><p>Factor rotation is applied after factor extraction to adjust the factor loading matrix in order to make the factors easier to interpret. <strong>Rotation redistributes the loadings to achieve a simpler and more meaningful structure (close to 1 or 0)</strong>, where each factor loads highly on a few variables and minimally on others. Common rotation methods include orthogonal rotation (e.g., Varimax), which keeps factors uncorrelated, and oblique rotation (e.g., Promax), which allows factors to be correlated.</p></li>
+</ul>
+</li>
+</ul>
+<p>In short, factor extraction finds “what factors exist,” and factor rotation makes those factors “easier to understand.”</p>
+</section>
+<section id="structural-equation-model">
+<h2><span class="section-number">8.9. </span>Structural equation model*<a class="headerlink" href="#structural-equation-model" title="Link to this heading">#</a></h2>
+<hr><p><code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Equation</span> <span class="pre">Modeling</span></code> (SEM) is especially useful when the research involves <strong>latent variables</strong> (concepts that can’t be directly observed) and <strong>complex relationships</strong> among multiple variables—such as mediation, moderation or multiple simultaneous dependencies.</p>
 <blockquote>
 <div><p>Variables like job satisfaction, employee engagement, customer loyalty, leadership style, or brand perception are not directly measurable.</p>
 </div></blockquote>
@@ -2244,11 +2559,11 @@ Leadership Style  ──→ Turnover Intention</p>
 </li>
 </ul>
 <section id="an-example-of-using-sem">
-<h3><span class="section-number">8.6.1. </span>An example of using SEM<a class="headerlink" href="#an-example-of-using-sem" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.9.1. </span>An example of using SEM<a class="headerlink" href="#an-example-of-using-sem" title="Link to this heading">#</a></h3>
 <hr>
 <p>We use an example in one marketing research showing how tuo use SEM.</p>
 <section id="research-question-assumptions-and-variables">
-<h4><span class="section-number">8.6.1.1. </span>Research question, assumptions and variables<a class="headerlink" href="#research-question-assumptions-and-variables" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">8.9.1.1. </span>Research question, assumptions and variables<a class="headerlink" href="#research-question-assumptions-and-variables" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Research question: this study aims to explore the impact mechanism of social media advertising (e.g., Instagram ads) on consumers’ purchase intention, and to analyze the mediating role of brand trust and the moderating role of personal innovativeness.</p></li>
 </ul>
@@ -2288,77 +2603,57 @@ Leadership Style  ──→ Turnover Intention</p>
 </ul>
 </div></blockquote>
 </section>
-<section id="data-collection-and-pretest">
-<h4><span class="section-number">8.6.1.2. </span>Data collection and pretest<a class="headerlink" href="#data-collection-and-pretest" title="Link to this heading">#</a></h4>
-</section>
-</section>
-</section>
-<section id="reliability-and-validity-test">
-<h2><span class="section-number">8.7. </span>Reliability and validity test<a class="headerlink" href="#reliability-and-validity-test" title="Link to this heading">#</a></h2>
-<hr><p>In research methodology (especially in fields such as <strong>surveys</strong>, psychometrics, and educational assessment), <code class="docutils literal notranslate"><span class="pre">reliability</span></code> and <code class="docutils literal notranslate"><span class="pre">validity</span></code> are two core indicators for evaluating the quality of a measurement scale.</p>
-<section id="reliablity">
-<h3><span class="section-number">8.7.1. </span>Reliablity<a class="headerlink" href="#reliablity" title="Link to this heading">#</a></h3>
-<hr>
-<p><code class="docutils literal notranslate"><span class="pre">Reliability</span></code> refers to the consistency of measurement. It means that if the questions in a questionnaire are asked repeatedly to the same person, their responses should remain consistent each time.</p>
-<p>There are several common types of reliability listed below.</p>
-<ol class="arabic simple">
-<li><p><strong>Internal Consistency Reliability</strong></p>
+<section id="data-collection">
+<h4><span class="section-number">8.9.1.2. </span>Data collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h4>
+<p>We can collect the data by questionaries: there aer 3 questions related with social media advertisement, 3 questions related with brand trust and 1 questions related personal innovativeness.</p>
 <ul class="simple">
-<li><p>Typically measured using <strong>Cronbach’s alpha</strong> (α).</p></li>
-<li><p>Thresholds:</p>
-<ul>
-<li><p>α ≥ 0.9: Excellent</p></li>
-<li><p>0.8 ≤ α &lt; 0.9: Good</p></li>
-<li><p>0.7 ≤ α &lt; 0.8: Acceptable</p></li>
+<li><p>Generally, the number of respondents should be at least 10 times of the number of questions in a questionary.</p></li>
+<li><p>Each latent variable was measured using 3-5 Likert-scale items (e.g., “The design of this advertisement is appealing to me,” with response options ranging from 1 = strongly disagree to 5 = strongly agree).</p></li>
 </ul>
-</li>
-</ul>
-</li>
-</ol>
-<p><code class="docutils literal notranslate"><span class="pre">Cronbach’s</span> <span class="pre">alpha</span> <span class="pre">(α)</span></code> can be computed by the method <code class="docutils literal notranslate"><span class="pre">cronbach_alpha</span></code> in the library <code class="docutils literal notranslate"><span class="pre">pingouin</span></code>.</p>
-<table>
-    <tr style="border-top:solid; border-bottom:solid">
-        <th colspan=2 style="text-align:center">cronbach_alpha(data, items=None, scores=None)</th>
-    </tr>
-    <tr>
-        <td style="text-align:left">data</td>
-        <td style="text-align:left">DataFrame</td>
-    </tr>
-    <tr style="text-align:left" >
-        <td style="text-align:left">item</td>
-        <td style="text-align:left">String, column in "data" with the items names</td>
-    </tr>
-    <tr style="text-align:left; border-bottom:solid" >
-        <td style="text-align:left">scores</td>
-        <td style="text-align:left">String, column in "data" with the scores</td>
-    </tr>
-</table>
-<br /><p>Suppose a survey to 10 respondents who can 3 quesions on a scale of 1 to 3.</p>
+<p>The following codes generate the data in a DataFrame by randome samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">pingouin</span> <span class="k">as</span> <span class="nn">pg</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># enter survey responses as a DataFrame</span>
-<span class="c1"># 3 questions and 10 respondents</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Q1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-                   <span class="s1">&#39;Q2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-                   <span class="s1">&#39;Q3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="c1"># data collection</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># Sample size</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">cronbach_alpha</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7734375, array([0.336, 0.939]))
+<span class="c1"># True scores of latent variables (used to generate observed items)</span>
+<span class="n">latent_ad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># Latent variable: Ad Attractiveness</span>
+<span class="n">latent_trust</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+    <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span>
+<span class="p">)</span>  <span class="c1"># Brand Trust (influenced by ads)</span>
+<span class="n">latent_purchase</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="mf">0.7</span> <span class="o">*</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">)</span>  <span class="c1"># Purchase Intention</span>
+
+<span class="c1"># Generate observed items (with measurement error)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="c1"># Ad Attractiveness items (3 items)</span>
+        <span class="s2">&quot;ad1&quot;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+        <span class="s2">&quot;ad2&quot;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+        <span class="s2">&quot;ad3&quot;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+        <span class="c1"># Brand Trust items (3 items)</span>
+        <span class="s2">&quot;trust1&quot;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+        <span class="s2">&quot;trust2&quot;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+        <span class="s2">&quot;trust3&quot;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+        <span class="c1"># Purchase Intention items (2 items)</span>
+        <span class="s2">&quot;purchase1&quot;</span><span class="p">:</span> <span class="n">latent_purchase</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+        <span class="s2">&quot;purchase2&quot;</span><span class="p">:</span> <span class="n">latent_purchase</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+        <span class="c1"># Moderator variable (Personal Innovativeness, 0 = Low, 1 = High)</span>
+        <span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>  <span class="c1"># Random group assignment</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -2381,101 +2676,210 @@ Leadership Style  ──→ Turnover Intention</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Q1</th>
-      <th>Q2</th>
-      <th>Q3</th>
+      <th>ad1</th>
+      <th>ad2</th>
+      <th>ad3</th>
+      <th>trust1</th>
+      <th>trust2</th>
+      <th>trust3</th>
+      <th>purchase1</th>
+      <th>purchase2</th>
+      <th>group</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>1</td>
+      <td>4.190021</td>
+      <td>4.470220</td>
+      <td>4.693156</td>
+      <td>2.963560</td>
+      <td>2.819397</td>
+      <td>2.635941</td>
+      <td>4.828307</td>
+      <td>4.269241</td>
       <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
+      <td>6.207140</td>
+      <td>6.087824</td>
+      <td>6.818595</td>
+      <td>2.453288</td>
+      <td>2.744874</td>
+      <td>3.046170</td>
+      <td>2.999860</td>
+      <td>3.254426</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
+      <td>6.190805</td>
+      <td>5.949379</td>
+      <td>5.019433</td>
+      <td>2.408478</td>
+      <td>2.339786</td>
+      <td>3.355576</td>
+      <td>3.601268</td>
+      <td>4.194445</td>
       <td>1</td>
-      <td>2</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3</td>
-      <td>2</td>
+      <td>3.367330</td>
+      <td>3.988168</td>
+      <td>3.371123</td>
+      <td>2.814195</td>
+      <td>2.959416</td>
+      <td>2.576147</td>
+      <td>2.680936</td>
+      <td>3.006890</td>
       <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2</td>
-      <td>3</td>
-      <td>2</td>
+      <td>4.275398</td>
+      <td>4.112914</td>
+      <td>3.589247</td>
+      <td>3.025766</td>
+      <td>3.292522</td>
+      <td>2.107603</td>
+      <td>4.664010</td>
+      <td>5.209560</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>2</td>
-      <td>3</td>
-      <td>3</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>3</td>
-      <td>2</td>
-      <td>3</td>
+      <th>295</th>
+      <td>6.368672</td>
+      <td>5.803688</td>
+      <td>5.694210</td>
+      <td>4.569970</td>
+      <td>2.989834</td>
+      <td>3.871037</td>
+      <td>4.494799</td>
+      <td>4.961940</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
+      <th>296</th>
+      <td>7.038577</td>
+      <td>6.155933</td>
+      <td>6.660471</td>
+      <td>3.135916</td>
+      <td>3.609047</td>
+      <td>3.361674</td>
+      <td>2.929658</td>
+      <td>3.933962</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>2</td>
-      <td>3</td>
-      <td>2</td>
+      <th>297</th>
+      <td>5.280736</td>
+      <td>5.394691</td>
+      <td>5.342487</td>
+      <td>1.443446</td>
+      <td>2.170921</td>
+      <td>2.257418</td>
+      <td>4.310186</td>
+      <td>3.887843</td>
+      <td>1</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>3</td>
-      <td>3</td>
-      <td>3</td>
+      <th>298</th>
+      <td>4.722381</td>
+      <td>5.403578</td>
+      <td>5.740632</td>
+      <td>4.776973</td>
+      <td>4.515847</td>
+      <td>3.133695</td>
+      <td>5.886338</td>
+      <td>5.420127</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>5.107155</td>
+      <td>6.696215</td>
+      <td>5.499004</td>
+      <td>2.872156</td>
+      <td>2.339892</td>
+      <td>2.988231</td>
+      <td>2.271778</td>
+      <td>3.164029</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
+<p>300 rows × 9 columns</p>
 </div></div></div>
 </div>
-<p>This method return the <code class="docutils literal notranslate"><span class="pre">Cronbach's</span> <span class="pre">alpha</span></code> and the corresponding 95% confidence interval.</p>
-<ol class="arabic simple" start="2">
-<li><p><strong>Test-Retest Reliability</strong></p>
-<ul class="simple">
-<li><p>Measures the stability of responses over time by administering the same test twice to the same group.</p></li>
-<li><p>Typically measured using <code class="docutils literal notranslate"><span class="pre">Pearson's</span> <span class="pre">correlation</span> <span class="pre">coefficient</span></code>.</p></li>
-</ul>
-</li>
-<li><p><strong>Split-Half Reliability</strong></p>
-<ul class="simple">
-<li><p>Splits the items into two halves (e.g., odd vs. even items) and examines the correlation between them.</p></li>
-<li><p>Typically measured using <code class="docutils literal notranslate"><span class="pre">Pearson's</span> <span class="pre">correlation</span> <span class="pre">coefficient</span></code>.</p></li>
-</ul>
-</li>
-<li><p><strong>Parallel Forms Reliability</strong></p>
-<ul class="simple">
-<li><p>Compares scores from two equivalent versions of the same instrument.</p></li>
-<li><p>Typically measured using <code class="docutils literal notranslate"><span class="pre">Pearson's</span> <span class="pre">correlation</span> <span class="pre">coefficient</span></code>.</p></li>
-</ul>
-</li>
-</ol>
 </section>
-<section id="validity">
-<h3><span class="section-number">8.7.2. </span>Validity<a class="headerlink" href="#validity" title="Link to this heading">#</a></h3>
-<hr><p><code class="docutils literal notranslate"><span class="pre">Validity</span></code> refers to whether a test or study measures what it claims to measure. For example, can a certain set of IQ test questions truly reflect a person’s real intelligence?</p>
+<section id="pre-test">
+<h4><span class="section-number">8.9.1.3. </span>Pre-test<a class="headerlink" href="#pre-test" title="Link to this heading">#</a></h4>
+<p>In research methodology (especially in fields such as <strong>surveys</strong>, psychometrics, and educational assessment), <code class="docutils literal notranslate"><span class="pre">reliability</span></code> and <code class="docutils literal notranslate"><span class="pre">validity</span></code> are two core indicators for evaluating the quality of a measurement scale.</p>
+<ol class="arabic simple">
+<li><p>Reliablity</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">Reliability</span></code> refers to the consistency of measurement. It means that if the questions in a questionnaire are asked repeatedly to the same person, their responses should remain consistent each time.</p>
+<p>One common types of reliability is internal consistency and typically measured using <strong>Cronbach’s alpha</strong> (α).</p>
+<ul class="simple">
+<li><p>α ≥ 0.9: Excellent</p></li>
+<li><p>0.8 ≤ α &lt; 0.9: Good</p></li>
+<li><p>0.7 ≤ α &lt; 0.8: Acceptable</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Cronbach’s</span> <span class="pre">alpha</span> <span class="pre">(α)</span></code> can be computed by the method <code class="docutils literal notranslate"><span class="pre">cronbach_alpha</span></code> in the library <code class="docutils literal notranslate"><span class="pre">pingouin</span></code>.</p>
+<table>
+    <tr style="border-top:solid; border-bottom:solid">
+        <th colspan=2 style="text-align:center">cronbach_alpha(data, items=None, scores=None)</th>
+    </tr>
+    <tr>
+        <td style="text-align:left">data</td>
+        <td style="text-align:left">DataFrame</td>
+    </tr>
+    <tr style="text-align:left" >
+        <td style="text-align:left">item</td>
+        <td style="text-align:left">String, column in "data" with the items names</td>
+    </tr>
+    <tr style="text-align:left; border-bottom:solid" >
+        <td style="text-align:left">scores</td>
+        <td style="text-align:left">String, column in "data" with the scores</td>
+    </tr>
+</table>
+<br /><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pingouin</span> <span class="k">as</span> <span class="nn">pg</span>
+
+<span class="c1"># cronbach alpha test</span>
+<span class="n">cronbach_result</span> <span class="o">=</span> <span class="n">pg</span><span class="o">.</span><span class="n">cronbach_alpha</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cronbach alpha value is </span><span class="si">{</span><span class="n">cronbach_result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cronbach alpha value is 0.89
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The method “cronbach_alpha” returns the <code class="docutils literal notranslate"><span class="pre">Cronbach's</span> <span class="pre">alpha</span></code> and the corresponding 95% confidence interval.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Validity</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">Validity</span></code> refers to whether a test or study measures what it claims to measure. For example, can a certain set of IQ test questions truly reflect a person’s real intelligence?</p>
 <p>There are several common types of validity listed below.</p>
 <ol class="arabic simple">
 <li><p><strong>Construct Validity</strong></p>
@@ -2610,160 +3014,6 @@ Value  0.999754  0.999631  0.011327  41.833862  119.613294
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">完整结构方程模型（SEM）分析示例：社交媒体广告对购买意愿的影响</span>
-<span class="sd">包含：测量模型、结构模型、中介效应、调节效应（多群组分析）</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">semopy</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">bootstrap</span><span class="p">,</span> <span class="n">calc_lrtest</span>
-<span class="kn">from</span> <span class="nn">semopy.semplot</span> <span class="kn">import</span> <span class="n">semplot</span>
-
-<span class="c1"># ======================</span>
-<span class="c1"># 1. 模拟数据生成</span>
-<span class="c1"># ======================</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># 样本量</span>
-
-<span class="c1"># 潜变量真实得分（用于生成题项）</span>
-<span class="n">latent_ad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>    <span class="c1"># 广告吸引力潜变量</span>
-<span class="n">latent_trust</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># 品牌信任（受广告影响）</span>
-<span class="n">latent_purchase</span> <span class="o">=</span> <span class="mf">0.7</span> <span class="o">*</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># 购买意愿</span>
-
-<span class="c1"># 生成观测题项（带测量误差）</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="c1"># 广告吸引力题项（3个）</span>
-    <span class="s1">&#39;ad1&#39;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
-    <span class="s1">&#39;ad2&#39;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
-    <span class="s1">&#39;ad3&#39;</span><span class="p">:</span> <span class="n">latent_ad</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
-    
-    <span class="c1"># 品牌信任题项（3个）</span>
-    <span class="s1">&#39;trust1&#39;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
-    <span class="s1">&#39;trust2&#39;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
-    <span class="s1">&#39;trust3&#39;</span><span class="p">:</span> <span class="n">latent_trust</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
-    
-    <span class="c1"># 购买意愿题项（2个）</span>
-    <span class="s1">&#39;purchase1&#39;</span><span class="p">:</span> <span class="n">latent_purchase</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
-    <span class="s1">&#39;purchase2&#39;</span><span class="p">:</span> <span class="n">latent_purchase</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
-    
-    <span class="c1"># 调节变量（个人创新性，0=低，1=高）</span>
-    <span class="s1">&#39;group&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># 随机分组</span>
-<span class="p">})</span>
-
-<span class="c1"># ======================</span>
-<span class="c1"># 2. 定义SEM模型</span>
-<span class="c1"># ======================</span>
-<span class="n">model_spec</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    # 测量模型（CFA部分）</span>
-<span class="s1">    广告吸引力 =~ ad1 + ad2 + ad3</span>
-<span class="s1">    品牌信任 =~ trust1 + trust2 + trust3</span>
-<span class="s1">    购买意愿 =~ purchase1 + purchase2</span>
-<span class="s1">    </span>
-<span class="s1">    # 结构模型（路径分析）</span>
-<span class="s1">    品牌信任 ~ 广告吸引力</span>
-<span class="s1">    购买意愿 ~ 品牌信任 + 广告吸引力</span>
-<span class="s1">&#39;&#39;&#39;</span>
-
-<span class="c1"># ======================</span>
-<span class="c1"># 3. 模型拟合与结果</span>
-<span class="c1"># ======================</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">model_spec</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== 模型拟合结果 ===&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== 标准化系数 ===&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">std_est</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-
-<span class="c1"># ======================</span>
-<span class="c1"># 4. 中介效应检验（Bootstrap）</span>
-<span class="c1"># ======================</span>
-<span class="n">mediation_spec</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    广告吸引力 =~ ad1 + ad2 + ad3</span>
-<span class="s1">    品牌信任 =~ trust1 + trust2 + trust3</span>
-<span class="s1">    购买意愿 =~ purchase1 + purchase2</span>
-<span class="s1">    </span>
-<span class="s1">    # 命名路径系数</span>
-<span class="s1">    品牌信任 ~ a*广告吸引力</span>
-<span class="s1">    购买意愿 ~ b*品牌信任 + c*广告吸引力</span>
-<span class="s1">    </span>
-<span class="s1">    # 定义效应</span>
-<span class="s1">    间接 := a*b</span>
-<span class="s1">    总效应 := c + a*b</span>
-<span class="s1">&#39;&#39;&#39;</span>
-
-<span class="n">mediation_model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">mediation_spec</span><span class="p">)</span>
-<span class="n">mediation_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">bootstrap_results</span> <span class="o">=</span> <span class="n">bootstrap</span><span class="p">(</span><span class="n">mediation_model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== 中介效应 ===&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;间接效应估计值: </span><span class="si">{</span><span class="n">bootstrap_results</span><span class="p">[</span><span class="s1">&#39;indirect&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;95%置信区间: [</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_results</span><span class="p">[</span><span class="s1">&#39;indirect&#39;</span><span class="p">],</span><span class="w"> </span><span class="mf">2.5</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, &quot;</span>
-      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_results</span><span class="p">[</span><span class="s1">&#39;indirect&#39;</span><span class="p">],</span><span class="w"> </span><span class="mf">97.5</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
-
-<span class="c1"># ======================</span>
-<span class="c1"># 5. 调节效应分析（多群组）</span>
-<span class="c1"># ======================</span>
-<span class="c1"># 按调节变量分组</span>
-<span class="n">group0</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># 低创新性组</span>
-<span class="n">group1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># 高创新性组</span>
-
-<span class="c1"># 分别拟合模型</span>
-<span class="n">model_group0</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">model_spec</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">group0</span><span class="p">)</span>
-<span class="n">model_group1</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">model_spec</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">group1</span><span class="p">)</span>
-
-<span class="c1"># 提取关键路径系数</span>
-<span class="n">beta_group0</span> <span class="o">=</span> <span class="n">model_group0</span><span class="o">.</span><span class="n">inspect</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;品牌信任~广告吸引力&#39;</span><span class="p">,</span> <span class="s1">&#39;Estimate&#39;</span><span class="p">]</span>
-<span class="n">beta_group1</span> <span class="o">=</span> <span class="n">model_group1</span><span class="o">.</span><span class="n">inspect</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;品牌信任~广告吸引力&#39;</span><span class="p">,</span> <span class="s1">&#39;Estimate&#39;</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== 调节效应 ===&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;低创新性组路径系数: </span><span class="si">{</span><span class="n">beta_group0</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;高创新性组路径系数: </span><span class="si">{</span><span class="n">beta_group1</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># 似然比检验（比较两组模型）</span>
-<span class="n">lrtest</span> <span class="o">=</span> <span class="n">calc_lrtest</span><span class="p">(</span><span class="n">model_group0</span><span class="p">,</span> <span class="n">model_group1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;路径系数差异显著性(p值): </span><span class="si">{</span><span class="n">lrtest</span><span class="o">.</span><span class="n">pvalue</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># ======================</span>
-<span class="c1"># 6. 可视化</span>
-<span class="c1"># ======================</span>
-<span class="c1"># 绘制路径图（需安装graphviz）</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">semplot</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;model.png&quot;</span><span class="p">,</span> <span class="n">plot_covs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># 绘制调节效应图</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;低创新性&#39;</span><span class="p">,</span> <span class="s1">&#39;高创新性&#39;</span><span class="p">]</span>
-<span class="n">coefs</span> <span class="o">=</span> <span class="p">[</span><span class="n">beta_group0</span><span class="p">,</span> <span class="n">beta_group1</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">coefs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="s1">&#39;salmon&#39;</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;广告吸引力→品牌信任的调节效应&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;路径系数&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">semopy</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">bootstrap</span><span class="p">,</span> <span class="n">calc_lrtest</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">semopy.semplot</span> <span class="kn">import</span> <span class="n">semplot</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># ======================</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># 1. 模拟数据生成</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># ======================</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;bootstrap&#39; from &#39;semopy&#39; (/opt/anaconda3/lib/python3.12/site-packages/semopy/__init__.py)
-</pre></div>
-</div>
-</div>
-</div>
 <ol class="arabic simple" start="3">
 <li><p>Discriminant Validity</p>
 <ul class="simple">
@@ -2790,8 +3040,9 @@ Value  0.999754  0.999631  0.011327  41.833862  119.613294
 </ul>
 </section>
 </section>
+</section>
 <section id="exercises">
-<h2><span class="section-number">8.8. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.10. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="statistic">
 
 <p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
@@ -2890,8 +3141,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2920,20 +3170,22 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.5. Linear regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model-1">8.6. Structural equation model*</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.6.1. An example of using SEM</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.6.1.1. Research question, assumptions and variables</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection-and-pretest">8.6.1.2. Data collection and pretest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">8.6. Standardize Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-standardization-standardscaler">8.6.1. Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">8.7. Principle component analysis (PCA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-analysis-1">8.8. Factor analysis* </a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model">8.9. Structural equation model*</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.9.1. An example of using SEM</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.9.1.1. Research question, assumptions and variables</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">8.9.1.2. Data collection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-test">8.9.1.3. Pre-test</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reliability-and-validity-test">8.7. Reliability and validity test</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reliablity">8.7.1. Reliablity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validity">8.7.2. Validity</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.8. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.10. Exercises</a></li>
 </ul>
   </nav></div>
 
@@ -2982,8 +3234,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
