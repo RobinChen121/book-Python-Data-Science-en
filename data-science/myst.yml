@@ -5,12 +5,20 @@ project:
     - name: Zhen Chen
   copyright: '2025'
   github: RobinChen121/book-Python-Data-Science-en
+
   thebe:
     binder:
       repo: RobinChen121/book-Python-Data-Science-en
       provider: github
       url: https://mybinder.org
       ref: main
+  # thebe:
+  #   binder:
+  #     repo: RobinChen121/book-Python-Data-Science-en
+  #     provider: github
+  #     url: https://mybinder.org
+  #     ref: main
+
   bibliography:
     - references.bib
   exports:
