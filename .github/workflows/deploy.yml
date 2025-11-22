@@ -14,41 +14,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 检出仓库
       - uses: actions/checkout@v4
 
-      # 2. 安装 Node.js（Jupyter Book 依赖 Node）
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18.x
-
-      # 3. 安装 Python 和 Jupyter Book
       - uses: actions/setup-python@v4
         with:
           python-version: 3.11
+
       - name: Install Jupyter Book
         run: |
           python -m pip install --upgrade pip
           pip install jupyter-book
 
-      # 4. 构建 HTML
-      - name: Build HTML Assets
-        run: jupyter-book build --html
+      # ⬇️ ⬇️ 关键修复：你的 book 在 data-science/ 目录
+      - name: Build HTML
+        run: jupyter-book build data-science/ --html
 
-      # 5. 查看构建目录（调试用）
-      - name: List build folder
-        run: ls -R _build
+      - name: List build output
+        run: ls -R data-science/_build
 
-      # 6. 配置 Pages
       - name: Configure Pages
         uses: actions/configure-pages@v3
 
-      # 7. 上传 artifact
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_build/html
+          path: data-science/_build/html
 
-      # 8. 部署
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
