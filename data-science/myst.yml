@@ -1,0 +1,39 @@
+version: 1
+project:
+  title: Python 数据科学
+  authors:
+    - name: Zhen Chen
+  copyright: '2025'
+  github: RobinChen121/book-Python-Data-Science-en
+  thebe:
+    binder:
+      repo: RobinChen121/book-Python-Data-Science-en
+      provider: github
+      url: https://mybinder.org
+      ref: main
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: intro.md
+    - title: Python Basics
+      children:
+        - file: A-first-look-of-Python.ipynb
+        - file: basic-data-type.ipynb
+        - file: print-read-files.ipynb
+        - file: introduction-to-numpy.ipynb
+        - file: introduction-to-pandas.ipynb
+        - file: define-function.ipynb
+        - file: draw-pictures.ipynb
+    - title: Python Advanced
+      children:
+        - file: statistics1.ipynb
+        - file: statistics2.ipynb
+site:
+  options:
+    logo: logo.png
+    folders: true
+  template: book-theme
