@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=22a07d05" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -60,7 +60,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'print-read-files';</script>
-    <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/myfile.js?v=16a49f19"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -1171,8 +1171,8 @@ His name is Elon Musk
 
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># get the absolute path of the file &#39;file.txt&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># get the directory of the file &#39;file.txt&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">,</span> <span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># concatenate the path strings</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># check whethe the path &#39;file.txt&#39; exists</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">,</span> <span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># concatenate the path strings &#39;dir&#39; with &#39;file.txt&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># check whether the path &#39;file.txt&#39; exists</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># check whether the string &#39;file.txt&#39; is a file or not</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;dir&#39;</span><span class="p">))</span>  <span class="c1"># check whether the string &#39;dir&#39; is a directory or not</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># split the pathname into a pair (root, ext), where root is the part of the path before the file extension and ext is the file extension.</span>
@@ -1202,8 +1202,8 @@ His name is Elon Musk
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18928
-18736
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9060
+7496
 </pre></div>
 </div>
 </div>
@@ -1432,19 +1432,7 @@ His name is Elon Musk
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script><!-- Toogle google translation -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
-layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-      }
-</script>
-<script type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
-<br><hr class="footnotes docutils" />
+</script><hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>

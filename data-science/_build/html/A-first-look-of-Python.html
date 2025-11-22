@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=22a07d05" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -62,7 +62,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'A-first-look-of-Python';</script>
-    <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/myfile.js?v=16a49f19"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -1085,10 +1085,16 @@ False
 <td class="text-left"><p>pip uninstall [library_name]</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>update library</p></td>
-<td class="text-left"><p>pip install [library_name] -U</p></td>
+<td class="text-left"><p>pip install -U [library_name]</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>or pip install [library_name] -U</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>or pip install [library_name] –upgrade</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>or pip install  –upgrade [library_name]</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>show librarires list</p></td>
 <td class="text-left"><p>pip list</p></td>
@@ -1098,6 +1104,9 @@ False
 </tr>
 <tr class="row-even"><td class="text-left"><p>search a library</p></td>
 <td class="text-left"><p>pip search [library_name]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>install library for specific version</p></td>
+<td class="text-left"><p>pip install [library_name]==[version]</p></td>
 </tr>
 </tbody>
 </table>
@@ -1611,19 +1620,7 @@ False
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script><!-- Toogle google translation -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'en',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
-layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-      }
-</script>
-<script type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
-<br></section>
+</script></section>
 </section>
 
     <script type="text/x-thebe-config">

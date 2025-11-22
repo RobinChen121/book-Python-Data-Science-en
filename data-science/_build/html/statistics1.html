@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=22a07d05" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -62,7 +62,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'statistics1';</script>
-    <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/myfile.js?v=16a49f19"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -460,25 +460,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-sample-t-test">8.4.3. Two sample t-test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anova">8.4.4. Anova</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-tests">8.4.5. <span class="math notranslate nohighlight">\(\chi^2\)</span> tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-standardization-standardscaler">8.4.6. Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.5. Linear regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">8.6. Standardize Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-standardization-standardscaler">8.6.1. Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">8.7. Principle component analysis (PCA)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-analysis-1">8.8. Factor analysis* </a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model">8.9. Structural equation model*</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.9.1. An example of using SEM</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.9.1.1. Research question, assumptions and variables</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">8.9.1.2. Data collection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-test">8.9.1.3. Pre-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-analysis-1">8.5. Factor analysis* </a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model">8.6. Structural equation model*</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.6.1. An example of using SEM</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.6.1.1. Research question, assumptions and variables</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">8.6.1.2. Data collection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-test">8.6.1.3. Pre-test</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.10. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.7. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -670,7 +665,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/08fc5f8dad9691104b4a4fc8882cca1e2982f048b918a5db5bf0c802e2be8236.png" src="_images/08fc5f8dad9691104b4a4fc8882cca1e2982f048b918a5db5bf0c802e2be8236.png" />
+<img alt="_images/82f3b2d4a653af3f5915cee3fe36c0b2bee3756666d0171709ff99bd21ad6b96.png" src="_images/82f3b2d4a653af3f5915cee3fe36c0b2bee3756666d0171709ff99bd21ad6b96.png" />
 </div>
 </div>
 <p>To compute the mean, we can use the method <code class="docutils literal notranslate"><span class="pre">mean()</span></code> from <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>.</p>
@@ -753,7 +748,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/f6b9008334d862b2495c9be2057641b0cc3ec062bab987417e548cbb591d87ca.png" src="_images/f6b9008334d862b2495c9be2057641b0cc3ec062bab987417e548cbb591d87ca.png" />
+<img alt="_images/dfdb17dace88f736941c5dd24b702d9738a0a4260d49fb4a4c6d46d5a9887a73.png" src="_images/dfdb17dace88f736941c5dd24b702d9738a0a4260d49fb4a4c6d46d5a9887a73.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays bars of approximately equal height, resulting in a <strong>flat</strong> or level appearance.</p>
@@ -777,7 +772,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/219203d3f245daa42613aaaf6beb887c775e056357e5adafc759b7d7821666bd.png" src="_images/219203d3f245daa42613aaaf6beb887c775e056357e5adafc759b7d7821666bd.png" />
+<img alt="_images/3750e1f2cf03c20ff39f7597467ad11643e544bce5b5a4b609e3c4c876dee677.png" src="_images/3750e1f2cf03c20ff39f7597467ad11643e544bce5b5a4b609e3c4c876dee677.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays a <strong>bell</strong> shape.</p>
@@ -806,7 +801,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/377079130d3a9caef2541ddc60505f249c83d2a3d2b883ddc6e2a46fda7cd532.png" src="_images/377079130d3a9caef2541ddc60505f249c83d2a3d2b883ddc6e2a46fda7cd532.png" />
+<img alt="_images/c16632c81549b53d727a17473d1e8067ec315059eb7fbe254cedfe2a448bcc07.png" src="_images/c16632c81549b53d727a17473d1e8067ec315059eb7fbe254cedfe2a448bcc07.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -816,7 +811,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6757341092113647
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6757341092113641
 </pre></div>
 </div>
 </div>
@@ -845,7 +840,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;size&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/5f64824c359fa73fb9ca22d9c2db5119941b28647c88bb8fc1bf524897361e9e.png" src="_images/5f64824c359fa73fb9ca22d9c2db5119941b28647c88bb8fc1bf524897361e9e.png" />
+<img alt="_images/32d5479dceeead2739bd7a8bcb74e6d8dca8b825888253b99afaff56b6f1e2c3.png" src="_images/32d5479dceeead2739bd7a8bcb74e6d8dca8b825888253b99afaff56b6f1e2c3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -876,7 +871,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/3e166ad7615f7e935019c994c06cdb7b49bcb0079b3f5d0d078607d60db1e505.png" src="_images/3e166ad7615f7e935019c994c06cdb7b49bcb0079b3f5d0d078607d60db1e505.png" />
+<img alt="_images/39a6a667ec4fb74cff44e57843a885c5992a801f55dbdbe5901abb44904bc7b8.png" src="_images/39a6a667ec4fb74cff44e57843a885c5992a801f55dbdbe5901abb44904bc7b8.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1779,438 +1774,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 <p class="admonition-title">Note</p>
 <p>Anova test can also be done by the library <code class="docutils literal notranslate"><span class="pre">statesmodels</span></code> and <span class="math notranslate nohighlight">\(\chi^2\)</span> test can also be done by the library <code class="docutils literal notranslate"><span class="pre">scipy</span></code>. But they are more cumbesome than <code class="docutils literal notranslate"><span class="pre">pingouin</span></code>.</p>
 </div>
-</section>
-</section>
-<section id="linear-regression">
-<h2><span class="section-number">8.5. </span>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h2>
-<hr><p>linear regression is a model that estimates the relationship between a scalar <code class="docutils literal notranslate"><span class="pre">response</span></code> (dependent variable) and one or more <code class="docutils literal notranslate"><span class="pre">explanatory</span> <span class="pre">variables</span></code> (regressor or independent variable).</p>
-<p>Linear regression is widely used in biological and social sciences to describe possible relationships between variables. It ranks as <strong>one of the most important tools</strong> used in these disciplines.</p>
-<p>For example, for a seaborn dataset “car_crashes”, which contains data on car crashes in different U.S. states.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
-<span class="n">crashes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>total</th>
-      <th>speeding</th>
-      <th>alcohol</th>
-      <th>not_distracted</th>
-      <th>no_previous</th>
-      <th>ins_premium</th>
-      <th>ins_losses</th>
-      <th>abbrev</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>18.8</td>
-      <td>7.332</td>
-      <td>5.640</td>
-      <td>18.048</td>
-      <td>15.040</td>
-      <td>784.55</td>
-      <td>145.08</td>
-      <td>AL</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>18.1</td>
-      <td>7.421</td>
-      <td>4.525</td>
-      <td>16.290</td>
-      <td>17.014</td>
-      <td>1053.48</td>
-      <td>133.93</td>
-      <td>AK</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>18.6</td>
-      <td>6.510</td>
-      <td>5.208</td>
-      <td>15.624</td>
-      <td>17.856</td>
-      <td>899.47</td>
-      <td>110.35</td>
-      <td>AZ</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>22.4</td>
-      <td>4.032</td>
-      <td>5.824</td>
-      <td>21.056</td>
-      <td>21.280</td>
-      <td>827.34</td>
-      <td>142.39</td>
-      <td>AR</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>12.0</td>
-      <td>4.200</td>
-      <td>3.360</td>
-      <td>10.920</td>
-      <td>10.680</td>
-      <td>878.41</td>
-      <td>165.63</td>
-      <td>CA</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Descriptions for each column are below:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Variable Name</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">total</span></code></p></td>
-<td><p>Total number of car crash deaths per 10,000 people in each state</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">speeding</span></code></p></td>
-<td><p>Proportion of deaths due to speeding (as a fraction of <code class="docutils literal notranslate"><span class="pre">total</span></code>)</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">alcohol</span></code></p></td>
-<td><p>Proportion of deaths involving alcohol (as a fraction of <code class="docutils literal notranslate"><span class="pre">total</span></code>)</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">not_distracted</span></code></p></td>
-<td><p>Proportion of deaths not caused by distraction</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">no_previous</span></code></p></td>
-<td><p>Proportion of drivers involved in fatal crashes with no prior violations</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ins_premium</span></code></p></td>
-<td><p>Alternative column for insurance premium</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ins_losses</span></code></p></td>
-<td><p>Average insurance losses per driver (in US dollars)</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">abbrev</span></code></p></td>
-<td><p>Two-letter abbreviation of the US state</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>A scatter plot for the speeding and total number of crashes is given below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;speeding&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;total&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/91daa28b28755211402dde5e6f6b55cca36b4a931b03020fbca99a3b47a28f47.png" src="_images/91daa28b28755211402dde5e6f6b55cca36b4a931b03020fbca99a3b47a28f47.png" />
-</div>
-</div>
-<p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
-<div class="math notranslate nohighlight" id="equation-eq-single-variable">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-eq-single-variable" title="Link to this equation">#</a></span>\[\text{total}=\beta_0+\beta_1\text{ speeding}\]</div>
-<p>Geometrically, linear regression involves finding <strong>the best-fitting line through a set of points</strong>, represented by a linear equation as shown above, where <span class="math notranslate nohighlight">\(\beta_0\)</span> is called the <code class="docutils literal notranslate"><span class="pre">intercept</span></code>.</p>
-<p>The most common way to comute the linear regreesion model is by the ordinary least square method, for which we can use the function <code class="docutils literal notranslate"><span class="pre">OLS()</span></code> from the library <code class="docutils literal notranslate"><span class="pre">Statsmodels</span></code>.</p>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> library to perform regression typically involves the following steps:</p>
-<ul class="simple">
-<li><p>Construct the regression model using the function <code class="docutils literal notranslate"><span class="pre">OLS()</span></code> and <code class="docutils literal notranslate"><span class="pre">fit()</span></code>.</p></li>
-<li><p>Output the regression results using the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> function.</p></li>
-<li><p>Obtain predicted values using the <code class="docutils literal notranslate"><span class="pre">predict()</span></code> function. This step can be omitted if not for prediction.</p></li>
-</ul>
-<p>In the following code, we build a linear model for the equation <a class="reference internal" href="#equation-eq-single-variable">(8.1)</a> using <code class="docutils literal notranslate"><span class="pre">statsmodels.formula.api</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-
-<span class="c1"># the linear model is definded by strings the in the formula</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;total ~ speeding&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="c1"># model summary</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                  total   R-squared:                       0.374
-Model:                            OLS   Adj. R-squared:                  0.361
-Method:                 Least Squares   F-statistic:                     29.27
-Date:                Thu, 19 Jun 2025   Prob (F-statistic):           1.87e-06
-Time:                        08:52:46   Log-Likelihood:                -132.15
-No. Observations:                  51   AIC:                             268.3
-Df Residuals:                      49   BIC:                             272.2
-Df Model:                           1                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-Intercept      9.5459      1.243      7.680      0.000       7.048      12.044
-speeding       1.2493      0.231      5.411      0.000       0.785       1.713
-==============================================================================
-Omnibus:                        2.847   Durbin-Watson:                   2.008
-Prob(Omnibus):                  0.241   Jarque-Bera (JB):                2.681
-Skew:                           0.542   Prob(JB):                        0.262
-Kurtosis:                       2.709   Cond. No.                         14.9
-==============================================================================
-
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-</pre></div>
-</div>
-</div>
-</div>
-<p>There are a lot of information in the output table, but we usually concern several key informations:</p>
-<ul class="simple">
-<li><p>Values of coefficicent <span class="math notranslate nohighlight">\(\beta_0, \beta_1, \dots\)</span></p>
-<ul>
-<li><p>They are given in the column “coef”. From them, we can get the fitted model. For this example, it is:
-$<span class="math notranslate nohighlight">\(
-\text{tip}=9.5459 +1.2493 \text{ total\_bill}
-\)</span>$</p></li>
-</ul>
-</li>
-<li><p>p-values of the independent variables.</p>
-<ul>
-<li><p>The p-values are given in the column “P&gt;|t|”. If the p-value of an independe variable is less than 0.05, it means there is <strong>linear relationship</strong> between the independent variable and the dependent variable at 95% confidence level. For this example, the p-values are all 0.000.</p></li>
-</ul>
-</li>
-<li><p><span class="math notranslate nohighlight">\(R^2\)</span></p>
-<ul>
-<li><p>It is given by the value on the right of “R-squred: “ at the top right of the table. It measures the proportion of variability in the dependent variable explained by the model, with a range between 0 and 1. <strong>The closer it is to 1, the better the model fit</strong>. For this example, it is 0.374.</p></li>
-</ul>
-</li>
-</ul>
-<p>In regression analysis, there is no universal threshold for what constitutes a “good” R² value, as it heavily depends on the <strong>field of study and research context</strong>. However, here are some general guidelines:</p>
-<ul class="simple">
-<li><p>R² &gt; 0.7: Often considered <strong>strong</strong> in social sciences or fields with high noise.</p></li>
-<li><p>R² = 0.3–0.7: <strong>Moderate</strong> explanatory power (common in economics, biology, etc.).</p></li>
-<li><p>R² &lt; 0.3: <strong>Weak</strong> fit, but may still be meaningful in noisy domains (e.g., psychology, climate studies).</p></li>
-<li><p>R² ≈ 0: Model explains almost none of the variability.</p></li>
-</ul>
-<p>The general syntax for the function <code class="docutils literal notranslate"><span class="pre">ols()</span></code> is given below.</p>
-<table>
-    <tr style="border-top:solid; border-bottom:solid">
-        <th colspan=2 style="text-align:center">statsmodels.formula.api.ols(formula, data)</th>
-    </tr>
-    <tr>
-        <td style="text-align:left">formula</td>
-        <td style="text-align:left">Usually a string, the formula specifying the model.</td>
-    </tr>
-    <tr style="text-align:left; border-bottom:solid" >
-        <td style="text-align:left">data</td>
-        <td style="text-align:left">Usually a DataFrame or dict, the data for the model</td>
-    </tr>
-</table>
-<br /><p>The general syntax for the formula is below:</p>
-<blockquote>
-<div><p>y ~ x1 + x2 + x1:x2 + C(x3)</p>
-</div></blockquote>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> is the dependent (response) variable</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">x3</span></code> are independent (regressor) variables</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">C(x3)</span></code> means x3 is catorgorical variable</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> separates the dependent variable from the predictors</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> adds independent variables</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-1</span></code> removes the intercept (by default it’s included)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1:x2</span></code> adds an <strong>interaction term</strong> only, which equals x1*x2</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x1*x2</span></code> adds both main terms and the interaction, which equals x1 + x2 + x1*x2</p></li>
-</ul>
-<ul class="simple">
-<li><p>Normally in regression, we assume that variables affect the outcome independently. But sometimes, the <strong>combined effect</strong> of two variables is more (or less) than just adding their individual effects — that’s where <code class="docutils literal notranslate"><span class="pre">interaction</span> <span class="pre">terms</span></code> come in.</p></li>
-</ul>
-<p>For example, we can apply a linear regression between the amount of total crashes, the speeding and the alcohol:</p>
-<div class="math notranslate nohighlight">
-\[
-\text{total}=\beta_0+\beta_1\text{ speeding}+\beta_2\text{ alcohol}
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
-
-<span class="c1"># the linear model is definded by strings the in the formula</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;total ~ speeding + alcohol&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="c1"># model summary</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                  total   R-squared:                       0.730
-Model:                            OLS   Adj. R-squared:                  0.719
-Method:                 Least Squares   F-statistic:                     64.87
-Date:                Fri, 20 Jun 2025   Prob (F-statistic):           2.27e-14
-Time:                        10:16:11   Log-Likelihood:                -110.71
-No. Observations:                  51   AIC:                             227.4
-Df Residuals:                      48   BIC:                             233.2
-Df Model:                           2                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-Intercept      5.6807      0.957      5.934      0.000       3.756       7.606
-speeding       0.1502      0.206      0.728      0.470      -0.265       0.565
-alcohol        1.9152      0.241      7.954      0.000       1.431       2.399
-==============================================================================
-Omnibus:                        2.495   Durbin-Watson:                   1.809
-Prob(Omnibus):                  0.287   Jarque-Bera (JB):                2.045
-Skew:                           0.490   Prob(JB):                        0.360
-Kurtosis:                       2.978   Cond. No.                         23.5
-==============================================================================
-
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Or, if we consider the interaction of speeding and alcohol (drivers with alcohol tend to driving with highe speed):</p>
-<div class="math notranslate nohighlight">
-\[
-\text{total}=\beta_0+\beta_1\text{ speeding}+\beta_2\text{ alcohol}+\beta_3\text{ alcohol*speeding}
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
-
-<span class="c1"># the linear model is definded by strings the in the formula</span>
-<span class="c1"># the below code equals: model = smf.ols(formula=&quot;total ~ alcohol*speeding&quot;, data=crashes).fit()</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;total ~ speeding + alcohol + alcohol:speeding&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="c1"># model summary</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                  total   R-squared:                       0.790
-Model:                            OLS   Adj. R-squared:                  0.777
-Method:                 Least Squares   F-statistic:                     58.91
-Date:                Fri, 20 Jun 2025   Prob (F-statistic):           5.91e-16
-Time:                        10:17:58   Log-Likelihood:                -104.31
-No. Observations:                  51   AIC:                             216.6
-Df Residuals:                      47   BIC:                             224.3
-Df Model:                           3                                         
-Covariance Type:            nonrobust                                         
-====================================================================================
-                       coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------------
-Intercept           -1.8936      2.236     -0.847      0.401      -6.393       2.605
-speeding             1.5561      0.426      3.657      0.001       0.700       2.412
-alcohol              3.5368      0.492      7.191      0.000       2.547       4.526
-alcohol:speeding    -0.2761      0.075     -3.664      0.001      -0.428      -0.125
-==============================================================================
-Omnibus:                        3.087   Durbin-Watson:                   1.807
-Prob(Omnibus):                  0.214   Jarque-Bera (JB):                2.360
-Skew:                           0.520   Prob(JB):                        0.307
-Kurtosis:                       3.168   Cond. No.                         284.
-==============================================================================
-
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-</pre></div>
-</div>
-</div>
-</div>
-<p>For the catogorical variable, we use the dataset “tips” as an example to fit the following equation:</p>
-<div class="math notranslate nohighlight">
-\[
-\text{tip}=\beta_0+\beta_1\text{ total\_bill}+\beta_2\text{ day}
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
-
-<span class="c1"># the linear model is definded by strings the in the formula</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;tip ~ total_bill + C(day)&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="c1"># model summary</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                    tip   R-squared:                       0.459
-Model:                            OLS   Adj. R-squared:                  0.450
-Method:                 Least Squares   F-statistic:                     50.67
-Date:                Fri, 20 Jun 2025   Prob (F-statistic):           7.52e-31
-Time:                        10:52:58   Log-Likelihood:                -350.03
-No. Observations:                 244   AIC:                             710.1
-Df Residuals:                     239   BIC:                             727.5
-Df Model:                           4                                         
-Covariance Type:            nonrobust                                         
-=================================================================================
-                    coef    std err          t      P&gt;|t|      [0.025      0.975]
----------------------------------------------------------------------------------
-Intercept         0.9205      0.186      4.943      0.000       0.554       1.287
-C(day)[T.Fri]     0.0189      0.269      0.070      0.944      -0.511       0.549
-C(day)[T.Sat]    -0.0671      0.172     -0.391      0.697      -0.406       0.271
-C(day)[T.Sun]     0.0935      0.178      0.526      0.599      -0.257       0.444
-total_bill        0.1047      0.008     13.915      0.000       0.090       0.119
-==============================================================================
-Omnibus:                       20.916   Durbin-Watson:                   2.149
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               38.821
-Skew:                           0.463   Prob(JB):                     3.72e-09
-Kurtosis:                       4.721   Cond. No.                         103.
-==============================================================================
-
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Linear regression can also be performed using non-formula-based modeling, non-OLS methods or other libraries, which are omitted here due to space limitations.</p>
-</div>
-</section>
-<section id="standardize-data">
-<h2><span class="section-number">8.6. </span>Standardize Data<a class="headerlink" href="#standardize-data" title="Link to this heading">#</a></h2>
-<hr><p><code class="docutils literal notranslate"><span class="pre">Standardization</span></code> is a process of transforming the data to make it more suitable for some statistical analysis or machine learning.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Standardization</span></code> is a process of transforming the data to make it more suitable for some statistical analysis or machine learning.</p>
 <p>The main reasons include:</p>
 <ul class="simple">
 <li><p>To remove the effect of different units and scales</p>
@@ -2236,8 +1800,9 @@ Notes:
 </li>
 </ul>
 <p>There are two common methods for standardizing data: z-score standardization and min-max standardization.</p>
+</section>
 <section id="z-score-standardization-standardscaler">
-<h3><span class="section-number">8.6.1. </span>Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)<a class="headerlink" href="#z-score-standardization-standardscaler" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.4.6. </span>Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)<a class="headerlink" href="#z-score-standardization-standardscaler" title="Link to this heading">#</a></h3>
 <hr>
 <p>Transforms data to have mean (<span class="math notranslate nohighlight">\(\mu\)</span>) = 0 and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) = 1.</p>
 <div class="math notranslate nohighlight">
@@ -2328,196 +1893,8 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 </ul>
 </section>
 </section>
-<section id="principle-component-analysis-pca">
-<h2><span class="section-number">8.7. </span>Principle component analysis (PCA)<a class="headerlink" href="#principle-component-analysis-pca" title="Link to this heading">#</a></h2>
-<hr><p>Principal component analysis (PCA) is a <strong>dimensionality reduction</strong> to simplify a large data set into a smaller set, while preserving their most important structures.</p>
-<p>It represent a transformation of the original variables into a new set of uncorrelated variables through linear combinations. This transformation is structured such that the leading components account for the <strong>maximal possible information (reflected by the data variance)</strong> in the data, effectively compressing the key information into fewer dimensions.</p>
-<ul class="simple">
-<li><p>For example, there are 10 variables in the original data set. We can use PCA to reduce the number of variables to 3 and keep 85% of the original information.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris&quot;</span><span class="p">)</span>
-<span class="n">data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal_length</th>
-      <th>sepal_width</th>
-      <th>petal_length</th>
-      <th>petal_width</th>
-      <th>species</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>setosa</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>6.7</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.3</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>6.3</td>
-      <td>2.5</td>
-      <td>5.0</td>
-      <td>1.9</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>147</th>
-      <td>6.5</td>
-      <td>3.0</td>
-      <td>5.2</td>
-      <td>2.0</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>148</th>
-      <td>6.2</td>
-      <td>3.4</td>
-      <td>5.4</td>
-      <td>2.3</td>
-      <td>virginica</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>5.9</td>
-      <td>3.0</td>
-      <td>5.1</td>
-      <td>1.8</td>
-      <td>virginica</td>
-    </tr>
-  </tbody>
-</table>
-<p>150 rows × 5 columns</p>
-</div></div></div>
-</div>
-<p>There are 4 variables in addition to the last categorical variable. We use the class <code class="docutils literal notranslate"><span class="pre">PCA</span></code> from the libraray <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> for reducing to 2 varaibles.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">iris_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># the number of principal components</span>
-<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris_standard</span><span class="p">)</span>  <span class="c1"># fit the data by PCA</span>
-<span class="nb">print</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">&quot;explained variance of each principal component: </span><span class="si">{</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="p">)</span>  <span class="c1"># output the explained variance ratio</span>
-
-<span class="n">principal_components</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">iris_standard</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;principal components shown the first 10 rows:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">principal_components</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>explained variance of each principal component: [0.72962445 0.22850762]
-principal components shown the first 10 rows:
- [[-2.26470281  0.4800266 ]
- [-2.08096115 -0.67413356]
- [-2.36422905 -0.34190802]
- [-2.29938422 -0.59739451]
- [-2.38984217  0.64683538]
- [-2.07563095  1.48917752]
- [-2.44402884  0.0476442 ]
- [-2.23284716  0.22314807]
- [-2.33464048 -1.11532768]
- [-2.18432817 -0.46901356]]
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>It is recommended to standarizing the data before applying PCA.</p></li>
-<li><p>Specify the number of principal components through the parameter <code class="docutils literal notranslate"><span class="pre">n_components</span></code> in <code class="docutils literal notranslate"><span class="pre">PCA(</span> <span class="pre">)</span></code>.</p></li>
-<li><p>Fit the data by PCA through the method <code class="docutils literal notranslate"><span class="pre">fit(</span> <span class="pre">)</span></code>.</p></li>
-<li><p>Usually, the cumulated explained variance ratio of the specified principal components should be greather equal than 85%.</p>
-<ul>
-<li><p>In this example, the cumluated explained variance ratiso is 0.729 + 0.228 = 0.954 &gt; 0.85.</p></li>
-</ul>
-</li>
-<li><p>Get the principal components (the values of the reduced variables) by the method <code class="docutils literal notranslate"><span class="pre">fit_transform(</span> <span class="pre">)</span></code>.</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>PCA is generally used as an intermediate step in data analysis. It is often applied for dimensionality reduction before further tasks such as clustering, classification, or visualization.</p>
-</div>
-</section>
 <section id="factor-analysis-1">
-<h2><span class="section-number">8.8. </span>Factor analysis* <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#factor-analysis-1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.5. </span>Factor analysis* <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#factor-analysis-1" title="Link to this heading">#</a></h2>
 <hr>
 <p>Factor analysis is a statistical method used to <strong>identify underlying latent factors</strong> that explain the patterns of correlations among observed variables. It helps to uncover the hidden structure in the data by modeling observed variables as linear combinations of a smaller number of unobserved factors. In simple terms, <strong>factor analysis reduces the dimensionality of data by assuming that multiple observed variables are influenced by fewer common factors</strong>.</p>
 <p>Factor analysis is extensively applied in fields such as market research, advertising, psychology, finance, and operations research. Take market research for an example, it helps identify price-sensitive customer segments, uncover brand attributes that affect consumer preferences, and provides insights into the factors influencing the choice of distribution channels.</p>
@@ -2537,7 +1914,7 @@ principal components shown the first 10 rows:
 <p>In short, factor extraction finds “what factors exist,” and factor rotation makes those factors “easier to understand.”</p>
 </section>
 <section id="structural-equation-model">
-<h2><span class="section-number">8.9. </span>Structural equation model*<a class="headerlink" href="#structural-equation-model" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.6. </span>Structural equation model*<a class="headerlink" href="#structural-equation-model" title="Link to this heading">#</a></h2>
 <hr><p><code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Equation</span> <span class="pre">Modeling</span></code> (SEM) is especially useful when the research involves <strong>latent variables</strong> (concepts that can’t be directly observed) and <strong>complex relationships</strong> among multiple variables—such as mediation, moderation or multiple simultaneous dependencies.</p>
 <blockquote>
 <div><p>Variables like job satisfaction, employee engagement, customer loyalty, leadership style, or brand perception are not directly measurable.</p>
@@ -2559,11 +1936,11 @@ Leadership Style  ──→ Turnover Intention</p>
 </li>
 </ul>
 <section id="an-example-of-using-sem">
-<h3><span class="section-number">8.9.1. </span>An example of using SEM<a class="headerlink" href="#an-example-of-using-sem" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">8.6.1. </span>An example of using SEM<a class="headerlink" href="#an-example-of-using-sem" title="Link to this heading">#</a></h3>
 <hr>
 <p>We use an example in one marketing research showing how tuo use SEM.</p>
 <section id="research-question-assumptions-and-variables">
-<h4><span class="section-number">8.9.1.1. </span>Research question, assumptions and variables<a class="headerlink" href="#research-question-assumptions-and-variables" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">8.6.1.1. </span>Research question, assumptions and variables<a class="headerlink" href="#research-question-assumptions-and-variables" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Research question: this study aims to explore the impact mechanism of social media advertising (e.g., Instagram ads) on consumers’ purchase intention, and to analyze the mediating role of brand trust and the moderating role of personal innovativeness.</p></li>
 </ul>
@@ -2604,7 +1981,7 @@ Leadership Style  ──→ Turnover Intention</p>
 </div></blockquote>
 </section>
 <section id="data-collection">
-<h4><span class="section-number">8.9.1.2. </span>Data collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">8.6.1.2. </span>Data collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h4>
 <p>We can collect the data by questionaries: there aer 3 questions related with social media advertisement, 3 questions related with brand trust and 1 questions related personal innovativeness.</p>
 <ul class="simple">
 <li><p>Generally, the number of respondents should be at least 10 times of the number of questions in a questionary.</p></li>
@@ -2827,7 +2204,7 @@ Leadership Style  ──→ Turnover Intention</p>
 </div>
 </section>
 <section id="pre-test">
-<h4><span class="section-number">8.9.1.3. </span>Pre-test<a class="headerlink" href="#pre-test" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">8.6.1.3. </span>Pre-test<a class="headerlink" href="#pre-test" title="Link to this heading">#</a></h4>
 <p>In research methodology (especially in fields such as <strong>surveys</strong>, psychometrics, and educational assessment), <code class="docutils literal notranslate"><span class="pre">reliability</span></code> and <code class="docutils literal notranslate"><span class="pre">validity</span></code> are two core indicators for evaluating the quality of a measurement scale.</p>
 <ol class="arabic simple">
 <li><p>Reliablity</p></li>
@@ -3042,7 +2419,7 @@ Value  0.999754  0.999631  0.011327  41.833862  119.613294
 </section>
 </section>
 <section id="exercises">
-<h2><span class="section-number">8.10. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.7. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="statistic">
 
 <p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
@@ -3064,19 +2441,7 @@ Value  0.999754  0.999631  0.011327  41.833862  119.613294
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script><!-- Toogle google translation -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'en',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
-layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-      }
-</script>
-<script type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
-<br><hr class="footnotes docutils" />
+</script><hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -3167,25 +2532,20 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-sample-t-test">8.4.3. Two sample t-test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anova">8.4.4. Anova</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chi-2-tests">8.4.5. <span class="math notranslate nohighlight">\(\chi^2\)</span> tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-standardization-standardscaler">8.4.6. Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">8.5. Linear regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">8.6. Standardize Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-standardization-standardscaler">8.6.1. Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">8.7. Principle component analysis (PCA)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-analysis-1">8.8. Factor analysis* </a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model">8.9. Structural equation model*</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.9.1. An example of using SEM</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.9.1.1. Research question, assumptions and variables</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">8.9.1.2. Data collection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-test">8.9.1.3. Pre-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-analysis-1">8.5. Factor analysis* </a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-equation-model">8.6. Structural equation model*</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-using-sem">8.6.1. An example of using SEM</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question-assumptions-and-variables">8.6.1.1. Research question, assumptions and variables</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">8.6.1.2. Data collection</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-test">8.6.1.3. Pre-test</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.10. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">8.7. Exercises</a></li>
 </ul>
   </nav></div>
 
