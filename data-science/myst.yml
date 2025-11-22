@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: Python 数据科学
+  title: Python Data Science
   authors:
     - name: Zhen Chen
   copyright: '2025'
