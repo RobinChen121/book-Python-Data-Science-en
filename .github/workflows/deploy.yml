@@ -11,6 +11,10 @@ permissions:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -25,12 +29,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install jupyter-book
 
-      # ⬇️ ⬇️ 关键修复：你的 book 在 data-science/ 目录
+      # ⬇️ 注意：你的书在 data-science/ 目录
       - name: Build HTML
         run: jupyter-book build data-science/ --html
-
-      - name: List build output
-        run: ls -R data-science/_build
 
       - name: Configure Pages
         uses: actions/configure-pages@v3
@@ -41,4 +42,5 @@ jobs:
           path: data-science/_build/html
 
       - name: Deploy to GitHub Pages
+        id: deploy
         uses: actions/deploy-pages@v4
