@@ -16,35 +16,32 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=22a07d05" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -65,15 +62,14 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'draw-pictures';</script>
-    <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/myfile.js?v=16a49f19"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="8. Python statistics" href="statistics1.html" />
-    <link rel="prev" title="6. Functions" href="define-function.html" />
+    <link rel="prev" title="6. Define functions" href="define-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -89,8 +85,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -98,6 +105,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -105,8 +113,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -122,8 +130,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -153,17 +160,21 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -181,7 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Introduction to Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Define functions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Draw graphs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
@@ -196,14 +207,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -247,7 +253,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science-en/draw-pictures.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science/draw-pictures.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -396,16 +402,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -491,13 +505,16 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;y=sin(x)&quot;</span><span class="p">)</span>  <span class="c1"># show texts in specified coordinates</span>
 
+<span class="c1"># show the grid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
 <span class="c1"># show the graph</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/28a252cf2c52ec80a75dd8aa947e19c55fe17816e124fc1495ed2d7f3e85d396.png" src="_images/28a252cf2c52ec80a75dd8aa947e19c55fe17816e124fc1495ed2d7f3e85d396.png" />
+<img alt="_images/11c28fac0d3c13631ae053b67e5216073ee4e0f17fe0af46e024efb583e2d725.png" src="_images/11c28fac0d3c13631ae053b67e5216073ee4e0f17fe0af46e024efb583e2d725.png" />
 </div>
 </div>
 <p>The syntax for <code class="docutils literal notranslate"><span class="pre">plot</span></code> function is below：</p>
@@ -611,10 +628,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x107c85280&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x232e3a39a90&gt;]
 </pre></div>
 </div>
-<img alt="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" src="_images/1960487e02705e64fb782ada7ace8abe1dd245bdfa5e771b1382dc8b53c4e990.png" />
+<img alt="_images/ae8dae793d615bd74787660ca66f199610afdd7219073a32289432b414419eff.png" src="_images/ae8dae793d615bd74787660ca66f199610afdd7219073a32289432b414419eff.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -624,10 +641,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a1a2600&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x232e3195d60&gt;]
 </pre></div>
 </div>
-<img alt="_images/767414e87ff4e7446c67721694c63b6b997758a787639ee18d226d1ffc07b887.png" src="_images/767414e87ff4e7446c67721694c63b6b997758a787639ee18d226d1ffc07b887.png" />
+<img alt="_images/b1f1991393abdcaedf336c456097ba2ce7c54aa4c2a6a7ee4bf4fb87ec6dd05d.png" src="_images/b1f1991393abdcaedf336c456097ba2ce7c54aa4c2a6a7ee4bf4fb87ec6dd05d.png" />
 </div>
 </div>
 <ul class="simple">
@@ -640,10 +657,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a3099a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x232e4b192b0&gt;]
 </pre></div>
 </div>
-<img alt="_images/f7686d2b5343058ec40fd854c381922a4b2cf62160b4a64a432ad8e4229d1c39.png" src="_images/f7686d2b5343058ec40fd854c381922a4b2cf62160b4a64a432ad8e4229d1c39.png" />
+<img alt="_images/cafb5e9bdfe83b0e420b3a163d63b8482dd08d6aba59127859ff28ac130612f9.png" src="_images/cafb5e9bdfe83b0e420b3a163d63b8482dd08d6aba59127859ff28ac130612f9.png" />
 </div>
 </div>
 <p>If we want to customize the axis labels, axis ticks, tick ranges, plot title, or add a legend, we can achieve this by setting properties in pyplot functions such as:</p>
@@ -697,7 +714,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9c70ee4de816fce5ad52c7f80e5ccdc5f4a3a1b1fc40506b3c46d98c2de898c0.png" src="_images/9c70ee4de816fce5ad52c7f80e5ccdc5f4a3a1b1fc40506b3c46d98c2de898c0.png" />
+<img alt="_images/bef4b78d3f1284a08fdec098452ffbafb09eb891f6f40add1e87dfe25c65621e.png" src="_images/bef4b78d3f1284a08fdec098452ffbafb09eb891f6f40add1e87dfe25c65621e.png" />
 </div>
 </div>
 <ul class="simple">
@@ -754,7 +771,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c0b226dae6f95f8948819e1aadd4c1d56ba30ebfd25120840f73950cfdb154f3.png" src="_images/c0b226dae6f95f8948819e1aadd4c1d56ba30ebfd25120840f73950cfdb154f3.png" />
+<img alt="_images/dedaabc6229dcb334d0d4fb01ba354bc0849fdf03a09aeead68a0f3947323bc3.png" src="_images/dedaabc6229dcb334d0d4fb01ba354bc0849fdf03a09aeead68a0f3947323bc3.png" />
 </div>
 </div>
 </section>
@@ -834,7 +851,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/71c3e7205cd45e3c00819af9a2311a8455f7704fc062854526500c620f9d3ded.png" src="_images/71c3e7205cd45e3c00819af9a2311a8455f7704fc062854526500c620f9d3ded.png" />
+<img alt="_images/0f9d37fddff8044e3dfb6f9ce480c309d6a4d4478792097a9ce578bdd9a58dcb.png" src="_images/0f9d37fddff8044e3dfb6f9ce480c309d6a4d4478792097a9ce578bdd9a58dcb.png" />
 </div>
 </div>
 <p>Horizontal bar charts are created using the <code class="docutils literal notranslate"><span class="pre">barh()</span></code> function, which has essentially the same usage as the standard <code class="docutils literal notranslate"><span class="pre">bar()</span></code> function.</p>
@@ -852,7 +869,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c3164bc4515f68d737d4c84cc3b6c384b4612039631dc2a8a79487fc54ea7eed.png" src="_images/c3164bc4515f68d737d4c84cc3b6c384b4612039631dc2a8a79487fc54ea7eed.png" />
+<img alt="_images/b918bc1b809fe612f8f44c046cb937ca2c5e2add2cc681b927efad34a1423ed2.png" src="_images/b918bc1b809fe612f8f44c046cb937ca2c5e2add2cc681b927efad34a1423ed2.png" />
 </div>
 </div>
 <p>To display survey results for two categories side-by-side using bar charts, you can:</p>
@@ -886,7 +903,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3147725afde7055f474cb9777a18561c9b982c0b192e5bb1e5db08721959c848.png" src="_images/3147725afde7055f474cb9777a18561c9b982c0b192e5bb1e5db08721959c848.png" />
+<img alt="_images/f7e15e2b4c2b19a70bf02c55a51f4045e630d2da4b999a3503700750a8ebe3f8.png" src="_images/f7e15e2b4c2b19a70bf02c55a51f4045e630d2da4b999a3503700750a8ebe3f8.png" />
 </div>
 </div>
 </section>
@@ -933,7 +950,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5a4dbfa0f09192863656a191a7a5db8baddd2e91c7baea205db439b3fe021ac5.png" src="_images/5a4dbfa0f09192863656a191a7a5db8baddd2e91c7baea205db439b3fe021ac5.png" />
+<img alt="_images/ad2cdf84f1836c03a9ce01ad253b0a38dbf19f4220dc9feb6263777ca8b2727b.png" src="_images/ad2cdf84f1836c03a9ce01ad253b0a38dbf19f4220dc9feb6263777ca8b2727b.png" />
 </div>
 </div>
 </section>
@@ -1001,7 +1018,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/86b90ca77c48ef0e5165c8e6a6dc81b8c80f496029ce38edffb4cd51febbcab1.png" src="_images/86b90ca77c48ef0e5165c8e6a6dc81b8c80f496029ce38edffb4cd51febbcab1.png" />
+<img alt="_images/fea10b2435b4e692889cd6dce8d7a6dbb014d3af96d5bd06375399bce41f8c84.png" src="_images/fea10b2435b4e692889cd6dce8d7a6dbb014d3af96d5bd06375399bce41f8c84.png" />
 </div>
 </div>
 <p>There is also a <code class="docutils literal notranslate"><span class="pre">subplots</span></code> function, which is used as <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>. Here, <code class="docutils literal notranslate"><span class="pre">fig</span></code> is used to adjust parameters for the entire figure, while <code class="docutils literal notranslate"><span class="pre">axs</span></code> is used to modify parameters for individual subplots. Due to space limitations, we won’t elaborate further on this.</p>
@@ -1055,7 +1072,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/06da774cff3e2f2c1ad248e1b71af2d6d6573191a908310a1eaec7c95228426b.png" src="_images/06da774cff3e2f2c1ad248e1b71af2d6d6573191a908310a1eaec7c95228426b.png" />
+<img alt="_images/4c9452fbbf1f5c011977f23c970f2bad7310a2c5947b1f7398bd583523c80e2b.png" src="_images/4c9452fbbf1f5c011977f23c970f2bad7310a2c5947b1f7398bd583523c80e2b.png" />
 </div>
 </div>
 </section>
@@ -1194,7 +1211,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e12a6fff708e6fabdc99e5b1bcaa2598365c2c80f7e3f8517457ba0a63f111f7.png" src="_images/e12a6fff708e6fabdc99e5b1bcaa2598365c2c80f7e3f8517457ba0a63f111f7.png" />
+<img alt="_images/9bda53ed426a2b77d1d7c80e41e9a1c8d56f4e065e05919880efea6d76eed800.png" src="_images/9bda53ed426a2b77d1d7c80e41e9a1c8d56f4e065e05919880efea6d76eed800.png" />
 </div>
 </div>
 </section>
@@ -1227,7 +1244,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f730e8e29a3af4aa74b7c78e749fb629f20eb68df4265969f54a6075ea89e1d2.png" src="_images/f730e8e29a3af4aa74b7c78e749fb629f20eb68df4265969f54a6075ea89e1d2.png" />
+<img alt="_images/e589c7d486a8ea7141021f7b2be119c92733fcc5af7de0bb6aa294c713102e41.png" src="_images/e589c7d486a8ea7141021f7b2be119c92733fcc5af7de0bb6aa294c713102e41.png" />
 </div>
 </div>
 <p>As we can see, after applying <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>’s theme, the color scheme of the plot has changed. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> comes with many built-in datasets, and next we’ll import the tips dataset.</p>
@@ -1447,7 +1464,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/60af268be7890664fe7ccfaec71317c7334bb594017737d980153328b2160855.png" src="_images/60af268be7890664fe7ccfaec71317c7334bb594017737d980153328b2160855.png" />
+<img alt="_images/51a12e85bf1a67f5b68c274ecf979b2646e1ceacf244a227060fe8b80ca9a41a.png" src="_images/51a12e85bf1a67f5b68c274ecf979b2646e1ceacf244a227060fe8b80ca9a41a.png" />
 </div>
 </div>
 <p>When generating line plots, data points sharing the same x-coordinate values will be aggregated. The visualization will display the mean value along with a 95% confidence interval.</p>
@@ -1459,7 +1476,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ef4348d9a21a8f2758da3b19c25619d5386ecf367603cb66d90708593851530e.png" src="_images/ef4348d9a21a8f2758da3b19c25619d5386ecf367603cb66d90708593851530e.png" />
+<img alt="_images/182b55b9aa75f4199a5f97fda82d544eb4d1372f59d2382b9a4e7686870833c2.png" src="_images/182b55b9aa75f4199a5f97fda82d544eb4d1372f59d2382b9a4e7686870833c2.png" />
 </div>
 </div>
 <p>Seaborn also provides the <code class="docutils literal notranslate"><span class="pre">regplot</span></code> function, which can perform linear regression along with a 95% confidence interval fitting on the data.</p>
@@ -1473,7 +1490,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/2510bc7bacf1b9d1e9f6e81a00a9fb244f1891bc254d5fbc8c3af719ee4d014d.png" src="_images/2510bc7bacf1b9d1e9f6e81a00a9fb244f1891bc254d5fbc8c3af719ee4d014d.png" />
+<img alt="_images/347b30dc75ff9c68bfb6da3f19701d0fb0ec9f98dbb9cc91f788fa241650377e.png" src="_images/347b30dc75ff9c68bfb6da3f19701d0fb0ec9f98dbb9cc91f788fa241650377e.png" />
 </div>
 </div>
 <p>For curve fitting, you can further configure parameters such as <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">logx</span></code>, and <code class="docutils literal notranslate"><span class="pre">logistic</span></code> in regplot to generate the desired plot.</p>
@@ -1497,7 +1514,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f79bbe3e9c9ece82d7b6d04320522ed5cb7607d26fd831e496796bb564bd9fc8.png" src="_images/f79bbe3e9c9ece82d7b6d04320522ed5cb7607d26fd831e496796bb564bd9fc8.png" />
+<img alt="_images/1ba5d983e6b1b76372b0a8f6395352f9005ab471d248f8ed305f48b190038769.png" src="_images/1ba5d983e6b1b76372b0a8f6395352f9005ab471d248f8ed305f48b190038769.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1511,7 +1528,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5438a3554142524d164dc95d8f30e907ab92f5adfb1ced60c2f5e8f32ef9165b.png" src="_images/5438a3554142524d164dc95d8f30e907ab92f5adfb1ced60c2f5e8f32ef9165b.png" />
+<img alt="_images/9260c8c413e8ef87cbc69e0a63633365517cbc2501d1c170bc2b2114870a125d.png" src="_images/9260c8c413e8ef87cbc69e0a63633365517cbc2501d1c170bc2b2114870a125d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1526,7 +1543,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/db570bf910202cf3036fd0e6deeed6b5f6966b027865bdab17ea1a248aee7b69.png" src="_images/db570bf910202cf3036fd0e6deeed6b5f6966b027865bdab17ea1a248aee7b69.png" />
+<img alt="_images/17360266eb7592bfbda7fc5aae6befef67b79547a4dd4be63c63bdb0c762ad4f.png" src="_images/17360266eb7592bfbda7fc5aae6befef67b79547a4dd4be63c63bdb0c762ad4f.png" />
 </div>
 </div>
 <p>Seaborn offers additional plotting functions such as <code class="docutils literal notranslate"><span class="pre">scatterplot</span></code> for scatter plots, <code class="docutils literal notranslate"><span class="pre">histplot</span></code> for histograms, <code class="docutils literal notranslate"><span class="pre">heatmap()</span></code> for heatmaps and <code class="docutils literal notranslate"><span class="pre">violinplot()</span></code> for violin plots. Due to space limitations, we won’t cover them in detail here. Interested readers may refer to the official documentation for further exploration.</p>
@@ -1794,19 +1811,7 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script><!-- Toogle google translation -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar',
-layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-      }
-</script>
-<script type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
-<br><hr class="footnotes docutils" />
+</script><hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -1852,7 +1857,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Functions</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Define functions</p>
       </div>
     </a>
     <a class="right-next"
@@ -1871,8 +1876,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1948,8 +1952,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
