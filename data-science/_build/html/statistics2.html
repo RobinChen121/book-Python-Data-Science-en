@@ -619,7 +619,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/6511354b1a51d7eb16de5262c537a24c53429d7d414d4ed21883865621b0e17c.png" src="_images/6511354b1a51d7eb16de5262c537a24c53429d7d414d4ed21883865621b0e17c.png" />
+<img alt="_images/6592b33d5aeba1f770f9e4c58f149ee08770c85d27e1593655e9d128592eeb26.png" src="_images/6592b33d5aeba1f770f9e4c58f149ee08770c85d27e1593655e9d128592eeb26.png" />
 </div>
 </div>
 <p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
@@ -652,8 +652,8 @@ document.write(`
 Dep. Variable:                  total   R-squared:                       0.374
 Model:                            OLS   Adj. R-squared:                  0.361
 Method:                 Least Squares   F-statistic:                     29.27
-Date:                Sat, 22 Nov 2025   Prob (F-statistic):           1.87e-06
-Time:                        21:08:28   Log-Likelihood:                -132.15
+Date:                Sun, 23 Nov 2025   Prob (F-statistic):           1.87e-06
+Time:                        11:41:30   Log-Likelihood:                -132.15
 No. Observations:                  51   AIC:                             268.3
 Df Residuals:                      49   BIC:                             272.2
 Df Model:                           1                                         
@@ -683,7 +683,7 @@ Notes:
 <li><p>They are given in the column “coef”. From them, we can get the fitted model. For this example, it is:</p>
 <div class="math notranslate nohighlight">
 \[
-    \text{tip}=9.5459 +1.2493 \text{ total\_bill}
+    \text{tip}=9.5459 +1.2493 \text{ total}\_\text{bill}
     \]</div>
 </li>
 </ul>
@@ -763,8 +763,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     64.87
-Date:                Sat, 22 Nov 2025   Prob (F-statistic):           2.27e-14
-Time:                        21:08:28   Log-Likelihood:                -110.71
+Date:                Sun, 23 Nov 2025   Prob (F-statistic):           2.27e-14
+Time:                        11:41:30   Log-Likelihood:                -110.71
 No. Observations:                  51   AIC:                             227.4
 Df Residuals:                      48   BIC:                             233.2
 Df Model:                           2                                         
@@ -815,8 +815,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.790
 Model:                            OLS   Adj. R-squared:                  0.777
 Method:                 Least Squares   F-statistic:                     58.91
-Date:                Sat, 22 Nov 2025   Prob (F-statistic):           5.91e-16
-Time:                        21:08:28   Log-Likelihood:                -104.31
+Date:                Sun, 23 Nov 2025   Prob (F-statistic):           5.91e-16
+Time:                        11:41:30   Log-Likelihood:                -104.31
 No. Observations:                  51   AIC:                             216.6
 Df Residuals:                      47   BIC:                             224.3
 Df Model:                           3                                         
@@ -844,7 +844,7 @@ Notes:
 <p>For the catogorical variable, we use the dataset “tips” as an example to fit the following equation:</p>
 <div class="math notranslate nohighlight">
 \[
-\text{tip}=\beta_0+\beta_1\text{ total\_bill}+\beta_2\text{ day}
+\text{tip}=\beta_0+\beta_1\text{ total}\_\text{bill}+\beta_2\text{ day}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -867,8 +867,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.459
 Model:                            OLS   Adj. R-squared:                  0.450
 Method:                 Least Squares   F-statistic:                     50.67
-Date:                Sat, 22 Nov 2025   Prob (F-statistic):           7.52e-31
-Time:                        21:08:28   Log-Likelihood:                -350.03
+Date:                Sun, 23 Nov 2025   Prob (F-statistic):           7.52e-31
+Time:                        11:41:30   Log-Likelihood:                -350.03
 No. Observations:                 244   AIC:                             710.1
 Df Residuals:                     239   BIC:                             727.5
 Df Model:                           4                                         
@@ -1676,16 +1676,16 @@ principal components shown the first 10 rows:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 0 0 0 0 0 0 0 1 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 0 1 1 1 0 1 0 2 0 2 1 0 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1]
 类别1
-[&#39;天  津&#39;, &#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;辽  宁&#39;, &#39;吉  林&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;安  徽&#39;, &#39;福  建&#39;, &#39;江  西&#39;, &#39;山  东&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  东&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
+[&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;广  东&#39;]
 类别2
-[&#39;上  海&#39;]
+[&#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;吉  林&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
 类别3
-[&#39;北  京&#39;, &#39;浙  江&#39;]
+[&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
 </pre></div>
 </div>
-<img alt="_images/ed3257d1b8d7830493de5bb8dfdf9ba36ae507edbef5a77f0e85c0220428a291.png" src="_images/ed3257d1b8d7830493de5bb8dfdf9ba36ae507edbef5a77f0e85c0220428a291.png" />
+<img alt="_images/6f3e3c4fe561553188e2041bc39b1f8c8c9090ccadcef75191dda7dac922bb41.png" src="_images/6f3e3c4fe561553188e2041bc39b1f8c8c9090ccadcef75191dda7dac922bb41.png" />
 </div>
 </div>
 </section>
@@ -1741,12 +1741,12 @@ principal components shown the first 10 rows:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>神经网络预测结果评价报告：
                precision    recall  f1-score   support
 
-           0       0.97      0.93      0.95        40
-           1       0.96      0.99      0.97        74
+           0       0.95      0.95      0.95        40
+           1       0.97      0.97      0.97        74
 
     accuracy                           0.96       114
-   macro avg       0.97      0.96      0.96       114
-weighted avg       0.97      0.96      0.96       114
+   macro avg       0.96      0.96      0.96       114
+weighted avg       0.96      0.96      0.96       114
 </pre></div>
 </div>
 </div>
