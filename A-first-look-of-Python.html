@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -1127,7 +1127,7 @@ False
 <p>When using libraries，first using <code class="docutils literal notranslate"><span class="pre">import</span></code> to import the library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 </pre></div>
 </div>
 </div>
@@ -1139,7 +1139,7 @@ False
 <p>Sometimes, the keyword <code class="docutils literal notranslate"><span class="pre">as</span></code> is also used to abbreviate the package name:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -1152,7 +1152,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.3010299956639813
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(2.3010299956639813)
 </pre></div>
 </div>
 </div>
@@ -1160,14 +1160,14 @@ False
 <p>Sometimes，using the keyword <code class="docutils literal notranslate"><span class="pre">from</span></code> to import specific methods from a library. In this situation, there is no need to put the name of library in front of the method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="c1"># import the method sqrt from the numpy library</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span> <span class="c1"># import the method sqrt from the numpy library</span>
 
 <span class="n">sqrt</span> <span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1"># no need to put the name of the library in front of the method</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.142135623730951
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(14.142135623730951)
 </pre></div>
 </div>
 </div>
@@ -1175,7 +1175,7 @@ False
 <p>Use <code class="docutils literal notranslate"><span class="pre">*</span></code> to import all the methods in a library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -1188,7 +1188,7 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(4.0)
 </pre></div>
 </div>
 </div>
@@ -1243,7 +1243,7 @@ False
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span>
 </pre></div>
@@ -1338,7 +1338,7 @@ False
 <p>Input the following codes in your Python editor and run.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># draw circles</span>
 
-<span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
 
 <span class="n">turtle</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>

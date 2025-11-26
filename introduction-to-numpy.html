@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -484,7 +484,7 @@ document.write(`
 <p>We first need to import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library before using it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -633,7 +633,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.int64(0),
+ np.int64(1),
+ np.int64(2),
+ np.int64(3),
+ np.int64(4),
+ np.int64(5),
+ np.int64(6),
+ np.int64(7),
+ np.int64(8),
+ np.int64(9)]
 </pre></div>
 </div>
 </div>
@@ -723,7 +732,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(6)
 </pre></div>
 </div>
 </div>
@@ -735,7 +744,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(6)
 </pre></div>
 </div>
 </div>
@@ -759,7 +768,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(9)
 </pre></div>
 </div>
 </div>
@@ -801,7 +810,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(6)
 </pre></div>
 </div>
 </div>
@@ -955,7 +964,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.5)
 </pre></div>
 </div>
 </div>
@@ -967,7 +976,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.5)
 </pre></div>
 </div>
 </div>
@@ -1004,7 +1013,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(3)
 </pre></div>
 </div>
 </div>
@@ -1016,7 +1025,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(0)
 </pre></div>
 </div>
 </div>
@@ -1189,15 +1198,15 @@ eigenvectors are [[-0.76729658 -0.57152478]
 <p>The <code class="docutils literal notranslate"><span class="pre">random</span></code> module in NumPy supports virtually all probability distributions and can generate random numbers in multi-row, multi-column arrays at once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># generate 2 row 2 column random numbers uniformally distributed between 1 (inclusive) and 10 (exclusive)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2.39150709, 8.83032945],
-       [5.09814498, 6.51732196]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.67733211, 3.21211078],
+       [4.35702572, 3.77674355]])
 </pre></div>
 </div>
 </div>
@@ -1209,7 +1218,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.76765823, 5.62959135, 3.28102874, 6.94190974, 1.57241745])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6.95575239, 5.16474884, 3.2099455 , 5.77017655, 2.97080582])
 </pre></div>
 </div>
 </div>
@@ -1221,8 +1230,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 2],
-       [1, 3]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6, 7],
+       [1, 2]])
 </pre></div>
 </div>
 </div>
@@ -1234,8 +1243,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6.32840271, 4.2851322 ],
-       [5.22955161, 5.8017923 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.23572569, 5.06023492],
+       [6.76716159, 3.40202864]])
 </pre></div>
 </div>
 </div>
@@ -1247,8 +1256,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 3],
-       [5, 7]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4, 5],
+       [4, 5]])
 </pre></div>
 </div>
 </div>
@@ -1295,7 +1304,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
@@ -1303,7 +1312,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1763898074.040424
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1764166069.585085
 </pre></div>
 </div>
 </div>
@@ -1319,7 +1328,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2025, tm_mon=11, tm_mday=23, tm_hour=11, tm_min=41, tm_sec=14, tm_wday=6, tm_yday=327, tm_isdst=0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2025, tm_mon=11, tm_mday=26, tm_hour=14, tm_min=7, tm_sec=49, tm_wday=2, tm_yday=330, tm_isdst=0)
 </pre></div>
 </div>
 </div>
@@ -1335,7 +1344,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-11-23 11:41:14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-11-26 14:07:49
 </pre></div>
 </div>
 </div>
@@ -1421,7 +1430,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.054910 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.028373 seconds
 </pre></div>
 </div>
 </div>
@@ -1440,7 +1449,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.029566 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.018932 seconds
 </pre></div>
 </div>
 </div>
@@ -1459,7 +1468,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.015625 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.015921 seconds
 </pre></div>
 </div>
 </div>
@@ -1474,7 +1483,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
@@ -1482,7 +1491,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-11-23 11:41:17.193887
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-11-26 14:07:52.679353
 </pre></div>
 </div>
 </div>
@@ -1492,7 +1501,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
@@ -1510,7 +1519,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
 
@@ -1530,7 +1539,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 
 <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
 <span class="n">new_dt</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -1546,7 +1555,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">dt1</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">57</span><span class="p">)</span>
 <span class="n">dt2</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>

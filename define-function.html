@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -974,7 +974,7 @@ loop is over
 <br /><p>The following codes define a summation function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span>
     <span class="k">return</span> <span class="n">z</span>
 </pre></div>
@@ -1007,7 +1007,7 @@ loop is over
 <p><strong>A Python function can return one or multiple values, or no return values</strong>. The following code returns multiple values—both the sum of the two arguments and the original arguments themselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span>
     <span class="k">return</span> <span class="n">z</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span>
 </pre></div>
@@ -1020,7 +1020,7 @@ loop is over
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span>
     <span class="k">return</span> <span class="n">z</span>
 
@@ -1040,7 +1040,7 @@ loop is over
 <p>If you don’t need to use a particular return value, you can assign it to an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> as a convention to indicate unused variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span>
     <span class="k">return</span> <span class="n">z</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span>
 
@@ -1064,7 +1064,7 @@ loop is over
 <p>A function can also be defined without input parameters, meaning the parentheses can be left empty. For example, the following code prints the message ``Hello, world!’’.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 
 
@@ -1081,7 +1081,7 @@ loop is over
 <p>You can use triple quote <code class="docutils literal notranslate"><span class="pre">'''</span> <span class="pre">'''</span></code> or triple quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">&quot;&quot;&quot;</span></code> to add function documentation (<code class="docutils literal notranslate"><span class="pre">docstring</span></code>). For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a hello function.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
 
@@ -1109,7 +1109,7 @@ loop is over
 <p>For immutable types, the original value of the parameter remains unchanged after being passed to a function. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeNum</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="c1"># this parameter a is valid only inside the scope of the function</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">changeNum</span><span class="p">(</span><span class="n">a</span><span class="p">):</span> <span class="c1"># this parameter a is valid only inside the scope of the function</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 
 
@@ -1136,7 +1136,7 @@ loop is over
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeNum</span><span class="p">():</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">changeNum</span><span class="p">():</span> 
     <span class="k">global</span> <span class="n">a</span> <span class="c1"># declare a global variable</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 
@@ -1156,7 +1156,7 @@ loop is over
 <p>When mutable objects (e.g., lists, dictionaries) are passed to a function, their original values can be altered if modified inside the function. This happens because Python passes them by object reference. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">changeList</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">changeList</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
     <span class="n">mylist</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">mylist</span>
 
@@ -1187,7 +1187,7 @@ loop is over
 <p>For positional arguments, the function parameters are assigned values in a <strong>one-to-one correspondence</strong> with the input order.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span>
     <span class="k">return</span> <span class="n">z</span>
 
@@ -1206,7 +1206,7 @@ loop is over
 <p><code class="docutils literal notranslate"><span class="pre">Keyword</span> <span class="pre">argument</span> <span class="pre">passing</span></code> means that when calling a function, you can directly assign values to parameters by name. Python <strong>automatically matches the values to parameters based on the names specified in parentheses</strong>. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span>
     <span class="k">return</span> <span class="n">z</span>
 
@@ -1225,7 +1225,7 @@ loop is over
 <p>In Python, when defining a function, you can set default values for parameters. When calling the function, <strong>if no value is provided for a parameter, the default value will be used</strong>. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span>
     <span class="k">return</span> <span class="n">z</span>
 
@@ -1245,7 +1245,7 @@ loop is over
 <p>When a function receives multiple arguments, but you’re not exactly sure how many, you can use <code class="docutils literal notranslate"><span class="pre">*args</span></code> to represent multiple arguments, in which <code class="docutils literal notranslate"><span class="pre">*args</span></code> can be seen as the name of a list. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
         <span class="n">x</span> <span class="o">+=</span> <span class="n">var</span>
@@ -1269,7 +1269,7 @@ final x is 18
 <p>You can use <code class="docutils literal notranslate"><span class="pre">**args</span></code> to pass a variable number of keyword (name-value) arguments. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">a</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">minus</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">a</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
@@ -1296,7 +1296,7 @@ final x is 18
 <h3><span class="section-number">6.5.1. </span>Debug using <code class="docutils literal notranslate"><span class="pre">print()</span></code><a class="headerlink" href="#debug-using-print" title="Link to this heading">#</a></h3>
 <hr><p>This method typically involves placing <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements before lines of code that are suspected to contain errors, in order to print out certain variable values or function outputs. This helps the programmer determine where the error is occurring. This debugging method is suitable for situations where the code is short, the problem is simple, and only a few variables need to be checked.</p>
 <p>For example, the following codes have a <code class="docutils literal notranslate"><span class="pre">print()</span></code> line to ouput the values of a and b to check the possible erros.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DEBUG: a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># check the value of a and b</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
 
@@ -1325,10 +1325,10 @@ final x is 18
 <ul class="simple">
 <li><p>Before using <code class="docutils literal notranslate"><span class="pre">pdb</span></code>, first import the pdb library by <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pdb</span></code>.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span> <span class="c1"># import the pdb library</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pdb</span> <span class="c1"># import the pdb library</span>
 
 
-<span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1"># the line for pdb debugging</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
 
@@ -1399,11 +1399,11 @@ Continues program execution until the next breakpoint or program termination.</p
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># if using &quot;Step Into&quot; when debugging, the dubgugger will enter the first line of the &quot;add&quot; function</span>
@@ -1422,11 +1422,11 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># if using &quot;Step Over&quot; here, the dubugger will execute the &quot;add&quot; function and go to the next line in the current block</span>
@@ -1445,15 +1445,15 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pdb</span>
 
 
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">pass</span> <span class="c1"># If using &quot;Step Out&quot; here, the dubugger will execute the &quot;add&quot; function and return to its caller</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Execution will pause here after stepping out</span>
@@ -1506,7 +1506,7 @@ Continues program execution until the next breakpoint or program termination.</p
 <br /><p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">devide</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">z</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">/</span> <span class="n">x2</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
@@ -1626,7 +1626,7 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x206d6f5a890&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1107a0220&gt;
 </pre></div>
 </div>
 </div>
@@ -1662,7 +1662,7 @@ Continues program execution until the next breakpoint or program termination.</p
 <p>The <code class="docutils literal notranslate"><span class="pre">reduce(fun,</span> <span class="pre">iter)</span></code> function applies a function “fun” cumulatively to items in an iterable object, reducing them to a single value. It <strong>first applies the function to the first two elements</strong> in the iterable iter, then uses the result as the first input for fun when processing the third element, and so on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>  <span class="c1"># import reduce from the library functools</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">reduce</span>  <span class="c1"># import reduce from the library functools</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">:</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> 
@@ -1716,14 +1716,14 @@ Continues program execution until the next breakpoint or program termination.</p
 <p>We can check the directories by the following code using <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;C:\\ProgramData\\anaconda3\\python312.zip&#39;, &#39;C:\\ProgramData\\anaconda3\\DLLs&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib&#39;, &#39;C:\\ProgramData\\anaconda3&#39;, &#39;&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\win32&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\win32\\lib&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\Pythonwin&#39;, &#39;C:\\ProgramData\\anaconda3\\Lib\\site-packages\\setuptools\\_vendor&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/yourname/projects&#39;, &#39;/Users/zhenchen/Documents/book-python-data-science-en/data-science&#39;, &#39;/opt/anaconda3/lib/python311.zip&#39;, &#39;/opt/anaconda3/lib/python3.11&#39;, &#39;/opt/anaconda3/lib/python3.11/lib-dynload&#39;, &#39;&#39;, &#39;/opt/anaconda3/lib/python3.11/site-packages&#39;, &#39;__editable__.nni-999.dev0.finder.__path_hook__&#39;]
 </pre></div>
 </div>
 </div>
@@ -1739,11 +1739,11 @@ Continues program execution until the next breakpoint or program termination.</p
 </pre></div>
 </div>
 <p>We can directly import the sibiling module:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_module</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">my_module</span>
 </pre></div>
 </div>
 <p>If we just want to import some function or class named “foo” in the sibling module, we can use <code class="docutils literal notranslate"><span class="pre">from-import</span></code> statement.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">my_module</span> <span class="kn">import</span> <span class="n">foo</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">my_module</span><span class="w"> </span><span class="kn">import</span> <span class="n">foo</span>
 </pre></div>
 </div>
 </section>
@@ -1758,11 +1758,11 @@ Continues program execution until the next breakpoint or program termination.</p
 </pre></div>
 </div>
 <p>We can import “my_module.py” in the folder “folder1” by the following code.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder1</span> <span class="kn">import</span> <span class="n">my_module</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">folder1</span><span class="w"> </span><span class="kn">import</span> <span class="n">my_module</span>
 </pre></div>
 </div>
 <p>If we just want to import the function/class “foo” from “my_module.py”:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder1.my_module</span> <span class="kn">import</span> <span class="n">foo</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">folder1.my_module</span><span class="w"> </span><span class="kn">import</span> <span class="n">foo</span>
 </pre></div>
 </div>
 </section>
@@ -1789,8 +1789,8 @@ Continues program execution until the next breakpoint or program termination.</p
 <ul class="simple">
 <li><p>First, we insert the parent directory to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="c1"># get the path of  the parent directory</span>
 <span class="n">parent_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;..&quot;</span><span class="p">))</span>  <span class="c1"># .. represents the parent directory</span>
@@ -1809,7 +1809,7 @@ Continues program execution until the next breakpoint or program termination.</p
 <p>PyCharm automatically adds the root directory of the entire project folder to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>. Therefore, in PyCharm, you can directly import modules based on the folder structure without manually adding the parent directory path via <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.</p>
 </div>
 <p>For example，for the directory structure2, we can directly import “my_module” by the following code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">folder2</span> <span class="kn">import</span> <span class="n">my_module</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">folder2</span><span class="w"> </span><span class="kn">import</span> <span class="n">my_module</span>
 </pre></div>
 </div>
 </section>
@@ -1818,11 +1818,11 @@ Continues program execution until the next breakpoint or program termination.</p
 <hr>
 <p>If the path to your module is complex, you can use methods like <code class="docutils literal notranslate"><span class="pre">sys.path.append()</span></code> to add the specific path of the module you want to import.</p>
 <p>For example, if you want to import “other_folder/my_module.py”, where other_folder is the full absolute path on your computer’s hard drive, you can do this:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;other_folder&quot;</span><span class="p">))</span>  <span class="c1"># add the path of &quot;other_foler&quot; to sys.path</span>
-<span class="kn">import</span> <span class="nn">my_module</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">my_module</span> 
 </pre></div>
 </div>
 </section>
@@ -1853,7 +1853,7 @@ Continues program execution until the next breakpoint or program termination.</p
 <section id="exercise-content">
 <p>What is the output of the following code?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;awesome&#39;</span>
-<span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">():</span>
   <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;fantastic&#39;</span>
     
 <span class="n">fun</span><span class="p">()</span>
@@ -1879,7 +1879,7 @@ Continues program execution until the next breakpoint or program termination.</p
 <section id="exercise-content">
 <p>What is the output of the following code?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;awesome&#39;</span>
-<span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;fantastic&#39;</span>
     
@@ -1963,7 +1963,7 @@ Continues program execution until the next breakpoint or program termination.</p
 <section id="exercise-content">
 <p>For the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">300</span>
-<span class="k">def</span> <span class="nf">myfunc</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">myfunc</span><span class="p">():</span>
   <span class="n">x</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">myfunc</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -1989,7 +1989,7 @@ Continues program execution until the next breakpoint or program termination.</p
 <section id="exercise-content">
 <p>For the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">300</span>
-<span class="k">def</span> <span class="nf">myfunc</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">myfunc</span><span class="p">():</span>
   <span class="k">global</span> <span class="n">x</span>
   <span class="n">x</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">myfunc</span><span class="p">()</span>
@@ -2070,7 +2070,7 @@ Continues program execution until the next breakpoint or program termination.</p
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#circle-area"> Exercise 6.11</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="n">define</span> <span class="n">area_cicle</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
     <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span>
@@ -2094,7 +2094,7 @@ Continues program execution until the next breakpoint or program termination.</p
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#sum-cub"> Exercise 6.12</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_cube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_cube</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span><span class="n">i</span>       
@@ -2118,7 +2118,7 @@ Continues program execution until the next breakpoint or program termination.</p
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#dict-values"> Exercise 6.13</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dict_sum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dict_sum</span><span class="p">(</span><span class="n">myDict</span><span class="p">):</span>      
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">myDict</span><span class="p">:</span> 
         <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">myDict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>      
@@ -2141,7 +2141,7 @@ Continues program execution until the next breakpoint or program termination.</p
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#judge-leap-year"> Exercise 6.14</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -2172,7 +2172,7 @@ Continues program execution until the next breakpoint or program termination.</p
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#unique-list"> Exercise 6.15</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unique_list</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">unique_list</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="c1"># Create an empty list &#39;x&#39; to store unique elements</span>
     <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
     
