@@ -20,3 +20,4 @@ parts:
   chapters:
   - file: statistics1
   - file: statistics2
+  - file: introduction-to-class

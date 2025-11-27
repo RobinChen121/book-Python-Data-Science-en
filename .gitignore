@@ -1,2 +1,8 @@
 # MyST build outputs
 _build
+
+# Jupyter Notebook / Book
+.ipynb_checkpoints/
+_build/
+*.nbconvert.ipynb
+objects/
