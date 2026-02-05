@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -199,6 +199,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="statistics1.html">8. Python statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistics2.html">9. Python machine learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python Object Oriented Programming</a></li>
 </ul>
 
     </div>
@@ -476,14 +477,18 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="draw-graphs">
 <h1><span class="section-number">7. </span>Draw graphs<a class="headerlink" href="#draw-graphs" title="Link to this heading">#</a></h1>
 <hr>
-<p>This chapter will demonstrate how to use Python’s <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library to generate various types of graphs, and briefly introduce another plotting libarary, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, for creating more aesthetically pleasing and sophisticated visualizations.</p>
+<p>This chapter will demonstrate how to use Python’s <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> library to generate various types of graphs, and briefly introduce another plotting libarary, <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>, for creating more aesthetically pleasing and sophisticated visualizations.</p>
+<ul class="simple">
+<li><p>The detailed API(Application Programming Interface) reference of <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> is in <a class="reference external" href="https://matplotlib.org/stable/api/index.html">https://matplotlib.org/stable/api/index.html</a>.</p></li>
+<li><p>The detailed API(Application Programming Interface) reference of <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> is in <a class="reference external" href="https://seaborn.pydata.org/api.html">https://seaborn.pydata.org/api.html</a>.</p></li>
+</ul>
 <section id="plot">
 <h2><span class="section-number">7.1. </span><code class="docutils literal notranslate"><span class="pre">plot</span></code><a class="headerlink" href="#plot" title="Link to this heading">#</a></h2>
 <hr>
 <p>When using the matplotlib lirary for plotting, we typically import the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> interface from it and name it as <code class="docutils literal notranslate"><span class="pre">plt</span></code>. Then, we use the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function to create graphs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -492,8 +497,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the libraries</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># plt.style.use(&#39;default&#39;)</span>
 
@@ -514,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/77a57c4bda2ee470ce49783ebea69f1286ea406352f9c311616219a079461064.png" src="_images/77a57c4bda2ee470ce49783ebea69f1286ea406352f9c311616219a079461064.png" />
+<img alt="_images/11c28fac0d3c13631ae053b67e5216073ee4e0f17fe0af46e024efb583e2d725.png" src="_images/11c28fac0d3c13631ae053b67e5216073ee4e0f17fe0af46e024efb583e2d725.png" />
 </div>
 </div>
 <p>The syntax for <code class="docutils literal notranslate"><span class="pre">plot</span></code> function is below：</p>
@@ -628,10 +633,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1192344d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2738f58e060&gt;]
 </pre></div>
 </div>
-<img alt="_images/9b7702940d084f9256214a2a8584dc8f17b4848c9ad86569ce6f9cfc81727910.png" src="_images/9b7702940d084f9256214a2a8584dc8f17b4848c9ad86569ce6f9cfc81727910.png" />
+<img alt="_images/ae8dae793d615bd74787660ca66f199610afdd7219073a32289432b414419eff.png" src="_images/ae8dae793d615bd74787660ca66f199610afdd7219073a32289432b414419eff.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -641,10 +646,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11f5c3f90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x27390914aa0&gt;]
 </pre></div>
 </div>
-<img alt="_images/044a0f343492f1e0e6f0e8c328174bc259f4a23ce0154fb20745f67221939fd4.png" src="_images/044a0f343492f1e0e6f0e8c328174bc259f4a23ce0154fb20745f67221939fd4.png" />
+<img alt="_images/b1f1991393abdcaedf336c456097ba2ce7c54aa4c2a6a7ee4bf4fb87ec6dd05d.png" src="_images/b1f1991393abdcaedf336c456097ba2ce7c54aa4c2a6a7ee4bf4fb87ec6dd05d.png" />
 </div>
 </div>
 <ul class="simple">
@@ -657,10 +662,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11f693a90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2739126a570&gt;]
 </pre></div>
 </div>
-<img alt="_images/1d81cd8cef91fa21441bac666e98b6765ec08ead19ec205cc0530aef843a72a2.png" src="_images/1d81cd8cef91fa21441bac666e98b6765ec08ead19ec205cc0530aef843a72a2.png" />
+<img alt="_images/cafb5e9bdfe83b0e420b3a163d63b8482dd08d6aba59127859ff28ac130612f9.png" src="_images/cafb5e9bdfe83b0e420b3a163d63b8482dd08d6aba59127859ff28ac130612f9.png" />
 </div>
 </div>
 <p>If we want to customize the axis labels, axis ticks, tick ranges, plot title, or add a legend, we can achieve this by setting properties in pyplot functions such as:</p>
@@ -678,8 +683,8 @@ document.write(`
 <p>To adjust image clarity, we can modify the DPI (dots per inch) using <code class="docutils literal notranslate"><span class="pre">plt.rcParams[&quot;figure.dpi&quot;]</span></code>. To change the image size, we can set the width and height via <code class="docutils literal notranslate"><span class="pre">plt.rcParams[&quot;figure.figsize&quot;]</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="c1"># generate data</span>
@@ -714,7 +719,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3a7a73da56d64c3e7ca0dd3434eaf814d19a364bf3bcc48c785626e29eba1d96.png" src="_images/3a7a73da56d64c3e7ca0dd3434eaf814d19a364bf3bcc48c785626e29eba1d96.png" />
+<img alt="_images/bef4b78d3f1284a08fdec098452ffbafb09eb891f6f40add1e87dfe25c65621e.png" src="_images/bef4b78d3f1284a08fdec098452ffbafb09eb891f6f40add1e87dfe25c65621e.png" />
 </div>
 </div>
 <ul class="simple">
@@ -756,8 +761,8 @@ document.write(`
 </table>
 <br /><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># data</span>
 <span class="n">production</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1125</span><span class="p">,</span> <span class="mi">1725</span><span class="p">,</span> <span class="mi">2250</span><span class="p">,</span> <span class="mi">2875</span><span class="p">,</span> <span class="mi">2900</span><span class="p">,</span> <span class="mi">3750</span><span class="p">,</span> <span class="mi">4125</span><span class="p">]</span>
@@ -771,7 +776,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cd32a40856eee2efba4d737a0e049f5e44ed5e8e365b605fbf583ff70deee1cf.png" src="_images/cd32a40856eee2efba4d737a0e049f5e44ed5e8e365b605fbf583ff70deee1cf.png" />
+<img alt="_images/dedaabc6229dcb334d0d4fb01ba354bc0849fdf03a09aeead68a0f3947323bc3.png" src="_images/dedaabc6229dcb334d0d4fb01ba354bc0849fdf03a09aeead68a0f3947323bc3.png" />
 </div>
 </div>
 </section>
@@ -839,7 +844,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">waters</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;soft drinks&quot;</span><span class="p">,</span> <span class="s2">&quot;tea&quot;</span><span class="p">,</span> <span class="s2">&quot;mineral water&quot;</span><span class="p">,</span> <span class="s2">&quot;juice&quot;</span><span class="p">,</span> <span class="s2">&quot;others&quot;</span><span class="p">)</span>
 <span class="n">buy_number</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -851,13 +856,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f74c3e2c789161e08a9ddc91321c7ef10c9ffc81a64b43b7a5fdd6a085f111f0.png" src="_images/f74c3e2c789161e08a9ddc91321c7ef10c9ffc81a64b43b7a5fdd6a085f111f0.png" />
+<img alt="_images/0f9d37fddff8044e3dfb6f9ce480c309d6a4d4478792097a9ce578bdd9a58dcb.png" src="_images/0f9d37fddff8044e3dfb6f9ce480c309d6a4d4478792097a9ce578bdd9a58dcb.png" />
 </div>
 </div>
 <p>Horizontal bar charts are created using the <code class="docutils literal notranslate"><span class="pre">barh()</span></code> function, which has essentially the same usage as the standard <code class="docutils literal notranslate"><span class="pre">bar()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">waters</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;soft drinks&quot;</span><span class="p">,</span> <span class="s2">&quot;tea&quot;</span><span class="p">,</span> <span class="s2">&quot;mineral water&quot;</span><span class="p">,</span> <span class="s2">&quot;juice&quot;</span><span class="p">,</span> <span class="s2">&quot;others&quot;</span><span class="p">)</span>
 <span class="n">buy_number</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -869,7 +874,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a709461f4aafa07538119de73fed00047e0819329bcb1d255c54e91b932e8bbf.png" src="_images/a709461f4aafa07538119de73fed00047e0819329bcb1d255c54e91b932e8bbf.png" />
+<img alt="_images/b918bc1b809fe612f8f44c046cb937ca2c5e2add2cc681b927efad34a1423ed2.png" src="_images/b918bc1b809fe612f8f44c046cb937ca2c5e2add2cc681b927efad34a1423ed2.png" />
 </div>
 </div>
 <p>To display survey results for two categories side-by-side using bar charts, you can:</p>
@@ -879,8 +884,8 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">waters</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;soft drinks&quot;</span><span class="p">,</span> <span class="s2">&quot;tea&quot;</span><span class="p">,</span> <span class="s2">&quot;mineral water&quot;</span><span class="p">,</span> <span class="s2">&quot;juice&quot;</span><span class="p">,</span> <span class="s2">&quot;others&quot;</span><span class="p">)</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -903,7 +908,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b6163a02e995397766a5dd0301bb75831b98123305d6387a567daf77d20c357e.png" src="_images/b6163a02e995397766a5dd0301bb75831b98123305d6387a567daf77d20c357e.png" />
+<img alt="_images/f7e15e2b4c2b19a70bf02c55a51f4045e630d2da4b999a3503700750a8ebe3f8.png" src="_images/f7e15e2b4c2b19a70bf02c55a51f4045e630d2da4b999a3503700750a8ebe3f8.png" />
 </div>
 </div>
 </section>
@@ -935,7 +940,7 @@ document.write(`
 <br /><p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">141</span><span class="p">,</span> <span class="mi">159</span><span class="p">,</span> <span class="mi">166</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="mi">177</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">188</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">214</span><span class="p">,</span> <span class="mi">143</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="mi">173</span><span class="p">,</span> <span class="mi">177</span><span class="p">,</span> <span class="mi">183</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span>
      <span class="mi">173</span><span class="p">,</span>
@@ -950,7 +955,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/54eb3dcb959b0b37bf6fcb0152eef761a7b70c9c8c736b341775e216e8b9ee77.png" src="_images/54eb3dcb959b0b37bf6fcb0152eef761a7b70c9c8c736b341775e216e8b9ee77.png" />
+<img alt="_images/ad2cdf84f1836c03a9ce01ad253b0a38dbf19f4220dc9feb6263777ca8b2727b.png" src="_images/ad2cdf84f1836c03a9ce01ad253b0a38dbf19f4220dc9feb6263777ca8b2727b.png" />
 </div>
 </div>
 </section>
@@ -988,8 +993,8 @@ document.write(`
 <p>The following example demonstrates how to create 3 subplots, with one of them spanning across 2 columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="c1"># the first plot</span>
@@ -1018,7 +1023,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/47864dd5474bac43210d4c283c72edb13ca72f7fe24b394b35d5c3ff968922db.png" src="_images/47864dd5474bac43210d4c283c72edb13ca72f7fe24b394b35d5c3ff968922db.png" />
+<img alt="_images/fea10b2435b4e692889cd6dce8d7a6dbb014d3af96d5bd06375399bce41f8c84.png" src="_images/fea10b2435b4e692889cd6dce8d7a6dbb014d3af96d5bd06375399bce41f8c84.png" />
 </div>
 </div>
 <p>There is also a <code class="docutils literal notranslate"><span class="pre">subplots</span></code> function, which is used as <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(nrows=1,</span> <span class="pre">ncols=1,</span> <span class="pre">index=1,</span> <span class="pre">**kwargs)</span></code>. Here, <code class="docutils literal notranslate"><span class="pre">fig</span></code> is used to adjust parameters for the entire figure, while <code class="docutils literal notranslate"><span class="pre">axs</span></code> is used to modify parameters for individual subplots. Due to space limitations, we won’t elaborate further on this.</p>
@@ -1058,7 +1063,7 @@ document.write(`
 </table>
 <br /><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 
 <span class="n">labels</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;soft drinks&quot;</span><span class="p">,</span> <span class="s2">&quot;tea&quot;</span><span class="p">,</span> <span class="s2">&quot;mineral water&quot;</span><span class="p">,</span> <span class="s2">&quot;juice&quot;</span><span class="p">,</span> <span class="s2">&quot;others&quot;</span><span class="p">)</span>
@@ -1072,7 +1077,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2758967f48fc9d8cafc5402077dc1bab55b44f9b68bd9e174c141fa77a4227ad.png" src="_images/2758967f48fc9d8cafc5402077dc1bab55b44f9b68bd9e174c141fa77a4227ad.png" />
+<img alt="_images/3c4ed601a0b04f63a9418930198f5b60cd99bbc7da53f288cfc7ccd13f76a794.png" src="_images/3c4ed601a0b04f63a9418930198f5b60cd99bbc7da53f288cfc7ccd13f76a794.png" />
 </div>
 </div>
 </section>
@@ -1191,8 +1196,8 @@ document.write(`
 <p>Draw the box plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="n">scores</span> <span class="o">=</span> <span class="p">[</span>
@@ -1211,7 +1216,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4ab46758b8f94d5af6b1faf09ea2eb68b15604f201a05a7bc4b613a9fd74a5ff.png" src="_images/4ab46758b8f94d5af6b1faf09ea2eb68b15604f201a05a7bc4b613a9fd74a5ff.png" />
+<img alt="_images/9bda53ed426a2b77d1d7c80e41e9a1c8d56f4e065e05919880efea6d76eed800.png" src="_images/9bda53ed426a2b77d1d7c80e41e9a1c8d56f4e065e05919880efea6d76eed800.png" />
 </div>
 </div>
 </section>
@@ -1229,9 +1234,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import seaborn</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Apply the default theme</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
@@ -1244,17 +1249,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import seaborn</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
-</pre></div>
-</div>
+<img alt="_images/e589c7d486a8ea7141021f7b2be119c92733fcc5af7de0bb6aa294c713102e41.png" src="_images/e589c7d486a8ea7141021f7b2be119c92733fcc5af7de0bb6aa294c713102e41.png" />
 </div>
 </div>
 <p>As we can see, after applying <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>’s theme, the color scheme of the plot has changed. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> comes with many built-in datasets, and next we’ll import the tips dataset.</p>
@@ -1474,7 +1469,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a007401bd298b3907439e793dcc644849ed56976bc14e32bdfbe60aa9ab1a6fd.png" src="_images/a007401bd298b3907439e793dcc644849ed56976bc14e32bdfbe60aa9ab1a6fd.png" />
+<img alt="_images/51a12e85bf1a67f5b68c274ecf979b2646e1ceacf244a227060fe8b80ca9a41a.png" src="_images/51a12e85bf1a67f5b68c274ecf979b2646e1ceacf244a227060fe8b80ca9a41a.png" />
 </div>
 </div>
 <p>When generating line plots, data points sharing the same x-coordinate values will be aggregated. The visualization will display the mean value along with a 95% confidence interval.</p>
@@ -1486,7 +1481,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7b9afb1c22ddc43dfc33fbffd5d0b5e3b40239a66efb9cd61dd6694f6e1c2236.png" src="_images/7b9afb1c22ddc43dfc33fbffd5d0b5e3b40239a66efb9cd61dd6694f6e1c2236.png" />
+<img alt="_images/19665df479c093dc0ce1a6259fdc9da86c35f7e5f7014e341df58f2e7ebc3241.png" src="_images/19665df479c093dc0ce1a6259fdc9da86c35f7e5f7014e341df58f2e7ebc3241.png" />
 </div>
 </div>
 <p>Seaborn also provides the <code class="docutils literal notranslate"><span class="pre">regplot</span></code> function, which can perform linear regression along with a 95% confidence interval fitting on the data.</p>
@@ -1500,7 +1495,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/dbf44bc819e1b1da0d1a05c996c208c452e6f7453a221051b70be42a0ce193cf.png" src="_images/dbf44bc819e1b1da0d1a05c996c208c452e6f7453a221051b70be42a0ce193cf.png" />
+<img alt="_images/4cc8ce95022d010f5f49efaaba154ef95981d8eb7e5387097eb5b97ab45614f1.png" src="_images/4cc8ce95022d010f5f49efaaba154ef95981d8eb7e5387097eb5b97ab45614f1.png" />
 </div>
 </div>
 <p>For curve fitting, you can further configure parameters such as <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">logx</span></code>, and <code class="docutils literal notranslate"><span class="pre">logistic</span></code> in regplot to generate the desired plot.</p>
@@ -1524,7 +1519,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/af18919f49f7fa690c17b4be7813c1033890554aaa4c5e38f2c0064a288bdc36.png" src="_images/af18919f49f7fa690c17b4be7813c1033890554aaa4c5e38f2c0064a288bdc36.png" />
+<img alt="_images/8105383095ba98880bf3433498af8f4268b3b76a2e45d7a89b3cbea0d09251e3.png" src="_images/8105383095ba98880bf3433498af8f4268b3b76a2e45d7a89b3cbea0d09251e3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1538,7 +1533,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2532ab2eb755420589f80dd0ab4fc966d0ca0859ce29912becf5469101895984.png" src="_images/2532ab2eb755420589f80dd0ab4fc966d0ca0859ce29912becf5469101895984.png" />
+<img alt="_images/9260c8c413e8ef87cbc69e0a63633365517cbc2501d1c170bc2b2114870a125d.png" src="_images/9260c8c413e8ef87cbc69e0a63633365517cbc2501d1c170bc2b2114870a125d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1553,7 +1548,7 @@ Seaborn provides built-in functions for generating common statistical visualizat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bfdc20e98401ba3e97a6ef70396d6e61fbb0c9a0f699a159c777f8d8efab8171.png" src="_images/bfdc20e98401ba3e97a6ef70396d6e61fbb0c9a0f699a159c777f8d8efab8171.png" />
+<img alt="_images/17360266eb7592bfbda7fc5aae6befef67b79547a4dd4be63c63bdb0c762ad4f.png" src="_images/17360266eb7592bfbda7fc5aae6befef67b79547a4dd4be63c63bdb0c762ad4f.png" />
 </div>
 </div>
 <p>Seaborn offers additional plotting functions such as <code class="docutils literal notranslate"><span class="pre">scatterplot</span></code> for scatter plots, <code class="docutils literal notranslate"><span class="pre">histplot</span></code> for histograms, <code class="docutils literal notranslate"><span class="pre">heatmap()</span></code> for heatmaps and <code class="docutils literal notranslate"><span class="pre">violinplot()</span></code> for violin plots. Due to space limitations, we won’t cover them in detail here. Interested readers may refer to the official documentation for further exploration.</p>
@@ -1723,9 +1718,9 @@ g(x)=&amp;-2.14\sqrt{\sqrt{2}-\sqrt{|x|}}
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#draw-heart"> Exercise 7.9</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">y1</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
@@ -1756,8 +1751,8 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
 <p class="admonition-title">Solution to<a class="reference internal" href="#draw-heart2"> Exercise 7.10</a></p>
 <section id="solution-content">
 <p>This is a solution:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="c1"># type %matplotlib qt to shown figure in a separate window</span>
@@ -1782,12 +1777,12 @@ f(x)=x^{2/3}+0.9(3.3-x^2)^{1/2}\sin(\alpha\pi x)
 </pre></div>
 </div>
 <p>This is another solution:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">FuncAnimation</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">alpha</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.3</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
     <span class="n">PLOT</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>

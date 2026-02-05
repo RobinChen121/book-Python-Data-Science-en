@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -197,6 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="statistics1.html">8. Python statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistics2.html">9. Python machine learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python Object Oriented Programming</a></li>
 </ul>
 
     </div>
@@ -459,7 +460,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cast-the-data-type-astype">5.3.2. Cast the data type <code class="docutils literal notranslate"><span class="pre">astype</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-duplicates-drop-duplicates">5.3.3. Remove duplicates <code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-missing-valuesdropna">5.3.4. Remove missing values<code class="docutils literal notranslate"><span class="pre">dropna</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-rename">5.3.5. Rename <code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-set-index">5.3.5. <code class="docutils literal notranslate"><span class="pre">rename</span></code>, <code class="docutils literal notranslate"><span class="pre">set_index</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-delete-and-merge-data">5.4. Add, delete and merge data</a><ul class="nav section-nav flex-column">
@@ -499,10 +500,13 @@ document.write(`
 <h1><span class="section-number">5. </span>Introduction to Pandas<a class="headerlink" href="#introduction-to-pandas" title="Link to this heading">#</a></h1>
 <hr>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> is one of the most important data analysis tools in Python for data processing. Built on NumPy, it offers many methods for handling large datasets and allows flexible, efficient data manipulation.</p>
+<ul class="simple">
+<li><p>The detailed API(Application Programming Interface) reference of <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> is in <a class="reference external" href="https://pandas.pydata.org/docs/reference/index.html">https://pandas.pydata.org/docs/reference/index.html</a>.</p></li>
+</ul>
 <p>The main data type used in pandas is the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, which is a two-dimensional structure similar to a table in Excel. To use pandas, you first need to import it. In fact, the name ‘Pandas’ is short for ‘panel data’.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
@@ -548,7 +552,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
@@ -578,8 +582,8 @@ document.write(`
 <p>Another way to create DataFrame with argument <code class="docutils literal notranslate"><span class="pre">columns</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">84</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Lily&quot;</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">78</span><span class="p">]])</span>
 <span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Statistics&quot;</span><span class="p">,</span> <span class="s2">&quot;Accounting&quot;</span><span class="p">,</span> <span class="s2">&quot;Marketing&quot;</span><span class="p">])</span>
@@ -641,8 +645,8 @@ document.write(`
 <p>Another way to create DataFrame with both argumens <code class="docutils literal notranslate"><span class="pre">columns</span></code> and <code class="docutils literal notranslate"><span class="pre">index</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">84</span><span class="p">],</span> <span class="p">[</span><span class="mi">68</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">78</span><span class="p">]])</span>
 <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Statistics&quot;</span><span class="p">,</span> <span class="s2">&quot;Accounting&quot;</span><span class="p">,</span> <span class="s2">&quot;Marketing&quot;</span><span class="p">]</span>
@@ -892,7 +896,7 @@ dtype: object
 <h3><span class="section-number">5.1.2. </span>Reading Data<a class="headerlink" href="#reading-data" title="Link to this heading">#</a></h3>
 <hr>
 <p>In most cases, we need to read data files (such as Excel files). Suppose the example above is saved in an Excel file named ‘transcripts.xlsx’ located in the “datas/” directory on your computer. We can read the file using the <code class="docutils literal notranslate"><span class="pre">read_excel</span></code> method:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datas/transcripts.xlsx&quot;</span><span class="p">)</span>
 <span class="c1"># or df = pd.read_excel(&quot;datas\\transcripts.xlsx&quot;)</span>
@@ -910,7 +914,7 @@ dtype: object
 <table>   
     <tr style="border-top:solid; border-bottom:solid">
         <th colspan=2 style="text-align:center">
-            read_excel(io, sheetname=0, header=0, skiprows=None, index_col=None, encoding=None)
+            read_excel(io, sheetname=0, header=0, skiprows=None, index_col=None, parse_dates=None, encoding=None, **kwargs)
         </th>
     </tr>
     <tr>
@@ -933,9 +937,17 @@ dtype: object
         <td style="text-align:left">index_col</td>
         <td style="text-align:left">Column to use as the row labels of the DataFrame.</td>
     </tr>
-    <tr style="border-bottom:solid">
+    <tr>
+        <td style="text-align:left">parse_dates</td>
+        <td style="text-align:left">Parse one or multi columns into datatime format.</td>
+    </tr>
+    <tr>
         <td style="text-align:left">encoding</td>
         <td style="text-align:left">Encoding format, commonly 'gbk' or 'utf-8'.</td>
+    </tr>
+    <tr style="border-bottom:solid">
+        <td style="text-align:left">**kwargs</td>
+        <td style="text-align:left">Other arguments.</td>
     </tr>
 </table><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -955,69 +967,6 @@ dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;datas/marks.xlsx&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;datas/marks.xlsx&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/anaconda3/lib/python3.11/site-packages/pandas/util/_decorators.py:333,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">333</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/anaconda3/lib/python3.11/site-packages/pandas/core/generic.py:2439,</span> in <span class="ni">NDFrame.to_excel</span><span class="nt">(self, excel_writer, sheet_name, na_rep, float_format, columns, header, index, index_label, startrow, startcol, engine, merge_cells, inf_rep, freeze_panes, storage_options, engine_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2426</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.io.formats.excel</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExcelFormatter</span>
-<span class="g g-Whitespace">   </span><span class="mi">2428</span> <span class="n">formatter</span> <span class="o">=</span> <span class="n">ExcelFormatter</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2429</span>     <span class="n">df</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2430</span>     <span class="n">na_rep</span><span class="o">=</span><span class="n">na_rep</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">2437</span>     <span class="n">inf_rep</span><span class="o">=</span><span class="n">inf_rep</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2438</span> <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2439</span> <span class="n">formatter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2440</span>     <span class="n">excel_writer</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2441</span>     <span class="n">sheet_name</span><span class="o">=</span><span class="n">sheet_name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2442</span>     <span class="n">startrow</span><span class="o">=</span><span class="n">startrow</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2443</span>     <span class="n">startcol</span><span class="o">=</span><span class="n">startcol</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2444</span>     <span class="n">freeze_panes</span><span class="o">=</span><span class="n">freeze_panes</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2445</span>     <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2446</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2447</span>     <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2448</span> <span class="p">)</span>
-
-<span class="nn">File /opt/anaconda3/lib/python3.11/site-packages/pandas/io/formats/excel.py:943,</span> in <span class="ni">ExcelFormatter.write</span><span class="nt">(self, writer, sheet_name, startrow, startcol, freeze_panes, engine, storage_options, engine_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">941</span>     <span class="n">need_save</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">942</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">943</span>     <span class="n">writer</span> <span class="o">=</span> <span class="n">ExcelWriter</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">944</span>         <span class="n">writer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">945</span>         <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span>         <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span>         <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">949</span>     <span class="n">need_save</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">951</span> <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File /opt/anaconda3/lib/python3.11/site-packages/pandas/io/excel/_openpyxl.py:57,</span> in <span class="ni">OpenpyxlWriter.__init__</span><span class="nt">(self, path, engine, date_format, datetime_format, mode, storage_options, if_sheet_exists, engine_kwargs, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="n">path</span><span class="p">:</span> <span class="n">FilePath</span> <span class="o">|</span> <span class="n">WriteExcelBuffer</span> <span class="o">|</span> <span class="n">ExcelWriter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">55</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="c1"># Use the openpyxl module as the Excel writer.</span>
-<span class="ne">---&gt; </span><span class="mi">57</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">openpyxl.workbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">Workbook</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="n">engine_kwargs</span> <span class="o">=</span> <span class="n">combine_kwargs</span><span class="p">(</span><span class="n">engine_kwargs</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="n">path</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>         <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">66</span>         <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;openpyxl&#39;
 </pre></div>
 </div>
 </div>
@@ -1245,7 +1194,7 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(90)
 </pre></div>
 </div>
 </div>
@@ -1257,7 +1206,7 @@ Name: 2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(90)
 </pre></div>
 </div>
 </div>
@@ -1396,7 +1345,7 @@ Name: 1, dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    85
 1    68
 2    90
-Name: Statistics, dtype: object
+Name: Statistics, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1644,7 +1593,7 @@ Name: Statistics, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;68&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(68)
 </pre></div>
 </div>
 </div>
@@ -1764,7 +1713,7 @@ Name: Statistics, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(81.0)
 </pre></div>
 </div>
 </div>
@@ -1793,7 +1742,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>88.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>88
 </pre></div>
 </div>
 </div>
@@ -1857,23 +1806,23 @@ dtype: float64
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85.0</td>
+      <td>85</td>
       <td>80</td>
-      <td>84.0</td>
+      <td>84</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Lily</td>
-      <td>68.0</td>
+      <td>68</td>
       <td>80</td>
-      <td>90.0</td>
+      <td>90</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90.0</td>
+      <td>90</td>
       <td>80</td>
-      <td>78.0</td>
+      <td>78</td>
     </tr>
   </tbody>
 </table>
@@ -1915,23 +1864,23 @@ dtype: float64
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85.0</td>
+      <td>85</td>
       <td>64</td>
-      <td>84.0</td>
+      <td>84</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Lily</td>
-      <td>68.0</td>
+      <td>68</td>
       <td>76</td>
-      <td>90.0</td>
+      <td>90</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90.0</td>
+      <td>90</td>
       <td>88</td>
-      <td>78.0</td>
+      <td>78</td>
     </tr>
   </tbody>
 </table>
@@ -1973,23 +1922,23 @@ dtype: float64
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85.0</td>
+      <td>85</td>
       <td>64</td>
-      <td>84.0</td>
+      <td>84</td>
     </tr>
     <tr>
       <th>1</th>
       <td>80</td>
-      <td>80.0</td>
       <td>80</td>
-      <td>80.0</td>
+      <td>80</td>
+      <td>80</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90.0</td>
+      <td>90</td>
       <td>88</td>
-      <td>78.0</td>
+      <td>78</td>
     </tr>
   </tbody>
 </table>
@@ -2031,23 +1980,23 @@ dtype: float64
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85.0</td>
+      <td>85</td>
       <td>64</td>
-      <td>84.0</td>
+      <td>84</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Ella</td>
-      <td>95.0</td>
+      <td>95</td>
       <td>90</td>
-      <td>89.0</td>
+      <td>89</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90.0</td>
+      <td>90</td>
       <td>88</td>
-      <td>78.0</td>
+      <td>78</td>
     </tr>
   </tbody>
 </table>
@@ -2090,23 +2039,23 @@ dtype: float64
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85.0</td>
+      <td>85</td>
       <td>64</td>
-      <td>84.0</td>
+      <td>84</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Ella</td>
-      <td>55.0</td>
+      <td>55</td>
       <td>90</td>
-      <td>89.0</td>
+      <td>89</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90.0</td>
+      <td>90</td>
       <td>88</td>
-      <td>78.0</td>
+      <td>78</td>
     </tr>
   </tbody>
 </table>
@@ -2140,7 +2089,7 @@ Name: Marketing, dtype: float64
 <p>For example, consider the following student grades:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">[[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="mi">52</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">68</span><span class="p">],</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">58</span><span class="p">]],</span>
@@ -2317,7 +2266,7 @@ Name: Marketing, dtype: float64
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="mi">52</span><span class="p">,</span>  <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">68</span><span class="p">],</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]]),</span>
@@ -2355,20 +2304,20 @@ Name: Marketing, dtype: float64
   <tbody>
     <tr>
       <th>Jack</th>
-      <td>55</td>
-      <td>68</td>
-      <td>70</td>
+      <td>55.0</td>
+      <td>68.0</td>
+      <td>70.0</td>
     </tr>
     <tr>
       <th>Lily</th>
-      <td>52</td>
-      <td>nan</td>
-      <td>68</td>
+      <td>52.0</td>
+      <td>NaN</td>
+      <td>68.0</td>
     </tr>
     <tr>
       <th>Tom</th>
-      <td>74</td>
-      <td>60</td>
+      <td>74.0</td>
+      <td>60.0</td>
       <td>NaN</td>
     </tr>
   </tbody>
@@ -2451,7 +2400,7 @@ Name: Finance, dtype: bool
 <p>Frquently, we need to perform data transformations on raw data. For example, if some numerical values in the original data are stored as text, we must convert them into numeric types before performing subsequent calculations. A commonly used method for data type conversion is <code class="docutils literal notranslate"><span class="pre">astype</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">[[</span><span class="s2">&quot;55&quot;</span><span class="p">,</span> <span class="s2">&quot;68&quot;</span><span class="p">,</span> <span class="s2">&quot;70&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;52&quot;</span><span class="p">,</span> <span class="s2">&quot;63&quot;</span><span class="p">,</span> <span class="s2">&quot;68&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;74&quot;</span><span class="p">,</span> <span class="s2">&quot;60&quot;</span><span class="p">,</span> <span class="s2">&quot;58&quot;</span><span class="p">]],</span>
@@ -2605,8 +2554,8 @@ dtype: object
 <p>When dealing with large datasets, duplicate data is a common issue. The <code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code> method can be used to remove redundant entries. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">84</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">84</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Lily&quot;</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">78</span><span class="p">]])</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Statistics&quot;</span><span class="p">,</span> <span class="s2">&quot;Accounting&quot;</span><span class="p">,</span> <span class="s2">&quot;Marketing&quot;</span><span class="p">])</span>
@@ -2789,7 +2738,7 @@ dtype: object
 </table>
 <br><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span> <span class="p">[</span><span class="mi">52</span><span class="p">,</span>  <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">68</span><span class="p">],</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]]),</span>
@@ -2987,8 +2936,8 @@ dtype: object
 </div></div></div>
 </div>
 </section>
-<section id="rename-rename">
-<h3><span class="section-number">5.3.5. </span>Rename <code class="docutils literal notranslate"><span class="pre">rename</span></code><a class="headerlink" href="#rename-rename" title="Link to this heading">#</a></h3>
+<section id="rename-set-index">
+<h3><span class="section-number">5.3.5. </span><code class="docutils literal notranslate"><span class="pre">rename</span></code>, <code class="docutils literal notranslate"><span class="pre">set_index</span></code><a class="headerlink" href="#rename-set-index" title="Link to this heading">#</a></h3>
 <hr>
 <p>When working with data, we may sometimes need to rename the row or column labels. This is where the rename function comes into play. The rename function takes a dictionary as its argument, where:</p>
 <ul class="simple">
@@ -2998,8 +2947,8 @@ dtype: object
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">84</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Lily&quot;</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">78</span><span class="p">]])</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Statistics&quot;</span><span class="p">,</span> <span class="s2">&quot;Accounting&quot;</span><span class="p">,</span> <span class="s2">&quot;Marketing&quot;</span><span class="p">])</span>
@@ -3060,7 +3009,8 @@ dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Statistics&quot;</span><span class="p">:</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Accouting&quot;</span><span class="p">:</span> <span class="s2">&quot;Finance&quot;</span><span class="p">})</span>  <span class="c1"># rename two column labels</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Statistics&quot;</span><span class="p">:</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;Accouting&quot;</span><span class="p">:</span> <span class="s2">&quot;Finance&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># rename two column labels</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -3099,20 +3049,13 @@ dtype: object
     </tr>
     <tr>
       <th>1</th>
-      <td>Jim</td>
-      <td>85</td>
-      <td>82</td>
-      <td>84</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>Lily</td>
       <td>68</td>
       <td>63</td>
       <td>90</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>Jack</td>
       <td>90</td>
       <td>88</td>
@@ -3125,6 +3068,66 @@ dtype: object
 <ul class="simple">
 <li><p>Use the argument <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code> if wanting to change the original data.</p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">set_index</span></code> sets the DataFrame index using existing columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Python</th>
+      <th>Accounting</th>
+      <th>Marketing</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Jim</th>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>Lily</th>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>Jack</th>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 </section>
 <section id="add-delete-and-merge-data">
@@ -3160,7 +3163,7 @@ dtype: object
     <tr style="text-align: right;">
       <th></th>
       <th>Name</th>
-      <th>Statistics</th>
+      <th>Python</th>
       <th>Accounting</th>
       <th>Marketing</th>
       <th>Python Programming</th>
@@ -3170,25 +3173,25 @@ dtype: object
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85.0</td>
-      <td>64</td>
-      <td>84.0</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
       <td>60</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Ella</td>
-      <td>55.0</td>
+      <td>Lily</td>
+      <td>68</td>
+      <td>63</td>
       <td>90</td>
-      <td>89.0</td>
       <td>60</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90.0</td>
+      <td>90</td>
       <td>88</td>
-      <td>78.0</td>
+      <td>78</td>
       <td>60</td>
     </tr>
   </tbody>
@@ -3222,7 +3225,7 @@ dtype: object
     <tr style="text-align: right;">
       <th></th>
       <th>Name</th>
-      <th>Statistics</th>
+      <th>Python</th>
       <th>Accounting</th>
       <th>Marketing</th>
       <th>Python Programming</th>
@@ -3233,27 +3236,27 @@ dtype: object
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85.0</td>
-      <td>64</td>
-      <td>84.0</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
       <td>60</td>
       <td>60</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Ella</td>
-      <td>55.0</td>
+      <td>Lily</td>
+      <td>68</td>
+      <td>63</td>
       <td>90</td>
-      <td>89.0</td>
       <td>60</td>
       <td>50</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90.0</td>
+      <td>90</td>
       <td>88</td>
-      <td>78.0</td>
+      <td>78</td>
       <td>60</td>
       <td>70</td>
     </tr>
@@ -3292,7 +3295,7 @@ dtype: object
     <tr style="text-align: right;">
       <th></th>
       <th>Name</th>
-      <th>Statistics</th>
+      <th>Python</th>
       <th>Accounting</th>
       <th>Marketing</th>
       <th>Python Programming</th>
@@ -3303,36 +3306,36 @@ dtype: object
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85.0</td>
-      <td>64.0</td>
-      <td>84.0</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
       <td>60.0</td>
       <td>60.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Ella</td>
-      <td>55.0</td>
-      <td>90.0</td>
-      <td>89.0</td>
+      <td>Lily</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
       <td>60.0</td>
       <td>50.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>78.0</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
       <td>60.0</td>
       <td>70.0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>David</td>
-      <td>65.0</td>
-      <td>70.0</td>
-      <td>69.0</td>
+      <td>65</td>
+      <td>70</td>
+      <td>69</td>
       <td>55.0</td>
       <td>83.0</td>
     </tr>
@@ -3369,7 +3372,7 @@ dtype: object
       <th></th>
       <th>Name</th>
       <th>Economy</th>
-      <th>Statistics</th>
+      <th>Python</th>
       <th>Accounting</th>
       <th>Marketing</th>
       <th>Python Programming</th>
@@ -3381,19 +3384,19 @@ dtype: object
       <th>0</th>
       <td>Jim</td>
       <td>61</td>
-      <td>85.0</td>
-      <td>64.0</td>
-      <td>84.0</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
       <td>60.0</td>
       <td>60.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Ella</td>
+      <td>Lily</td>
       <td>72</td>
-      <td>55.0</td>
-      <td>90.0</td>
-      <td>89.0</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
       <td>60.0</td>
       <td>50.0</td>
     </tr>
@@ -3401,9 +3404,9 @@ dtype: object
       <th>2</th>
       <td>Jack</td>
       <td>84</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>78.0</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
       <td>60.0</td>
       <td>70.0</td>
     </tr>
@@ -3411,9 +3414,9 @@ dtype: object
       <th>3</th>
       <td>David</td>
       <td>81</td>
-      <td>65.0</td>
-      <td>70.0</td>
-      <td>69.0</td>
+      <td>65</td>
+      <td>70</td>
+      <td>69</td>
       <td>55.0</td>
       <td>83.0</td>
     </tr>
@@ -3454,7 +3457,7 @@ dtype: object
       <th></th>
       <th>Name</th>
       <th>Economy</th>
-      <th>Statistics</th>
+      <th>Python</th>
       <th>Accounting</th>
       <th>Marketing</th>
       <th>Python Programming</th>
@@ -3466,19 +3469,19 @@ dtype: object
       <th>0</th>
       <td>Jim</td>
       <td>61</td>
-      <td>85.0</td>
-      <td>64.0</td>
-      <td>84.0</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
       <td>60.0</td>
       <td>60.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Ella</td>
+      <td>Lily</td>
       <td>72</td>
-      <td>55.0</td>
-      <td>90.0</td>
-      <td>89.0</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
       <td>60.0</td>
       <td>50.0</td>
     </tr>
@@ -3486,9 +3489,9 @@ dtype: object
       <th>2</th>
       <td>Jack</td>
       <td>84</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>78.0</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
       <td>60.0</td>
       <td>70.0</td>
     </tr>
@@ -3527,7 +3530,7 @@ dtype: object
       <th></th>
       <th>Name</th>
       <th>Economy</th>
-      <th>Statistics</th>
+      <th>Python</th>
       <th>Accounting</th>
       <th>Marketing</th>
       <th>Financing</th>
@@ -3538,27 +3541,27 @@ dtype: object
       <th>0</th>
       <td>Jim</td>
       <td>61</td>
-      <td>85.0</td>
-      <td>64.0</td>
-      <td>84.0</td>
+      <td>85</td>
+      <td>82</td>
+      <td>84</td>
       <td>60.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Ella</td>
+      <td>Lily</td>
       <td>72</td>
-      <td>55.0</td>
-      <td>90.0</td>
-      <td>89.0</td>
+      <td>68</td>
+      <td>63</td>
+      <td>90</td>
       <td>50.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
       <td>84</td>
-      <td>90.0</td>
-      <td>88.0</td>
-      <td>78.0</td>
+      <td>90</td>
+      <td>88</td>
+      <td>78</td>
       <td>70.0</td>
     </tr>
   </tbody>
@@ -3596,7 +3599,7 @@ dtype: object
       <th></th>
       <th>Name</th>
       <th>Economy</th>
-      <th>Statistics</th>
+      <th>Python</th>
       <th>Accounting</th>
     </tr>
   </thead>
@@ -3605,22 +3608,22 @@ dtype: object
       <th>0</th>
       <td>Jim</td>
       <td>61</td>
-      <td>85.0</td>
-      <td>64.0</td>
+      <td>85</td>
+      <td>82</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Ella</td>
+      <td>Lily</td>
       <td>72</td>
-      <td>55.0</td>
-      <td>90.0</td>
+      <td>68</td>
+      <td>63</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
       <td>84</td>
-      <td>90.0</td>
-      <td>88.0</td>
+      <td>90</td>
+      <td>88</td>
     </tr>
   </tbody>
 </table>
@@ -3654,17 +3657,17 @@ dtype: object
       <th></th>
       <th>Name</th>
       <th>Economy</th>
-      <th>Statistics</th>
+      <th>Python</th>
       <th>Accounting</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>1</th>
-      <td>Ella</td>
+      <td>Lily</td>
       <td>72</td>
-      <td>55.0</td>
-      <td>90.0</td>
+      <td>68</td>
+      <td>63</td>
     </tr>
   </tbody>
 </table>
@@ -4662,7 +4665,7 @@ dtype: object
 <p>When querying DataFrame data based on certain conditions, some comparison operators are commonly used, such as: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>. Conditional queries are generally applied only to column data. During the query process, <strong>Pandas first generates a Boolean index (True or False)</strong> and then produces the queried data by specifying this index.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
@@ -4899,7 +4902,7 @@ Name: Statistics, dtype: bool
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
@@ -5054,15 +5057,15 @@ Name: Statistics, dtype: bool
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85</td>
       <td>82</td>
+      <td>72</td>
       <td>84</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90</td>
-      <td>88</td>
+      <td>82</td>
+      <td>72</td>
       <td>78</td>
     </tr>
   </tbody>
@@ -5103,18 +5106,18 @@ Name: Statistics, dtype: bool
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>Jack</td>
-      <td>90</td>
-      <td>88</td>
-      <td>78</td>
-    </tr>
-    <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85</td>
       <td>82</td>
+      <td>72</td>
       <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Jack</td>
+      <td>82</td>
+      <td>72</td>
+      <td>78</td>
     </tr>
     <tr>
       <th>1</th>
@@ -5168,15 +5171,15 @@ Name: Statistics, dtype: bool
     <tr>
       <th>0</th>
       <td>Jack</td>
-      <td>90</td>
-      <td>88</td>
+      <td>82</td>
+      <td>72</td>
       <td>78</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Jim</td>
-      <td>85</td>
       <td>82</td>
+      <td>72</td>
       <td>84</td>
     </tr>
     <tr>
@@ -5226,8 +5229,8 @@ Name: Statistics, dtype: bool
     <tr>
       <th>0</th>
       <td>Jim</td>
-      <td>85</td>
       <td>82</td>
+      <td>72</td>
       <td>84</td>
     </tr>
     <tr>
@@ -5240,8 +5243,8 @@ Name: Statistics, dtype: bool
     <tr>
       <th>2</th>
       <td>Jack</td>
-      <td>90</td>
-      <td>88</td>
+      <td>82</td>
+      <td>72</td>
       <td>78</td>
     </tr>
   </tbody>
@@ -5284,15 +5287,15 @@ Name: Statistics, dtype: bool
     <tr>
       <th>0</th>
       <td>Jack</td>
-      <td>90</td>
-      <td>88</td>
+      <td>82</td>
+      <td>72</td>
       <td>78</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Jim</td>
-      <td>85</td>
       <td>82</td>
+      <td>72</td>
       <td>84</td>
     </tr>
     <tr>
@@ -6053,7 +6056,7 @@ dtype: int64
 <p>Pandas can use the method <code class="docutils literal notranslate"><span class="pre">apply</span></code> to apply a function/method to the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Statistics&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span>  <span class="c1"># apply the method sqrt in NumPy to compute the squre root of a colun</span>
 </pre></div>
@@ -6175,7 +6178,7 @@ Name: Statistics, dtype: float64
 <p><code class="docutils literal notranslate"><span class="pre">apply</span></code> can also apply other more complex self defined function. For example, the following code transfers the numeric scores in other forms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">replace_score</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">replace_score</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
         <span class="k">return</span> <span class="s2">&quot;A&quot;</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
@@ -6294,7 +6297,7 @@ Name: Statistics, dtype: float64
 <p>In practical work, we often encounter large amounts of time series data. The raw time series data is typically in text format, which needs to be converted into datetime format. Pandas provides the <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> method to convert other datetime formats into Python’s datetime format. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;20200514&quot;</span><span class="p">)</span> <span class="c1"># transfor the date text &quot;20200514&quot; to Timestamp format</span>
 </pre></div>
@@ -6507,8 +6510,8 @@ Name: Enrollment date, dtype: object
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;12/24/2019&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>  <span class="c1"># generate a date range</span>
 <span class="n">index</span>
@@ -6833,7 +6836,7 @@ Name: Enrollment date, dtype: object
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
 <span class="n">df</span>
@@ -6970,7 +6973,7 @@ Name: Enrollment date, dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/c335d8a410ec96c85f481b3a1cdf477b3593b3711150b7bb7b1b6632e1dcc412.png" src="_images/c335d8a410ec96c85f481b3a1cdf477b3593b3711150b7bb7b1b6632e1dcc412.png" />
+<img alt="_images/76876828467254c3da9bc0ede28de43ebe130af7b8210363c0c30967e92b19e1.png" src="_images/76876828467254c3da9bc0ede28de43ebe130af7b8210363c0c30967e92b19e1.png" />
 </div>
 </div>
 <p>The above picture shows that the <code class="docutils literal notranslate"><span class="pre">plot</span></code> method of Pandas draw a line chart for each numeric column.</p>
@@ -6984,7 +6987,7 @@ Name: Enrollment date, dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;My picture&#39;}, ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ae07780ca140c74ccd847ac55325b029e40230c0ffb0d8d4f789a978d4846da7.png" src="_images/ae07780ca140c74ccd847ac55325b029e40230c0ffb0d8d4f789a978d4846da7.png" />
+<img alt="_images/520d19f56a6f745af0195fd32ad596385b075e906318978f5230ad0a2c861fe0.png" src="_images/520d19f56a6f745af0195fd32ad596385b075e906318978f5230ad0a2c861fe0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6997,7 +7000,7 @@ Name: Enrollment date, dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;sepal_length&#39;, ylabel=&#39;sepal_width&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/f05ab40ee11aabe85dce858a34a996483f10d3b29b37725e4c5872f82ca2400e.png" src="_images/f05ab40ee11aabe85dce858a34a996483f10d3b29b37725e4c5872f82ca2400e.png" />
+<img alt="_images/89b4ebd4650db8af96f5ed7bd6b6db3173dd35175b1b5060d46fefb739747ad9.png" src="_images/89b4ebd4650db8af96f5ed7bd6b6db3173dd35175b1b5060d46fefb739747ad9.png" />
 </div>
 </div>
 <p>Pandas provides a comprehensive set of data processing methods with numerous argument configurations. Due to space limitations, this book does not elaborate on them in detail. When using Pandas for data processing, readers are encouraged to consult the <a class="reference external" href="https://pandas.pydata.org/docs/">official documentation</a> for further reference.</p>
@@ -7034,14 +7037,14 @@ Name: Enrollment date, dtype: object
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#creat-df"> Exercise 5.1</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Nation&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;UK&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">],</span> <span class="s1">&#39;Capital&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;London&#39;</span><span class="p">,</span> <span class="s1">&#39;Washinton DC&#39;</span><span class="p">,</span> <span class="s1">&#39;Beijing&#39;</span><span class="p">]})</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s1">&#39;UK&#39;</span><span class="p">,</span> <span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;London&#39;</span><span class="p">,</span> <span class="s1">&#39;Washinton DC&#39;</span><span class="p">,</span> <span class="s1">&#39;Beijing&#39;</span><span class="p">]])</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Nation&#39;</span><span class="p">,</span> <span class="s1">&#39;Capital&#39;</span><span class="p">])</span>
@@ -7466,8 +7469,8 @@ Name: Enrollment date, dtype: object
 
 <p class="admonition-title">Solution to<a class="reference internal" href="#pandas-read"> Exercise 5.21</a></p>
 <section id="solution-content">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Student&#39;</span><span class="p">,</span> <span class="s1">&#39;Module1&#39;</span><span class="p">,</span> <span class="s1">&#39;Module2&#39;</span><span class="p">,</span> <span class="s1">&#39;Module3&#39;</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s1">&#39;Stu1&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">56</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Stu2&#39;</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">73</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Stu3&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">62</span><span class="p">],</span>\
@@ -7599,7 +7602,7 @@ Name: Enrollment date, dtype: object
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cast-the-data-type-astype">5.3.2. Cast the data type <code class="docutils literal notranslate"><span class="pre">astype</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-duplicates-drop-duplicates">5.3.3. Remove duplicates <code class="docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-missing-valuesdropna">5.3.4. Remove missing values<code class="docutils literal notranslate"><span class="pre">dropna</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-rename">5.3.5. Rename <code class="docutils literal notranslate"><span class="pre">rename</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rename-set-index">5.3.5. <code class="docutils literal notranslate"><span class="pre">rename</span></code>, <code class="docutils literal notranslate"><span class="pre">set_index</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-delete-and-merge-data">5.4. Add, delete and merge data</a><ul class="nav section-nav flex-column">
