@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. Python 面向对象编程 &#8212; Python 数据科学</title>
+    <title>10. Python Object Oriented Programming &#8212; Python 数据科学</title>
   
   
   
@@ -16,35 +16,32 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=ced2e0c4" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -63,15 +60,13 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-class';</script>
-    <script src="_static/myfile.js?v=78ba3122"></script>
+    <script src="_static/myfile.js?v=16a49f19"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. Python 的良好编程规范" href="good-practices-python.html" />
-    <link rel="prev" title="9. 爬虫入门" href="introduction-to-crawler.html" />
+    <link rel="prev" title="9. Python machine learning" href="statistics2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -96,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +157,21 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python 数据科学 - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -179,16 +189,14 @@
 <li class="toctree-l1"><a class="reference internal" href="print-read-files.html">3. Output, read and write files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-numpy.html">4. Introduction to Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-pandas.html">5. Introduction to Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="define-function.html">6. Define functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw-pictures.html">7. Draw graphs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Advanced</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="statistics1.html">8. Python statistics I</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-crawler.html">9. 爬虫入门</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Python 面向对象编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="good-practices-python.html">11. Python 的良好编程规范</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-parallel.html">12. Python 并行计算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics1.html">8. Python statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics2.html">9. Python machine learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Python Object Oriented Programming</a></li>
 </ul>
 
     </div>
@@ -197,14 +205,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -248,7 +251,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science-en/introduction-to-class.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science/introduction-to-class.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -397,16 +400,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -420,7 +431,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python 面向对象编程</h1>
+    <h1>Python Object Oriented Programming</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -430,13 +441,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.1. 类, 对象, 属性, 方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.2. 类的初始化 __init__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的继承与方法重写</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-getitem">10.4. 类的专有/特殊方法 __str__、__getitem__等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-object-attribute-method">10.1. Class, Object, Attribute, Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-class-init">10.2. Initialize a class <code class="docutils literal notranslate"><span class="pre">__init__</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-or-magic-methods-of-a-class">10.4. Special (or “magic”) methods of a class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">10.5. 类的特殊属性 __doc__、__name__ 等</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">10.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.7. 类方法与静态方法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
             </nav>
@@ -449,13 +460,13 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1><span class="section-number">10. </span>Python 面向对象编程<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
-<hr><p>Python 是一种支持面向对象编程（Object Oriented Programming, OOP）的语言。面向对象编程是一种编程范式，它将数据和操作数据的函数封装在对象中，通过类（Class）和对象（Object）来组织代码，使得代码更易于理解、维护、扩展和重用, 特别适合开发大型、复杂的系统。</p>
-<section id="id1">
-<h2><span class="section-number">10.1. </span>类, 对象, 属性, 方法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<hr><p>面向对象编程中，类是对象的模板或蓝图，描述一类事物的属性（变量）和行为（方法）；而对象是类的实例，具体体现类的属性和行为。例如，定义企业员工为一个类，该类中，可以包含姓名，工资，工龄，职务等属性；而具体的一个企业员工张三或李四就是这个类的一个实例。打个比喻，类就像是“蛋糕模具”，对象是用这个模具做出的“蛋糕”。</p>
-<p>Python 通过 <code class="docutils literal notranslate"><span class="pre">class</span></code> 来定义一个类，并在类中进一步定义类的<code class="docutils literal notranslate"><span class="pre">属性</span></code>（数据）和<code class="docutils literal notranslate"><span class="pre">方法</span></code>（函数）。语法格式如下：</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-object-oriented-programming">
+<h1><span class="section-number">10. </span>Python Object Oriented Programming<a class="headerlink" href="#python-object-oriented-programming" title="Link to this heading">#</a></h1>
+<hr><p>Python is a programming language that supports object-oriented programming (OOP). Object-oriented programming is a paradigm that encapsulates data and the functions that operate on it within objects. By organizing code through classes and objects, <strong>it makes programs clearer, easier to maintain, and more extensible and reusable</strong>, making it particularly well-suited for developing large and complex systems.</p>
+<section id="class-object-attribute-method">
+<h2><span class="section-number">10.1. </span>Class, Object, Attribute, Method<a class="headerlink" href="#class-object-attribute-method" title="Link to this heading">#</a></h2>
+<hr><p>In object-oriented programming, a class is a template or blueprint for objects, describing the attributes (variables) and behaviors (methods) of a certain type of entity. An object, on the other hand, is an instance of a class, concretely embodying the class’s attributes and behaviors. For example, if we define “Employee” as a class, it can include attributes such as name, salary, years of service, and position; a specific employee, like Zhang San or Li Si, would be an instance of this class. To use an analogy, a class is like a “cake mold,” and an object is the “cake” made from that mold.</p>
+<p>Python uses <code class="docutils literal notranslate"><span class="pre">class</span></code> to define a class, and within the class further defines class attributes (data) and methods (functions). The syntax is as follows:</p>
 <table>   
     <tr style="border-bottom:solid">
      </tr>
@@ -475,15 +486,15 @@
         <td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;statement_block_N&gt;</td>
     </tr>
 </table>
-<br /><p>下面的例子中，我们定义一个员工类：</p>
+<br /><p>In the following example, we define an Employee class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
-    <span class="c1"># 类的属性</span>
-    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business school&quot;</span>  <span class="c1"># 普通属性</span>
-    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
+    <span class="c1"># Class attributes</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business school&quot;</span>  <span class="c1"># Regular attribute</span>
+    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># Variables prefixed with double underscores are private class attributes</span>
 
-    <span class="c1"># 类的方法</span>
+    <span class="c1"># Class methods</span>
     <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span>
 
@@ -491,9 +502,9 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, everyone!&quot;</span><span class="p">)</span>
 
 
-<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span>  <span class="c1"># 实例化一个类</span>
-<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>  <span class="c1"># 访问对象里的方法</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My department is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span>  <span class="c1"># 访问对象里的属性</span>
+<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span>  <span class="c1"># Instantiate a class</span>
+<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>  <span class="c1"># Access a method of the object</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My department is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span>  <span class="c1"># Access an attribute of the object</span>
 </pre></div>
 </div>
 </div>
@@ -530,8 +541,8 @@ My department is business school.
 </ul>
 </div>
 </section>
-<section id="init">
-<h2><span class="section-number">10.2. </span>类的初始化 __init__<a class="headerlink" href="#init" title="Link to this heading">#</a></h2>
+<section id="initialize-a-class-init">
+<h2><span class="section-number">10.2. </span>Initialize a class <code class="docutils literal notranslate"><span class="pre">__init__</span></code><a class="headerlink" href="#initialize-a-class-init" title="Link to this heading">#</a></h2>
 <hr><p>类有一个名为 __init__() 的特殊方法，该方法在类实例化时会自动调用，进行对象的初始化。例如：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -573,8 +584,8 @@ My department is engineering school.
 <p>类的方法与普通函数有一个显著的区别，它们的第一个参数总是 self，self 代表的是类的实例。</p>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">10.3. </span>类的继承与方法重写<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2><span class="section-number">10.3. </span>类的继承与方法重写<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr><p>Python 支持类的继承，即一个类可以继承另一个类的所有属性和方法，还可以添加新的属性，新的方法或者重写另一个类的方法。</p>
 <p>例如，我们可以添加一个类 NewEmployee，继承 Employ 类。</p>
 <div class="cell docutils container">
@@ -670,8 +681,8 @@ I have passed probation.
 </div>
 </div>
 </section>
-<section id="str-getitem">
-<h2><span class="section-number">10.4. </span>类的专有/特殊方法 __str__、__getitem__等<a class="headerlink" href="#str-getitem" title="Link to this heading">#</a></h2>
+<section id="special-or-magic-methods-of-a-class">
+<h2><span class="section-number">10.4. </span>Special (or “magic”) methods of a class<a class="headerlink" href="#special-or-magic-methods-of-a-class" title="Link to this heading">#</a></h2>
 <hr><p>以前后缀双下划线命名的方法为类的专有/特殊方法，又称作魔术方法，用以实现一些特定功能。</p>
 <p>下面表格中总结了一些常用的专有方法。</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -720,6 +731,9 @@ I have passed probation.
 <tr class="row-even"><td class="text-center"><p>__call__</p></td>
 <td class="text-center"><p>让对象可以像函数一样被调用</p></td>
 </tr>
+<tr class="row-odd"><td class="text-center"><p>__len__</p></td>
+<td class="text-center"><p>define the length of the object</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -765,7 +779,7 @@ Bob, 30 years old
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x10301d8e0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x00000260016590A0&gt;
 &lt;class &#39;__main__.Dog&#39;&gt;
 </pre></div>
 </div>
@@ -1009,8 +1023,8 @@ male
 </div>
 </div>
 </section>
-<section id="id3">
-<h2><span class="section-number">10.7. </span>类方法与静态方法<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2><span class="section-number">10.7. </span>类方法与静态方法<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <hr><p>上面的例子中，类中方法的第一个参数总是 self，这类方法为<code class="docutils literal notranslate"><span class="pre">普通方法</span></code>，只能被对象调用。</p>
 <p>除了普通方法外，还有<code class="docutils literal notranslate"><span class="pre">类方法</span></code>与<code class="docutils literal notranslate"><span class="pre">静态方法</span></code>。</p>
 <ul class="simple">
@@ -1124,16 +1138,16 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -1146,22 +1160,13 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction-to-crawler.html"
+       href="statistics2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>爬虫入门</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Python machine learning</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="good-practices-python.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Python 的良好编程规范</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -1170,8 +1175,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1180,13 +1184,13 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.1. 类, 对象, 属性, 方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#init">10.2. 类的初始化 __init__</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.3. 类的继承与方法重写</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#str-getitem">10.4. 类的专有/特殊方法 __str__、__getitem__等</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-object-attribute-method">10.1. Class, Object, Attribute, Method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-class-init">10.2. Initialize a class <code class="docutils literal notranslate"><span class="pre">__init__</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-or-magic-methods-of-a-class">10.4. Special (or “magic”) methods of a class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">10.5. 类的特殊属性 __doc__、__name__ 等</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">10.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.7. 类方法与静态方法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
   </nav></div>
@@ -1236,8 +1240,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
