@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Output, read and write files &#8212; Python 数据科学</title>
+    <title>3. Output, read and write files &#8212; Python Data Science</title>
   
   
   
@@ -30,8 +30,13 @@
   <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+=======
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+>>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -150,8 +155,13 @@
       
     
     
+<<<<<<< HEAD
     <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
     <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
+=======
+    <img src="_static/logo.png" class="logo__image only-light" alt="Python Data Science - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python Data Science - Home"/>`);</script>
+>>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
   
   
 </a></div>
@@ -562,7 +572,7 @@ age is 25
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="n">b</span> <span class="o">=</span> <span class="mf">4.56</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the numbers are </span><span class="si">{</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -821,7 +831,7 @@ the numbers are 3 and 4.56 and 3
 <p>The percent sign <code class="docutils literal notranslate"><span class="pre">%</span></code> can also achieve various formatted outputs, with syntax rules similar to C language. Here are some specific examples for reference:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the number is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># output a float to integer format</span>
 </pre></div>
@@ -1106,7 +1116,7 @@ His name is Elon Musk
 <hr>
 <p>The <code class="docutils literal notranslate"><span class="pre">os</span></code> in Python is a standard library for interacting with the operating system, providing functionalities for handling files, directories, processes, and environment variables.</p>
 <p>Below are some usages of the <code class="docutils literal notranslate"><span class="pre">os</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># get the name of the current computer system: &#39;posix&#39; (Linux/macOS) or &#39;nt&#39; (Windows)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>  <span class="c1"># get current working directory</span>
@@ -1122,7 +1132,7 @@ His name is Elon Musk
 <ul class="simple">
 <li><p>Create or delete a directory</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;new_dir&#39;</span><span class="p">)</span>  <span class="c1"># create a new directory</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;parent/child/grandchild&#39;</span><span class="p">)</span>  <span class="c1"># create hierarchy directories</span>
@@ -1133,7 +1143,7 @@ His name is Elon Musk
 <ul class="simple">
 <li><p>File renaming <code class="docutils literal notranslate"><span class="pre">rename</span></code> or deletion <code class="docutils literal notranslate"><span class="pre">remove</span></code></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;new_file.txt&quot;</span>  
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -1154,7 +1164,7 @@ His name is Elon Musk
 <ul class="simple">
 <li><p>Path operations</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># get the absolute path of the file &#39;file.txt&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>  <span class="c1"># get the directory of the file &#39;file.txt&#39;</span>
@@ -1167,7 +1177,7 @@ His name is Elon Musk
 </pre></div>
 </div>
 <p>The following example gets the file name of the current file.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="c1"># __file__ can get the full path of the current file</span>
 <span class="n">current_file_path</span> <span class="o">=</span> <span class="vm">__file__</span> 
@@ -1181,7 +1191,7 @@ His name is Elon Musk
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>  <span class="c1"># get the id of the current process</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getppid</span><span class="p">())</span>  <span class="c1"># get the id of the parent process</span>
@@ -1189,8 +1199,13 @@ His name is Elon Musk
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14386
 14321
+=======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12388
+17392
+>>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
 </pre></div>
 </div>
 </div>
@@ -1205,14 +1220,18 @@ His name is Elon Musk
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<<<<<<< HEAD
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.12.8 | packaged by conda-forge | (main, Dec  5 2024, 08:43:59) [Clang 18.1.8 ]
+=======
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]
+>>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
 </pre></div>
 </div>
 </div>
@@ -1227,7 +1246,7 @@ His name is Elon Musk
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>darwin
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>win32
 </pre></div>
 </div>
 </div>
