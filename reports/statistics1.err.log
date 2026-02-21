@@ -36,20 +36,81 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pingouin as pg
-import seaborn as sns
+import numpy as np
+import pandas as pd
+from semopy import Model, calc_stats
 
-tips = sns.load_dataset("tips")
-pg.anova(tips, dv="tip", between="sex")
+# Set random seed for reproducibility
+np.random.seed(42)
+n_samples = 300
+
+# Generate latent variables with assumed relationships
+# BrandImage ~ N(0,1)
+BrandImage = np.random.normal(0, 1, n_samples)
+# Customer Satisfaction influenced by BrandImage + noise
+CustSatis = 0.7 * BrandImage + np.random.normal(0, 0.5, n_samples)
+# Customer Loyalty influenced by BrandImage and CustSatis + noise
+CustLoyal = 0.3 * BrandImage + 0.6 * CustSatis + np.random.normal(0, 0.5, n_samples)
+
+# Function to generate observed indicators from latent variables
+def generate_indicators(latent_var):
+    # Each latent variable is measured by 3 indicators with measurement error (std=0.3)
+    return latent_var.reshape(-1, 1) + np.random.normal(0, 0.3, (n_samples, 3))
+
+# Generate observed variables for each latent variable
+BI = generate_indicators(BrandImage)  # Brand Image indicators
+CS = generate_indicators(CustSatis)   # Customer Satisfaction indicators
+CL = generate_indicators(CustLoyal)   # Customer Loyalty indicators
+
+# Combine all observed indicators into one dataset
+data = np.hstack([BI, CS, CL])
+
+# Create DataFrame with appropriate column names matching SEM model
+columns = ['BI1', 'BI2', 'BI3', 'CS1', 'CS2', 'CS3', 'CL1', 'CL2', 'CL3']
+df = pd.DataFrame(data, columns=columns)
+
+# Transform data to simulate Likert-scale scores (1 to 5)
+df = 3 + df          # Shift mean to around 3
+df = df.clip(1, 5)   # Clip values to range [1, 5]
+df = df.round(2)     # Round to 2 decimal places
+
+print("Sample of simulated data:")
+print(df.head())
+
+# Define SEM model using lavaan-style syntax
+model_desc = '''
+BrandImage =~ BI1 + BI2 + BI3
+CustSatis =~ CS1 + CS2 + CS3
+CustLoyal =~ CL1 + CL2 + CL3
+
+CustSatis ~ BrandImage
+CustLoyal ~ BrandImage + CustSatis
+'''
+
+# Initialize and fit SEM model
+model = Model(model_desc)
+model.fit(df)
+
+# Inspect and print path coefficients and loadings
+print("\nPath coefficients and loadings:")
+print(model.inspect())
+
+# Calculate and print model fit statistics (CFI, TLI, RMSEA, AIC, BIC)
+stats = calc_stats(model)
+print("\nModel fit indices:")
+print(stats[['CFI', 'TLI', 'RMSEA', 'AIC', 'BIC']])
+
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[19][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mpingouin[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpg[39;00m
-[32m      2[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mseaborn[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01msns[39;00m
-[32m      4[39m tips = sns.load_dataset([33m"[39m[33mtips[39m[33m"[39m)
+[36mCell[39m[36m [39m[32mIn[29][39m[32m, line 3[39m
+[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+[32m      2[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpd[39;00m
+[32m----> [39m[32m3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msemopy[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Model, calc_stats
+[32m      5[39m [38;5;66;03m# Set random seed for reproducibility[39;00m
+[32m      6[39m np.random.seed([32m42[39m)
 
-[31mModuleNotFoundError[39m: No module named 'pingouin'
+[31mModuleNotFoundError[39m: No module named 'semopy'
 
