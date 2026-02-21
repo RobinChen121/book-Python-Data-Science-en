@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -636,7 +636,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/89a2866ec3e9c3cbb97a12ae9e496ae6a5b7c054ed2ce0756858bc59b8a5b564.png" src="_images/89a2866ec3e9c3cbb97a12ae9e496ae6a5b7c054ed2ce0756858bc59b8a5b564.png" />
+<img alt="_images/f42df9213282fd516618ba9cc3ffffdc4da3f48f68a23c0be9d2e62ff07d828a.png" src="_images/f42df9213282fd516618ba9cc3ffffdc4da3f48f68a23c0be9d2e62ff07d828a.png" />
 </div>
 </div>
 <p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
@@ -670,7 +670,7 @@ Dep. Variable:                  total   R-squared:                       0.374
 Model:                            OLS   Adj. R-squared:                  0.361
 Method:                 Least Squares   F-statistic:                     29.27
 Date:                Sat, 21 Feb 2026   Prob (F-statistic):           1.87e-06
-Time:                        13:58:27   Log-Likelihood:                -132.15
+Time:                        14:07:32   Log-Likelihood:                -132.15
 No. Observations:                  51   AIC:                             268.3
 Df Residuals:                      49   BIC:                             272.2
 Df Model:                           1                                         
@@ -781,7 +781,7 @@ Dep. Variable:                  total   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     64.87
 Date:                Sat, 21 Feb 2026   Prob (F-statistic):           2.27e-14
-Time:                        13:58:27   Log-Likelihood:                -110.71
+Time:                        14:07:32   Log-Likelihood:                -110.71
 No. Observations:                  51   AIC:                             227.4
 Df Residuals:                      48   BIC:                             233.2
 Df Model:                           2                                         
@@ -833,7 +833,7 @@ Dep. Variable:                  total   R-squared:                       0.790
 Model:                            OLS   Adj. R-squared:                  0.777
 Method:                 Least Squares   F-statistic:                     58.91
 Date:                Sat, 21 Feb 2026   Prob (F-statistic):           5.91e-16
-Time:                        13:58:27   Log-Likelihood:                -104.31
+Time:                        14:07:32   Log-Likelihood:                -104.31
 No. Observations:                  51   AIC:                             216.6
 Df Residuals:                      47   BIC:                             224.3
 Df Model:                           3                                         
@@ -885,7 +885,7 @@ Dep. Variable:                    tip   R-squared:                       0.459
 Model:                            OLS   Adj. R-squared:                  0.450
 Method:                 Least Squares   F-statistic:                     50.67
 Date:                Sat, 21 Feb 2026   Prob (F-statistic):           7.52e-31
-Time:                        13:58:27   Log-Likelihood:                -350.03
+Time:                        14:07:32   Log-Likelihood:                -350.03
 No. Observations:                 244   AIC:                             710.1
 Df Residuals:                     239   BIC:                             727.5
 Df Model:                           4                                         
@@ -962,7 +962,6 @@ z = \frac{x - \mu}{\sigma}
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">crash_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">crashes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># standard</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">crash_standard</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># print the first 10 rows</span>
-<span class="n">crash_standard</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -985,9 +984,6 @@ z = \frac{x - \mu}{\sigma}
    0.06330968]
  [ 0.51693265 -0.62025945  0.17768604  0.64840171  0.7568227   1.54737129
    0.39391538]]
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x157da8450&gt;
 </pre></div>
 </div>
 </div>
@@ -1307,7 +1303,7 @@ principal components shown the first 10 rows:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6293a6127afd8480cfcaa6b6593cbf2843cf916bb1e6e25ea9060f676a8c5294.png" src="_images/6293a6127afd8480cfcaa6b6593cbf2843cf916bb1e6e25ea9060f676a8c5294.png" />
+<img alt="_images/2ff30af5a652694fcf8fb7f0a4aaf8c62e933bea2d8d47155cade5fe0f3eeb6e.png" src="_images/2ff30af5a652694fcf8fb7f0a4aaf8c62e933bea2d8d47155cade5fe0f3eeb6e.png" />
 </div>
 </div>
 </section>
