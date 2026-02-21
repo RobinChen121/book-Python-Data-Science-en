@@ -6,3 +6,7 @@ _build
 _build/
 *.nbconvert.ipynb
 objects/
+.DS_Store
+data-science/.DS_Store
+data-science/_build/.DS_Store
+data-science/_build/html/.DS_Store
