@@ -16,40 +16,32 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-<<<<<<< HEAD
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-=======
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -60,7 +52,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -78,7 +70,6 @@
     <link rel="prev" title="8. Python statistics" href="statistics1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -94,8 +85,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -103,6 +105,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,8 +113,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,8 +130,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,23 +159,22 @@
       
     
     
-<<<<<<< HEAD
-    <img src="_static/logo.png" class="logo__image only-light" alt="Python 数据科学 - Home"/>
-    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python 数据科学 - Home"/>
-=======
     <img src="_static/logo.png" class="logo__image only-light" alt="Python Data Science - Home"/>
     <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python Data Science - Home"/>`);</script>
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -207,14 +208,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -407,16 +403,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -444,8 +448,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.2. Standardize Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">9.3. Principle component analysis (PCA)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">9.4. Clustering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-neural-network">9.5. Artificial neural network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.6. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-neural-network-ann">9.5. Artificial neural network (ANN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-machine-svm">9.6. Support vector machine (SVM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.7. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -460,6 +465,20 @@
   <section class="tex2jax_ignore mathjax_ignore" id="python-machine-learning">
 <h1><span class="section-number">9. </span>Python machine learning<a class="headerlink" href="#python-machine-learning" title="Link to this heading">#</a></h1>
 <hr>
+<div class="admonition-goals-and-prerequisites admonition">
+<p class="admonition-title">Goals and prerequisites</p>
+<p><strong>Goals</strong>:</p>
+<ul class="simple">
+<li><p>Learn and use some common marchine learning methods for data analysis.</p></li>
+</ul>
+<p><strong>Prerequisites</strong>:</p>
+<ul class="simple">
+<li><p>Can install and import a Python library.</p></li>
+<li><p>Can use Pandas and Numpy to process data.</p></li>
+<li><p>Can draw a picture in Python.</p></li>
+<li><p>Can define a Python fuction.</p></li>
+</ul>
+</div>
 <p>In this chapter, we explain how to perform some machine leanrning methods using Python. Rather than delving into the theoretical and computational details of those methods, we aim to provide intuitive, visual explanations that are easy to understand.</p>
 <p>One key machine leanring library in Python is <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, which focuses on some classical machine lenarning methods such as linear regression, supoport vector machine, random forest, clustring, and so on.</p>
 <p>Install it using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>:</p>
@@ -475,7 +494,7 @@
 <p>For example, for a seaborn dataset “car_crashes”, which contains data on car crashes in different U.S. states.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
 <span class="n">crashes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  
@@ -595,10 +614,10 @@
 <td><p>Proportion of drivers involved in fatal crashes with no prior violations</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ins_premium</span></code></p></td>
-<td><p>Alternative column for insurance premium</p></td>
+<td><p>Average insurance paid per driver</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ins_losses</span></code></p></td>
-<td><p>Average insurance losses per driver (in US dollars)</p></td>
+<td><p>Average insurance losses per driver for the insurance company</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">abbrev</span></code></p></td>
 <td><p>Two-letter abbreviation of the US state</p></td>
@@ -617,11 +636,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
 </pre></div>
 </div>
-<<<<<<< HEAD
-<img alt="_images/9485577a87f12e3b5b210655e06576eb5acaca216a9b2cee5bf4af882bc7c0fe.png" src="_images/9485577a87f12e3b5b210655e06576eb5acaca216a9b2cee5bf4af882bc7c0fe.png" />
-=======
-<img alt="_images/490989b7ace1e77a198fb8e6fd5946c090d2a096bd073af5f36cf95874311604.png" src="_images/490989b7ace1e77a198fb8e6fd5946c090d2a096bd073af5f36cf95874311604.png" />
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
+<img alt="_images/89a2866ec3e9c3cbb97a12ae9e496ae6a5b7c054ed2ce0756858bc59b8a5b564.png" src="_images/89a2866ec3e9c3cbb97a12ae9e496ae6a5b7c054ed2ce0756858bc59b8a5b564.png" />
 </div>
 </div>
 <p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
@@ -638,7 +653,7 @@
 <p>In the following code, we build a linear model for the equation <a class="reference internal" href="#equation-eq-single-variable">(9.1)</a> using <code class="docutils literal notranslate"><span class="pre">statsmodels.formula.api</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
 
 <span class="c1"># the linear model is definded by strings the in the formula</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;total ~ speeding&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -654,13 +669,8 @@
 Dep. Variable:                  total   R-squared:                       0.374
 Model:                            OLS   Adj. R-squared:                  0.361
 Method:                 Least Squares   F-statistic:                     29.27
-<<<<<<< HEAD
-Date:                Wed, 11 Feb 2026   Prob (F-statistic):           1.87e-06
-Time:                        11:55:49   Log-Likelihood:                -132.15
-=======
-Date:                Thu, 05 Feb 2026   Prob (F-statistic):           1.87e-06
-Time:                        20:19:30   Log-Likelihood:                -132.15
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
+Date:                Sat, 21 Feb 2026   Prob (F-statistic):           1.87e-06
+Time:                        13:58:27   Log-Likelihood:                -132.15
 No. Observations:                  51   AIC:                             268.3
 Df Residuals:                      49   BIC:                             272.2
 Df Model:                           1                                         
@@ -690,7 +700,7 @@ Notes:
 <li><p>They are given in the column “coef”. From them, we can get the fitted model. For this example, it is:</p>
 <div class="math notranslate nohighlight">
 \[
-    \text{tip}=9.5459 +1.2493 \text{ total}\_\text{bill}
+    \text{total}=9.5459 +1.2493 \text{ total}\_\text{speed}
     \]</div>
 </li>
 </ul>
@@ -751,8 +761,8 @@ Notes:
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
 
@@ -770,13 +780,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     64.87
-<<<<<<< HEAD
-Date:                Wed, 11 Feb 2026   Prob (F-statistic):           2.27e-14
-Time:                        11:55:49   Log-Likelihood:                -110.71
-=======
-Date:                Thu, 05 Feb 2026   Prob (F-statistic):           2.27e-14
-Time:                        20:19:30   Log-Likelihood:                -110.71
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
+Date:                Sat, 21 Feb 2026   Prob (F-statistic):           2.27e-14
+Time:                        13:58:27   Log-Likelihood:                -110.71
 No. Observations:                  51   AIC:                             227.4
 Df Residuals:                      48   BIC:                             233.2
 Df Model:                           2                                         
@@ -807,8 +812,8 @@ Notes:
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
 
@@ -827,13 +832,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.790
 Model:                            OLS   Adj. R-squared:                  0.777
 Method:                 Least Squares   F-statistic:                     58.91
-<<<<<<< HEAD
-Date:                Wed, 11 Feb 2026   Prob (F-statistic):           5.91e-16
-Time:                        11:55:49   Log-Likelihood:                -104.31
-=======
-Date:                Thu, 05 Feb 2026   Prob (F-statistic):           5.91e-16
-Time:                        20:19:30   Log-Likelihood:                -104.31
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
+Date:                Sat, 21 Feb 2026   Prob (F-statistic):           5.91e-16
+Time:                        13:58:27   Log-Likelihood:                -104.31
 No. Observations:                  51   AIC:                             216.6
 Df Residuals:                      47   BIC:                             224.3
 Df Model:                           3                                         
@@ -865,8 +865,8 @@ Notes:
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
 
@@ -884,13 +884,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.459
 Model:                            OLS   Adj. R-squared:                  0.450
 Method:                 Least Squares   F-statistic:                     50.67
-<<<<<<< HEAD
-Date:                Wed, 11 Feb 2026   Prob (F-statistic):           7.52e-31
-Time:                        11:55:49   Log-Likelihood:                -350.03
-=======
-Date:                Thu, 05 Feb 2026   Prob (F-statistic):           7.52e-31
-Time:                        20:19:30   Log-Likelihood:                -350.03
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
+Date:                Sat, 21 Feb 2026   Prob (F-statistic):           7.52e-31
+Time:                        13:58:27   Log-Likelihood:                -350.03
 No. Observations:                 244   AIC:                             710.1
 Df Residuals:                     239   BIC:                             727.5
 Df Model:                           4                                         
@@ -960,13 +955,14 @@ z = \frac{x - \mu}{\sigma}
 <p>In python, it is easy to standardize the data with the method <code class="docutils literal notranslate"><span class="pre">fit_transform(</span> <span class="pre">)</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">crash_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">crashes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># standard</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">crash_standard</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># print the first 10 rows</span>
+<span class="n">crash_standard</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -991,6 +987,9 @@ z = \frac{x - \mu}{\sigma}
    0.39391538]]
 </pre></div>
 </div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x157da8450&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <ul class="simple">
@@ -1006,8 +1005,8 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
@@ -1053,7 +1052,7 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris&quot;</span><span class="p">)</span>
 <span class="n">data</span>
@@ -1183,8 +1182,8 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 <p>There are 4 variables in addition to the last categorical variable. We use the class <code class="docutils literal notranslate"><span class="pre">PCA</span></code> from the libraray <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> for reducing to 2 varaibles.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">iris_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -1226,601 +1225,255 @@ principal components shown the first 10 rows:
 </ul>
 </li>
 <li><p>Get the principal components (the values of the reduced variables) by the method <code class="docutils literal notranslate"><span class="pre">fit_transform(</span> <span class="pre">)</span></code>.</p></li>
+<li><p>The results of PCA may vary each time it is run unless you set the <code class="docutils literal notranslate"><span class="pre">random_state</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">PCA(</span> <span class="pre">)</span></code>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>PCA is generally used as an intermediate step in data analysis. It is often applied for dimensionality reduction before further tasks such as clustering, classification, or visualization.</p>
 </div>
-<p>主成分分析的求解一般采用特征根分解，即求解原始数据<strong>协方差矩阵或相关系数矩阵</strong>最大特征根对应的特征向量，即为第一主成分，第二主成分为第二大特征根对应的特征向量，其他的主成分可以依次得出。主成分贡献率为对应特征根占所有特征根加和的比例。</p>
-<p>采用 python 主成分分析时，常用的包为 sklearn，其他一些包也能做（例如 matplotlib.mlab.PCA）。需要注意的是</p>
-<ul class="simple">
-<li><p>最好对原始数据进行标准化</p></li>
-<li><p>sklearn 计算主成分时使用的是协方差矩阵，而不是相关系数矩阵</p></li>
-</ul>
-<p>sklearn 中的标准化函数有：</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p>函数</p></th>
-<th class="head text-left"><p>描述</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-left"><p>scale(X, axis=0, *)</p></td>
-<td class="text-left"><p>对数据 X 进行 z 标准化，参数 axis 调整对列或对行标准化</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>StandardScaler()</p></td>
-<td class="text-left"><p>z 标准化，列标准化</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>MinMaxScaler()</p></td>
-<td class="text-left"><p>最大最小标准化，列标准化</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>MaxAbsScaler()</p></td>
-<td class="text-left"><p>最大绝对值标准化，列标准化</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>… …</p></td>
-<td class="text-left"><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>举例，下面一个统计数据：</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>食品</p></th>
-<th class="head"><p>衣着</p></th>
-<th class="head"><p>居住</p></th>
-<th class="head"><p>家庭设备</p></th>
-<th class="head"><p>交通通讯</p></th>
-<th class="head"><p>文教娱乐</p></th>
-<th class="head"><p>医疗保健</p></th>
-<th class="head"><p>其他</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>北  京</p></td>
-<td><p>1736</p></td>
-<td><p>379</p></td>
-<td><p>854</p></td>
-<td><p>327</p></td>
-<td><p>615</p></td>
-<td><p>797</p></td>
-<td><p>504</p></td>
-<td><p>103</p></td>
-</tr>
-<tr class="row-odd"><td><p>天  津</p></td>
-<td><p>1171</p></td>
-<td><p>257</p></td>
-<td><p>614</p></td>
-<td><p>117</p></td>
-<td><p>328</p></td>
-<td><p>329</p></td>
-<td><p>179</p></td>
-<td><p>40</p></td>
-</tr>
-<tr class="row-even"><td><p>河  北</p></td>
-<td><p>888</p></td>
-<td><p>156</p></td>
-<td><p>399</p></td>
-<td><p>101</p></td>
-<td><p>222</p></td>
-<td><p>226</p></td>
-<td><p>135</p></td>
-<td><p>39</p></td>
-</tr>
-<tr class="row-odd"><td><p>山  西</p></td>
-<td><p>830</p></td>
-<td><p>202</p></td>
-<td><p>201</p></td>
-<td><p>69</p></td>
-<td><p>160</p></td>
-<td><p>280</p></td>
-<td><p>103</p></td>
-<td><p>33</p></td>
-</tr>
-<tr class="row-even"><td><p>内蒙古</p></td>
-<td><p>1054</p></td>
-<td><p>150</p></td>
-<td><p>335</p></td>
-<td><p>84</p></td>
-<td><p>293</p></td>
-<td><p>309</p></td>
-<td><p>176</p></td>
-<td><p>44</p></td>
-</tr>
-<tr class="row-odd"><td><p>辽  宁</p></td>
-<td><p>1127</p></td>
-<td><p>221</p></td>
-<td><p>378</p></td>
-<td><p>100</p></td>
-<td><p>301</p></td>
-<td><p>377</p></td>
-<td><p>234</p></td>
-<td><p>68</p></td>
-</tr>
-<tr class="row-even"><td><p>吉  林</p></td>
-<td><p>1003</p></td>
-<td><p>168</p></td>
-<td><p>257</p></td>
-<td><p>82</p></td>
-<td><p>285</p></td>
-<td><p>261</p></td>
-<td><p>194</p></td>
-<td><p>56</p></td>
-</tr>
-<tr class="row-odd"><td><p>黑龙江</p></td>
-<td><p>924</p></td>
-<td><p>184</p></td>
-<td><p>527</p></td>
-<td><p>74</p></td>
-<td><p>257</p></td>
-<td><p>277</p></td>
-<td><p>254</p></td>
-<td><p>49</p></td>
-</tr>
-<tr class="row-even"><td><p>上  海</p></td>
-<td><p>2684</p></td>
-<td><p>366</p></td>
-<td><p>1320</p></td>
-<td><p>458</p></td>
-<td><p>748</p></td>
-<td><p>937</p></td>
-<td><p>562</p></td>
-<td><p>204</p></td>
-</tr>
-<tr class="row-odd"><td><p>江  苏</p></td>
-<td><p>1569</p></td>
-<td><p>191</p></td>
-<td><p>512</p></td>
-<td><p>168</p></td>
-<td><p>364</p></td>
-<td><p>479</p></td>
-<td><p>199</p></td>
-<td><p>85</p></td>
-</tr>
-<tr class="row-even"><td><p>浙  江</p></td>
-<td><p>2061</p></td>
-<td><p>319</p></td>
-<td><p>914</p></td>
-<td><p>260</p></td>
-<td><p>618</p></td>
-<td><p>723</p></td>
-<td><p>416</p></td>
-<td><p>121</p></td>
-</tr>
-<tr class="row-odd"><td><p>安  徽</p></td>
-<td><p>1000</p></td>
-<td><p>117</p></td>
-<td><p>345</p></td>
-<td><p>106</p></td>
-<td><p>197</p></td>
-<td><p>257</p></td>
-<td><p>134</p></td>
-<td><p>41</p></td>
-</tr>
-<tr class="row-even"><td><p>福  建</p></td>
-<td><p>1518</p></td>
-<td><p>187</p></td>
-<td><p>457</p></td>
-<td><p>154</p></td>
-<td><p>366</p></td>
-<td><p>357</p></td>
-<td><p>154</p></td>
-<td><p>100</p></td>
-</tr>
-<tr class="row-odd"><td><p>江  西</p></td>
-<td><p>1221</p></td>
-<td><p>125</p></td>
-<td><p>326</p></td>
-<td><p>96</p></td>
-<td><p>230</p></td>
-<td><p>276</p></td>
-<td><p>155</p></td>
-<td><p>56</p></td>
-</tr>
-<tr class="row-even"><td><p>山  东</p></td>
-<td><p>1088</p></td>
-<td><p>160</p></td>
-<td><p>446</p></td>
-<td><p>137</p></td>
-<td><p>294</p></td>
-<td><p>377</p></td>
-<td><p>188</p></td>
-<td><p>46</p></td>
-</tr>
-<tr class="row-odd"><td><p>河  南</p></td>
-<td><p>859</p></td>
-<td><p>132</p></td>
-<td><p>318</p></td>
-<td><p>83</p></td>
-<td><p>160</p></td>
-<td><p>178</p></td>
-<td><p>123</p></td>
-<td><p>39</p></td>
-</tr>
-<tr class="row-even"><td><p>湖  北</p></td>
-<td><p>1192</p></td>
-<td><p>125</p></td>
-<td><p>310</p></td>
-<td><p>110</p></td>
-<td><p>223</p></td>
-<td><p>272</p></td>
-<td><p>135</p></td>
-<td><p>62</p></td>
-</tr>
-<tr class="row-odd"><td><p>湖  南</p></td>
-<td><p>1433</p></td>
-<td><p>128</p></td>
-<td><p>307</p></td>
-<td><p>114</p></td>
-<td><p>219</p></td>
-<td><p>329</p></td>
-<td><p>168</p></td>
-<td><p>58</p></td>
-</tr>
-<tr class="row-even"><td><p>广  东</p></td>
-<td><p>1789</p></td>
-<td><p>144</p></td>
-<td><p>530</p></td>
-<td><p>152</p></td>
-<td><p>412</p></td>
-<td><p>361</p></td>
-<td><p>204</p></td>
-<td><p>116</p></td>
-</tr>
-<tr class="row-odd"><td><p>广  西</p></td>
-<td><p>1187</p></td>
-<td><p>79</p></td>
-<td><p>380</p></td>
-<td><p>95</p></td>
-<td><p>214</p></td>
-<td><p>226</p></td>
-<td><p>123</p></td>
-<td><p>44</p></td>
-</tr>
-<tr class="row-even"><td><p>海  南</p></td>
-<td><p>1135</p></td>
-<td><p>66</p></td>
-<td><p>146</p></td>
-<td><p>92</p></td>
-<td><p>178</p></td>
-<td><p>199</p></td>
-<td><p>93</p></td>
-<td><p>60</p></td>
-</tr>
-<tr class="row-odd"><td><p>重  庆</p></td>
-<td><p>1130</p></td>
-<td><p>96</p></td>
-<td><p>231</p></td>
-<td><p>96</p></td>
-<td><p>163</p></td>
-<td><p>250</p></td>
-<td><p>143</p></td>
-<td><p>33</p></td>
-</tr>
-<tr class="row-even"><td><p>四  川</p></td>
-<td><p>1244</p></td>
-<td><p>116</p></td>
-<td><p>234</p></td>
-<td><p>102</p></td>
-<td><p>172</p></td>
-<td><p>225</p></td>
-<td><p>144</p></td>
-<td><p>36</p></td>
-</tr>
-<tr class="row-odd"><td><p>贵  州</p></td>
-<td><p>820</p></td>
-<td><p>80</p></td>
-<td><p>236</p></td>
-<td><p>62</p></td>
-<td><p>99</p></td>
-<td><p>161</p></td>
-<td><p>72</p></td>
-<td><p>24</p></td>
-</tr>
-<tr class="row-even"><td><p>云  南</p></td>
-<td><p>976</p></td>
-<td><p>80</p></td>
-<td><p>226</p></td>
-<td><p>67</p></td>
-<td><p>100</p></td>
-<td><p>183</p></td>
-<td><p>122</p></td>
-<td><p>35</p></td>
-</tr>
-<tr class="row-odd"><td><p>西  藏</p></td>
-<td><p>1185</p></td>
-<td><p>182</p></td>
-<td><p>84</p></td>
-<td><p>81</p></td>
-<td><p>79</p></td>
-<td><p>28</p></td>
-<td><p>44</p></td>
-<td><p>39</p></td>
-</tr>
-<tr class="row-even"><td><p>陕  西</p></td>
-<td><p>813</p></td>
-<td><p>124</p></td>
-<td><p>212</p></td>
-<td><p>84</p></td>
-<td><p>163</p></td>
-<td><p>297</p></td>
-<td><p>166</p></td>
-<td><p>38</p></td>
-</tr>
-<tr class="row-odd"><td><p>甘  肃</p></td>
-<td><p>859</p></td>
-<td><p>92</p></td>
-<td><p>241</p></td>
-<td><p>74</p></td>
-<td><p>155</p></td>
-<td><p>258</p></td>
-<td><p>114</p></td>
-<td><p>27</p></td>
-</tr>
-<tr class="row-even"><td><p>青  海</p></td>
-<td><p>893</p></td>
-<td><p>156</p></td>
-<td><p>329</p></td>
-<td><p>84</p></td>
-<td><p>208</p></td>
-<td><p>110</p></td>
-<td><p>152</p></td>
-<td><p>43</p></td>
-</tr>
-<tr class="row-odd"><td><p>宁  夏</p></td>
-<td><p>923</p></td>
-<td><p>143</p></td>
-<td><p>346</p></td>
-<td><p>77</p></td>
-<td><p>178</p></td>
-<td><p>178</p></td>
-<td><p>199</p></td>
-<td><p>51</p></td>
-</tr>
-<tr class="row-even"><td><p>新  疆</p></td>
-<td><p>804</p></td>
-<td><p>171</p></td>
-<td><p>333</p></td>
-<td><p>68</p></td>
-<td><p>183</p></td>
-<td><p>159</p></td>
-<td><p>169</p></td>
-<td><p>36</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>主成分分析的 Python 代码为：</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">scale</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># 下面前几行代码是为了运行 live code 而进行的设置，</span>
-<span class="c1"># 与本章的教学内容无关</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;/home/jovyan&quot;</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;data-science/&quot;</span><span class="p">)</span>
-
-<span class="c1"># 正文</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datas/data-pca.xlsx&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 读取数据</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">scale</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>  <span class="c1"># z标准化，标准化之后就自动根据协方差矩阵进行主成分分析了</span>
-<span class="c1"># data2 = np.corrcoef(np.transpose(data)) # 没有必要单独计算协方差阵或相关系数阵</span>
-<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 可以通过参数 n_components 调整主成分个数</span>
-<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;特征根：&quot;</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_</span><span class="p">)</span>  <span class="c1"># 输出特征根</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;主成分：&quot;</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">)</span>  <span class="c1"># 输出主成分</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>特征根： [7.32679152 0.46898546 0.16208403]
-
-主成分： [[ 0.34197826  0.32541509  0.36029958  0.36486138  0.3682146   0.36096996
-   0.35616496  0.34854195]
- [-0.54451489  0.61527353  0.11520953 -0.11674732  0.03494752  0.07480108
-   0.2943857  -0.4522824 ]
- [ 0.27960446  0.69192655 -0.19973533 -0.07235855 -0.02963776 -0.42452329
-  -0.39881297  0.24037227]]
-</pre></div>
-</div>
-</div>
-</div>
+<p>*The solution to principal component analysis (PCA) is generally obtained via eigenvalue decomposition. Specifically, one computes the eigenvectors corresponding to the largest eigenvalues of the covariance matrix or the correlation matrix of the original data. The eigenvector associated with the largest eigenvalue is the first principal component, the eigenvector associated with the second largest eigenvalue is the second principal component, and the remaining principal components are obtained in descending order accordingly. The proportion of variance explained (also called the contribution rate) of each principal component is defined as the ratio of its corresponding eigenvalue to the sum of all eigenvalues.</p>
 </section>
 <section id="clustering">
 <h2><span class="section-number">9.4. </span>Clustering<a class="headerlink" href="#clustering" title="Link to this heading">#</a></h2>
 <hr>
-<p>Kmeans 是一种动态聚类方法，其基本思想是：首先随机选取 K 个点作为初始凝聚点，按照距离最近原则划分为 K 类；然后重新计算 K 个类的重心作为新的凝聚点，再按照距离最近原则重新分类；重复这一过程，直到重心不再变化为止。</p>
-<p>对上面的例子，进行 Kmeans 聚类并画图的代码为：</p>
+<p>K-means is a dynamic clustering method. Its basic idea is as follows: first, randomly select K points as the initial centroids, and assign points to K clusters based on the nearest distance principle; then, recalculate the centroids of the K clusters as the new centroids, and reassign points according to the nearest distance principle; this process is repeated until the centroids no longer change.</p>
+<p>Now, we use K-means to cluster the iris data.</p>
+<ul class="simple">
+<li><p>Specify the number of clusters through the parameter <code class="docutils literal notranslate"><span class="pre">n_clusters</span></code> in <code class="docutils literal notranslate"><span class="pre">KMeans(</span> <span class="pre">)</span></code>.</p></li>
+<li><p>Get the clustering result by the method <code class="docutils literal notranslate"><span class="pre">fit_predict(</span> <span class="pre">)</span></code>.</p></li>
+<li><p>Get the clusgtering centers by the attribute <code class="docutils literal notranslate"><span class="pre">cluster_centers_</span></code>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both sklearn and seaborn provide datasets for data analysis, but their formats differ. Seaborn datasets are returned as Pandas DataFrames, while scikit-learn datasets are provided as objects with attributes.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">mode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>  <span class="c1"># 忽略掉使用默写函数的一些警告信息</span>
+<span class="c1"># Load Iris dataset and standardize</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="c1"># standardize</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="c1"># visit the data values by visiting the data attribute</span>
+<span class="n">y_true</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>  <span class="c1"># Original species labels</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="c1"># Apply K-means clustering</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="c1"># 下面前几行代码是为了运行 live code 而进行的设置，</span>
-<span class="c1"># 与本章的教学内容无关</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># * Map K-means labels to match true labels (for consistent colors)</span>
+<span class="n">labels_mapped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+    <span class="c1"># mode computation</span>
+    <span class="c1"># set the predicted label corresponding to the true label</span>
+    <span class="n">labels_mapped</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">mode</span><span class="p">(</span><span class="n">y_true</span><span class="p">[</span><span class="n">mask</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;/home/jovyan&quot;</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;data-science/&quot;</span><span class="p">)</span>
+<span class="c1"># Reduce to 2D for visualization</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X_2d</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">centers_2d</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">)</span>
 
-<span class="c1"># 正文</span>
-<span class="c1"># 将上述数据放到 excel 里，并用 pandas 读取</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datas/data-pca.xlsx&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Plot side by side: K-means vs True labels with consistent colors</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
-<span class="n">scale_values</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>  <span class="c1"># 数据表转化预处理</span>
+<span class="c1"># Left: K-means clusters (mapped)</span>
+<span class="c1"># &#39;viridis&#39; is the name of a predefined colormap in Matplotlib.</span>
+<span class="c1"># It defines a gradient of colors that Matplotlib uses to map numeric values to colors.</span>
+<span class="c1"># &#39;viridis&#39; specifically is a smooth gradient from dark purple → blue → green → yellow.</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_2d</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">labels_mapped</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">centers_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">centers_2d</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Centroids&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;K-means Clustering (Colors Matched)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;PCA Component 1&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PCA Component 2&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
-<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">scale_values</span><span class="p">)</span>  <span class="c1"># 分为 3 类, 参数 n_init= &#39;auto&#39; 设置初始聚类的运行次数</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>  <span class="c1"># 输出判别结果列表</span>
+<span class="c1"># Right: Original species</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_2d</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_2d</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_true</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Original Species&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;PCA Component 1&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;PCA Component 2&quot;</span><span class="p">)</span>
 
-<span class="c1"># 具体输出判别结果</span>
-<span class="n">cluster_1</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">cluster_2</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">cluster_3</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">cluster_1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">cluster_2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">cluster_3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;类别1&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cluster_1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;类别2&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cluster_2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;类别3&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cluster_3</span><span class="p">)</span>
-
-<span class="c1"># draw pictures by tsne, or pca, 利用主成分降为 2 维，并画图显示分类结果</span>
-<span class="c1"># from sklearn.manifold import TSNE</span>
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">tsne</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">scale_values</span><span class="p">)</span>  <span class="c1"># tsne</span>
-<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tsne</span><span class="p">)</span>
-<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
-
-<span class="n">df_1</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">df_2</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">df_3</span> <span class="o">=</span> <span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
-
-<span class="c1"># 画图</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df_1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;bo&quot;</span><span class="p">,</span> <span class="n">df_2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df_2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;r*&quot;</span><span class="p">,</span> <span class="n">df_3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">df_3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;gD&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<<<<<<< HEAD
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 0 0 2 2 2 2 1 2 1 0 2 0 2 0 0 2 2 0 0 0 0 0 0 0 0 0 0 0 0]
-类别1
-[&#39;河  北&#39;, &#39;山  西&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
-类别2
-[&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
-类别3
-[&#39;天  津&#39;, &#39;内蒙古&#39;, &#39;辽  宁&#39;, &#39;吉  林&#39;, &#39;黑龙江&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;湖  南&#39;, &#39;广  东&#39;]
-</pre></div>
-</div>
-<img alt="_images/9cb2030cfcb30f296cdcf858ecf6ab05b2eb69ea91bd80205b2c996ccb50f849.png" src="_images/9cb2030cfcb30f296cdcf858ecf6ab05b2eb69ea91bd80205b2c996ccb50f849.png" />
-=======
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 0 0 0 2 0 0 1 2 1 0 2 0 2 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0]
-类别1
-[&#39;河  北&#39;, &#39;山  西&#39;, &#39;内蒙古&#39;, &#39;吉  林&#39;, &#39;黑龙江&#39;, &#39;安  徽&#39;, &#39;江  西&#39;, &#39;河  南&#39;, &#39;湖  北&#39;, &#39;湖  南&#39;, &#39;广  西&#39;, &#39;海  南&#39;, &#39;重  庆&#39;, &#39;四  川&#39;, &#39;贵  州&#39;, &#39;云  南&#39;, &#39;西  藏&#39;, &#39;陕  西&#39;, &#39;甘  肃&#39;, &#39;青  海&#39;, &#39;宁  夏&#39;, &#39;新  疆&#39;]
-类别2
-[&#39;北  京&#39;, &#39;上  海&#39;, &#39;浙  江&#39;]
-类别3
-[&#39;天  津&#39;, &#39;辽  宁&#39;, &#39;江  苏&#39;, &#39;福  建&#39;, &#39;山  东&#39;, &#39;广  东&#39;]
-</pre></div>
-</div>
-<img alt="_images/3996e9c55c21730c534f3555f8a3b6c1f91af498506a58ff0853b3fd1bcbb6d3.png" src="_images/3996e9c55c21730c534f3555f8a3b6c1f91af498506a58ff0853b3fd1bcbb6d3.png" />
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
+<img alt="_images/6293a6127afd8480cfcaa6b6593cbf2843cf916bb1e6e25ea9060f676a8c5294.png" src="_images/6293a6127afd8480cfcaa6b6593cbf2843cf916bb1e6e25ea9060f676a8c5294.png" />
 </div>
 </div>
 </section>
-<section id="artificial-neural-network">
-<h2><span class="section-number">9.5. </span>Artificial neural network<a class="headerlink" href="#artificial-neural-network" title="Link to this heading">#</a></h2>
+<section id="artificial-neural-network-ann">
+<h2><span class="section-number">9.5. </span>Artificial neural network (ANN)<a class="headerlink" href="#artificial-neural-network-ann" title="Link to this heading">#</a></h2>
 <hr>
-<p>神经网络的目标是：找到一个能把一组输入最好地映射到其正确输出的函数。例如一个简单的分类任务，其中输入是动物的图像，正确的输出将是动物的名称。或者根据历史需求数据，预测未来一期的需求。神经网络的思想类似回归分析中经常用到的拟合，都用到了最小二乘的思想：数学意义上的决策目标是：选取一些参数（神经网络中每个输入的权重），使得拟合的输出与期望输出的误差平方和最小。</p>
-<p>下面是一个神经网络示意图（输入层有一些神经元，隐含层有一些神经元，输出层有一些神经元），输入信息经过正向传播到输出，计算实际输出与期望输出的误差后，在反向传播误差；重复这个过程，在传播过程中，不断减少误差，直到误差减少到一定程度终止。</p>
-<p><img alt="ann.png" src="_images/ann.png" /></p>
-<p>用 BP 神经网络预测 sklearn 包中自带的乳腺癌数据例子：</p>
+<p>Artificial neural network tries to imiate the function of a human brain.</p>
+<p>How a human brain work: the brain continuously sends and receives electrical and chemical signals throughout the body. Some signals make us feel tired, while others allow us to perceive pain. To accomplish this complex communication, the central nervous system depends on billions of neurons (nerve cells).</p>
+<p>Below is picture about the stucture of a neuron.</p>
+<p><img alt="bnn" src="_images/biology_neuro.png" /></p>
+<p>Neurons typically receive signals through their dendrites and transmit them via their axons to the dendrites of other neurons. They are electrically excitable: when the membrane voltage changes sufficiently within a short time, the neuron generates an all-or-none electrochemical pulse known as an action potential. This pulse propagates rapidly throughout the body.</p>
+<p><img alt="ann1" src="_images/artificial_neuro.png" /></p>
+<p>The neural network approach is inspired by the biological structure of human neurons. Input signals are first combined through weighted sums (weights <span class="math notranslate nohighlight">\(w\)</span> and biases <span class="math notranslate nohighlight">\(b\)</span>) and then passed through an activation function, which determines the amount of information transmitted. The resulting output signals are finally sent to the next neuron.</p>
+<p>The computational principle of artificial neural network algorithms is as follows: input information is propagated forward to produce an output, and the error between the actual output and the expected output is calculated. The network parameters (weights <span class="math notranslate nohighlight">\(w\)</span> and biases <span class="math notranslate nohighlight">\(b\)</span>) are then updated through backpropagation. This process is repeated iteratively, gradually reducing the error during propagation, until it falls below a predefined threshold.</p>
+<p>The following is an artificial neural network of two hidder layers and there are 3 neurons in the input, output and each hidder layers.</p>
+<p><img alt="ann2" src="_images/ann.png" /></p>
+<p>General process for using ANN:</p>
+<ul class="simple">
+<li><p>load data;</p></li>
+<li><p>split the data into training and testing sets;</p></li>
+<li><p>standaridize the data;</p></li>
+<li><p>build the network model and train;</p></li>
+<li><p>used the trained network to predict for the test set;</p></li>
+<li><p>report the accuracy.</p></li>
+</ul>
+<p>We use the artificial neuron network from sklearn to clasify the iris data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 测试一下癌症数据</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neural_network</span><span class="w"> </span><span class="kn">import</span> <span class="n">MLPClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
 
-<span class="n">cancer</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">()</span>
-<span class="n">cancer_data</span> <span class="o">=</span> <span class="n">cancer</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
-<span class="n">cancer_target</span> <span class="o">=</span> <span class="n">cancer</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
+<span class="c1"># Load the Iris dataset</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 
-<span class="c1"># 将数据集划分为训练集，测试集</span>
-<span class="p">(</span>
-    <span class="n">cancer_data_train</span><span class="p">,</span>
-    <span class="n">cancer_data_test</span><span class="p">,</span>
-    <span class="n">cancer_target_train</span><span class="p">,</span>
-    <span class="n">cancer_target_test</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">cancer_data</span><span class="p">,</span> <span class="n">cancer_target</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="c1"># Split data into training and testing sets</span>
+<span class="c1"># stratify=y ensures that the training and test sets maintain the same class proportions as the original dataset</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
 
-<span class="c1"># 数据标准化</span>
-<span class="n">stdScaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cancer_data_train</span><span class="p">)</span>
-<span class="n">cancer_trainStd</span> <span class="o">=</span> <span class="n">stdScaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">cancer_data_train</span><span class="p">)</span>
-<span class="n">cancer_testStd</span> <span class="o">=</span> <span class="n">stdScaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">cancer_data_test</span><span class="p">)</span>
+<span class="c1"># Standardize features</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="c1"># 建立 BP 模型</span>
-<span class="n">bpnn</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span>
-    <span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>  <span class="c1"># 神经元隐含层的大小</span>
-    <span class="n">max_iter</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-    <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;adam&quot;</span><span class="p">,</span>
-    <span class="n">random_state</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">bpnn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">cancer_trainStd</span><span class="p">,</span> <span class="n">cancer_target_train</span><span class="p">)</span>
+<span class="c1"># Create and train the artificial neural network</span>
+<span class="c1"># both hidden layers have 10 neurons</span>
+<span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-<span class="c1"># 预测</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">bpnn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">cancer_testStd</span><span class="p">)</span>  <span class="c1"># 返回预测结果</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;神经网络预测结果评价报告：</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">cancer_target_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="c1"># Predict on the test set</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">mlp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+
+<span class="c1"># Report accuracy</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test set accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>神经网络预测结果评价报告：
-               precision    recall  f1-score   support
-
-<<<<<<< HEAD
-           0       0.95      0.92      0.94        39
-           1       0.96      0.97      0.97        75
-
-    accuracy                           0.96       114
-   macro avg       0.95      0.95      0.95       114
-weighted avg       0.96      0.96      0.96       114
-=======
-           0       0.97      0.94      0.96        34
-           1       0.98      0.99      0.98        80
-
-    accuracy                           0.97       114
-   macro avg       0.97      0.96      0.97       114
-weighted avg       0.97      0.97      0.97       114
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test set accuracy: 96.67%
 </pre></div>
 </div>
 </div>
 </div>
-<p>其他常见的机器学习方法，例如随机森林，支持向量机，梯度提升等，都可以在<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库中找到相应的函数。</p>
+<p>There are more complex and powerful ANN structures, such as:</p>
+<ul class="simple">
+<li><p>Recurrent Neural Networks (RNNs): designed for sequential data like time series, text, or speech; process input step by step, keeping memory of previous steps. Variants:</p>
+<ul>
+<li><p>LSTM (Long Short-Term Memory)</p></li>
+<li><p>GRU (Gated Recurrent Unit)</p></li>
+</ul>
+</li>
+<li><p>Convolutional Neural Networks (CNNs): designed for image, video, or spatial data; use convolutional layers to automatically extract features. Examples:</p>
+<ul>
+<li><p>LeNet, AlexNet, VGG, ResNet</p></li>
+</ul>
+</li>
+<li><p>Transformers: modern state-of-the-art for natural language processing (NLP), sequences, and even images; use self-attention mechanisms to capture long-range dependencies. Examples:</p>
+<ul>
+<li><p>BERT, GPT, Vision Transformer</p></li>
+</ul>
+</li>
+<li><p>Generative Adversarial Networks (GANs): consist of two networks (generator and discriminator) competing; used for image generation, style transfer, and games.</p></li>
+<li><p>Graph Neural Networks (GNNs): work with graph-structured data, like social networks or molecular structures. Examples:</p>
+<ul>
+<li><p>GCN, GraphSAGE</p></li>
+</ul>
+</li>
+</ul>
+<p>Those complex networks are usually built using frameworks like <code class="docutils literal notranslate"><span class="pre">PyTorch</span></code> or <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code>.</p>
+</section>
+<section id="support-vector-machine-svm">
+<h2><span class="section-number">9.6. </span>Support vector machine (SVM)<a class="headerlink" href="#support-vector-machine-svm" title="Link to this heading">#</a></h2>
+<hr><p>Support vector machines are supervised machine learning algorithms that analyze data for classification and regression analysis.</p>
+<p>The geometric idea behind SVM is to find a decision boundary (which is a line in two dimensional space) that separates classes with the maximum possible margin. The data points that lie closest to this boundary are called support vectors.</p>
+<p><img alt="svm1" src="_images/svm1.png" /></p>
+<p>The following codes apply SVM to classify the Iris dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># Load the Iris dataset</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>    <span class="c1"># Features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>  <span class="c1"># Labels</span>
+
+<span class="c1"># Split data into training and test sets</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span>  <span class="c1"># stratify ensures class balance</span>
+<span class="p">)</span>
+
+<span class="c1"># Standardize features (important for SVM)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>  <span class="c1"># Fit on training data</span>
+<span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>        <span class="c1"># Apply same transformation to test data</span>
+
+<span class="c1"># Create the SVM classifier (RBF kernel)</span>
+<span class="n">svm_clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">)</span>
+<span class="n">svm_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  <span class="c1"># Train the SVM on scaled training data</span>
+
+<span class="c1"># Make predictions on the test set</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">svm_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+
+<span class="c1"># Evaluate the model</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test set accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test set accuracy: 96.67%
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="exercises">
-<h2><span class="section-number">9.6. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.7. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <hr><div class="exercise admonition" id="regression">
 
 <p class="admonition-title"><span class="caption-number">Exercise 9.1 </span></p>
 <section id="exercise-content">
-<p>使用python 中的<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>库或<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库，编程实现《统计学》或《计量经济学》课程上的一些数据分析习题。</p>
+<p>Use the library <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> to do some linear regressions for the ‘tips’ dataset in the seaborn library.</p>
 </section>
 </div>
 <script src="https://giscus.app/client.js"
-        data-repo="robinchen121/book-Python-Data-Science"
-        data-repo-id="R_kgDOKFdyOw"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOKFdyO84CgWHi"
+        data-repo="RobinChen121/book-Python-Data-Science-en"
+        data-repo-id="R_kgDOOt-49A"
+        data-category="General"
+        data-category-id="DIC_kwDOOt-49M4C2R1O"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
-        data-theme="light"
+        data-theme="preferred_color_scheme"
         data-lang="en"
         crossorigin="anonymous"
         async>
@@ -1882,8 +1535,7 @@ weighted avg       0.97      0.97      0.97       114
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1896,8 +1548,9 @@ weighted avg       0.97      0.97      0.97       114
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.2. Standardize Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">9.3. Principle component analysis (PCA)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">9.4. Clustering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-neural-network">9.5. Artificial neural network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.6. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-neural-network-ann">9.5. Artificial neural network (ANN)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support-vector-machine-svm">9.6. Support vector machine (SVM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">9.7. Exercises</a></li>
 </ul>
   </nav></div>
 
@@ -1946,8 +1599,8 @@ By Zhen Chen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

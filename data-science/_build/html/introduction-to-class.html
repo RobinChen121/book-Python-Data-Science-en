@@ -8,11 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<<<<<<< HEAD
-    <title>10. Python Object Oriented Programming &#8212; Python 数据科学</title>
-=======
     <title>10. Python Object Oriented Programming &#8212; Python Data Science</title>
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
   
   
   
@@ -32,16 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-=======
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -61,7 +52,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -452,11 +443,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-object-attribute-method">10.1. Class, Object, Attribute, Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-class-init">10.2. Initialize a class <code class="docutils literal notranslate"><span class="pre">__init__</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-inheritance-and-method-overriding">10.3. Class Inheritance and Method Overriding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-or-magic-methods-of-a-class">10.4. Special (or “magic”) methods of a class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">10.5. 类的特殊属性 __doc__、__name__ 等</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">10.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.7. 类方法与静态方法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
             </nav>
@@ -498,21 +489,13 @@ document.write(`
 <br /><p>In the following example, we define an Employee class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<<<<<<< HEAD
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Employee</span><span class="p">:</span>
-=======
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
     <span class="c1"># Class attributes</span>
     <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business school&quot;</span>  <span class="c1"># Regular attribute</span>
     <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># Variables prefixed with double underscores are private class attributes</span>
 
     <span class="c1"># Class methods</span>
-<<<<<<< HEAD
     <span class="k">def</span><span class="w"> </span><span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-=======
-    <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">say_hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -532,8 +515,11 @@ My department is business school.
 </div>
 </div>
 </div>
-<p>上面的例子中，我们定义了一个 Employee 类，有两个属性：一个普通属性和一个私有属性。通过实例化一个类，我们就可以通过实例访问类里面的一些属性和方法。</p>
-<p>前缀双下划线命名的变量为类的私有属性，<strong>不能在类外部直接访问</strong>，但可以在类里面定义一个访问私有属性的方法，然后调用方法进行访问。</p>
+<p>In the example above, we defined an <code class="docutils literal notranslate"><span class="pre">Employee</span></code> class with two attributes: a regular attribute and a private attribute. They can both have default values inside the defintion. By instantiating the class, we can create an object and access some of the attributes and methods defined in the class through the instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Variables prefixed with double underscores (<code class="docutils literal notranslate"><span class="pre">__</span></code>) are treated as private attributes of a class and cannot be accessed directly from outside the class. However, we can define a method within the class to access the private attribute and then retrieve its value by calling that method.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;age is&quot;</span><span class="p">,</span> <span class="n">john</span><span class="o">.</span><span class="n">get_age</span><span class="p">())</span>
@@ -546,35 +532,49 @@ My department is business school.
 </div>
 </div>
 </div>
-<p>如果直接在对象 john 访问私有属性 __age (例如 print(john.__age))，程序会报错。</p>
+<p>If you try to directly access the private attribute __age from the object john (for example below), the program will raise an error.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">__age</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>前缀双下划线命名的变量或函数为类的私有属性或方法，不能在类外部直接访问。</p></li>
-<li><p>前缀单下划线命名的变量或函数为类的守保护属性或方法，可以在类外部直接访问，但不推荐访问。</p></li>
+<li><p>Variables or functions prefixed with double underscores (<code class="docutils literal notranslate"><span class="pre">__</span></code>) are considered private attributes or methods of a class and cannot be accessed directly from outside the class.</p></li>
+<li><p>Variables or functions prefixed with a single underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>) are considered protected attributes or methods of a class. They can be accessed from outside the class, but doing so is not recommended.</p></li>
 </ul>
+</div>
+<p>In Python, you can dynamically add attributes to classes or instances, which means you can assign a value to an attribute that was not originally defined in the class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">john</span><span class="o">.</span><span class="n">_weight</span> <span class="o">=</span> <span class="mi">70</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">john</span><span class="o">.</span><span class="n">_weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="initialize-a-class-init">
 <h2><span class="section-number">10.2. </span>Initialize a class <code class="docutils literal notranslate"><span class="pre">__init__</span></code><a class="headerlink" href="#initialize-a-class-init" title="Link to this heading">#</a></h2>
-<hr><p>类有一个名为 __init__() 的特殊方法，该方法在类实例化时会自动调用，进行对象的初始化。例如：</p>
+<hr><p>A class has a special method called <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> that is automatically invoked when an instance of the class is created, and is used to initialize the object. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Employee</span><span class="p">:</span>
-    <span class="c1"># 类的属性</span>
-    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business school&quot;</span>  <span class="c1"># 普通属性</span>
-    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># 前缀双下划线命名的变量为类的私有属性</span>
+    <span class="c1"># Class attributes</span>
+    <span class="n">department</span> <span class="o">=</span> <span class="s2">&quot;business school&quot;</span>  <span class="c1"># Regular attribute</span>
+    <span class="n">__age</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># Variables with double underscores are private class attributes</span>
 
-    <span class="c1"># 类的初始化方法</span>
+    <span class="c1"># Class initializer</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">department</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__age</span> <span class="o">=</span> <span class="n">age</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">department</span> <span class="o">=</span> <span class="n">department</span>
 
-    <span class="c1"># 类的方法</span>
+    <span class="c1"># Class methods</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span>
 
@@ -582,9 +582,9 @@ My department is business school.
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, everyone! My name is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
 
-<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;engineering school&quot;</span><span class="p">)</span>  <span class="c1"># 实例化一个类，自动调用  __init__(）初始化</span>
-<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>  <span class="c1"># 访问类里的方法</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My department is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span>  <span class="c1"># 访问类里的属性</span>
+<span class="n">john</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;engineering school&quot;</span><span class="p">)</span>  <span class="c1"># Instantiate the class; __init__() is called automatically</span>
+<span class="n">john</span><span class="o">.</span><span class="n">say_hello</span><span class="p">()</span>  <span class="c1"># Call a method of the class</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My department is </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">john</span><span class="o">.</span><span class="n">department</span><span class="p">)</span>  <span class="c1"># Access an attribute of the class</span>
 </pre></div>
 </div>
 </div>
@@ -595,14 +595,14 @@ My department is engineering school.
 </div>
 </div>
 </div>
-<p>上面的例子中，__init__ 方法初始化了类的多个属性，可以包括__init__ 方法前面未被类声明的属性。而已经声明的属性值被__init__ 方法中的参数值覆盖。</p>
+<p>In the example above, the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method initializes multiple attributes of the class, and any default attribute values are overwritten by the values passed as parameters to the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>类的方法与普通函数有一个显著的区别，它们的第一个参数总是 self，self 代表的是类的实例。</p>
+<p>A key difference between class methods and regular functions is that the first parameter of class methods is always <code class="docutils literal notranslate"><span class="pre">self</span></code>, which represents the instance of the class.</p>
 </div>
 </section>
-<section id="id1">
-<h2><span class="section-number">10.3. </span>类的继承与方法重写<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="class-inheritance-and-method-overriding">
+<h2><span class="section-number">10.3. </span>Class Inheritance and Method Overriding<a class="headerlink" href="#class-inheritance-and-method-overriding" title="Link to this heading">#</a></h2>
 <hr><p>Python 支持类的继承，即一个类可以继承另一个类的所有属性和方法，还可以添加新的属性，新的方法或者重写另一个类的方法。</p>
 <p>例如，我们可以添加一个类 NewEmployee，继承 Employ 类。</p>
 <div class="cell docutils container">
@@ -648,7 +648,7 @@ I have passed probation.
 </div>
 </div>
 </div>
-<p>上面的例子中，使用了<code class="docutils literal notranslate"><span class="pre">super()</span></code>调用了父类的 __init__ 与 get_age 方法，并重写父类的 say_hello 方法。</p>
+<p>In the above example, <code class="docutils literal notranslate"><span class="pre">super()</span></code> is used to call the parent class’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and <code class="docutils literal notranslate"><span class="pre">get_age</span></code> methods, and the parent class’s <code class="docutils literal notranslate"><span class="pre">say_hello</span></code> method is overridden.</p>
 <p>Python 同样有支持多继承形式，即一个子类可以继承多个父类，将多个类的名称放入子类的小括号里面即可。例如，我们定义个 NewAcademicEmpolyee 类，同时继承了类 Employee 与 NewEmployee。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -796,11 +796,7 @@ Bob, 30 years old
 </div>
 </div>
 <div class="cell_output docutils container">
-<<<<<<< HEAD
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x107bfb500&gt;
-=======
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x000001DD288F9760&gt;
->>>>>>> 3a9490b560da2c97fcbc529361df5bde18bb96c4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x1054b56a0&gt;
 &lt;class &#39;__main__.Dog&#39;&gt;
 </pre></div>
 </div>
@@ -1044,8 +1040,8 @@ male
 </div>
 </div>
 </section>
-<section id="id2">
-<h2><span class="section-number">10.7. </span>类方法与静态方法<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2><span class="section-number">10.7. </span>类方法与静态方法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <hr><p>上面的例子中，类中方法的第一个参数总是 self，这类方法为<code class="docutils literal notranslate"><span class="pre">普通方法</span></code>，只能被对象调用。</p>
 <p>除了普通方法外，还有<code class="docutils literal notranslate"><span class="pre">类方法</span></code>与<code class="docutils literal notranslate"><span class="pre">静态方法</span></code>。</p>
 <ul class="simple">
@@ -1122,32 +1118,20 @@ male
 </div>
 <p>可以看出，dataclass 与普通类的一个区别是，必须在定义中声明属性的数据类型，但是显著减少了代码量。</p>
 <script src="https://giscus.app/client.js"
-        data-repo="robinchen121/book-Python-Data-Science"
-        data-repo-id="R_kgDOKFdyOw"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOKFdyO84CgWHi"
+        data-repo="RobinChen121/book-Python-Data-Science-en"
+        data-repo-id="R_kgDOOt-49A"
+        data-category="General"
+        data-category-id="DIC_kwDOOt-49M4C2R1O"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="bottom"
-        data-theme="light"
+        data-theme="preferred_color_scheme"
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script><!-- Toogle google translation -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'zh-CN',
-                  includedLanguages: 'en,zh-CN,zh-TW,ja,ko,de,ru,fr,es,it,pt,hi,ar,fa',
-layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-      }
-</script>
-<script type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
-<br></section>
+</script></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1207,11 +1191,11 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-object-attribute-method">10.1. Class, Object, Attribute, Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-class-init">10.2. Initialize a class <code class="docutils literal notranslate"><span class="pre">__init__</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.3. 类的继承与方法重写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-inheritance-and-method-overriding">10.3. Class Inheritance and Method Overriding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-or-magic-methods-of-a-class">10.4. Special (or “magic”) methods of a class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doc-name">10.5. 类的特殊属性 __doc__、__name__ 等</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setattr-getattr">10.6. 类属性的相关方法<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.7. 类方法与静态方法</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
   </nav></div>
