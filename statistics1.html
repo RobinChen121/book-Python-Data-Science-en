@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
@@ -1106,7 +1106,7 @@ document.write(`
 </div>
 <p>To compute the mean, we can use the method <code class="docutils literal notranslate"><span class="pre">mean()</span></code> from <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>.</p>
 <ul class="simple">
-<li><p>The method <code class="docutils literal notranslate"><span class="pre">numpy</span></code> in <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>can computer the average value of</p></li>
+<li><p>The method <code class="docutils literal notranslate"><span class="pre">mean</span></code> in <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>can computer the average value of an array such as a list, Numpy’s ndarray or Pandas’s series.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1184,7 +1184,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/7d798400c95727a6e17b23dcb329a04048bfb04c8959d6007eeaea4c1d29871d.png" src="_images/7d798400c95727a6e17b23dcb329a04048bfb04c8959d6007eeaea4c1d29871d.png" />
+<img alt="_images/93db38ace060bbfeb6e40c8b67f0e6f3df2f3e29168a4e2794e39fdfd5ed10d9.png" src="_images/93db38ace060bbfeb6e40c8b67f0e6f3df2f3e29168a4e2794e39fdfd5ed10d9.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays bars of approximately equal height, resulting in a <strong>flat</strong> or level appearance.</p>
@@ -1208,7 +1208,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/87e639cd0cbe59ac39bb81983b11bdac8520f3bdeedee67fc0f98eaec0c99333.png" src="_images/87e639cd0cbe59ac39bb81983b11bdac8520f3bdeedee67fc0f98eaec0c99333.png" />
+<img alt="_images/ac475721638cfddbaacfee0aea52ffaf31d955fec66409d464d1c5567b691d93.png" src="_images/ac475721638cfddbaacfee0aea52ffaf31d955fec66409d464d1c5567b691d93.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays a <strong>bell</strong> shape.</p>
@@ -1237,9 +1237,10 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/22d71523ff06160775564c9790786c1bb2fafa3f25c5d27387f28bfe29051c51.png" src="_images/22d71523ff06160775564c9790786c1bb2fafa3f25c5d27387f28bfe29051c51.png" />
+<img alt="_images/6118d514f943ddd1f0d2947f43860083ff81cfc276c2fdd67ae4e55ca4faed87.png" src="_images/6118d514f943ddd1f0d2947f43860083ff81cfc276c2fdd67ae4e55ca4faed87.png" />
 </div>
 </div>
+<p>If the data is stored in a Pandas DataFrame, it is very convenient to compute the correlation between two columns.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tips</span><span class="p">[</span><span class="s1">&#39;total_bill&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">tips</span><span class="p">[</span><span class="s1">&#39;tip&#39;</span><span class="p">])</span> <span class="c1"># compute the Pearson correlation</span>
@@ -1252,6 +1253,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Another way is to use</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Pearson</span> <span class="pre">Correlation</span></code> is <strong>most common</strong> of all the correlation measures.</p></li>
 <li><p>`Pearson Correlation is suitable when variables are <strong>normally distributed and linearly related</strong>.</p></li>
@@ -1276,7 +1278,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;size&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/b07dcbc00e53394083d03130c3bb52f83477cc169ebc8bd201c9a223240007d4.png" src="_images/b07dcbc00e53394083d03130c3bb52f83477cc169ebc8bd201c9a223240007d4.png" />
+<img alt="_images/606754b3e28c9aff784851ce44821a4297d59960315ae57fe69d3909abe462d9.png" src="_images/606754b3e28c9aff784851ce44821a4297d59960315ae57fe69d3909abe462d9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1307,7 +1309,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/7fe43ecc08bdbb9008a709a59e6843a36583f4aaf9cdbdce042b3b06c70241b8.png" src="_images/7fe43ecc08bdbb9008a709a59e6843a36583f4aaf9cdbdce042b3b06c70241b8.png" />
+<img alt="_images/2e5b87a18cae93dd255992461f6606e4233e7f29c2a2ee62bd91377aa3660754.png" src="_images/2e5b87a18cae93dd255992461f6606e4233e7f29c2a2ee62bd91377aa3660754.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2877,16 +2879,56 @@ Value  0.999754  0.999631  0.011327  41.833862  119.613294
 <li><p>Expert review (at least three subject matter experts assess the relevance of each item).</p></li>
 <li><p>Pilot study (feedback from a small sample of respondents is used to revise unclear wording).</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">70</span><span class="p">]</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;average is </span><span class="si">{</span><span class="n">mean</span><span class="si">:</span><span class="s1"> .2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;variance is </span><span class="si">{</span><span class="n">var</span><span class="si">:</span><span class="s1"> .2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average is  51.15
+variance is  841.51
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
 <section id="exercises">
 <h2><span class="section-number">8.7. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
-<hr><div class="exercise admonition" id="statistic">
+<hr><div class="exercise admonition" id="mean-var">
 
 <p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
 <section id="exercise-content">
-<p>使用python 中的<code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>库或<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>库，编程实现《统计学》或《计量经济学》课程上的一些数据分析习题。</p>
+<p>Caculute the average and variance for the following data using Python codes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">70</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="solution dropdown admonition" id="statistics1-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#mean-var"> Exercise 8.1</a></p>
+<section id="solution-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">70</span><span class="p">]</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;average is </span><span class="si">{mean: .2f}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;variance is </span><span class="si">{var: .2f}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </div>
 <script src="https://giscus.app/client.js"
@@ -2915,16 +2957,16 @@ Value  0.999754  0.999631  0.011327  41.833862  119.613294
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-base-py"
+            mode: "python"
         },
         kernelOptions: {
-            name: "conda-base-py",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-base-py'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               

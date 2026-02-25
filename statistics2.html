@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
@@ -444,7 +444,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">9.1. Linear regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">9.1. Linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-interaction-terms">9.1.1. *With interaction terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-catogorical-variabls">9.1.2. *With catogorical variabls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-explanation-of-the-regression-results-from-statsmodels">9.1.3. *Detailed explanation of the regression results from Statsmodels</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.2. Standardize Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">9.3. Principle component analysis (PCA)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">9.4. Clustering</a></li>
@@ -636,7 +641,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/eecb6bce4ee52a14d928c1f537515111e006e86244278ffa0179c88255fca767.png" src="_images/eecb6bce4ee52a14d928c1f537515111e006e86244278ffa0179c88255fca767.png" />
+<img alt="_images/cb684b405694434de1271df739bfe8d23398075eb93cd570c36c33563b87ec2c.png" src="_images/cb684b405694434de1271df739bfe8d23398075eb93cd570c36c33563b87ec2c.png" />
 </div>
 </div>
 <p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
@@ -669,8 +674,8 @@ document.write(`
 Dep. Variable:                  total   R-squared:                       0.374
 Model:                            OLS   Adj. R-squared:                  0.361
 Method:                 Least Squares   F-statistic:                     29.27
-Date:                Sat, 21 Feb 2026   Prob (F-statistic):           1.87e-06
-Time:                        14:14:02   Log-Likelihood:                -132.15
+Date:                Wed, 25 Feb 2026   Prob (F-statistic):           1.87e-06
+Time:                        09:15:01   Log-Likelihood:                -132.15
 No. Observations:                  51   AIC:                             268.3
 Df Residuals:                      49   BIC:                             272.2
 Df Model:                           1                                         
@@ -707,12 +712,17 @@ Notes:
 </li>
 <li><p>p-values of the independent variables.</p>
 <ul class="simple">
-<li><p>The p-values are given in the column “P&gt;|t|”. If the p-value of an independe variable is less than 0.05, it means there is <strong>linear relationship</strong> between the independent variable and the dependent variable at 95% confidence level. For this example, the p-values are all 0.000.</p></li>
+<li><p>The p-values are given in the column “P&gt;|t|”. If the p-value of an independe variable is less than 0.05, it means there is <strong>linear relationship</strong> between the independent variable and the dependent variable at 95% confidence level. For this example, the p-values for ‘speeding’ are 0.000. meaning it has strong influence on the car crash deaths.</p></li>
 </ul>
 </li>
 <li><p><span class="math notranslate nohighlight">\(R^2\)</span></p>
 <ul class="simple">
-<li><p>It is given by the value on the right of “R-squred: “ at the top right of the table. It measures the proportion of variability in the dependent variable explained by the model, with a range between 0 and 1. <strong>The closer it is to 1, the better the model fit</strong>. For this example, it is 0.374.</p></li>
+<li><p>It is given by the value on the right of “R-squred: “ at the top right of the table. It measures the proportion of variability in the dependent variable explained by the model, with a range between 0 and 1. <strong>The closer it is to 1, the better the model fit</strong> (in reasonable business models, <span class="math notranslate nohighlight">\(R^2\)</span> should usually be higher than 0.2). For this example, it is 0.374.</p></li>
+</ul>
+</li>
+<li><p>Prob (F-statistic)</p>
+<ul class="simple">
+<li><p>It is the p-value for the entire model, indicating whether all the independent variables together significantly affect the dependent variable. If Prob (F-statistic) &lt; 0.05, this indicates that the model is statistically significant, meaning at least one of your independent variables has a reliable relationship with the dependent variable; otherwise, it means all the independent variabls do not have much influence on the dependent variable.</p></li>
 </ul>
 </li>
 </ul>
@@ -751,9 +761,6 @@ Notes:
 <li><p><code class="docutils literal notranslate"><span class="pre">x1:x2</span></code> adds an <strong>interaction term</strong> only, which equals x1*x2</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">x1*x2</span></code> adds both main terms and the interaction, which equals x1 + x2 + x1*x2</p></li>
 </ul>
-<ul class="simple">
-<li><p>Normally in regression, we assume that variables affect the outcome independently. But sometimes, the <strong>combined effect</strong> of two variables is more (or less) than just adding their individual effects — that’s where <code class="docutils literal notranslate"><span class="pre">interaction</span> <span class="pre">terms</span></code> come in.</p></li>
-</ul>
 <p>For example, we can apply a linear regression between the amount of total crashes, the speeding and the alcohol:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -780,8 +787,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     64.87
-Date:                Sat, 21 Feb 2026   Prob (F-statistic):           2.27e-14
-Time:                        14:14:02   Log-Likelihood:                -110.71
+Date:                Wed, 25 Feb 2026   Prob (F-statistic):           2.27e-14
+Time:                        09:15:01   Log-Likelihood:                -110.71
 No. Observations:                  51   AIC:                             227.4
 Df Residuals:                      48   BIC:                             233.2
 Df Model:                           2                                         
@@ -805,11 +812,20 @@ Notes:
 </div>
 </div>
 </div>
-<p>Or, if we consider the interaction of speeding and alcohol (drivers with alcohol tend to driving with highe speed):</p>
+<p>In the regression results, the p-value for ‘alcohol’ is below 0.001, indicating a statistically significant association with the number of accidents. In contrast, the p-value for ‘speeding’ is 0.470, which exceeds the conventional 0.05 significance level. This suggests that, after controlling for ‘alcohol’ consumption, ‘speeding’ does not have a statistically significant independent effect in this specification of the model. This may be due to the presence of an interaction effect between speeding and alcohol.</p>
+<section id="with-interaction-terms">
+<h3><span class="section-number">9.1.1. </span>*With interaction terms<a class="headerlink" href="#with-interaction-terms" title="Link to this heading">#</a></h3>
+<p>Normally in regression, we assume that variables affect the outcome <strong>independently</strong>. But sometimes, the combined effect of two variables is more (or less) than just adding their individual effects — that’s where <code class="docutils literal notranslate"><span class="pre">interaction</span> <span class="pre">terms</span></code> come in.</p>
+<p>For example, if we consider the interaction of speeding and alcohol (drivers with alcohol tend to driving with highe speed):</p>
 <div class="math notranslate nohighlight">
 \[
 \text{total}=\beta_0+\beta_1\text{ speeding}+\beta_2\text{ alcohol}+\beta_3\text{ alcohol*speeding}
 \]</div>
+<p>To mitigate potential collinearity arising from interaction terms, continuous variables were mean-centered prior to analysis. This procedure not only stabilizes the model but also facilitates the interpretation of main effects by representing them at the predictors’ average levels.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Collinearity</strong> (or multicollinearity) occurs when two or more predictor variables in a regression model are highly correlated with each other. In other words, one variable can be linearly predicted from the others with a substantial degree of accuracy.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
@@ -817,9 +833,13 @@ Notes:
 
 <span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
 
+<span class="c1"># center the continuous variables</span>
+<span class="n">crashes</span><span class="p">[</span><span class="s1">&#39;speeding_c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crashes</span><span class="p">[</span><span class="s1">&#39;speeding&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">crashes</span><span class="p">[</span><span class="s1">&#39;speeding&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">crashes</span><span class="p">[</span><span class="s1">&#39;alcohol_c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crashes</span><span class="p">[</span><span class="s1">&#39;alcohol&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">crashes</span><span class="p">[</span><span class="s1">&#39;alcohol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
 <span class="c1"># the linear model is definded by strings the in the formula</span>
-<span class="c1"># the below code equals: model = smf.ols(formula=&quot;total ~ alcohol*speeding&quot;, data=crashes).fit()</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;total ~ speeding + alcohol + alcohol:speeding&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># the below code equals: model = smf.ols(formula=&quot;total ~ alcohol_c*speeding_c&quot;, data=crashes).fit()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;total ~ speeding_c + alcohol_c + alcohol_c:speeding_c&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">crashes</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
 <span class="c1"># model summary</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
@@ -832,24 +852,24 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.790
 Model:                            OLS   Adj. R-squared:                  0.777
 Method:                 Least Squares   F-statistic:                     58.91
-Date:                Sat, 21 Feb 2026   Prob (F-statistic):           5.91e-16
-Time:                        14:14:02   Log-Likelihood:                -104.31
+Date:                Wed, 25 Feb 2026   Prob (F-statistic):           5.91e-16
+Time:                        09:15:01   Log-Likelihood:                -104.31
 No. Observations:                  51   AIC:                             216.6
 Df Residuals:                      47   BIC:                             224.3
 Df Model:                           3                                         
 Covariance Type:            nonrobust                                         
-====================================================================================
-                       coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------------
-Intercept           -1.8936      2.236     -0.847      0.401      -6.393       2.605
-speeding             1.5561      0.426      3.657      0.001       0.700       2.412
-alcohol              3.5368      0.492      7.191      0.000       2.547       4.526
-alcohol:speeding    -0.2761      0.075     -3.664      0.001      -0.428      -0.125
+========================================================================================
+                           coef    std err          t      P&gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+Intercept               16.4228      0.323     50.862      0.000      15.773      17.072
+speeding_c               0.2067      0.185      1.120      0.269      -0.165       0.578
+alcohol_c                2.1566      0.224      9.606      0.000       1.705       2.608
+alcohol_c:speeding_c    -0.2761      0.075     -3.664      0.001      -0.428      -0.125
 ==============================================================================
 Omnibus:                        3.087   Durbin-Watson:                   1.807
 Prob(Omnibus):                  0.214   Jarque-Bera (JB):                2.360
 Skew:                           0.520   Prob(JB):                        0.307
-Kurtosis:                       3.168   Cond. No.                         284.
+Kurtosis:                       3.168   Cond. No.                         5.77
 ==============================================================================
 
 Notes:
@@ -858,11 +878,252 @@ Notes:
 </div>
 </div>
 </div>
+<p>The interaction term is statistically significant (<span class="math notranslate nohighlight">\(p = 0.001\)</span>), indicating a robust joint effect on total car crashes. The negative coefficient (-0.2761) suggests a negative moderatio): specifically, the positive association between ‘alcohol’ and crash frequency diminishes as ‘speeding’ levels increase.</p>
+</section>
+<section id="with-catogorical-variabls">
+<h3><span class="section-number">9.1.2. </span>*With catogorical variabls<a class="headerlink" href="#with-catogorical-variabls" title="Link to this heading">#</a></h3>
 <p>For the catogorical variable, we use the dataset “tips” as an example to fit the following equation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
+<span class="n">tips</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>sex</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>234</th>
+      <td>15.53</td>
+      <td>3.00</td>
+      <td>Male</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>10.07</td>
+      <td>1.25</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>12.60</td>
+      <td>1.00</td>
+      <td>Male</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>32.83</td>
+      <td>1.17</td>
+      <td>Male</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>35.83</td>
+      <td>4.67</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>29.03</td>
+      <td>5.92</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>27.18</td>
+      <td>2.00</td>
+      <td>Female</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>241</th>
+      <td>22.67</td>
+      <td>2.00</td>
+      <td>Male</td>
+      <td>Yes</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>17.82</td>
+      <td>1.75</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sat</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>18.78</td>
+      <td>3.00</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Thur</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>To examine whether the day of the week significantly affects the tips, we specify the following linear regression formula in Statsmodel:</p>
+<blockquote>
+<div><p>tip ~ C(day)</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>The catogrical variable is  put in the parenthesis of <code class="docutils literal notranslate"><span class="pre">C(</span> <span class="pre">)</span></code> in Statsmodel’s formula.</p></li>
+</ul>
+<p>To perform the regression with catogorical variables, Statsmodels follows these steps:</p>
+<ul class="simple">
+<li><p>Identification of Categories: It identifies all unique levels within the variable (e.g., Fri, Sat, Sun, Thur).</p></li>
+<li><p>Establishing a Reference Group: It automatically picks one category as the baseline (usually the one that comes first alphabetically). In this example, Thursday was chosen as the reference.</p></li>
+<li><p>Creating <span class="math notranslate nohighlight">\(n-1\)</span> Binary Columns: For a variable with <span class="math notranslate nohighlight">\(n\)</span> categories, it creates <span class="math notranslate nohighlight">\(n-1\)</span> new columns. For each observation:</p>
+<ul>
+<li><p>If the day is “Sun”, the T.Sun column gets a 1, and all other day columns get a 0.</p></li>
+<li><p>If the day is the reference group (“Thur”), all created columns get a 0.</p></li>
+</ul>
+</li>
+</ul>
+<p>Therefore, the actural linear regression model mathematically is :</p>
 <div class="math notranslate nohighlight">
 \[
-\text{tip}=\beta_0+\beta_1\text{ total}\_\text{bill}+\beta_2\text{ day}
+\text{tip}=\beta_0+\beta_1\text{Friday}+\beta_2\text{Tuesday}+\beta_3\text{Sunday}
 \]</div>
+<ul class="simple">
+<li><p>The Intercept (<span class="math notranslate nohighlight">\(\beta_0\)</span>): represents the mean of the Reference Group (Thursday).</p></li>
+<li><p>The Coefficients (<span class="math notranslate nohighlight">\(\beta_1, \beta_2, \beta_3\)</span>): represent the difference between that specific day and the reference group.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
+
+<span class="c1"># the linear model is definded by strings the in the formula</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s2">&quot;tip ~ C(day)&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># model summary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    tip   R-squared:                       0.020
+Model:                            OLS   Adj. R-squared:                  0.008
+Method:                 Least Squares   F-statistic:                     1.672
+Date:                Wed, 25 Feb 2026   Prob (F-statistic):              0.174
+Time:                        09:15:01   Log-Likelihood:                -422.43
+No. Observations:                 244   AIC:                             852.9
+Df Residuals:                     240   BIC:                             866.8
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P&gt;|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+Intercept         2.7715      0.175     15.837      0.000       2.427       3.116
+C(day)[T.Fri]    -0.0367      0.361     -0.102      0.919      -0.748       0.675
+C(day)[T.Sat]     0.2217      0.229      0.968      0.334      -0.229       0.673
+C(day)[T.Sun]     0.4837      0.236      2.051      0.041       0.019       0.948
+==============================================================================
+Omnibus:                       82.801   Durbin-Watson:                   1.962
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              238.276
+Skew:                           1.492   Prob(JB):                     1.82e-52
+Kurtosis:                       6.811   Cond. No.                         5.28
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(R^2\)</span> is only 0.02. This means that ‘day of the week’ accounts for only 2% of the variance in tip amounts. The vast majority of the variation in tips is determined by other factors, such as total bill.</p>
+<p>Based on the results, the model selected Thursday as the reference group (as it is excluded from the coefficient list).</p>
+<ul class="simple">
+<li><p>Intercept (2.7715): Represents the mean tip level for Thursday.</p></li>
+<li><p>C(day)[T.Fri] (-0.0367, <span class="math notranslate nohighlight">\(p=0.919\)</span>): the average tip on Friday is 0.037 less than on Thursday.</p>
+<ul>
+<li><p>However, the <span class="math notranslate nohighlight">\(p\)</span>-value is nearly 1, indicating no significant difference between Friday and Thursday.</p></li>
+</ul>
+</li>
+<li><p>C(day)[T.Sat] (0.2217, <span class="math notranslate nohighlight">\(p=0.334\)</span>): the average tip on Saturday is 0.22 more than on Thursday.</p>
+<ul>
+<li><p>With <span class="math notranslate nohighlight">\(p &gt; 0.05\)</span>, this difference is likewise not statistically significant.</p></li>
+</ul>
+</li>
+<li><p>C(day)[T.Sun] (0.4837, <span class="math notranslate nohighlight">\(p=0.041\)</span>): the average tip on Sunday is 0.48 more than on Thursday.</p>
+<ul>
+<li><p>Significance: The <span class="math notranslate nohighlight">\(p\)</span>-value of 0.041 is statistically significant at the 0.05 level. This indicates that within this sample, tips on Sunday are significantly higher than those on Thursday.”</p></li>
+</ul>
+</li>
+</ul>
+<p>After adding ‘total_bill’ to the model:</p>
+<blockquote>
+<div><p>tip ~ total_bill + C(day)</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
@@ -884,8 +1145,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.459
 Model:                            OLS   Adj. R-squared:                  0.450
 Method:                 Least Squares   F-statistic:                     50.67
-Date:                Sat, 21 Feb 2026   Prob (F-statistic):           7.52e-31
-Time:                        14:14:02   Log-Likelihood:                -350.03
+Date:                Wed, 25 Feb 2026   Prob (F-statistic):           7.52e-31
+Time:                        09:15:01   Log-Likelihood:                -350.03
 No. Observations:                 244   AIC:                             710.1
 Df Residuals:                     239   BIC:                             727.5
 Df Model:                           4                                         
@@ -911,10 +1172,60 @@ Notes:
 </div>
 </div>
 </div>
+<p>After controlling for total_bill, the previously significant effect of Sunday disappeared (<span class="math notranslate nohighlight">\(p\)</span> increased from 0.041 to 0.599). This suggests that the higher tips observed on Sundays were driven by higher consumption amounts rather than a day-specific tipping behavior. The total_bill emerged as the primary predictor, with a significant coefficient of 0.1047 (<span class="math notranslate nohighlight">\(p &lt; 0.001\)</span>), accounting for nearly 46% of the variance in tip amounts</p>
+<ul class="simple">
+<li><p>To explore whether other variables affect tipping behavior, we can use a hierarchical approach, adding factors step-by-step. The optimal model is then identified by comparing the resulting AIC or BIC and Adjusted <span class="math notranslate nohighlight">\(R^2\)</span> values.</p></li>
+</ul>
+</section>
+<section id="detailed-explanation-of-the-regression-results-from-statsmodels">
+<h3><span class="section-number">9.1.3. </span>*Detailed explanation of the regression results from Statsmodels<a class="headerlink" href="#detailed-explanation-of-the-regression-results-from-statsmodels" title="Link to this heading">#</a></h3>
+<p>To understand the Statsmodels OLS (Ordinary Least Squares) output as show in the several tables above, it is helpful to divide the results into three main sections: <strong>Model Fit Summary</strong>, <strong>Coefficient Estimates</strong>, and <strong>Diagnostic Tests</strong>.</p>
+<p>Here is a detailed breakdown of each statistical value:</p>
+<ol class="arabic simple">
+<li><p>Model Fit Summary: this section tells you how well your independent variables (like total_bill and day) explain the dependent variable (tip).</p>
+<ul class="simple">
+<li><p>R-squared (<span class="math notranslate nohighlight">\(R^2\)</span>): The proportion of the variance for the dependent variable that’s explained by the independent variables.</p></li>
+<li><p>Adj. R-squared: A modified version of <span class="math notranslate nohighlight">\(R^2\)</span> that accounts for the number of predictors. It only increases if the new term improves the model more than would be expected by chance.</p></li>
+<li><p>F-statistic: Tests whether the model with predictors is significantly better than a model with no predictors (the intercept-only model).</p></li>
+<li><p>Prob (F-statistic): The p-value for the overall model. A value &lt; 0.05 indicates the model is statistically significant.</p></li>
+<li><p>Log-Likelihood: A measure of how well the model fits the data. Higher (less negative) is better.</p></li>
+<li><p>AIC / BIC: Information criteria used for model selection. They penalize complexity; lower values indicate a better balance between fit and simplicity.</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Coefficient Estimates: this section describes the relationship between each specific predictor and the dependent variable.</p>
+<ul class="simple">
+<li><p>coef (Coefficient): The estimated change in the dependent variable for every 1-unit increase in the independent variable.</p></li>
+<li><p>std err (Standard Error): Measures the accuracy of the coefficient estimate. Smaller values indicate more precise estimates.</p></li>
+<li><p>t (t-statistic): The coefficient divided by its standard error. It measures how many standard deviations the coefficient is away from zero.</p></li>
+<li><p>P &gt; |t| (p-value): Tests the null hypothesis that the coefficient is zero. If &lt; 0.05, the variable is a significant predictor.</p></li>
+<li><p>[0.025, 0.975]: The 95% Confidence Interval. If this range does not include zero, the variable is generally considered significant.</p></li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Diagnostic Tests: these values check if your data meets the mathematical assumptions of linear regression.</p>
+<ul class="simple">
+<li><p>Omnibus / Prob(Omnibus): Tests the skewness and kurtosis of the residuals. We want Prob(Omnibus) to be high (&gt; 0.05) to indicate normally distributed residuals.</p>
+<ul>
+<li><p>A very small Prob(Omnibus) value suggests that the model may suffer from omitted variable bias, the presence of outliers, or a non-linear relationship that requires a mathematical transformation of the dependent variable (such as a log transformation).</p></li>
+</ul>
+</li>
+<li><p>Skew (Skewness): Measures the asymmetry of the residuals. Zero is perfectly symmetrical.</p></li>
+<li><p>Kurtosis: Measures the “fatness” of the tails of the residual distribution. A normal distribution has a kurtosis of 3.</p></li>
+<li><p>Durbin-Watson: Tests for autocorrelation in the residuals. Values near 2.0 mean no autocorrelation. Its value for a reasonable model should be between 1 and 3.</p></li>
+<li><p>Jarque-Bera (JB) / Prob(JB): Another test for the normality of residuals. Like Omnibus, we generally want a high p-value here.</p></li>
+<li><p>Cond. No. (Condition Number): Tests for multicollinearity. If this value is very high (&gt; 1000 for business models), the independent variables may be too highly correlated with each other.</p></li>
+<li><p>In business models, when the condition number is greater than 1000, researchers typically calculate the variance inflation factor (VIF) for each explanatory variable to further assess multicollinearity.</p></li>
+</ul>
+</li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Linear regression can also be performed using non-formula-based modeling, non-OLS methods or other libraries, which are omitted here due to space limitations.</p>
 </div>
+</section>
 </section>
 <section id="standardize-data">
 <h2><span class="section-number">9.2. </span>Standardize Data<a class="headerlink" href="#standardize-data" title="Link to this heading">#</a></h2>
@@ -1303,7 +1614,7 @@ principal components shown the first 10 rows:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6293a6127afd8480cfcaa6b6593cbf2843cf916bb1e6e25ea9060f676a8c5294.png" src="_images/6293a6127afd8480cfcaa6b6593cbf2843cf916bb1e6e25ea9060f676a8c5294.png" />
+<img alt="_images/b32b1d7b394f8acd41a94fc63a894dfd0c25b768952a5ebb56bcd1a48b14b59c.png" src="_images/b32b1d7b394f8acd41a94fc63a894dfd0c25b768952a5ebb56bcd1a48b14b59c.png" />
 </div>
 </div>
 </section>
@@ -1485,16 +1796,16 @@ principal components shown the first 10 rows:
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-base-py"
+            mode: "python"
         },
         kernelOptions: {
-            name: "conda-base-py",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-base-py'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -1540,7 +1851,12 @@ principal components shown the first 10 rows:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">9.1. Linear regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">9.1. Linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-interaction-terms">9.1.1. *With interaction terms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#with-catogorical-variabls">9.1.2. *With catogorical variabls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-explanation-of-the-regression-results-from-statsmodels">9.1.3. *Detailed explanation of the regression results from Statsmodels</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.2. Standardize Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">9.3. Principle component analysis (PCA)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">9.4. Clustering</a></li>
