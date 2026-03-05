@@ -18,6 +18,6 @@ parts:
 - caption: Python Advanced
   numbered: true
   chapters:
-  - file: statistics1
-  - file: statistics2
+  - file: statistics
+  - file: machine-learning
   - file: introduction-to-class
