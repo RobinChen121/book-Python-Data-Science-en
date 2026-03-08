@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=13fa32ad" />
   
@@ -401,7 +401,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-explanation-of-the-regression-results-from-statsmodels">9.1.3. *Detailed explanation of the regression results from Statsmodels</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.2. Standardize Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.2. Standardize Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-standardization-standardscaler">9.2.1. Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">9.2.2. Min-Max Normalization</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">9.3. *Principle component analysis (PCA)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">9.4. K-means Clustering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-neural-network-ann">9.5. Artificial neural network (ANN)</a></li>
@@ -593,7 +597,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/cc283e2d08bdc2239c4d3a666e0ea42caa1d143804b6f09efadf9d8d8cd4351f.png" src="_images/cc283e2d08bdc2239c4d3a666e0ea42caa1d143804b6f09efadf9d8d8cd4351f.png" />
+<img alt="_images/2c46951da0434528e92e67b8bb37883293891a257be1d7a407bbdf793a250239.png" src="_images/2c46951da0434528e92e67b8bb37883293891a257be1d7a407bbdf793a250239.png" />
 </div>
 </div>
 <p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
@@ -626,8 +630,8 @@ document.write(`
 Dep. Variable:                  total   R-squared:                       0.374
 Model:                            OLS   Adj. R-squared:                  0.361
 Method:                 Least Squares   F-statistic:                     29.27
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):           1.87e-06
-Time:                        21:59:14   Log-Likelihood:                -132.15
+Date:                Sun, 08 Mar 2026   Prob (F-statistic):           1.87e-06
+Time:                        16:41:39   Log-Likelihood:                -132.15
 No. Observations:                  51   AIC:                             268.3
 Df Residuals:                      49   BIC:                             272.2
 Df Model:                           1                                         
@@ -739,8 +743,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     64.87
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):           2.27e-14
-Time:                        21:59:14   Log-Likelihood:                -110.71
+Date:                Sun, 08 Mar 2026   Prob (F-statistic):           2.27e-14
+Time:                        16:41:39   Log-Likelihood:                -110.71
 No. Observations:                  51   AIC:                             227.4
 Df Residuals:                      48   BIC:                             233.2
 Df Model:                           2                                         
@@ -804,8 +808,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.790
 Model:                            OLS   Adj. R-squared:                  0.777
 Method:                 Least Squares   F-statistic:                     58.91
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):           5.91e-16
-Time:                        21:59:14   Log-Likelihood:                -104.31
+Date:                Sun, 08 Mar 2026   Prob (F-statistic):           5.91e-16
+Time:                        16:41:39   Log-Likelihood:                -104.31
 No. Observations:                  51   AIC:                             216.6
 Df Residuals:                      47   BIC:                             224.3
 Df Model:                           3                                         
@@ -1026,8 +1030,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.020
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     1.672
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):              0.174
-Time:                        21:59:14   Log-Likelihood:                -422.43
+Date:                Sun, 08 Mar 2026   Prob (F-statistic):              0.174
+Time:                        16:41:39   Log-Likelihood:                -422.43
 No. Observations:                 244   AIC:                             852.9
 Df Residuals:                     240   BIC:                             866.8
 Df Model:                           3                                         
@@ -1095,8 +1099,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.020
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     1.672
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):              0.174
-Time:                        21:59:14   Log-Likelihood:                -422.43
+Date:                Sun, 08 Mar 2026   Prob (F-statistic):              0.174
+Time:                        16:41:39   Log-Likelihood:                -422.43
 No. Observations:                 244   AIC:                             852.9
 Df Residuals:                     240   BIC:                             866.8
 Df Model:                           3                                         
@@ -1146,8 +1150,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.459
 Model:                            OLS   Adj. R-squared:                  0.450
 Method:                 Least Squares   F-statistic:                     50.67
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):           7.52e-31
-Time:                        21:59:14   Log-Likelihood:                -350.03
+Date:                Sun, 08 Mar 2026   Prob (F-statistic):           7.52e-31
+Time:                        16:41:39   Log-Likelihood:                -350.03
 No. Observations:                 244   AIC:                             710.1
 Df Residuals:                     239   BIC:                             727.5
 Df Model:                           4                                         
@@ -1256,9 +1260,8 @@ Notes:
 </li>
 </ul>
 <p>There are two common methods for standardizing data: z-score standardization and min-max standardization</p>
-<ol class="arabic simple">
-<li><p><strong>Z-score Standardization</strong> (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</p></li>
-</ol>
+<section id="z-score-standardization-standardscaler">
+<h3><span class="section-number">9.2.1. </span>Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)<a class="headerlink" href="#z-score-standardization-standardscaler" title="Link to this heading">#</a></h3>
 <p>Transforms data to have mean (<span class="math notranslate nohighlight">\(\mu\)</span>) = 0 and standard deviation (<span class="math notranslate nohighlight">\(\sigma\)</span>) = 1.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1303,10 +1306,10 @@ z = \frac{x - \mu}{\sigma}
 <ul class="simple">
 <li><p>For the input parmater X in the method <code class="docutils literal notranslate"><span class="pre">fit_transform(X)</span></code>, X is an array-like of shape (n_samples, n_features).</p></li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p><strong>Min-Max Normalization</strong> (0-1 Scaling)</p></li>
-</ol>
-<p>This method scales data to the <strong>[0, 1]</strong> range.</p>
+</section>
+<section id="min-max-normalization">
+<h3><span class="section-number">9.2.2. </span>Min-Max Normalization<a class="headerlink" href="#min-max-normalization" title="Link to this heading">#</a></h3>
+<p>This method scales data to the <strong>[0, 1]</strong> range by default.</p>
 <div class="math notranslate nohighlight">
 \[
 x' = \frac{x - \min(x)}{\max(x) - \min(x)}
@@ -1350,6 +1353,156 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 <li><p>There is no negative values after standarization for this method.</p></li>
 <li><p>Inverse standardization can be through the method <code class="docutils literal notranslate"><span class="pre">inverse_transform()</span></code>.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">crash_standard</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  18.8  ,    7.332,    5.64 ,   18.048,   15.04 ,  784.55 ,
+         145.08 ],
+       [  18.1  ,    7.421,    4.525,   16.29 ,   17.014, 1053.48 ,
+         133.93 ],
+       [  18.6  ,    6.51 ,    5.208,   15.624,   17.856,  899.47 ,
+         110.35 ],
+       [  22.4  ,    4.032,    5.824,   21.056,   21.28 ,  827.34 ,
+         142.39 ],
+       [  12.   ,    4.2  ,    3.36 ,   10.92 ,   10.68 ,  878.41 ,
+         165.63 ],
+       [  13.6  ,    5.032,    3.808,   10.744,   12.92 ,  835.5  ,
+         139.91 ],
+       [  10.8  ,    4.968,    3.888,    9.396,    8.856, 1068.73 ,
+         167.02 ],
+       [  16.2  ,    6.156,    4.86 ,   14.094,   16.038, 1137.87 ,
+         151.48 ],
+       [   5.9  ,    2.006,    1.593,    5.9  ,    5.9  , 1273.89 ,
+         136.05 ],
+       [  17.9  ,    3.759,    5.191,   16.468,   16.826, 1160.13 ,
+         144.18 ],
+       [  15.6  ,    2.964,    3.9  ,   14.82 ,   14.508,  913.15 ,
+         142.8  ],
+       [  17.5  ,    9.45 ,    7.175,   14.35 ,   15.225,  861.18 ,
+         120.92 ],
+       [  15.3  ,    5.508,    4.437,   13.005,   14.994,  641.96 ,
+          82.75 ],
+       [  12.8  ,    4.608,    4.352,   12.032,   12.288,  803.11 ,
+         139.15 ],
+       [  14.5  ,    3.625,    4.205,   13.775,   13.775,  710.46 ,
+         108.92 ],
+       [  15.7  ,    2.669,    3.925,   15.229,   13.659,  649.06 ,
+         114.47 ],
+       [  17.8  ,    4.806,    4.272,   13.706,   15.13 ,  780.45 ,
+         133.8  ],
+       [  21.4  ,    4.066,    4.922,   16.692,   16.264,  872.51 ,
+         137.13 ],
+       [  20.5  ,    7.175,    6.765,   14.965,   20.09 , 1281.55 ,
+         194.78 ],
+       [  15.1  ,    5.738,    4.53 ,   13.137,   12.684,  661.88 ,
+          96.57 ],
+       [  12.5  ,    4.25 ,    4.   ,    8.875,   12.375, 1048.78 ,
+         192.7  ],
+       [   8.2  ,    1.886,    2.87 ,    7.134,    6.56 , 1011.14 ,
+         135.63 ],
+       [  14.1  ,    3.384,    3.948,   13.395,   10.857, 1110.61 ,
+         152.26 ],
+       [   9.6  ,    2.208,    2.784,    8.448,    8.448,  777.18 ,
+         133.35 ],
+       [  17.6  ,    2.64 ,    5.456,    1.76 ,   17.6  ,  896.07 ,
+         155.77 ],
+       [  16.1  ,    6.923,    5.474,   14.812,   13.524,  790.32 ,
+         144.45 ],
+       [  21.4  ,    8.346,    9.416,   17.976,   18.19 ,  816.21 ,
+          85.15 ],
+       [  14.9  ,    1.937,    5.215,   13.857,   13.41 ,  732.28 ,
+         114.82 ],
+       [  14.7  ,    5.439,    4.704,   13.965,   14.553, 1029.87 ,
+         138.71 ],
+       [  11.6  ,    4.06 ,    3.48 ,   10.092,    9.628,  746.54 ,
+         120.21 ],
+       [  11.2  ,    1.792,    3.136,    9.632,    8.736, 1301.52 ,
+         159.85 ],
+       [  18.4  ,    3.496,    4.968,   12.328,   18.032,  869.85 ,
+         120.75 ],
+       [  12.3  ,    3.936,    3.567,   10.824,    9.84 , 1234.31 ,
+         150.01 ],
+       [  16.8  ,    6.552,    5.208,   15.792,   13.608,  708.24 ,
+         127.82 ],
+       [  23.9  ,    5.497,   10.038,   23.661,   20.554,  688.75 ,
+         109.72 ],
+       [  14.1  ,    3.948,    4.794,   13.959,   11.562,  697.73 ,
+         133.52 ],
+       [  19.9  ,    6.368,    5.771,   18.308,   18.706,  881.51 ,
+         178.86 ],
+       [  12.8  ,    4.224,    3.328,    8.576,   11.52 ,  804.71 ,
+         104.61 ],
+       [  18.2  ,    9.1  ,    5.642,   17.472,   16.016,  905.99 ,
+         153.86 ],
+       [  11.1  ,    3.774,    4.218,   10.212,    8.769, 1148.99 ,
+         148.58 ],
+       [  23.9  ,    9.082,    9.799,   22.944,   19.359,  858.97 ,
+         116.29 ],
+       [  19.4  ,    6.014,    6.402,   19.012,   16.684,  669.31 ,
+          96.87 ],
+       [  19.5  ,    4.095,    5.655,   15.99 ,   15.795,  767.91 ,
+         155.57 ],
+       [  19.4  ,    7.76 ,    7.372,   17.654,   16.878, 1004.75 ,
+         156.83 ],
+       [  11.3  ,    4.859,    1.808,    9.944,   10.848,  809.38 ,
+         109.48 ],
+       [  13.6  ,    4.08 ,    4.08 ,   13.056,   12.92 ,  716.2  ,
+         109.61 ],
+       [  12.7  ,    2.413,    3.429,   11.049,   11.176,  768.95 ,
+         153.72 ],
+       [  10.6  ,    4.452,    3.498,    8.692,    9.116,  890.03 ,
+         111.62 ],
+       [  23.8  ,    8.092,    6.664,   23.086,   20.706,  992.61 ,
+         152.56 ],
+       [  13.8  ,    4.968,    4.554,    5.382,   11.592,  670.31 ,
+         106.62 ],
+       [  17.4  ,    7.308,    5.568,   14.094,   15.66 ,  791.14 ,
+         122.04 ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also specify the desired scaling range by using the <code class="docutils literal notranslate"><span class="pre">feature_range</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">MinMaxScaler()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">crash_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">crashes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># min-max</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">crash_standard</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span> <span class="c1"># print the first 10 rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.35555556  0.47009663 -0.30562463  0.32688005  0.44525358  0.24786221
+  -0.08631617]
+ [ 0.41111111  0.2321755  -0.14387211  0.26606091  0.55474642 -0.2191461
+  -0.50727484]
+ [ 0.83333333 -0.41499086  0.00201303  0.76211132  1.         -0.43786767
+   0.06471481]
+ [-0.32222222 -0.37111517 -0.58152753 -0.16350852 -0.37841352 -0.28300685
+   0.47960368]
+ [-0.14444444 -0.15382606 -0.47542925 -0.17958084 -0.08712614 -0.4131239
+   0.02044095]
+ [-0.45555556 -0.17054061 -0.45648313 -0.30268024 -0.61560468  0.29410516
+   0.50441846]
+ [ 0.14444444  0.13972317 -0.22628774  0.12634126  0.3183355   0.50376008
+   0.22699277]
+ [-1.         -0.94411073 -1.         -0.62193507 -1.          0.91621687
+  -0.04846916]
+ [ 0.33333333 -0.48628885 -0.14789816  0.34313502  0.42080624  0.57125963
+   0.09667053]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="principle-component-analysis-pca">
 <h2><span class="section-number">9.3. </span>*Principle component analysis (PCA)<a class="headerlink" href="#principle-component-analysis-pca" title="Link to this heading">#</a></h2>
@@ -1508,9 +1661,7 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>explained variance of each principal component: [0.72962445 0.22850762]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>principal components shown the first 10 rows:
+principal components shown the first 10 rows:
  [[-2.26470281  0.4800266 ]
  [-2.08096115 -0.67413356]
  [-2.36422905 -0.34190802]
@@ -1617,7 +1768,7 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a389081912382cc874032e710f21b08e97b374f00ada76c768575632b32c8bc9.png" src="_images/a389081912382cc874032e710f21b08e97b374f00ada76c768575632b32c8bc9.png" />
+<img alt="_images/6772e584cefb3a4439f22639962a5bc9697a32efab95acf9010fb14ffd36ea8f.png" src="_images/6772e584cefb3a4439f22639962a5bc9697a32efab95acf9010fb14ffd36ea8f.png" />
 </div>
 </div>
 </section>
@@ -1777,6 +1928,20 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 <p>Use the library <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> to do some linear regressions for the ‘tips’ dataset in the seaborn library.</p>
 </section>
 </div>
+<div class="exercise admonition" id="kmeans">
+
+<p class="admonition-title"><span class="caption-number">Exercise 9.2 </span></p>
+<section id="exercise-content">
+<p>Use the library <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> to do some k-means clustering for the ‘penguin’ dataset in the seaborn library.</p>
+</section>
+</div>
+<div class="exercise admonition" id="prediction">
+
+<p class="admonition-title"><span class="caption-number">Exercise 9.3 </span></p>
+<section id="exercise-content">
+<p>Use the artificial neural network from the library <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> to do some predictions for the ‘titanic’ dataset in the seaborn library.</p>
+</section>
+</div>
 <script src="https://giscus.app/client.js"
         data-repo="RobinChen121/book-Python-Data-Science-en"
         data-repo-id="R_kgDOOt-49A"
@@ -1864,7 +2029,11 @@ x' = \frac{x - \min(x)}{\max(x) - \min(x)}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-explanation-of-the-regression-results-from-statsmodels">9.1.3. *Detailed explanation of the regression results from Statsmodels</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.2. Standardize Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardize-data">9.2. Standardize Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-standardization-standardscaler">9.2.1. Z-score Standardization (<code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">9.2.2. Min-Max Normalization</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principle-component-analysis-pca">9.3. *Principle component analysis (PCA)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">9.4. K-means Clustering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-neural-network-ann">9.5. Artificial neural network (ANN)</a></li>
