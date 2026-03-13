@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -197,7 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="statistics.html">8. Python statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine-learning.html">9. Python machine learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python Object Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. *Python Object Oriented Programming</a></li>
 </ul>
 
     </div>
@@ -239,6 +239,37 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science/introduction-to-numpy.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -418,6 +449,17 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-numpy">
 <h1><span class="section-number">4. </span>Introduction to Numpy<a class="headerlink" href="#introduction-to-numpy" title="Link to this heading">#</a></h1>
 <hr>
+<div class="admonition-goals-and-prerequisites admonition">
+<p class="admonition-title">Goals and prerequisites</p>
+<p><strong>Goals</strong>:</p>
+<ul class="simple">
+<li><p>Learn some common usages of Numpy to process data especially about creating arrays, array indexing and slicing.</p></li>
+</ul>
+<p><strong>Prerequisites</strong>:</p>
+<ul class="simple">
+<li><p>Familiar with common Python data types and their usage.</p></li>
+</ul>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> is a crucial extension library in Python that provides extensive support for <strong>array and matrix operations</strong>, along with a comprehensive collection of mathematical methods designed to emulate the capabilities of mathematical software like MATLAB. NumPy is indispensable for data science, engineering, and research due to its efficiency and integration with other key libraries like <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">Scipy</span></code>, etc.</p>
 <p>Key Features of NumPy:</p>
 <ul class="simple">
@@ -1157,8 +1199,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9.61322751, 6.49917846],
-       [4.69577081, 9.77151049]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.48551514, 5.5295928 ],
+       [7.72918043, 3.396499  ]])
 </pre></div>
 </div>
 </div>
@@ -1170,7 +1212,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9.49220266, 1.87351459, 2.1549252 , 1.08929235, 1.69771884])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7.82160829, 3.69129922, 3.35316814, 3.87568723, 9.58532725])
 </pre></div>
 </div>
 </div>
@@ -1182,8 +1224,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9, 1],
-       [1, 5]], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 7],
+       [5, 1]])
 </pre></div>
 </div>
 </div>
@@ -1195,8 +1237,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.91283418, 6.13987847],
-       [3.50042844, 4.64278112]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.92630652, 3.37159585],
+       [5.88398175, 5.0577487 ]])
 </pre></div>
 </div>
 </div>
@@ -1208,8 +1250,8 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 6],
-       [5, 7]], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 9],
+       [4, 7]])
 </pre></div>
 </div>
 </div>
@@ -1264,7 +1306,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1772747942.9288816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1773406903.124938
 </pre></div>
 </div>
 </div>
@@ -1280,7 +1322,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2026, tm_mon=3, tm_mday=5, tm_hour=21, tm_min=59, tm_sec=2, tm_wday=3, tm_yday=64, tm_isdst=0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time.struct_time(tm_year=2026, tm_mon=3, tm_mday=13, tm_hour=13, tm_min=1, tm_sec=43, tm_wday=4, tm_yday=72, tm_isdst=0)
 </pre></div>
 </div>
 </div>
@@ -1296,7 +1338,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-03-05 21:59:02
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-03-13 13:01:43
 </pre></div>
 </div>
 </div>
@@ -1382,7 +1424,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.031919 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.032446 seconds
 </pre></div>
 </div>
 </div>
@@ -1401,7 +1443,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.021891 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Execution time: 0.021689 seconds
 </pre></div>
 </div>
 </div>
@@ -1420,7 +1462,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.015625 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU time used: 0.018721 seconds
 </pre></div>
 </div>
 </div>
@@ -1443,7 +1485,7 @@ eigenvectors are [[-0.76729658 -0.57152478]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-03-05 21:59:06.035966
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-03-13 13:01:46.228521
 </pre></div>
 </div>
 </div>

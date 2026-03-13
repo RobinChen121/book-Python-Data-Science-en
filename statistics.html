@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -495,8 +495,7 @@ mermaid.initialize(
     }
 );
 
-window.addEventListener("load", load);
-window.runMermaid = runMermaid;</script>
+window.addEventListener("load", load);</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'statistics';</script>
     <script src="_static/myfile.js?v=16a49f19"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
@@ -635,7 +634,7 @@ window.runMermaid = runMermaid;</script>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Python statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine-learning.html">9. Python machine learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python Object Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. *Python Object Oriented Programming</a></li>
 </ul>
 
     </div>
@@ -677,6 +676,37 @@ window.runMermaid = runMermaid;</script>
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science/statistics.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -876,6 +906,18 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="python-statistics">
 <h1><span class="section-number">8. </span>Python statistics<a class="headerlink" href="#python-statistics" title="Link to this heading">#</a></h1>
 <hr>
+<div class="admonition-goals-and-prerequisites admonition">
+<p class="admonition-title">Goals and prerequisites</p>
+<p><strong>Goals</strong>:</p>
+<ul class="simple">
+<li><p>Learn how to perform some common statistical analysis using Python.</p></li>
+</ul>
+<p><strong>Prerequisites</strong>:</p>
+<ul class="simple">
+<li><p>Familiar with common Python data types and their usage.</p></li>
+<li><p>Familiar with Numpy and Pandas.</p></li>
+</ul>
+</div>
 <p>In this chapter, we explain how to perform statistical analysis on data using Python. Rather than delving into the theoretical and computational details of the statistical concepts and methods, we aim to provide intuitive, visual explanations that are easy to understand.</p>
 <section id="mean-variance">
 <h2><span class="section-number">8.1. </span>Mean, Variance<a class="headerlink" href="#mean-variance" title="Link to this heading">#</a></h2>
@@ -1053,7 +1095,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/98c2da5b983236848e6f3df0e51dd3d84c49bf65280edcc6210fd8e0263b6b60.png" src="_images/98c2da5b983236848e6f3df0e51dd3d84c49bf65280edcc6210fd8e0263b6b60.png" />
+<img alt="_images/82f3b2d4a653af3f5915cee3fe36c0b2bee3756666d0171709ff99bd21ad6b96.png" src="_images/82f3b2d4a653af3f5915cee3fe36c0b2bee3756666d0171709ff99bd21ad6b96.png" />
 </div>
 </div>
 <p>To compute the mean, we can use the method <code class="docutils literal notranslate"><span class="pre">mean()</span></code> from <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> or <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>.</p>
@@ -1093,7 +1135,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.9066085124966412)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9066085124966428
 </pre></div>
 </div>
 </div>
@@ -1105,7 +1147,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.914454638062471)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.9144546380624725
 </pre></div>
 </div>
 </div>
@@ -1136,7 +1178,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/f6613db5b0608d56f1262b12c9c35192259de61856538f6fae840416f8524f9c.png" src="_images/f6613db5b0608d56f1262b12c9c35192259de61856538f6fae840416f8524f9c.png" />
+<img alt="_images/18f8a85eb6074ddc0ff9e8e84f32e9e086c604f5f84c92af9f2c87f7e4961203.png" src="_images/18f8a85eb6074ddc0ff9e8e84f32e9e086c604f5f84c92af9f2c87f7e4961203.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays bars of approximately equal height, resulting in a <strong>flat</strong> or level appearance.</p>
@@ -1160,7 +1202,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ea3d8d8d73a8a1f726632b06ee9e3e7f5e638f8f1cc2d6772cbe9f56f37a0f72.png" src="_images/ea3d8d8d73a8a1f726632b06ee9e3e7f5e638f8f1cc2d6772cbe9f56f37a0f72.png" />
+<img alt="_images/14ac43a6283e669302156de67538a6e14692959ed20f7eae26fa1eee948e9e28.png" src="_images/14ac43a6283e669302156de67538a6e14692959ed20f7eae26fa1eee948e9e28.png" />
 </div>
 </div>
 <p>For uniformly distributed data, the histogram typically displays a <strong>bell</strong> shape.</p>
@@ -1189,7 +1231,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;total_bill&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/67a8fd50bcca7504568fe9da55abf87c98fadfda44d88cdb8b06ff0abe3792ed.png" src="_images/67a8fd50bcca7504568fe9da55abf87c98fadfda44d88cdb8b06ff0abe3792ed.png" />
+<img alt="_images/198dc884411877a79437bd5a23d413791349f6366067ef88b2cfc2f318a78e89.png" src="_images/198dc884411877a79437bd5a23d413791349f6366067ef88b2cfc2f318a78e89.png" />
 </div>
 </div>
 <p>If the data is stored in a Pandas DataFrame, it is very convenient to compute the correlation between two columns.</p>
@@ -1200,7 +1242,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.6757341092113645)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.6757341092113641)
 </pre></div>
 </div>
 </div>
@@ -1230,7 +1272,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;size&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/90ca69a2d2fe105556ef78f7dd0f400412159b71271fb457dd49d1fae00c6e6b.png" src="_images/90ca69a2d2fe105556ef78f7dd0f400412159b71271fb457dd49d1fae00c6e6b.png" />
+<img alt="_images/799fed0518478d3d2b5470d9aafdb22cf4c51052741fc6f269ebe428b7d5f25b.png" src="_images/799fed0518478d3d2b5470d9aafdb22cf4c51052741fc6f269ebe428b7d5f25b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1261,7 +1303,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;day&#39;, ylabel=&#39;tip&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/d04dcf2e0b1a88976bbb91b57136146be45956b6cbf9b26a36d4f5e1176f4f20.png" src="_images/d04dcf2e0b1a88976bbb91b57136146be45956b6cbf9b26a36d4f5e1176f4f20.png" />
+<img alt="_images/34b51f9637912747b481ff0ba700b90fbadd71770bcad9e161363c8ecf63a56c.png" src="_images/34b51f9637912747b481ff0ba700b90fbadd71770bcad9e161363c8ecf63a56c.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1577,7 +1619,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=np.float64(-0.019432641422916876), pvalue=np.float64(0.9845119176410543), df=np.int64(243))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=np.float64(-0.019432641422916876), pvalue=np.float64(0.9845119176410544), df=np.int64(243))
 </pre></div>
 </div>
 </div>
@@ -1595,7 +1637,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=np.float64(-0.019432641422916876), pvalue=np.float64(0.49225595882052714), df=np.int64(243))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=np.float64(-0.019432641422916876), pvalue=np.float64(0.4922559588205272), df=np.int64(243))
 </pre></div>
 </div>
 </div>
@@ -1724,7 +1766,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
       <th>ddof1</th>
       <th>ddof2</th>
       <th>F</th>
-      <th>p_unc</th>
+      <th>p-unc</th>
       <th>np2</th>
     </tr>
   </thead>
@@ -1773,7 +1815,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
       <th>ddof1</th>
       <th>ddof2</th>
       <th>F</th>
-      <th>p_unc</th>
+      <th>p-unc</th>
       <th>np2</th>
     </tr>
   </thead>
@@ -1828,7 +1870,7 @@ This hypothesis represents what we aim to support if the null hypothesis is reje
       <th>DF</th>
       <th>MS</th>
       <th>F</th>
-      <th>p_unc</th>
+      <th>p-unc</th>
       <th>np2</th>
     </tr>
   </thead>
@@ -2775,30 +2817,30 @@ Leadership Style  ──→ Turnover Intention</p>
 
 Path coefficients and loadings:
           lval  op        rval  Estimate  Std. Err    z-value p-value
-0    CustSatis   ~  BrandImage  0.709237  0.037495  18.915261     0.0
-1    CustLoyal   ~  BrandImage  0.387441  0.062317   6.217298     0.0
-2    CustLoyal   ~   CustSatis  0.523353  0.072203    7.24833     0.0
+0    CustSatis   ~  BrandImage  0.709224  0.037491  18.917308     0.0
+1    CustLoyal   ~  BrandImage  0.387470  0.062312   6.218176     0.0
+2    CustLoyal   ~   CustSatis  0.523225  0.072201   7.246761     0.0
 3          BI1   ~  BrandImage  1.000000         -          -       -
-4          BI2   ~  BrandImage  1.002760  0.028184  35.579601     0.0
-5          BI3   ~  BrandImage  1.001947  0.026477  37.841908     0.0
+4          BI2   ~  BrandImage  1.002752  0.028184  35.579137     0.0
+5          BI3   ~  BrandImage  1.001932  0.026477  37.841087     0.0
 6          CS1   ~   CustSatis  1.000000         -          -       -
-7          CS2   ~   CustSatis  1.017153  0.031754  32.032238     0.0
-8          CS3   ~   CustSatis  1.020169  0.031555  32.329417     0.0
+7          CS2   ~   CustSatis  1.017055  0.031748  32.035727     0.0
+8          CS3   ~   CustSatis  1.020071  0.031551  32.330885     0.0
 9          CL1   ~   CustLoyal  1.000000         -          -       -
-10         CL2   ~   CustLoyal  0.984234  0.030301  32.481949     0.0
-11         CL3   ~   CustLoyal  0.991315  0.029436  33.677374     0.0
-12  BrandImage  ~~  BrandImage  0.836740  0.076387  10.953963     0.0
-13   CustLoyal  ~~   CustLoyal  0.230526  0.023739    9.71088     0.0
-14   CustSatis  ~~   CustSatis  0.216182  0.022635   9.550606     0.0
-15         BI1  ~~         BI1  0.099460  0.011123   8.941709     0.0
-16         BI2  ~~         BI2  0.087458  0.010387   8.419813     0.0
-17         BI3  ~~         BI3  0.062645  0.008972   6.982363     0.0
-18         CL1  ~~         CL1  0.088397   0.01132   7.808606     0.0
-19         CL2  ~~         CL2  0.108024  0.012346    8.74958     0.0
-20         CL3  ~~         CL3  0.093793  0.011534     8.1317     0.0
-21         CS1  ~~         CS1  0.094962   0.01064    8.92529     0.0
-22         CS2  ~~         CS2  0.078832  0.009772   8.067484     0.0
-23         CS3  ~~         CS3  0.075517  0.009604   7.862728     0.0
+10         CL2   ~   CustLoyal  0.984246  0.030296  32.487667     0.0
+11         CL3   ~   CustLoyal  0.991321  0.029434  33.679657     0.0
+12  BrandImage  ~~  BrandImage  0.836948  0.076407  10.953804     0.0
+13   CustLoyal  ~~   CustLoyal  0.230516  0.023737   9.711169     0.0
+14   CustSatis  ~~   CustSatis  0.216180  0.022635   9.550792     0.0
+15         BI1  ~~         BI1  0.099500  0.011127   8.942418     0.0
+16         BI2  ~~         BI2  0.087469  0.010389   8.419547     0.0
+17         BI3  ~~         BI3  0.062652  0.008973    6.98208     0.0
+18         CL1  ~~         CL1  0.088383  0.011318    7.80889     0.0
+19         CL2  ~~         CL2  0.107971  0.012342   8.748476     0.0
+20         CL3  ~~         CL3  0.093789  0.011533   8.132388     0.0
+21         CS1  ~~         CS1  0.094927  0.010638   8.923491     0.0
+22         CS2  ~~         CS2  0.078834  0.009771   8.067809     0.0
+23         CS3  ~~         CS3  0.075546  0.009606   7.864577     0.0
 
 Model fit indices:
             CFI       TLI     RMSEA        AIC         BIC

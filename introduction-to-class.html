@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. Python Object Oriented Programming &#8212; Python Data Science</title>
+    <title>10. *Python Object Oriented Programming &#8212; Python Data Science</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -196,7 +196,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="statistics.html">8. Python statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine-learning.html">9. Python machine learning</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Python Object Oriented Programming</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. *Python Object Oriented Programming</a></li>
 </ul>
 
     </div>
@@ -238,6 +238,37 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science/introduction-to-class.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -382,7 +413,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python Object Oriented Programming</h1>
+    <h1>*Python Object Oriented Programming</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -398,7 +429,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-or-magic-methods-of-a-class">10.4. *Special (or “magic”) methods of a class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-or-magic-attribute-of-a-class">10.5. *Special (or “magic”) attribute of a class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute-related-methodssetattr-getattr">10.6. Attribute related methods<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-method-and-static-method">10.7. *Class method and static method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
             </nav>
@@ -412,7 +443,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-object-oriented-programming">
-<h1><span class="section-number">10. </span>Python Object Oriented Programming<a class="headerlink" href="#python-object-oriented-programming" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>*Python Object Oriented Programming<a class="headerlink" href="#python-object-oriented-programming" title="Link to this heading">#</a></h1>
 <hr><p>Python is a programming language that supports object-oriented programming (OOP). Object-oriented programming is a paradigm that encapsulates data and the functions that operate on it within objects. By organizing code through classes and objects, <strong>it makes programs clearer, easier to maintain, and more extensible and reusable</strong>, making it particularly well-suited for developing large and complex systems.</p>
 <section id="class-object-attribute-method">
 <h2><span class="section-number">10.1. </span>Class, Object, Attribute, Method<a class="headerlink" href="#class-object-attribute-method" title="Link to this heading">#</a></h2>
@@ -749,7 +780,7 @@ Bob, 30 years old
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x0000018AA3036010&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Dog object at 0x119625400&gt;
 &lt;class &#39;__main__.Dog&#39;&gt;
 </pre></div>
 </div>
@@ -991,46 +1022,46 @@ male
 </div>
 </div>
 </section>
-<section id="id1">
-<h2><span class="section-number">10.7. </span>类方法与静态方法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<hr><p>上面的例子中，类中方法的第一个参数总是 self，这类方法为<code class="docutils literal notranslate"><span class="pre">普通方法</span></code>，只能被对象调用。</p>
-<p>除了普通方法外，还有<code class="docutils literal notranslate"><span class="pre">类方法</span></code>与<code class="docutils literal notranslate"><span class="pre">静态方法</span></code>。</p>
+<section id="class-method-and-static-method">
+<h2><span class="section-number">10.7. </span>*Class method and static method<a class="headerlink" href="#class-method-and-static-method" title="Link to this heading">#</a></h2>
+<hr><p>In the examples above, the first parameter of a method in a class is always self. Such methods are called <code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">methods</span></code> and can only be called by an object.</p>
+<p>In addition to <code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">methods</span></code>, there are also <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">methods</span></code> and <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">methods</span></code>.</p>
 <ul class="simple">
-<li><p>静态方法: 用 &#64;staticmethod 装饰的不带 self 参数的方法叫做静态方法，类的静态方法可以没有参数，可以直接使用类名调用</p></li>
-<li><p>类方法: 默认有个 cls 参数，可以被类和对象调用，需要加上 &#64;classmethod 装饰器</p></li>
+<li><p>Static methods: Methods decorated with <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> that do not take a self parameter are called static methods. A class’s static method can have no parameters and can be called directly using the class name.</p></li>
+<li><p>Class methods: These methods have a <code class="docutils literal notranslate"><span class="pre">cls</span></code> parameter by default, can be called by both the class and its instances, and must be decorated with &#64;classmethod.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
-    <span class="nd">@staticmethod</span>  <span class="c1"># 以@开头的名称为装饰器，用来说明特殊的函数</span>
+    <span class="nd">@staticmethod</span>  <span class="c1"># Names starting with @ are decorators, used to indicate special functions</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;静态方法&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Static method&quot;</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>  <span class="c1"># 第一个参数为 cls</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;类方法&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>  <span class="c1"># The first parameter is cls</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Class method&quot;</span><span class="p">)</span>
 
-    <span class="c1"># 普通方法</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 第一个参数为 self</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;普通方法&quot;</span><span class="p">)</span>
+    <span class="c1"># Instance method</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># The first parameter is self</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Instance method&quot;</span><span class="p">)</span>
 
 
-<span class="n">MyClass</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span>  <span class="c1"># 静态方法可以被类名直接调用</span>
-<span class="n">MyClass</span><span class="o">.</span><span class="n">a</span><span class="p">()</span>  <span class="c1"># 类方法可以被类名直接调用</span>
+<span class="n">MyClass</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span>  <span class="c1"># Static methods can be called directly by the class name</span>
+<span class="n">MyClass</span><span class="o">.</span><span class="n">a</span><span class="p">()</span>    <span class="c1"># Class methods can be called directly by the class name</span>
 
 <span class="n">case</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
-<span class="k">case</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span>  <span class="c1"># 静态方法也可以被对象调用</span>
-<span class="k">case</span><span class="o">.</span><span class="n">a</span><span class="p">()</span>  <span class="c1"># 类方法也可以被对象调用</span>
-<span class="k">case</span><span class="o">.</span><span class="n">b</span><span class="p">()</span>  <span class="c1"># 普通方法只能被对象调用</span>
+<span class="k">case</span><span class="o">.</span><span class="n">fun</span><span class="p">()</span>  <span class="c1"># Static methods can also be called by an instance</span>
+<span class="k">case</span><span class="o">.</span><span class="n">a</span><span class="p">()</span>    <span class="c1"># Class methods can also be called by an instance</span>
+<span class="k">case</span><span class="o">.</span><span class="n">b</span><span class="p">()</span>    <span class="c1"># Instance methods can only be called by an instance</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>静态方法
-类方法
-静态方法
-类方法
-普通方法
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Static method
+Class method
+Static method
+Class method
+Instance method
 </pre></div>
 </div>
 </div>
@@ -1038,8 +1069,8 @@ male
 </section>
 <section id="dateclass">
 <h2><span class="section-number">10.8. </span>dateclass<a class="headerlink" href="#dateclass" title="Link to this heading">#</a></h2>
-<hr><p><code class="docutils literal notranslate"><span class="pre">dataclass</span></code> 是 Python 3.7 引入的装饰器，自动生成 __init__、__repr__、__eq__ 等方法，让数据类的编写更加简洁。</p>
-<p>一个例子：</p>
+<hr><p><code class="docutils literal notranslate"><span class="pre">dataclass</span></code> is a decorator introduced in Python 3.7 that automatically generates methods like <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>, and <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>, making the definition of data classes more concise.</p>
+<p>One example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
@@ -1047,17 +1078,17 @@ male
 
 <span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># 声明 name 为字符串类型</span>
-    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>  <span class="c1"># 声明 age 为整数类型</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># declare name as string type</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>  <span class="c1"># declare age as an int type</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>上面的代码等同于：</p>
+<p>The above codes are equivalent to:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># 冒号跟数据类型，可以声明变量的数据类型</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>  <span class="c1"># A colon followed by a data type can be used to declare the type of a variable.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
 
@@ -1067,7 +1098,7 @@ male
 </div>
 </div>
 </div>
-<p>可以看出，dataclass 与普通类的一个区别是，必须在定义中声明属性的数据类型，但是显著减少了代码量。</p>
+<p>It can be seen that one difference between a dataclass and a regular class is that the data types of attributes must be declared in the definition, while the amount of code is significantly reduced.</p>
 <script src="https://giscus.app/client.js"
         data-repo="RobinChen121/book-Python-Data-Science-en"
         data-repo-id="R_kgDOOt-49A"
@@ -1146,7 +1177,7 @@ male
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-or-magic-methods-of-a-class">10.4. *Special (or “magic”) methods of a class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-or-magic-attribute-of-a-class">10.5. *Special (or “magic”) attribute of a class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute-related-methodssetattr-getattr">10.6. Attribute related methods<code class="docutils literal notranslate"><span class="pre">setattr()</span></code>, <code class="docutils literal notranslate"><span class="pre">getattr()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">10.7. 类方法与静态方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-method-and-static-method">10.7. *Class method and static method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dateclass">10.8. dateclass</a></li>
 </ul>
   </nav></div>

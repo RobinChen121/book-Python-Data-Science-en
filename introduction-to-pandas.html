@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
@@ -197,7 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="statistics.html">8. Python statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine-learning.html">9. Python machine learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python Object Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. *Python Object Oriented Programming</a></li>
 </ul>
 
     </div>
@@ -239,6 +239,37 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/RobinChen121/book-Python-Data-Science-en/main?urlpath=lab/tree/data-science/introduction-to-pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -450,6 +481,17 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-pandas">
 <h1><span class="section-number">5. </span>Introduction to Pandas<a class="headerlink" href="#introduction-to-pandas" title="Link to this heading">#</a></h1>
 <hr>
+<div class="admonition-goals-and-prerequisites admonition">
+<p class="admonition-title">Goals and prerequisites</p>
+<p><strong>Goals</strong>:</p>
+<ul class="simple">
+<li><p>Learn how to process tabular data with Pandas.</p></li>
+</ul>
+<p><strong>Prerequisites</strong>:</p>
+<ul class="simple">
+<li><p>Familiar with common Python data types and Numpy.</p></li>
+</ul>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> is one of the most important data analysis tools in Python for data processing. Built on NumPy, it offers many methods for handling large datasets and allows flexible, efficient data manipulation.</p>
 <ul>
 <li><p>The detailed API(Application Programming Interface) reference of <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> is in</p>
@@ -668,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Name&#39;, &#39;Statistics&#39;, &#39;Accounting&#39;, &#39;Marketing&#39;], dtype=&#39;str&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Name&#39;, &#39;Statistics&#39;, &#39;Accounting&#39;, &#39;Marketing&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -695,7 +737,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.Series
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
 </pre></div>
 </div>
 </div>
@@ -740,10 +782,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name            str
-Statistics    int64
-Accounting    int64
-Marketing     int64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name          object
+Statistics     int64
+Accounting     int64
+Marketing      int64
 dtype: object
 </pre></div>
 </div>
@@ -1695,7 +1737,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(88)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>88
 </pre></div>
 </div>
 </div>
@@ -2363,9 +2405,9 @@ Name: Finance, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistics    str
-Python        str
-Finance       str
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistics    object
+Python        object
+Finance       object
 dtype: object
 </pre></div>
 </div>
@@ -5939,7 +5981,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Class&#39;, &#39;Gender&#39;, &#39;Statistics&#39;, &#39;Accounting&#39;, &#39;Finance&#39;], dtype=&#39;str&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Class&#39;, &#39;Gender&#39;, &#39;Statistics&#39;, &#39;Accounting&#39;, &#39;Finance&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -6382,7 +6424,7 @@ Another function, <code class="docutils literal notranslate"><span class="pre">d
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    09-15-16
 1    03-23-17
 2    09-05-18
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6397,7 +6439,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    09-15-2016
 1    03-23-2017
 2    09-05-2018
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6412,7 +6454,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    09/15/16
 1    03/23/17
 2    09/05/18
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6427,7 +6469,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2016-37
 1    2017-12
 2    2018-36
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6442,7 +6484,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2016-09-4
 1    2017-03-4
 2    2018-09-3
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6469,7 +6511,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-12-24&#39;, &#39;2019-12-25&#39;, &#39;2019-12-26&#39;, &#39;2019-12-27&#39;,
                &#39;2019-12-28&#39;, &#39;2019-12-29&#39;, &#39;2019-12-30&#39;, &#39;2019-12-31&#39;,
                &#39;2020-01-01&#39;, &#39;2020-01-02&#39;],
-              dtype=&#39;datetime64[us]&#39;, freq=&#39;D&#39;)
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
 </pre></div>
 </div>
 </div>
@@ -6920,7 +6962,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="_images/76eee6c0c6cf684cee09d6b24624e7d5ef10f8833e83eacc733b4bb4bbc3072d.png" src="_images/76eee6c0c6cf684cee09d6b24624e7d5ef10f8833e83eacc733b4bb4bbc3072d.png" />
+<img alt="_images/76876828467254c3da9bc0ede28de43ebe130af7b8210363c0c30967e92b19e1.png" src="_images/76876828467254c3da9bc0ede28de43ebe130af7b8210363c0c30967e92b19e1.png" />
 </div>
 </div>
 <p>The above picture shows that the <code class="docutils literal notranslate"><span class="pre">plot</span></code> method of Pandas draw a line chart for each numeric column.</p>
@@ -6934,7 +6976,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;My picture&#39;}, ylabel=&#39;Frequency&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/54124b74f3eea4eea38977c970703f78e95c2b85361d5ab0c3274a30c5993d3c.png" src="_images/54124b74f3eea4eea38977c970703f78e95c2b85361d5ab0c3274a30c5993d3c.png" />
+<img alt="_images/520d19f56a6f745af0195fd32ad596385b075e906318978f5230ad0a2c861fe0.png" src="_images/520d19f56a6f745af0195fd32ad596385b075e906318978f5230ad0a2c861fe0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6947,7 +6989,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;sepal_length&#39;, ylabel=&#39;sepal_width&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ad6a0b8ba18ab90d9675c1c9d78e2374a6962e0d52f68e65884ea932a62a1cc4.png" src="_images/ad6a0b8ba18ab90d9675c1c9d78e2374a6962e0d52f68e65884ea932a62a1cc4.png" />
+<img alt="_images/89b4ebd4650db8af96f5ed7bd6b6db3173dd35175b1b5060d46fefb739747ad9.png" src="_images/89b4ebd4650db8af96f5ed7bd6b6db3173dd35175b1b5060d46fefb739747ad9.png" />
 </div>
 </div>
 <p>Pandas provides a comprehensive set of data processing methods with numerous argument configurations. Due to space limitations, this book does not elaborate on them in detail. When using Pandas for data processing, readers are encouraged to consult the <a class="reference external" href="https://pandas.pydata.org/docs/">official documentation</a> for further reference.</p>
