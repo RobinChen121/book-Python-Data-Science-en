@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bdc5d849-31fe-440d-a21d-8103da5ce2ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/A-first-look-of-Python-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/A-first-look-of-Python-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/basic-data-type-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/basic-data-type-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/define-function-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/define-function-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/draw-pictures-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/draw-pictures-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/intro-checkpoint.md" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/intro-checkpoint.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/introduction-to-numpy-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/introduction-to-numpy-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/introduction-to-pandas-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/introduction-to-pandas-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/print-read-files-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/.ipynb_checkpoints/print-read-files-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/.virtual_documents/machine-learning.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/A-first-look-of-Python.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/A-first-look-of-Python.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/_static/myfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/_static/myfile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/_static/myfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/_static/myfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/basic-data-type.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/basic-data-type.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/datas/marks.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/datas/marks.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/define-function.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/define-function.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/draw-pictures.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/draw-pictures.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/intro.md" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/intro.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/introduction-to-class.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/introduction-to-class.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/introduction-to-numpy.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/introduction-to-numpy.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/introduction-to-pandas.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/introduction-to-pandas.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/machine-learning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/machine-learning.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/print-read-files.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/print-read-files.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-science/statistics.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data-science/statistics.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "RobinChen121"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/RobinChen121/book-Python-Data-Science-en.git",
+    "accountId": "84870bf4-6d77-45c0-9003-b0ea530de67f"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3BXUiCkLSwV9TLzR3Hx45LnwWCv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdc5d849-31fe-440d-a21d-8103da5ce2ef" name="Changes" comment="" />
+      <created>1774635035169</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774635035169</updated>
+      <workItem from="1774635037018" duration="134000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
