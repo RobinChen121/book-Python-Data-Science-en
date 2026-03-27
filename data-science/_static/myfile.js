@@ -48,5 +48,56 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
     
     setcookie('googtrans', '/en');
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. 创建按钮元素
+    const scrollBottomBtn = document.createElement('button');
+
+    // 2. 设置内容：使用更优雅的 SVG 图标（向下箭头）
+    // SVG 可以确保在任何分辨率下都清晰，且比文字更具通用性
+    scrollBottomBtn.innerHTML = `
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
+    `;
+
+    // 3. 设置基础样式（半透明、毛玻璃效果）
+    Object.assign(scrollBottomBtn.style, {
+        position: 'fixed',
+        bottom: '80px',   // 位于“回到顶部”按钮上方
+        right: '20px',
+        zIndex: '1000',
+        width: '45px',    // 圆形按钮
+        height: '45px',
+        border: 'none',
+        borderRadius: '50%',
+        cursor: 'pointer',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.15)', // 柔和阴影
+        display: 'flex',   // 居中图标
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'all 0.3s ease', // 平滑过渡动画
+        backdropFilter: 'blur(8px)', // 毛玻璃效果 (背景模糊)
+        WebkitBackdropFilter: 'blur(8px)' // 兼容 Safari
+    });
+
+    // // 4. 悬停效果
+    scrollBottomBtn.onmouseover = () => scrollBottomBtn.style.backgroundColor = "currentColor" ;
+    scrollBottomBtn.onmouseout = () => scrollBottomBtn.style.backgroundColor = '#684679';
+
+    // 5. 点击逻辑：平滑滚动到底部
+    scrollBottomBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth'
+        });
+    });
+
+    // 6. 将按钮添加到页面
+    document.body.appendChild(scrollBottomBtn);
+});
     
     
