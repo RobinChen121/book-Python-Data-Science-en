@@ -27,5 +27,5 @@ seaborn
 scikit-learn
 openpyxl # for pandas reading files
 statsmodels
-Ipympl # for animation in Jupyter notebook
-Pingouin
+# Ipympl # for animation in Jupyter notebook
+# Pingouin

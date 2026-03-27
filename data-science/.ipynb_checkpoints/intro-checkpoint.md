@@ -30,7 +30,7 @@ Dr Zhen Chen
 </script>
 
 <!-- Toogle google translation -->
-<!-- <div id="google_translate_element"></div>
+<div id="google_translate_element"></div>
 <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({ pageLanguage: 'en',
@@ -41,4 +41,4 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 <script type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
 ></script>
-<br> -->
+<br>
