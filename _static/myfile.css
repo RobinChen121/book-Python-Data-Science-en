@@ -2,11 +2,81 @@ p {
     text-align: justify;
 }
 
-/* 调整主内容区域的最大宽度 */
+/* 优化标题，增加字重和呼吸感，段落间距 */
+h2, h3 {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    margin-top: 1.5em;
+}
+p { margin-bottom: 1em; }
 
-/*.bd-container {*/
-/*    width: 1000px; !* !* 或者你可以设置为 1200px、1400px 等 *!*!*/
-/*}*/
+/* 侧边栏当前活动项的样式 */
+.current > .reference {
+    color: #7c6488 !important;
+    /*border-left: 1px solid #7c6488 !important; !* 增加左侧指示条 *!*/
+    background-color: #f4f1f5;
+    font-weight: 600;
+}
+
+/* 右侧边栏整体容器微调 */
+.page-toc {
+    /*border-left: 1px solid #eee; !* 给整个右侧目录加一条极细的底线，增加层次感 *!*/
+    padding-left: 0;
+    padding-right: 0;
+    color: #7c6488 !important;
+}
+
+/*图片居中、加边框和阴影*/
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* dataframe 单元格：增加间距 */
+.dataframe td {
+    padding: 8px 12px !important;
+    border: 1px solid #f0f0f0 !important;
+}
+
+/* 1. 针对 Pandas DataFrame 的表头底边线 */
+.dataframe thead tr:last-child th {
+    border-bottom: 2px solid #7c6488 !important; /* 使用你的主色调紫色 */
+    /* 如果觉得太深，可以改用 rgba(124, 100, 136, 0.3) 这种半透明紫 */
+}
+
+/* 2. 针对 标准 Markdown 表格的表头底边线 */
+table.table thead th,
+table.docutils thead th {
+    border-bottom: 2px solid #afa2b6 !important;
+    text-align: center !important;
+}
+
+/* 4. 鼠标悬停：保持你要求的淡紫色 */
+.dataframe tbody tr:hover, table tbody tr:hover {
+    background-color: #e0a7f4 !important;
+    transition: background-color 0.2s ease;
+}
+
+/* 设置所有表格单元格的最小宽度 */
+.dataframe td, .dataframe th,
+table td, table th {
+    min-width: 60px !important; /* 你可以根据需求改为 80px 或 120px */
+    word-wrap: break-word;       /* 防止长内容撑破单元格 */
+    vertical-align: middle !important; /* 垂直也居中，防止长短不一 */
+}
+
+/* 针对特定的 Pandas DataFrame 表头 */
+.dataframe thead th {
+    text-align: center !important;
+}
+
+
+/* 调整主内容区域的最大宽度 */
+.bd-container {
+    width: 1300px; /* !* 或者你可以设置为 1200px、1400px 等 *!*/
+}
 
 /*google*/
 .goog-te-gadget {

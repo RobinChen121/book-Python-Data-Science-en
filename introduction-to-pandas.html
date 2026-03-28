@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=19d0c287" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=0cac1f5e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -60,7 +60,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction-to-pandas';</script>
-    <script src="_static/myfile.js?v=303e1063"></script>
+    <script src="_static/myfile.js?v=e879616e"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -197,7 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="statistics.html">8. Python statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine-learning.html">9. Python machine learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. *Python Object Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python Object Oriented Programming*</a></li>
 </ul>
 
     </div>
@@ -481,7 +481,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-pandas">
 <h1><span class="section-number">5. </span>Introduction to Pandas<a class="headerlink" href="#introduction-to-pandas" title="Link to this heading">#</a></h1>
 <hr>
-<div class="admonition-goals-and-prerequisites admonition">
+<div class="tip admonition">
 <p class="admonition-title">Goals and prerequisites</p>
 <p><strong>Goals</strong>:</p>
 <ul class="simple">
@@ -962,69 +962,6 @@ dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;datas/marks.xlsx&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;datas/marks.xlsx&quot;</span><span class="p">)</span>
-
-<span class="nn">File D:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\util\_decorators.py:333,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">333</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File D:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\generic.py:2436,</span> in <span class="ni">NDFrame.to_excel</span><span class="nt">(self, excel_writer, sheet_name, na_rep, float_format, columns, header, index, index_label, startrow, startcol, engine, merge_cells, inf_rep, freeze_panes, storage_options, engine_kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2423</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pandas.io.formats.excel</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExcelFormatter</span>
-<span class="g g-Whitespace">   </span><span class="mi">2425</span> <span class="n">formatter</span> <span class="o">=</span> <span class="n">ExcelFormatter</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2426</span>     <span class="n">df</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2427</span>     <span class="n">na_rep</span><span class="o">=</span><span class="n">na_rep</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">2434</span>     <span class="n">inf_rep</span><span class="o">=</span><span class="n">inf_rep</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2435</span> <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2436</span> <span class="n">formatter</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2437</span>     <span class="n">excel_writer</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2438</span>     <span class="n">sheet_name</span><span class="o">=</span><span class="n">sheet_name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2439</span>     <span class="n">startrow</span><span class="o">=</span><span class="n">startrow</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2440</span>     <span class="n">startcol</span><span class="o">=</span><span class="n">startcol</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2441</span>     <span class="n">freeze_panes</span><span class="o">=</span><span class="n">freeze_panes</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2442</span>     <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2443</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2444</span>     <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2445</span> <span class="p">)</span>
-
-<span class="nn">File D:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\formats\excel.py:943,</span> in <span class="ni">ExcelFormatter.write</span><span class="nt">(self, writer, sheet_name, startrow, startcol, freeze_panes, engine, storage_options, engine_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">941</span>     <span class="n">need_save</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">942</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">943</span>     <span class="n">writer</span> <span class="o">=</span> <span class="n">ExcelWriter</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">944</span>         <span class="n">writer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">945</span>         <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span>         <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span>         <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">949</span>     <span class="n">need_save</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">951</span> <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">File D:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\excel\_openpyxl.py:57,</span> in <span class="ni">OpenpyxlWriter.__init__</span><span class="nt">(self, path, engine, date_format, datetime_format, mode, storage_options, if_sheet_exists, engine_kwargs, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="n">path</span><span class="p">:</span> <span class="n">FilePath</span> <span class="o">|</span> <span class="n">WriteExcelBuffer</span> <span class="o">|</span> <span class="n">ExcelWriter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">55</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="c1"># Use the openpyxl module as the Excel writer.</span>
-<span class="ne">---&gt; </span><span class="mi">57</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">openpyxl.workbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">Workbook</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="n">engine_kwargs</span> <span class="o">=</span> <span class="n">combine_kwargs</span><span class="p">(</span><span class="n">engine_kwargs</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="n">path</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>         <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">66</span>         <span class="n">engine_kwargs</span><span class="o">=</span><span class="n">engine_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;openpyxl&#39;
 </pre></div>
 </div>
 </div>
@@ -2468,9 +2405,9 @@ Name: Finance, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistics    str
-Python        str
-Finance       str
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistics    object
+Python        object
+Finance       object
 dtype: object
 </pre></div>
 </div>
@@ -6044,7 +5981,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Class&#39;, &#39;Gender&#39;, &#39;Statistics&#39;, &#39;Accounting&#39;, &#39;Finance&#39;], dtype=&#39;str&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Class&#39;, &#39;Gender&#39;, &#39;Statistics&#39;, &#39;Accounting&#39;, &#39;Finance&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -6487,7 +6424,7 @@ Another function, <code class="docutils literal notranslate"><span class="pre">d
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    09-15-16
 1    03-23-17
 2    09-05-18
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6502,7 +6439,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    09-15-2016
 1    03-23-2017
 2    09-05-2018
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6517,7 +6454,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    09/15/16
 1    03/23/17
 2    09/05/18
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6532,7 +6469,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2016-37
 1    2017-12
 2    2018-36
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6547,7 +6484,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2016-09-4
 1    2017-03-4
 2    2018-09-3
-Name: Enrollment date, dtype: str
+Name: Enrollment date, dtype: object
 </pre></div>
 </div>
 </div>
@@ -6574,7 +6511,7 @@ Name: Enrollment date, dtype: str
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2019-12-24&#39;, &#39;2019-12-25&#39;, &#39;2019-12-26&#39;, &#39;2019-12-27&#39;,
                &#39;2019-12-28&#39;, &#39;2019-12-29&#39;, &#39;2019-12-30&#39;, &#39;2019-12-31&#39;,
                &#39;2020-01-01&#39;, &#39;2020-01-02&#39;],
-              dtype=&#39;datetime64[us]&#39;, freq=&#39;D&#39;)
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
 </pre></div>
 </div>
 </div>

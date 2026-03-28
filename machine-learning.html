@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=19d0c287" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=0cac1f5e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -62,11 +62,11 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'machine-learning';</script>
-    <script src="_static/myfile.js?v=303e1063"></script>
+    <script src="_static/myfile.js?v=e879616e"></script>
     <script src="_static/.ipynb_checkpoints/myfile-checkpoint.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. *Python Object Oriented Programming" href="introduction-to-class.html" />
+    <link rel="next" title="10. Python Object Oriented Programming*" href="introduction-to-class.html" />
     <link rel="prev" title="8. Python statistics" href="statistics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -199,7 +199,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="statistics.html">8. Python statistics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Python machine learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. *Python Object Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python Object Oriented Programming*</a></li>
 </ul>
 
     </div>
@@ -457,7 +457,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="python-machine-learning">
 <h1><span class="section-number">9. </span>Python machine learning<a class="headerlink" href="#python-machine-learning" title="Link to this heading">#</a></h1>
 <hr>
-<div class="admonition-goals-and-prerequisites admonition">
+<div class="tip admonition">
 <p class="admonition-title">Goals and prerequisites</p>
 <p><strong>Goals</strong>:</p>
 <ul class="simple">
@@ -468,8 +468,17 @@ document.write(`
 <li><p>Can install and import a Python library.</p></li>
 <li><p>Familiar with common data types in Python.</p></li>
 <li><p>Can use Pandas and Numpy to process data.</p></li>
-<li><p>*Can draw a picture in Python.</p></li>
-<li><p>*Can define a Python fuction.</p></li>
+<li><p>Can draw a picture in Python*.</p></li>
+<li><p>Can define a Python function*.</p></li>
+</ul>
+<p><strong>Python libraries used in this chapter</strong>:</p>
+<ul class="simple">
+<li><p>Matplotlib</p></li>
+<li><p>Numpy</p></li>
+<li><p>Pandas</p></li>
+<li><p>Scikit-learn</p></li>
+<li><p>Statsmodels</p></li>
+<li><p>Seaborn*</p></li>
 </ul>
 </div>
 <p>In this chapter, we explain how to perform some machine leanrning methods using Python. Rather than delving into the theoretical and computational details of those methods, we aim to provide intuitive, visual explanations that are easy to understand.</p>
@@ -495,17 +504,93 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">crashes</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;car_crashes&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">crashes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total</th>
+      <th>speeding</th>
+      <th>alcohol</th>
+      <th>not_distracted</th>
+      <th>no_previous</th>
+      <th>ins_premium</th>
+      <th>ins_losses</th>
+      <th>abbrev</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.8</td>
+      <td>7.332</td>
+      <td>5.640</td>
+      <td>18.048</td>
+      <td>15.040</td>
+      <td>784.55</td>
+      <td>145.08</td>
+      <td>AL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>18.1</td>
+      <td>7.421</td>
+      <td>4.525</td>
+      <td>16.290</td>
+      <td>17.014</td>
+      <td>1053.48</td>
+      <td>133.93</td>
+      <td>AK</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.6</td>
+      <td>6.510</td>
+      <td>5.208</td>
+      <td>15.624</td>
+      <td>17.856</td>
+      <td>899.47</td>
+      <td>110.35</td>
+      <td>AZ</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>22.4</td>
+      <td>4.032</td>
+      <td>5.824</td>
+      <td>21.056</td>
+      <td>21.280</td>
+      <td>827.34</td>
+      <td>142.39</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12.0</td>
+      <td>4.200</td>
+      <td>3.360</td>
+      <td>10.920</td>
+      <td>10.680</td>
+      <td>878.41</td>
+      <td>165.63</td>
+      <td>CA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Descriptions for each column are below:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -553,7 +638,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;speeding&#39;, ylabel=&#39;total&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/2ae63a45c65ce61624c0198c15564f8517c3029ef008b522f812817b8415263b.png" src="_images/2ae63a45c65ce61624c0198c15564f8517c3029ef008b522f812817b8415263b.png" />
+<img alt="_images/fd7118960d5879694881d8616bb97b6cdbcc08afb0663cb144cb0a851c27f7ef.png" src="_images/fd7118960d5879694881d8616bb97b6cdbcc08afb0663cb144cb0a851c27f7ef.png" />
 </div>
 </div>
 <p>We may assume there is a linear relationship between the amount of total crashes and the speeding, i.e.,</p>
@@ -586,8 +671,8 @@ document.write(`
 Dep. Variable:                  total   R-squared:                       0.374
 Model:                            OLS   Adj. R-squared:                  0.361
 Method:                 Least Squares   F-statistic:                     29.27
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):           1.87e-06
-Time:                        21:55:42   Log-Likelihood:                -132.15
+Date:                Sat, 28 Mar 2026   Prob (F-statistic):           1.87e-06
+Time:                        13:49:36   Log-Likelihood:                -132.15
 No. Observations:                  51   AIC:                             268.3
 Df Residuals:                      49   BIC:                             272.2
 Df Model:                           1                                         
@@ -699,8 +784,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     64.87
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):           2.27e-14
-Time:                        21:55:42   Log-Likelihood:                -110.71
+Date:                Sat, 28 Mar 2026   Prob (F-statistic):           2.27e-14
+Time:                        13:49:36   Log-Likelihood:                -110.71
 No. Observations:                  51   AIC:                             227.4
 Df Residuals:                      48   BIC:                             233.2
 Df Model:                           2                                         
@@ -764,8 +849,8 @@ Notes:
 Dep. Variable:                  total   R-squared:                       0.790
 Model:                            OLS   Adj. R-squared:                  0.777
 Method:                 Least Squares   F-statistic:                     58.91
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):           5.91e-16
-Time:                        21:55:43   Log-Likelihood:                -104.31
+Date:                Sat, 28 Mar 2026   Prob (F-statistic):           5.91e-16
+Time:                        13:49:36   Log-Likelihood:                -104.31
 No. Observations:                  51   AIC:                             216.6
 Df Residuals:                      47   BIC:                             224.3
 Df Model:                           3                                         
@@ -986,8 +1071,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.020
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     1.672
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):              0.174
-Time:                        21:55:43   Log-Likelihood:                -422.43
+Date:                Sat, 28 Mar 2026   Prob (F-statistic):              0.174
+Time:                        13:49:36   Log-Likelihood:                -422.43
 No. Observations:                 244   AIC:                             852.9
 Df Residuals:                     240   BIC:                             866.8
 Df Model:                           3                                         
@@ -1055,8 +1140,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.020
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     1.672
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):              0.174
-Time:                        21:55:43   Log-Likelihood:                -422.43
+Date:                Sat, 28 Mar 2026   Prob (F-statistic):              0.174
+Time:                        13:49:36   Log-Likelihood:                -422.43
 No. Observations:                 244   AIC:                             852.9
 Df Residuals:                     240   BIC:                             866.8
 Df Model:                           3                                         
@@ -1106,8 +1191,8 @@ Notes:
 Dep. Variable:                    tip   R-squared:                       0.459
 Model:                            OLS   Adj. R-squared:                  0.450
 Method:                 Least Squares   F-statistic:                     50.67
-Date:                Thu, 05 Mar 2026   Prob (F-statistic):           7.52e-31
-Time:                        21:55:43   Log-Likelihood:                -350.03
+Date:                Sat, 28 Mar 2026   Prob (F-statistic):           7.52e-31
+Time:                        13:49:36   Log-Likelihood:                -350.03
 No. Observations:                 244   AIC:                             710.1
 Df Residuals:                     239   BIC:                             727.5
 Df Model:                           4                                         
@@ -1976,7 +2061,7 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>*Python Object Oriented Programming</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Python Object Oriented Programming*</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
