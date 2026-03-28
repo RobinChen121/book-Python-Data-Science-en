@@ -10,19 +10,18 @@ h2, h3 {
 p { margin-bottom: 1em; }
 
 /* 侧边栏当前活动项的样式 */
-.current > .reference {
-    color: #7c6488 !important;
-    /*border-left: 1px solid #7c6488 !important; !* 增加左侧指示条 *!*/
-    background-color: #f4f1f5;
-    font-weight: 600;
-}
+/*.current > .reference {*/
+/*    color: #7c6488 !important;*/
+/*    !*border-left: 1px solid #7c6488 !important; !* 增加左侧指示条 *!*!*/
+/*    background-color: #f4f1f5;*/
+/*    font-weight: 600;*/
+/*}*/
+
 
 /* 右侧边栏整体容器微调 */
 .page-toc {
-    /*border-left: 1px solid #eee; !* 给整个右侧目录加一条极细的底线，增加层次感 *!*/
     padding-left: 0;
     padding-right: 0;
-    color: #7c6488 !important;
 }
 
 /*图片居中、加边框和阴影*/
@@ -34,15 +33,9 @@ img {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* dataframe 单元格：增加间距 */
-.dataframe td {
-    padding: 8px 12px !important;
-    border: 1px solid #f0f0f0 !important;
-}
-
 /* 1. 针对 Pandas DataFrame 的表头底边线 */
 .dataframe thead tr:last-child th {
-    border-bottom: 2px solid #7c6488 !important; /* 使用你的主色调紫色 */
+    border-bottom: 2px solid #afa2b6 !important; /* 使用你的主色调紫色 */
     /* 如果觉得太深，可以改用 rgba(124, 100, 136, 0.3) 这种半透明紫 */
 }
 
@@ -67,9 +60,30 @@ table td, table th {
     vertical-align: middle !important; /* 垂直也居中，防止长短不一 */
 }
 
+/* 1. 强制统一 DataFrame 所有的单元格间距 */
+.dataframe thead th,
+.dataframe tbody th,
+.dataframe tbody td {
+    padding: 8px 12px !important; /* 统一上下左右内边距 */
+    line-height: 1.5 !important;    /* 统一行高 */
+    vertical-align: middle !important; /* 确保垂直居中 */
+    height: auto !important;        /* 消除可能存在的最小高度限制 */
+}
+
 /* 针对特定的 Pandas DataFrame 表头 */
 .dataframe thead th {
     text-align: center !important;
+}
+
+/*markdow 单元格首行内容居中*/
+.text-center {
+    text-align: center;
+}
+
+/* 如果 p 标签导致了额外的间距，可以加上这个 */
+.head p {
+    margin: 0;
+    display: inline-block; /* 或者使用 block */
 }
 
 
@@ -77,6 +91,7 @@ table td, table th {
 .bd-container {
     width: 1300px; /* !* 或者你可以设置为 1200px、1400px 等 *!*/
 }
+
 
 /*google*/
 .goog-te-gadget {
