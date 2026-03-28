@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
             position: 'fixed',
             right: '20px',
             zIndex: '1000',
-            width: '45px',
-            height: '45px',
+            width: '25px',
+            height: '25px',
             border: 'none',
             borderRadius: '50%',
             cursor: 'pointer',
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: 'all 0.3s ease',
             backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
-            backgroundColor: '#684679',
+            backgroundColor: 'rgba(124, 100, 136, 0.9)',
             color: '#fff',
             opacity: '0',          // 默认隐藏
             pointerEvents: 'none'  // 防止误点
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </svg>
     `);
 
-    scrollTopBtn.style.bottom = '140px';
+    scrollTopBtn.style.bottom = '120px';
 
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({
