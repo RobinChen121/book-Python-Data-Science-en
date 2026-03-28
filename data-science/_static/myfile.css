@@ -8,38 +8,59 @@ p {
 /*    width: 1000px; !* !* 或者你可以设置为 1200px、1400px 等 *!*!*/
 /*}*/
 
- .goog-te-gadget {
-    font-family: Roboto, "Open Sans", sans-serif !important;
-    text-transform: uppercase;
-}
+/*google*/
+.goog-te-gadget {
+       font-family: Roboto, "Open Sans", sans-serif !important;
+   /*text-transform: uppercase;*/
+ }
+
 .goog-te-gadget-simple {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border: 1px solid rgba(237, 230, 230, 0.5) !important;
-  padding: 8px !important;
-  border-radius: 4px !important;
-  font-size: 1rem !important;
-  line-height: 1rem !important;
-  display: inline-block;
-  cursor: pointer;
-  zoom: 1;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(237, 230, 230, 0.5) !important;
+    padding: 8px !important;
+    border-radius: 4px !important;
+    font-size: 1rem !important;
+    line-height: 1rem !important;
+    display: inline-block;
+    cursor: pointer;
+    zoom: 1;
+
+    color: inherit !important;   /* 🔥 关键 */
+}
+.goog-te-gadget-simple span {
+    color: inherit !important;
 }
 
-.goog-te-gadget-icon {
-  background-image: url(https://placehold.it/32) !important;
-  background-position: 0px 0px;
-  height: 0px !important;
-  width: 0px !important;
-  margin-right: 8px !important;
-  display: none;
+#google_translate_element .goog-te-gadget {
+    display: inline-flex !important;
+    margin-right: 20px;
 }
 
+.goog-te-gadget-icon { // 更改谷歌翻译框外观
+background-image: url(https://placehold.it/32) !important;
+    background-position: 0 0;
+    height: 0 !important;
+    width: 0 !important;
+    margin-right: 8px !important;
+    display: none;
+}
+
+
+/*不让翻译后显示谷歌的其他弹出框*/
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
-    display: none; // add !important if required
-  }
-
+       display: none; // add !important if required
+   }
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
-    }
+}
 body {
     top: 0px !important;
-    }
+}
+/* 主弹框 */
+#goog-gt-vt {
+    display: none !important;
+}
+/* 备用：隐藏内部结构（防止重绘） */
+.VIpgJd-yAWNEb-hvhgNd {
+    display: none !important;
+}
