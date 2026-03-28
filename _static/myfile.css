@@ -61,7 +61,7 @@ body {
     display: none !important;
 }
 
-/* 控制翻译框显示文字颜色 */
+/* 控制翻译框显示文字颜色，旨在jupyter book 中有必要使用 */
 .VIpgJd-ZVi9od-xl07Ob-lTBxed span {
     color: var(--pst-color-text-base);
 }
