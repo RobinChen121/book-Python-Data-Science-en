@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         Object.assign(btn.style, {
             position: 'fixed',
-            right: '20px',
+            right: '10px',
             zIndex: '1000',
             width: '35px',
             height: '35px',
