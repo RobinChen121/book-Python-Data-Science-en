@@ -24,36 +24,10 @@ p { margin-bottom: 1em; }
 /*}*/
 
 
-/* 右侧边栏整体容器微调 */
-/*.bd-sidebar-secondary {*/
-/*    padding-right: 0 !important; !* 去掉整个右侧栏的右边空隙 *!*/
-
-/*}*/
-/*!* 去掉内部容器的 padding *!*/
-/*.sidebar-secondary-items {*/
-/*    padding-right: 0 !important;*/
-/*    margin-right: 0 !important; !* 去掉每个 block 的 margin *!*/
-/*}*/
-
-/*!* 让 toc 填满 *!*/
-/*.page-toc {*/
-/*    width: 100%;*/
-/*}*/
-
-/*.bd-sidebar-secondary.bd-toc.noprint {*/
-/*    width: fit-content;*/
-/*    max-width: 250px;*/
-/*}*/
-/*.bd-sidebar-secondary{*/
-/*    padding-right: 0px;*/
-/*}*/
-/*.bd-main .bd-content {*/
-/*    justify-content: unset !important;*/
-/*}*/
-
+/* 右侧边栏整体容器微调，右侧边栏多出的空白与浏览器的大小有关 */
 @media (min-width: 960px) {
     .bd-page-width {
-        max-width: none !important;
+        max-width: 100rem !important;
     }
 }
 
