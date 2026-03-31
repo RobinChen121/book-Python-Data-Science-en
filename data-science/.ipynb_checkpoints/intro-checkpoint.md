@@ -13,6 +13,8 @@ Dr Zhen Chen
 
 21th May, 2025 at Uxbridge, UK 
 
+![](heart.gif)
+
 <script src="https://giscus.app/client.js"
         data-repo="RobinChen121/book-Python-Data-Science-en"
         data-repo-id="R_kgDOOt-49A"
