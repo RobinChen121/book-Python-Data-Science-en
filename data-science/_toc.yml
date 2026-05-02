@@ -25,3 +25,4 @@ parts:
 - caption: Python hands-on projects
   numbered: false
   chapters:
+  - file: projects
