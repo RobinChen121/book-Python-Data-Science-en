@@ -201,6 +201,10 @@
 <li class="toctree-l1"><a class="reference internal" href="machine-learning.html">9. Python machine learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction-to-class.html">10. Python Object Oriented Programming*</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python hands-on projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Data Science Projects</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -440,9 +444,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">6.5. Debugging</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-print">6.5.1. Debug using <code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-a-dubugger">6.5.2. Debug using a dubugger</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.5.3. <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-try-except-statements">6.5.4. Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-jupyter-lab-debugger">6.5.2. Debug using Jupyter Lab debugger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-the-built-in-dubugger">6.5.3. Debug using the built-in dubugger*</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.5.4. <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code>*</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-try-except-statements">6.5.5. Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.6. <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
@@ -1301,8 +1306,11 @@ final x is 18
 </div>
 <p>The drawbacks of this method is: the <code class="docutils literal notranslate"><span class="pre">print()</span></code> positions need to be manually modified each time.</p>
 </section>
-<section id="debug-using-a-dubugger">
-<h3><span class="section-number">6.5.2. </span>Debug using a dubugger<a class="headerlink" href="#debug-using-a-dubugger" title="Link to this heading">#</a></h3>
+<section id="debug-using-jupyter-lab-debugger">
+<h3><span class="section-number">6.5.2. </span>Debug using Jupyter Lab debugger<a class="headerlink" href="#debug-using-jupyter-lab-debugger" title="Link to this heading">#</a></h3>
+</section>
+<section id="debug-using-the-built-in-dubugger">
+<h3><span class="section-number">6.5.3. </span>Debug using the built-in dubugger*<a class="headerlink" href="#debug-using-the-built-in-dubugger" title="Link to this heading">#</a></h3>
 <hr><p>Python comes with a built-in debugger called <code class="docutils literal notranslate"><span class="pre">pdb</span></code>. Additionally, other Python IDEs such as <code class="docutils literal notranslate"><span class="pre">Spyder</span></code>, <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code>, and <code class="docutils literal notranslate"><span class="pre">VS</span> <span class="pre">Code</span></code> provide dedicated debugging features in their menu or toolbar.</p>
 <p>The general steps for debugging with a debugger are:</p>
 <ol class="arabic simple">
@@ -1362,7 +1370,7 @@ final x is 18
 </div>
 </section>
 <section id="step-into-step-over-step-out-resume-program">
-<h3><span class="section-number">6.5.3. </span><code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code><a class="headerlink" href="#step-into-step-over-step-out-resume-program" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.4. </span><code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code>*<a class="headerlink" href="#step-into-step-over-step-out-resume-program" title="Link to this heading">#</a></h3>
 <hr><p>When using an IDE for debugging, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, and <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code> are common debugger functions, and their differences are as follows:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code><br />
@@ -1478,7 +1486,7 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 </section>
 <section id="debug-using-try-except-statements">
-<h3><span class="section-number">6.5.4. </span>Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements<a class="headerlink" href="#debug-using-try-except-statements" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.5.5. </span>Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements<a class="headerlink" href="#debug-using-try-except-statements" title="Link to this heading">#</a></h3>
 <hr>
 <p>When writing programs, sometimes you’re unsure whether the code will run correctly and want to test how it executes. In such cases, you can use a <strong>try-except statement</strong>: if the code in the <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">block</span></code> fails to execute successfully, the program will then run the code in the <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">block</span></code>.</p>
 <table>   
@@ -1620,7 +1628,7 @@ Continues program execution until the next breakpoint or program termination.</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x22f8eb0de10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;map at 0x1dde1ce9de0&gt;
 </pre></div>
 </div>
 </div>
@@ -2301,9 +2309,10 @@ layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_transla
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">6.5. Debugging</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-print">6.5.1. Debug using <code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-a-dubugger">6.5.2. Debug using a dubugger</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.5.3. <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-try-except-statements">6.5.4. Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-jupyter-lab-debugger">6.5.2. Debug using Jupyter Lab debugger</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-the-built-in-dubugger">6.5.3. Debug using the built-in dubugger*</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-into-step-over-step-out-resume-program">6.5.4. <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Into</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Over</span></code>, <code class="docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Out</span></code>, <code class="docutils literal notranslate"><span class="pre">Resume</span> <span class="pre">Program</span></code>*</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-using-try-except-statements">6.5.5. Debug using <code class="docutils literal notranslate"><span class="pre">try-except</span></code> statements</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-map-filter-reduce">6.6. <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce</span></code></a></li>
