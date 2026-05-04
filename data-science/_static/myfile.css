@@ -63,7 +63,7 @@ table.docutils thead th {
     transition: background-color 0.2s ease;
 }
 
-[data-theme='dark'] .dataframe tbody tr:hover, table tbody tr:hover {
+[data-theme='dark'] .dataframe tbody tr:hover, [data-theme='dark'] table tbody tr:hover {
     background-color: #958d97 !important;
     transition: background-color 0.2s ease;
 }
@@ -210,9 +210,18 @@ img[src="https://www.google.com/images/cleardot.gif"] {
 
 /*> > symbol is called the Child Combinator. > .admonition-title
 It is used to select elements that are direct children of a specific parent*/
-[data-theme='dark'] .admonition.tip, .admonition.note,
+[data-theme='dark'] .admonition.tip, [data-theme='dark'] .admonition.note,
 /*div this linetells the browser: "Only target this if it is specifically a <div>*/
-[data-theme='dark'] div.admonition.tip, div.admonition.note{
+[data-theme='dark'] div.admonition.tip, [data-theme='dark'] div.admonition.note{
     filter: invert(1);
     /*background-color: #afa2b6 !important;*/
 }
+
+/*!*黑色背景下反转 logo*!*/
+/*[data-theme='dark'] .theme-aware-logo {*/
+/*    filter: invert(1);*/
+/*}*/
+/*!* 默认不反转（浅色模式） *!*/
+/*.theme-aware-logo {*/
+/*    filter: none;*/
+/*}*/
