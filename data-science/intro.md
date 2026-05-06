@@ -7,6 +7,8 @@ This book is designed to help readers quickly master Python data analysis techni
 
 The material in this book is adapted from my previously online Chinese-language book, various blog posts, LaTeX-based lecture notes, and teaching resources used in my Python classes.
 
+- This online textbook is powered by [Jupyter Book V1](https://jupyterbook.org/v1/intro.html). I have opted out of V2 because it lacks robust support for Jupyter Notebooks and offers less flexibility for custom formatting and styling compared to its predecessor.
+
 I am currently a lecturer at Brunel University London, and I hope this book will support students in developing practical coding skills for business analytics.
 
 Dr Zhen Chen
