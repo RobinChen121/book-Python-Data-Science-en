@@ -162,9 +162,9 @@ body {
 }
 
 /* 控制翻译框显示文字颜色，旨在jupyter book 中有必要使用 */
-/*.VIpgJd-ZVi9od-xl07Ob-lTBxed span {*/
-/*    color: var(--pst-color-text-base);*/
-/*}*/
+.VIpgJd-ZVi9od-xl07Ob-lTBxed span {
+    color: var(--pst-color-text-base);
+}
 
 /* 不要用 Google 这个 span，自己画分隔线，从而把里面的白点去掉（因为字体渲染的原因） */
 .goog-te-gadget-simple span[style*="border-left"] {
